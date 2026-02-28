@@ -2,6 +2,11 @@
 
 ## [透過google slide AI完成作品](./source)
 
+## AI工具:
+1. ChatGPT-生成大綱文字,生成簡報風格描述
+2. Gemini Canvas生成簡報
+3. Google slide AI建立插畫
+
 ## 工作流
 
 1. **需求**： 透過網路取得參考文章
