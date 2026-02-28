@@ -1,6 +1,6 @@
 # 簡報風格一致性
 
-## [透過google slide AI完成作品](./source)
+## [初稿作品和完成作品](./source)
 
 ## AI工具:
 1. ChatGPT-生成大綱文字,生成簡報風格描述
