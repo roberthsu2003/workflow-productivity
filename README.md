@@ -31,9 +31,8 @@
 - [生成式AI模型基本概念](./生成式AI模型基本概念/README.md)
 - [prompt工程指南](./prompt/README.md)
 - [討論方式的內容生成](./討論方式的內容生成/README.md)
-- [工具導向](./tool-oriented/README.md)
-- [目的導向](./goal-oriented/README.md)
-- [實作任務](./tasks/README.md)
+- [工具導向](./工具導向/README.md)
+- [實作任務](./實作任務/README.md)
 ---
 
 ## 💡 最佳實踐
