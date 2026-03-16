@@ -25,15 +25,15 @@
 | **3. 模仿** | 學它的風格和節奏 | 掌握句型、排版、色彩、構圖等「可複製的風格特徵」 | 模仿範本的用語、段落長度、視覺配置 |
 | **4. 生成** | 讓 AI 幫你大量產出 | 用清楚的指令，快速產出文字、圖片、程式碼、文件等 | 一次產出多種版本，再挑選或微調 |
 
-## 生成式AI模型基本概念: [生成式AI模型基本概念](./生成式AI模型基本概念/README.md)
+---
+### 章節索引
 
-## 工具導向: [工具導向](./tool-oriented/README.md)
-
-## 目的導向: [目的導向](./goal-oriented/README.md)
-
-## 實作任務: [實作任務](./tasks/README.md)
-
-## 其它: [其它](./others/README.md)
+- [生成式AI模型基本概念](./生成式AI模型基本概念/README.md)
+- [工具導向](./tool-oriented/README.md)
+- [目的導向](./goal-oriented/README.md)
+- [實作任務](./tasks/README.md)
+- [其它](./others/README.md)
+---
 
 ## 💡 最佳實踐
 
