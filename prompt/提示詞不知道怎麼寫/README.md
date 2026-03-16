@@ -19,6 +19,8 @@
 <details>
 <summary>💡 參考解答（點擊展開）</summary>
 
+<br>
+
 AI 可能會回覆類似這樣的範本：
 ```
 # 角色
@@ -57,6 +59,8 @@ AI 可能會回覆類似這樣的範本：
 
 <details>
 <summary>💡 參考解答（點擊展開）</summary>
+
+<br>
 
 AI 可能會先問你：
 
@@ -103,6 +107,9 @@ AI 可能會先問你：
 
 <details>
 <summary>💡 從庫中找到的「文章改寫」prompt 範例（點擊展開）</summary>
+
+<br>
+
 ```
 請幫我改寫以下文章，要求：
 1. 保持原意不變
@@ -134,6 +141,8 @@ AI 可能會先問你：
 
 <details>
 <summary>💡 參考解答（點擊展開）</summary>
+
+<br>
 
 AI 可能會產出：
 ```
@@ -177,6 +186,9 @@ AI 可能會產出：
 
 <details>
 <summary>💡 改寫後的 prompt 範例（點擊展開）</summary>
+
+<br>
+
 ```markdown
 # 角色
 你是公司財務部門的行政人員，負責說明費用申報規定。
