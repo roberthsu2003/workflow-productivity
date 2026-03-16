@@ -32,7 +32,6 @@
 - [工具導向](./tool-oriented/README.md)
 - [目的導向](./goal-oriented/README.md)
 - [實作任務](./tasks/README.md)
-- [其它](./others/README.md)
 ---
 
 ## 💡 最佳實踐
@@ -51,5 +50,9 @@
 ### 資料安全提醒
 - ⚠️ **敏感資料**：使用 Ollama 本地處理，不上傳雲端
 - ✅ **一般資料**：可使用 ChatGPT、Claude、Gemini 免費版
+
 ---
+
+## 其它
+ [其它](./others/README.md)
 
