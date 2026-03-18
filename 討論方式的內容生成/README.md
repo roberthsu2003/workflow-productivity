@@ -33,6 +33,38 @@
 
 ---
 
+## 產出內容類型對照
+
+三大工具的協作編輯器不僅能產出 Markdown 文件，還能產生**不同類型的結構化內容**。各工具的介面與可選類型不盡相同，使用前可先確認該工具支援的產出類型。
+
+### Claude Artifacts 產出類型
+
+Claude 的 Artifacts 提供明確的**產出類型選單**，可依需求選擇起點：
+
+| 類型 | 說明 |
+|------|------|
+| **Apps and websites** | 網頁應用程式、前端介面 |
+| **Documents and templates** | 結構化文件、報告、範本 |
+| **Games** | 互動式遊戲 |
+| **Productivity tools** | 計算機、轉換器、小工具等生產力工具 |
+| **Creative projects** | 視覺、藝術類創作專案 |
+| **Quiz or survey** | 測驗、問卷、表單 |
+| **Start from scratch** | 從空白開始，自訂產出類型 |
+
+![Claude Artifacts 產出類型選單](./images/claude-artifacts-categories.png)
+
+### Gemini、ChatGPT 的差異
+
+| 工具 | 產出類型說明 |
+|------|--------------|
+| **Gemini Canvas** | 以 Markdown、程式碼為主，依描述自動判斷產出格式，無獨立類型選單 |
+| **ChatGPT Canvas** | 以 Markdown、程式碼為主，可產出圖表、簡報等，依 prompt 自動判斷 |
+| **Claude Artifacts** | 提供 7 種預設類型選單，可明確指定產出類別 |
+
+> 💡 **使用建議**：若需特定類型（如網頁、遊戲、問卷），Claude 可先選類型再描述需求；Gemini、ChatGPT 則建議在 prompt 中**明確寫出產出格式**（如「請產生一個可互動的網頁」「請做一份問卷表單」）。
+
+---
+
 ## 如何觸發各工具的編輯器？
 
 ### 通用原則
