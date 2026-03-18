@@ -18,6 +18,16 @@
 
 ---
 
+## 需要重覆填寫docx的表格資料時的解決方式(使用手動填寫的方式)
+
+> 就是由AI產生填寫的內容,再由手動填寫的方式
+
+| 動作 | ChatGPT | Claude | Gemini |
+|------|---------|--------|--------|
+| 重復產生相關內容 | 自訂ChatGPT的prompt | 建立自訂的artifact | gemini的gem |
+
+---
+
 ## docx轉換為相同格式的docx(類似clone和轉換為英文版)
 
 | 動作 | ChatGPT | Claude | Gemini |
@@ -30,7 +40,7 @@
 
 **ChatGPT的解決方式:**
 
-- action:必需自已建立一個open ai API Server才可以使用
+- action:必需自已建立一個openAI API Server才可以使用(coding)
 
 **claude的解決方式:**
 
