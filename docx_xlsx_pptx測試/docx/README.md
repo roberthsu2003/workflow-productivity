@@ -10,7 +10,7 @@
 
 ---
 
-## dockx轉換為討論式生成模式
+## docx轉換為討論式生成模式
 
 | 動作 | ChatGPT-canvas | Claude-artifact | Gemini-canvas |
 |------|---------|--------|--------|
@@ -28,11 +28,15 @@
 > Claude會幫你轉換,但會先轉換為markdown格式後再轉換為docx格式(版面結構不一樣-比較美觀)  
 > Gemini會幫你轉換,但會先轉換為markdown格式後再轉換為docx格式(版面結構不一樣)  
 
-**ChatGPT的解決方式-Action:**
+**ChatGPT的解決方式:**
 
-> 必需自已建立一個open ai API Server才可以使用
+- action:必需自已建立一個open ai API Server才可以使用
 
-**claude的解決方式-claud skill:**
+**claude的解決方式:**
+
+- claude skill:
+- claude cowork:
+- claude connector:
 
 **Gemini無解決方式**
 
