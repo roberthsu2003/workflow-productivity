@@ -49,6 +49,8 @@
 - [工具導向](./工具導向/README.md)  
   免費 AI 工具清單與介紹：ChatGPT、Claude、Gemini、Ollama、Canva、MCP 等
 
+- [影音生成](./影音生成/README.md)  
+  影音生成的生成
 ---
 
 ### 免費方案使用技巧
