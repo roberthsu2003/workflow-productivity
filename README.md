@@ -25,10 +25,10 @@
 - [生成式AI模型基本概念](./生成式AI模型基本概念/README.md)  
   了解 LLM 從「模型」到「應用程式」的演進，掌握 AI 工具的本質與能力邊界
 
-- [prompt工程指南](./prompt/README.md)  
+- [prompt工程指南](./prompt/README.md)   
   輸入格式、系統提示詞、ROSES 框架與 4 要素，學會正確下指令讓 AI 產出更好
 
-- [討論方式的內容生成](./討論方式的內容生成/README.md) 
+- [討論方式的內容生成](./討論方式的內容生成/README.md)  
   善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出docx,xlsx,pptx,pdf,markdown,網頁等格式 
 
 - [儲存與重複使用 AI 提示詞](./儲存與重複使用AI提示詞/README.md)  
