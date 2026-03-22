@@ -45,6 +45,9 @@
 - [連結應用程式](./連結應用程式/README.md) 
   連結應用程式的生成
 
+- [影音生成應用程式](./影音生成/README.md) 
+  影音生成的生成
+
 ## 進階AI應用-需配合MCP,SKILL,TOOLS,ACTIONS等
 
   - ChatGPT的應用程式(Connection,Action,Tool)
@@ -59,8 +62,7 @@
 - [工具導向](./工具導向/README.md)  
   免費 AI 工具清單與介紹：ChatGPT、Claude、Gemini、Ollama、Canva、MCP 等
 
-- [影音生成](./影音生成/README.md)  
-  影音生成的生成
+
 ---
 
 ### 免費方案使用技巧
