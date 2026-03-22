@@ -28,8 +28,9 @@
 - [prompt工程指南](./prompt/README.md)  
   輸入格式、系統提示詞、ROSES 框架與 4 要素，學會正確下指令讓 AI 產出更好
 
-- [討論方式的內容生成](./討論方式的內容生成/README.md)  
-  善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出 Markdown、遊戲、表單、簡報大綱等
+- [討論方式的內容生成](./討論方式的內容生成/README.md) 
+
+  善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出docx,xlsx,pptx,pdf,markdown,網頁等格式 
 
 - [儲存與重複使用 AI 提示詞](./儲存與重複使用AI提示詞/README.md)  
   Gemini Gem、ChatGPT 自訂、Claude 專案 — 建立可重複使用的 AI 助手
