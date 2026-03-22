@@ -20,7 +20,7 @@
 3. **持續優化 Prompt**：越清楚的指令，AI 產出品質越高
 
 ---
-### 章節索引
+## 簡單AI應用
 
 - [生成式AI模型基本概念](./生成式AI模型基本概念/README.md)  
   了解 LLM 從「模型」到「應用程式」的演進，掌握 AI 工具的本質與能力邊界
@@ -30,6 +30,8 @@
 
 - [討論方式的內容生成](./討論方式的內容生成/README.md)  
   善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出docx,xlsx,pptx,pdf,markdown,網頁等格式 
+
+## 中階AI應用
 
 - [儲存與重複使用 AI 提示詞](./儲存與重複使用AI提示詞/README.md)  
   Gemini Gem、ChatGPT 自訂、Claude 專案 — 建立可重複使用的 AI 助手
@@ -42,6 +44,14 @@
 
 - [連結應用程式](./連結應用程式/README.md) 
   連結應用程式的生成
+
+## 進階AI應用-需配合MCP,SKILL,TOOLS,ACTIONS等
+
+  - ChatGPT的應用程式(Connection,Action,Tool)
+  - Claude(MCP,SKILL,Action)
+
+
+---
 
 - [實作任務](./實作任務/README.md)  
   15 個任務導向工作流：會議紀錄、簡報、資料分析、郵件、企劃書、知識庫等
