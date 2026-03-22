@@ -1,6 +1,7 @@
 # 連結應用程式
 
 ## claude + canva的整合應用
+### 簡報的制作
 
 **連線canva的步驟**
 1. 進入customize
