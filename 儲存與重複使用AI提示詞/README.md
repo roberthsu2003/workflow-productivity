@@ -30,6 +30,8 @@
 
 > 📌 **白話說明**：就像為不同工作指派不同同事——Gem 就是你替 AI 建立的「專職角色」，需要時直接叫出來用。
 
+> **方案**：依 [Google 說明](https://support.google.com/gemini/answer/16275805)，**Canvas、Gems** 等對**多數使用者**開放；免費與付費主要在提示次數、模型與進階功能用量上限有別，**不必**為了「能連線使用」另外付費。
+
 ![](./images/gem設定畫面.png)
 
 ### 「新增 Gem」畫面裡要填什麼？
@@ -177,7 +179,7 @@
 
 預覽區可選擇模型（例如 **Auto**）並輸入對話測試；左側 **推薦的模型** 與預覽區模型選擇層級不同，可依教學需求先固定建議版本再微調。確認無誤後，使用右上角「**建立**」或「**更新**」完成儲存，再選擇「**僅自己使用**」或「**分享給他人**」。
 
-> ⚠️ **注意**：建立 GPT 需要 **ChatGPT Plus 以上**方案，免費版無法建立，但可以使用別人公開分享的 GPT。
+> ⚠️ **注意**：依 [OpenAI 說明](https://help.openai.com/en/articles/8554407-gpts-in-chatgpt)，**建立或編輯**自訂 GPT 須 **付費訂閱**；免費帳號仍可使用他人公開或分享的 GPT。實際訂閱方案名稱以官網為準。
 
 ### 常見的 GPTs 範例
 
@@ -278,6 +280,8 @@
 
 > 📌 **白話說明**：就像你電腦裡的資料夾，不同專案的對話和設定完全分開，互不干擾。
 
+> **方案**：依 [Anthropic 說明](https://support.claude.com/en/articles/9517075-what-are-projects)，**免費帳號**亦可建立 Projects（最多 **5** 個）並上傳知識；**強化專案知識（RAG）**、團隊共享等進階功能須 **Pro／Max／Team／Enterprise** 等付費方案。
+
 ### 如何建立 Projects？
 
 1. 前往 [claude.ai/projects](https://claude.ai/projects)，點選「**＋ 新增專案**」
@@ -331,8 +335,10 @@
 | **建立難易度** | ⭐ 簡單 | ⭐⭐ 中等 | ⭐ 簡單 |
 | **知識庫** | 依 Gem 設定 | 最多 20 個檔案 | 總容量 200MB |
 | **切換方式** | 左側點選 | 左側切換 | 左側切換 |
-| **付費需求** | 依方案 | Plus 以上才能建立 | Pro 以上 |
+| **費用需求** | **免費帳號即可**建立／使用 Gem；用量與模型受方案與每日上限影響，付費（如 Google AI 訂閱）可提升上限。官方說明 Canvas、Gems 等**多數使用者皆可使用**（詳見 [Gemini Apps 說明](https://support.google.com/gemini/answer/16275805)）。 | **建立或編輯**自訂 GPT 須 **付費訂閱**（OpenAI 說明為 paid subscription，實際方案名稱以官網為準）；**使用**他人公開或分享的 GPT，登入後**免費帳號亦可**（詳見 [GPTs in ChatGPT](https://help.openai.com/en/articles/8554407-gpts-in-chatgpt)）。 | **免費帳號即可**建立 Projects（最多 **5** 個）並上傳知識；**強化專案知識（RAG）** 等進階能力須 **Pro／Max／Team／Enterprise** 等付費方案（詳見 [What are projects?](https://support.claude.com/en/articles/9517075-what-are-projects)）。 |
 | **適合情境** | 快速切換角色 | 建立複雜自訂 AI | 專案導向管理 |
+
+> **註**：「連線」使用網頁／App **不需**另外付費才能上網；上表指的是**建立自訂角色／專案**與部分**進階能力**是否須訂閱。各平台方案與名稱會變動，以官方最新公告為準。
 
 ---
 
