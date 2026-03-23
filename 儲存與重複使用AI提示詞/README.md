@@ -287,20 +287,23 @@
 ![](./images/claude建立專案第一畫面.png)
 
 1. 前往 [claude.ai/projects](https://claude.ai/projects)，點選「**＋ 新增專案**」（首屏標題可能為英文 **Create a personal project**）。
-2. **第一個畫面**會請你填兩個欄位（介面常為英文，與下方範例對照即可）：
 
-| 畫面上的英文 | 意義 |
-|--------------|------|
-| **What are you working on?** | 專案**名稱**（短名稱，顯示在左側列表） |
-| **What are you trying to achieve?** | 專案**描述**：這個專案要做什麼、給誰用、後續會上傳哪些參考資料等 |
+2. **第一個畫面（操作說明，非範例本文）**  
 
-畫面上方通常有 **How to use projects** 說明：專案可上傳文件、程式碼與檔案，讓 Claude 在多輪對話中持續參考。填完後按 **Create project**；若要取消則按 **Cancel**。
+   此畫面會請你填兩個欄位（介面常為英文，欄位意義如下表；**可複製的示範文字**請見本步驟下方的 **「小範本」** 小節）。
+
+   | 畫面上的英文 | 意義 |
+   |--------------|------|
+   | **What are you working on?** | 專案**名稱**（短名稱，顯示在左側列表） |
+   | **What are you trying to achieve?** | 專案**描述**：這個專案要做什麼、給誰用、後續會上傳哪些參考資料等 |
+
+   畫面上方通常有 **How to use projects** 說明：專案可上傳文件、程式碼與檔案，讓 Claude 在多輪對話中持續參考。填完後按 **Create project**；若要取消則按 **Cancel**。
 
 3. 建立成功後會進入**專案儀表板**（見下方「第二個畫面」）：在右側完成 **Instructions**、**Files**，並可略讀 **Memory** 說明。
 
-#### 第一個畫面：可複製範例（以「週報整理助手」為例）
+#### 小範本：第一個畫面可複製的兩個欄位（以「週報整理助手」為例）
 
-以下對應 **Name your project** 與 **Describe your project, goals, subject, etc...** 兩個欄位，可直接全選複製後貼入 Claude。
+以下為**教學用小範本**，對應 **Name your project** 與 **Describe your project, goals, subject, etc...**；可直接全選複製後貼入 Claude。
 
 **What are you working on?（專案名稱）**
 
