@@ -16,8 +16,7 @@
 - [三、Claude（Projects）](#section-claude)
   - [Claude Projects 的特色](#claude-features)
   - [如何建立 Projects（第一／二個畫面）](#claude-build)
-  - [小練習：週報整理助手](#lab-claude-weekly)
-  - [小練習：規劃多專案架構](#lab-claude-multi)
+  - [小練習：週報整理助手](#lab-claude-weekly)  
 - [四、三種工具快速比較](#section-compare)
 - [綜合練習](#section-final-lab)
 - [課後提醒](#section-afterword)
@@ -445,27 +444,9 @@
 
 </details>
 
-<a id="lab-claude-multi"></a>
-
-### ✏️ 小練習：規劃你的 Projects 架構
-
-**主題背景**：你是**業務部門**助理，同時負責三項工作——整理週報、回覆客戶信件、管理出差申請文件。希望建立三個 Claude Project，每個專案有獨立角色與參考文件。
 
 
-<details>
-<summary>💬 建議規劃範例（點擊展開）</summary>
 
-| 專案名稱 | 主要用途 | 可上傳的文件 |
-|----------|----------|--------------|
-| 📝 週報整理助手 | 將當週工作紀錄整理成週報格式 | **預先置於專案**：`週報範本.docx`；**每週提供**：當週 `當週工作記錄_週一`～`週五` |
-| 📧 客戶信件助手 | 草擬客戶回信，語氣專業有禮 | 常見問題FAQ.pdf |
-| ✈️ 出差申請助手 | 協助填寫出差申請說明、整理費用 | 出差申請規定.pdf |
-
-> 💡 專案名稱加上 Emoji，在左側列表更容易辨識；上傳公司實際規定文件，AI 回答會更符合公司規範。
-
-</details>
-
----
 
 <a id="section-compare"></a>
 
