@@ -13,4 +13,4 @@
 - **Gem／GPT**：可將範本與當週日記一併上傳至知識庫／相關資訊，或將內容複製貼上對話。
 - 若介面無法直接讀取 `.docx`，請改貼文字或匯出為 `.txt`／`.md` 再上傳。
 
-Claude Projects 用的 **ROSES 建議 Prompt**（Instructions 全文）請見上層 [儲存與重複使用 AI 提示詞 README](../README.md)「**三、Claude 的 Projects**」→「**第二個畫面**」摺疊區，以及「**✏️ 小練習（Claude Projects）：週報整理助手**」。若用 Gem／GPTs，可沿用同一套邏輯並改貼至對應欄位。
+Claude Projects 用的 **ROSES 建議 Prompt**（Instructions 全文）請見上層 [儲存與重複使用 AI 提示詞 README](../README.md)「**三、Claude 的 Projects**」→「**✏️ 小練習（Claude Projects）：週報整理助手**」標題下方的摺疊區（「**第二個畫面**」僅為介面說明）。若用 Gem／GPTs，可沿用同一套邏輯並改貼至對應欄位。
