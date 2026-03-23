@@ -6,7 +6,25 @@
 >
 > 📌 **前置學習**：本單元範例採用 [AI 提示詞工程指南](../prompt/AI提示詞工程指南/README.md) 的 **ROSES 框架**撰寫系統提示詞，請先熟悉該規範再進行練習。
 
+## 目錄
+
+- [開頭：三種工具對照](#section-overview)
+- [一、Gemini（Gem）](#section-gemini)
+  - [小練習：會議記錄助手](#lab-gem-meeting)
+- [二、ChatGPT（GPTs）](#section-gpt)
+  - [小練習：教務處客服助手](#lab-gpt-registrar)
+- [三、Claude（Projects）](#section-claude)
+  - [Claude Projects 的特色](#claude-features)
+  - [如何建立 Projects（第一／二個畫面）](#claude-build)
+  - [小練習：週報整理助手](#lab-claude-weekly)
+  - [小練習：規劃多專案架構](#lab-claude-multi)
+- [四、三種工具快速比較](#section-compare)
+- [綜合練習](#section-final-lab)
+- [課後提醒](#section-afterword)
+
 ---
+
+<a id="section-overview"></a>
 
 ## 三種工具都能解決你的問題
 
@@ -21,6 +39,8 @@
 > 💡 **你可以依慣用工具選擇**：若常用 Gemini → 學 Gem；常用 ChatGPT → 學 GPTs；常用 Claude → 學 Projects。三種都能達成「儲存與重複使用」的目標。
 
 ---
+
+<a id="section-gemini"></a>
 
 ## 一、Gemini 的 Gem 功能
 
@@ -63,6 +83,8 @@
 2. 在左側導覽列找到「**Gem**」區塊
 3. 點選想要的 Gem，即可開始對話
 4. 點擊右側「📌 釘書針」圖示，可將常用 Gem 固定在最上方
+
+<a id="lab-gem-meeting"></a>
 
 ### ✏️ 小練習：建立你的第一個 Gem - 會議記錄助手
 
@@ -147,6 +169,8 @@
 
 ---
 
+<a id="section-gpt"></a>
+
 ## 二、ChatGPT 的 GPTs 功能
 
 ### 什麼是 GPTs？
@@ -196,6 +220,8 @@
 2. 在左側導覽列找到你的 **GPT**，或先進入「**探索 GPT**」再選取
 3. 點選想要的 GPT，即可開始對話
 4. 若需**編輯或刪除**：須從「**探索 GPT**」進入，在你的 GPT 上開啟管理選項（僅網頁版）
+
+<a id="lab-gpt-registrar"></a>
 
 ### ✏️ 小練習：建立你的第一個 GPT - 教務處客服助手
 
@@ -272,6 +298,8 @@
 
 ---
 
+<a id="section-claude"></a>
+
 ## 三、Claude 的 Projects 專案功能
 
 ### 什麼是 Projects？
@@ -281,6 +309,19 @@
 > 📌 **白話說明**：就像你電腦裡的資料夾，不同專案的對話和設定完全分開，互不干擾。
 
 > **方案**：依 [Anthropic 說明](https://support.claude.com/en/articles/9517075-what-are-projects)，**免費帳號**亦可建立 Projects（最多 **5** 個）並上傳知識；**強化專案知識（RAG）**、團隊共享等進階功能須 **Pro／Max／Team／Enterprise** 等付費方案。
+
+<a id="claude-features"></a>
+
+### Claude Projects 的特色
+
+| 特色 | 說明 |
+|------|------|
+| **專案自訂指令** | 每個專案有獨立設定，切換專案即切換角色 |
+| **釘選文件** | 單檔最大 30MB，專案總容量 200MB |
+| **對話獨立** | 各專案對話分開，不會互相混淆 |
+| **團隊共享** | Teams 版本可與同事共享專案 |
+
+<a id="claude-build"></a>
 
 ### 如何建立 Projects？
 
@@ -333,6 +374,8 @@
 | **Files** | **專案知識**：上傳後多輪對話皆可參考（對應說明：**Add PDFs, documents, or other text to reference in this project.**）。 | **預先上傳** [週報範本.docx](./週報整理助手原始檔/週報範本.docx)；每週的 **`當週工作記錄_週一`～`週五`** 請在**該週對話中**上傳或貼上，不必固定放在 Files（亦見 [週報整理助手原始檔](./週報整理助手原始檔)）。 |
 
 填妥後即可在下方輸入框開始對話（占位：**How can I help you today?**）。
+
+<a id="lab-claude-weekly"></a>
 
 ### ✏️ 小練習（Claude Projects）：週報整理助手
 
@@ -402,14 +445,7 @@
 
 </details>
 
-### Claude Projects 的特色
-
-| 特色 | 說明 |
-|------|------|
-| **專案自訂指令** | 每個專案有獨立設定，切換專案即切換角色 |
-| **釘選文件** | 單檔最大 30MB，專案總容量 200MB |
-| **對話獨立** | 各專案對話分開，不會互相混淆 |
-| **團隊共享** | Teams 版本可與同事共享專案 |
+<a id="lab-claude-multi"></a>
 
 ### ✏️ 小練習：規劃你的 Projects 架構
 
@@ -431,6 +467,8 @@
 
 ---
 
+<a id="section-compare"></a>
+
 ## 四、三種工具快速比較
 
 | 比較項目 | Gemini（Gem） | ChatGPT（GPTs） | Claude（Projects） |
@@ -447,6 +485,8 @@
 ---
 
 
+<a id="section-final-lab"></a>
+
 ## 🚀 綜合練習：設計你的專屬助理
 
 請從「**一、Gemini**」「**二、ChatGPT**」「**三、Claude**」中**自選一種工具**，實際建立一個可重複使用的助理，並用 **ROSES**（或至少包含「角色」「任務」「規則」）撰寫系統提示詞，填入該工具對應的欄位（如 **使用說明**／**指令**／**Instructions**）。
@@ -460,5 +500,7 @@
 | **📊 數據摘要助手** | 將報表數字整理成 3～5 點給主管閱讀的重點；請自行準備簡表或假資料測試。 |
 
 ---
+
+<a id="section-afterword"></a>
 
 > 💡 **課後提醒**：系統提示詞沒有標準答案，只要 AI 的回覆符合你的需求，就是好的提示詞。建議多試幾次、逐步修改，找出最適合自己工作習慣的寫法！
