@@ -41,11 +41,16 @@
 - [儲存與重複使用 AI 提示詞](./儲存與重複使用AI提示詞/README.md)  
   Gemini Gem、ChatGPT 自訂、Claude 專案 — 建立可重複使用的 AI 助手
 
+
 - [連結應用程式](./連結應用程式/README.md)  
   連結應用程式的生成
 
+- [RAG的應用](./RAG的應用/README.md)
+
 - [影音生成應用程式](./影音生成/README.md)  
   影音生成的生成
+
+
 
 ## 進階AI應用-需配合MCP,SKILL,TOOLS,ACTIONS等
 
