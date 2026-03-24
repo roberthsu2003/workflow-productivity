@@ -7,16 +7,22 @@
 
 教學用原始檔已集中於下列資料夾，**請先閱讀該資料夾的 README** 再挑選檔案上傳：
 
-- **[知識庫原始檔](./知識庫原始檔/README.md)**（資料夾說明與檔案列表）
-- 快速連結（同資料夾內檔案）：
+- **[知識庫原始檔](./知識庫原始檔/README.md)**（資料夾說明與完整檔案列表）
+- **根目錄**快速連結：
   - [信用卡權益說明.txt](./知識庫原始檔/信用卡權益說明.txt)
   - [智慧型手機使用手冊.pdf](./知識庫原始檔/智慧型手機使用手冊.pdf)
   - [電動機車使用手冊.pdf](./知識庫原始檔/電動機車使用手冊.pdf)
   - [健保就醫指南.pdf](./知識庫原始檔/健保就醫指南.pdf)
+- **短的 pdf**（三份產品說明，可搭配下方「知識庫驗証」範例題）— 詳見 [短的pdf/README](./知識庫原始檔/短的pdf/README.md)：
+  - [manual_soniccloud_9_chinese.pdf](./知識庫原始檔/短的pdf/manual_soniccloud_9_chinese.pdf)（無線耳機）
+  - [manual_brewbot_x1_chinese.pdf](./知識庫原始檔/短的pdf/manual_brewbot_x1_chinese.pdf)（咖啡機）
+  - [manual_floragard_pro_chinese.pdf](./知識庫原始檔/短的pdf/manual_floragard_pro_chinese.pdf)（植物監測器）
 
 > ℹ️ 內容為**教學虛構或範例性質**，不應作為真實財務、醫療或產品依據。
 
 ## 利用NoteBookLM,快速打造個內知識庫
+
+[**知識庫素材來源下載**](./知識庫原始檔/短的pdf/)
 
 ## 知識庫驗証
 
