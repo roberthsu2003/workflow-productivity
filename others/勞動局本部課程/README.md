@@ -2,6 +2,8 @@
 
 ## 課程大綱
 
+[**行政效率翻倍與資安實戰攻略.pdf**](./assets/行政效率翻倍與資安實戰攻略.pdf)
+
 ### 80-20 原則
 
 ### promprt: [prompt.md](prompt.md)
