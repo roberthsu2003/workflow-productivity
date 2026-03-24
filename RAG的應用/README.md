@@ -3,6 +3,19 @@
 
 **RAG（Retrieval-Augmented Generation，檢索增強生成）** 讓模型在回答前，先從你提供的**知識庫／文件**中找出相關片段再生成答案，有助於**降低胡編**、**對齊內部資料**。本單元可搭配各工具「上傳檔案、專案知識庫、自訂 GPT 知識」等功能實作。
 
+## 範例索引
+
+本文件含 **四種** RAG 教學範例，可點連結快速跳轉：
+
+| # | 範例主題 | 說明 |
+|---|----------|------|
+| 1 | [知識庫範例素材](#section-rag-kb-materials) | 原始檔位置、下載連結與 [知識庫原始檔 README](./知識庫原始檔/README.md) |
+| 2 | [NotebookLM（短版產品 PDF）](#section-rag-notebooklm) | 三份短版手冊 + 知識庫驗證題（耳機／咖啡機／植物監測器） |
+| 3 | [ChatGPT Projects（健保就醫指南）](#section-rag-chatgpt) | 健保 PDF + ROSES 客服 Prompt + 測評題 |
+| 4 | [Claude Projects（智慧型手機／電動機車手冊）](#section-rag-claude) | 雙 PDF + ROSES 客服 Prompt + 測評題 |
+
+<a id="section-rag-kb-materials"></a>
+
 ## 知識庫範例素材
 
 教學用原始檔已集中於下列資料夾，**請先閱讀該資料夾的 README** 再挑選檔案上傳：
@@ -19,6 +32,8 @@
   - [manual_floragard_pro_chinese.pdf](./知識庫原始檔/短的pdf/manual_floragard_pro_chinese.pdf)（植物監測器）
 
 > ℹ️ 內容為**教學虛構或範例性質**，不應作為真實財務、醫療或產品依據。
+
+<a id="section-rag-notebooklm"></a>
 
 ## 利用NoteBookLM,快速打造個內知識庫
 > 最簡單快速的方式  
@@ -122,6 +137,8 @@ SonicCloud 9 耳機如果完全沒電了，使用 USB-C 充滿電需要多久時
 </details>
 
 ---
+
+<a id="section-rag-chatgpt"></a>
 
 ## ChatGPT - Projects
 
@@ -248,6 +265,8 @@ SonicCloud 9 耳機如果完全沒電了，使用 USB-C 充滿電需要多久時
 </details>
 
 ---
+
+<a id="section-rag-claude"></a>
 
 ## Claude.ai - Projects
 
