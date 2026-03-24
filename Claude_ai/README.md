@@ -9,7 +9,7 @@
     - skills
     - plugin
 
-## Cowrok
+## Cowork
 - Scheduled
 - Dispatch
 - Ideas
