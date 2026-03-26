@@ -1,6 +1,6 @@
 # 討論方式的內容生成
 
-當你有一個主題，想產出 **Markdown 格式**的內容，並希望透過與 AI **反覆討論、逐步優化**，可以善用 Gemini、ChatGPT、Claude 的「協作編輯」功能（Canvas／畫布／Artifacts）。內容不是一次定稿，而是由你與 AI 一起打磨到滿意為止。
+當你有一個主題，想產出 **Markdown 格式**的內容，並希望透過與 AI **反覆討論、逐步優化**，可以善用 Gemini、ChatGPT、Claude 的「協作編輯」功能（Canvas／畫布／Artifacts）。**Gemini** 請在 **Chat View** 選取 **Canvas** 工具；**Claude** 請**必須**使用 **Artifact** 模式（詳見下文）。內容不是一次定稿，而是由你與 AI 一起打磨到滿意為止。
 
 > **適合對象**：想用 AI 產出與編輯內容的學習者與職場人士  
 > **前置說明**：本單元**首次觸發編輯器**的 prompt 建議採 **RTCCF**（Role, Task, Context, Constraint, Format）之 Markdown 結構；結構化觀念可參考 [AI 提示詞工程指南](../prompt/AI提示詞工程指南/README.md)。**圈選修改、多輪對話**則用**自然語言**即可，不必再套框架。
@@ -38,13 +38,13 @@
 
 | | **Gemini** | **ChatGPT** | **Claude** |
 |---|---|---|---|
-| **功能名稱** | Canvas | Canvas（畫布） | Artifacts（工件） |
-| **觸發方式** | 描述要產生的內容，自動開啟 | 內容超過約 10 行，或說「使用畫布」 | 要求生成長文、程式碼、圖表時自動出現 |
+| **功能名稱** | Canvas | Canvas（畫布） | Artifacts（Artifact 模式） |
+| **怎麼開編輯區** | 在 **Chat View** **選取 Canvas 工具**後，再輸入或貼上 prompt | 內容較長時可能自動開啟；或說「使用畫布」、輸入 `/canvas` | **必須**先使用 **Artifact 模式**（介面名稱可能為 Artifacts），再輸入需求 |
 | **直接編輯** | ✅ | ✅ | ✅ |
 | **圈選修改** | ✅ | ✅ | ✅ |
 | **版本記錄** | ✅ | ✅ | ✅ |
 | **匯出格式** | — | PDF / .md / .docx | — |
-| **特別說明** | 無需額外設定 | 可輸入 `/canvas` 強制開啟 | 預設啟用 |
+| **特別說明** | 以手動選工具為準，勿只依賴「自動跳出」 | 可輸入 `/canvas` 強制開啟 | 本單元以 **Artifact 模式**為強制規範 |
 
 ---
 
@@ -70,9 +70,9 @@
 
 | 工具 | 說明 |
 |------|------|
-| **Gemini Canvas** | 以 Markdown、程式碼為主，依描述判斷格式，通常無獨立「類型選單」 |
+| **Gemini Canvas** | 先在 **Chat View** **選取 Canvas 工具**；產出以 Markdown、程式碼為主，通常無獨立「類型選單」 |
 | **ChatGPT Canvas** | 以 Markdown、程式碼為主，可含圖表、簡報等，依 prompt 判斷 |
-| **Claude Artifacts** | 有預設類型選單，可明確指定類別 |
+| **Claude Artifact** | **必須**使用 **Artifact 模式**；有預設類型選單時可先選類型再下需求 |
 
 **建議**：需要網頁、遊戲、問卷等**明確類型**時，Claude 可先選類型再下需求；Gemini／ChatGPT 則宜在 prompt 裡**寫清楚產出物**（例如「請產生可互動的網頁」「請做問卷表單」）。更多範例見 [Prompt 範例（RTCCF）](#prompt-範例rtccf)。
 
@@ -90,13 +90,19 @@
 | **暗示要編輯** | 例如「方便我編輯」「我要邊看邊改」 |
 | **要求足夠篇幅** | 「完整文章」「多個章節」比一句話更容易觸發編輯器 |
 
-### 各工具觸發關鍵字
+### 各工具：編輯區怎麼開？（本單元規範）
 
-| 工具 | 可併入 prompt 的句子 |
-|------|----------------------|
-| **Gemini** | 「請在 Canvas 中顯示」 |
+<a id="tools-editor-howto"></a>
+
+> **Gemini**：在 **Chat View** 上**選取 Canvas 工具**，再貼上 RTCCF prompt。  
+> **Claude**：**必須使用 Artifact 模式**（Artifacts）產出可編輯內容，不可僅用一般對話帶過。  
+> **ChatGPT**：可併入「使用畫布」「在 Canvas 中顯示」、或輸入 `/canvas`；長文有時會自動開啟畫布。
+
+| 工具 | 操作／可併入 prompt 的補充句 |
+|------|------------------------------|
+| **Gemini** | **先選工具**：Chat View → **Canvas**；prompt 內仍可寫「請在 Canvas 中產出」以強調版面 |
 | **ChatGPT** | 「使用畫布」「在 Canvas 中顯示」、`/canvas` |
-| **Claude** | 「以 Artifact 形式顯示」「請產生可編輯的 Markdown 文件」 |
+| **Claude** | 介面切到 **Artifact／Artifacts** 模式後再送 prompt；可寫「以 Artifact 顯示可編輯 Markdown」作為補強 |
 
 ### 萬用範本（RTCCF）
 
@@ -127,7 +133,7 @@
 ## Format
 
 - 以 Markdown 標題與條列呈現，結構清晰
-- 請在 Canvas／畫布／Artifact 中顯示，方便我直接編輯並討論修改
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式，方便直接編輯並討論修改
 ```
 
 </details>
@@ -166,7 +172,7 @@
 ## Format
 
 - 單一 HTML 檔，可直接用瀏覽器開啟執行
-- 請在 Canvas／畫布／Artifact 中顯示，方便我直接編輯
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式，方便直接編輯
 ```
 
 </details>
@@ -201,7 +207,7 @@
 ## Format
 
 - 以 Markdown 表格或 CSV 呈現，方便複製貼上
-- 請在 Canvas／畫布／Artifact 中顯示
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式
 ```
 
 </details>
@@ -236,7 +242,7 @@
 ## Format
 
 - Markdown，結構清楚；標明「第 1 張：…」「第 2 張：…」
-- 請在 Canvas／畫布／Artifact 中顯示
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式
 ```
 
 </details>
@@ -271,7 +277,7 @@
 ## Format
 
 - 條列與表格為主，標明「圖表區塊 1」「圖表區塊 2」等，利於排版
-- 請在 Canvas／畫布／Artifact 中顯示
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式
 ```
 
 </details>
@@ -335,7 +341,7 @@
 ## Format
 
 - Markdown，標題與表格清楚，方便後續複製與編輯
-- 請在 Canvas／畫布／Artifact 中顯示，我要直接編輯
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式，以便直接編輯
 ```
 
 </details>
@@ -378,9 +384,10 @@
 
 **步驟**
 
-1. 開啟 Gemini、ChatGPT 或 Claude  
-2. 輸入下方建議 Prompt（或保留 RTCCF 結構、替換主題）  
-3. 確認右側（或對應區域）出現可編輯內容區塊  
+1. 開啟 **Gemini**、**ChatGPT** 或 **Claude**（依你選用的工具）  
+2. **Gemini**：在 **Chat View** **選取 Canvas 工具**。**Claude**：**必須**切換為 **Artifact** 模式。**ChatGPT**：可直接貼上，或先輸入 `/canvas`／選用畫布（依介面）  
+3. 輸入下方建議 Prompt（或保留 RTCCF 結構、替換主題）  
+4. 確認出現可編輯內容區塊（Canvas／畫布／Artifact 區）  
 
 <details>
 <summary>💬 建議 Prompt（RTCCF）</summary>
@@ -407,7 +414,7 @@
 ## Format
 
 - Markdown 標題與條列
-- 請在 Canvas／畫布／Artifact 中顯示
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式
 ```
 
 </details>
@@ -482,7 +489,7 @@
 ## Format
 
 - Markdown，含標題、表格、條列
-- 請在 Canvas／畫布／Artifact 中顯示
+- **Gemini**：於 **Chat View** 選取 **Canvas** 工具後再送出。**ChatGPT**：**畫布**顯示（或 `/canvas`）。**Claude**：**必須**使用 **Artifact** 模式
 ```
 
 </details>
@@ -508,10 +515,10 @@
 
 | 想做的事 | 做法 |
 |----------|------|
-| **首次觸發編輯器** | 用 **RTCCF** 寫清 Role／Task／Context／Constraint／Format，並加上「在 Canvas／畫布／Artifact 中顯示」 |
+| **首次觸發編輯器** | 用 **RTCCF** 寫清五段；**Gemini** 先於 **Chat View** 選 **Canvas**；**Claude** **必須**開 **Artifact** 模式（見 [各工具：編輯區怎麼開？](#tools-editor-howto)） |
 | **不同產出類型** | 見 [Prompt 範例（RTCCF）](#prompt-範例rtccf) |
 | **圈選與多輪修改** | **自然語言**即可，例如：「這段改口語」「加一例」 |
-| **沒跳出編輯器** | 補上「使用畫布」「在 Canvas 中顯示」「以 Artifact 顯示」，或要求較長、完整篇章 |
+| **沒跳出編輯區** | **Gemini**：確認已選 **Canvas** 工具。**Claude**：確認已用 **Artifact** 模式。**ChatGPT**：試「使用畫布」、`/canvas` 或較長全文 |
 | **只改一段** | 先**圈選**該段，再下指令，避免整篇重寫 |
 
 > **重點**：圈選後再下指令，模型較能只改指定片段；這是協作編輯最實用的技巧之一。
