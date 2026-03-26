@@ -16,6 +16,8 @@
 
 > 我想請 AI 幫我寫一封婉拒廠商報價的信，語氣要禮貌但明確。請給我一個完整的 prompt 範本，讓我可以直接複製使用。
 
+> 請使用RTCCF(Role,Task,Context,Constraint,Format)的markdown格式
+
 <details>
 <summary>💡 參考解答（點擊展開）</summary>
 
@@ -56,6 +58,8 @@ AI 可能會回覆類似這樣的範本：
 **你可以這樣問：**
 
 > 我想用 AI 整理會議記錄，但不太確定怎麼寫 prompt。請用一問一答的方式引導我，問我幾個關鍵問題（例如：會議類型、需要哪些欄位、輸出格式等），再根據我的回答幫我產出完整的 prompt。
+
+> 請使用RTCCF(Role,Task,Context,Constraint,Format)的markdown格式
 
 <details>
 <summary>💡 參考解答（點擊展開）</summary>
@@ -109,6 +113,10 @@ AI 可能會先問你：
 
 **主題背景**：你是**華梵大學教務處**承辦人，有一份「**選課辦法說明**」寫得太冗長，想請 AI 改寫成更簡潔、適合大一新生閱讀的版本，字數控制在原文 80% 以內。
 
+**從庫中複製或請 AI 協助時，可加上：**
+
+> 請使用RTCCF(Role,Task,Context,Constraint,Format)的markdown格式
+
 <details>
 <summary>💡 從庫中找到的「文章改寫」prompt 範例（點擊展開）</summary>
 
@@ -142,6 +150,8 @@ AI 可能會先問你：
 **你可以這樣問：**
 
 > 我想請 AI 幫我寫一份新人到職注意事項，但我只想到「幫我寫新人注意事項」。請幫我把這句話擴充成一個完整、結構清楚的 prompt，包含角色、任務、需要涵蓋的內容與輸出格式。
+
+> 請使用RTCCF(Role,Task,Context,Constraint,Format)的markdown格式
 
 <details>
 <summary>💡 參考解答（點擊展開）</summary>
@@ -187,6 +197,10 @@ AI 可能會產出：
 1. 打開會議通知信的 prompt 範例
 2. 保留原有的結構（角色、任務、需涵蓋的內容、輸出格式）
 3. 把「會議通知」相關的文字，替換成「出差費用申報」的內容
+
+**若請 AI 依此框架產出或檢查改寫稿，可加上：**
+
+> 請使用RTCCF(Role,Task,Context,Constraint,Format)的markdown格式
 
 <details>
 <summary>💡 改寫後的 prompt 範例（點擊展開）</summary>
