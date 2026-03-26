@@ -99,5 +99,3 @@
 
  ---
 
-## 華梵上課連結
-https://meet.google.com/ors-zoku-uio
