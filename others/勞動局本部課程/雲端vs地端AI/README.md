@@ -15,9 +15,22 @@
 
 ## 安裝
 
-### 一、Ollama（地端 LLM）
+介面截圖以下列**兩欄並排**顯示（每欄約半頁寬，較利閱讀；若覺得偏小可對圖片右鍵新分頁開啟原檔）。
 
-![](./images/ollama.png)
+<table>
+  <tr>
+    <td width="50%" valign="top" align="center">
+      <p><strong>Ollama</strong>（地端 LLM）</p>
+      <p><img src="./images/ollama.png" alt="Ollama 介面示意" width="100%" /></p>
+    </td>
+    <td width="50%" valign="top" align="center">
+      <p><strong>Buzz</strong>（語音轉文字）</p>
+      <p><img src="./images/buzz.png" alt="Buzz 介面示意" width="100%" /></p>
+    </td>
+  </tr>
+</table>
+
+### 一、Ollama（地端 LLM）
 
 - **官方網站**：[https://ollama.com/download](https://ollama.com/download)
 - **課程模型 `gpt-oss:20b`**：僅能處理**文字**，**無法解析圖片**（無視覺／多模態）。本單元只用作逐字稿→會議文件；若要讀圖請改用支援視覺的模型或其他工具。
@@ -37,8 +50,6 @@
 ---
 
 ### 二、Buzz（語音轉文字）
-
-![](./images/buzz.png)
 
 - **官方下載**：[Buzz 於 SourceForge 的檔案頁](https://sourceforge.net/projects/buzz-captions/files/)
 - 免費開源、離線，採 Whisper，支援多語系
