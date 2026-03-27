@@ -1,5 +1,11 @@
 # 勞動局本部課程
 
+## 上課連線
+
+https://meet.google.com/sys-xywc-vjx
+
+---
+
 ## 課程大綱
 
 - [**行政效率翻倍與資安實戰攻略.pdf下載**](./assets/行政效率翻倍與資安實戰攻略.pdf)
