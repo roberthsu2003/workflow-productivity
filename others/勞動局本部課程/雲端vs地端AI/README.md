@@ -2,6 +2,12 @@
 
 本說明以 **Buzz** 離線轉出逐字稿、**手動合併**字幕檔後，再以 **Ollama（`gpt-oss:20b`）** 產出會議文件為主軸。
 
+> 即時錄音: vibing(microsoft免費軟體)
+> 語音編寫: typeless
+> 手機錄音: Notta(app)
+
+
+
 ---
 
 ## 主要的 AI 工具
