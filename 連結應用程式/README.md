@@ -1,11 +1,24 @@
 # 連結應用程式
 
+本單元整理如何讓 AI 工具（ChatGPT、Claude 等）透過**官方／內建連結**與外部應用程式協作，例如簡報、雲端日曆與試算表。以下依**主題**分節：每節先有**說明**，再於各**連結**下附**簡略說明**，方便快速選讀。
+
+---
+
 ## Canva
 
-- [簡報制作](./Canva簡報/README.md)
+**說明**：將對話與 **Canva** 連線，在簡報中產生大綱、文案或調整版面；含 **ChatGPT 與 Canva 整合**時的版本差異（桌面版／網頁版）。
 
-## google workspace
+- **[Canva 簡報制作與連線](./Canva簡報/README.md)**  
+  **簡略說明**：連線步驟、簡報內容大綱範例、Mac 版與線上版在「應用程式」入口上的差異。
 
-- google drive
-- [google calendar](./Google_canlendar/README.md)
+---
 
+## Google Workspace
+
+**說明**：與 **Google 雲端服務**（日曆、雲端硬碟等）連結，讓 AI 在授權範圍內查詢行程、空檔或搭配試算表產出（實際能力依工具與帳號設定而定）。
+
+- **[Google Calendar：排課與 Excel 產出](./Google_calendar/README.md)**  
+  **簡略說明**：Claude.ai 連結 Calendar 查空檔與避開假日，RTCCF 排課後以 Excel／xlsx skill 產出試算表；同頁有「完成檔案範例」可下載對照。
+
+- **Google Drive**  
+  **簡略說明**：與雲端硬碟連動讀寫檔案之實作，本倉庫**尚未**另立子頁；需要時可參考各 AI 工具官方之 Google Workspace 連結說明。
