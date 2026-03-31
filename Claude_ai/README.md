@@ -1,20 +1,5 @@
 # Claude_AI
 
-## 主題快速連結
-
-下列為本目錄六大主題之**筆記與範例**入口，點選即可進入對應 `README.md`。
-
-| 主題 | 中文 | 進入筆記 |
-|------|------|----------|
-| **Chats** | 對話 | **[→ Chats](./Chats/README.md)** |
-| **Projects** | 專案 | **[→ Projects](./Projects/README.md)** |
-| **Artifacts** | 成品 | **[→ Artifacts](./Artifacts/README.md)** |
-| **Connectors** | 連接器 | **[→ Connectors](./Connectors/README.md)** |
-| **Skills** | 技能 | **[→ Skills](./Skills/README.md)** |
-| **Plugins** | 外掛／套件 | **[→ Plugins](./Plugins/README.md)** |
-
----
-
 ## Chats（對話）
 
 > **📂 [進入主題筆記：Chats](./Chats/README.md)**（對話、RTCCF、產檔範例）
