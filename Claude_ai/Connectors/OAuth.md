@@ -42,9 +42,26 @@ Connectors 之所以能建立連線，是因為兩端在技術規範上達成了
 | **Windows** | **認證管理員 (Credential Manager)** | 整合 Windows 帳戶權限保護。 |
 | **Linux / 其他** | **加密後的本地設定檔** | 通常位於 `~/.claude/` 目錄。 |
 
-### 為什麼存放在本地？
-1.  **持久性 (Persistence)**：讓您重新啟動應用程式後，Connectors 依然保持連線。
-2.  **安全性 (Security)**：Token 不會以明文（純文字）形式存放在硬碟，而是透過系統內建的加密機制保護，其他應用程式難以竊取。
+---
+
+## 🔍 如何在 Supabase 查詢與管理授權？
+
+如果您想知道目前發出了哪些授權，或是想管理連線，可以透過 Supabase 後台進行以下操作：
+
+### 1. 管理您開發的 OAuth App
+如果您是 Connector 的開發者，可以在後台管理應用程式資訊：
+- **路徑**：`Project Settings` -> `Authentication` -> `OAuth Apps`。
+- **功能**：查看 Client ID、設定 Redirect URIs，以及管理哪些應用程式被允許作為 OAuth 客戶端。
+
+### 2. 審計授權紀錄 (Audit Logs)
+Supabase 目前沒有提供一個「所有發出的 Access Tokens 清單」介面（因為 Token 是一次性核發給客戶端的），但您可以透過日誌追蹤：
+- **路徑**：`Logs` -> `Auth`。
+- **觀察**：尋找 `token_issued` 或相關的登入事件。這會顯示何時、哪個 IP、以及哪個用戶核發了權杖。
+
+### 3. 強制撤銷授權
+如果您擔心安全問題想切斷所有連線：
+- **方法 A：登出使用者會話**：在 `Authentication` -> `Users` 中找到該用戶，點擊 `Sign out all sessions`。這通常會讓相關的 Refresh Tokens 失效。
+- **方法 B：RLS 控管**：在資料庫層級使用 **Row Level Security**。您可以透過檢查 JWT 中的 `client_id` 欄位，來決定是否允許來自特定 OAuth App（如 Claude）的請求。
 
 ---
 
@@ -84,27 +101,7 @@ Connectors 之所以能建立連線，是因為兩端在技術規範上達成了
 
 ---
 
-## 🔁 實戰案例：Supabase 資料操作
-
-假設您的 **OAuth Token** 擁有完整的 `read`, `write`, `delete` 權限，但您在 **Claude Connector** 做了以下設定：
-
-| 功能 | Connector 安全設定 | 結果 |
-| :--- | :--- | :--- |
-| **查詢資料 (SELECT)** | Always allow | ✅ 直接執行並顯示結果 |
-| **寫入資料 (INSERT)** | Needs approval | ⚠️ Claude 會彈出視窗請您確認 |
-| **刪除資料 (DELETE)** | Blocked | ❌ 即使 Token 允許，Claude 也拒絕執行 |
-
-### 為什麼要這樣設計？
-為了防止 AI 因為理解錯誤而造成災難。例如：
-> **使用者提問**：「幫我清掉測試資料。」
-> **AI 誤解**：執行 `DELETE FROM users;` (清空所有用戶)
-> **安全機制**：因為您設定了 `Blocked` 或 `Needs approval`，這一秒鐘的確認能挽救整個資料庫。
-
----
-
 ## 🎯 教學用的三層安全模型
-
-您可以將這個機制整理為以下三層模型，非常適合用於教學：
 
 ```mermaid
 graph TD
@@ -121,15 +118,12 @@ graph TD
 
 ---
 
-## 🔥 總結：進階觀念
+## 🔥 總結：技術對接
 
-- **OAuth Scope 是「粗粒度」的**：例如 `read` 代表能讀取整個專案。
-- **Claude Control 是「細粒度」的**：它可以根據對話脈絡、特定表單、或操作性質（如刪除 vs 查詢）來觸發不同的安全機制。
-
-> **技術對接總結**：
-> - **Claude Desktop** = OAuth Client（發起者）
-> - **Supabase** = OAuth Server（驗證者）
-> - **本地儲存 (Keychain/Credential Manager)** = Token 的安全居所。
+- **Claude Desktop** = OAuth Client（發起者）
+- **Supabase** = OAuth Server（驗證者）
+- **本地儲存** = Token 的安全居所（Keychain/Credential Manager）
+- **管理路徑** = Supabase Dashboard -> Authentication -> OAuth Apps / Logs
 
 ---
 
