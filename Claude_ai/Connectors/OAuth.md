@@ -25,7 +25,7 @@
 Connectors 之所以能建立連線，是因為兩端在技術規範上達成了「完美的對接」：
 
 ### 1. Claude Desktop 作為「OAuth Client」
-**Claude Desktop** 內建了符合標準的 OAuth 客戶端功能。它懂得如何發起授權請求、開啟瀏覽器引導您登入、並安全地接收與存取授權後的「權杖 (Token)」。作為客戶端，它負責管理權杖的生命週期（如：儲存與重新整理）。
+**Claude Desktop** 內建了符合標準的 OAuth 客戶端功能。它懂得如何發起授權請求、開啟瀏覽器引導您登入、並安全地接收與存取授權後的「權杖 (Token)」。
 
 ### 2. Supabase 作為「OAuth Server」
 **Supabase** 不僅僅是個資料庫，它還提供了完整的 OAuth 伺服器功能（基於 GoTrue/Auth 模組）。它能提供登入介面、驗證您的身分、確認授權範圍 (Scopes)，並最終核發鑰匙給 Claude。
@@ -34,7 +34,7 @@ Connectors 之所以能建立連線，是因為兩端在技術規範上達成了
 
 ## 🔐 Access Token 儲存在哪裡？
 
-當您完成授權後，Access Token（那把專用鑰匙）會被儲存在您的**本地裝置**中，以確保您下次開啟 Claude 時不需要重新登入。
+當您完成授權後，Access Token 會被儲存在您的**本地裝置**中。
 
 | 作業系統 | 儲存位置 | 安全機制 |
 | :--- | :--- | :--- |
@@ -46,58 +46,32 @@ Connectors 之所以能建立連線，是因為兩端在技術規範上達成了
 
 ## 🔍 如何在 Supabase 查詢與管理授權？
 
-如果您想知道目前發出了哪些授權，或是想管理連線，可以透過 Supabase 後台進行以下操作：
+如果您想管理目前發出的授權，可以透過 Supabase 後台進行以下操作：
 
-### 1. 管理您開發的 OAuth App
-如果您是 Connector 的開發者，可以在後台管理應用程式資訊：
-- **路徑**：`Project Settings` -> `Authentication` -> `OAuth Apps`。
-- **功能**：查看 Client ID、設定 Redirect URIs，以及管理哪些應用程式被允許作為 OAuth 客戶端。
+### 1. 管理「已授權應用程式」(Authorized Apps)
+這是使用者最常用的管理畫面，可以看到哪些第三方 App 拿到了您的權限。
+- **路徑**：`Organization Settings` -> `Authorized apps`。
+- **常見現象：為什麼會出現兩個 Claude？**
+    - 當您在 Claude Desktop 連結、中斷、又重新連結時，會產生兩次不同的授權記錄。
+    - **中斷連結 (App 端)**：通常只是刪除您電腦上的鑰匙。
+    - **撤銷授權 (Supabase 端)**：必須在 Authorized apps 畫面點擊**垃圾桶圖示 (Delete)**。這才會真正讓該次核發的鑰匙失效。
+- **建議**：定期清理舊的連線記錄（參考 AUTHORIZED 授權時間），只保留最新的一筆。
 
 ### 2. 審計授權紀錄 (Audit Logs)
-Supabase 目前沒有提供一個「所有發出的 Access Tokens 清單」介面（因為 Token 是一次性核發給客戶端的），但您可以透過日誌追蹤：
 - **路徑**：`Logs` -> `Auth`。
-- **觀察**：尋找 `token_issued` 或相關的登入事件。這會顯示何時、哪個 IP、以及哪個用戶核發了權杖。
+- **觀察**：尋找 `token_issued` 事件。這會顯示核發權杖的精確時間與 IP。
 
-### 3. 強制撤銷授權
-如果您擔心安全問題想切斷所有連線：
-- **方法 A：登出使用者會話**：在 `Authentication` -> `Users` 中找到該用戶，點擊 `Sign out all sessions`。這通常會讓相關的 Refresh Tokens 失效。
-- **方法 B：RLS 控管**：在資料庫層級使用 **Row Level Security**。您可以透過檢查 JWT 中的 `client_id` 欄位，來決定是否允許來自特定 OAuth App（如 Claude）的請求。
-
----
-
-## OAuth 的四大角色（以 Supabase 為例）
-
-| 角色 | 專業術語 | 在 Connectors 情境中是誰？ | 負責任務 |
-| :--- | :--- | :--- | :--- |
-| **資源擁有者** | Resource Owner | **您** | 擁有資料並決定要授權哪些權限。 |
-| **客戶端** | Client | **Claude Desktop** | 發起請求、接收權杖並代表您操作資料。 |
-| **授權伺服器** | Authorization Server | **Supabase Auth** | 驗證您的帳密並核發 Access Token。 |
-| **資源伺服器** | Resource Server | **Supabase Database / Storage** | 驗證 Token 是否正確，並回傳資料。 |
+### 3. 開發者層級管理 (OAuth Apps)
+- **路徑**：`Project Settings` -> `Authentication` -> `OAuth Apps`。
+- **用途**：如果您是開發者，在此管理您自己建立的 Client ID 與 Redirect URIs。
 
 ---
 
 ## 核心重點：OAuth Scope vs. Claude Connector 控管
 
-當我們談論「權限」時，實際上存在兩個完全不同層級的安全檢查。
-
 ### 🧠 一句話總結
 - **OAuth Scope**：決定 Claude 「**技術上能不能做**」。
 - **Connector 設定**：決定 Claude 「**行為上願不願意幫你做**」。
-
----
-
-### 第一層：OAuth Access Token（外部權限層）
-當您連接 Supabase 時，Supabase 會核發一個 Access Token 並帶有 **Scopes**（例如：`read`, `write`, `admin`）。
-- 這代表了 Claude **在技術層面上擁有的最高權力**。
-- 如果 Scope 只有 `read`，Claude 就算想刪除資料也絕對做不到。
-
-### 第二層：Claude Connector 設定（內部安全閥）
-在 Claude 的設定介面中，您可以看到針對不同操作的控管開關：
-- **Always allow** (自動執行)
-- **Needs approval** (詢問確認)
-- **Blocked** (完全禁止)
-
-這是 Claude 為了防止 AI 誤操作而設計的「**自我限制**」。即使 OAuth Token 擁有權限，Claude 也會依照您的設定決定是否執行。
 
 ---
 
@@ -118,12 +92,11 @@ graph TD
 
 ---
 
-## 🔥 總結：技術對接
+## 🔥 技術對接總結
 
 - **Claude Desktop** = OAuth Client（發起者）
 - **Supabase** = OAuth Server（驗證者）
-- **本地儲存** = Token 的安全居所（Keychain/Credential Manager）
-- **管理路徑** = Supabase Dashboard -> Authentication -> OAuth Apps / Logs
+- **中斷連結 ≠ 撤銷授權**：若要徹底斷開，請至 Supabase **Authorized apps** 點擊垃圾桶。
 
 ---
 
