@@ -30,8 +30,21 @@ Connectors 之所以能建立連線，是因為兩端在技術規範上達成了
 ### 2. Supabase 作為「OAuth Server」
 **Supabase** 不僅僅是個資料庫，它還提供了完整的 OAuth 伺服器功能（基於 GoTrue/Auth 模組）。它能提供登入介面、驗證您的身分、確認授權範圍 (Scopes)，並最終核發鑰匙給 Claude。
 
-> **核心觀念**：
-> 正是因為 **Claude Desktop (Client)** 與 **Supabase (Server)** 都遵循了同一套 OAuth 2.0 標準協議，兩者才能像磁鐵一樣吸合，實現無縫的資料連線。
+---
+
+## 🔐 Access Token 儲存在哪裡？
+
+當您完成授權後，Access Token（那把專用鑰匙）會被儲存在您的**本地裝置**中，以確保您下次開啟 Claude 時不需要重新登入。
+
+| 作業系統 | 儲存位置 | 安全機制 |
+| :--- | :--- | :--- |
+| **macOS** | **鑰匙圈 (Keychain Access)** | 使用系統級硬體加密保護。 |
+| **Windows** | **認證管理員 (Credential Manager)** | 整合 Windows 帳戶權限保護。 |
+| **Linux / 其他** | **加密後的本地設定檔** | 通常位於 `~/.claude/` 目錄。 |
+
+### 為什麼存放在本地？
+1.  **持久性 (Persistence)**：讓您重新啟動應用程式後，Connectors 依然保持連線。
+2.  **安全性 (Security)**：Token 不會以明文（純文字）形式存放在硬碟，而是透過系統內建的加密機制保護，其他應用程式難以竊取。
 
 ---
 
@@ -116,7 +129,7 @@ graph TD
 > **技術對接總結**：
 > - **Claude Desktop** = OAuth Client（發起者）
 > - **Supabase** = OAuth Server（驗證者）
-> - **OAuth 2.0 協議** = 兩者對話的「共同語言」
+> - **本地儲存 (Keychain/Credential Manager)** = Token 的安全居所。
 
 ---
 
