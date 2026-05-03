@@ -1,86 +1,82 @@
-# Connectors（連接器）
+# Connectors（連接器）：AI 的資料橋樑
 
-**Connectors** 是 Claude 的擴充功能，主要透過 **OAuth 2.0** 協定完成身分驗證，並基於 **MCP（Model Context Protocol）** 開放標準，將 Claude 安全地連接到 **Google 雲端硬碟、Gmail、Google 日曆、GitHub、Slack、Microsoft 365** 等外部服務。
+**Connectors** 是 Claude 的一個強大擴充功能。想像它是一座**專屬大橋**，將 Claude 直接連到您常用的雲端服務（如 Google Drive, Gmail, GitHub, Supabase 等）。
 
-這讓 Claude 能夠在您的授權下，直接讀取、檢索或摘要您的個人與組織資料，無需手動複製貼上。
-
----
-
-## 核心機制：OAuth 與 MCP
-
-### 1. OAuth 2.0 驗證（正確資訊確認）
-您的資訊完全正確：**Connectors 確實使用 OAuth 進行授權**。
-- **核心原理**：請參閱專門的 [**OAuth 2.0 授權機制詳解**](./OAuth.md) 了解代客泊車比喻與技術細節。
-- **安全性**：Claude 不會看到或儲存您的帳號密碼，而是透過 OAuth 取得限時、限縮權限的「存取權杖（Access Token）」。
-- **授權範圍 (Scopes)**：您可以清楚看到 Claude 申請了哪些權限（例如：僅限讀取日曆，或包含編輯文件）。
-- **隨時撤銷**：您隨時可以在 Google、GitHub 等服務的安全性設定中撤銷授權。
-
-### 2. MCP (Model Context Protocol) 傳輸
-- Connectors 的底層運作是基於 Anthropic 推出的 MCP 協議。
-- 它定義了模型如何向外部資料源請求資料，並將資料以結構化的方式餵給 Claude 的上下文。
+透過 Connectors，您不需要再手動將資料複製貼上到對話框。Claude 可以在您的授權下，直接「走過這座橋」去讀取、分析或摘要您放在雲端的資料。
 
 ---
 
-## 使用時機
+## 為什麼要學 Connectors？
 
-| 適合情境 | 限制與不適用 |
+| 傳統做法 ❌ | 使用 Connectors ✅ |
 | :--- | :--- |
-| **自動化資料存取**：資料在雲端（郵件、Repo），想直接在對話中分析。 | **內網與離線資料**：資料若在純內網且無法提供公網 OAuth 回調連結，則無法連線。 |
-| **精準引用來源**：對話中會標示資料來源（如：根據哪一封郵件），增加可信度。 | **寫回權限限制**：多數官方 Connector 目前以「讀取」為主（如 Google Calendar），無法直接代為建立事件。 |
-| **跨工具協作**：同時分析 GitHub 的代碼與 Slack 的討論記錄。 | **隱私敏感度極高**：若組織政策不允許 AI 接取任何雲端 SaaS 資料。 |
+| 打開信箱 -> 複製內文 -> 貼回 Claude | 在 Claude 直接說：「摘要我上週的郵件」 |
+| 下載 Excel -> 上傳至對話框 | 讓 Claude 直接讀取 Google Sheets 的數據 |
+| 手動整理行事曆衝突 | 讓 Claude 幫您掃描日曆並找出空檔 |
 
 ---
 
-## 操作流程
+## 核心運作機制
 
-1. **進入設定**：登入 **claude.ai** → 點擊左下角頭像 → **Settings** → **Connectors**。
-2. **連線授權**：選擇目標服務（如 GitHub）→ 點擊 **Connect** → 導向該平台完成 **OAuth 登入與授權**。
-3. **自然提問**：回到對話框，直接以自然語言互動（如：「摘要我上週在 GitHub 的 Pull Requests」），Claude 會視需求自動觸發連線。
+為了確保資料傳輸的安全，Connectors 背後有兩個關鍵技術：
+
+1.  **OAuth 2.0 (授權碼)**：這就像是一張「限時、限權」的通行證，讓 Claude 可以在不看到您密碼的情況下獲得存取權。
+2.  **MCP (Model Context Protocol)**：這是兩端溝通的「共同語言」。
+
+> **想要成為高手嗎？** 🛠️
+> 如果您想深入了解 OAuth 如何運作、Access Token 存在哪裡，以及如何管理安全控管，請點擊閱讀：
+> 👉 [**OAuth 2.0 與安全機制深度解析**](./OAuth.md)
 
 ---
 
-## 經典範例：本週會議摘要與行動建議
+## 快速設定步驟
+
+1.  **進入設定**：登入 [claude.ai](https://claude.ai)，點擊左下角頭像 -> **Settings** -> **Connectors**。
+2.  **選擇服務**：找到您想連線的服務（例如 Google Calendar 或 Supabase）。
+3.  **完成授權**：點擊 **Connect**，在跳出的視窗中登入該服務並點擊「允許」。
+4.  **開始提問**：回到聊天室，直接用自然語言下指令。
+
+---
+
+## 經典範例：本週行程與準備清單
 
 ### 任務背景
-使用者已連結 **Google Calendar**，需要快速整理本週行程並產生對應的準備清單。
+當您連結了 **Google Calendar** 後，可以使用以下 Prompt 讓 Claude 幫您管理時間。
 
 ### RTCCF Prompt 範本
-> **RTCCF 提醒**：請對照 [Chats／RTCCF 欄位對照](../Chats/README.md#rtccf-欄位對照複製範本時請五段都填) 確保五段內容完整。
+> **提示**：複製後請修改 `{ }` 內的內容。
 
 ```markdown
 ## Role
-你是一位資深的行政效率專家與行程分析師。
+你是一位資深的行政效率專家。
 
 ## Task
-請讀取我已連結的 **Google Calendar** 行事曆，檢索 **{請填：本週／下週}** 的所有會議資訊。
-請為我產出一份「行程概覽與行動建議」，內容需包含：
-1. 每日重點會議（時間、主題、地點/連結）。
-2. 行程衝突警告（若有重疊時段）。
-3. 具體的行動建議（例如：某會議前需準備哪些文件、某時段建議留白產出報告）。
+請讀取我已連結的 **Google Calendar**，整理 **{請填：本週／下週}** 的會議摘要。
+輸出需包含：時間、主題、地點/連結，以及針對每個會議的「準備建議」。
 
 ## Context
-- 我的時區：{例如 Asia/Taipei}。
-- 專注專案：{例如 A 產品上市、Q2 預算審核}。
-- 若無資料，請明確告知「查無此時段行程」。
+- 我的時區：Asia/Taipei。
+- 若有行程衝突（重疊），請特別用「⚠️」標示。
 
 ## Constraint
-- 資訊準確性：僅根據日曆實際內容回答，不可自行推測或虛構行程。
-- 權限限制：若服務不支援「寫入/建立」，請勿在回答中暗示已幫我排定會議。
+- 僅根據日曆內容回答，不可自行推測行程。
 - 語言：繁體中文。
 
 ## Format
-- 格式：使用 Markdown 表格列出行程。
-- 標示引用：請保留 Connector 的來源引用標記，讓我能點擊確認。
+- 使用 Markdown 表格呈現。
 ```
 
 ---
 
-## 延伸閱讀與資源
-- [官方文件：Get started with connectors](https://claude.com/docs/connectors/getting-started)
-- [官方文件：Connectors 總覽](https://claude.com/docs/connectors/overview)
-- [Google Calendar 整合限制說明](https://claude.com/docs/connectors/google/calendar)
+## 學生常見問題 FAQ
+
+**Q：為什麼有些工具要寫設定檔，有些只要按 Connect 鈕？**
+*   **本地 MCP**：像是在您電腦裡安裝小工具，需要改設定檔，適合存取本機檔案。
+*   **Connectors (遠端 MCP)**：像是雲端服務對話，只要 OAuth 登入（Connect）就能用。
+
+**Q：連線後，Claude 會偷看我所有的資料嗎？**
+*   不會。Claude 只有在收到您的指令、且該指令需要用到相關資料時，才會透過 Connectors 去索取資料。您也可以隨時在設定中切斷連線。
 
 ---
 
-← [上層：Claude_AI 索引](../README.md) · [Chats 範例庫](../Chats/README.md)
-**‌**
+← [返回上層：Claude_AI 索引](../README.md) · [前往下一章：OAuth 詳解](./OAuth.md)
