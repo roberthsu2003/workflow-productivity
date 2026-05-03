@@ -30,16 +30,33 @@
 
 ---
 
-## 🛠️ MCP Tools —— AI 的「功能清單」
+## 🛠️ MCP 的兩大居住地：本地 vs. 遠端
 
-當您完成 OAuth 授權後，Claude 就正式「握有了鑰匙」。接著，它會透過 **MCP (Model Context Protocol)** 協議來查看這個連線具體能做什麼。
+MCP 伺服器根據執行的位置，主要分為兩大類型。了解這點能幫您釐清為何有些工具需要設定檔，而有些只要登入：
 
-### Tools 與功能的關係
-您在 Claude Desktop 介面上看到的 **Tools**（例如：`Confirm cost understanding`, `Generate TypeScript types`），本質上就是 **MCP Server 所提供的一系列「函數 (Functions)」**。
+### 1. 本地 MCP (Local MCP)
+- **位置**：執行在您的個人電腦（Mac/PC）上。
+- **通訊**：透過 `stdio` (標準輸入輸出) 與 Claude Desktop 通訊。
+- **設定**：需手動修改 `claude_desktop_config.json`。
+- **情境**：存取本機檔案、執行本機腳本。
 
-- **MCP Server** = 功能的提供者（如 Supabase 整合程式）。
-- **Tools** = 伺服器開放出來的「個別能力」。
-- **Tool Permissions** = 每一項能力的「安全開關」。
+### 2. 遠端連接器 (Remote Connectors / Connectors) —— **Supabase 屬於此類**
+- **位置**：由服務商（如 Supabase）或 Anthropic 託管在**雲端伺服器**。
+- **通訊**：透過 HTTPS 與 OAuth 安全協議進行遠端通訊。
+- **設定**：免設定檔，透過「OAuth 一鍵連線」即可。
+- **情境**：存取雲端資料庫、GitHub、Gmail 等 SaaS 服務。
+
+> **結論**：您所使用的 Supabase Connector 是由 Supabase 提供的 **Server-side MCP**，因為它運行在雲端，所以必須搭配 **OAuth** 來識別您的身分。
+
+---
+
+## 🔍 MCP Tools —— AI 的「功能清單」
+
+當您完成 OAuth 授權後，Claude 會透過 MCP 協議來查看這個連線具體能做什麼。
+
+- **MCP Server** = 功能的提供者（如雲端託管的 Supabase 整合程式）。
+- **Tools** = 伺服器開放出來的「個別能力」（如：查詢資料庫）。
+- **Tool Permissions** = 每一項能力的「安全開關」（Always allow / Needs approval / Blocked）。
 
 ---
 
@@ -50,18 +67,6 @@
 ### 🧠 一句話總結
 - **OAuth Scope**：決定 Claude 「**技術上能不能做**」（外部權限）。
 - **Connector / Tool 設定**：決定 Claude 「**行為上願不願意幫你做**」（內部控管）。
-
----
-
-## 🔁 實戰案例：Supabase 資料操作
-
-假設您的 **OAuth Token** 擁有完整權限，但您在 **Claude Tool Permissions** 做了以下設定：
-
-| 工具功能 (MCP Tool) | 安全設定圖示 | 結果 |
-| :--- | :--- | :--- |
-| **查詢資料 (SELECT)** | ✅ (Always allow) | 直接執行並顯示結果。 |
-| **修改 Schema / 刪除** | ✋ (Needs approval) | AI 會暫停並跳出視窗請您確認。 |
-| **敏感管理操作** | 🚫 (Blocked) | 即使技術上可行，AI 也被禁止執行。 |
 
 ---
 
@@ -84,9 +89,9 @@ graph TD
 
 ## 🔥 技術總結
 
-- **Access Token**：安全儲存在本地（Keychain/Credential Manager）。
-- **MCP Server**：透過 Tools 曝露功能。
-- **權限控制**：是為了防止 AI 誤操作，實現 AI 安全中的「人在回路」。
+- **Access Token**：安全儲存於本地或加密於雲端（依 Connectors 類型）。
+- **MCP Server**：可分為本地與遠端（Supabase 為遠端託管）。
+- **權限控制**：實作了 AI 安全中的「細粒度控管」與「人在回路」。
 
 ---
 
