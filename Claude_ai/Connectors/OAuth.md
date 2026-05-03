@@ -20,14 +20,29 @@
 
 ---
 
-## OAuth 的四大角色
+## 為什麼 Connectors 能運作？（技術底層的對接）
 
-| 角色 | 專業術語 | 在 Supabase Connector 中是誰？ |
-| :--- | :--- | :--- |
-| **資源擁有者** | Resource Owner | **您**（擁有 Supabase 專案權限的人）。 |
-| **客戶端** | Client | **Claude (Anthropic)**（想要存取資料的應用程式）。 |
-| **授權伺服器** | Authorization Server | **Supabase 的登入系統**（負責核發鑰匙）。 |
-| **資源伺服器** | Resource Server | **Supabase API / Database**（存放您實際資料的地方）。 |
+Connectors 之所以能建立連線，是因為兩端在技術規範上達成了「完美的對接」：
+
+### 1. Claude Desktop 作為「OAuth Client」
+**Claude Desktop** 內建了符合標準的 OAuth 客戶端功能。它懂得如何發起授權請求、開啟瀏覽器引導您登入、並安全地接收與存取授權後的「權杖 (Token)」。作為客戶端，它負責管理權杖的生命週期（如：儲存與重新整理）。
+
+### 2. Supabase 作為「OAuth Server」
+**Supabase** 不僅僅是個資料庫，它還提供了完整的 OAuth 伺服器功能（基於 GoTrue/Auth 模組）。它能提供登入介面、驗證您的身分、確認授權範圍 (Scopes)，並最終核發鑰匙給 Claude。
+
+> **核心觀念**：
+> 正是因為 **Claude Desktop (Client)** 與 **Supabase (Server)** 都遵循了同一套 OAuth 2.0 標準協議，兩者才能像磁鐵一樣吸合，實現無縫的資料連線。
+
+---
+
+## OAuth 的四大角色（以 Supabase 為例）
+
+| 角色 | 專業術語 | 在 Connectors 情境中是誰？ | 負責任務 |
+| :--- | :--- | :--- | :--- |
+| **資源擁有者** | Resource Owner | **您** | 擁有資料並決定要授權哪些權限。 |
+| **客戶端** | Client | **Claude Desktop** | 發起請求、接收權杖並代表您操作資料。 |
+| **授權伺服器** | Authorization Server | **Supabase Auth** | 驗證您的帳密並核發 Access Token。 |
+| **資源伺服器** | Resource Server | **Supabase Database / Storage** | 驗證 Token 是否正確，並回傳資料。 |
 
 ---
 
@@ -98,10 +113,10 @@ graph TD
 - **OAuth Scope 是「粗粒度」的**：例如 `read` 代表能讀取整個專案。
 - **Claude Control 是「細粒度」的**：它可以根據對話脈絡、特定表單、或操作性質（如刪除 vs 查詢）來觸發不同的安全機制。
 
-> **最後的比喻**：
-> - **OAuth** = 您擁有的「駕照」（證明您有開車的能力）。
-> - **Connector** = 車子有沒有「上鎖」（決定車子何時能動）。
-> - **Approval** = 您握著「方向盤」（決定這段路要不要開過去）。
+> **技術對接總結**：
+> - **Claude Desktop** = OAuth Client（發起者）
+> - **Supabase** = OAuth Server（驗證者）
+> - **OAuth 2.0 協議** = 兩者對話的「共同語言」
 
 ---
 
