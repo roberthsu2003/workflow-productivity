@@ -57,6 +57,12 @@ description: 確保所有文件維持品牌一致的風格和語氣
 - 空白行後是「指令」(告訴 Claude 怎麼做)
 - 清單化、具體的要求
 
+**💡 進階觀念：Skills 的行動力**
+除了指令 (Instructions) 與資源 (Resources)，進階的 Skills 實際上是具備「行動力」的專家：
+- **Function Calling (工具調用)**：教導 Claude 在何時、如何呼叫特定的工具。
+- **MCP 整合**：可以指引 Claude 連結「本地 MCP Server」來執行檔案操作、讀取資料庫或存取內網。
+- **程式碼執行**：搭配 Claude 內建的程式碼執行能力，在安全沙盒中進行數據運算與處理。
+
 #### 0:45-1:15 | 建立第一個 Skill (跟著做)
 **學生在自己的 Claude Desktop 上建立**
 
