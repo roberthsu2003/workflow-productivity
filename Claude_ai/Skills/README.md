@@ -1,5 +1,8 @@
 # Claude Skills：從模仿到大師（14 小時完整教案）
 
+> 🟢 **方案需求**：Free（完全可用，含自訂 SKILL.md）。依官方說明，Free / Pro / Max / Team / Enterprise 皆可建立與使用 Skills，惟需先在 Settings 中啟用 **Skills** 與 **程式碼執行** 兩項功能。  
+> 參考：[Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) · [How to create custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
+
 這是一門專為**非程式設計師**設計的職場自動化課程。我們不學寫程式，我們學習如何「訓練」AI 成為您的數位分身。
 
 ---
@@ -24,7 +27,10 @@
 
 ---
 
-## 💡 Skills 與 Projects 的協作藝術
+## 💡 Skills 與 Projects 的協作藝術 🔵 Pro 進階
+
+> **提醒**：本小節示範的是 Skills + **Projects** 雙劍合璧的進階用法。  
+> **Projects 需 Pro 方案**，Free 帳號可改在一般 Chats 內反覆呼叫 Skill 達到類似效果（僅缺乏專屬知識庫與長期記憶）。
 
 在教學中，強烈建議將 Skills 放在 **Projects** 的框架下使用，這能實現最強大的「自動化沙盒」：
 

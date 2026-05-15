@@ -1,5 +1,8 @@
 # Plugins（外掛／套件）
 
+> 🟣 **方案需求**：**Pro 以上**（含 Claude Code 與 Cowork 才能使用）。Free 帳號無法安裝 Plugins。  
+> **Free 替代方案**：若只是要「同時用一組 Skills + Connectors」，Free 帳號可手動在 Settings 中個別啟用各項 Skills 與 Connectors，效果類似但缺少 slash command 與打包分享。
+
 **Plugins** 將 **MCP Connectors**、**Skills**、**斜線指令（slash commands）**、**子代理（sub-agents）** 等打包成**可安裝、可分享**的能力單元，用於在 **Claude Code**、**Cowork** 等情境一次帶入整套流程。總覽見 [Plugins overview](https://claude.com/docs/plugins/overview)；Anthropic 已開源多個內部使用範例（如 **Productivity**、**Enterprise search**、**Data**、**Legal** 等），可於 [claude.com/plugins](https://claude.com/plugins-for/cowork) 瀏覽（實際入口以官網為準）。Cowork 內安裝方式可參考 [Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)。
 
 **RTCCF 五段欄位**請對照 [Chats／RTCCF 欄位對照](../Chats/README.md#rtccf-欄位對照複製範本時請五段都填)。

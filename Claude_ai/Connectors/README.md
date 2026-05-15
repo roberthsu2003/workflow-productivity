@@ -1,5 +1,7 @@
 # Connectors（連接器）：AI 的資料橋樑
 
+> 🟢 **方案需求**：Free（可用）。Free 帳號可使用 Slack、Google Workspace 等官方連接器，以及任意 Remote MCP，但每段對話與每日訊息用量比 Pro 低（Pro 至少 5×）。
+
 **Connectors** 是 Claude 的一個強大擴充功能。想像它是一座**專屬大橋**，將 Claude 直接連到您常用的雲端服務（如 Google Drive, Gmail, GitHub, Supabase 等）。
 
 透過 Connectors，您不需要再手動將資料複製貼上到對話框。Claude 可以在您的授權下，直接「走過這座橋」去讀取、分析或摘要您放在雲端的資料。

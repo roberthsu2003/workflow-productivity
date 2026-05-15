@@ -1,5 +1,7 @@
 # Chats（對話）
 
+> 🟢 **方案需求**：Free（完全可用）。檔案產出（.docx / .xlsx / .pptx / .pdf）依賴內建程式碼執行與 Skills，Free 帳號均可使用，但用量受 5 小時為單位的訊息上限限制。
+
 在 **Claude.ai 對話**中，你可以先**查詢／彙整**資料（貼上查詢結果、上傳檔案，或搭配 **Connectors** 讀取郵件、行事曆等），再請模型依固定結構產出 **Markdown** 或可下載的 **Word／Excel／PowerPoint／PDF**。下列範例採 **RTCCF**（**R**ole、**T**ask、**C**ontext、**C**onstraint、**F**ormat）撰寫，與本倉庫 [AI 提示詞工程指南](../../prompt/AI提示詞工程指南/README.md) 之「一般任務」五要素一致，方便複製後只改情境與內容。
 
 > **實務提醒**：產出 **.docx／.xlsx／.pptx／.pdf** 時，請確認帳號已啟用 **Skills** 與**程式碼執行**（依方案與介面為準），並在 **Format** 中明確要求「產出可下載檔案」。若當下無法產檔，可先請模型輸出 **Markdown 表格或大綱**，再改請產試算表／文件檔。

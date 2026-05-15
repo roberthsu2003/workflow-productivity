@@ -1,5 +1,7 @@
 # Artifacts（成品／Artifact）
 
+> 🟢 **方案需求**：Free（完全可用）。內嵌 Claude 模型呼叫亦在 Free 範圍內，但與整體訊息共用用量上限。
+
 **Artifacts** 是對話中產生的**獨立預覽區塊**（HTML、React、SVG、Mermaid、Markdown 等），可在側欄即時檢視、修改與發佈連結。官方教學指出：在 Artifact 內可**嵌入 Claude 文字完成能力**（無須自行管理 API Key），適合快速做**互動原型**與內部分享。詳見 [Prototype AI-Powered Apps with Claude artifacts](https://www.claude.com/resources/tutorials/prototype-ai-powered-apps-with-claude-artifacts)、[說明中心：Artifacts 介紹](https://support.claude.com/en/articles/9945615-intro-to-artifacts)。
 
 **RTCCF 五段欄位**請對照 [Chats／RTCCF 欄位對照](../Chats/README.md#rtccf-欄位對照複製範本時請五段都填)。

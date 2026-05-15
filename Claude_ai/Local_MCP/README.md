@@ -1,5 +1,7 @@
 # Local MCP Servers（本地端伺服器）
 
+> 🟢 **方案需求**：Free（可用）。Claude Desktop 的 Desktop Extensions / Local MCP 機制在 Free 帳號即開放，需要的只是下載桌面版並開啟 Developer 模式。
+
 **Local MCP Servers** 是執行在您個人電腦（Mac/PC）上的擴充服務。與雲端託管的 Connectors 不同，本地 MCP 讓 Claude 能夠存取您**本機的檔案、資料庫、甚至是執行本機的腳本與指令**。
 
 這是在 Claude Desktop 上進行深度客製化、實現「AI 操控電腦」的核心機制。
