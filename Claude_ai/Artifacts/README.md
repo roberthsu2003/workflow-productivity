@@ -2,7 +2,15 @@
 
 > 🟢 **方案需求**：Free（完全可用）。內嵌 Claude 模型呼叫亦在 Free 範圍內，但與整體訊息共用用量上限。
 
-**Artifacts** 是對話中產生的**獨立預覽區塊**（HTML、React、SVG、Mermaid、Markdown 等），可在側欄即時檢視、修改與發佈連結。官方教學指出：在 Artifact 內可**嵌入 Claude 文字完成能力**（無須自行管理 API Key），適合快速做**互動原型**與內部分享。詳見 [Prototype AI-Powered Apps with Claude artifacts](https://www.claude.com/resources/tutorials/prototype-ai-powered-apps-with-claude-artifacts)、[說明中心：Artifacts 介紹](https://support.claude.com/en/articles/9945615-intro-to-artifacts)。
+**Artifacts** 是對話中產生的**獨立預覽區塊**（HTML、React、SVG、Mermaid、Markdown 等），當您要求 Claude 生成**長篇文字、程式碼、圖表或互動網頁**時，它不會將內容混雜在對話紀錄中，而是會在右側獨立開啟一個「畫布（Canvas）」視窗，可在側欄即時檢視、修改與發佈連結。
+
+### 🌟 核心特性
+* **即時預覽**：支援 HTML/CSS/JS、React、Tailwind CSS 等程式碼與視覺設計的即時渲染。
+* **版本控制**：隨時記錄每一次的修改與迭代，方便來回比對與還原。
+* **介面隔離**：保持主要對話視窗乾淨，方便專注於邏輯與 Prompt 的討論。
+* **內嵌 Claude 能力**：在 Artifact 內可直接呼叫 Claude 的文字完成能力（無須自行管理 API Key），適合快速製作智慧互動原型與分享。
+
+詳細資訊可參考：[Prototype AI-Powered Apps with Claude artifacts](https://www.claude.com/resources/tutorials/prototype-ai-powered-apps-with-claude-artifacts)、[說明中心：Artifacts 介紹](https://support.claude.com/en/articles/9945615-intro-to-artifacts)。
 
 **RTCCF 五段欄位**請對照 [Chats／RTCCF 欄位對照](../Chats/README.md#rtccf-欄位對照複製範本時請五段都填)。
 
@@ -25,6 +33,105 @@ Anthropic 在教學中示範用一句話測試 Artifact 內嵌模型是否正常
 > 「Create a simple chatbot that uses Claude. Respond with compliments to every user input.」
 
 並列舉多類靈感：[Language Tutor](https://claude.ai/public/artifacts/2af221b6-367f-4b4f-9fe9-25710f5f8feb)、[One-Page PRD Maker](https://claude.ai/public/artifacts/3d81ba29-d1ad-4e9b-b58e-3e0f46ba8afd)、[5 Whys 分析工具](https://claude.ai/public/artifacts/fc64414e-76db-4876-8531-6e9794e4b1be) 等公開 Artifact（連結見上述教學頁）。
+
+---
+
+## 💡 實戰講義：四大核心範例全解
+
+本講義完整收錄了官方展示的四個核心應用範例。透過這些範例，您可以深入了解如何利用 Artifacts 功能進行高效的文案創作、程式撰寫、數據視覺化以及互動式網頁應用的開發。
+
+### 範例一：行銷經理的 AIGC 實踐 —— 產品文案說明
+* **應用場景**：快速生成結構清晰、排版美觀、具備高說服力的產品銷售頁面（Landing Page）。
+* **產出的文案內容**：
+  > #### Techmaster X1000：觸手可及的未來
+  > 隆重推出 Techmaster X1000，智慧型手機創新的巔峰之作。
+  > 
+  > **核心優勢**：
+  > * **量子核心處理器**：搭載頂級 AI 運算能力，提供閃電般的處理速度。
+  > * **全像 3D 顯示幕**：6.7 吋無邊框螢幕，呈現震撼的全像投影視覺體驗。
+  > * **自適應相機系統**：四鏡頭配置，配備 2 億畫素主感光元件與 100 倍數位變焦。
+  > * **生物辨識安全**：先進的面部與 DNA 匹配辨識，解鎖安全無虞。
+  > * **環保太陽能背板**：支援太陽能輔助充電，續航力持久。
+  > * **5G+ 超高速連接**：極致的數據傳輸速度與超低延遲。
+  > 
+  > **為什麼 Techmaster X1000 能脫穎而出？**
+  > 在競爭激烈的市場中，Techmaster X1000 憑藉獨家研發的全像顯示技術傲視群雄。傳統手機仍停留在平面視覺，而我們已帶領使用者跨入多維度互動新紀元。結合全天候環保自充能系統，這不僅僅是一支手機，更是一項引領未來十年的革命性投資。
+* **💡 思考與討論重點**：
+  1. **排版美化**：實務上可以使用卡片式佈局（Card Layout）與漸層色來強化視覺重點。
+  2. **語氣調整**：可根據不同受眾（Tech 迷、商務人士、學生）一鍵切換文案風格。
+
+---
+
+### 範例二：工程師的開發助手 —— Python 邏輯函數
+* **應用場景**：快速產出符合 PEP 8 規範、包含 Docstring（註解說明）與測試範例的乾淨程式碼。
+* **原始碼範例**：
+  ```python
+  def fibonacci_sequence(limit):
+      """
+      計算並產生不高於給定限制值的斐波那契數列。
+      
+      參數:
+      limit (int): 數列發展的上限值。
+      
+      回傳:
+      list: 包含至上限為止的斐波那契數列。
+      """
+      # 初始化數列前兩個經典數字：0 和 1
+      sequence = [0, 1]
+      
+      # 循環計算直到下一個數字超出限制
+      while sequence[-1] + sequence[-2] <= limit:
+          next_number = sequence[-1] + sequence[-2]
+          sequence.append(next_number)
+          
+      return sequence
+
+  # 使用範例示範：
+  limit_value = 100
+  result = fibonacci_sequence(limit_value)
+  print(f"不高於 {limit_value} 的斐波那契數列為: {result}")
+  # 輸出結果: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+  ```
+* **💡 思考與討論重點**：
+  1. **邊界條件**：若 `limit` 輸入負數或 0，該如何優化防錯機制（Exception Handling）？
+  2. **演算法優化**：針對極大數值的計算，如何改用生成器（Generator `yield`）來節省記憶體？
+
+---
+
+### 範例三：數據分析師的儀表板 —— 銷售與利潤率圖表
+* **應用場景**：將複雜的 CSV 或 Excel 數據，快速轉化為雙軸（Dual-Axis）動態圖表，一眼看出營收與利潤的關聯。
+* **數據結構與設計**：本範例使用 **Recharts** 庫，在網頁前端渲染出雙 Y 軸圖表：左軸代表銷售量（柱狀圖），右軸代表利潤率（綠色線條或對比柱）。
+  
+  | 季度 | 銷售量 (台) | 利潤率 (%) |
+  | --- | --- | --- |
+  | 第一季度 (Q1) | 150,000 | 20% |
+  | 第二季度 (Q2) | 220,000 | 22% |
+  | 第三季度 (Q3) | 180,000 | 21% |
+  | 第四季度 (Q4) | 280,000 | 25% |
+* **💡 思考與討論重點**：
+  1. **圖表類型切換**：適合將利潤率改為「折線圖（Line Chart）」疊加在銷售量柱狀圖上，視覺對比會更強烈。
+  2. **動態數據綁定**：如何讓這個圖表能夠直接讀取使用者的 CSV 檔案並自動更新？
+
+---
+
+### 範例四：產品經理的互動原型 —— 團隊內容排程行事曆
+* **應用場景**：不需後端資料庫，快速建立一個可互動的 React 前端原型（Prototype），用於點擊測試與流程確認。
+* **核心功能拆解**：
+  1. **日曆網格生成**：自動計算月份天數與星期幾的對齊空白。
+  2. **狀態管理 (State)**：使用 React `useState` 存放排程陣列。
+  3. **互動式 Modal**：點擊任何日期，會跳出彈出視窗（Modal），讓使用者輸入「排程標題」並「選擇負責部門（行銷/業務/產品）」，儲存後立刻渲染在對應日期中。
+* **💡 思考與討論重點**：
+  1. **資料持久化**：如何加入 `localStorage` 功能，讓使用者重新整理網頁後，新增的行程不會消失？
+  2. **拖拽功能 (Drag and Drop)**：如何更進一步讓排程可以在日期之間自由拖曳變更日期？
+
+---
+
+## 📝 課後思考與互動討論
+
+這份講義是我們討論的起點！您可以參考本講義進行以下的互動或改造：
+* **修改文案主題**：例如，改為您公司的真實產品或服務。
+* **重構程式碼**：例如，使用其他程式語言（JavaScript / Go）或增加新功能與防錯機制。
+* **調整圖表與網頁功能**：例如，變更配色樣式、增加互動按鈕或點擊事件。
 
 ---
 
