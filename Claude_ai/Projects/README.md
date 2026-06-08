@@ -1,8 +1,8 @@
 # Projects（專案）：您的雲端專屬知識沙盒
 
-> 🔵 **方案需求**：**Pro 以上**（$20/月起）。Free 帳號無法建立 Projects，但可閱讀本章節觀念。  
-> 參考：[What is the Pro plan?](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan) 明列「Access to projects and knowledge bases」為 Pro 專屬功能。  
-> **Free 替代方案**：可在一般 Chats 中以「貼上長篇 Context + RTCCF」方式達到 70% 效果，缺點是無法跨對話保留知識。
+> 🟢 **方案需求**：**Free 帳號可建立最多 5 個專案**；Pro 帳號（$20/月起）可建立無限個專案，並享有更大容量的知識庫 (RAG) 與進階模型。  
+> 參考：[What is the Pro plan?](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan)  
+> **使用建議**：Free 帳號的 5 個專案額度足夠完成日常核心練習。若專案數量不夠，可封存或刪除舊專案，或升級為 Pro 方案解鎖無限專案。
 
 **Projects** 是 Claude 提供的一種**持久化、規模化**的雲端工作方式。如果您覺得一般對話像是在路邊攤快餐，那麼 **Project** 就像是您擁有一間專屬的實驗室。
 
