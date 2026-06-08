@@ -26,7 +26,7 @@
 | **Computer Use（Beta）** | ✗ | ✓ |
 | 使用量上限 | 較低 | 至少 5 倍 |
 
-> 💡 **教學提醒**：用 Free 方案就能跑完第一部全部範例。若課堂上要示範 Projects、Plugins、Claude Code 等，建議講師端使用 Pro 帳號展示，學生用 Free 帳號完成 80% 練習。
+> 💡 **教學提醒**：用 Free 方案就能跑完第一部全部範例，以及 Projects（限 5 個）。若課堂上要示範 Plugins、Claude Code、Cowork 等 Pro 專屬功能，建議講師端使用 Pro 帳號展示，學生用 Free 帳號完成 80% 以上練習。
 
 ---
 
@@ -61,13 +61,13 @@
 
 ---
 
-## 🚀 第二部：Pro 進階（選讀，需升級 $20/月）
+## 🚀 第二部：進階功能（部分需升級 $20/月）
 
-> 以下章節需 Pro 方案才能使用。Free 帳號可閱讀觀念，但無法實作。建議學生熟悉第一部後再考慮升級。
+> Projects 已可在 Free 方案使用（限 5 個）。其餘章節（Plugins、Cowork、Code 等）仍需 Pro 方案。Free 帳號可閱讀觀念，無法實作 Pro 專屬功能。建議學生熟悉第一部後再考慮升級。
 
-### 🔵 7. Projects（雲端知識沙盒）— **Pro Only**
+### 🟢 7. Projects（雲端知識沙盒）— **Free（限 5 個）／Pro（無限制）**
 > **📂 [進入主題筆記：Projects](./Projects/README.md)**  
-> 為每個任務建立獨立的雲端知識空間，可上傳專屬檔案、設定 Custom Instructions、勾選專屬 Connectors，實現「跨對話」記憶共享與專案隔離。
+> 為每個任務建立獨立的雲端知識空間，可上傳專屬檔案、設定 Custom Instructions、勾選專屬 Connectors，實現「跨對話」記憶共享與專案隔離。Free 方案最多可建立 5 個 Project；Pro 方案無數量限制。
 
 ### 🟣 8. Plugins（外掛打包）— **Pro / Cowork / Code Only**
 > **📂 [進入主題筆記：Plugins](./Plugins/README.md)**  
@@ -94,7 +94,7 @@
 第 3 週：Skills（建立第一個自訂 SKILL.md）
 第 4 週：Connectors + Local MCP（讓 Claude 讀取你的資料）
 ─────────────── Free 方案到此能完成 ───────────────
-第 5 週：Projects 觀念講解（需 Pro 升級實作）
+第 5 週：Projects（Free 限 5 個可實作；Pro 無限制）
 第 6 週：Plugins / Cowork / Code 概覽
 ```
 
