@@ -17,7 +17,7 @@
 | Connectors（Slack / Google Workspace / Remote MCP） | ✓（有用量限制） | ✓ |
 | Desktop Extensions（本地 MCP） | ✓ | ✓ |
 | Extended Thinking | ✓ | ✓ |
-| **Projects**（雲端知識沙盒） | ✗ | ✓（無上限） |
+| **Projects**（雲端知識沙盒） |  ✓ | ✓ |
 | **Model selector**（Opus 等） | ✗ | ✓ |
 | **Research Mode** | ✗ | ✓ |
 | **Claude Code / Cowork** | ✗ | ✓ |
