@@ -1,7 +1,7 @@
 # 實作範例 0：使用現有的 Skill（Google Workspace 入門）
 
 > 🟢 **方案需求**：Free（需先在 Settings 開啟 Skills 與程式碼執行）  
-> 🔗 **前置準備**：在 Settings → Connectors 完成 Google Workspace（Google Drive、Gmail）授權
+> 🔗 **前置準備**：在 Settings → Connectors 完成 Google Drive 與 Gmail 授權
 
 這是學習 Skills 的**第一步**：不需要自己建立，先學會找到合適的現有 Skill 並直接呼叫。  
 以下四個練習對應 **Google Docs、Google Sheets、Google Slides、Gmail**，每個都附有可直接複製使用的 RTCCF Prompt。
@@ -12,7 +12,7 @@
 
 1. 開啟 **Claude Desktop** → **Settings** → **Skills**
 2. 確認已開啟 **Skills** 與 **程式碼執行（Code Execution）** 兩個開關
-3. 前往 **Settings** → **Connectors** → 連接 **Google Workspace**（授權 Drive、Docs、Sheets、Slides、Gmail）
+3. 前往 **Settings** → **Connectors** → 連接 **Google Drive** 與 **Gmail**（Docs 與 Sheets 不需要單獨授權，只需授權 Google Drive 即可）
 4. 完成後，在對話框輸入 `/` 可預覽目前可用的 Skill 清單
 
 ---
@@ -102,6 +102,8 @@
 ---
 
 ## 練習 C：建立簡報大綱並以 Canva 製作簡報
+
+> 使用artifacts,測試無誤
 
 ### 📖 說明
 輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過 Canva Connector 自動將此大綱內容製作成 Canva 簡報，回傳簡報的編輯或檢視連結。

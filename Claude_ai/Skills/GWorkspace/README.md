@@ -2,7 +2,7 @@
 
 > 以下三個練習專注在 **Google Docs、Google Sheets、Google Slides、Gmail** 四個工具，  
 > 透過「先用現有 Skill → 再改造成自己的 Skill」兩步驟，讓學生快速上手。  
-> 需先在 Settings 開啟 **Skills** 與 **程式碼執行**，並透過 [Connectors](../../Connectors/README.md) 完成 Google Workspace 授權。
+> 需先在 Settings 開啟 **Skills** 與 **程式碼執行**，並透過 [Connectors](../../Connectors/README.md) 完成 Google Drive 與 Gmail 授權。
 
 ---
 
