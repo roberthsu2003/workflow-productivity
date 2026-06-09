@@ -172,6 +172,6 @@
 - 用 RTCCF 框架提供清楚的任務指示
 - 讓 Claude 直接操作 Google Workspace 產出成品
 
-**下一步**：前往 [練習 1：修改現有的 Skill](./GWorkspace_01_Modify_Existing_Skill.md)，學習如何調整 Skill 來符合您的部門習慣。
+**下一步**：前往 [實作練習：Google Workspace Skills](./README.md)，學習如何調整 Skill 來符合您的部門習慣。
 
 ← [返回 Skills 索引](../README.md)
