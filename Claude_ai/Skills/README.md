@@ -1,4 +1,4 @@
-# Claude Skills：從模仿到大師（14 小時完整教案）
+# Claude Skills
 
 > **💡 三種擴充功能快速對照**
 >
