@@ -1,5 +1,16 @@
 # Claude Skills：從模仿到大師（14 小時完整教案）
 
+> **💡 三種擴充功能快速對照**
+>
+> | 類型 | 解決什麼 | 比喻 |
+> |------|---------|------|
+> | **Skills（技能）** | 教 Claude 怎麼把某類任務做好（不連外部服務） | 食譜／SOP |
+> | **Connectors（連接器）** | 讓 Claude 能存取資料或操作其他系統 | 對外的插座、橋樑 |
+> | **Plugins（外掛）** | 把多種能力打包成一個可安裝單位 | 整套工具箱 |
+>
+> **Skills** 是給 Claude 一套處理特定任務的「工作流程說明書」——一個資料夾內放 `SKILL.md`（操作指引）加上範本、腳本等檔案。當任務符合時，Claude 會自動讀取並照著做。例如產生 Word 文件、做簡報、填報價單。本身**不連外部服務**。  
+> 若需要讀取外部資料請看 [Connectors](../Connectors/README.md)；若要打包整套設定請看 [Plugins](../Plugins/README.md)。
+
 > 🟢 **方案需求**：Free（完全可用，含自訂 SKILL.md）。依官方說明，Free / Pro / Max / Team / Enterprise 皆可建立與使用 Skills，惟需先在 Settings 中啟用 **Skills** 與 **程式碼執行** 兩項功能。  
 > 參考：[Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) · [How to create custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
 

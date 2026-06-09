@@ -1,6 +1,17 @@
 # Plugins（外掛／套件）
 
-> 🟣 **方案需求**：**Pro 以上**（含 Claude Code 與 Cowork 才能使用）。Free 帳號無法安裝 Plugins。  
+> **💡 三種擴充功能快速對照**
+>
+> | 類型 | 解決什麼 | 比喻 |
+> |------|---------|------|
+> | **Skills（技能）** | 教 Claude 怎麼把某類任務做好（不連外部服務） | 食譜／SOP |
+> | **Connectors（連接器）** | 讓 Claude 能存取資料或操作其他系統 | 對外的插座、橋樑 |
+> | **Plugins（外掛）** | 把多種能力打包成一個可安裝單位 | 整套工具箱 |
+>
+> **Plugins** 偏向打包式的擴充，把一組相關的東西（可能同時包含 Skills、指令、Connector 設定等）整合成一個可安裝的套件，方便一次部署或在團隊間共享。  
+> 若需要教 Claude 執行某類工作請看 [Skills](../Skills/README.md)；若需要連外部服務請看 [Connectors](../Connectors/README.md)。
+
+> 🟡 **方案需求**：**Plugins 本身 Free 即可安裝與瀏覽**；但完整的使用環境（**Claude Code** 與 **Cowork**）需 **Pro 方案**。Free 帳號可在一般 claude.ai 聊天中安裝 Plugins，但無法進入 Cowork／Code 流程。  
 > **Free 替代方案**：若只是要「同時用一組 Skills + Connectors」，Free 帳號可手動在 Settings 中個別啟用各項 Skills 與 Connectors，效果類似但缺少 slash command 與打包分享。
 
 **Plugins** 將 **MCP Connectors**、**Skills**、**斜線指令（slash commands）**、**子代理（sub-agents）** 等打包成**可安裝、可分享**的能力單元，用於在 **Claude Code**、**Cowork** 等情境一次帶入整套流程。總覽見 [Plugins overview](https://claude.com/docs/plugins/overview)；Anthropic 已開源多個內部使用範例（如 **Productivity**、**Enterprise search**、**Data**、**Legal** 等），可於 [claude.com/plugins](https://claude.com/plugins-for/cowork) 瀏覽（實際入口以官網為準）。Cowork 內安裝方式可參考 [Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)。

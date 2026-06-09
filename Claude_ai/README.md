@@ -69,9 +69,9 @@
 > **📂 [進入主題筆記：Projects](./Projects/README.md)**  
 > 為每個任務建立獨立的雲端知識空間，可上傳專屬檔案、設定 Custom Instructions、勾選專屬 Connectors，實現「跨對話」記憶共享與專案隔離。Free 方案最多可建立 5 個 Project；Pro 方案無數量限制。
 
-### 🟣 8. Plugins（外掛打包）— **Pro / Cowork / Code Only**
+### 🟡 8. Plugins（外掛打包）— **Free 可安裝；Cowork / Code 需 Pro**
 > **📂 [進入主題筆記：Plugins](./Plugins/README.md)**  
-> 將 Connectors、Skills、slash commands、sub-agents 打包成可安裝、可分享的能力單元，主要在 **Claude Code** 與 **Cowork** 環境使用。
+> 將 Connectors、Skills、slash commands、sub-agents 打包成可安裝、可分享的能力單元。**Plugins 本身 Free 帳號即可安裝與瀏覽**，但主要使用環境（**Claude Code**、**Cowork**）為 Pro 專屬；Free 帳號可在一般聊天中安裝，但無法使用完整的 Cowork／Code 工作流程。
 
 ### 🟣 9. Cowork / Code（進階代理工具）— **Pro Only**
 > 專為協作與開發設計，會大量使用 **Sub-agents（子代理）** 技術：

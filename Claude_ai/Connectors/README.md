@@ -1,5 +1,16 @@
 # Connectors（連接器）：AI 的資料橋樑
 
+> **💡 三種擴充功能快速對照**
+>
+> | 類型 | 解決什麼 | 比喻 |
+> |------|---------|------|
+> | **Skills（技能）** | 教 Claude 怎麼把某類任務做好（不連外部服務） | 食譜／SOP |
+> | **Connectors（連接器）** | 讓 Claude 能存取資料或操作其他系統 | 對外的插座、橋樑 |
+> | **Plugins（外掛）** | 把多種能力打包成一個可安裝單位 | 整套工具箱 |
+>
+> **Connectors** 讓 Claude 連到外部服務、讀寫你的資料，底層多半是 MCP（Model Context Protocol）。例如 Google Drive、Gmail、Google Sheets、Supabase、n8n。提供的是**工具（tools）**，不是流程說明。  
+> 若需要教 Claude 執行某類工作請看 [Skills](../Skills/README.md)；若要打包整套設定請看 [Plugins](../Plugins/README.md)。
+
 > 🟢 **方案需求**：Free（可用）。Free 帳號可使用 Slack、Google Workspace 等官方連接器，以及任意 Remote MCP，但每段對話與每日訊息用量比 Pro 低（Pro 至少 5×）。
 
 **Connectors** 是 Claude 的一個強大擴充功能。想像它是一座**專屬大橋**，將 Claude 直接連到您常用的雲端服務（如 Google Drive, Gmail, GitHub, Supabase 等）。
