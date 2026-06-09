@@ -19,6 +19,8 @@
 
 ## 練習 A：用現有 Skill 建立 Google Docs 會議紀錄
 
+> 使用artifacts,測試無誤
+
 ### 📖 說明
 輸入會議的零散要點或逐字稿，Claude 會先在 Artifacts 呈現草稿與你討論。確認無誤後，再透過 Google Workspace Skill 自動建立 Google Doc，並將其存放至 Google Drive 的「上課用」資料夾中，回傳可分享的連結。
 
