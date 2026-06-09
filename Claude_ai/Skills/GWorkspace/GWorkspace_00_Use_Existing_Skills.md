@@ -62,6 +62,8 @@
 
 ## 練習 B：用現有 Skill 建立 Google Sheets 任務追蹤表
 
+> 使用artifacts,測試無誤
+
 ### 📖 說明
 輸入任務清單，Claude 會先在 Artifacts 呈現試算表結構與草稿。確認無誤後，再透過 Google Workspace Skill 自動建立 Google Sheets，並將其存放至 Google Drive 的「上課用」資料夾中，回傳可分享的連結。
 
@@ -99,19 +101,19 @@
 
 ---
 
-## 練習 C：用現有 Skill 建立 Google Slides 簡報大綱
+## 練習 C：建立簡報大綱並以 Canva 製作簡報
 
 ### 📖 說明
-輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認無誤後，再透過 Google Workspace Skill 自動建立 Google Slides，並將其存放至 Google Drive 的「上課用」資料夾中，回傳可分享的連結。
+輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過 Canva Connector 自動將此大綱內容製作成 Canva 簡報，回傳簡報的編輯或檢視連結。
 
 ### 📋 RTCCF Prompt（直接複製使用）
 
 ```markdown
 ## Role
-你是簡報設計助手，擅長將要點轉化為結構清晰的 Google Slides 投影片，並能運用 Google Workspace Skill 管理雲端檔案。
+你是簡報設計助手，擅長將要點轉化為結構清晰的簡報大綱，並能運用 Canva Connector 製作精美的簡報。
 
 ## Task
-請依我提供的主題與要點，規劃一份簡報大綱與投影片結構，先與我討論確認後，再使用 Google Slides Skill 將其建立並儲存至 Google Drive 中名為「上課用」的資料夾。
+請依我提供的主題與要點，規劃一份簡報大綱與投影片結構，先與我討論確認後，再使用 Canva Connector 將其製作成簡報檔案。
 
 ## Context
 簡報資訊：
@@ -127,16 +129,14 @@
 - 語言：繁體中文
 - 固定 5 頁結構：封面 → 本期成果 → 重點發現 → 下半年策略 → 結語與目標
 - 每頁要點不超過 4 條
-- 簡報命名：「2026 Q2 業務成果報告」
 - **工作流程限制**：
   1. **第一步（討論階段）**：請先使用 Claude Artifacts 功能，呈現每頁投影片的標題與大綱草稿。
-  2. **第二步（討論階段）**：詢問我是否需要修改，在此時**不要**呼叫 Google Workspace Skill 建立簡報。
-  3. **第三步（存檔階段）**：待我確認「可以建立」後，呼叫 Google Slides Skill 建立簡報。
-  4. **第四步（資料夾歸檔）**：請將該簡報存放在 Google Drive 根目錄下的 **「上課用」** 資料夾中（若「上課用」資料夾不存在，請先建立該資料夾再將檔案移入）。
+  2. **第二步（討論階段）**：詢問我是否需要修改，在此時**不要**呼叫 Canva Connector。
+  3. **第三步（製作階段）**：待我確認大綱「可以製作」後，呼叫 Canva Connector 將此大綱內容製作成 Canva 簡報。
 
 ## Format
-- 建立 Google Slides 簡報
-- 完成後回傳連結，並列出每頁的標題與要點摘要
+- 使用 Canva 建立簡報檔案
+- 完成後回傳 Canva 簡報連結，並列出每頁的標題與大綱摘要
 ```
 
 ---
