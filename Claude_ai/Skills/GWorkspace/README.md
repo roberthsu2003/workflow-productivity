@@ -6,50 +6,11 @@
 
 ---
 
-### 👉 [練習 0：使用現有的 Skill（Google Workspace 四合一範例）](./GWorkspace_00_Use_Existing_Skills.md)
+### 👉 [練習 1：使用現有的 Skill（Google Workspace 四合一範例）](./GWorkspace_00_Use_Existing_Skills.md)
 
 > **建議第一個做這個**。不需要自己建立 Skill，直接呼叫現有 Skill，  
 > 分別產出 Google Docs 會議紀錄、Google Sheets 任務追蹤表、Google Slides 簡報、Gmail 郵件。  
 > 每個練習附有可直接複製的完整 RTCCF Prompt。
-
----
-
-### 練習 1：使用現有的 Skill
-
-> **目標**：學會從 Skill 目錄找到合適的 Skill，直接呼叫並產出 Google Workspace 文件。  
-> **前置**：已安裝 Claude Desktop 或在 claude.ai 的 Settings → Skills 中啟用對應 Skill。
-
-| 任務 | 呼叫的 Skill | 說明 |
-|------|------------|------|
-| 產出 Google Docs 會議紀錄 | `Meeting Notes → Google Doc` | 輸入逐字稿或要點，Skill 自動整理並建立 Doc |
-| 建立 Google Sheets 追蹤表 | `Task Tracker → Google Sheet` | 輸入任務清單，Skill 自動建立含狀態欄的試算表 |
-| 製作 Google Slides 簡報大綱 | `Presentation Builder → Google Slides` | 輸入主題與要點，Skill 自動建立投影片結構 |
-| 草擬並寄送 Gmail | `Email Drafter → Gmail` | 輸入收件人與重點，Skill 草擬郵件並可一鍵寄出 |
-
-**RTCCF 呼叫範例（Google Sheets 追蹤表）**
-
-```markdown
-## Role
-你是辦公室行政助手，擅長使用 Google Sheets 建立追蹤表。
-
-## Task
-請用「Task Tracker」Skill，將下列任務清單建立成 Google Sheets，
-欄位包含：任務名稱、負責人、截止日、狀態（待處理／進行中／完成）。
-
-## Context
-任務清單：
-- 採購新螢幕（負責人：小明，截止：2026-06-20）
-- 更新員工手冊（負責人：小華，截止：2026-06-30）
-- 安排季度會議（負責人：小美，截止：2026-06-15）
-
-## Constraint
-- 語言：繁體中文
-- 狀態欄預設值為「待處理」
-- 試算表名稱：「2026-06 任務追蹤表」
-
-## Format
-建立完成後回傳 Google Sheets 連結，並列出已建立的欄位清單。
-```
 
 ---
 
