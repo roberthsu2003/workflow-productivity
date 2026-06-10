@@ -66,24 +66,6 @@
 * **核心概念**：學會如何撰寫基礎的 `SKILL.md`（定義 `Role`, `Task`, `Constraint`, `Format` 等指引）。
 * **適用場景**：純文字的格式處理、語氣修飾、日常事務摘要等。
 * **實戰範例**：👉 [**全能郵件修飾專家**](./Examples/Level1_Email_Polisher/README.md)
-* **自訂方式**：
-  * **💡 方式 A (使用內建 `/create-skill` 技能)**：
-    在 Claude 對話中輸入：
-    > 「`請幫我建立一個名為『郵件修飾專家』的 Skill。角色是專業文案，任務是修飾日常郵件語氣，限制是使用繁體中文、格式為 Markdown，請使用 /create-skill 幫我自動產出。`」
-    Claude 會呼叫內建工具，在本地自動為您生成 `SKILL.md` 並建立資料夾。
-  * **✍️ 方式 B (手動建立檔案)**：
-    1. 在電腦中建立一個新資料夾，命名為 `email-polisher`。
-    2. 在資料夾中新增一個 `SKILL.md` 檔案。
-    3. 在 `SKILL.md` 開頭寫入 YAML 元數據，並編寫指引內容：
-       ```markdown
-       ---
-       name: email-polisher
-       description: "修飾電子郵件語氣，使其更加專業且符合商務禮儀。"
-       ---
-       # 郵件修飾專家
-       ## Role ...
-       ```
-    4. 進入 Claude 設定中的 `Settings` ➔ `Skills` 上傳此資料夾，或將其複製到桌面版本地 Skills 目錄中。
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 1 ~ 2）。
 
 ### 🔵 第二階：創作者 (Creator) —— `SKILL.md` + `references` & `templates`
