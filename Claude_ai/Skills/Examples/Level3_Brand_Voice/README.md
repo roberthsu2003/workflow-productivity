@@ -18,10 +18,10 @@ Level3_Brand_Voice/
 
 ## 🛠️ 安裝與使用方式
 
-### 💡 方式 A：使用內建 `/create-skill` 技能（自動建立）
+### 💡 方式 A：使用內建 `/skill-creator` 技能（自動建立）
 1. 先將 [brand-book.md](./references/brand-book.md) 檔案與 Logo 圖片上傳至 Claude 對話中。
 2. 直接下指令：
-   > 「`我想建立一個品牌語氣稽核 Skill。請將這張 Logo 圖片放入 assets，並參考我剛才上傳的 brand-book.md 規範內容，使用 /create-skill 幫我建立包含 references 和 assets 資料夾的 Skill。`」
+   > 「`我想建立一個品牌語氣稽核 Skill。請將這張 Logo 圖片放入 assets，並參考我剛才上傳的 brand-book.md 規範內容，使用 /skill-creator 幫我建立包含 references 和 assets 資料夾的 Skill。`」
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Level3_Brand_Voice`，並建立 `references` 與 `assets` 兩個子資料夾。

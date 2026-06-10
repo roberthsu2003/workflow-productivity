@@ -16,10 +16,10 @@ Level4_Meeting_Secretary/
 
 ## 🛠️ 安裝與使用方式
 
-### 💡 方式 A：使用內建 `/create-skill` 技能（自動建立）
+### 💡 方式 A：使用內建 `/skill-creator` 技能（自動建立）
 1. 先將 [calculate_hours.py](./scripts/calculate_hours.py) 檔案上傳至 Claude 對話中。
 2. 直接下指令：
-   > 「`我想建立一個會議秘書 Skill。請幫我把 calculate_hours.py 放入 scripts 資料夾，並使用 /create-skill 建立包含 scripts 的自訂 Skill。`」
+   > 「`我想建立一個會議秘書 Skill。請幫我把 calculate_hours.py 放入 scripts 資料夾，並使用 /skill-creator 建立包含 scripts 的自訂 Skill。`」
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Level4_Meeting_Secretary`，並在其中建立名為 `scripts` 的子資料夾。
