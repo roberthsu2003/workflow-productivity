@@ -49,12 +49,12 @@
 
 ---
 
-## 🔰 實作練習：Google Workspace Skills
+## 🔰 內建 Skills 使用與 Google Workspace 實作練習
 
 > 這是專注在 **Google Docs、Google Sheets、Google Slides、Gmail** 四個常用辦公室工具的練習。
-> 透過實作「使用現有 Skill」主題，幫助您快速上手職場自動化流程。
+> 透過實作「使用內建的現有 Skill」主題，幫助您快速上手職場自動化流程。
 >
-> 👉 [**點此前往 Google Workspace Skills 實作練習（練習 1：使用現有的 Skill）**](./GWorkspace/README.md)
+> 👉 [**點此前往 Google Workspace Skills 實作練習（使用內建的現有 Skill）**](./GWorkspace/README.md)
 
 ---
 
