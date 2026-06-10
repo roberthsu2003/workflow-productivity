@@ -73,7 +73,7 @@
 ## [Claude.AI](./Claude_ai/README.md)
   AI應用程式
 
-## ChatGPT, Codex(./chatGPT_codex/README.md)
+## [ChatGPT, Codex](./chatGPT_codex/README.md)
 ---
 
 - [實作任務](./實作任務/README.md)  

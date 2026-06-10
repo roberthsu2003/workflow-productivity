@@ -12,7 +12,10 @@
 > 若需要讀取外部資料請看 [Connectors](../Connectors/README.md)；若要打包整套設定請看 [Plugins](../Plugins/README.md)。
 
 > 🟢 **方案需求**：Free（完全可用，含自訂 SKILL.md）。依官方說明，Free / Pro / Max / Team / Enterprise 皆可建立與使用 Skills，惟需先在 Settings 中啟用 **Skills** 與 **程式碼執行** 兩項功能。  
-> 參考：[Use Skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) · [How to create custom Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
+> 參考官方文案：  
+> [如何使用skill(Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)   
+>  [如何建立自訂的skills(How to create custom Skills)](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)  
+>  [官方skill repo](https://github.com/anthropics/skills)
 
 這是一門專為**非程式設計師**設計的職場自動化課程。我們不學寫程式，我們學習如何「訓練」AI 成為您的數位分身。
 
