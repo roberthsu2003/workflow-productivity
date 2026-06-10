@@ -72,55 +72,18 @@
 * **核心概念**：學習掛載外部參考知識（放置於 `references/`）與套用標準文件範本（放置於 `templates/`），使 Claude 產出特定格式的文件。
 * **適用場景**：符合公司特定規範的報價單、遵循特定格式的會議紀錄、參考產品手冊進行預檢等。
 * **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/README.md)
-* **自訂方式**：
-  * **💡 方式 A (使用內建 `/create-skill` 技能)**：
-    先將參考文件 (PDF/Doc) 與範本檔上傳給 Claude，然後下指令：
-    > 「`我想建立一個品牌稽核 Skill，請參考我剛才上傳的『品牌手冊.pdf』，並根據『報告樣板.md』的格式，使用 /create-skill 幫我建立包含 references 和 templates 資料夾的 Skill。`」
-  * **✍️ 方式 B (手動建立檔案)**：
-    1. 在 Skill 資料夾下建立 `references/` 與 `templates/` 兩個子資料夾。
-    2. 將參考資料（如 `brand-handbook.pdf`）放入 `references/`；將標準格式範本（如 `daily-report-template.md`）放入 `templates/`。
-    3. 在 `SKILL.md` 的 `## Constraint` 中指示 Claude 必須參考與套用該目錄檔案：
-       ```markdown
-       ## Constraint
-       - 請嚴格參考 `references/brand-handbook.pdf` 中的品牌語氣規範。
-       - 輸出格式必須完全符合 `templates/daily-report-template.md` 的結構。
-       ```
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）。
 
 ### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo 與圖片)
 * **核心概念**：在 Skill 中加入 `assets/` 資料夾放置圖片（如公司 Logo、圖表、ICON），並在產出文件時以相對路徑引用，讓 Claude 的輸出直接包含品牌標誌。
 * **適用場景**：製作帶有公司商標的合約、簡報封面頁、附有 Logo 的正式報價單等。
 * **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/README.md)
-* **自訂方式**：
-  * **💡 方式 A (使用內建 `/create-skill` 技能)**：
-    將您的 Logo 圖片上傳至對話中，並指示：
-    > 「`我想建立一個帶有 Logo 的文件產生 Skill。請把這張圖片放入 assets 資料夾，並在 /create-skill 生成的 SKILL.md 中規定：產出的文件開頭必須用相對路徑插入這張 Logo。`」
-  * **✍️ 方式 B (手動建立檔案)**：
-    1. 在 Skill 資料夾下建立一個名為 `assets/` 的子資料夾。
-    2. 將您的 Logo 圖片檔案（例如 `company-logo.png`）放入 `assets/`。
-    3. 在 `SKILL.md` 中，使用 Markdown 語法以相對路徑引入該圖片：
-       ```markdown
-       ## Format
-       - 文件第一行必須置中加入公司 Logo：`![公司 Logo](assets/company-logo.png)`
-       ```
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 5 ~ 7）。
 
 ### 🔴 第四階：自動化專家 (Automator) —— `SKILL.md` + `scripts` (Python/工具調用)
 * **核心概念**：加入 `scripts/` 資料夾放置 Python 腳本或工具宣告定義。結合 Claude 的「程式碼執行 (Code Execution)」，讓 AI 在伺服器端運行腳本，實現資料運算、複雜圖表繪製或自動化處理。
 * **適用場景**：自動生成圖表簡報、進行財務數據加總小計、動態更新日程等。
 * **實戰範例**：👉 [**智能會議排程秘書**](./Examples/Level4_Meeting_Secretary/README.md)
-* **自訂方式**：
-  * **💡 方式 A (使用內建 `/create-skill` 技能)**：
-    在對話中告知您的自動化邏輯，Claude 會幫您撰寫 Python 腳本並以工具打包：
-    > 「`我想建立一個自動排程 Skill，請幫我寫一個計算時間衝突的 Python 腳本放進 scripts 資料夾，並使用 /create-skill 建立此自動化技能。`」
-  * **✍️ 方式 B (手動建立檔案)**：
-    1. 在 Skill 資料夾下建立 `scripts/` 子資料夾。
-    2. 將您寫好的 Python 腳本（例如 `calculate_hours.py`）放入 `scripts/`。
-    3. 在 `SKILL.md` 中，指示 Claude 執行該腳本：
-       ```markdown
-       ## Task
-       - 當接收到工時數據後，請使用程式碼執行功能運行 `scripts/calculate_hours.py` 腳本，以計算總工時並產出統計圖表。
-       ```
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 8 ~ 10）。
 
 ---
