@@ -24,6 +24,21 @@
 > > 3. 將 `Cloud code execution and file creation` 功能切換為**開啟** (On) 狀態
 > > 
 > > 💡 *提示：這是因為 Skills 在執行任務時，需要依賴 Claude 在伺服器端執行程式碼以及建立/編輯文件、試算表、簡報等檔案的能力。*
+> >
+> > <details>
+> > <summary>⚙️ <b>Settings 設定細節與「找不到 Skills 清單」的常見解惑</b>（點此展開）</summary>
+> > <br>
+> > 
+> > * **Skills 區段在頁面更下方**：  
+> >   在 `Capabilities` 設定頁面中，請繼續**往下方捲動**。經過「Allow network egress」與「Domain allowlist」後，才會看到「**Skills**」區段，那裡才會列出您已安裝的 Skills。
+> > 
+> > * **內建文件 Skills 自動生效**：  
+> >   `pptx`、`docx`、`xlsx`、`pdf` 這幾個官方文件 Skills **不會**出現在下方的 Skills 清單中。它們是**直接內建**於 `Cloud code execution and file creation` 功能裡的。只要此開關開啟，這幾項文件處理功能（包含簡報、試算表、Word、PDF 等）就已自動生效，無需也無法手動安裝。
+> > 
+> > * **下方的 Skills 清單會列出**：  
+> >   1. **自訂上傳的 Skills**：例如您上傳的「華梵課程計畫表」、「報價單 (`quotation`)」、「產投課表 (`workforce-training-skill`)」等。
+> >   2. **Anthropic 官方提供的範例 Skills**（若有開放瀏覽與安裝）。
+> > </details>
 > 
 > > 📖 **官方參考文案**：
 > > - [如何使用 Skills (Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
