@@ -94,21 +94,21 @@
 
 ## 🧩 10 個辦公室工作流範例規劃：由簡單到複雜
 
-> **設計原則**：每個範例都以「辦公室真實任務」為場景，從單純文字改寫開始，逐步加入表格、檔案、規則、資料查詢、跨工具協作，最後進入「自己定義 function tools」的自動化工作流。
+> **設計原則**：每個範例都以「辦公室真實任務」為場景，從單純文字改寫開始，逐步加入表格、檔案、規則、資料查詢、與跨工具協作。
 > 下表與上方自訂 Skills 四階演進路徑互相對應：範例 1–2 對應「第一階：模仿者」，範例 3–4 對應「第二階：創作者」，範例 5–7 對應「第三階：整合者」，範例 8–10 對應「第四階：自動化專家」。
 
-| # | 對應演進階段 | Skill 名稱 | 辦公室場景 | 可形成的工作流 | 自訂 Function Tools 概念 |
-| :---: | :--- | :--- | :--- | :--- | :--- |
-| 1 | 🟢 第一階：模仿者 | [郵件語氣修飾員](./Examples/Office_Workflow_01_Email_Tone.md) | 同事寫好草稿，但語氣太直接或不夠專業 | 貼上草稿 → 判斷對象 → 產出正式版、友善版、簡短版 | `classify_recipient()`、`rewrite_email()` |
-| 2 | 🟢 第一階：模仿者 | [主管交辦事項整理員](./Examples/Office_Workflow_02_Task_Extractor.md) | 會議後收到一堆零散訊息，需要整理成待辦清單 | 貼上對話 → 抽取任務 → 標記負責人、期限、優先級 | `extract_tasks()`、`prioritize_tasks()` |
-| 3 | 🔵 第二階：創作者 | [每日工作日誌產生器](./Examples/Office_Workflow_03_Daily_Report.md) | 下班前要回報今天完成事項與明日計畫 | 輸入零散工作紀錄 → 分類 → 產出日報、週報草稿 | `format_report()` |
-| 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan.md) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 | `extract_actions()`、`detect_decisions()` |
-| 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover.md) | 員工請假時，需要整理交接事項與通知信 | 輸入請假日期與工作項目 → 產出交接清單、代理通知、主管摘要 | `check_leave_overlap()`、`create_handover_plan()` |
-| 6 | 🟡 第三階：整合者 | [採購申請預檢員](./Examples/Office_Workflow_06_Purchase_Checker.md) | 行政或 IT 採購前，需要確認品項、預算、理由是否完整 | 貼上採購需求 → 檢查缺漏 → 產出補件問題與申請書草稿 | `validate_purchase_request()` |
-| 7 | 🟡 第三階：整合者 | [客戶回覆與 CRM 更新助手](./Examples/Office_Workflow_07_Customer_CRM.md) | 業務收到客戶信件後，要回覆並更新客戶狀態 | 貼上客戶信 → 判斷意圖 → 產出回信 → 產生 CRM 更新摘要 | `classify_customer_intent()`、`generate_crm_note()` |
-| 8 | 🔴 第四階：自動化專家 | [週會資料彙整與簡報大綱助手](./Examples/Office_Workflow_08_Weekly_Brief.md) | 部門週會前，需要從多份進度回報整理重點 | 匯入多份回報 → 合併重複項 → 找風險 → 產出簡報大綱 | `merge_status_updates()`、`risk_score()` |
-| 9 | 🔴 第四階：自動化專家 | [跨部門簽核追蹤秘書](./Examples/Office_Workflow_09_Approval_Tracker.md) | 文件需要法務、財務、主管多方簽核，容易卡關 | 輸入簽核流程 → 查目前狀態 → 找卡點 → 產出催辦訊息 | `get_approval_status()`、`draft_followup_message()` |
-| 10 | 🔴 第四階：自動化專家 | [辦公室營運儀表板代理人](./Examples/Office_Workflow_10_Operations_Dashboard.md) | 主管每天想知道會議、待辦、客訴、採購、簽核的整體狀態 | 讀取多來源資料 → 分析異常 → 產出每日營運摘要 → 建議下一步 | `fetch_calendar()`、`fetch_tasks()`、`fetch_tickets()`、`summarize_operations()` |
+| # | 對應演進階段 | Skill 名稱 | 辦公室場景 | 可形成的工作流 |
+| :---: | :--- | :--- | :--- | :--- |
+| 1 | 🟢 第一階：模仿者 | [社群貼文文案大師](./Examples/Office_Workflow_01_Copywriter.md) | 有簡單的活動想法，需要快速撰寫成社群推廣文案 | 輸入核心概念 → 選擇平台 → 產出吸睛文案、Hashtags 與 Call-to-Action |
+| 2 | 🟢 第一階：模仿者 | [主管交辦事項整理員](./Examples/Office_Workflow_02_Task_Extractor.md) | 會議後收到一堆零散訊息，需要整理成待辦清單 | 貼上對話 → 抽取任務 → 標記負責人、期限、優先級 |
+| 3 | 🔵 第二階：創作者 | [每日工作日誌產生器](./Examples/Office_Workflow_03_Daily_Report.md) | 下班前要回報今天完成事項與明日計畫 | 輸入零散工作紀錄 → 分類 → 產出日報、週報草稿 |
+| 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan.md) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 |
+| 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover.md) | 員工請假時，需要整理交接事項與通知信 | 輸入請假日期與工作項目 → 產出交接清單、代理通知、主管摘要 |
+| 6 | 🟡 第三階：整合者 | [採購申請預檢員](./Examples/Office_Workflow_06_Purchase_Checker.md) | 行政或 IT 採購前，需要確認品項、預算、理由是否完整 | 貼上採購需求 → 檢查缺漏 → 產出補件問題與申請書草稿 |
+| 7 | 🟡 第三階：整合者 | [客戶回覆與 CRM 更新助手](./Examples/Office_Workflow_07_Customer_CRM.md) | 業務收到客戶信件後，要回覆並更新客戶狀態 | 貼上客戶信 → 判斷意圖 → 產出回信 → 產生 CRM 更新摘要 |
+| 8 | 🔴 第四階：自動化專家 | [週會資料彙整與簡報大綱助手](./Examples/Office_Workflow_08_Weekly_Brief.md) | 部門週會前，需要從多份進度回報整理重點 | 匯入多份回報 → 合併重複項 → 找風險 → 產出簡報大綱 |
+| 9 | 🔴 第四階：自動化專家 | [跨部門簽核追蹤秘書](./Examples/Office_Workflow_09_Approval_Tracker.md) | 文件需要法務、財務、主管多方簽核，容易卡關 | 輸入簽核流程 → 查目前狀態 → 找卡點 → 產出催辦訊息 |
+| 10 | 🔴 第四階：自動化專家 | [辦公室營運儀表板代理人](./Examples/Office_Workflow_10_Operations_Dashboard.md) | 主管每天想知道會議、待辦、客訴、採購、簽核的整體狀態 | 讀取多來源資料 → 分析異常 → 產出每日營運摘要 → 建議下一步 |
 
 ---
 
