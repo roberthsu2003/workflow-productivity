@@ -103,6 +103,7 @@
 
 ## 練習 C1：使用 Anthropic PPTX Skill 製作簡報 (.pptx)
 
+> 必需先關閉canva的connector
 > 使用artifacts,測試無誤
 
 ### 📖 說明
@@ -160,6 +161,7 @@
 
 ## 練習 C2：使用 Canva Connector 製作簡報
 
+> 必需開啟canva的connector
 > 使用artifacts,測試無誤
 
 ### 📖 說明
