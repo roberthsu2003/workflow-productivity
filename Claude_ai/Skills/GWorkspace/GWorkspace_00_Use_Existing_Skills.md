@@ -101,12 +101,69 @@
 
 ---
 
-## 練習 C：建立簡報大綱並以 Canva 製作簡報
+## 練習 C1：使用 Anthropic PPTX Skill 製作簡報 (.pptx)
 
 > 使用artifacts,測試無誤
 
 ### 📖 說明
-輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過 Canva Connector 自動將此大綱內容製作成 Canva 簡報，回傳簡報的編輯或檢視連結。
+輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過內建的 **PPTX Skill**（已內建於 `Cloud code execution and file creation` 功能中）在雲端自動產生實體 PowerPoint 簡報檔案 (.pptx)，並提供下載連結。
+
+> 🎨 **設計配色指南**：
+> 內建的 PPTX Skill 支援自訂配色主題。請參考 [Anthropic PPTX 官方設計指南](https://github.com/anthropics/skills/tree/main/skills/pptx) 的說明，您可以直接在 Prompt 裡的 `Constraint` 指定下方其中一組主題：
+> 
+> * **Midnight Executive** (`1E2761` / `CADCFC` / `FFFFFF`) - 深藍/冰藍/白（適合正式商務報告）
+> * **Forest & Moss** (`2C5F2D` / `97BC62` / `F5F5F5`) - 森林綠/苔綠/乳白（適合永續、環保或自然主題）
+> * **Coral Energy** (`F96167` / `F9E795` / `2F3C7E`) - 珊瑚紅/金黃/深藍（適合活力、創新或科技主題）
+> * **Warm Terracotta** (`B85042` / `E7E8D1` / `A7BEAE`) - 磚紅/沙褐/鼠尾草綠（適合溫暖、人文質感主題）
+> * **Ocean Gradient** (`065A82` / `1C7293` / `21295C`) - 深藍/湖水藍/子夜藍（適合專業、嚴謹或科技主題）
+> * **Charcoal Minimal** (`36454F` / `F2F2F2` / `212121`) - 炭灰/灰白/純黑（極簡商務風格）
+> * **Teal Trust** (`028090` / `00A896` / `02C39A`) - 青綠/海泡綠/薄荷綠（適合醫療、信任與新創主題）
+> * **Berry & Cream** (`6D2E46` / `A26769` / `ECE2D0`) - 莓紫/玫瑰粉/奶油白（適合生活、美妝或優雅主題）
+> * **Sage Calm** (`84B59F` / `69A297` / `50808E`) - 鼠尾草綠/尤加利綠/石板灰（適合安靜、極簡或療癒主題）
+> * **Cherry Bold** (`990011` / `FCF6F5` / `2F3C7E`) - 櫻桃紅/暖白/深藍（強烈對比，適合發表會與焦點發表）
+
+### 📋 RTCCF Prompt（直接複製使用）
+
+```markdown
+## Role
+你是簡報設計助手，擅長將要點轉化為結構清晰的簡報大綱，並能運用 PPTX Skill 產生 PowerPoint 簡報檔案。
+
+## Task
+請依我提供的主題與要點，規劃一份簡報大綱與投影片結構，先與我討論確認後，再使用 PPTX Skill 將其製作成 PowerPoint 簡報檔案 (.pptx) 供我下載。
+
+## Context
+簡報資訊：
+- 主題：2026 Q2 業務成果報告
+- 對象：部門主管
+- 要點：
+  - Q2 業績達成率 94%，超越目標 4%
+  - 新客戶 5 家，集中在北部科技業
+  - 下半年策略：深耕現有客戶 + 開拓中南部市場
+  - 預計 Q3 目標：業績成長 15%
+
+## Constraint
+- 語言：繁體中文
+- 簡報設計配色：指定使用「Midnight Executive」配色方案（深藍/冰藍/白），營造專業且清晰的商務視覺。
+- 固定 5 頁結構：封面 → 本期成果 → 重點發現 → 下半年策略 → 結語與目標
+- 每頁要點不超過 4 條
+- **工作流程限制**：
+  1. **第一步（討論階段）**：請先使用 Claude Artifacts 功能，呈現每頁投影片的標題與大綱草稿。
+  2. **第二步（討論階段）**：詢問我是否需要修改，在此時**不要**呼叫 PPTX 產生工具。
+  3. **第三步（製作階段）**：待我確認大綱「可以製作」後，呼叫內建的 PPTX Skill 將此大綱內容製作成實體 PPTX 簡報檔案。
+
+## Format
+- 使用內建 PPTX Skill 建立並套用指定配色，匯出 PowerPoint 簡報檔案 (.pptx)
+- 完成後提供簡報檔案下載連結，並列出每頁的標題與大綱摘要
+```
+
+---
+
+## 練習 C2：使用 Canva Connector 製作簡報
+
+> 使用artifacts,測試無誤
+
+### 📖 說明
+輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過 **Canva Connector** 於 Canva 雲端平台自動建立精美簡報，回傳簡報的編輯或檢視連結。
 
 ### 📋 RTCCF Prompt（直接複製使用）
 
@@ -140,7 +197,6 @@
 - 使用 Canva 建立簡報檔案
 - 完成後回傳 Canva 簡報連結，並列出每頁的標題與大綱摘要
 ```
-
 ---
 
 ## 練習 D：用現有 Skill 草擬並寄送 Gmail
