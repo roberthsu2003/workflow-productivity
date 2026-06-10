@@ -11,11 +11,24 @@
 > **Skills** 是給 Claude 一套處理特定任務的「工作流程說明書」——一個資料夾內放 `SKILL.md`（操作指引）加上範本、腳本等檔案。當任務符合時，Claude 會自動讀取並照著做。例如產生 Word 文件、做簡報、填報價單。本身**不連外部服務**。  
 > 若需要讀取外部資料請看 [Connectors](../Connectors/README.md)；若要打包整套設定請看 [Plugins](../Plugins/README.md)。
 
-> 🟢 **方案需求**：Free（完全可用，含自訂 SKILL.md）。依官方說明，Free / Pro / Max / Team / Enterprise 皆可建立與使用 Skills，惟需先在 Settings 中啟用 **Skills** 與 **程式碼執行** 兩項功能。  
-> 參考官方文案：  
-> [如何使用skill(Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)   
->  [如何建立自訂的skills(How to create custom Skills)](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)  
->  [官方skill repo](https://github.com/anthropics/skills)
+> 🟢 **方案需求**：Free（完全可用，含自訂 SKILL.md）。依官方說明，Free / Pro / Max / Team / Enterprise 皆可建立與使用 Skills。
+>
+> > [!IMPORTANT]
+> > **使用 Skills 的關鍵前提：啟用「程式碼執行 (Code execution)」功能**
+> > 
+> > 在 Claude 中使用或開發 Skills 時，**必須**啟用「**Cloud code execution and file creation**」（雲端程式碼執行與檔案建立）功能。若未開啟，Skills 將無法正常運作。
+> > 
+> > ⚙️ **設定路徑**：
+> > 1. 點擊左下角個人頭像前往 `Settings`（設定）
+> > 2. 選擇左側選單的 `Capabilities`（能力）
+> > 3. 將 `Cloud code execution and file creation` 功能切換為**開啟** (On) 狀態
+> > 
+> > 💡 *提示：這是因為 Skills 在執行任務時，需要依賴 Claude 在伺服器端執行程式碼以及建立/編輯文件、試算表、簡報等檔案的能力。*
+> 
+> > 📖 **官方參考文案**：
+> > - [如何使用 Skills (Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
+> > - [如何建立自訂的 Skills (How to create custom Skills)](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)
+> > - [官方 Skill 範例庫 (Official Skills Repo)](https://github.com/anthropics/skills)
 
 這是一門專為**非程式設計師**設計的職場自動化課程。我們不學寫程式，我們學習如何「訓練」AI 成為您的數位分身。
 
