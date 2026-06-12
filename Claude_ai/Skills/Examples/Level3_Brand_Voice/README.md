@@ -28,6 +28,23 @@ Level3_Brand_Voice/
 2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 儲存於根目錄；將 [brand-book.md](./references/brand-book.md) 儲存至 `references/` 目錄；將 Logo 圖片儲存為 `assets/company-logo.png`。
 3. 前往 Claude 的 **Settings** ➔ **Skills** ➔ 點擊 **Add Custom Skill** 上傳此資料夾。
 
+## 🧪 測試與驗證
+
+確認 Skill 建立成功後，您可以開啟新對話並使用以下範例 Prompt 來測試其效果：
+
+**測試 Prompt（不合規範的文案）：**
+```text
+請幫我稽核這段文案：
+「我們最近推出了全新的 Custom Skills 功能，只要使用我們的 Connectors 就能輕鬆把各種服務串起來！超方便，保證讓你的工作速度飛天，趕快來試用！」
+```
+
+**預期效果：**
+Claude 將會自動啟用該 Skill，並：
+1. 在稽核報告的最上方置中顯示公司 Logo：`![公司 Logo](assets/company-logo.png)`。
+2. 進行品牌語氣分析，判定該文案使用「飛天」、「超方便」等詞彙過於誇大且不夠專業，且誤用了英文專有名詞「Custom Skills」與「Connectors」。
+3. 給出「❌ 需修改」的結論，並提供修改與重寫建議（例如將英文專有名詞替換為「自訂技能」與「連接器」）。
+
 ---
 
 ← [返回 Skills 主頁](../../README.md)
+

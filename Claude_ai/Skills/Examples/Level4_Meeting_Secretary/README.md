@@ -26,6 +26,34 @@ Level4_Meeting_Secretary/
 2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 儲存於根目錄；將 [calculate_hours.py](./scripts/calculate_hours.py) 儲存至 `scripts/` 目錄中。
 3. 前往 Claude 的 **Settings** ➔ **Skills** ➔ 點擊 **Add Custom Skill** 上傳此資料夾。
 
+## 🧪 測試與驗證
+
+確認 Skill 建立成功後，您可以開啟新對話並使用以下範例 Prompt 來測試其效果：
+
+**測試 Prompt：**
+```text
+我今天處理了這些事情，幫我產出工時統計報告：
+- 撰寫產品規格書花了我 3 小時。
+- 跟前端工程師對 API 介面花了 2 小時。
+- 修復線上購物車 Bug 花了 4 小時。
+- 寫週報跟回覆信件花了 1 小時。
+```
+
+**預期效果：**
+Claude 將會自動啟用該 Skill，並：
+1. 將輸入的資料轉換為 JSON 結構：
+   ```json
+   [
+     {"name": "撰寫產品規格書", "hours": 3},
+     {"name": "對 API 介面", "hours": 2},
+     {"name": "修復購物車 Bug", "hours": 4},
+     {"name": "週報與回信", "hours": 1}
+   ]
+   ```
+2. 透過 Code Execution 執行 `scripts/calculate_hours.py` 腳本，將 JSON 資料寫入腳本。
+3. 輸出該腳本產生的 ASCII 百分比長條圖與總工時統計報告。
+
 ---
 
 ← [返回 Skills 主頁](../../README.md)
+
