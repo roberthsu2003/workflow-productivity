@@ -1,10 +1,10 @@
 # 延伸練習 4：會議紀錄轉行動計畫助手（第二階：創作者）
 
-這是第二階的延伸實作練習。本階段的重點在於學會如何使用樣板檔案（Templates）來限制 AI 的輸出格式。
+這是第二階的延伸實作練習。本階段的重點在於學會如何使用 Excel 樣板檔案（Templates）來限制 AI 的輸出格式，並產出實體 Excel 檔案供下載。
 
 ## 📖 範例說明
 
-這個 Skill 可以將長篇會議逐字稿、會議摘要或討論隨記，快速整理出會議決議、負責人、期限、風險提示，並依據標準樣板自動生成一封專業的會後通知信草稿。
+這個 Skill 可以將長篇會議逐字稿、會議摘要或討論隨記，快速整理出會議決議、負責人、期限、風險提示，並套用標準 Excel 樣板，產出格式美觀的行動計畫試算表（`.xlsx`）供下載。
 
 ## 📁 實體自訂 Skill 結構
 
@@ -13,19 +13,19 @@
 Office_Workflow_04_Meeting_Action_Plan/
 ├── SKILL.md
 └── templates/
-    └── action-plan-template.md  # 儲存行動計畫標準 Markdown 樣板
+    └── action-plan-template.xlsx  # 儲存行動計畫標準 Excel 樣板
 ```
 
 ## 🛠️ 安裝與使用方式
 
 ### 💡 方式 A：使用內建 `/skill-creator` 技能（自動建立）
-1. 先將 [action-plan-template.md](./templates/action-plan-template.md) 檔案上傳至 Claude 對話中。
+1. 先將 [action-plan-template.xlsx](./templates/action-plan-template.xlsx) 檔案上傳至 Claude 對話中。
 2. 直接下指令：
-   > 「`我想建立一個會議紀錄轉行動計畫 Skill。請參考我剛才上傳的樣板檔案格式，使用 /skill-creator 幫我建立包含 templates 資料夾的 Skill。`」
+   > 「`我想建立一個會議紀錄轉行動計畫 Skill。請參考我剛才上傳的 Excel 樣板檔案格式，使用 /skill-creator 幫我建立包含 templates 資料夾的 Skill。`」
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Office_Workflow_04_Meeting_Action_Plan`，並在其中建立名為 `templates` 的子資料夾。
-2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 內容儲存於根目錄；將 [action-plan-template.md](./templates/action-plan-template.md) 內容儲存至 `templates/` 目錄中。
+2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 內容儲存於根目錄；將 [action-plan-template.xlsx](./templates/action-plan-template.xlsx) 內容儲存至 `templates/` 目錄中。
 3. 前往 Claude 的 **Settings** ➔ **Skills** ➔ 點擊 **Add Custom Skill** 上傳此資料夾。
 
 ## 🧪 測試與驗證
@@ -39,7 +39,7 @@ Office_Workflow_04_Meeting_Action_Plan/
 ```
 
 **預期效果：**
-Claude 將會自動啟用該 Skill，並依據 `templates/action-plan-template.md` 的格式將對話內容整理為會議決議（新產品上線準備、下週五上線審查會議），將任務與期限整理為 Action Items 表格（標明小美和大雄各自的任務與期限），並附上風險提醒與正式的會後通知信草稿。
+Claude 將會自動啟用該 Skill，並依據 `templates/action-plan-template.xlsx` 的格式，自動呼叫 Python 程式碼，將對話內容整理並寫入成可供下載的 `.xlsx` 檔案，其中包含會議決議、負責人任務與期限、風險提醒。
 
 ---
 
