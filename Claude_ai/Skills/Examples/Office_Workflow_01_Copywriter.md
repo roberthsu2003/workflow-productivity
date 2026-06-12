@@ -11,7 +11,7 @@
 1. 點擊 Claude 左下角頭像前往 **Customize** ➔ **Skills**。
 2. 點擊右上角的 `+` ➔ **Create skill** ➔ 選擇 **Write skill instructions**。
 3. 依照以下內容填寫欄位：
-   - **Skill name**: `Social Media Expert`
+   - **Skill name**: `social-media-expert`
    - **Description**: `將簡單的主題想法，擴寫為吸引人的社群媒體貼文。`
    - **Instructions** (複製並貼上以下內容)：
      ```text
