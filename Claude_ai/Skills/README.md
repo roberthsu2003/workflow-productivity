@@ -101,8 +101,8 @@
 | :---: | :--- | :--- | :--- | :--- |
 | 1 | 🟢 第一階：模仿者 | [社群貼文文案大師](./Examples/Office_Workflow_01_Copywriter.md) | 有簡單的活動想法，需要快速撰寫成社群推廣文案 | 輸入核心概念 → 選擇平台 → 產出吸睛文案、Hashtags 與 Call-to-Action |
 | 2 | 🟢 第一階：模仿者 | [主管交辦事項整理員](./Examples/Office_Workflow_02_Task_Extractor.md) | 會議後收到一堆零散訊息，需要整理成待辦清單 | 貼上對話 → 抽取任務 → 標記負責人、期限、優先級 |
-| 3 | 🔵 第二階：創作者 | [每日工作日誌產生器](./Examples/Office_Workflow_03_Daily_Report.md) | 下班前要回報今天完成事項與明日計畫 | 輸入零散工作紀錄 → 分類 → 產出日報、週報草稿 |
-| 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan.md) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 |
+| 3 | 🔵 第二階：創作者 | [每日工作日誌產生器](./Examples/Office_Workflow_03_Daily_Report/README.md) | 下班前要回報今天完成事項與明日計畫 | 輸入零散工作紀錄 → 分類 → 產出日報、週報草稿 |
+| 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan/README.md) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 |
 | 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover.md) | 員工請假時，需要整理交接事項與通知信 | 輸入請假日期與工作項目 → 產出交接清單、代理通知、主管摘要 |
 | 6 | 🟡 第三階：整合者 | [採購申請預檢員](./Examples/Office_Workflow_06_Purchase_Checker.md) | 行政或 IT 採購前，需要確認品項、預算、理由是否完整 | 貼上採購需求 → 檢查缺漏 → 產出補件問題與申請書草稿 |
 | 7 | 🟡 第三階：整合者 | [客戶回覆與 CRM 更新助手](./Examples/Office_Workflow_07_Customer_CRM.md) | 業務收到客戶信件後，要回覆並更新客戶狀態 | 貼上客戶信 → 判斷意圖 → 產出回信 → 產生 CRM 更新摘要 |
