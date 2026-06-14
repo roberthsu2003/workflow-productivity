@@ -14,8 +14,8 @@
 | Artifacts（互動成品） | ✓ | ✓ |
 | 程式碼執行 / 產出 Word・Excel・PPT・PDF | ✓ | ✓ |
 | Skills（含自訂 SKILL.md） | ✓ | ✓ |
-| Connectors（Slack / Google Workspace / Remote MCP） | ✓（有用量限制） | ✓ |
 | Desktop Extensions（本地 MCP） | ✓ | ✓ |
+| Connectors（Slack / Google Workspace / Remote MCP） | ✓（有用量限制） | ✓ |
 | Extended Thinking | ✓ | ✓ |
 | **Projects**（雲端知識沙盒） | ✓（限 5 個） | ✓ |
 | **Model selector**（Opus 等） | ✗ | ✓ |
@@ -50,14 +50,14 @@
 > 自訂 `SKILL.md` 讓 Claude 變成你的數位分身。Free 帳號即可建立、測試與使用自訂 Skill（需開啟 code execution）。  
 > 內含四階範例：模仿者 → 創作者 → 整合者 → 自動化專家。
 
-### 🟢 5. Connectors（連接器）
+### 🟢 5. Local MCP / Desktop Extensions（本地擴充）
+> **📂 [進入主題筆記：Local_MCP](./Local_MCP/README.md)**  
+> 在 Claude Desktop 透過 `claude_desktop_config.json` 加入本機 MCP 伺服器，讓 Claude 存取本機檔案、資料庫或執行本機指令。Free 可用。
+
+### 🟢 6. Connectors（連接器）
 > **📂 [進入主題筆記：Connectors](./Connectors/README.md)**  
 > 透過 OAuth 連接 Slack、Google Workspace（Gmail、Drive、Calendar）以及任意 Remote MCP。Free 可用但有用量限制。  
 > 進階閱讀：[OAuth 2.0 授權機制深度解析](./Connectors/OAuth.md)
-
-### 🟢 6. Local MCP / Desktop Extensions（本地擴充）
-> **📂 [進入主題筆記：Local_MCP](./Local_MCP/README.md)**  
-> 在 Claude Desktop 透過 `claude_desktop_config.json` 加入本機 MCP 伺服器，讓 Claude 存取本機檔案、資料庫或執行本機指令。Free 可用。
 
 ---
 
@@ -92,7 +92,7 @@
 第 1 週：Settings + Chats（RTCCF 框架）
 第 2 週：Artifacts（做出第一個互動小工具）
 第 3 週：Skills（建立第一個自訂 SKILL.md）
-第 4 週：Connectors + Local MCP（讓 Claude 讀取你的資料）
+第 4 週：Local MCP + Connectors（讓 Claude 讀取你的資料）
 ─────────────── Free 方案到此能完成 ───────────────
 第 5 週：Projects（Free 限 5 個可實作；Pro 無限制）
 第 6 週：Plugins / Cowork / Code 概覽
