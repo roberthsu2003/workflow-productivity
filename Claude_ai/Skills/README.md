@@ -43,7 +43,9 @@
 > > 📖 **官方參考文案**：
 > > - [如何使用 Skills (Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 > > - [如何建立自訂的 Skills (How to create custom Skills)](https://support.claude.com/zh-TW/articles/12512198-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%87%AA%E8%A8%82%E6%8A%80%E8%83%BD)
+
 >> - [skills-claude API Docs](https://platform.claude.com/docs/zh-TW/agents-and-tools/agent-skills/overview)
+
 > > - [官方 Skill 範例庫 (Official Skills Repo)](https://github.com/anthropics/skills) 預設打開`Cloud code execution and file creation`,這些就會自動在雲端掛載
 
 這是一門專為**非程式設計師**設計的職場自動化課程。我們不學寫程式，我們學習如何「訓練」AI 成為您的數位分身。
