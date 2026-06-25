@@ -1,63 +1,79 @@
 # Claude Skills
 
-> **💡 三種擴充功能快速對照**
->
-> | 類型 | 解決什麼 | 比喻 |
-> |------|---------|------|
-> | **Skills（技能）** | 教 Claude 怎麼把某類任務做好（不連外部服務） | 食譜／SOP |
-> | **Connectors（連接器）** | 讓 Claude 能存取資料或操作其他系統 | 對外的插座、橋樑 |
-> | **Plugins（外掛）** | 把多種能力打包成一個可安裝單位 | 整套工具箱 |
->
-> **Skills** 是給 Claude 一套處理特定任務的「工作流程說明書」——一個資料夾內放 `SKILL.md`（操作指引）加上範本、腳本等檔案。當任務符合時，Claude 會自動讀取並照著做。例如產生 Word 文件、做簡報、填報價單。本身**不連外部服務**。  
-> 若需要讀取外部資料請看 [Connectors](../Connectors/README.md)；若要打包整套設定請看 [Plugins](../Plugins/README.md)。
-
-> 🟢 **方案需求**：Free（完全可用，含自訂 SKILL.md）。依官方說明，Free / Pro / Max / Team / Enterprise 皆可建立與使用 Skills。
->
-> > [!IMPORTANT]
-> > **使用 Skills 的關鍵前提：啟用「程式碼執行 (Code execution)」功能**
-> > 
-> > 在 Claude 中使用或開發 Skills 時，**必須**啟用「**Cloud code execution and file creation**」（雲端程式碼執行與檔案建立）功能。若未開啟，Skills 將無法正常運作。
-> > 
-> > ⚙️ **設定路徑**：
-> > 1. 點擊左下角個人頭像前往 `Settings`（設定）
-> > 2. 選擇左側選單的 `Capabilities`（能力）
-> > 3. 將 `Cloud code execution and file creation` 功能切換為**開啟** (On) 狀態
-> > 
-> > 💡 *提示：這是因為 Skills 在執行任務時，需要依賴 Claude 在伺服器端執行程式碼以及建立/編輯文件、試算表、簡報等檔案的能力。*
-> >
-> > <details>
-> > <summary>⚙️ <b>Settings 設定細節與「找不到 Skills 清單」的常見解惑</b>（點此展開）</summary>
-> > <br>
-> > 
-> > * **Skills 區段在頁面更下方**：  
-> >   在 `Capabilities` 設定頁面中，請繼續**往下方捲動**。經過「Allow network egress」與「Domain allowlist」後，才會看到「**Skills**」區段，那裡才會列出您已安裝的 Skills。
-> > 
-> > * **內建文件 Skills 自動生效**：  
-> >   `pptx`、`docx`、`xlsx`、`pdf` 這幾個官方文件 Skills **不會**出現在下方的 Skills 清單中。它們是**直接內建**於 `Cloud code execution and file creation` 功能裡的。只要此開關開啟，這幾項文件處理功能（包含簡報、試算表、Word、PDF 等）就已自動生效，無需也無法手動安裝。
-> > 
-> > * **下方的 Skills 清單會列出**：  
-> >   1. **自訂上傳的 Skills**：例如您上傳的「華梵課程計畫表」、「報價單 (`quotation`)」、「產投課表 (`workforce-training-skill`)」等。
-> >   2. **Anthropic 官方提供的範例 Skills**（若有開放瀏覽與安裝）。
-> > </details>
-> 
-> > 📖 **官方參考文案**：
-> > - [如何使用 Skills (Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
-> > - [如何建立自訂的 Skills (How to create custom Skills)](https://support.claude.com/zh-TW/articles/12512198-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%87%AA%E8%A8%82%E6%8A%80%E8%83%BD)
-
->> - [skills-claude API Docs](https://platform.claude.com/docs/zh-TW/agents-and-tools/agent-skills/overview)
-
-> > - [官方 Skill 範例庫 (Official Skills Repo)](https://github.com/anthropics/skills) 預設打開`Cloud code execution and file creation`,這些就會自動在雲端掛載
-
-這是一門專為**非程式設計師**設計的職場自動化課程。我們不學寫程式，我們學習如何「訓練」AI 成為您的數位分身。
+本教材專為**非程式設計師**設計，旨在學習如何「訓練」AI 成為您的數位分身，實現職場自動化工作流。
 
 ---
 
-## 🔰 內建 Skills 使用與 Google Workspace 實作練習
+## 💡 三種擴充功能快速對照
 
-> 這是專注在 **Google Docs、Google Sheets、Google Slides、Gmail** 四個常用辦公室工具的練習。
-> 透過實作「使用內建的現有 Skill」主題，幫助您快速上手職場自動化流程。
->
-> 👉 [**點此前往 Google Workspace Skills 實作練習（使用內建的現有 Skill）**](./GWorkspace/README.md)
+| 類型 | 解決什麼 | 比喻 | 備註 |
+|:---|:---|:---|:---|
+| **Skills（技能）** | 教 Claude 怎麼把特定任務做好（不連外部服務） | 食譜／SOP | 一個資料夾內含 `SKILL.md` 指引、範本與腳本，符合條件時自動讀取。 |
+| **Connectors（連接器）** | 讓 Claude 能存取外部資料或操作其他系統 | 對外的插座、橋樑 | 讀取外部資料請參考 [Connectors](../Connectors/README.md)。 |
+| **Plugins（外掛）** | 把多種能力打包成一個可安裝單位 | 整套工具箱 | 打包整套設定請參考 [Plugins](../Plugins/README.md)。 |
+
+---
+
+## 🟢 方案需求與關鍵設定
+
+> **適用方案**：Free / Pro / Max / Team / Enterprise 皆可建立與使用自訂 Skills。
+
+> [!IMPORTANT]
+> **使用 Skills 的關鍵前提：啟用「程式碼執行 (Code execution)」功能**
+> 
+> 在 Claude 中使用或開發 Skills 時，**必須**啟用「**Cloud code execution and file creation**」（雲端程式碼執行與檔案建立）功能。若未開啟，Skills 將無法正常運作。
+> 
+> ⚙️ **設定路徑**：
+> 1. 點擊左下角個人頭像前往 `Settings`（設定）
+> 2. 選擇左側選單的 `Capabilities`（能力）
+> 3. 將 `Cloud code execution and file creation` 功能切換為**開啟** (On) 狀態
+> 
+> 💡 *提示：這是因為 Skills 在執行任務時，需要依賴 Claude 在伺服器端執行程式碼以及建立/編輯文件、試算表、簡報等檔案的能力。*
+
+<details>
+<summary>⚙️ <b>Settings 設定細節與「找不到 Skills 清單」的常見解惑</b>（點此展開）</summary>
+<br>
+
+* **Skills 區段在頁面更下方**：  
+  In `Capabilities` 設定頁面中，請繼續**往下方捲動**。經過「Allow network egress」與「Domain allowlist」後，才會看到「**Skills**」區段，那裡才會列出您已安裝的 Skills。
+
+* **內建文件 Skills 自動生效**：  
+  `pptx`、`docx`、`xlsx`、`pdf` 這幾個官方文件 Skills **不會**出現在下方的 Skills 清單中。它們是**直接內建**於 `Cloud code execution and file creation` 功能裡的。只要此開關開啟，這幾項文件處理功能（包含簡報、試算表、Word、PDF 等）就已自動生效，無需也無法手動安裝。
+
+* **下方的 Skills 清單會列出**：  
+  1. **自訂上傳的 Skills**：例如您上傳的「華梵課程計畫表」、「報價單 (`quotation`)」、「產投課表 (`workforce-training-skill`)」等。
+  2. **Anthropic 官方提供的範例 Skills**（若有開放瀏覽與安裝）。
+</details>
+
+---
+
+## 📖 相關資源與官方文件
+
+* **官方參考文件**：
+  * [如何使用 Skills (Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
+  * [如何建立自訂的 Skills (How to create custom Skills)](https://support.claude.com/zh-TW/articles/12512198-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%87%AA%E8%A8%82%E6%8A%80%E8%83%BD)
+* **開發者資源**：
+  * [skills-claude API Docs](https://platform.claude.com/docs/zh-TW/agents-and-tools/agent-skills/overview)
+  * [官方 Skill 範例庫 (Official Skills Repo)](https://github.com/anthropics/skills) *(預設開啟 Cloud code execution and file creation，這些就會自動在雲端掛載)*
+
+---
+
+## 🔰 官方四大類別 Skills 實戰指令包
+
+本節將 Anthropic 官方推出的 17 個 Skills 與實作練習，依據**文件製作、設計、開發、溝通**四大類別劃分。每個類別皆配備專屬的實作指引與直接可複製使用的 RTCCF Prompt 練習：
+
+* **📁 [文件製作類 (Google Workspace) 指令包](./GWorkspace/README.md)**
+  * 涵蓋：`pdf`、`docx`、`xlsx`、`pptx` 及 Google Workspace (Docs, Sheets, Slides, Gmail) 應用。
+  * 實戰：Google Docs 會議紀錄、Google Sheets 任務追蹤、PowerPoint 簡報生成、Gmail 自動信件草擬等。
+* **🎨 [設計與品牌類 (Design & Branding) 指令包](./Design/README.md)**
+  * 涵蓋：`brand-guidelines` (品牌識別)、`canvas-design` (2D 畫布排版)、`theme-factory` (配色工廠)、`algorithmic-art` (程序藝術)。
+  * 實戰：品牌化規格書、社群貼文畫布佈局、Teal Trust 配色方案展示、p5.js 星軌引力互動藝術。
+* **💻 [工程與開發類 (Development & Tech) 指令包](./Development/README.md)**
+  * 涵蓋：`claude-api` (API 最佳實踐)、`mcp-builder` (MCP 伺服器建置)、`frontend-design` (現代 UI 設計)、`web-artifacts-builder` (單頁應用)、`webapp-testing` (Playwright 測試)、`skill-creator` (自訂技能引導)。
+  * 實戰：互動記帳儀表板 React Artifact、Playwright 端對端測試、Notion 待辦清單 MCP 伺服器設計、自訂合約審查技能。
+* **💬 [溝通與內容類 (Communication & Content) 指令包](./Communication/README.md)**
+  * 涵蓋：`doc-coauthoring` (個人風潤飾)、`internal-comms` (高效內部公告)、`slack-gif-creator` (動態貼圖生成)。
+  * 實戰：保留聲音的數位游牧短文修改、TL;DR 企業 ERP 停機公告、Slack Rocket Welcome 動態貼圖。
 
 ---
 
