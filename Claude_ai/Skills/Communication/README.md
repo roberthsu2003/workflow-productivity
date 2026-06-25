@@ -10,7 +10,7 @@
 ## 🛠️ 前置步驟（只需做一次）
 
 1. 開啟 **Claude Desktop** 或 Web 版的 **Settings**
-2. 確認已在 `Capabilities` 開啟 **Cloud code execution and file creation** 
+2. 確認已在 `Capabilities` 開啟 **Code execution and file creation** 
 3. 在對話框輸入 `/` 可預覽目前可用的 Skill 清單，確認有相關溝通 Skill 已啟用。
 
 ---

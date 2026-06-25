@@ -10,8 +10,8 @@
 
 ## 🛠️ 前置步驟（只需做一次）
 
-1. 開啟 **Claude Desktop** → **Settings** → **Skills**
-2. 確認已開啟 **Skills** 與 **程式碼執行（Code Execution）** 兩個開關
+1. 開啟 **Claude Desktop** → **Settings** → **Capabilities**（能力）
+2. 確認已將 **Code execution and file creation**（程式碼執行與檔案建立）切換為**開啟** (On) 狀態（此功能是呼叫 Skills 的關鍵前提）
 3. 前往 **Settings** → **Connectors** → 連接 **Google Drive** 與 **Gmail**（Docs 與 Sheets 不需要單獨授權，只需授權 Google Drive 即可）
 4. 完成後，在對話框輸入 `/` 可預覽目前可用的 Skill 清單
 
@@ -104,10 +104,10 @@
 ## 練習 C1：使用 Anthropic PPTX Skill 製作簡報 (.pptx)
 
 > ⚠️ **注意**：必需先關閉 Canva 的 Connector  
-> 💡 *這也是內建於「Cloud code execution and file creation」功能中的工具。*
+> 💡 *這也是內建於「Code execution and file creation」功能中的工具。*
 
 ### 📖 說明
-輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過內建的 **PPTX Skill**（已內建於 `Cloud code execution and file creation` 功能中）在雲端自動產生實體 PowerPoint 簡報檔案 (.pptx)，並提供下載連結。
+輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過內建的 **PPTX Skill**（已內建於 `Code execution and file creation` 功能中）在雲端自動產生實體 PowerPoint 簡報檔案 (.pptx)，並提供下載連結。
 
 > 🎨 **設計配色指南**：
 > 內建的 PPTX Skill 支援自訂配色主題。請參考 [Anthropic PPTX 官方設計指南](https://github.com/anthropics/skills/tree/main/skills/pptx) 的說明，您可以直接在 Prompt 裡的 `Constraint` 指定下方其中一組主題：
