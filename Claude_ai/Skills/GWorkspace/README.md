@@ -13,7 +13,7 @@
 1. 開啟 **Claude Desktop** → **Settings** → **Capabilities**（能力）
 2. 確認已將 **Code execution and file creation**（程式碼執行與檔案建立）切換為**開啟** (On) 狀態（此功能是呼叫 Skills 的關鍵前提）
 3. 前往 **Settings** → **Connectors** → 連接 **Google Drive** 與 **Gmail**（Docs 與 Sheets 不需要單獨授權，只需授權 Google Drive 即可）
-4. 完成後，在對話框輸入 `/` 可預覽目前可用的 Skill 清單
+4. 完成後即可直接在對話中以 Prompt 觸發 Skill（網頁版介面無斜線 `/` 指令選單，Skills 會在背景自動識別並觸發執行）
 
 ---
 

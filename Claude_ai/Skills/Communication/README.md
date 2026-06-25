@@ -11,7 +11,7 @@
 
 1. 開啟 **Claude Desktop** 或 Web 版的 **Settings**
 2. 確認已在 `Capabilities` 開啟 **Code execution and file creation** 
-3. 在對話框輸入 `/` 可預覽目前可用的 Skill 清單，確認有相關溝通 Skill 已啟用。
+3. 完成後即可直接在對話中以 Prompt 觸發 Skill（網頁版介面無斜線 `/` 指令選單，Skills 會在背景自動識別並觸發執行）。
 
 ---
 
