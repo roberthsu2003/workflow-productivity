@@ -44,17 +44,74 @@
 
 ---
 
-### 💡 實測知識小百科：Claude Skills 的實際運作流程
+### 💡 深入底層：Claude.ai 內建 Skills 的「雙層結構」架構
 
-根據實際測試，即便在 **Free（免費版）** 帳號上，只要開啟了 **Code execution**（代碼執行），Claude 的背景就已經預載了 `docx`、`pdf`、`pptx`、`xlsx`、`frontend-design`、`skill-creator` 等數個核心官方內建技能！
+根據對 Claude 沙盒環境的實測，Claude.ai 在背景掛載的 Skills 其實是由**「自動啟用的核心技能」**與**「磁碟上的範例參考技能」**所組成的雙層磁碟結構（通常位於 `/mnt/skills/` 目錄下）：
 
-當您在對話中要求 Claude 產生簡報或文件時，它的完整運作流程為：
-1. **讀取規範**：Claude 讀取系統內建掛載的 `SKILL.md`（例如 `/mnt/skills/public/pptx/SKILL.md`），獲取該技能的排版限制與最佳做法。
-2. **撰寫與執行代碼**：在雲端沙盒容器內以 Python（搭配 `python-pptx`、`python-docx`、`openpyxl` 等庫）寫並執行程式碼。
+---
+
+#### 1. 📂 `/mnt/skills/public/`（自動啟用的核心 Skills）
+這些技能被列在 Claude 系統提示詞的 `<available_skills>` 區塊中。這代表每次對話開始時，Claude **預設就已經「知道」它們的存在**，只要遇到相關指令，它就會**自動觸發**，不需手動上傳或在對話中特別提醒。
+
+##### 📋 `public/` 自動觸發系統 Skills 對照表（共 9 個）
+| 技能名稱 (Skill) | 類別 | 用途說明 | 運作庫 / 資源 |
+| :--- | :--- | :--- | :--- |
+| **`pptx`** | 文件製作 | 建立或編輯 PowerPoint 簡報（.pptx） | `python-pptx` |
+| **`docx`** | 文件製作 | 建立、編輯、讀取 Word 文件（.docx） | `python-docx` |
+| **`xlsx`** | 文件製作 | 建立或編輯 Excel 試算表（.xlsx） | `openpyxl`、`pandas` |
+| **`pdf`** | 文件製作 | 處理 PDF：讀取、合併、分割、建立等 | `pypdf`、`PyPDF2` |
+| **`frontend-design`** | 工程開發 | 現代前端 UI 設計、無障礙設計與元件生成 | React, Tailwind, Lucide |
+| **`skill-creator`** | 工程開發 | 逐步引導設計、建立或優化自訂技能 | 官方技能模板 |
+| **`file-reading`** | 核心讀取 | 讀取與解析上傳的各類檔案內容 | 系統底層 parser |
+| **`pdf-reading`** | 核心讀取 | 專門讀取與解析 PDF 內容與表格 | pdfminer 等 |
+| **`product-self-knowledge`** | 核心知識 | Anthropic 產品知識與說明文件查詢 | 官方知識庫 |
+
+---
+
+#### 2. 📂 `/mnt/skills/examples/`（範例 Skills，共 24 個）
+這些是存放在沙盒磁碟上的範本檔案（預設並未寫入系統提示詞中，因此 Claude 預設「不知道」它們的存在）。但因為檔案確實存在於磁碟上，**只要您在對話中明確指名、或它主動用工具去檢索**，Claude 就會前往該目錄讀取 `SKILL.md`，並完全遵循該範本的規範來執行任務！
+
+##### 📋 `examples/` 磁碟範例 Skills 清單（部分精選）
+| 技能名稱 (Skill) | 用途說明 | 課堂實戰應用 |
+| :--- | :--- | :--- |
+| **`theme-factory`** | 主題樣式配色生成工具 | 可幫 PPT 或 HTML Artifact 一鍵套用 10 種專業主題樣式。 |
+| **`canvas-design`** | 2D 畫布與圖層排版設計 | 提供海報、資訊圖表等視覺區塊的比例間距定位。 |
+| **`algorithmic-art`** | p5.js 程序與演算法藝術 | 用於生成參數化幾何圖案或網頁互動特效背景。 |
+| **`web-artifacts-builder`** | 單頁 Web 應用（SPA）建置 | 專用於 React + shadcn/ui 等高難度網頁應用的程式碼架構。 |
+| **`mcp-builder`** | MCP 伺服器規格與對接建置 | 自動設計 Model Context Protocol 伺服器程式碼與 JSON Schema。 |
+| **`doc-coauthoring`** | 文件共同撰寫與潤飾 | 協作撰寫長文，重點在於「給予編輯建議而非完全改寫」，保留作者筆調。 |
+| **`internal-comms`** | 企業內部高效溝通公告 | 提供 TL;DR、時間線、責任分配等商務通知格式。 |
+| *… 還有更多* | *包含財務計算、活動規劃、費用申報、表單處理等共 24 個範例模板。* | - |
+
+---
+
+#### 💡 核心觀念對照：自動觸發（Public） vs. 需指名調用（Examples）
+為了方便向學生說明，老師可以使用以下的「員工入職比喻」：
+
+| 比較維度 | 📂 `public/`（自動觸發） | 📂 `examples/`（需明確使用） |
+| :--- | :--- | :--- |
+| **生動比喻** | 公司給你的**正式工作手冊**（一入職就發在桌上） | 放在**公司檔案室裡的歷史參考檔案**（要自己去查或被交代才看） |
+| **Claude 的認知** | 預設就知道（寫在系統提示詞中） | 預設不知道（但可用磁碟讀取工具讀取） |
+| **是否需提醒？** | **不需要**，直接說「幫我做一個簡報」即可觸發 | **需要**，必須在對話中明確說「使用 `theme-factory` 技能」 |
+| **主要功能** | 生成簡報、試算表、Word 等實體檔案 | 主題套用、畫布排版、MCP 伺服器代碼結構等 |
+
+---
+
+#### 📋 如何在對話中調用 `/examples` 技能？（實戰 Prompt 範例）
+如果您想要在對話中調用像是 `theme-factory` 這樣的範例技能，您可以直接用這樣的對話方式：
+
+> **💬 對話範例（直接指定主題）**：
+> *「請幫我製作一份關於『AI 趨勢』的 5 頁簡報，並**使用 theme-factory 範例技能裡的 Midnight Galaxy 主題**來為我設計簡報的配色與字型風格。」*
+> 
+> *註：此時 Claude 就會去讀取 `/mnt/skills/examples/theme-factory/SKILL.md`，並按照裡面的步驟：(1) 顯示 10 種主題的 theme-showcase，(2) 讓您選擇，(3) 讀取對應 HEX 配色並套用到您的 PPT 檔案中。*
+
+---
+
+#### ⚙️ 產生簡報與文件的背景執行流程：
+1. **讀取規範**：Claude 讀取系統內建掛載的 `SKILL.md`（自動或手動指名）。
+2. **撰寫與執行代碼**：在雲端沙盒容器內以 Python（搭配對應的函式庫如 `python-pptx`, `python-docx`, `openpyxl` 等）撰寫並執行程式碼。
 3. **儲存輸出**：將產出的實體檔案存至系統路徑 `/mnt/user-data/outputs/`。
-4. **呈現檔案**：調用內建的 `present_files` 工具，在右側產生下載連結提供給您。
-
-這就是為什麼「沒有手動安裝，卻能直接產出 PPTX 簡報」的底層原因！
+4. **呈現檔案**：調用內建的 `present_files` 工具，在對話右側產生下載連結提供給您。
 
 ---
 
