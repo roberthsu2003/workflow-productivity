@@ -79,6 +79,12 @@ description: 判斷客戶來信意圖，產出回覆草稿與 CRM 更新摘要�
 
 ---
 
+
+### 💡 方式 B：在終端機中部署（適用於 Claude Code / 終端機代理）
+1. 在您的專案或 CLI 系統的 `/mnt/skills/user/` 目錄下建立一個自訂技能資料夾（名稱例如 `customer-crm-assistant`）。
+2. 在該資料夾內建立 `SKILL.md` 檔案。
+3. 複製下方「一鍵複製區 (SKILL.md)」中的所有內容並貼入 `SKILL.md` 存檔即可。
+
 ## 🚀 練習輸入
 貼上一封客戶詢價、抱怨或追進度的信件。
 

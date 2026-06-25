@@ -40,6 +40,13 @@
      ```
 4. 點擊 **Create** 按鈕完成建立。確認 Skills 列表中是否已成功出現「Email Expert」這個新 Skill。
 
+### 💡 方式 C：在終端機中部署（適用於 Claude Code / 終端機代理）
+若您是在終端機（如 Claude Code）環境中使用，可以直接將本範例的整個資料夾（包含根目錄的 `SKILL.md` 檔案與相關子目錄）複製或移動到 `/mnt/skills/user/` 下。例如：
+```bash
+cp -r Level1_Email_Polisher/ /mnt/skills/user/Level1_Email_Polisher
+```
+複製完成後即可在對話中直接使用該自訂技能。
+
 ## 🧪 測試與驗證
 
 確認 Skill 建立成功後，您可以開啟新對話並使用以下範例 Prompt 來測試其效果：

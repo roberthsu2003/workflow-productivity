@@ -26,6 +26,13 @@ Level4_Meeting_Secretary/
 2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 儲存於根目錄；將 [calculate_hours.py](./scripts/calculate_hours.py) 儲存至 `scripts/` 目錄中。
 3. 前往 Claude 的 **Settings** ➔ **Skills** ➔ 點擊 **Add Custom Skill** 上傳此資料夾。
 
+### 💡 方式 C：在終端機中部署（適用於 Claude Code / 終端機代理）
+若您是在終端機（如 Claude Code）環境中使用，可以直接將本範例的整個資料夾（包含根目錄的 `SKILL.md` 檔案與相關子目錄）複製或移動到 `/mnt/skills/user/` 下。例如：
+```bash
+cp -r Level4_Meeting_Secretary/ /mnt/skills/user/Level4_Meeting_Secretary
+```
+複製完成後即可在對話中直接使用該自訂技能。
+
 ## 🧪 測試與驗證
 
 確認 Skill 建立成功後，您可以開啟新對話並使用以下範例 Prompt 來測試其效果：

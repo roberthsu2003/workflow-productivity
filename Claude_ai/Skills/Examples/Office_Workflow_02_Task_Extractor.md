@@ -32,6 +32,12 @@
      ```
 4. 點擊 **Create** 按鈕完成建立。確認 Skills 列表中是否已成功出現「Task Extractor」這個新 Skill。
 
+
+### 💡 方式 B：在終端機中部署（適用於 Claude Code / 終端機代理）
+1. 在您的專案或 CLI 系統的 `/mnt/skills/user/` 目錄下建立一個自訂技能資料夾（名稱例如 `task-extractor`）。
+2. 在該資料夾內建立 `SKILL.md` 檔案。
+3. 複製下方「一鍵複製區 (SKILL.md)」中的所有內容並貼入 `SKILL.md` 存檔即可。
+
 ## 🧪 測試與驗證
 
 確認 Skill 建立成功後，您可以開啟新對話並使用以下範例 Prompt 來測試其效果：
