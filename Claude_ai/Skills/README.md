@@ -17,10 +17,10 @@
 ## 🟢 方案需求與關鍵設定
 
 > **適用方案**：Free / Pro / Max / Team / Enterprise 皆可建立與使用自訂 Skills。
-> 
-> 💡 **找不到或不知如何安裝 Skills？**  
-> 由於網頁/桌面版與 Claude Code 終端機的安裝與啟用方式完全不同，詳細步驟與授課建議請先參閱：  
-> 👉 [**點此前往：Claude Skills 安裝與啟用指南（網頁版上傳 vs. 終端機指令）**](./Setup/README.md)
+
+### 🛠️ [Claude Skills 安裝與啟用指南（網頁版上傳 vs. 終端機指令）](./Setup/README.md)
+
+💡 由於網頁/桌面版與 Claude Code 終端機的安裝與啟用方式完全不同，詳細步驟與授課建議請直接點擊上方標題前往指南。
 
 > [!IMPORTANT]
 > **使用 Skills 的關鍵前提：啟用「程式碼執行 (Code execution)」功能**
