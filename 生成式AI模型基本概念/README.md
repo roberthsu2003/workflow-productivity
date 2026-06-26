@@ -13,6 +13,8 @@
 
 ---
 
+![images](./images/generative-ai-model-basics-infographic-16x9.png)
+
 ### 關鍵理解
 
 **1. 底層能力不變**
