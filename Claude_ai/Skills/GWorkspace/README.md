@@ -19,7 +19,7 @@
 
 ## 練習 A：用現有 Skill 建立 Google Docs 會議紀錄
 
-> 使用artifacts,測試無誤
+> 測試無誤
 
 ### 📖 說明
 輸入會議的零散要點或逐字稿，Claude 會先在 Artifacts 呈現草稿與你討論。確認無誤後，再透過 Google Workspace Skill 自動建立 Google Doc，並將其存放至 Google Drive 的「上課用」資料夾中，回傳可分享的連結。
@@ -62,7 +62,7 @@
 
 ## 練習 B：用現有 Skill 建立 Google Sheets 任務追蹤表
 
-> 使用artifacts,測試無誤
+> 測試無誤
 
 ### 📖 說明
 輸入任務清單，Claude 會先在 Artifacts 呈現試算表結構與草稿。確認無誤後，再透過 Google Workspace Skill 自動建立 Google Sheets，並將其存放至 Google Drive 的「上課用」資料夾中，回傳可分享的連結。
@@ -103,8 +103,7 @@
 
 ## 練習 C1：使用 Anthropic PPTX Skill 製作簡報 (.pptx)
 
-> ⚠️ **注意**：必需先關閉 Canva 的 Connector  
-> 💡 *這也是內建於「Code execution and file creation」功能中的工具。*
+> 測試無誤
 
 ### 📖 說明
 輸入簡報主題與要點，Claude 會先在 Artifacts 呈現簡報大綱與投影片結構。確認大綱無誤後，再透過內建的 **PPTX Skill**（已內建於 `Code execution and file creation` 功能中）在雲端自動產生實體 PowerPoint 簡報檔案 (.pptx)，並提供下載連結。
