@@ -109,10 +109,11 @@ Playwright MCP Server (本機執行)
 ##### 測試方式
 
 重新啟動 Claude Desktop。連線成功後會在介面上看到 `playwright` 這個 MCP Server 已連接。
-直接下指令測試，例如：
-> 「用 Playwright 開啟 https://example.com，把頁面上的標題抓出來」
+直接下指令測試，例如您可以輸入以下經過潤飾的實用 Prompt：
 
-Claude 會呼叫 `browser_navigate`、`browser_snapshot` 這類工具，實際打開一個瀏覽器視窗執行。
+> 「請使用 **Playwright** 開啟**台灣銀行牌告匯率網頁**（https://rate.bot.com.tw），查詢今日**美金 (USD)**、**日圓 (JPY)** 與 **歐元 (EUR)** 對新台幣的『現鈔買入』與『現鈔賣出』匯率，並將結果整理成 Markdown 表格輸出。」
+
+Claude 會自動呼叫 `browser_navigate`、`browser_snapshot` 這類工具，實際在您的電腦上打開一個瀏覽器視窗，前往該網站並自動爬取資料呈現在對話框中。
 
 ##### 實務注意事項
 
