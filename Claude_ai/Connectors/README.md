@@ -42,6 +42,22 @@
 
 ---
 
+## 🔌 Connectors 與 Extensions (擴充功能) 的關係
+
+在 **Claude Desktop (桌面版)** 中，Connectors 與 Extensions 兩者在概念與 UI 上是高度綁定的：
+
+1. **安裝與呈現**：當您在設定的 `Directory -> Connectors` 挑選並安裝某個連接器（例如 `Control Chrome` 或 `Context7`）之後，它會做為一項 **Extension (擴充功能)** 出現在您的 `Settings -> Extensions`（已安裝在您的電腦上）列表中。
+2. **細粒度工具權限控制 (Tool permissions)**：
+   在 `Settings -> Extensions` 中點進具體的擴充功能，您可以針對該連接器所屬的每個 Tool（例如 `Get Current Tab`、`Open URL`）進行獨立權限設定：
+   - **允許 (Allow)**：AI 呼叫時直接執行。
+   - **每次詢問 (Ask)**：AI 呼叫前需跳出視窗徵求您的同意（預設通常為人型小圖示）。
+   - **禁止 (Deny)**：禁用該特定功能。
+3. **擴充功能安裝包 (.MCPB 與 .DXT)**：在 Extensions 頁面下方，支援直接拖曳（Drag and Drop）手動安裝封裝檔案：
+   - **`.MCPB` (Model Context Protocol Bundle)**：這是 MCP 伺服器的**執行程式封裝包**。它將伺服器程式碼、環境相依性與啟動設定直接打包成單一檔案，讓您拖曳即可一鍵安裝，完全免去手動安裝 Node.js/Python 與編輯 JSON 設定檔的繁瑣步驟。
+   - **`.DXT` (Desktop Extension)**：這是擴充功能的**宣告與權限設定檔**。它定義了該擴充功能所需要的工具權限與 UI 配置，拖入後 Claude Desktop 會自動為其建立 Tool permissions 設定面板。
+
+---
+
 ## 快速設定步驟
 
 1.  **進入設定**：登入 [claude.ai](https://claude.ai)，點擊左下角頭像 -> **Settings** -> **Connectors**。

@@ -135,6 +135,9 @@ Claude 會呼叫 `browser_navigate`、`browser_snapshot` 這類工具，實際�
   - **效果**：該伺服器所提供的工具（Tools）已載入至 Claude 中，對話時 Claude 可隨時調用。
 - **View Logs**：當伺服器無法啟動（例如顯示為紅色錯誤或停止）時，點擊此處查看詳細的錯誤日誌，這是除錯最關鍵的第一步。
 - **垃圾桶圖示**：點擊可直接從 `claude_desktop_config.json` 中移除該伺服器的設定。
+- **Extension 代管狀態 (Managed by an extension)**：
+  - 如果伺服器狀態顯示 `"This server is managed by an extension"`（此伺服器由擴充功能管理），代表它是由您在 `Settings -> Extensions` 安裝的 Connector 所託管。
+  - **無法直接編輯 JSON**：這類伺服器不需要、也無法透過手動編輯 `claude_desktop_config.json` 來啟動或以垃圾桶圖示刪除。若要管理（如啟用、停用、卸載、調整單一 Tools 讀寫權限），必須至 `Settings -> Extensions` 頁面進行操作。
 
 ### 2. ⚠️ 啟用過多 MCP 伺服器的負面影響
 
