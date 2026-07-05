@@ -99,15 +99,15 @@
 
 ---
 
-## 經典範例：本週行程與準備清單
+## 📖 經典範例與 Prompt 範本
 
-### 任務背景
-當您連結了 **Google Calendar** 後，可以使用以下 Prompt 讓 Claude 幫您管理時間。
+您可以直接複製以下經過潤飾的實用 Prompt 來與 Claude 進行互動：
 
-### RTCCF Prompt 範本
-> **提示**：複製後請修改 `{ }` 內的內容。
+### 範例一：Google Calendar (本週行程與準備建議)
+當您連結了 **Google Calendar** 後，可以使用此 Prompt 整理行程：
 
 ```markdown
+"""
 ## Role
 你是一位資深的行政效率專家。
 
@@ -125,6 +125,48 @@
 
 ## Format
 - 使用 Markdown 表格呈現。
+"""
+```
+
+### 範例二：GitHub (PR 審查與倉庫管理)
+當您在 Directory 連結了 **GitHub Integration** 後，可以使用此 Prompt 協助專案管理：
+
+```markdown
+"""
+## Role
+你是一位資深的軟體工程專案經理。
+
+## Task
+請使用 GitHub 連接器讀取我已連結的倉庫 `{請填：擁有者/倉庫名稱，例如 user/repo}`：
+1. 幫我列出最近 5 個處於 Open 狀態的 Pull Request (PR)，並整理出它們的『標題』、『創建者』與『更改的核心檔案』。
+2. 針對每一個 PR，請讀取其內文與變更差異 (Diff)，為我生成一份不超過 100 字的 PR 變更摘要。
+
+## Format
+- 將這些資訊整理成 Markdown 表格輸出。
+"""
+```
+
+### 範例三：Control Chrome (瀏覽器分頁掃描與重點整理)
+當您啟用了內建的 **Control Chrome** 擴充功能後，可以使用此 Prompt 操控瀏覽器：
+
+```markdown
+"""
+## Role
+你是一位高效率的資料分析助理。
+
+## Task
+請使用 Control Chrome 工具列出我目前開啟的所有 Chrome 瀏覽器分頁：
+1. 找出所有標題與『AI』或『MCP』相關的分頁。
+2. 依序切換並讀取這些網頁的內容，並幫我提取出每個分頁最核心的 3 個重點。
+
+## Format
+- 整理成一份 Markdown 重點清單，格式為：
+  - **網頁標題**：{分頁標題} (URL: {分頁網址})
+  - **核心重點**：
+    - {重點一}
+    - {重點二}
+    - {重點三}
+"""
 ```
 
 ---
