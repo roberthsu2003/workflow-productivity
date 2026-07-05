@@ -67,6 +67,38 @@
 
 ---
 
+## 🖥️ Connectors 管理面板與狀態說明
+
+當您進入 Claude Desktop 的 `Settings -> Connectors` 設定畫面時，會看到以下管理面板。此面板主要分為三個標籤頁，用於監控與配置不同的連接器狀態：
+
+### 1. 三大頁籤說明
+
+| 頁籤名稱 | 說明 | 預期截圖對照 |
+| :--- | :--- | :--- |
+| **All (全部)** | 顯示系統支援的所有連接器清單，不論是否已連接。 | `![All 頁籤](./images/connectors_all.png)` |
+| **Connected (已連接)** | 僅顯示目前已成功授權且運作正常的連接器，供您快速檢查。 | `![Connected 頁籤](./images/connectors_connected.png)` |
+| **Not connected (未連接)** | 顯示尚未連線、或當前連線有問題（例如 `Connection issue`）的項目。 | `![Not connected 頁籤](./images/connectors_not_connected.png)` |
+
+---
+
+### 2. 關鍵欄位解讀
+
+在管理面板中，每一個連接器都包含兩個主要屬性：
+
+#### 💡 類型 (Type)
+- **Web**：代表**雲端型連接器**。這類服務（例如 Google Drive、Gmail、Canva、n8n）執行在遠端伺服器上，需要透過點擊 `Connect` 按鈕並利用 OAuth 2.0 通行證進行雲端授權。
+- **Desktop**：代表**本機型連接器 (Local MCP)**。
+  - 標示為 **`Included`**（如 `Claude in Chrome`）：表示為 Claude 桌面版內建的本地端控制工具。
+  - 標示為 **`Local dev`**（如 `playwright`）：表示您透過修改 `claude_desktop_config.json` 設定檔，在本機開發並手動掛載的本地 MCP 伺服器。
+
+#### 💡 狀態 (Status)
+- **勾號 `✓`**：連接器運作正常，Claude 已載入其提供的 Tools。
+- **`Connect` 按鈕**：代表此連接器目前為閒置/未授權狀態，點擊後會引導您登入該服務授權。
+- **破折號 `—`**：通常用於本地端（Desktop）項目，代表該本地擴充尚未在 `Extensions` 頁面中被啟用。
+- **⚠️ Connection issue**：代表連線異常。這通常發生在遠端 OAuth Token 到期需要重新授權，或是本地服務（如 n8n 本地端）未開啟而無法通訊時。此時可點擊該項目並點選重連或檢視 Logs。
+
+---
+
 ## 經典範例：本週行程與準備清單
 
 ### 任務背景
