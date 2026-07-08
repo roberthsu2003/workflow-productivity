@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agent 工作流程自動化與 Claude 核心操作技巧｜工研院產業學院</title>
+  <meta name="description" content="工研院產業學院 Claude AI 核心課程,共12小時、4堂課的工作流程自動化訓練。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0D1B2A;
+      --ink-soft: #16283D;
+      --ink-soft-2: #1C324A;
+      --line: #24405A;
+      --paper: #ECE8DE;
+      --muted: #93A8BC;
+      --teal: #5FD3C4;
+      --amber: #E8A63D;
+      --topbar-h: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 64px 64px;
+      background-position: center top;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 0%, rgba(13, 27, 42, 0) 0%, var(--ink) 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(20px, 4vw, 56px);
+      background: rgba(13, 27, 42, 0.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+    }
+
+    .topbar-brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: .01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .topbar-brand span {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .topbar-meta {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+
+    /* ---------- Progress rail (signature element) ---------- */
+    .rail {
+      position: fixed;
+      left: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+      z-index: 90;
+    }
+
+    .rail::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--line);
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .rail-fill {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: calc(var(--progress, 0) * 100%);
+      transform: translateX(-50%);
+      background: var(--fill-color, var(--teal));
+      transition: height .5s ease, background .5s ease;
+      z-index: 0;
+    }
+
+    .rail-node {
+      position: relative;
+      z-index: 1;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--ink-soft);
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+    }
+
+    .rail-node:hover {
+      transform: scale(1.08);
+    }
+
+    .rail-node:focus-visible {
+      outline: 2px solid var(--paper);
+      outline-offset: 3px;
+    }
+
+    .rail-node[data-accent="teal"].active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: var(--ink);
+    }
+
+    .rail-node[data-accent="amber"].active {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--ink);
+    }
+
+    @media (max-width:720px) {
+      .rail {
+        flex-direction: row;
+        left: 50%;
+        top: auto;
+        bottom: 18px;
+        transform: translateX(-50%);
+        gap: 22px;
+      }
+
+      .rail::before {
+        left: 0;
+        right: 0;
+        top: 50%;
+        bottom: auto;
+        width: auto;
+        height: 2px;
+        transform: translateY(-50%);
+      }
+
+      .rail-fill {
+        left: 0;
+        top: 50%;
+        width: calc(var(--progress, 0) * 100%);
+        height: 2px;
+        transform: translateY(-50%);
+        transition: width .5s ease, background .5s ease;
+      }
+
+      .rail-node {
+        width: 30px;
+        height: 30px;
+        font-size: 0.68rem;
+      }
+    }
+
+    /* ---------- Slides ---------- */
+    main {
+      position: relative;
+      z-index: 1;
+      scroll-snap-type: y mandatory;
+    }
+
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--topbar-h) + 40px) clamp(24px, 8vw, 96px) 64px;
+      scroll-snap-align: start;
+      scroll-margin-top: var(--topbar-h);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .slide:last-of-type {
+      border-bottom: none;
+    }
+
+    .slide-grid {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(32px, 5vw, 80px);
+      align-items: center;
+    }
+
+    @media (max-width:900px) {
+      .slide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .slide-content .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .slide.in-view .slide-content .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-content .reveal:nth-child(1) {
+      transition-delay: .02s;
+    }
+
+    .slide-content .reveal:nth-child(2) {
+      transition-delay: .10s;
+    }
+
+    .slide-content .reveal:nth-child(3) {
+      transition-delay: .18s;
+    }
+
+    .slide-content .reveal:nth-child(4) {
+      transition-delay: .26s;
+    }
+
+    .slide-content .reveal:nth-child(5) {
+      transition-delay: .34s;
+    }
+
+    .slide-visual {
+      opacity: 0;
+      transform: translateY(16px) scale(.98);
+      transition: opacity .7s ease .3s, transform .7s ease .3s;
+    }
+
+    .slide.in-view .slide-visual {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.82rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .slide[data-accent="teal"] .eyebrow {
+      color: var(--teal);
+    }
+
+    .slide[data-accent="amber"] .eyebrow {
+      color: var(--amber);
+    }
+
+    .slide-title {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: clamp(1.9rem, 3.6vw, 3.1rem);
+      line-height: 1.28;
+      margin: 0 0 20px;
+      color: var(--paper);
+    }
+
+    .slide-promise {
+      font-size: clamp(1.05rem, 1.2vw + 0.7rem, 1.3rem);
+      color: var(--muted);
+      margin: 0 0 28px;
+      padding-left: 16px;
+      border-left: 2px solid var(--accent);
+      line-height: 1.6;
+    }
+
+    .slide-points {
+      margin-bottom: 32px;
+    }
+
+    .slide-points li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 14px;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: var(--paper);
+    }
+
+    .slide-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hour-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hour-tag svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .hour-tag svg circle {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 1.6;
+    }
+
+    .hour-tag svg line {
+      stroke: var(--accent);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+    }
+
+    .slide-visual {
+      background: var(--ink-soft);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: clamp(20px, 3vw, 36px);
+    }
+
+    .diagram-caption {
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: .04em;
+    }
+
+    .diagram-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .slide[data-accent="teal"] .diagram-svg {
+      --accent-color: var(--teal);
+    }
+
+    .slide[data-accent="amber"] .diagram-svg {
+      --accent-color: var(--amber);
+    }
+
+    .d-node {
+      fill: var(--ink-soft-2);
+      stroke: var(--muted);
+      stroke-width: 2;
+    }
+
+    .d-node-accent {
+      stroke: var(--accent-color);
+      stroke-width: 2.6;
+    }
+
+    .d-doc {
+      fill: var(--ink-soft-2);
+      stroke: var(--muted);
+      stroke-width: 2;
+    }
+
+    .d-card {
+      fill: var(--ink-soft-2);
+      stroke: var(--accent-color);
+      stroke-width: 2;
+    }
+
+    .d-bar {
+      fill: var(--ink-soft-2);
+      stroke: var(--muted);
+      stroke-width: 2;
+    }
+
+    .d-line {
+      stroke: var(--muted);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .d-dashed {
+      stroke-dasharray: 6 7;
+    }
+
+    .d-arrow {
+      fill: var(--accent-color);
+    }
+
+    .d-highlight {
+      stroke: var(--accent-color);
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    .d-label {
+      fill: var(--paper);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .slide-content .reveal,
+      .slide-visual {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-brand">工研院產業學院 <span>× Claude AI 核心課程</span></div>
+    <div class="topbar-meta">12 小時 ‧ 共 4 堂</div>
+  </header>
+
+  <nav class="rail" aria-label="課程進度導覽">
+    <div class="rail-fill" id="railFill"></div>
+    <button class="rail-node" data-target="s1" data-accent="teal" aria-label="跳至第一堂"><span>01</span></button>
+    <button class="rail-node" data-target="s2" data-accent="amber" aria-label="跳至第二堂"><span>02</span></button>
+    <button class="rail-node" data-target="s3" data-accent="teal" aria-label="跳至第三堂"><span>03</span></button>
+    <button class="rail-node" data-target="s4" data-accent="amber" aria-label="跳至第四堂"><span>04</span></button>
+  </nav>
+
+  <main>
+
+    <!-- Session 1 -->
+    <section class="slide" id="s1" data-accent="teal">
+      <div class="slide-grid">
+        <div class="slide-content">
+          <div class="eyebrow reveal">第一堂 ‧ 01</div>
+          <h2 class="slide-title reveal">AI Agent 工作流程自動化與<br>Claude 核心操作技巧</h2>
+          <p class="slide-promise reveal">從一段指令,到一套會自動運作的工作方式。</p>
+          <ul class="slide-points reveal">
+            <li>掌握 Claude 核心操作技巧與介面邏輯</li>
+            <li>學習 Prompt 設計與工作流程自動化的基本概念</li>
+            <li>認識 AI Agent 如何嵌入日常工作流程</li>
+            <li>透過實際應用案例,練習用 Claude 協助資料整理、文件產出與工作效率提升</li>
+          </ul>
+          <div class="hour-tag reveal">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <line x1="12" y1="12" x2="12" y2="7" />
+              <line x1="12" y1="12" x2="16" y2="14" />
+            </svg>
+            3 小時
+          </div>
+        </div>
+        <div class="slide-visual">
+          <svg class="diagram-svg" viewBox="0 0 360 200">
+            <line x1="84" y1="100" x2="146" y2="100" class="d-line" />
+            <polygon points="146,100 135,94 135,106" class="d-arrow" />
+            <line x1="214" y1="100" x2="276" y2="100" class="d-line" />
+            <polygon points="276,100 265,94 265,106" class="d-arrow" />
+            <circle cx="50" cy="100" r="32" class="d-node" />
+            <circle cx="180" cy="100" r="32" class="d-node d-node-accent" />
+            <circle cx="310" cy="100" r="32" class="d-node" />
+            <text x="50" y="150" class="d-label">指令</text>
+            <text x="180" y="150" class="d-label">Claude</text>
+            <text x="310" y="150" class="d-label">自動化產出</text>
+          </svg>
+          <div class="diagram-caption">指令輸入 → Claude 處理 → 自動化產出</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session 2 -->
+    <section class="slide" id="s2" data-accent="amber">
+      <div class="slide-grid">
+        <div class="slide-content">
+          <div class="eyebrow reveal">第二堂 ‧ 02</div>
+          <h2 class="slide-title reveal">研究資料整理與重點萃取</h2>
+          <p class="slide-promise reveal">把一疊資料,讀成一份看得懂的重點。</p>
+          <ul class="slide-points reveal">
+            <li>彙整公司資料、簡報文件、產業報告與公開資訊</li>
+            <li>產出具體的重點摘要與關鍵洞察</li>
+            <li>標註風險提醒與待確認問題,而非只是彙整資料</li>
+          </ul>
+          <div class="hour-tag reveal">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <line x1="12" y1="12" x2="12" y2="7" />
+              <line x1="12" y1="12" x2="16" y2="14" />
+            </svg>
+            3 小時
+          </div>
+        </div>
+        <div class="slide-visual">
+          <svg class="diagram-svg" viewBox="0 0 360 220">
+            <rect x="26" y="34" width="68" height="88" rx="4" class="d-doc" />
+            <rect x="40" y="48" width="68" height="88" rx="4" class="d-doc" />
+            <rect x="54" y="62" width="68" height="88" rx="4" class="d-doc d-node-accent" />
+            <line x1="150" y1="112" x2="212" y2="112" class="d-line" />
+            <polygon points="212,112 201,106 201,118" class="d-arrow" />
+            <rect x="222" y="56" width="112" height="112" rx="6" class="d-card" />
+            <line x1="238" y1="88" x2="316" y2="88" class="d-highlight" />
+            <line x1="238" y1="112" x2="298" y2="112" class="d-highlight" />
+            <line x1="238" y1="136" x2="308" y2="136" class="d-highlight" />
+          </svg>
+          <div class="diagram-caption">多份文件 → 彙整分析 → 重點摘要卡</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session 3 -->
+    <section class="slide" id="s3" data-accent="teal">
+      <div class="slide-grid">
+        <div class="slide-content">
+          <div class="eyebrow reveal">第三堂 ‧ 03</div>
+          <h2 class="slide-title reveal">專案知識庫建立與<br>評估模板應用</h2>
+          <p class="slide-promise reveal">把一次做好的方法,變成下次可以直接用的模板。</p>
+          <ul class="slide-points reveal">
+            <li>使用 Claude Projects 建立專案專屬知識庫</li>
+            <li>匯入常用分析架構、評估表單與文件格式</li>
+            <li>設定自訂指令,把作業準則變成可重複使用的作法</li>
+          </ul>
+          <div class="hour-tag reveal">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <line x1="12" y1="12" x2="12" y2="7" />
+              <line x1="12" y1="12" x2="16" y2="14" />
+            </svg>
+            3 小時
+          </div>
+        </div>
+        <div class="slide-visual">
+          <svg class="diagram-svg" viewBox="0 0 360 220">
+            <path d="M28,70 h48 l14,16 h78 v78 h-140 z" class="d-doc d-node-accent" />
+            <line x1="178" y1="110" x2="212" y2="110" class="d-line" />
+            <polygon points="212,110 201,104 201,116" class="d-arrow" />
+            <rect x="222" y="52" width="58" height="42" rx="4" class="d-card" />
+            <rect x="222" y="104" width="58" height="42" rx="4" class="d-card" />
+            <rect x="222" y="156" width="58" height="42" rx="4" class="d-card" />
+            <path d="M300,58 a44,44 0 1 1 -10,96" class="d-line d-dashed" fill="none" />
+            <polygon points="286,150 292,161 301,148" class="d-arrow" />
+          </svg>
+          <div class="diagram-caption">知識庫 → 分析架構 / 評估表單 → 重複使用</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session 4 -->
+    <section class="slide" id="s4" data-accent="amber">
+      <div class="slide-grid">
+        <div class="slide-content">
+          <div class="eyebrow reveal">第四堂 ‧ 04</div>
+          <h2 class="slide-title reveal">資料分析與報表摘要自動化</h2>
+          <p class="slide-promise reveal">把一份 Excel,變成主管看得懂的一段話。</p>
+          <ul class="slide-points reveal">
+            <li>上傳 Excel 業績、專案或營運資料</li>
+            <li>進行趨勢判讀與異常提醒,產出重點摘要</li>
+            <li>轉換成可閱讀的說明文字,快速產出主管報告、月報或專案營運分析</li>
+          </ul>
+          <div class="hour-tag reveal">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <line x1="12" y1="12" x2="12" y2="7" />
+              <line x1="12" y1="12" x2="16" y2="14" />
+            </svg>
+            3 小時
+          </div>
+        </div>
+        <div class="slide-visual">
+          <svg class="diagram-svg" viewBox="0 0 360 220">
+            <rect x="36" y="120" width="20" height="62" class="d-bar" />
+            <rect x="66" y="86" width="20" height="96" class="d-bar d-node-accent" />
+            <rect x="96" y="140" width="20" height="42" class="d-bar" />
+            <rect x="126" y="66" width="20" height="116" class="d-bar" />
+            <line x1="168" y1="128" x2="212" y2="128" class="d-line" />
+            <polygon points="212,128 201,122 201,134" class="d-arrow" />
+            <line x1="228" y1="90" x2="326" y2="90" class="d-highlight" />
+            <line x1="228" y1="116" x2="302" y2="116" class="d-highlight" />
+            <line x1="228" y1="142" x2="314" y2="142" class="d-highlight" />
+            <line x1="228" y1="168" x2="282" y2="168" class="d-highlight" />
+          </svg>
+          <div class="diagram-caption">數據圖表 → 趨勢判讀 → 說明文字報告</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+      var railNodes = Array.prototype.slice.call(document.querySelectorAll('.rail-node'));
+      var railFill = document.getElementById('railFill');
+      var teal = getComputedStyle(document.documentElement).getPropertyValue('--teal').trim();
+      var amber = getComputedStyle(document.documentElement).getPropertyValue('--amber').trim();
+      var currentIndex = 0;
+
+      function setActive(index) {
+        currentIndex = index;
+        slides.forEach(function (s, i) { s.classList.toggle('in-view', i === index); });
+        railNodes.forEach(function (n, i) { n.classList.toggle('active', i === index); });
+        var progress = slides.length > 1 ? index / (slides.length - 1) : 0;
+        railFill.style.setProperty('--progress', progress);
+        railFill.style.background = slides[index].dataset.accent === 'amber' ? amber : teal;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            var idx = slides.indexOf(entry.target);
+            if (idx !== -1) setActive(idx);
+          }
+        });
+      }, { threshold: 0.5 });
+      slides.forEach(function (s) { observer.observe(s); });
+
+      railNodes.forEach(function (node, i) {
+        node.addEventListener('click', function () {
+          slides[i].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        });
+      });
+
+      window.addEventListener('keydown', function (e) {
+        if (['ArrowDown', 'PageDown'].indexOf(e.key) !== -1) {
+          e.preventDefault();
+          var next = Math.min(currentIndex + 1, slides.length - 1);
+          slides[next].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        } else if (['ArrowUp', 'PageUp'].indexOf(e.key) !== -1) {
+          e.preventDefault();
+          var prev = Math.max(currentIndex - 1, 0);
+          slides[prev].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        }
+      });
+
+      setActive(0);
+    })();
+  </script>
+
+</body>
+
+</html>
