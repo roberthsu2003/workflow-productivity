@@ -54,8 +54,8 @@
 ## 📖 相關資源與官方文件
 
 * **官方參考文件**：
-  * [A complete guide to building skills for Claude](https://claude.com/blog/complete-guide-to-building-skills-for-claude)
-  
+  * [A complete guide to building skills for Claude-官方pdf文件](./The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
+
   * [如何使用 Skills (Use Skills in Claude)](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
   * [如何建立自訂的 Skills (How to create custom Skills)](https://support.claude.com/zh-TW/articles/12512198-%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%87%AA%E8%A8%82%E6%8A%80%E8%83%BD)
 * **開發者資源**：
