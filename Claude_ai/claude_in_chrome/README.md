@@ -139,13 +139,13 @@ Claude Desktop 提供的畫面，其實是一個「遠端管理面板」，讓�
 ### 範例二 (動態搜尋與商品比價)
 
 ```text
-請使用 Playwright 開啟 momo 購物網（https://www.momoshop.com.tw），在搜尋框中輸入『毛寶洗碗精』並進行搜尋。請幫我收集搜尋結果前 5 筆商品的『商品名稱』與『促銷價格』，並將結果整理成 Markdown 表格輸出。
+請使用 claude in chrome  開啟 momo 購物網（https://www.momoshop.com.tw），在搜尋框中輸入『毛寶洗碗精』並進行搜尋。請幫我收集搜尋結果前 5 筆商品的『商品名稱』與『促銷價格』，並將結果整理成 Markdown 表格輸出。
 ```
 
 ### 範例三 (競品市場調查與對比分析)
 
 ```text
-請使用 Playwright 開啟 momo 購物網（https://www.momoshop.com.tw）：
+請使用 claude in chrome  開啟 momo 購物網（https://www.momoshop.com.tw）：
 1. 在搜尋框中輸入『毛寶 小蘇打洗碗精 無香精』並進行搜尋，先幫我記錄我方產品的促銷價格與規格。
 2. 接著，重新搜尋『小蘇打洗碗精』，尋找其他競爭品牌（例如橘子工坊、茶籽堂、淨毒五郎等）的類似產品。
 3. 幫我收集前 5 筆競品商品的『品牌名稱』、『商品名稱』、『容量』與『促銷價格』。
