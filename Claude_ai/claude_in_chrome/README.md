@@ -1,7 +1,6 @@
 # Claude in Chrome 設定與使用教學
 
-> 本文說明 Claude in Chrome 擴充功能是什麼、如何與 Claude Desktop 搭配運作，
-> 以及與 Playwright MCP 的差異，適合初次接觸瀏覽器自動化的同學閱讀。
+> 本文說明 Claude in Chrome 擴充功能是什麼、如何與 Claude Desktop 搭配運作
 
 ---
 
