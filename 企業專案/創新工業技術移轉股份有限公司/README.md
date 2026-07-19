@@ -46,9 +46,7 @@ ITIC 投資研究、營運管理及業務相關人員（具備基礎電腦操作
 - [**討論的方式的內容生成Artifact(實作)**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗（Canvas）生成長文案、數據圖表與互動原型，實現即時渲染、版本控制與介面隔離
 
 - [**連結的技巧**](../../Claude_ai/Connectors/README.md)
-- [**使用現有的Skill-Google Works(實作)**]
-
-：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），無須手動複製貼上即可讓 Claude 直接存取與整合雲端資料
+- [**使用現有的Skill-Google Works(實作)**]:設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），無須手動複製貼上即可讓 Claude 直接存取與整合雲端資料
 
 
 ### 第二章：自動化新聞情報蒐集、Excel 數據分析與重點摘要 Skill
