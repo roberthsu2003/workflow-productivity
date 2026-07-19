@@ -140,7 +140,19 @@ Claude 會自動呼叫 `browser_navigate`、`browser_snapshot` 這類工具，�
 ##### 實務注意事項
 
 * **官方套件**：官方套件是 `@playwright/mcp`（Microsoft 出的）。市面上還有一個 `@executeautomation/playwright-mcp-server`，是另一個社群專案、API 不太一樣，設定時請注意別搞混。
-* **預設為有頭模式 (Headed Mode)**：預設是「看得見」的瀏覽器，非常適合教學展示，您可以親眼看到自動化過程；若需要跑批次或背景執行時，才需特別加上 `-headless` 參數。
+* **預設為有頭模式 (Headed Mode)**：預設會彈出「看得見」的瀏覽器視窗，非常適合教學展示與視覺化確認；若需要背景悄悄執行（不彈出視窗），可以在 `claude_desktop_config.json` 的 `args` 參數陣列中加上 `"--headless"`。
+
+  **JSON 設定範例（無頭/背景模式）：**
+  ```json
+  {
+    "mcpServers": {
+      "playwright": {
+        "command": "npx",
+        "args": ["@playwright/mcp@latest", "--headless"]
+      }
+    }
+  }
+  ```
 * **登入型網站**：因為瀏覽器是可見的，遇到需要登入的頁面，可以讓 Claude 開到登入頁，您自己手動完成登入，之後 Claude 接手繼續操作，Cookie 會在該次 session 內保留。
 * **低門檻操作**：這是 Claude 自己在寫/呼叫指令，不是您自己寫 Playwright 程式碼，對不熟程式的老師或學生來說門檻很低，非常適合當作教學示範。
 * **正式爬蟲建議**：如果要做「排程、大量爬取」的正式爬蟲（例如每天固定抓某個資料），Playwright MCP 這種互動式操控比較適合「示範、探索、驗證邏輯」，真正大量執行時，仍建議請 Claude 幫您產生一支獨立的 Python/Node Playwright 腳本，排程執行會更穩定且節省資源。
