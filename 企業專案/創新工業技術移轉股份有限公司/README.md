@@ -53,6 +53,8 @@ ITIC 投資研究、營運管理及業務相關人員（具備基礎電腦操作
 
 ### 第二章：自動化新聞情報蒐集、Excel 數據分析與重點摘要 Skill
 
+- [**claude in chrome**](../../Claude_ai/claude_in_chrome/README.md)：Anthropic 官方 Chrome 擴充功能，可直接在使用者已登入的 Chrome 瀏覽器中代為操作頁面、點擊與擷取資料，適合需沿用既有登入狀態（如 Gmail、Google 日曆、內部系統）的網頁自動化
+
 - [**網路爬蟲技巧-playwright**](../../Claude_ai/Local_MCP/README.md)：相較於內建 Web Fetch 僅能讀取簡單靜態網頁且受限於雲端白名單，Playwright 可在本機操控真實瀏覽器，支援動態 JS 渲染、點擊與輸入等頁面互動，並能存取公司內網與登入型網站
 
 **課程內容綱要：**
