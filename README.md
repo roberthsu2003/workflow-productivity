@@ -40,7 +40,7 @@
 - [討論方式的內容生成](./討論方式的內容生成/README.md)  
   善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出docx,xlsx,pptx,pdf,markdown,網頁等格式 
 
-## 中階AI應用
+## 常見的AI應用
 
 - [個人知識庫](./RAG的應用/README.md)  
   檢索增強生成（RAG）與知識庫實作；範例素材見 [知識庫原始檔](./RAG的應用/知識庫原始檔/README.md)
@@ -63,12 +63,12 @@
 - [影音生成應用程式](./影音生成/README.md)  
   影音生成的生成
 
+- 資料搜尋的應用
+
+> claude ai
 
 
-## 進階AI應用-需配合MCP,SKILL,TOOLS,ACTIONS等
-
-  - ChatGPT的應用程式(Connection,Action,Tool)
-  - Claude(MCP,SKILL,Action)
+---
 
 ## [Claude.AI](./Claude_ai/README.md)
   AI應用程式
