@@ -16,15 +16,10 @@
 ### 1. Node.js (與 npx)
 - **為什麼需要**：許多 MCP 伺服器是用 JavaScript/TypeScript 寫成的。`npx` 是 Node.js 內建的工具，它能讓 Claude Desktop 直接從網路下載並執行 Node.js 開發的 MCP 伺服器（例如 Playwright MCP），免去手動管理本地套件的麻煩。
 - **如何安裝**：
-  - **macOS**：推薦使用 Homebrew 安裝。開啟終端機並輸入：
-    ```bash
-    brew install node
-    ```
-  - **Windows**：推薦使用 Winget 安裝。開啟 PowerShell 並輸入：
-    ```powershell
-    winget install OpenJS.NodeJS
-    ```
-  - **官方安裝包**：您也可以前往 [Node.js 官方網站](https://nodejs.org/) 下載並安裝 LTS 版本。
+  - **推薦方式（一般使用者）**：前往 [Node.js 官方網站](https://nodejs.org/) 下載並安裝 **LTS (長期支援版本)** 官方安裝包（`.pkg` 或 `.msi`），依預設提示完成安裝即可。
+  - **命令行方式（進階使用者）**：
+    - **macOS (Homebrew)**：`brew install node`
+    - **Windows (Winget)**：`winget install OpenJS.NodeJS`
 
 ### 2. uv (與 uvx)
 - **為什麼需要**：許多 MCP 伺服器是用 Python 寫成的。`uv` 是極速的 Python 套件與環境管理工具，而 `uvx` 能讓 Claude Desktop 自動在臨時的虛擬環境中下載並運行 Python 的 MCP 伺服器（例如 Time MCP），不需要您手動建立或管理繁瑣的 Python 環境。
