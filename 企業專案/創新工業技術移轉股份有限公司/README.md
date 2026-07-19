@@ -37,12 +37,19 @@ ITIC 投資研究、營運管理及業務相關人員（具備基礎電腦操作
 ### 第一章：Claude 核心操作、Projects 知識庫與關注清單 Skill
 
 **課程內容綱要：**
-- [**生成式AI模型基本概念**](../../生成式AI模型基本概念)
-- **Claude 核心操作技巧**：Prompt 設計原則、工作流程自動化觀念與實際應用案例示範
-- **Claude Projects 專案知識庫建置**：匯入常用分析架構、評估表單、文件格式與作業準則，建立可重複使用的工作助理
-- **整理公司資料與公開資訊**：整理公司資料、簡報文件、產業報告與公開資訊；產出重點摘要、關鍵洞察、風險提醒與待確認問題
-- **產業/公司關注清單管理 Skill**：設計結構化關注清單（公司名稱、產業別、關鍵字別名），實作可透過自然語言新增/修改/刪除清單項目的 Skill
-- **實作練習**：建立 ITIC 投資組合公司清單雛形與 Project 知識庫
+- [**生成式AI模型基本概念**](../../生成式AI模型基本概念/README.md)：解析 LLM 底層模型核心能力（文字理解與生成）與上層應用程式（檔案讀取、搜尋、外掛 API 串接）的演進與職場應用觀念
+
+- [**Prompt的技巧(實作)**](../../prompt/README.md)：掌握自然語言/YAML/Markdown 內容格式、System Prompt 角色規則設定與進階提示詞工程設計技巧
+
+- [**claude官方skill介紹(連結介紹)**](https://github.com/anthropics/skills)
+
+- [**討論的方式的內容生成Artifact(實作)**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗（Canvas）生成長文案、數據圖表與互動原型，實現即時渲染、版本控制與介面隔離
+
+- [**連結的技巧**](../../Claude_ai/Connectors/README.md)
+- [**使用現有的Skill-Google Works(實作)**]
+
+：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），無須手動複製貼上即可讓 Claude 直接存取與整合雲端資料
+
 
 ### 第二章：自動化新聞情報蒐集、Excel 數據分析與重點摘要 Skill
 
