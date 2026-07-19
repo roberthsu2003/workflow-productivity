@@ -104,8 +104,9 @@ Playwright MCP Server (本機執行)
   }
 }
 ```
+---
 
-##### 測試方式
+### 測試方式
 
 重新啟動 Claude Desktop。連線成功後會在介面上看到 `playwright` 這個 MCP Server 已連接。
 直接下指令測試，例如您可以輸入以下經過潤飾的實用 Prompt：
@@ -162,6 +163,8 @@ Playwright MCP Server (本機執行)
 </details>
 
 Claude 會自動呼叫 `browser_navigate`、`browser_snapshot` 這類工具，實際在您的電腦上打開一個瀏覽器視窗，前往該網站並自動爬取資料呈現在對話框中。
+
+---
 
 ##### 實務注意事項
 
