@@ -47,6 +47,7 @@
 ### 🔹 第二章：自動化新聞情報蒐集、Excel 數據分析與重點摘要 Skill
 
 #### 📖 參考教材與延伸連結
+- [**Projects 雲端知識沙盒**](../../Claude_ai/Projects/README.md)：延續第一章建立的關注清單知識庫，將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
 - [**Claude in Chrome 擴充功能**](../../Claude_ai/claude_in_chrome/README.md)：Anthropic 官方 Chrome 擴充功能，可在已登入環境中執行頁面操作與資料讀取，適合 Gmail、內部系統等需登入網頁。
 - [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，適合存取內網與無 API 的公開網站。
 - [**每日產業新聞/情報蒐集實戰指南**](./每日產業新聞情報蒐集實戰.md)：比較泛用搜尋與定點爬蟲差異，含關鍵字組合、Playwright Python 程式範例與 ITIC 專屬情報 Prompt。
@@ -67,7 +68,6 @@
 - [**討論方式的內容生成**](../../討論方式的內容生成/README.md)：以 Artifact 模式與 Claude 反覆討論、逐步優化內容，並產出 docx、pdf 等格式，適合彙整每日情報與數據分析成正式報告。
 - [**簡報的生成**](../../簡報和資訊圖表/簡報的生成.md)：簡報大綱設計、風格與配色建議，以及 NotebookLM／PPT 模板產出流程，供彙整簡報參考。
 - [**Scheduled 排程任務**](../../Claude_ai/Scheduled/README.md)：Claude 原生排程功能的建立與管理方式，可設定固定時間自動觸發 Day 1-2 的蒐集與摘要工作流。
-- [**Connectors 連結技巧**](../../Claude_ai/Connectors/README.md)：串接 Gmail、Google Drive 等雲端服務，作為自動化流程完成後的交付管道。
 
 #### 🛠️ 課程內容與實作綱要
 - **每日彙整簡報產出 Skill**：串接文件產出能力（Word/PDF），將摘要與數據分析整合為主管導向的正式簡報與報告。
