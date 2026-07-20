@@ -21,6 +21,8 @@
 | **Model selector**（Opus 等） | ✗ | ✓ |
 | **Research Mode** | ✗ | ✓ |
 | **Cowork**（協作與代理模式） | ✗ | ✓ |
+| **Scheduled**（排程任務，Cowork Beta） | ✗ | ✓ |
+| **Dispatch**（手機／電腦跨裝置代理，Beta） | ✗ | ✓（僅 Pro / Max） |
 | **Claude Code**（終端機開發工具） | ✗ | ✓ |
 | **Plugins**（外掛安裝與瀏覽） | ✓ | ✓ |
 | **Plugins**（於 Code 及 Cowork 內使用） | ✗ | ✓ |
@@ -76,6 +78,14 @@
 > 專為協作與開發設計，會大量使用 **Sub-agents（子代理）** 技術：
 > - 主 AI 為了完成複雜任務，會自動派發多個「分身」執行子任務（一個查資料、一個寫程式），最後彙整結果。
 > - 大幅提升處理複雜任務的精準度。
+
+### 🟣 Scheduled（排程任務）— **Pro / Max / Team / Enterprise（Cowork Beta）**
+> **📂 [進入主題筆記：Scheduled](./Scheduled/README.md)**  
+> 把重複性工作交給 Claude 自動定時執行：每日簡報、週報彙整、定期研究追蹤等，即使電腦休眠也會準時在雲端執行。
+
+### 🟣 Dispatch（Beta）— **Pro / Max Only**
+> **📂 [進入主題筆記：Dispatch](./Dispatch/README.md)**  
+> 從手機交辦任務，Claude 在你的電腦上實際執行，使用本機檔案、Connectors 與應用程式，完成後把成品傳回手機。
 
 ### 🟣 其他 Pro 專屬功能 — **Pro Only**
 - **Model Selector**：選擇 Opus 等更強模型
