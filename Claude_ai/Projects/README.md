@@ -97,7 +97,7 @@ Claude 直接回答「90 天新人入職培訓計畫」——**不用重新上�
 | [💼 專業辦公行政助手](./Examples/Office_Assistant.md) | 上班族 | ⭐ | 術語表＋逐字稿的完整工作流 |
 | [✍️ 社群行銷文案大師](./Examples/Marketing_Copywriter.md) | 社群小編 | ⭐⭐ | 上傳品牌指南，AI 自動守住品牌語調 |
 | [🎓 英語學習與口語教練](./Examples/English_Learning.md) | 學生 | ⭐⭐ | 上傳寫作樣本，得到個人化錯誤診斷 |
-| [💼 商業自適應知識庫（會進化的 Prompt 引擎）](./Examples/Business_Brain.md) | 業務/行銷/創業者 | ⭐⭐⭐⭐ | 從零開始：累積業務情報，AI 自動生成自適應 Prompt 並能自我優化專案指令 |
+| [📊 商業數據分析庫（會自動進化的圖表）](./Examples/Business_Brain.md) | 業務/行銷/主管 | ⭐⭐⭐ | 透過多種方式更新資料表，免改 Prompt 見證圖表自動合併新數據 |
 
 ---
 
