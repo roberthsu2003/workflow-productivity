@@ -97,7 +97,7 @@ Claude 直接回答「90 天新人入職培訓計畫」——**不用重新上�
 | [💼 專業辦公行政助手](./Examples/Office_Assistant.md) | 上班族 | ⭐ | 術語表＋逐字稿的完整工作流 |
 | [✍️ 社群行銷文案大師](./Examples/Marketing_Copywriter.md) | 社群小編 | ⭐⭐ | 上傳品牌指南，AI 自動守住品牌語調 |
 | [🎓 英語學習與口語教練](./Examples/English_Learning.md) | 學生 | ⭐⭐ | 上傳寫作樣本，得到個人化錯誤診斷 |
-| [📚 期末報告研究助理](./Examples/Research_Assistant.md) | 學生 | ⭐⭐⭐ | 跨對話累積進度，8 週長期專案管理 |
+| [🧠 個人第二大腦（成長型知識庫）](./Examples/Second_Brain.md) | 所有人 | ⭐⭐⭐ | 從零開始：用 Chat＋Artifacts 產出知識卡片，回存 Knowledge 讓大腦越養越大 |
 
 ---
 
