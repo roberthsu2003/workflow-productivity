@@ -17,11 +17,13 @@ Level2_Daily_Report/
 ## 🛠️ 安裝與使用方式
 
 ### 💡 方式 A：使用內建 `/skill-creator` 技能（自動建立）
-> 實際測試-無誤
 
 此方式包含以下兩種自動建立的情境與對話引導：
 
 #### 方案 1：直接提供範本檔案建立
+
+> 實際測試-無誤
+
 1. **上傳樣板**：先將 [report-template.md](./templates/report-template.md) 檔案上傳至 Claude 對話中。
 2. **下指令建立**：直接對 Claude 輸入以下指令：
    > 「`我想建立一個每日報工 Skill。請參考我剛才上傳的樣板檔案格式，使用 /skill-creator 幫我建立包含 templates 資料夾的 Skill。`」
@@ -31,6 +33,9 @@ Level2_Daily_Report/
    * 點擊 **Add Custom Skill** 上傳此解壓縮後的資料夾。
 
 #### 方案 2：先完成任務對話，再打包成技能
+
+> 實際測試-無誤
+
 1. **上傳樣板與對話測試**：
    * 先將 [report-template.md](./templates/report-template.md) 樣板檔案上傳至對話中。
    * 貼入當天隨手寫下的雜亂工作筆記，請 Claude 協助依樣板排版整理。
@@ -44,7 +49,9 @@ Level2_Daily_Report/
    * 點擊 **Add Custom Skill** 上傳該解壓縮後的資料夾即可完成安裝。
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
+
 > 實際測試-無誤
+
 1. 在電腦中建立新資料夾 `Level2_Daily_Report`，並在其中建立名為 `templates` 的子資料夾。
 2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 內容儲存於根目錄；將 [report-template.md](./templates/report-template.md) 內容儲存至 `templates/` 目錄中。
 3. 前往 Claude 的 **Settings** ➔ **Skills** ➔ 點擊 **Add Custom Skill** 上傳此資料夾。
