@@ -21,9 +21,18 @@ Level3_Brand_Voice/
 ## 🛠️ 安裝與使用方式
 
 ### 💡 方式 A：使用內建 `/skill-creator` 技能（自動建立）
+
+此方式包含以下兩種自動建立的情境與對話引導：
+
+#### 方案 1：直接提供範本檔案與參考文件建立
 1. 先將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 樣板與 [brand-book.md](./references/brand-book.md) 檔案上傳至 Claude 對話中。
 2. 直接下指令：
    > 「`我想建立一個品牌語氣稽核 Skill。請參考我剛才上傳的 brand-book.md 規範與 Excel 樣板，使用 /skill-creator 幫我建立包含 references 和 templates 資料夾的 Skill。`」
+
+#### 方案 2：先完成任務對話，再打包成技能
+1. 在對話中上傳你的品牌指南與樣板，並提供一段宣傳文案，讓 Claude 幫您成功稽核並產出一次符合預期的 Excel 報告。
+2. 隨後直接對 Claude 下指令：
+   > 「`請參考剛才我們對話的稽核邏輯與 Excel 輸出格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Level3_Brand_Voice`，並建立 `references`、`templates` 與 `assets` 三個子資料夾。
