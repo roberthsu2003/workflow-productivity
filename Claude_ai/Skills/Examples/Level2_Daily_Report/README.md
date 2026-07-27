@@ -22,14 +22,26 @@ Level2_Daily_Report/
 此方式包含以下兩種自動建立的情境與對話引導：
 
 #### 方案 1：直接提供範本檔案建立
-1. 先將 [report-template.md](./templates/report-template.md) 檔案上傳至 Claude 對話中。
-2. 直接下指令：
+1. **上傳樣板**：先將 [report-template.md](./templates/report-template.md) 檔案上傳至 Claude 對話中。
+2. **下指令建立**：直接對 Claude 輸入以下指令：
    > 「`我想建立一個每日報工 Skill。請參考我剛才上傳的樣板檔案格式，使用 /skill-creator 幫我建立包含 templates 資料夾的 Skill。`」
+3. **下載與安裝**：
+   * Claude 執行完成後，會提供一個自訂技能資料夾的下載包（通常是 ZIP 壓縮檔）。請將其下載並解壓縮。
+   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
+   * 點擊 **Add Custom Skill** 上傳此解壓縮後的資料夾。
 
 #### 方案 2：先完成任務對話，再打包成技能
-1. 在一般對話中先貼入雜亂的工作筆記，讓 Claude 幫您成功整理出一次符合預期的日報。
-2. 隨後直接對 Claude 下指令：
-   > 「`請參考剛才我們對話的整理邏輯與格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
+1. **上傳樣板與對話測試**：
+   * 先將 [report-template.md](./templates/report-template.md) 樣板檔案上傳至對話中。
+   * 貼入當天隨手寫下的雜亂工作筆記，請 Claude 協助依樣板排版整理。
+   * 檢查 Claude 輸出的日報格式是否符合預期，若有不完美之處可繼續對話修正，直到產出的格式完全滿意。
+2. **下指令進行打包**：
+   * 當結果完全滿意後，直接輸入指令：
+     > 「`請參考剛才我們對話的整理邏輯與格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
+3. **下載與安裝**：
+   * Claude 執行完成後，下載其產出的自訂技能資料夾（或 ZIP 檔）並解壓縮。
+   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
+   * 點擊 **Add Custom Skill** 上傳該解壓縮後的資料夾即可完成安裝。
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 > 實際測試-無誤

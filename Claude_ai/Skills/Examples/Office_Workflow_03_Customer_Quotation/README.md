@@ -48,14 +48,26 @@ Office_Workflow_03_Customer_Quotation/
 此方式包含以下兩種自動建立的情境與對話引導：
 
 #### 方案 1：直接提供範本檔案建立
-1. 先將 [quotation-template.xlsx](./templates/quotation-template.xlsx) 檔案上傳至 Claude 對話中。
-2. 直接下指令：
+1. **上傳樣板**：先將 [quotation-template.xlsx](./templates/quotation-template.xlsx) 檔案上傳至 Claude 對話中。
+2. **下指令建立**：直接對 Claude 輸入以下指令：
    > 「`我想建立一個客戶報價單 Skill。請參考我剛才上傳的 Excel 樣板檔案格式，使用 /skill-creator 幫我建立包含 templates 資料夾的 Skill。若在填寫時發現有些欄位缺少資料，必須詢問使用者進行確認。`」
+3. **下載與安裝**：
+   * Claude 執行完成後，會提供一個自訂技能資料夾的下載包（通常是 ZIP 壓縮檔）。請將其下載並解壓縮。
+   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
+   * 點擊 **Add Custom Skill** 上傳此解壓縮後的資料夾。
 
 #### 方案 2：先完成任務對話，再打包成技能
-1. 在對話中先上傳您的報價單樣板並貼上客戶報價需求，讓 Claude 幫您成功計算並產出一次符合預期的 Excel 報價單。
-2. 隨後直接對 Claude 下指令：
-   > 「`請參考剛才我們對話的金額計算邏輯與 Excel 報價單填寫格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
+1. **上傳相關資源與對話測試**：
+   * 先將 [quotation-template.xlsx](./templates/quotation-template.xlsx) 樣板檔案上傳至對話中。
+   * 提供一段客戶報價的文字需求，請 Claude 依據上傳的 Excel 樣板計算金額與折讓，並呼叫 Python 寫入 Excel 中。
+   * 檢查 Claude 產出下載的 Excel 報價單內容是否符合預期，若有需要調整之處可以繼續對話，直到產出的結果完全滿意。
+2. **下指令進行打包**：
+   * 當結果完全滿意後，直接輸入指令：
+     > 「`請參考剛才我們對話的金額計算邏輯與 Excel 報價單填寫格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
+3. **下載與安裝**：
+   * Claude 執行完成後，下載其產出的自訂技能資料夾（或 ZIP 檔）並解壓縮。
+   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
+   * 點擊 **Add Custom Skill** 上傳該解壓縮後的資料夾即可完成安裝。
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Office_Workflow_03_Customer_Quotation`，並在其中建立名為 `templates` 的子資料夾。

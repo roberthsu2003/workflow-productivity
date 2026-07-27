@@ -21,14 +21,26 @@ Level4_Meeting_Secretary/
 此方式包含以下兩種自動建立的情境與對話引導：
 
 #### 方案 1：直接提供腳本檔案建立
-1. 先將 [calculate_hours.py](./scripts/calculate_hours.py) 檔案上傳至 Claude 對話中。
-2. 直接下指令：
+1. **上傳腳本**：先將 [calculate_hours.py](./scripts/calculate_hours.py) 檔案上傳至 Claude 對話中。
+2. **下指令建立**：直接對 Claude 輸入以下指令：
    > 「`我想建立一個會議秘書 Skill。請幫我把 calculate_hours.py 放入 scripts 資料夾，並使用 /skill-creator 建立包含 scripts 的自訂 Skill。`」
+3. **下載與安裝**：
+   * Claude 執行完成後，會提供一個自訂技能資料夾的下載包（通常是 ZIP 壓縮檔）。請將其下載並解壓縮。
+   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
+   * 點擊 **Add Custom Skill** 上傳此解壓縮後的資料夾。
 
 #### 方案 2：先完成任務對話，再打包成技能
-1. 在對話中先提供您的工時數據與 Python 腳本，讓 Claude 幫您成功運行計算並產出一次符合預期的圖表結果。
-2. 隨後直接對 Claude 下指令：
-   > 「`請參考剛才我們對話的統計邏輯、Python 腳本的呼叫方式與輸出格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
+1. **上傳相關資源與對話測試**：
+   * 先將 [calculate_hours.py](./scripts/calculate_hours.py) 腳本檔案上傳至對話中。
+   * 提供一組工時測試數據，請 Claude 呼叫並運行該 Python 腳本來統計工時。
+   * 檢查 Claude 輸出的統計數據與 ASCII 佔比圖表是否符合預期，若有需要調整之處可以繼續對話，直到產出的結果完全滿意。
+2. **下指令進行打包**：
+   * 當結果完全滿意後，直接輸入指令：
+     > 「`請參考剛才我們對話的統計邏輯、Python 腳本的呼叫方式與輸出格式，使用 /skill-creator 幫我將這個功能打包建立為一個自訂技能。`」
+3. **下載與安裝**：
+   * Claude 執行完成後，下載其產出的自訂技能資料夾（或 ZIP 檔）並解壓縮。
+   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
+   * 點擊 **Add Custom Skill** 上傳該解壓縮後的資料夾即可完成安裝。
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Level4_Meeting_Secretary`，並在其中建立名為 `scripts` 的子資料夾。
