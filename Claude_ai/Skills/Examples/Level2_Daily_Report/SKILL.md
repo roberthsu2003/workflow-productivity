@@ -1,8 +1,6 @@
 ---
-name: Daily Report Assistant
+name: Level2_Daily_Report
 description: 將雜訊很多的每日工作筆記，依照標準樣板整理成正式的專案日報。
-templates:
-  - templates/report-template.md
 ---
 
 # 每日報工助手

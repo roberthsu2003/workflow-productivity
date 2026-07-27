@@ -1,8 +1,6 @@
 ---
-name: Customer Quotation Generator (Excel Version)
+name: Office_Workflow_03_Customer_Quotation
 description: 依據客戶需求與費用項目，套用標準報價單 Excel 樣板產出正式報價單下載檔。
-templates:
-  - templates/quotation-template.xlsx
 ---
 
 # 客戶報價單產生器 (Excel版)

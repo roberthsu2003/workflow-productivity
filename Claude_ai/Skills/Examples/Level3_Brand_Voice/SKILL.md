@@ -1,10 +1,6 @@
 ---
-name: Brand Voice Auditor (Excel Version)
+name: Level3_Brand_Voice
 description: 依據品牌規範文件稽核文案，並將稽核報告輸出為 Excel 檔案供下載。
-templates:
-  - templates/brand-voice-audit-template.xlsx
-resources:
-  - references/brand-book.md
 ---
 
 # 品牌語氣稽核員 (Excel版)

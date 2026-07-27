@@ -1,5 +1,5 @@
 ---
-name: Meeting Secretary
+name: Level4_Meeting_Secretary
 description: 自動計算工時分佈，產出專案進度分析圖表。
 ---
 

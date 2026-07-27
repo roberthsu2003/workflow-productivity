@@ -1,8 +1,6 @@
 ---
-name: Meeting Action Plan Assistant (Excel Version)
+name: Office_Workflow_04_Meeting_Action_Plan
 description: 將會議紀錄轉換成決議摘要、行動項目並輸出為 Excel 檔案供下載。
-templates:
-  - templates/action-plan-template.xlsx
 ---
 
 # 會議紀錄轉行動計畫助手 (Excel版)
