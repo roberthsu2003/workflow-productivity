@@ -48,7 +48,7 @@
 ### 🔹 第二章：自動化新聞情報蒐集、Excel 數據分析與重點摘要 Skill
 
 <details>
-<summary>💡 課堂練習／實作驗證：使用 RTCCF 查詢本週行程（3 個範例）</summary>
+<summary>💡 課堂練習／實作驗證：使用 RTCCF,Connectors和pptx的skill</summary>
 
 以下示範搭配 **Google Calendar Connector** 讀取行事曆時，如何撰寫標準 RTCCF Prompt：
 
