@@ -179,6 +179,46 @@
 
   </details>
 - [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，適合存取內網與無 API 的公開網站。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（Playwright MCP 本地自動化爬蟲操作）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：學員電腦已於 Claude Desktop 設定中配置好 `playwright` Local MCP Server。本驗證旨在確認學員掌握**使用 Playwright 本地爬蟲突破雲端白名單限制、動態渲染 JS 網頁並擷取創投資訊**的能力。
+
+  ---
+
+  **📝 實作驗證任務：在 Claude Desktop 使用 Playwright MCP 下指令爬取資訊**
+
+  請開啟 **Claude Desktop** 應用程式對話視窗，複製以下任一創投實務 Prompt 貼入並發送測試：
+
+  * **🔹 任務選項 A：動態網站資料爬取與重點整理（公開資訊/產業新聞）**
+    在 Claude Desktop 中輸入 Prompt：
+    ```text
+    請使用 Playwright MCP 幫我開啟科技新報（https://technews.tw）或公開新聞網頁：
+    1. 搜尋過去一週關於『半導體封裝』或『CPO 矽光子』的新聞報導
+    2. 擷取前 3 筆資料的『標題』、『發布日期』與『摘要重點』
+    3. 將結果整理成 Markdown 表格輸出
+    ```
+
+  * **🔹 任務選項 B：新創標的網站動態網頁截圖與產品分析**
+    在 Claude Desktop 中輸入 Prompt：
+    ```text
+    請使用 Playwright MCP 開啟指定的新創公司官網（或科技新聞頁面）：
+    1. 開啟網頁並滾動頁面確保動態 JS 內容完全載入
+    2. 讀取頁面文字並對首頁重要區塊進行截圖保存
+    3. 提煉出該公司的『核心產品/技術』、『應用市場』與『團隊優勢』
+    ```
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **MCP 服務連線正常**：在 Claude Desktop 設定中確認 `playwright` Local MCP Server 已正確連線。
+  - [ ] **本機瀏覽器自動喚起**：發送指令後，Claude Desktop 能自動驅動本機 Playwright 瀏覽器執行頁面瀏覽與互動。
+  - [ ] **突破雲端白名單限制**：成功存取與解析動態渲染（JavaScript）的公開網站頁面。
+  - [ ] **結構化表格與摘要產出**：成功將爬取到的文字與數據彙整成 Markdown 表格或簡報要點輸出。
+
+  </details>
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 四階演進路徑（模仿者 → 創作者 → 整合者 → 自動化專家），用於設計「新聞蒐集」與「重點摘要」兩支專屬 Skill。
 - [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：延續第一章建立的關注清單知識庫，將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
 - [**每日產業新聞/情報蒐集實戰指南**](./每日產業新聞情報蒐集實戰.md)：比較泛用搜尋與定點爬蟲差異，含關鍵字組合、Playwright Python 程式範例與 ITIC 專屬情報 Prompt。
