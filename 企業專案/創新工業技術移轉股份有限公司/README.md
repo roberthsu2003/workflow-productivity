@@ -220,8 +220,53 @@
 
   </details>
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 前兩階演進（第一階：模仿者 ➔ 第二階：創作者），學習建立基礎自訂 Skill 與結構化樣板（Templates）對接。
-- [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：延續第一章建立的關注清單知識庫，將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（基礎 Skill 建立與樣板對接）</b></summary>
+  <br>
 
+  > 💡 **實作背景**：驗證學員是否能自行建立 `Email Expert`（模仿者）或 `Daily Report`（創作者樣板對接）Skill。
+
+  ---
+
+  **📝 實作驗證任務：手動建立與測試自訂 Skill**
+
+  1. 開啟新對話，輸入指令：「`請幫我建立一個名為『郵件修飾專家』的 Skill，角色是專業文案，任務是修飾生硬郵件成禮貌商務信件，請使用 /skill-creator 自動產出。`」
+  2. 下載產出的 ZIP 檔並解壓至 **Customize ➔ Skills** 完成安裝。
+  3. 開啟全新對話，輸入一段生硬口吻的測試訊息，確認 Claude 是否自動啟用該 Skill 並輸出包含主旨、稱謂與禮貌正文的郵件。
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **Skill 安裝確認**：在 Customize ➔ Skills 清單中能看見新增的 Skill。
+  - [ ] **自動識別啟用**：貼入生硬短訊時，Claude 能自動調用該 Skill 進行處理。
+  - [ ] **結構符合規範**：產出的郵件符合主旨、稱謂、正文、祝禱與簽名檔完整結構。
+
+  </details>
+- [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：延續第一章建立的關注清單知識庫，將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（Projects 雲端知識庫上傳與檢索）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：學員已在 Projects 中建立專屬的「ITIC 投資組合與關注清單」知識庫。本驗證旨在確認學員掌握上傳關注檔案並在對話中呼叫知識庫內容進行比對的能力。
+
+  ---
+
+  **📝 實作驗證任務：在 Project 中上傳資料並進行跨檔案詢問**
+
+  1. 前往 **Projects** 頁面，開啟專屬的投資關注 Project。
+  2. 在 **Project Knowledge** 上傳關注產業清單文件（如：`itic_watchlist.pdf` 或 `.txt`）。
+  3. 在 Project 對話框中輸入 Prompt：「`請參考 Project 知識庫中的關注清單，比對我今天開啟的新聞標的，說明該標的是否屬於我們的重點關注領域？`」
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **檔案成功上傳**：能在 Project Knowledge 中看見已上傳的關注清單檔案。
+  - [ ] **知識庫引述檢索**：Claude 回答時能精確引述 Project 中的檔案內容進行比對。
+  - [ ] **專案隔離保護**：切換至其他 Project 時，資料獨立不互相混淆。
+
+  </details>
 
 ---
 
@@ -229,10 +274,120 @@
 
 #### 📖 參考教材與延伸連結
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習整合專案知識庫（Projects）與多格式樣板檔，實現免寫程式的高階工作流自動化。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（第三階：整合者 Skill 實作）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：驗證學員能否不靠寫程式，整合 Projects 知識庫、規範與範例檔打造高階分析 Skill。
+
+  ---
+
+  **📝 實作驗證任務：建立整合型 Skill**
+
+  1. 建立一個名為 `ITIC Report Integrator` 的 Skill。
+  2. 在 Instructions 中定義：同時引用 Project 知識庫的關注標準、結合樣板檔格式，自動產出含分析與建議的投資摘要報告。
+  3. 在新對話中輸入測試資訊，驗證 Skill 是否能同時讀取 Project 並套用樣板輸出。
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **免寫程式整合**：無需 Python 程式即可透過 Markdown 設定完成多資源整合。
+  - [ ] **多來源參照**：回應結果能同時整合 Project 知識與樣板規範。
+
+  </details>
 - [**Claude Cowork 協作工作空間**](../../Claude_ai/cowork/README.md)：Anthropic 全新 AI 獨立工作空間，支援自主多步驟任務執行、整合 Connectors 與 Skills，適合無程式背景者進行進階自動化。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**，且排程任務於**雲端遠端執行**，無法呼叫本機檔案與應用程式。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（Claude Cowork 獨立工作空間）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：驗證學員在 Claude Cowork 空間中發起自主任務的能力。
+
+  ---
+
+  **📝 實作驗證任務：在 Cowork 建立自主工作流程**
+
+  1. 從左側選單切換至 **Cowork** 工作空間，建立一個新的 Cowork 任務 Session。
+  2. 輸入 Prompt：「`請幫我執行週報彙整任務：讀取目前關聯的 Google Drive 與 Gmail，整理出本週 3 大重點進度與待辦事項。`」
+  3. 觀察 Claude 在 Cowork 視窗中自主拆解步驟、調用工具並交付成果。
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **Cowork 空間開啟**：成功進入 Cowork 視窗發起任務。
+  - [ ] **多步驟自主執行**：Claude 能連續呼叫工具並完成複雜流程。
+
+  </details>
 - [**每日產業新聞/情報蒐集實戰指南**](./每日產業新聞情報蒐集實戰.md)：比較泛用搜尋與定點爬蟲差異，含關鍵字組合、Playwright Python 程式範例與 ITIC 專屬情報 Prompt。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（產業新聞情報 Prompt 設計）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：驗證學員能否運用實戰指南中的關鍵字組合邏輯進行定點情報蒐集。
+
+  ---
+
+  **📝 實作驗證任務：設計關鍵字與時間控制 Prompt**
+
+  1. 參考指南撰寫帶有 `OR` / `AND` 邏輯與時間控制（近 24 小時）的新聞搜尋 Prompt。
+  2. 在 Claude 中執行，檢查產出的結果是否精確限制在指定時間內且包含指定關鍵字。
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **邏輯精確**：關鍵字組合布林邏輯正確。
+  - [ ] **時間過濾**：搜尋結果無過期舊新聞。
+
+  </details>
 - [**資料分析與報告撰寫實作**](../../實作任務/資料分析與報告/README.md)：AI 負責的 80% 工作（統計計算、趨勢視覺化建議、異常偵測）與人負責的 20%（數據來源、目標定義、結果驗證），適合套用到 ITIC Excel 業績與營運資料判讀。<br>⚠️ **本教材僅取用「80/20 人機分工框架」觀念**；其中示範的 Google Sheets／ChatGPT／Gemini／Canva 等工具操作不在本課程範圍內，實際操作一律以「上傳 Excel 至 Claude 解析」為準。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（Excel 數據分析與 80/20 人機分工）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：驗證學員上傳實體 Excel 檔案給 Claude 進行數據解析與人機分工判讀的能力。
+
+  ---
+
+  **📝 實作驗證任務：上傳 Excel 進行營運分析**
+
+  1. 在對話框上傳一份營運/財務 Excel 檔案（.xlsx）。
+  2. 輸入 Prompt：「`請解析此 Excel 檔案，幫我完成 AI 80% 的工作：計算營收成長率、找出異常數據點並繪製 Markdown 摘要表格。`」
+  3. 人員執行 20%：人工檢查 AI 算出的數字是否正確，並撰寫最終投資決策建議。
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **Excel 解析成功**：Claude 能正確判讀試算表欄位與數據。
+  - [ ] **人機分工合宜**：AI 完成統計與繪表，人員完成品質驗證與決策。
+
+  </details>
 - [**Scheduled 排程任務**](../../Claude_ai/Scheduled/README.md)：Claude 原生排程功能的建立與管理方式，可設定固定時間自動觸發第一、二章的蒐集與摘要工作流。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**，且排程任務於**雲端遠端執行**，無法呼叫本機檔案與應用程式。
+  <details>
+  <summary>💡 <b>點擊展開：學員實作驗證（Scheduled 雲端定時排程）</b></summary>
+  <br>
+
+  > 💡 **實作背景**：驗證學員建立 Scheduled 定時排程任務的能力。
+
+  ---
+
+  **📝 實作驗證任務：建立每日定時排程**
+
+  1. 前往 **Scheduled** 頁面，點選 **New task**。
+  2. 設定執行頻率（例如：每工作日 早上 9:00）。
+  3. 填入任務 Prompt：「`自動讀取 Google Workspace Connectors，彙整每日最新郵件與行程摘要。`」
+  4. 儲存排程，在 Scheduled 列表確認任務已排入待執行佇列。
+
+  ---
+
+  **✅ 實作驗證清單（Checklist）**
+
+  - [ ] **排程設定成功**：任務出現在 Scheduled 清單中且時間頻率正確。
+  - [ ] **雲端獨立運行**：確認任務說明符合雲端遠端執行規範。
+
+  </details>
 
 ---
 
