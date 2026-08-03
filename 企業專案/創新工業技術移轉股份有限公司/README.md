@@ -140,36 +140,42 @@
 #### 📖 參考教材與延伸連結
 - [**Claude in Chrome 擴充功能**](../../Claude_ai/claude_in_chrome/README.md)：Anthropic 官方 Chrome 擴充功能，可在已登入環境中執行頁面操作與資料讀取，適合 Gmail、內部系統等需登入網頁。
   <details>
-  <summary>💡 <b>點擊展開：學員實作驗證（Claude in Chrome 實機操作）</b></summary>
+  <summary>💡 <b>點擊展開：學員實作驗證（在 Claude Desktop 中使用 Prompt 控制 Chrome）</b></summary>
   <br>
 
-  > 💡 **實作背景**：學員於本機 Chrome 瀏覽器中已登入個人/公司帳號（如 Gmail、Google Workspace 或創投內部系統）。本驗證旨在確認學員是否已掌握「免複製貼上、讓 Claude 直接存取並分析當前已登入分頁」的技能。
+  > 💡 **實作背景**：學員已於本機 Chrome 瀏覽器登入個人/公司帳號（如 Gmail、Google Workspace 或創投內部系統），並於 **Claude Desktop** 設定中啟用「Enable Claude in Chrome」。本驗證旨在確認學員已掌握**在 Claude Desktop 視窗直接輸入 Prompt，遠端驅動 Chrome 讀取與分析已登入網頁**的能力。
 
   ---
 
-  **📝 實作驗證任務：創投資訊與郵件即時判讀**
+  **📝 實作驗證任務：在 Claude Desktop 輸入 Prompt 進行即時查詢**
 
-  請挑選以下**任一創投日常場景**進行手動實作測試：
+  請開啟 **Claude Desktop** 應用程式對話視窗，複製以下任一創投實務 Prompt 貼入並發送測試：
 
-  * **🔹 任務選項 A：已登入郵件即時摘要（Gmail / 內部信箱）**
-    1. 在 Chrome 中開啟您的 **Gmail** 或 **內部郵件系統**，開啟一封近期關於「投資案源」、「會議通知」或「廠商提案/報價」的信件。
-    2. 點擊 Chrome 右上角的 **Claude 擴充功能圖示**開啟右側邊欄。
-    3. 在側邊欄輸入 Prompt：
-       > 「`請直接讀取我目前開啟的這封郵件內容，幫我整理出：1. 寄件者與主旨 2. 核心訴求/投資標的簡述 3. 我需要執行的待辦事項（若無則寫無）。`」
+  * **🔹 任務選項 A：已登入 Gmail 郵件檢查與摘要（使用 Claude Desktop）**
+    在 Claude Desktop 中輸入 Prompt：
+    ```text
+    請使用 claude in chrome 開啟我的 Gmail（https://mail.google.com），檢查我最近的信件，幫我整理出：
+    1. 寄件者與郵件主旨
+    2. 核心訴求 / 創投案源簡述
+    3. 需要執行的優先待辦事項與建議行動
+    ```
 
-  * **🔹 任務選項 B：標的網站/新聞即時摘要（公司官網/科技媒體）**
-    1. 在 Chrome 開啟您目前關注的**創投標的官網**、**科技新聞**或**公開資訊觀測站頁面**。
-    2. 開啟右側 Claude 擴充功能側邊欄，輸入 Prompt：
-       > 「`請讀取當前網頁內容，為投資評估整理 3 大重點摘要，包含：主要產品/技術亮點、目標市場，以及網頁中提及的任何關鍵數據。`」
+  * **🔹 任務選項 B：產業新聞與標的網站動態擷取（使用 Claude Desktop）**
+    在 Claude Desktop 中輸入 Prompt：
+    ```text
+    請使用 claude in chrome 開啟科技新報（https://technews.tw）或經濟日報，搜尋關於『半導體先進封裝』或『AI伺服器』的最新新聞：
+    1. 擷取新聞標題、發布時間與關鍵公司
+    2. 為 ITIC 投資評估濃縮 3 大重點摘要與潛在市場影響
+    ```
 
   ---
 
   **✅ 實作驗證清單（Checklist）**
 
-  - [ ] **側邊欄順利啟動**：能在 Chrome 中點選並成功開啟右側 Claude 側邊欄。
-  - [ ] **免複製讀取**：無需手動複製貼上網頁內文，Claude 即可直接讀取並理解當前分頁（Active Tab）的資訊。
-  - [ ] **已登入環境提取**：即使是需要登入後才能看到的信件或內部網頁內容，Claude 也能正確提取資料。
-  - [ ] **結構化輸出**：產出的結果精確符合您要求的投資摘要格式，無捏造或資訊遺漏。
+  - [ ] **連線設定確認**：Claude Desktop 的「Enable Claude in Chrome」已勾選啟用且連線正常。
+  - [ ] **Desktop 下指令連動**：在 Claude Desktop 輸入 Prompt 後，能成功喚起並驅動 Chrome 進行分頁切換與內容讀取。
+  - [ ] **已登入權限沿用**：無需手動輸入帳密，Claude Desktop 能直接讀取 Chrome 已登入帳號的內容（如 Gmail/內部系統）。
+  - [ ] **結果回傳 Desktop**：頁面讀取與分析結果能自動回傳並結構化呈現於 Claude Desktop 對話視窗中。
 
   </details>
 - [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，適合存取內網與無 API 的公開網站。
