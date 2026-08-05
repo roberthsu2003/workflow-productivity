@@ -60,14 +60,14 @@
 
 ## 📂 準備知識庫檔案 (Knowledge Files)
 
-您可以在專案的 **Knowledge** 區塊中，放入以下模擬或真實檔案：
+點選下列連結可直接預覽或下載對應的學生練習檔案（亦可至 [📂 VC_Practice 學生練習資料夾](./sample_files/VC_Practice/README.md) 一次打包）：
 
-| 檔案類型 | 檔案名稱 | 內容關鍵字 / 關鍵指標 |
+| 檔案類型 | 檔案名稱 (點選即可下載/檢視) | 內容關鍵字 / 關鍵指標 |
 |---|---|---|
-| 📝 **Word (.docx)** | `WeWork_創辦人訪談與治理合約.docx` | 創辦人 Adam Neumann 口頭宣稱「ARR 達 30 億美元」；合約載明擁有 20:1 雙重股權投票權、將個人房產出租給公司，並將「We」商標以 590 萬美元賣回公司。 |
-| 📊 **Excel (.xlsx)** | `WeWork_2018_2019_財務實核與燒錢率.xlsx` | 2018 實際營收 18.2 億美元，淨虧損高達 19.3 億美元（每賺 $1 燒 $1.06）；自創 Community Adjusted EBITDA 扣除行政與開辦費。 |
-| 📄 **PDF (.pdf)** | `WeWork_2019_SEC_S1_Registration_Statement.pdf` | 2019 年向美國 SEC 提交之 227 頁真實公開 S-1 招股書，記載 470 億美元長租合約負債與短租客戶年限錯配風險。 |
-| 📝 **Word (.docx)** | `創投投審會_合夥人歷史質疑庫.docx` | 合夥人最討厭的 3 大死穴：估值過高 (EV/Sales 溢價)、創辦人專制集權、商業模式長短租錯配。 |
+| 📝 **Word** | [`Adam_Neumann_Corporate_Governance_and_Trademark_Agreement.md`](./sample_files/VC_Practice/Adam_Neumann_Corporate_Governance_and_Trademark_Agreement.md) | 創辦人 Adam Neumann 口頭宣稱「ARR 達 30 億美元」；合約載明擁有 20:1 雙重股權投票權、將個人房產出租給公司，並將「We」商標以 590 萬美元賣回公司。 |
+| 📊 **Excel (CSV)** | [`WeWork_2018_2019_Financial_Breakdown_BurnRate.csv`](./sample_files/VC_Practice/WeWork_2018_2019_Financial_Breakdown_BurnRate.csv) | 2018 實際營收 18.2 億美元，淨虧損高達 19.3 億美元（每賺 $1 燒 $1.06）；自創 Community Adjusted EBITDA 扣除行政與開辦費。 |
+| 📄 **PDF** | [`WeWork_2019_SEC_S1_Registration_Statement.md`](./sample_files/VC_Practice/WeWork_2019_SEC_S1_Registration_Statement.md) | 2019 年向美國 SEC 提交之 227 頁真實公開 S-1 招股書摘要，記載 470 億美元長租合約負債與短租客戶年限錯配風險。 |
+| 📝 **Word** | [`創投投審會_合夥人歷史質疑與退件庫.md`](./sample_files/VC_Practice/創投投審會_合夥人歷史質疑與退件庫.md) | 合夥人最討厭的 3 大死穴：估值過高 (EV/Sales 溢價)、創辦人專制集權、商業模式長短租錯配。 |
 
 ---
 

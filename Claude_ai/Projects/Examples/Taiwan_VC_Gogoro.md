@@ -56,13 +56,13 @@
 
 ## 📂 準備知識庫檔案 (Knowledge Files)
 
-您可以在專案的 **Knowledge** 區塊中，放入以下台灣公開實例檔案：
+點選下列連結可直接預覽或下載對應的學生練習檔案（亦可至 [📂 VC_Practice 學生練習資料夾](./sample_files/VC_Practice/README.md) 一次打包）：
 
-| 檔案類型 | 檔案名稱 | 內容關鍵字 / 關鍵指標 |
+| 檔案類型 | 檔案名稱 (點選即可下載/檢視) | 內容關鍵字 / 關鍵指標 |
 |---|---|---|
-| 📄 **PDF (.pdf)** | `Gogoro_Poema_SPAC_F4_Registration_Statement.pdf` | 真實美股 SEC 招股書：記載全球 GoStation 電池交換站之折舊費用、美股上市估值與營運現金流。 |
-| 📊 **Excel (.xlsx)** | `Gogoro_車輛毛利與補助依存度.xlsx` | 每台車售價、電池交換月租收入、經濟部產發署補助金與真實車輛毛利率。 |
-| 📝 **Word (.docx)** | `經濟部產發署_睿能馬達國產化審查意見書.docx` | 產發署對馬達控制器供應商填報更正說明、安心補償方案（1.85 億元保固成本）與國產化資格審議結論。 |
+| 📄 **PDF** | [`Gogoro_Poema_SPAC_F4_Registration_Statement.md`](./sample_files/VC_Practice/Gogoro_Poema_SPAC_F4_Registration_Statement.md) | 真實美股 SEC 招股書摘要：記載全球 GoStation 電池交換站之折舊費用、美股上市估值與營運現金流。 |
+| 📊 **Excel (CSV)** | [`Gogoro_車輛毛利與補助依存度.csv`](./sample_files/VC_Practice/Gogoro_車輛毛利與補助依存度.csv) | 每台車售價、電池交換月租收入、經濟部產發署補助金與真實車輛毛利率。 |
+| 📝 **Word** | [`經濟部產發署_睿能馬達國產化審查意見書.md`](./sample_files/VC_Practice/經濟部產發署_睿能馬達國產化審查意見書.md) | 產發署對馬達控制器供應商填報更正說明、安心補償方案（1.85 億元保固成本）與國產化資格審議結論。 |
 
 ---
 
