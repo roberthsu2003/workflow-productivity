@@ -1,0 +1,5 @@
+Model_Name,Retail_Price_TWD,Gov_Subsidy_IDA_EPA_TWD,Customer_Out_of_Pocket_TWD,Hardware_Cost_COGS_TWD,Gross_Profit_With_Subsidy_TWD,Gross_Margin_With_Subsidy_pct,Gross_Margin_Without_Subsidy_pct,Subsidy_Dependency_Level
+Gogoro_VIVA_MIX,76980,10000,66980,52000,24980,32.4%,19.5%,High
+Gogoro_JEGO,57980,10000,47980,41000,16980,29.3%,12.0%,Very High
+Gogoro_SuperSport,99980,7000,92980,68000,31980,32.0%,25.0%,Medium
+Gogoro_Delight,89980,8500,81480,59000,30980,34.4%,24.8%,Medium
