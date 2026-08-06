@@ -74,7 +74,7 @@
 > **📂 [進入主題筆記：claude_in_chrome](./claude_in_chrome/README.md)**  
 > Anthropic 官方推出的 Chrome 擴充功能，能讓 Claude 直接進入您已登入的 Chrome 瀏覽器頁面，代為執行開分頁、點擊按鈕、填寫表單與讀取資料。（需 Pro / Max / Team / Enterprise 付費方案帳號登入使用）
 
-### 🟣 Cowork / Code（進階代理工具）— **Pro Only**
+### 🟣 Cowork / Code（進階代理工具）— **Pro / Max / Team / Enterprise**
 > **📂 [進入主題筆記：cowork](./cowork/README.md)**  
 > 專為協作與自動化設計的獨立工作空間，支援自主多步驟任務執行、結合背景運算與排程，讓 Claude 成為能獨立運作的數位神隊友。
 > 專為協作與開發設計，會大量使用 **Sub-agents（子代理）** 技術：
