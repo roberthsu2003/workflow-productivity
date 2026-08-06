@@ -21,6 +21,8 @@
 - Gmail、Google 日曆等已登入的服務
 - 需要帳號密碼的會員網站
 
+> ⚠️ **帳號權限說明**：Claude in Chrome 屬於官方代理功能，**免費版（Free Plan）帳號無法使用**。您必須使用具備 **Claude Pro、Max、Team 或 Enterprise** 付費訂閱的帳號登入，方可啟用並使用此瀏覽器擴充功能。
+
 ---
 
 ## 二、安裝位置 vs 管理位置

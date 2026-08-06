@@ -70,9 +70,9 @@
 > **📂 [進入主題筆記：Local_MCP](./Local_MCP/README.md)**  
 > 在 Claude Desktop 透過 `claude_desktop_config.json` 加入本機 MCP 伺服器，讓 Claude 存取本機檔案、資料庫或執行本機指令。Free 可用。
 
-### 🟢 Claude in Chrome（瀏覽器擴充功能）— **Free**
+### 🟣 Claude in Chrome（瀏覽器擴充功能）— **Pro / Max / Team / Enterprise**
 > **📂 [進入主題筆記：claude_in_chrome](./claude_in_chrome/README.md)**  
-> Anthropic 官方推出的 Chrome 擴充功能，能讓 Claude 直接進入您已登入的 Chrome 瀏覽器頁面，代為執行開分頁、點擊按鈕、填寫表單與讀取資料。
+> Anthropic 官方推出的 Chrome 擴充功能，能讓 Claude 直接進入您已登入的 Chrome 瀏覽器頁面，代為執行開分頁、點擊按鈕、填寫表單與讀取資料。（需 Pro / Max / Team / Enterprise 付費方案帳號登入使用）
 
 ### 🟣 Cowork / Code（進階代理工具）— **Pro Only**
 > **📂 [進入主題筆記：cowork](./cowork/README.md)**  
