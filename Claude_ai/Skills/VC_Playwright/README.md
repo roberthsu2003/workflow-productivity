@@ -114,8 +114,58 @@ description: 當使用者提供台灣硬體（無人機、矽光子/AI晶片）�
 4. **Hiring & Market Expansion Signals（招募與市場擴張訊號）**：分析其團隊擴張與海外落地進度。
 5. **Key Questions for Founder（創辦人訪談關鍵問題）**：針對專利壁壘、客戶驗證 (PoC) 進度與毛利率提出 3–5 個建議問題。
 ```
+---
+## 📝 學員課後自主練習：台灣智慧醫療 AI (MedTech) 投資前初審 Skill
 
+### 🎯 練習目標
+請學員運用上課所學的 **Playwright MCP 網頁自動化** 與 **Claude Custom Skill 寫作語法**，打造一個專為創投分析師設計的 **「台灣智慧醫療 AI (MedTech) 標的極速評估 Skill」**。
 
+---
+
+### 📋 練習題目需求
+
+- **目標新創**：**雲象科技 (aetherAI)**（台灣 AI 數位病理與醫療影像領導廠商）
+  - 測試網址：`https://aetherai.com`
+- **評估情境**：身為創投分析師，你收到雲象科技的案源，需要快速了解其在 AI 數位病理的技術壁壘、醫療器材認證（TFDA / FDA）與合作醫院落地狀況，並產出投資委員會 (IC) 的「MedTech 案源初審報告」。
+
+---
+
+### 💡 給學員的解題提示與指引 (Student Hints & Workflow Guide)
+
+> 💡 **提示 1：創投商業思維 (VC Business Focus)**  
+> 醫療 AI (MedTech) 與一般 SaaS 新創不同，VC 最關注的 3 大關鍵指標為：
+> 1. **醫療器材許可證 (SaMD)**：是否取得 TFDA (台灣) 或 FDA (美國) 認證？
+> 2. **臨床驗證與標竿醫院**：合作的醫學中心有哪些（如台大、榮總、長庚）？
+> 3. **AI 模型數據源與專利**：病理切片標註資料量與影像辨識準確率訴求。
+
+> 💡 **提示 2：Playwright MCP 網頁導覽技巧 (Playwright Navigation Rules)**  
+> 在撰寫 `SKILL.md` 的 SOP 時，請務必提示 Claude 執行以下步驟：
+> 1. 使用 Playwright MCP 開啟 `https://aetherai.com`。
+> 2. 導覽至選單中的 `/solutions` (解決方案) 或 `/news` (最新消息)，擷取認證與醫院合作資訊。
+> 3. 遇 DOM 動態選單時，設定「等待元件載入完成 (wait_for_selector)」，確保不會抓取到空白頁面。
+
+> 💡 **提示 3：Skill YAML 與 SOP 定義參考 (SKILL.md Template)**  
+> 學員可在 `.claude/skills/medtech-ai-dd/SKILL.md` 中嘗試撰寫以下結構：
+
+```yaml
+---
+name: medtech-ai-evaluator
+description: 當輸入醫療 AI 新創官網時，利用 Playwright MCP 擷取 TFDA/FDA 認證、臨床合作醫院並生成 MedTech 投資評估報告。
+---
+
+# 智慧醫療 AI 標的評估 SOP
+1. 使用 Playwright MCP 開啟目標官網，擷取醫療影像/病理 AI 核心產品。
+2. 導覽至新聞或產品頁面，尋找 TFDA / FDA 認證與專利標示。
+3. 統計合作之醫院與醫學中心名單（驗證臨床落地能力）。
+4. 輸出含「法規壁壘」、「臨床驗證」、「創投評估建議」之 Markdown 報告。
+```
+
+---
+
+### 🏆 驗收標準 (Completion Criteria)
+- [ ] 成功使用 Playwright MCP 造訪 `https://aetherai.com` 並動態擷取產品與合作夥伴頁面。
+- [ ] 報告中需明確列出該公司獲得的 **TFDA/FDA 認證狀態** 或 **臨床醫院落地實績**。
+- [ ] 產出一份符合創投 IC 會議標準的 Markdown 「MedTech 案源初審報告」。
 
 ---
 
