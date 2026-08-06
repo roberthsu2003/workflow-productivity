@@ -92,7 +92,7 @@
 * **核心概念**：學會如何撰寫基礎的 `SKILL.md`（定義 `Role`, `Task`, `Constraint`, `Format` 等指引）。
 * **適用場景**：純文字的格式處理、語氣修飾、日常事務摘要等。
 * **實戰範例**：👉 [**全能郵件修飾專家**](./Examples/Level1_Email_Polisher/README.md)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 1 ~ 2）。
+* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 1 ~ 2）與 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](#vc-playwright)。
 
 ### 🔵 第二階：創作者 (Creator) —— `SKILL.md` + `references` & `templates`
 * **核心概念**：學習掛載外部參考知識（放置於 `references/`）與套用標準文件範本（放置於 `templates/`），使 Claude 產出特定格式的文件。
@@ -137,6 +137,8 @@
 | 10 | 🔴 第四階：自動化專家 | [辦公室營運儀表板代理人](./Examples/Office_Workflow_10_Operations_Dashboard.md) | 主管每天想知道會議、待辦、客訴、採購、簽核的整體狀態 | 讀取多來源資料 → 分析異常 → 產出每日營運摘要 → 建議下一步 |
 
 ---
+<div id="vc-playwright"></div>
+
 * **💼 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](./VC_Playwright/README.md)**
   * 涵蓋：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
   * 實戰：Playwright MCP 動態抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
