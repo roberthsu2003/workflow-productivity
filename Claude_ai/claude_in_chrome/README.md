@@ -128,6 +128,8 @@ Claude Desktop 提供的畫面，其實是一個「遠端管理面板」，讓�
 4. 只有在網站**必須登入**、且非得靠點擊互動才能取得資料時，才需要用到 Claude in Chrome，
    而這類任務建議安排在「有人在電腦前」的時段執行較為穩定。
 
+> 💡 **創投 (VC) 自動化進階導覽**：關於如何運用 Playwright MCP 免登入動態抓取新創官網、Pricing 頁面與競品資料，並結合 Custom Skill 產出盡職調查報告，請參閱 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](../Skills/VC_Playwright/README.md)。
+
 ---
 
 ## 八、實戰 Prompt 範例

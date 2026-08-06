@@ -81,6 +81,7 @@
   * 涵蓋：`doc-coauthoring` (個人風潤飾)、`internal-comms` (高效內部公告)、`slack-gif-creator` (動態貼圖生成)。
   * 實戰：保留聲音的數位游牧短文修改、TL;DR 企業 ERP 停機公告、Slack Rocket Welcome 動態貼圖。
 
+
 ---
 
 ## 🚀 自訂 Skills 四階演進路徑與建立方式
@@ -135,6 +136,10 @@
 | 9 | 🔴 第四階：自動化專家 | [跨部門簽核追蹤秘書](./Examples/Office_Workflow_09_Approval_Tracker.md) | 文件需要法務、財務、主管多方簽核，容易卡關 | 輸入簽核流程 → 查目前狀態 → 找卡點 → 產出催辦訊息 |
 | 10 | 🔴 第四階：自動化專家 | [辦公室營運儀表板代理人](./Examples/Office_Workflow_10_Operations_Dashboard.md) | 主管每天想知道會議、待辦、客訴、採購、簽核的整體狀態 | 讀取多來源資料 → 分析異常 → 產出每日營運摘要 → 建議下一步 |
 
+---
+* **💼 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](./VC_Playwright/README.md)**
+  * 涵蓋：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
+  * 實戰：Playwright MCP 動態抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
 ---
 
 

@@ -60,7 +60,8 @@
 ### 🟢 Skills（技能）— **Free**
 > **📂 [進入主題筆記：Skills](./Skills/README.md)**  
 > 自訂 `SKILL.md` 讓 Claude 變成你的數位分身。Free 帳號即可建立、測試與使用自訂 Skill（需開啟 code execution）。  
-> 內含四階範例：模仿者 → 創作者 → 整合者 → 自動化專家。
+> 內含四階範例：模仿者 → 創作者 → 整合者 → 自動化專家。  
+> 💼 **特別專題**：[創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](./Skills/VC_Playwright/README.md)（結合動態網頁爬取與創投商業分析框架）。
 
 ### 🟡 Plugins（外掛打包）— **Free 可安裝；Cowork / Code 需 Pro**
 > **📂 [進入主題筆記：Plugins](./Plugins/README.md)**  
