@@ -98,7 +98,7 @@
 * **核心概念**：學習掛載外部參考知識（放置於 `references/`）與套用標準文件範本（放置於 `templates/`），使 Claude 產出特定格式的文件。
 * **適用場景**：符合公司特定規範的報價單、遵循特定格式的會議紀錄、參考產品手冊進行預檢等。
 * **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/README.md)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）。
+* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）與 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](#vc-creator)。
 
 ### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo 與圖片)
 * **核心概念**：在 Skill 中加入 `assets/` 資料夾放置圖片（如公司 Logo、圖表、ICON），並在產出文件時以相對路徑引用，讓 Claude 的輸出直接包含品牌標誌。
@@ -137,11 +137,21 @@
 | 10 | 🔴 第四階：自動化專家 | [辦公室營運儀表板代理人](./Examples/Office_Workflow_10_Operations_Dashboard.md) | 主管每天想知道會議、待辦、客訴、採購、簽核的整體狀態 | 讀取多來源資料 → 分析異常 → 產出每日營運摘要 → 建議下一步 |
 
 ---
+
+
 <div id="vc-playwright"></div>
 
 * **💼 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](./VC_Playwright/README.md)**
   * 涵蓋：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
   * 實戰：Playwright MCP 動態抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
+  
+
+<div id="vc-creator"></div>
+
+* **💼 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](./VC_Creator/README.md)**
+  * 涵蓋：投資備忘錄 (Investment Memo) 產生器、Term Sheet 條款檢核與風險評級 (Red Flag Alerts)、Pitch Deck 簡報審查與問答生成器。
+  * 技巧：結合 `references/`（創投指標規章、條款指南）與 `templates/`（標準 IC 備忘錄與風險報告範本）。
+
 ---
 
 
