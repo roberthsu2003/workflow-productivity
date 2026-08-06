@@ -1,55 +1,94 @@
 # 🎯 創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰
 
 > 🟢 **方案需求**：Free / Pro 方案皆適用（搭配 Claude Desktop 本地 Playwright MCP 伺服器）  
-> 💼 **產業目標**：針對創投（Venture Capital）產業的核心工作（Deal Sourcing、Due Diligence、Market Mapping、Portfolio Management），將 **Playwright MCP 瀏覽器自動化** 與 **創投商業分析框架** 結合，打造高效率的模组化 Agent Skills。
+> 💼 **產業目標**：針對創投（Venture Capital）產業的核心工作（Deal Sourcing、Due Diligence、Market Mapping、Portfolio Management），將 **Playwright MCP 瀏覽器自動化** 與 **創投商業分析框架** 結合，打造高效率的模組化 Agent Skills。  
+> 🎓 **講師提示**：本文件專為非創投背景講師設計，提供 **真實可測試網址**、**可以直接複製的示範指令** 以及 **VC 創投商業背景小知識**，方便課堂上順暢示範。
 
 ---
 
-## 💡 為什麼創投產業需要 Playwright MCP + Custom Skill？
+## 🎓 講師專屬：4 大實戰演練案例庫（含真實測試網址）
 
-創投經理與分析師（VC Associates / Analysts）每天需處理海量的公開與非公開數據，常見痛點包括：
-- **動態網頁難以直接擷取**：許多新創官網、Pricing 價格頁面、Changelog 或 Product Launch 平台採用 SPA（Single Page Application）或動態渲染。
-- **反覆人工爬查極度耗時**：比對 5–10 家競品的 Pricing、最新 Feature 或創辦人背景時需頻繁切換分頁與複製貼上。
-- **資料缺乏標準化結構**：散落於不同網站的非結構化資訊，難以直接輸入至創投 IC（Investment Committee，投資委員會）會議簡報或投資備忘錄 (Investment Memo)。
+為了讓非創投背景的講師能直接在課堂上對著畫面示範，以下精選 4 個國際知名新創公司的真實網址與課堂操作腳本：
 
-透過 **Playwright MCP**（操控本機真實瀏覽器）+ **Claude Custom Skill**（封裝創投分析邏輯 SOP），即可實現從「網頁動態點擊擷取」到「專業商業報告產出」的全自動化！
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                創投 4 大實戰案例網址與示範主題                                     │
+├──────────────────────────┬──────────────────────────────────────┬───────────────────────────────┤
+│ 演練主題                 │ 真實測試網址 (Target URLs)           │ 創投商業關注點 (VC Metrics)   │
+├──────────────────────────┼──────────────────────────────────────┼───────────────────────────────┤
+│ 案例 1：開發者工具與競品 │ Supabase (https://supabase.com)      │ 定價機制 (Freemium/Usage)、   │
+│          調研 (DD)       │ vs Firebase (https://firebase.google)│ 開源社群影響力 vs 競品壁壘    │
+├──────────────────────────┼──────────────────────────────────────┼───────────────────────────────┤
+│ 案例 2：AI 向量資料庫    │ Pinecone (https://www.pinecone.io)   │ 賽道成長潛力、收費模式、      │
+│          市場地圖        │ vs Qdrant (https://qdrant.tech)      │ 全託管 (Managed) vs 自建      │
+├──────────────────────────┼──────────────────────────────────────┼───────────────────────────────┤
+│ 案例 3：新創標的發現     │ Product Hunt (https://producthunt.com)│ Upvote 聲量、產品創新度、     │
+│          (Deal Source)   │ YC Companies (https://ycombinator.com)│ 早期趨勢與關鍵字篩選          │
+├──────────────────────────┼──────────────────────────────────────┼───────────────────────────────┤
+│ 案例 4：投後營運與擴張   │ Resend (https://resend.com/careers)  │ 招募規模變動 (Hiring Blitz)、 │
+│          健康度追蹤      │ Changelog (https://resend.com/changelog)│ 產品疊代頻率 (Release Velocity)│
+└──────────────────────────┴──────────────────────────────────────┴───────────────────────────────┘
+```
 
 ---
 
-## 🚀 創投 4 大專屬 Skill 主題與實操架構
+### 📌 案例 1：新創盡職調查與競品比對 (Due Diligence & Competitor Intel)
 
+- **目標新創**：**Supabase**（知名開源資料庫新創）
+  - 官網首頁：`https://supabase.com`
+  - 價格頁面：`https://supabase.com/pricing`
+  - 招募頁面：`https://supabase.com/careers`
+- **對照競品**：**Firebase** (`https://firebase.google.com`)
+- **💡 創投背景小知識（講師口播備忘）**：
+  > 「Supabase 是主打替代 Google Firebase 的開源新創。VC 在做盡職調查 (DD) 時，極度看重這類 SaaS 公司的 **Pricing 模型（免費額度 Freemium 能否轉化為付費客戶）** 以及 **招募頁面（工程與業務團隊是否快速膨脹）**。」
+
+#### 📋 講師課堂示範指令（直接複製發送給 Claude）：
+```markdown
+請使用 Playwright MCP 連接至 Supabase 官網 (https://supabase.com) 與價格頁面 (https://supabase.com/pricing)，擷取其核心產品訴求與付費方案。接著開啟競品 Firebase (https://firebase.google.com)，幫我產出一份「Supabase vs Firebase 競品分析報告」，包含：核心價值主張、計費方式（Usage-based 或月費）、目標客群差異。
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│                                創投 4 大專屬 Skill 自動化矩陣                             │
-├──────────────────────────┬──────────────────────────┬───────────────────────────────────┤
-│ Skill 主題               │ Playwright MCP 任務      │ 技能產出結果                      │
-├──────────────────────────┼──────────────────────────┼───────────────────────────────────┤
-│ 1. 競品動態與市場地圖    │ 自動連線競品官網/Pricing  │ 競品矩陣（定位、商業模式、優劣勢） │
-│ 2. 創辦團隊背景研判      │ 爬取工商登記/新聞/論壇   │ 數位足跡與背景風險評估報告        │
-│ 3. 新創趨勢與 Deal Source│ 追蹤 Product Hunt/YC/GitHub│ 每週 Deal Sourcing 預警簡報        │
-│ 4. 投後營運健康度追蹤    │ 抓取 App 評分/Careers 職缺│ 營運成長/預警訊號報告             │
-└──────────────────────────┴──────────────────────────┴───────────────────────────────────┘
+
+---
+
+### 📌 案例 2：AI 賽道競品對照與市場地圖 (Market Mapping)
+
+- **目標新創**：**Pinecone**（知名 AI 向量資料庫新創）
+  - 官網與 Pricing：`https://www.pinecone.io/pricing`
+- **對照競品**：**Qdrant** (`https://qdrant.tech`)
+- **💡 創投背景小知識（講師口播備忘）**：
+  > 「AI 大模型暴紅後，『向量資料庫 (Vector Database)』成為 VC 最瘋狂競相投資的基礎設施賽道。VC 做 Market Mapping 時，需要快速比對誰提供 Serverless 隨用隨付、誰提供開源自架版本。」
+
+#### 📋 講師課堂示範指令（直接複製發送給 Claude）：
+```markdown
+請使用 Playwright MCP 造訪 Pinecone (https://www.pinecone.io/pricing) 與 Qdrant (https://qdrant.tech)，比較這兩家 AI 向量資料庫新創。請擷取兩家的：1. 核心產品定位 2. 收費機制 3. 是否提供開源版，並產出 Markdown 競品對照矩陣。
 ```
 
-### 1. 競品動態與市場地圖生成器 (Market Mapping & Competitor Intel Skill)
-- **應用場景**：分析特定賽道（如 AI DevTools、FinTech、Enterprise SaaS）時，快速掃描目標公司與 5–10 家競品的產品定位、價格架構、最新 Feature 與客群。
-- **Playwright MCP 角色**：自動連線至競品官網、`/pricing` 頁面、`/changelog` 或更新日誌頁面，動態擷取最新文案與畫面結構。
-- **技能產出**：競品對照矩陣（包含：核心定位、商業模式、收費機制、功能特點、目標客群、SWOT 分析）。
+---
 
-### 2. 初創團隊與創辦人背景研判 Skill (Founder & Startup Background Check Skill)
-- **應用場景**：收到 Pitch Deck 或發現潛在項目時，進行快速背景研判與數位足跡核實。
-- **Playwright MCP 角色**：前往公開商業登記（如公司登記查詢網站）、新聞搜尋引擎、社群/論壇（GitHub Trending、Product Hunt、LinkedIn 公開頁面）、創辦人採訪或 Podcast 逐字稿。
-- **技能產出**：團隊數位足跡與背景風險評估報告，標示公開新聞紀錄、技術社群聲量、專利發明與公司異動歷程。
+### 📌 案例 3：早期新創標的搜尋 (Deal Sourcing Tracker)
 
-### 3. 新創趨勢與 Deal Sourcing 偵測 Skill (Deal Sourcing & Product Launch Tracker)
-- **應用場景**：主動發現早期潛在投資標的，降低錯失好項目的風險（FOMO）。
-- **Playwright MCP 角色**：自動造訪與爬取 Product Hunt、YC Launch 頁面、GitHub Trending、Hacker News Launch 貼文或垂直產業論壇。
-- **技能產出**：依據自訂條件（如 AI 應用、High Upvotes、特定 Tech Stack、SaaS 訂閱制）過濾優質項目，生成「每週 Deal Sourcing 預警與初審簡報」。
+- **目標網站**：**Product Hunt** (`https://www.producthunt.com`)
+- **💡 創投背景小知識（講師口播備忘）**：
+  > 「Deal Sourcing 是創投分析師最重要的基本功。分析師每天早上都要上 Product Hunt 看有哪些新工具獲得高 Upvote（社群投票讚數），搶在其他創投之前聯絡創辦人發出投資邀約。」
 
-### 4. 投後公司營運狀況自動追蹤器 (Portfolio Company Health Checker)
-- **應用場景**：定期關注已投 Portfolio 公司或重點觀望 (Watchlist) 名單的運作狀態。
-- **Playwright MCP 角色**：連線至 App Store / Google Play 擷取最新評分與用戶負評、進入官網 Careers（招募頁面）統計職缺數量變動、前往 Blog / Newsroom 觀察產品更新頻率。
-- **技能產出**：營運訊號健康報告（例如組織擴張訊號：技術與業務職缺爆發；營運警訊：評分下滑或長達數月無更新）。
+#### 📋 講師課堂示範指令（直接複製發送給 Claude）：
+```markdown
+請使用 Playwright MCP 造訪 Product Hunt 首頁 (https://www.producthunt.com)，抓取今天熱門發布 (Featured Products) 前 5 個項目。請整理出：產品名稱、一句話摘要、獲得的 Upvote 票數、官網連結，並分析哪些項目屬於 AI 應用。
+```
+
+---
+
+### 📌 案例 4：投後公司營運健康度追蹤 (Portfolio Health Check)
+
+- **目標新創**：**Resend**（知名郵件 API 新創，成長速度極快）
+  - 招募頁面：`https://resend.com/careers`
+  - 更新日誌：`https://resend.com/changelog`
+- **💡 創投背景小知識（講師口播備忘）**：
+  > 「投後管理 (Portfolio Management) 時，VC 不需要天天問創辦人進度。觀察公司的 **Careers 頁面職缺數**（代表資金是否充沛、正大規模擴張）與 **Changelog 產品更新頻率**（代表團隊開發執行力），就能精準評估公司的健康狀態。」
+
+#### 📋 講師課堂示範指令（直接複製發送給 Claude）：
+```markdown
+請使用 Playwright MCP 造訪 Resend 的招募頁 (https://resend.com/careers) 與 Changelog 頁 (https://resend.com/changelog)，統計該公司目前開放的職缺數量與類別，以及最近一個月的產品更新次數，產出一份「Resend 營運成長與擴張訊號報告」。
+```
 
 ---
 
@@ -95,34 +134,18 @@ description: 當使用者提供新創公司 URL 時，結合 Playwright MCP 自�
 
 ---
 
-## 📋 課堂可以直接複製使用的 Prompt（RTCCF 格式）
+## 📚 非創投背景講師：VC 核心術語與講義備忘手冊
 
-上課示範時，若無上傳 `.md` 設定檔，學員可以直接複製以下 RTCCF Prompt 在對話框中發起任務：
+上課時如果學員問起創投術語，可以參考以下簡明解說表：
 
-```markdown
-## Role
-你是一位資深創投分析師 (VC Investment Associate)，精通運用 Playwright MCP 操控瀏覽器進行自動化盡職調查與市場調研。
-
-## Task
-請針對目標新創公司網站（例如：https://example-startup.com），進行網頁資料抓取、競品分析並產出一份「VC 初步盡職調查報告 (Preliminary VC Due Diligence Report)」。
-
-## Context
-你需要分析該項目的產品商業模式、價格策略、團隊擴張狀況，並自動搜尋網路上 2 家主要競品進行比較。
-
-## Constraint
-- 必須使用 Playwright MCP 造訪目標網站的首頁、/pricing 頁面與 /careers 頁面。
-- 使用搜尋引擎尋找競品，並使用 Playwright 開啟前 2 家競品官網。
-- 報告須使用繁體中文輸出。
-- 遇 DOM 動態載入時，需等待元件載入完成（wait_for_selector）再擷取內容。
-
-## Format
-請輸出標準 Markdown 格式報告，包含：
-1. 執行摘要 (Executive Summary)
-2. 商業模式與價格機制 (Business Model & Pricing)
-3. 競品分析矩陣 (Competitor Comparison Table)
-4. 團隊與招募訊號 (Hiring & Growth Signals)
-5. 創辦人面談建議問題 (Top 3 Questions for Founders)
-```
+| 創投術語 (Term) | 全名 / 中文 | 講師秒懂解釋（課堂口播法） |
+| :--- | :--- | :--- |
+| **Deal Sourcing** | 標的尋找 / 案源發掘 | 「像探星獵人一樣，主動在網路上尋找剛起步、有潛力的新創公司。」 |
+| **Due Diligence (DD)** | 盡職調查 | 「買房前的驗屋！在掏錢投資前，把目標公司的產品、財務、法務與競品查個水落石出。」 |
+| **Market Mapping** | 市場地圖 / 賽道掃描 | 「繪製產業地圖，把市面上的主要玩家（目標公司 + 競品）依照定位與價格排成對照表格。」 |
+| **Portfolio Management**| 投後管理 | 「投資後的售後服務與健康追蹤，定期關注已投公司有沒有在好好招募與做產品更新。」 |
+| **Freemium / Usage-based**| 免費增值 / 按用量計費| 「SaaS 新創常見的收費模式：基礎功能免費吸引用戶，用量變大（如資料量、API 呼叫數）才收費。」 |
+| **Changelog** | 產品更新日誌 | 「新創公司的開發成績單。看 Changelog 就能知道這家公司的工程師有沒有在認真寫程式發佈新功能。」 |
 
 ---
 
