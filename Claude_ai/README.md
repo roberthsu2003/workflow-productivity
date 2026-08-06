@@ -81,7 +81,7 @@
 > - 主 AI 為了完成複雜任務，會自動派發多個「分身」執行子任務（一個查資料、一個寫程式），最後彙整結果。
 > - 大幅提升處理複雜任務的精準度。
 
-### 🟣 Scheduled（排程任務）— **Pro / Max / Team / Enterprise（Cowork Beta）**
+### 🟣 Scheduled（排程任務）— **Pro / Max / Team / Enterprise**
 > **📂 [進入主題筆記：Scheduled](./Scheduled/README.md)**  
 > 把重複性工作交給 Claude 自動定時執行：每日簡報、週報彙整、定期研究追蹤等，即使電腦休眠也會準時在雲端執行。
 
