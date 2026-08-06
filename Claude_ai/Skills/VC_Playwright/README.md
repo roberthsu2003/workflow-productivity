@@ -117,27 +117,4 @@ description: 當使用者提供台灣硬體（無人機、矽光子/AI晶片）�
 
 ---
 
-## 💡 課程設計與教學進階建議
-
-### 1. 教導「處理動態阻擋與結構化提取」
-- **元件載入與動態等待**：創投常研究的科技新創網站多採用動態前端（React/Vue/Next.js），教導學員如何在 Playwright 指令中加入「等待元件載入完成（`wait_for_selector`）」或「等待網路空閒（`wait_for_load_state`）」，避免擷取到空白頁面。
-- **非結構化 HTML 轉結構化 JSON/Markdown**：引導學員理解 Playwright MCP 負責「抓取 raw 內容」，而 Claude 則負責將龐大的 DOM 結構自動清理並轉換為結構化的 JSON 欄位或 Markdown 比對表格。
-
-### 2. 結合多 MCP 打造完整自動化 Workflow (Playwright + FileSystem / Notion / Slack)
-串聯多個 MCP 伺服器，實現資料從「抓取 ➔ 分析 ➔ 存檔 ➔ 通報」的一站式工作流：
-
-```
-┌─────────────────┐     ┌──────────────────┐     ┌───────────────────┐     ┌─────────────────────┐
-│  Playwright MCP │ ──> │ Claude DD Skill  │ ──> │   FileSystem MCP  │ ──> │ Notion / Slack MCP  │
-│ (自動抓取官網/競品) │     │ (創投商業框架分析) │     │ (儲存為 .md 投資報告) │     │ (自動同步至 IC 數據庫) │
-└─────────────────┘     └──────────────────┘     └───────────────────┘     └─────────────────────┘
-```
-
-1. **Playwright MCP**：本機操控瀏覽器前往新創官網與競品網頁，抓取動態內容。
-2. **Claude Custom Skill**：輸入網頁資料並套用 VC 商業分析模組進行歸納收斂。
-3. **FileSystem MCP**：將產出的報告自動儲存至團隊的 `/Investment_Reports/Taiwan_Startups/` 目錄中。
-4. **Notion / Slack Connector (Remote MCP)**：自動將重點摘要同步張貼至團隊的 Slack `#deal-flow` 頻道或更新至 Notion 投資案資料庫中。
-
----
-
 ← [返回 Skills 主頁](../README.md) | [返回專案首頁](../../README.md)
