@@ -38,19 +38,27 @@ VC_Creator/
 <summary><b>範例 1：IC 委員會標準投資備忘錄生成助手 (Investment Memo Generator)</b></summary>
 
 - **建議 Skill `name`**：`vc-investment-memo-generator`
-- **建議 `description`**：
+- **建議 `description`（可直接複製至 `SKILL.md` 前言）**：
   ```yaml
+  name: vc-investment-memo-generator
   description: >-
-    當使用者提供新創訪談筆記、團隊介紹、財務數據簡報，並要求整理或生成「投資備忘錄 (Investment Memo)」、「IC 會議報告」、「投資評估報告」時觸發。自動調用 references/vc-evaluation-framework.md 對照關鍵財務與營運指標（如 LTV/CAC, NDR, Burn Multiple），並套用 templates/investment-memo-template.md 輸出包含商業模式、財務健康度、風險評估與創辦人提問單的標準 IC 備忘錄。
+    當使用者提供新創訪談筆記、團隊介紹、財務數據簡報，
+    並要求整理或生成「投資備忘錄 (Investment Memo)」、「IC 會議報告」、「投資評估報告」時觸發。
+    自動調用 references/vc-evaluation-framework.md 對照關鍵財務與營運指標
+    （如 LTV/CAC, NDR, Burn Multiple），
+    並套用 templates/investment-memo-template.md 輸出包含商業模式、
+    財務健康度、風險評估與創辦人提問單的標準 IC 備忘錄。
   ```
 - **應用場景**：分析師剛與新創創辦人開完會，手邊有雜亂的對話紀錄與財務簡報文字，需快速產出標準格式的投資備忘錄。
 - **調用資源**：
   - 參考 `references/vc-evaluation-framework.md` 自動對照 LTV/CAC、NDR、Burn Multiple 等指標。
   - 套用 `templates/investment-memo-template.md` 產出帶有風險評估與創辦人提問單的簡報備忘錄。
-- **建立步驟**：
-  1. **解析輸入**：提取訪談筆記中的公司名稱、團隊背景、產品競品與財務指標（ARR, Burn Rate, Cash Runway, Valuation）。
-  2. **指標對照**：讀取 `references/vc-evaluation-framework.md` 對照數據健康度（如 LTV/CAC > 3x, NDR > 110%）。
-  3. **套用範本**：讀取 `templates/investment-memo-template.md` 將結果填入對應章節並輸出。
+- **建立步驟（RTCCF 提示詞架構）**：
+  - **R (Role 角色)**：創投資深投資分析師 (VC Investment Analyst)。
+  - **T (Task 任務)**：解析輸入之訪談筆記與數據，產出合乎 IC 審查規範的標準投資備忘錄。
+  - **C (Context 背景)**：讀取新創對話紀錄與財務數據，自動引用 `references/vc-evaluation-framework.md` 進行 SaaS / 實體財務健康指標對照。
+  - **C (Constraint 限制)**：數據必須真實對照無幻覺；缺漏數據須標明「待盡調核實」；嚴格遵循客觀風險評估原則。
+  - **F (Format 格式)**：嚴格套用 `templates/investment-memo-template.md` 之 Markdown 樣板輸出。
 
 </details>
 
@@ -58,19 +66,27 @@ VC_Creator/
 <summary><b>範例 2：Term Sheet 條款檢核與風險評級助手 (Term Sheet Risk Checker)</b></summary>
 
 - **建議 Skill `name`**：`vc-term-sheet-risk-checker`
-- **建議 `description`**：
+- **建議 `description`（可直接複製至 `SKILL.md` 前言）**：
   ```yaml
+  name: vc-term-sheet-risk-checker
   description: >-
-    當使用者輸入或上傳 Term Sheet 投資意向書草案，要求進行「條款檢核」、「風險評估」、「尋找不平等的 Red Flag 條款」時觸發。參考 references/term-sheet-glossary.md 對照清算優先權 (Liquidation Preference)、反稀釋 (Anti-dilution)、期權池 (ESOP Pool) 及董事會席次等重要條款，並套用 templates/term-sheet-summary-template.md 自動輸出帶有 🟢 綠燈、🟡 黃燈與 🔴 紅燈警訊的風險檢核報告。
+    當使用者輸入或上傳 Term Sheet 投資意向書草案，
+    要求進行「條款檢核」、「風險評估」、「尋找不平等的 Red Flag 條款」時觸發。
+    參考 references/term-sheet-glossary.md 對照清算優先權 (Liquidation Preference)、
+    反稀釋 (Anti-dilution)、期權池 (ESOP Pool) 及董事會席次等重要條款，
+    並套用 templates/term-sheet-summary-template.md 
+    自動輸出帶有 🟢 綠燈、🟡 黃燈與 🔴 紅燈警訊的風險檢核報告。
   ```
 - **應用場景**：收到新創或對手創投提出的 Term Sheet 草案，需快速分析是否有對創投或創辦人不利的極端條款。
 - **調用資源**：
   - 參考 `references/term-sheet-glossary.md` 對照清算優先權 (Liquidation Preference)、反稀釋 (Anti-dilution) 等條款。
   - 套用 `templates/term-sheet-summary-template.md` 自動標示 🟢 綠燈、🟡 黃燈與 🔴 紅燈風險警訊。
-- **建立步驟**：
-  1. **條款擷取與歸類**：識別 Term Sheet 中的核心要素（Valuation, Liquidation Preference, Anti-dilution, Governance, Option Pool）。
-  2. **風險評級判斷**：讀取 `references/term-sheet-glossary.md` 的風險標準進行三色燈號評級（🟢 Standard, 🟡 Caution, 🔴 Red Flag）。
-  3. **格式化報告輸出**：套用 `templates/term-sheet-summary-template.md` 產出摘要表與風險警告。
+- **建立步驟（RTCCF 提示詞架構）**：
+  - **R (Role 角色)**：創投法務與盡調審查專家 (VC Legal & Deal Counsel)。
+  - **T (Task 任務)**：掃描與審查 Term Sheet 條款草案，評估條款合理性並標示極端或不利條款 (Red Flags)。
+  - **C (Context 背景)**：調用 `references/term-sheet-glossary.md` 的標準條款與極端條款庫進行條款比對與權益分析。
+  - **C (Constraint 限制)**：依據風險程度分類標示 🟢 綠燈 (標準)、🟡 黃燈 (需注意)、🔴 紅燈 (高風險/極端條款)；具體說明條款影響力。
+  - **F (Format 格式)**：套用 `templates/term-sheet-summary-template.md` 輸出包含摘要表與三色警訊之審查報告。
 
 </details>
 
@@ -78,21 +94,29 @@ VC_Creator/
 <summary><b>範例 3：Pitch Deck 簡報審查與創辦人提問單生成器 (Pitch Deck Auditor)</b></summary>
 
 - **建議 Skill `name`**：`vc-pitch-deck-auditor`
-- **建議 `description`**：
+- **建議 `description`（可直接複製至 `SKILL.md` 前言）**：
   ```yaml
+  name: vc-pitch-deck-auditor
   description: >-
-    當使用者提供新創商業計畫書 (Pitch Deck)、簡報大綱或產品簡介文字，要求進行「Deck 審查」、「簡報完整度打分」、「初審評估」或「列出對創辦人的提問單」時觸發。參考 references/pitch-deck-checklist.md (對齊 Sequoia / YC 10 大簡報要素) 進行結構審查，並套用 templates/deck-review-report-template.md 自動產出簡報完整度打分表及 3-5 個 IC 會議關鍵提問單。
+    當使用者提供新創商業計畫書 (Pitch Deck)、簡報大綱或產品簡介文字，
+    要求進行「Deck 審查」、「簡報完整度打分」、「初審評估」或「列出對創辦人的提問單」時觸發。
+    參考 references/pitch-deck-checklist.md (對齊 Sequoia / YC 10 大簡報要素) 進行結構審查，
+    並套用 templates/deck-review-report-template.md 
+    自動產出簡報完整度打分表及 3-5 個 IC 會議關鍵提問單。
   ```
 - **應用場景**：初審大量的商業計畫書 (Pitch Deck)，快速評估簡報是否缺漏關鍵 Slide，並列出 IC 會議要問創辦人的 3 個關鍵問題。
 - **調用資源**：
   - 參考 `references/pitch-deck-checklist.md` (Sequoia / YC 10 大簡報要素)。
   - 套用 `templates/deck-review-report-template.md` 輸出完整度打分表。
-- **建立步驟**：
-  1. **簡報要素比對**：讀取 `references/pitch-deck-checklist.md` 中的 10 大關鍵 Slide 矩陣。
-  2. **缺漏分析與評分**：檢查輸入內容缺少哪些關鍵項目並計算完整度分數。
-  3. **生成創辦人提問單**：根據缺漏或邏輯矛盾之處產出 3~5 個關鍵提問單，並套用 `templates/deck-review-report-template.md` 輸出報告。
+- **建立步驟（RTCCF 提示詞架構）**：
+  - **R (Role 角色)**：創投合夥人與 Pitch Deck 審查主幹 (VC Partner & Pitch Auditor)。
+  - **T (Task 任務)**：初審商業計畫書結構完整度，計算質量得分並產出 IC 審查關鍵提問單。
+  - **C (Context 背景)**：對齊 `references/pitch-deck-checklist.md` (Sequoia / YC 10 大核心簡報要素矩陣)。
+  - **C (Constraint 限制)**：明確標示缺漏之關鍵 Slide；提問單須聚焦於商業模式漏洞、單位經濟與競爭壁壘等核心痛點。
+  - **F (Format 格式)**：套用 `templates/deck-review-report-template.md` 輸出評分表與提問單清單。
 
 </details>
+
 
 
 ---
