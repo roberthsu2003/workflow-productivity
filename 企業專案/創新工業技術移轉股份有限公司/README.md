@@ -274,7 +274,7 @@
 
 #### 📖 參考教材與延伸連結
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習整合專案知識庫（Projects）與多格式樣板檔，實現免寫程式的高階工作流自動化。
-  - [VC_Playwright實作範例(第二階：創作者)](../../Claude_ai/Skills/VC_Playwright/README.md)
+  - [VC_Playwright實作範例(模仿者 (Imitator))](../../Claude_ai/Skills/VC_Playwright/README.md)
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（第三階：整合者 Skill 實作）</b></summary>
   <br>

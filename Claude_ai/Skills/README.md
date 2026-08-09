@@ -98,7 +98,7 @@
 * **核心概念**：學習掛載外部參考知識（放置於 `references/`）與套用標準文件範本（放置於 `templates/`），使 Claude 產出特定格式的文件。
 * **適用場景**：符合公司特定規範的報價單、遵循特定格式的會議紀錄、參考產品手冊進行預檢等。
 * **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/README.md)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）與 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](#vc-creator)。
+* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）與 [創投 (VC) 專屬 Skill 實戰](#vc-creator)。
 
 ### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo 與圖片)
 * **核心概念**：在 Skill 中加入 `assets/` 資料夾放置圖片（如公司 Logo、圖表、ICON），並在產出文件時以相對路徑引用，讓 Claude 的輸出直接包含品牌標誌。
