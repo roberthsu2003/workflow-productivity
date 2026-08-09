@@ -86,33 +86,30 @@
 ```yaml
 ---
 name: taiwan-tech-due-diligence
-description: 當使用者提供台灣硬體（無人機、矽光子/AI晶片）或 AI 新創官網 URL 時，結合 Playwright MCP 自動進行台灣產業特性檢視與競品對照報告。
+description: >-
+  當使用者提供台灣硬體（無人機、矽光子/AI晶片）或 AI 新創官網 URL 時，
+  結合 Playwright MCP 自動進行台灣產業特性檢視與競品對照報告。
 ---
 
 # 台灣 DeepTech & AI 新創盡職調查 Skill
 
-## 任務目標
-針對台灣在地新創（無人機、矽光子/半導體、工業 AI 等），結合 Playwright MCP 進行官網動態擷取、供應鏈與技術特點分析，產出投資前評估報告。
+## 提示詞與執行 SOP（RTCCF 架構）
 
-## 執行流程 SOP
-
-### 第一階段：Playwright 動態擷取 (Target Taiwan Startup)
-1. 使用 Playwright MCP 開啟指定之台灣新創官網 URL。
-2. 擷取首頁之核心技術價值主張 (Value Proposition) 與產品規格。
-3. 自動導覽至網站中的 `/products` (產品)、`/solutions` (解決方案)、`/about` (團隊背景) 與 `/careers` (招募狀態) 頁面。
-
-### 第二階段：台灣產業鏈特色分析
-1. 檢視產品是否符合「非紅供應鏈」或「半導體/矽光子生態系整合」。
-2. 透過搜尋引擎查詢其主要台灣或國際競品，使用 Playwright 開啟競品官網。
-
-### 第三階段：商業分析與報告產出
-綜合以上擷取之數據，輸出符合以下格式的 Markdown 報告：
-
-1. **Executive Summary（執行摘要）**：100 字極簡說明產品技術與市場切入點。
-2. **Technical & Supply Chain Advantages（技術與供應鏈優勢）**：分析其在台灣半導體/硬體製造鏈中的優勢與壁壘。
-3. **Competitor Comparison Matrix（競品分析矩陣）**：以 Markdown 表格比較目標公司 vs 主要競品。
-4. **Hiring & Market Expansion Signals（招募與市場擴張訊號）**：分析其團隊擴張與海外落地進度。
-5. **Key Questions for Founder（創辦人訪談關鍵問題）**：針對專利壁壘、客戶驗證 (PoC) 進度與毛利率提出 3–5 個建議問題。
+- **Role (角色)**：創投資深 DeepTech 投資分析師與台灣半導體/硬體產業研究員。
+- **Task (任務)**：結合 Playwright MCP 自動導覽台灣硬體與 AI 新創官網，擷取核心產品技術規格、供應鏈定位與招募訊號，並產出投資前初審評估報告。
+- **Context (背景與資源)**：
+  1. 第一階段（Playwright 動態擷取）：開啟指定 URL，導覽首頁、`/products`、`/solutions`、`/about` 及 `/careers` 頁面擷取價值主張與招募訊號。
+  2. 第二階段（台灣產業鏈對照）：檢視產品是否符合「非紅供應鏈」或「半導體/矽光子生態系整合」，並透過搜尋開啟主要競品官網。
+- **Constraint (限制與規範)**：
+  1. 數據必須來自官網與公開搜尋之真實資訊，不得臆測捏造。
+  2. 若網頁載入失敗或有動態 DOM，必須等待元件載入完成 (`wait_for_selector`) 後再擷取。
+  3. 創辦人提問單須聚焦專利壁壘、客戶 PoC 進度與毛利率。
+- **Format (輸出格式)**：產出包含以下 5 大章節的 Markdown 報告：
+  1. **Executive Summary（執行摘要）**：100 字極簡說明產品技術與市場切入點。
+  2. **Technical & Supply Chain Advantages（技術與供應鏈優勢）**：分析其在台灣半導體/硬體製造鏈中的優勢與壁壘。
+  3. **Competitor Comparison Matrix（競品分析矩陣）**：以 Markdown 表格比較目標公司 vs 主要競品。
+  4. **Hiring & Market Expansion Signals（招募與市場擴張訊號）**：分析其團隊擴張與海外落地進度。
+  5. **Key Questions for Founder（創辦人訪談關鍵問題）**：針對專利壁壘、客戶驗證 (PoC) 進度與毛利率提出 3–5 個建議問題。
 ```
 ---
 ## 📝 學員課後自主練習：台灣智慧醫療 AI (MedTech) 投資前初審 Skill
@@ -144,20 +141,30 @@ description: 當使用者提供台灣硬體（無人機、矽光子/AI晶片）�
 > 2. 導覽至選單中的 `/solutions` (解決方案) 或 `/news` (最新消息)，擷取認證與醫院合作資訊。
 > 3. 遇 DOM 動態選單時，設定「等待元件載入完成 (wait_for_selector)」，確保不會抓取到空白頁面。
 
-> 💡 **提示 3：Skill YAML 與 SOP 定義參考 (SKILL.md Template)**  
+> 💡 **提示 3：Skill YAML 與 SOP 定義參考 (SKILL.md Template - RTCCF 架構)**  
 > 學員可在 `.claude/skills/medtech-ai-dd/SKILL.md` 中嘗試撰寫以下結構：
 
 ```yaml
 ---
 name: medtech-ai-evaluator
-description: 當輸入醫療 AI 新創官網時，利用 Playwright MCP 擷取 TFDA/FDA 認證、臨床合作醫院並生成 MedTech 投資評估報告。
+description: >-
+  當輸入醫療 AI 新創官網時，利用 Playwright MCP 擷取 TFDA/FDA 認證、
+  臨床合作醫院並生成 MedTech 投資評估報告。
 ---
 
-# 智慧醫療 AI 標的評估 SOP
-1. 使用 Playwright MCP 開啟目標官網，擷取醫療影像/病理 AI 核心產品。
-2. 導覽至新聞或產品頁面，尋找 TFDA / FDA 認證與專利標示。
-3. 統計合作之醫院與醫學中心名單（驗證臨床落地能力）。
-4. 輸出含「法規壁壘」、「臨床驗證」、「創投評估建議」之 Markdown 報告。
+# 智慧醫療 AI 標的評估 SOP（RTCCF 架構）
+
+- **Role (角色)**：創投智慧醫療 (MedTech) 領域投資經理與醫療器材監管分析師。
+- **Task (任務)**：造訪醫療 AI 新創官網，擷取醫療器材認證 (SaMD)、臨床合作醫院實績與 AI 病理/影像技術壁壘，生成投資委員會 (IC) 案源初審報告。
+- **Context (背景與資源)**：
+  1. 開啟目標官網（如 `https://aetherai.com`），導覽至 `/solutions` 或 `/news` 頁面。
+  2. 擷取 TFDA (台灣) / FDA (美國) 醫療器材許可證與專利標示。
+  3. 統計合作之醫院與醫學中心名單以驗證臨床落地能力。
+- **Constraint (限制與規範)**：
+  1. 嚴格區分「已取得認證」與「臨床進行中/申請中」狀態，不可混淆。
+  2. 遇到 DOM 動態選單時，須等待元件載入完成再進行擷取，避免抓取空白頁。
+  3. 著重評估 SaMD 法規壁壘、醫院通路與模型數據源。
+- **Format (輸出格式)**：輸出包含「法規壁壘與認證狀態」、「臨床驗證與標竿醫院」、「技術與數據壁壘」、「創投評估建議與提問單」之 Markdown 報告。
 ```
 
 ---
