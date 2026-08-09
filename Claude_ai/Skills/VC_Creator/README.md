@@ -140,14 +140,30 @@ description: >-
 
 ## 🛠️ 安裝與部署方式
 
-1. **手動安裝 (Claude Web)**：
-   - 下載本資料夾（包含 `SKILL.md`、`references/` 與 `templates/`）。
-   - 前往 Claude 網頁左下角 **Settings** ➔ **Skills** ➔ **Add Custom Skill** 上傳此資料夾。
-2. **終端機部署 (Claude Code)**：
-   ```bash
-   cp -r VC_Creator/ ~/.claude/skills/VC_Creator
-   ```
+### 🌐 方式 A：Web 介面半手動打包安裝（適用於 Claude.ai Web 網頁版）
+
+對於包含 `references/` 知識規章與 `templates/` 輸出範本的 **Level 2 創作者 Skill**，網頁版請遵循以下 5 步驟進行打包與更新：
+
+1. **建立初始 Skill**：進入 Claude.ai，使用內建的 **Write Skill Instructor** 讓 Claude 建立初始 Skill 框架並下載打包檔（副檔名為 `.skill`）。
+2. **修改副檔名為 ZIP**：將下載的 `.skill` 檔案副檔名手動修改為 `.zip`。
+3. **解壓縮並加入副資料夾**：
+   - 將該 `.zip` 檔案解壓縮。
+   - 在解壓後的目錄中建立 `references/` 與 `templates/` 資料夾。
+   - 將需要的參考規章檔 (如 `vc-evaluation-framework.md`) 與樣板檔 (如 `investment-memo-template.md`) 放入對應資料夾中。
+4. **重新打包成 ZIP 檔**：將包含 `SKILL.md`、`references/` 與 `templates/` 的完整內容重新壓縮成 `.zip` 檔案。
+5. **上傳更新至 Claude.ai**：返回 Claude.ai **Settings ➔ Skills** 頁面，找到剛建立的 Skill，點選 **「Update Skill」** 並上傳重新打包的 `.zip` 檔案，即可完成更新與部署！
+
+---
+
+### 💻 方式 B：終端機一鍵部署（適用於 Claude Code CLI / 本地環境）
+
+直接將包含 `SKILL.md`、`references/` 與 `templates/` 的 `VC_Creator/` 資料夾複製至本地 Claude Skill 放置目錄：
+
+```bash
+cp -r VC_Creator/ ~/.claude/skills/VC_Creator
+```
 
 ---
 
 ← [返回 Skills 主頁](../README.md) | [返回專案首頁](../../README.md)
+
