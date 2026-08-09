@@ -3,19 +3,19 @@
 本階段重點在於學會掛載「外部知識庫檔案（References）」與「Excel 樣板（Templates）」，並透過「程式碼執行 (Code Execution)」產出實體 `.xlsx` 檔案供使用者下載。
 
 ## 📖 範例說明
-這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。若稽核完畢，AI 會呼叫 Python 程式碼載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，並輸出一個實體 Excel 檔（`.xlsx`）供下載。
+這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。稽核完畢後，AI 會透過 Python 程式碼載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，**並自動將 `assets/company-logo.png` 品牌 Logo 嵌入至試算表頂部**，最終輸出一個具備公司品牌識別的實體 Excel 檔（`.xlsx`）供下載。
 
 ## 📁 實體自訂 Skill 結構
 此範例在手動建立時，包含以下檔案與資料夾結構：
 ```text
 Level3_Brand_Voice/
-├── SKILL.md
+├── SKILL.md                             # 採用 RTCCF 提示詞架構的主 Skill 檔
 ├── templates/
 │   └── brand-voice-audit-template.xlsx  # 儲存稽核報告 Excel 樣板
 ├── references/
 │   └── brand-book.md                    # 品牌規範參考手冊
 └── assets/
-    └── company-logo.png                 # 公司的 Logo 圖片檔案
+    └── company-logo.png                 # 公司的 Logo 圖片檔案（將嵌入 Excel 表頭）
 ```
 
 ## 🛠️ 安裝與使用方式
@@ -71,8 +71,8 @@ cp -r Level3_Brand_Voice/ /mnt/skills/user/Level3_Brand_Voice
 **預期效果：**
 Claude 將會自動啟用該 Skill，並：
 1. 進行品牌語氣分析，判定該文案使用「飛天」、「超方便」等詞彙過於誇大且不夠專業，且誤用了英文專有名詞「Custom Skills」與「Connectors」。
-2. 自動呼叫程式碼執行功能，利用 Python 的 `openpyxl` 庫載入並讀取 `templates/brand-voice-audit-template.xlsx`。
-3. 將稽核狀態（❌ 需修改）、稽核細節與建議修正文案填入 Excel，並產出一個包含完整稽核資料的 `.xlsx` 檔案供使用者點擊下載。
+2. 自動呼叫程式碼執行功能，利用 Python 的 `openpyxl` 庫讀取 `templates/brand-voice-audit-template.xlsx` 樣板，並使用 `openpyxl.drawing.image.Image` 將 `assets/company-logo.png` 品牌 Logo 寫入表頭區域。
+3. 將稽核狀態（❌ 需修改）、稽核細節與建議修正文案填入 Excel，產出一份附帶品牌 Logo 的 `.xlsx` 檔案供下載。
 
 ---
 
