@@ -243,6 +243,12 @@
   - [ ] **結構符合規範**：產出的郵件符合主旨、稱謂、正文、祝禱與簽名檔完整結構。
 
   </details>
+
+
+---
+
+### 🔹 第三章：Excel 數據分析、Skill 整合者實作、排程自動化與交付實作
+
 - [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：延續第一章建立的關注清單知識庫，將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（Projects 雲端知識庫上傳與檢索）</b></summary>
@@ -267,12 +273,7 @@
   - [ ] **專案隔離保護**：切換至其他 Project 時，資料獨立不互相混淆。
 
   </details>
-
----
-
-### 🔹 第三章：Excel 數據分析、Skill 整合者實作、排程自動化與交付實作
-
-#### 📖 參考教材與延伸連結
+  
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習運用 Code Execution 讓 Skill 自動執行指定程式碼，整合樣板與視覺資產檔（assets），實現高階工作流自動化。
   - [**每日產業新聞與情報自動化蒐集(模仿者 (Imitator))**](../../Claude_ai/Skills/VC_Playwright/README.md)
   - [**創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）**](../../Claude_ai/Skills/VC_Creator/README.md)
