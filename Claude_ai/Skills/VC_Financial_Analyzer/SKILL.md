@@ -2,14 +2,36 @@
 name: vc-financial-analyzer
 description: >-
   當使用者上傳或提供創投被投/標的公司之 Excel 財務報表 (.xlsx, .xls, .csv) 時，
-  自動讀取檔案結構與工作表，向使用者提供 5 大專業財務分析模式選單。
-  使用者選擇後，自動調用 Python Code Execution 進行精準數據計算與圖表視覺化渲染，
+  或要求生成測試用財報時，自動讀取/生成檔案並提供 5 大專業財務分析模式選單。
+  使用者選擇後，背景自動呼叫 Python Code Execution 進行精準數據計算與圖表視覺化渲染，
   並結合 references/ 創投規章與 templates/ 產出高階投資報告。
 ---
 
 # 💼 創投 (VC) 財報數據分析與 Code Execution Agent Skill
 
-本 Skill 專為創投投資分析師、財務盡調團隊 (FDD) 與投資經理設計，具備 **Excel 報表結構自動掃描**、**互動式分析選單** 與 **Python Code Execution 自動化運算繪圖** 之能力。
+本 Skill 專為創投投資分析師、財務盡調團隊 (FDD) 與投資經理設計，具備 **Excel 報表結構自動掃描**、**零程式基礎的背景 Python 運算繪圖** 與 **互動式分析選單** 之能力。
+
+---
+
+## 🎯 零程式基礎專用：測試 Excel 報表自動生成機制
+
+若使用者表示手邊沒有檔案或要求「`請幫我生成測試用的創投財務報表`」，直接在背景執行以下 Python 代碼產出一份標準 Excel 檔並提供下載按鈕：
+
+```python
+import pandas as pd
+import numpy as np
+
+# 生成測試財報數據 (包含 P&L, Cash Flow, KPIs 三張 Sheet)
+months = pd.date_range(start="2025-01-01", periods=12, freq="MS").strftime("%Y-%m")
+mrr = np.array([50000, 54000, 59000, 65000, 72000, 80000, 89000, 98000, 108000, 119000, 130000, 142000])
+total_revenue = mrr + np.random.randint(5000, 15000, size=12)
+cogs = (total_revenue * 0.22).astype(int)
+gross_profit = total_revenue - cogs
+
+df_pnl = pd.DataFrame({"月份": months, "總營收": total_revenue, "毛利": gross_profit})
+with pd.ExcelWriter("sample_startup_financials.xlsx") as writer:
+    df_pnl.to_excel(writer, sheet_name="損益表 P&L", index=False)
+```
 
 ---
 
@@ -17,7 +39,7 @@ description: >-
 
 ```mermaid
 graph TD
-    A[Phase 1: 上傳 Excel 報表] --> B[Python 掃描 Sheet 與欄位]
+    A[Phase 1: 上傳 Excel 報表] --> B[背景 Python 掃描 Sheet 與欄位]
     B --> C[Phase 2: 輸出互動式分析建議選單]
     C --> D[使用者選擇分析模式 1~5]
     D --> E[Phase 3: Code Execution 計算指標與繪圖]
@@ -28,7 +50,7 @@ graph TD
 
 ## 🔹 Phase 1: 報表上傳與結構自動掃描 (File Inspection)
 
-當使用者提供 Excel 或 CSV 財報時，**先不要直接產出最終報告**，而是執行以下 Python 腳本掃描檔案：
+當使用者提供 Excel 或 CSV 財報時，**在背景**執行以下 Python 腳本掃描檔案（不要顯示龐大程式碼給使用者看，僅輸出結構結果）：
 
 ```python
 import pandas as pd
@@ -73,7 +95,7 @@ for sheet in xl.sheet_names:
 
 1. **資料計算**：
    - 引用 [references/financial-metrics-guide.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/references/financial-metrics-guide.md) 之公式計算所有 KPI。
-   - 計算精準之數字（絕不憑空幻想或推估數值）。
+   - 算出的精準數值絕不憑空猜測。
 2. **圖表繪製**：
    - 執行 Python matplotlib/seaborn 繪製專業圖表。
    - 輸出圖片至 `charts/financial_trend.png` 與 `charts/cash_runway_chart.png`。
