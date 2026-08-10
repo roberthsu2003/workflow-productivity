@@ -44,7 +44,19 @@
 
 ---
 
-## 🛠️ 四、快速上手步驟
+## 🎓 四、3 大職場自動化實戰範例 (含學員練習檔)
+
+為幫助學員無痛上手 Cowork，本單元提供 3 個真實職場場景的實戰範例，每個範例皆附有可直接下載測試的原始範例檔案 (`sample_files/`)：
+
+| # | 實戰範例名稱 | 職場應用場景 | Cowork 核心能力 | 學員練習檔 (`sample_files/`) |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | [**每日產業情報與競品自動彙整**](./Examples/01_Daily_News_Brief/README.md) | 創投、行銷與企劃團隊每日監測產業新聞與趨勢。 | • Web 檢索<br/>• Scheduled 雲端定時排程 | • `industry_keywords.txt`<br/>• `daily_news_template.md` |
+| **2** | [**跨來源財務與營運數據對比**](./Examples/02_Financial_Report/README.md) | 財務與風控團隊自動交叉比對多份 CSV 財務與預算。 | • 背景 Code Execution 運算<br/>• 多檔案自動比對與畫圖 | • `q3_financial_raw.csv`<br/>• `crm_sales_target.csv` |
+| **3** | [**客戶客訴與意見自動分類處置**](./Examples/03_Customer_Feedback/README.md) | 客服、PM 與營運團隊處理批量客訴，分類評級並草擬回信。 | • 多檔案批量處理<br/>• 自動比對 SOP 風險等級 | • `customer_support_logs.csv`<br/>• `sop_escalation_rules.md` |
+
+---
+
+## 🛠️ 五、快速上手步驟
 
 1. **開啟 Cowork 工作空間**：登入 [claude.ai](https://claude.ai)，從左側功能選單切換至 **Cowork**。
 2. **選擇或建立專案**：可直接建立新任務，或結合已有的 **Projects** 知識庫。
@@ -56,7 +68,7 @@
 
 ---
 
-## 💡 五、教學與使用建議
+## 💡 六、教學與使用建議
 
 > [!TIP]
 > 1. **非程式背景最佳實用工具**：Cowork 讓不需要程式基礎的學員，也能透過自然語言＋內建工具打造媲美自動化腳本的工作流。
@@ -64,4 +76,4 @@
 
 ---
 
-← [返回上層：Claude_AI 索引](../README.md)
+← [返回 Claude_AI 主講義](../README.md) | 🏠 [返回專案總首頁](../../README.md)

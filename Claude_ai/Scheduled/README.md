@@ -19,6 +19,18 @@
 
 ---
 
+## 🎓 3 大 Scheduled 定時排程實戰範例 (整合 Cowork 專案使用)
+
+本單元提供 3 個真實職場場景的定時排程實戰範例，展示如何將定時任務設定在 **Claude Cowork 雲端工作空間** 之中，每個範例皆附有可直接下載測試的練習檔案 (`sample_files/`)：
+
+| # | 排程範例名稱 | 建議執行頻率 | Cowork + Scheduled 整合應用 | 學員練習檔 (`sample_files/`) |
+| :---: | :--- | :---: | :--- | :--- |
+| **1** | [**每週團隊進度與風險排程報告**](./Examples/01_Weekly_Brief/README.md) | 每週五 17:00 | 定時自動讀取週報、合併重複項、分析進度卡點並生成週會簡報。 | • `team_weekly_updates.csv`<br/>• `weekly_brief_template.md` |
+| **2** | [**每日庫存與供應鏈異常定時巡檢**](./Examples/02_Inventory_Monitor/README.md) | 每日 09:00 | 定時自動呼叫背景 Code Execution 計算安全庫存天數，發出缺貨預警。 | • `daily_inventory_status.csv`<br/>• `reorder_threshold_rules.md` |
+| **3** | [**每週競品價格與促銷變化排程追蹤**](./Examples/03_Price_Monitor/README.md) | 每週一 08:00 | 定時自動比對我方售價與競品價格，計算價差比並產出動態跟價建議。 | • `our_product_catalog.csv`<br/>• `competitor_market_prices.csv` |
+
+---
+
 ## ⚙️ 運作方式
 
 - 建立排程任務時，Claude 會把你的指令存成任務的「執行說明」，並依你設定的頻率自動執行
@@ -73,4 +85,4 @@
 
 ---
 
-← [返回上層：Claude_AI 索引](../README.md)
+← [返回 Claude_AI 主講義](../README.md) | 🏠 [返回專案總首頁](../../README.md)

@@ -1,0 +1,15 @@
+# 🎯 每日產業情報監測關鍵字與目標來源清單
+
+## 1. 核心監測關鍵字 (Keywords)
+- 智慧醫療 / AI 醫療影像 / FDA 醫材認證
+- 創投趨勢 / VC 早期投資 / Pre-A 輪融資
+- 智慧農業 / 綠能科技 / ESG 永續轉型
+
+## 2. 優先資訊來源與媒體 (Target Sources)
+- 科技報橘 (TechOrange)、Inside 科技媒體
+- 數位時代 (BusinessNext)、工商時報產業版
+- TechCrunch (AI & Biotech Category)
+
+## 3. 過濾與剔除條件 (Exclude Criteria)
+- 剔除單純股票炒作或無實際產品落地之公關稿。
+- 剔除重複報導之新聞，僅保留首發或完整度最高者。
