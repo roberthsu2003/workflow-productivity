@@ -3,7 +3,7 @@
 本階段重點在於學會掛載「外部知識庫檔案（References）」、「Excel 樣板（Templates）」與「靜態視覺資產（Assets）」，並透過「程式碼執行 (Code Execution)」產出嵌入品牌 Logo 圖片的實體 `.xlsx` 檔案供使用者下載。
 
 ## 📖 範例說明
-這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。稽核完畢後，AI 會透過 Python 程式碼載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，**並自動將 `assets/company-logo.png` 品牌 Logo 嵌入至試算表頂部**，最終輸出一個具備公司品牌識別的實體 Excel 檔（`.xlsx`）供下載。
+這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。稽核完畢後，AI 會透過 Python 程式碼載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，**並自動將 `assets/company-logo.jpeg` 品牌 Logo 嵌入至試算表頂部**，最終輸出一個具備公司品牌識別的實體 Excel 檔（`.xlsx`）供下載。
 
 ## 📁 實體自訂 Skill 結構
 此範例在手動建立時，包含以下檔案與資料夾結構：
@@ -15,7 +15,7 @@ Level3_Brand_Voice/
 ├── references/
 │   └── brand-book.md                    # 品牌規範參考手冊
 └── assets/
-    └── company-logo.png                 # 公司的 Logo 圖片檔案（將嵌入 Excel 表頭）
+    └── company-logo.jpeg                 # 公司的 Logo 圖片檔案（將嵌入 Excel 表頭）
 ```
 
 ## 🛠️ 安裝與使用方式
@@ -25,9 +25,11 @@ Level3_Brand_Voice/
 此方式包含以下兩種自動建立的情境與對話引導：
 
 #### 方案 1：直接提供範本檔案與參考文件建立
-1. **上傳檔案**：先將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 樣板、[brand-book.md](./references/brand-book.md) 規範與 [company-logo.png](./assets/company-logo.png) Logo 圖片上傳至 Claude 對話中。
+1. **上傳檔案**：先將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 樣板、[brand-book.md](./references/brand-book.md) 規範與 [company-logo.jpeg](./assets/company-logo.jpeg) Logo 圖片上傳至 Claude 對話中。
 2. **下指令建立**：直接對 Claude 輸入以下指令：
-   > 「`我想建立一個品牌語氣稽核 Skill。請參考我剛才上傳的 brand-book.md 規範、Excel 樣板與 company-logo.png 圖檔，使用 /skill-creator 幫我建立包含 references、templates 和 assets 資料夾的 Skill。`」
+   ```text
+   我想建立一個品牌語氣稽核 Skill。請參考我剛才上傳的 brand-book.md 規範、Excel 樣板與 company-logo.jpeg 圖檔，使用 /skill-creator 幫我建立包含 references、templates 和 assets 資料夾的 Skill。請在 SKILL.md 中明確指定：執行 Python (Code Execution) 寫入 Excel 報表時，必須使用 openpyxl.drawing.image.Image 將 assets/company-logo.jpeg 圖片插入置於 Excel 試算表頂端表頭位置 (Cell A1)。
+   ```
 3. **下載與安裝**：
    * Claude 執行完成後，會提供一個自訂技能資料夾的下載包（通常是 ZIP 壓縮檔）。請將其下載並解壓縮。
    * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
@@ -35,12 +37,14 @@ Level3_Brand_Voice/
 
 #### 方案 2：先完成任務對話，再打包成技能
 1. **上傳相關資源與對話測試**：
-   * 先將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 樣板、[brand-book.md](./references/brand-book.md) 規範與 [company-logo.png](./assets/company-logo.png) Logo 圖片上傳至對話中。
-   * 輸入一段公司宣傳文案，請 Claude 依據上傳的品牌指引進行語氣與禁忌詞稽核，並呼叫 Python 寫入 Excel 樣板且嵌入 Logo 圖片。
-   * 檢查 Claude 產出下載的 Excel 內容是否符合預期，若需要微調可以繼續對話，直到產出的格式完全滿意。
+   * 先將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 樣板、[brand-book.md](./references/brand-book.md) 規範與 [company-logo.jpeg](./assets/company-logo.jpeg) Logo 圖片上傳至對話中。
+   * 輸入一段公司宣傳文案，請 Claude 依據上傳的品牌指引進行語氣與禁忌詞稽核，並呼叫 Python 寫入 Excel 樣板，同時使用 openpyxl 將 company-logo.jpeg 嵌入至 Excel 頂部表頭 (A1)。
+   * 檢查 Claude 產出下載的 Excel 內容是否符合預期（確認 Logo 圖片成功放置在表格上方），若需要微調可以繼續對話，直到產出的格式完全滿意。
 2. **下指令進行打包**：
    * 當結果完全滿意後，直接輸入指令：
-     > 「`請參考剛才我們對話的稽核邏輯、Excel 輸出格式與公司 Logo 圖片，使用 /skill-creator 幫我將這個功能打包建立為包含 references, templates 與 assets 的自訂技能。`」
+     ```text
+     請參考剛才我們對話的稽核邏輯、Excel 輸出格式與公司 Logo 圖片，使用 /skill-creator 幫我將這個功能打包建立為包含 references, templates 與 assets 的自訂技能。請確保 SKILL.md 中寫入用 openpyxl 將 assets/company-logo.jpeg 嵌入至 Excel 試算表頂端表頭 (Cell A1) 的 SOP 指令。
+     ```
 3. **下載與安裝**：
    * Claude 執行完成後，下載其產出的自訂技能資料夾（或 ZIP 檔）並解壓縮。
    * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
@@ -48,7 +52,7 @@ Level3_Brand_Voice/
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Level3_Brand_Voice`，並建立 `references`、`templates` 與 `assets` 三個子資料夾。
-2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 儲存於根目錄；將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 儲存至 `templates/` 目錄；將 [brand-book.md](./references/brand-book.md) 儲存至 `references/` 目錄；將 Logo 圖片儲存為 `assets/company-logo.png`。
+2. 複製此資料夾下的 [SKILL.md](./SKILL.md) 儲存於根目錄；將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 儲存至 `templates/` 目錄；將 [brand-book.md](./references/brand-book.md) 儲存至 `references/` 目錄；將 Logo 圖片儲存為 `assets/company-logo.jpeg`。
 3. 前往 Claude 的 **Settings** ➔ **Skills** ➔ 點擊 **Add Custom Skill** 上傳此資料夾。
 
 ### 💡 方式 C：在終端機中部署（適用於 Claude Code / 終端機代理）
@@ -71,7 +75,7 @@ cp -r Level3_Brand_Voice/ /mnt/skills/user/Level3_Brand_Voice
 **預期效果：**
 Claude 將會自動啟用該 Skill，並：
 1. 進行品牌語氣分析，判定該文案使用「飛天」、「超方便」等詞彙過於誇大且不夠專業，且誤用了英文專有名詞「Custom Skills」與「Connectors」。
-2. 自動呼叫程式碼執行功能，利用 Python 的 `openpyxl` 庫讀取 `templates/brand-voice-audit-template.xlsx` 樣板，並使用 `openpyxl.drawing.image.Image` 將 `assets/company-logo.png` 品牌 Logo 寫入表頭區域。
+2. 自動呼叫程式碼執行功能，利用 Python 的 `openpyxl` 庫讀取 `templates/brand-voice-audit-template.xlsx` 樣板，並使用 `openpyxl.drawing.image.Image` 將 `assets/company-logo.jpeg` 品牌 Logo 寫入表頭區域。
 3. 將稽核狀態（❌ 需修改）、稽核細節與建議修正文案填入 Excel，產出一份附帶品牌 Logo 的 `.xlsx` 檔案供下載。
 
 ---
