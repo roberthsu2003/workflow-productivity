@@ -1,9 +1,9 @@
 # Level 3 範例：品牌語氣稽核員（第三階：整合者）
 
-本階段重點在於學會掛載「外部知識庫檔案（References）」、「Excel 樣板（Templates）」與「靜態視覺資產（Assets）」，並透過「程式碼執行 (Code Execution)」產出嵌入品牌 Logo 圖片的實體 `.xlsx` 檔案供使用者下載。
+本階段重點在於運用 Claude AI 的「**程式碼執行 (Code Execution)**」功能，讓 Skill 能**自動執行指定的 Python 程式碼**！整合「外部知識庫檔案 (References)」、「Excel 樣板 (Templates)」與「靜態視覺資產 (Assets)」，自動處理數據稽核與圖片寫入，產出嵌入品牌 Logo 圖片的實體 `.xlsx` 檔案供使用者下載。
 
 ## 📖 範例說明
-這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。稽核完畢後，AI 會透過 Python 程式碼載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，**並自動將 `assets/company-logo.jpeg` 品牌 Logo 嵌入至試算表頂部**，最終輸出一個具備公司品牌識別的實體 Excel 檔（`.xlsx`）供下載。
+這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。稽核完畢後，AI 會使用 **Code Execution 自動執行指定的 Python 程式碼**，載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，**並自動使用 openpyxl 將 `assets/company-logo.jpeg` 品牌 Logo 嵌入至試算表頂部 (Cell A1)**，最終輸出一個具備公司品牌識別的實體 Excel 檔（`.xlsx`）供下載。
 
 ## 📁 實體自訂 Skill 結構
 此範例在手動建立時，包含以下檔案與資料夾結構：

@@ -100,10 +100,10 @@
 * **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/README.md)
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）與 [創投 (VC) 專屬 Skill 實戰](#vc-creator)。
 
-### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo 與圖片)
-* **核心概念**：在 Skill 中加入 `assets/` 資料夾放置圖片（如公司 Logo、圖表、ICON），並在產出文件時以相對路徑引用，讓 Claude 的輸出直接包含品牌標誌。
-* **適用場景**：製作帶有公司商標的合約、簡報封面頁、附有 Logo 的正式報價單等。
-* **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/README.md)
+### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo與圖片) & 程式碼執行 (Code Execution)
+* **核心概念**：運用 Claude 的「**程式碼執行 (Code Execution)**」功能，讓 Skill 會**自動執行指定的 Python 程式碼**！整合 `references/` 規章、`templates/` 報表樣板與 `assets/` 圖片（如公司 Logo），自動進行資料分析、文字稽核與圖表/圖片寫入，產出包含品牌識別與完整格式的實體檔案（如 `.xlsx`）供下載。
+* **適用場景**：自動稽核文案並呼叫 Python 寫入帶有 Logo 的 Excel 報告、自動填寫表格樣板並插入企業圖表、生成具備品牌標誌的實體報表等。
+* **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/README.md) (自動執行 Python 讀取 Excel 樣板與 `assets/company-logo.jpeg` 圖檔產生稽核報告檔)
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 5 ~ 7）。
 
 ### 🔴 第四階：自動化專家 (Automator) —— `SKILL.md` + `scripts` (Python/工具調用)

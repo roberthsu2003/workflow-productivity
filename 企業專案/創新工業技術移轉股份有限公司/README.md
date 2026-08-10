@@ -273,7 +273,7 @@
 ### 🔹 第三章：Excel 數據分析、Skill 整合者實作、排程自動化與交付實作
 
 #### 📖 參考教材與延伸連結
-- [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習整合專案知識庫（Projects）與多格式樣板檔，實現免寫程式的高階工作流自動化。
+- [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習運用 Code Execution 讓 Skill 自動執行指定程式碼，整合樣板與視覺資產檔（assets），實現高階工作流自動化。
   - [VC_Playwright實作範例(模仿者 (Imitator))](../../Claude_ai/Skills/VC_Playwright/README.md)
   - [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](../../Claude_ai/Skills/VC_Creator/README.md)
   <details>
