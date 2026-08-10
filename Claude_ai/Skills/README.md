@@ -152,6 +152,13 @@
   * 涵蓋：投資備忘錄 (Investment Memo) 產生器、Term Sheet 條款檢核與風險評級 (Red Flag Alerts)、Pitch Deck 簡報審查與問答生成器。
   * 技巧：結合 `references/`（創投指標規章、條款指南）與 `templates/`（標準 IC 備忘錄與風險報告範本）。
 
+<div id="vc-financial-analyzer"></div>
+
+* **💼 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](./VC_Financial_Analyzer/README.md)**
+  * 涵蓋：Excel 報表上傳自動掃描、互動式分析建議選單、100% 精準 Python 數據運算、動態渲染財務趨勢與 Runway 圖表、標準 IC 財務盡調報告產出。
+  * 實戰：結合 **Code Execution (Code Interpreter)** 零數據幻覺運算 + `references/` 創投指標警訊庫 + `templates/` 標準盡調簡報樣板。
+
+
 ---
 
 
