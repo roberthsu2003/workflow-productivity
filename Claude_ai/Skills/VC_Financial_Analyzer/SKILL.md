@@ -74,7 +74,8 @@ description: >-
 
 ## 🔹 Phase 4: 套用範本產出報告 (RTCCF: Format)
 
-1. **主要產出 (對話視窗閱讀)**：載入 [templates/financial-report-template.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/templates/financial-report-template.md) 樣板，將 Phase 3 計算好的精準數字與背景生成的圖片填入變數中，呈獻供高階主管與 IC 閱覽的完整 Markdown 財務盡調報告。
+1. **主要產出 (對話視窗閱讀)**：載入 [templates/financial-report-template.md](./templates/financial-report-template.md) 樣板，將 Phase 3 計算好的精準數字與背景生成的圖片填入變數中，呈獻供高階主管與 IC 閱覽的完整 Markdown 財務盡調報告。
+
 2. **延伸產出 (Excel 檔案匯出)**：若使用者要求「匯出 Excel 報表」或「下載整理後的數據」，請透過背景 Code Execution 將計算出的財務 KPI 總覽表與警訊清單另存為全新的 `.xlsx` 試算表檔案供使用者下載。
 
 

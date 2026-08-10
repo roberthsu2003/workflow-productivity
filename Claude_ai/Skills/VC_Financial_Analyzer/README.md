@@ -25,9 +25,9 @@
 
 ```mermaid
 graph LR
-    A[1. 原始 Excel 報表<br/>.xlsx 數據列與欄] --> B[2. 背景 Code Execution<br/>自動讀取並算出財務指標]
-    B --> C[3. 填入 Markdown 樣板<br/>替換 {{變數}} 填空欄位]
-    C --> D[4. 對話框呈獻速讀報告<br/>+ 可選匯出新 Excel]
+    A["1. 原始 Excel 報表<br/>.xlsx 數據列與欄"] --> B["2. 背景 Code Execution<br/>自動讀取並算出財務指標"]
+    B --> C["3. 填入 Markdown 樣板<br/>替換 {{變數}} 填空欄位"]
+    C --> D["4. 對話框呈獻速讀報告<br/>+ 可選匯出新 Excel"]
 ```
 
 1. **原始數據 (Excel 欄位)**：提供基礎表格與數字（如`總營收`、`營業費用`、`期末現金`）。
@@ -36,7 +36,6 @@ graph LR
 4. **報告產出**：Claude 將背景算好的精準數字填入 Markdown 標籤中，在對話視窗呈獻出一份帶有標題、總覽表格與趨勢圖片的專業速讀報告；若學員需要，也可以請 Claude 另存一份全新的 Excel 檔下載。
 
 ---
-
 
 ## 📁 創投 Level 3 Skill 實體目錄結構
 
@@ -136,7 +135,7 @@ description: >-
 學員在 Claude.ai 介面上只需執行以下步驟，完全不需要開任何命令列或編寫程式：
 
 ### 步驟 1：取得測試用 Excel 財報（二選一）
-- **方式 A (直接下載)**：直接從本項目的 `examples/` 資料夾下載 [sample_startup_financials.xlsx](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/examples/sample_startup_financials.xlsx)。
+- **方式 A (直接下載)**：直接從本項目的 `examples/` 資料夾下載 [sample_startup_financials.xlsx](./examples/sample_startup_financials.xlsx)。
 - **方式 B (請 Claude 生成)**：在對話視窗直接對 Claude 說：「`請幫我生成一份測試用的創投財務報表 Excel 檔`」，Claude 就會透過背景 Python 自動產出一個 `.xlsx` 檔案供您下載。
 
 ### 步驟 2：上傳 Excel 並觸發 Skill
@@ -152,4 +151,3 @@ Claude 會自動掃描 Excel 結構並彈出 5 大建議選單。您只需回覆
 ---
 
 ← [返回 Skills 主頁](../README.md) | 🏠 [返回專案總首頁](../../README.md)
-
