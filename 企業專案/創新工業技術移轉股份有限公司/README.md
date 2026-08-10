@@ -277,7 +277,7 @@
   - [**每日產業新聞與情報自動化蒐集(模仿者 (Imitator))**](../../Claude_ai/Skills/VC_Playwright/README.md)
   - [**創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）**](../../Claude_ai/Skills/VC_Creator/README.md)
   - [**品牌語氣稽核員（第三階：整合者code execution）**](../../Claude_ai/Skills/Examples/Level3_Brand_Voice/SKILL.md)
-
+  - [**資料分析與報告撰寫實作**](../../Claude_ai/Skills/VC_Financial_Analyzer/README.md)
   
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（第三階：整合者 Skill 實作）</b></summary>
@@ -325,29 +325,7 @@
 
   </details>
 
-- [**資料分析與報告撰寫實作**](../../實作任務/資料分析與報告/README.md)：AI 負責的 80% 工作（統計計算、趨勢視覺化建議、異常偵測）與人負責的 20%（數據來源、目標定義、結果驗證），適合套用到 ITIC Excel 業績與營運資料判讀。<br>⚠️ **本教材僅取用「80/20 人機分工框架」觀念**；其中示範的 Google Sheets／ChatGPT／Gemini／Canva 等工具操作不在本課程範圍內，實際操作一律以「上傳 Excel 至 Claude 解析」為準。
-  <details>
-  <summary>💡 <b>點擊展開：學員實作驗證（Excel 數據分析與 80/20 人機分工）</b></summary>
-  <br>
-
-  > 💡 **實作背景**：驗證學員上傳實體 Excel 檔案給 Claude 進行數據解析與人機分工判讀的能力。
-
-  ---
-
-  **📝 實作驗證任務：上傳 Excel 進行營運分析**
-
-  1. 在對話框上傳一份營運/財務 Excel 檔案（.xlsx）。
-  2. 輸入 Prompt：「`請解析此 Excel 檔案，幫我完成 AI 80% 的工作：計算營收成長率、找出異常數據點並繪製 Markdown 摘要表格。`」
-  3. 人員執行 20%：人工檢查 AI 算出的數字是否正確，並撰寫最終投資決策建議。
-
-  ---
-
-  **✅ 實作驗證清單（Checklist）**
-
-  - [ ] **Excel 解析成功**：Claude 能正確判讀試算表欄位與數據。
-  - [ ] **人機分工合宜**：AI 完成統計與繪表，人員完成品質驗證與決策。
-
-  </details>
+  
 - [**Scheduled 排程任務**](../../Claude_ai/Scheduled/README.md)：Claude 原生排程功能的建立與管理方式，可設定固定時間自動觸發第一、二章的蒐集與摘要工作流。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**，且排程任務於**雲端遠端執行**，無法呼叫本機檔案與應用程式。
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（Scheduled 雲端定時排程）</b></summary>
