@@ -63,14 +63,21 @@ description: >-
 - **Constraint (限制)**：依據風險程度分類標示 🔴 紅燈 (高度風險) 與 🟡 黃燈 (需注意)。
 - **Format (格式)**：輸出 Red Flag 風險檢核清單與稽核說明。
 
----
-
 ### 🔹 模式 5：全方位創投 IC 委員會財務盡調簡報 (VC Managing Partner & IC Chair)
 - **Role (角色)**：創投合夥人與 IC 委員會主席 (VC Managing Partner & IC Chair)。
 - **Task (任務)**：綜合執行模式 1~4，產出全覽式財務盡調簡報。
 - **Context (背景)**：結合上述所有專業知識庫與視覺化圖表。
 - **Constraint (限制)**：包含 IC 必問創辦人的 3 大關鍵財務問題。
 - **Format (格式)**：完全套用 `templates/financial-report-template.md` 產出完整 Markdown 報告。
+
+---
+
+## 🔹 Phase 4: 套用範本產出報告 (RTCCF: Format)
+
+1. **主要產出 (對話視窗閱讀)**：載入 [templates/financial-report-template.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/templates/financial-report-template.md) 樣板，將 Phase 3 計算好的精準數字與背景生成的圖片填入變數中，呈獻供高階主管與 IC 閱覽的完整 Markdown 財務盡調報告。
+2. **延伸產出 (Excel 檔案匯出)**：若使用者要求「匯出 Excel 報表」或「下載整理後的數據」，請透過背景 Code Execution 將計算出的財務 KPI 總覽表與警訊清單另存為全新的 `.xlsx` 試算表檔案供使用者下載。
+
+
 
 ---
 

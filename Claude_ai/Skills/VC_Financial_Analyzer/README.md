@@ -17,6 +17,27 @@
 
 ---
 
+## 🧩 數據運作原理解密：從 Excel 欄位到 Markdown 填空樣板
+
+很多學員會好奇：「**我們上傳的是 Excel (.xlsx) 試算表，為什麼產出的範例樣板是 `.md` (Markdown) 檔案？**」
+
+這正是 AI 現代工作流中 **「速讀報告生成 + 精準數據運算」** 的核心運作機制：
+
+```mermaid
+graph LR
+    A[1. 原始 Excel 報表<br/>.xlsx 數據列與欄] --> B[2. 背景 Code Execution<br/>自動讀取並算出財務指標]
+    B --> C[3. 填入 Markdown 樣板<br/>替換 {{變數}} 填空欄位]
+    C --> D[4. 對話框呈獻速讀報告<br/>+ 可選匯出新 Excel]
+```
+
+1. **原始數據 (Excel 欄位)**：提供基礎表格與數字（如`總營收`、`營業費用`、`期末現金`）。
+2. **背景運算 (Code Execution)**：Claude 背景自動執行算術，計算出高階財務指標（如 `MRR 成長率`、`Gross Margin %`、`Runway 營運月數`）。
+3. **樣板填空 (`templates/financial-report-template.md`)**：Markdown 檔案定義了報告的架構與美感，裡面的 `{{CURRENT_MRR}}`、`{{RUNWAY_MONTHS}}`、`{{GROSS_MARGIN}}` 就是留給 Claude 的 **「數據填空標籤 (Placeholders)」**。
+4. **報告產出**：Claude 將背景算好的精準數字填入 Markdown 標籤中，在對話視窗呈獻出一份帶有標題、總覽表格與趨勢圖片的專業速讀報告；若學員需要，也可以請 Claude 另存一份全新的 Excel 檔下載。
+
+---
+
+
 ## 📁 創投 Level 3 Skill 實體目錄結構
 
 ```text
@@ -130,4 +151,5 @@ Claude 會自動掃描 Excel 結構並彈出 5 大建議選單。您只需回覆
 
 ---
 
-← [返回 Skill 主索引](../README.md)
+← [返回 Skills 主頁](../README.md) | 🏠 [返回專案總首頁](../../README.md)
+

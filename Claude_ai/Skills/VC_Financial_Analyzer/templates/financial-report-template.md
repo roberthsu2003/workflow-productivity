@@ -1,9 +1,12 @@
+> 💡 **樣板用途說明**：本檔為 Claude 讀取使用者上傳的原始 Excel 報表 (.xlsx) 後，在對話視窗產出給主管與投資委員會 (IC) 閱讀的「速讀分析報告樣板」。若使用者有需要，也可以請 Claude 將計算後的數據匯出為新的 Excel 試算表 (.xlsx) 提供下載。
+
 # 💼 [標的公司名稱] 財務分析與盡職調查報告 (Financial Due Diligence Report)
 
 > **報告產生時間**：{{REPORT_DATE}}  
 > **評估模式**：{{ANALYSIS_MODE_NAME}}  
-> **數據來源檔案**：`{{SOURCE_FILE_NAME}}`  
+> **數據來源 Excel 檔**：`{{SOURCE_FILE_NAME}}`  
 > **分析執行工具**：Code Interpreter (Python Pandas & Matplotlib Engine)
+
 
 ---
 
