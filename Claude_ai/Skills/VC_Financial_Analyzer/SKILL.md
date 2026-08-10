@@ -3,74 +3,48 @@ name: vc-financial-analyzer
 description: >-
   當使用者上傳或提供創投被投/標的公司之 Excel 財務報表 (.xlsx, .xls, .csv) 時，
   或要求生成測試用財報時，自動讀取/生成檔案並提供 5 大專業財務分析模式選單。
-  使用者選擇後，背景自動呼叫 Python Code Execution 進行精準數據計算與圖表視覺化渲染，
+  使用者選擇後，背景自動啟用 Code Execution (Analysis Tool) 進行 100% 精準數據計算與圖表渲染，
   並結合 references/ 創投規章與 templates/ 產出高階投資報告。
 ---
 
 # 💼 創投 (VC) 財報數據分析與 Code Execution Agent Skill
 
-本 Skill 專為創投投資分析師、財務盡調團隊 (FDD) 與投資經理設計，具備 **Excel 報表結構自動掃描**、**零程式基礎的背景 Python 運算繪圖** 與 **互動式分析選單** 之能力。
+本 Skill 專為創投投資分析師、財務盡調團隊 (FDD) 與投資經理設計。**全檔採用 100% 繁體中文自然語言 SOP 撰寫，無需撰寫任何程式碼**，Claude 會自動將您的自然語言指令轉換為背景 Code Execution 運算。
 
 ---
 
-## 🎯 零程式基礎專用：測試 Excel 報表自動生成機制
+## 🎯 零程式基礎專用：測試 Excel 報表自動生成指引
 
-若使用者表示手邊沒有檔案或要求「`請幫我生成測試用的創投財務報表`」，直接在背景執行以下 Python 代碼產出一份標準 Excel 檔並提供下載按鈕：
-
-```python
-import pandas as pd
-import numpy as np
-
-# 生成測試財報數據 (包含 P&L, Cash Flow, KPIs 三張 Sheet)
-months = pd.date_range(start="2025-01-01", periods=12, freq="MS").strftime("%Y-%m")
-mrr = np.array([50000, 54000, 59000, 65000, 72000, 80000, 89000, 98000, 108000, 119000, 130000, 142000])
-total_revenue = mrr + np.random.randint(5000, 15000, size=12)
-cogs = (total_revenue * 0.22).astype(int)
-gross_profit = total_revenue - cogs
-
-df_pnl = pd.DataFrame({"月份": months, "總營收": total_revenue, "毛利": gross_profit})
-with pd.ExcelWriter("sample_startup_financials.xlsx") as writer:
-    df_pnl.to_excel(writer, sheet_name="損益表 P&L", index=False)
-```
+若使用者表示手邊沒有檔案或輸入「`請幫我生成測試用的創投財務報表`」：
+- **指引**：請呼叫背景 Code Execution (Analysis Tool)，自動建立一份名為 `sample_startup_financials.xlsx` 的測試 Excel 檔（包含「損益表 P&L」、「現金流與 Runway」、「營運指標 KPIs」三張工作表），並在對話視窗中呈現下載按鈕供使用者下載。
 
 ---
 
-## ⚙️ 4 階段標準自動化執行流程 (SOP)
+## ⚙️ 4 階段標準自然語言執行流程 (SOP)
 
 ```mermaid
 graph TD
-    A[Phase 1: 上傳 Excel 報表] --> B[背景 Python 掃描 Sheet 與欄位]
+    A[Phase 1: 上傳 Excel 報表] --> B[自然語言指示：背景自動讀取 Sheet 與欄位]
     B --> C[Phase 2: 輸出互動式分析建議選單]
     C --> D[使用者選擇分析模式 1~5]
-    D --> E[Phase 3: Code Execution 計算指標與繪圖]
+    D --> E[Phase 3: 自然語言指示：背景 Code Execution 精準計算與畫圖]
     E --> F[Phase 4: 載入 Templates 產出 Markdown 盡調報告]
 ```
 
 ---
 
-## 🔹 Phase 1: 報表上傳與結構自動掃描 (File Inspection)
+## 🔹 Phase 1: 報表上傳與結構自動讀取指引 (File Inspection)
 
-當使用者提供 Excel 或 CSV 財報時，**在背景**執行以下 Python 腳本掃描檔案（不要顯示龐大程式碼給使用者看，僅輸出結構結果）：
-
-```python
-import pandas as pd
-
-# 讀取檔案結構
-excel_path = "uploaded_file.xlsx"
-xl = pd.ExcelFile(excel_path)
-print(f"📊 偵測到的工作表 (Sheets)：{xl.sheet_names}")
-
-# 預覽每個 Sheet 前 3 行欄位
-for sheet in xl.sheet_names:
-    df_preview = pd.read_excel(excel_path, sheet_name=sheet, nrows=3)
-    print(f"Sheet [{sheet}] 欄位：{list(df_preview.columns)}")
-```
+當使用者提供 Excel 或 CSV 財報時，請遵照以下步驟處理：
+1. **啟用 Code Execution**：請呼叫背景 Analysis Tool (Python 環境)，自動載入使用者上傳的檔案。
+2. **自動掃描結構**：自動讀取該 Excel 檔案包含的所有工作表名稱 (Sheet Names) 以及每個工作表前 3 行的欄位名稱。
+3. **數據保護機制**：純背景執行讀取，切勿印出雜亂的 Python 程式碼，僅需向使用者輸出乾淨的掃描結果摘要。
 
 ---
 
 ## 🔹 Phase 2: 輸出互動式分析建議選單 (Interactive Menu Generation)
 
-掃描完欄位後，依據偵測到的數據內容（如損益表 P&L、現金流 Cash Flow、營運指標 KPI），輸出以下格式的互動選單詢問使用者：
+掃描完欄位後，依據偵測到的數據內容（如損益表 P&L、現金流 Cash Flow、營運指標 KPI），直接輸出以下格式的互動選單詢問使用者：
 
 > 💡 **偵測結果**：已成功讀取財報檔案！包含 `{{SHEET_NAMES}}` 等工作表。
 >
@@ -89,19 +63,20 @@ for sheet in xl.sheet_names:
 
 ---
 
-## 🔹 Phase 3: Python Code Execution 數據運算與圖表渲染
+## 🔹 Phase 3: 自然語言驅動 Code Execution 數據運算與圖表渲染
 
-當使用者確認選擇後，依據 [references/code-execution-rules.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/references/code-execution-rules.md) 之規範：
+當使用者確認選擇數字後，請依據 [references/code-execution-rules.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/references/code-execution-rules.md) 的設計規範指示 Claude 在背景自動執行：
 
-1. **資料計算**：
-   - 引用 [references/financial-metrics-guide.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/references/financial-metrics-guide.md) 之公式計算所有 KPI。
-   - 算出的精準數值絕不憑空猜測。
-2. **圖表繪製**：
-   - 執行 Python matplotlib/seaborn 繪製專業圖表。
-   - 輸出圖片至 `charts/financial_trend.png` 與 `charts/cash_runway_chart.png`。
+1. **精準財務數據計算**：
+   - 引用 [references/financial-metrics-guide.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/references/financial-metrics-guide.md) 指導原則，透過背景 Code Execution 執行算術運算（計算月成長率 MoM、毛利率 Gross Margin %、月淨燒錢率 Net Burn Rate、可營運月數 Runway）。
+   - 算出的數據務必 100% 精準，禁止猜測或產生數據幻覺。
+2. **自動生成視覺化趨勢圖表**：
+   - 指示 Code Execution 繪製以下兩張視覺化圖表，並輸出為高解析度圖片：
+     - 📈 **營收與費用消長趨勢圖 (Revenue vs. OpEx)**：雙 Y 軸設計，包含總營收、總費用柱狀圖與 EBITDA 淨損益折線圖。
+     - 📉 **期末現金餘額與 Cash Runway 趨勢圖**：包含現金餘額區域圖，並劃設 6 個月紅色虛線警戒線 (Safety Limit)。
 
 ---
 
 ## 🔹 Phase 4: 套用範本產出報告 (Report Generation)
 
-載入 [templates/financial-report-template.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/templates/financial-report-template.md) 樣板，將 Python 算出的精確數據與生成的圖片連結填入對應變數中，產出完整且高品質的 Markdown 財務盡調報告。
+請讀取 [templates/financial-report-template.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/Claude_ai/Skills/VC_Financial_Analyzer/templates/financial-report-template.md) 樣板檔案，將 Phase 3 算出的精準數據與產出的圖表嵌入對應區塊中，呈獻完整且專業的 Markdown 財務盡調報告。
