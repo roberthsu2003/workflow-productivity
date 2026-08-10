@@ -274,9 +274,9 @@
 
 #### 📖 參考教材與延伸連結
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習運用 Code Execution 讓 Skill 自動執行指定程式碼，整合樣板與視覺資產檔（assets），實現高階工作流自動化。
-  - [VC_Playwright實作範例(模仿者 (Imitator))](../../Claude_ai/Skills/VC_Playwright/README.md)
-  - [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](../../Claude_ai/Skills/VC_Creator/README.md)
-  - [品牌語氣稽核員（第三階：整合者code execution）](../../Claude_ai/Skills/Examples/Level3_Brand_Voice/SKILL.md)
+  - [**每日產業新聞與情報自動化蒐集(模仿者 (Imitator))**](../../Claude_ai/Skills/VC_Playwright/README.md)
+  - [**創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）**](../../Claude_ai/Skills/VC_Creator/README.md)
+  - [**品牌語氣稽核員（第三階：整合者code execution）**](../../Claude_ai/Skills/Examples/Level3_Brand_Voice/SKILL.md)
 
   
   <details>
@@ -324,28 +324,7 @@
   - [ ] **多步驟自主執行**：Claude 能連續呼叫工具並完成複雜流程。
 
   </details>
-- [**每日產業新聞/情報蒐集實戰指南**](./每日產業新聞情報蒐集實戰.md)：比較泛用搜尋與定點爬蟲差異，含關鍵字組合、Playwright Python 程式範例與 ITIC 專屬情報 Prompt。
-  <details>
-  <summary>💡 <b>點擊展開：學員實作驗證（產業新聞情報 Prompt 設計）</b></summary>
-  <br>
 
-  > 💡 **實作背景**：驗證學員能否運用實戰指南中的關鍵字組合邏輯進行定點情報蒐集。
-
-  ---
-
-  **📝 實作驗證任務：設計關鍵字與時間控制 Prompt**
-
-  1. 參考指南撰寫帶有 `OR` / `AND` 邏輯與時間控制（近 24 小時）的新聞搜尋 Prompt。
-  2. 在 Claude 中執行，檢查產出的結果是否精確限制在指定時間內且包含指定關鍵字。
-
-  ---
-
-  **✅ 實作驗證清單（Checklist）**
-
-  - [ ] **邏輯精確**：關鍵字組合布林邏輯正確。
-  - [ ] **時間過濾**：搜尋結果無過期舊新聞。
-
-  </details>
 - [**資料分析與報告撰寫實作**](../../實作任務/資料分析與報告/README.md)：AI 負責的 80% 工作（統計計算、趨勢視覺化建議、異常偵測）與人負責的 20%（數據來源、目標定義、結果驗證），適合套用到 ITIC Excel 業績與營運資料判讀。<br>⚠️ **本教材僅取用「80/20 人機分工框架」觀念**；其中示範的 Google Sheets／ChatGPT／Gemini／Canva 等工具操作不在本課程範圍內，實際操作一律以「上傳 Excel 至 Claude 解析」為準。
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（Excel 數據分析與 80/20 人機分工）</b></summary>
