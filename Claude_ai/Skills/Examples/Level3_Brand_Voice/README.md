@@ -30,10 +30,9 @@ Level3_Brand_Voice/
    ```text
    我想建立一個品牌語氣稽核 Skill。請參考我剛才上傳的 brand-book.md 規範、Excel 樣板與 company-logo.jpeg 圖檔，使用 /skill-creator 幫我建立包含 references、templates 和 assets 資料夾的 Skill。請在 SKILL.md 中明確指定：執行 Python (Code Execution) 寫入 Excel 報表時，必須使用 openpyxl.drawing.image.Image 將 assets/company-logo.jpeg 圖片插入置於 Excel 試算表頂端表頭位置 (Cell A1)。
    ```
-3. **下載與安裝**：
-   * Claude 執行完成後，會提供一個自訂技能資料夾的下載包（通常是 ZIP 壓縮檔）。請將其下載並解壓縮。
-   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
-   * 點擊 **Add Custom Skill** 上傳此解壓縮後的資料夾。
+3. **自動完成啟用與生效**：
+   * Claude 執行 `/skill-creator` 完成後，會自動在您的帳號中建置並啟用此 Skill，您可直接在新對話中測試使用。
+   * *(選用備份)*：若欲匯出至其他帳號或 Claude Code 終端機使用，可將 Claude 產出的 ZIP 打包檔下載備份。
 
 #### 方案 2：先完成任務對話，再打包成技能
 1. **上傳相關資源與對話測試**：
@@ -45,10 +44,9 @@ Level3_Brand_Voice/
      ```text
      請參考剛才我們對話的稽核邏輯、Excel 輸出格式與公司 Logo 圖片，使用 /skill-creator 幫我將這個功能打包建立為包含 references, templates 與 assets 的自訂技能。請確保 SKILL.md 中寫入用 openpyxl 將 assets/company-logo.jpeg 嵌入至 Excel 試算表頂端表頭 (Cell A1) 的 SOP 指令。
      ```
-3. **下載與安裝**：
-   * Claude 執行完成後，下載其產出的自訂技能資料夾（或 ZIP 檔）並解壓縮。
-   * 前往 Claude 網頁左下角個人頭像 ➔ **Settings** ➔ **Skills**。
-   * 點擊 **Add Custom Skill** 上傳該解壓縮後的資料夾即可完成安裝。
+3. **自動完成啟用與生效**：
+   * Claude 執行打包後，該自訂技能將自動建置並直接在您當前的帳號中生效啟用。
+   * *(選用備份)*：如需備份，亦可下載 Claude 提供的 ZIP 包於本地保留。
 
 ### ✍️ 方式 B：手動複製檔案（手動建立）
 1. 在電腦中建立新資料夾 `Level3_Brand_Voice`，並建立 `references`、`templates` 與 `assets` 三個子資料夾。
