@@ -276,6 +276,9 @@
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習運用 Code Execution 讓 Skill 自動執行指定程式碼，整合樣板與視覺資產檔（assets），實現高階工作流自動化。
   - [VC_Playwright實作範例(模仿者 (Imitator))](../../Claude_ai/Skills/VC_Playwright/README.md)
   - [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](../../Claude_ai/Skills/VC_Creator/README.md)
+  - [品牌語氣稽核員（第三階：整合者code execution）](../../Claude_ai/Skills/Examples/Level3_Brand_Voice/SKILL.md)
+
+  
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（第三階：整合者 Skill 實作）</b></summary>
   <br>
