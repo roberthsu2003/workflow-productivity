@@ -2,30 +2,31 @@
 
 > 🟢 **方案需求**：Free / Pro / Team / Enterprise 方案皆適用 (需開啟 Claude.ai 之 Code Execution / Analysis Tool 功能)  
 > 💼 **適用對象**：創投分析師 (VC Analyst / Associate)、財務盡調審查員 (Financial Due Diligence Auditor) 與投資經理 (Investment Manager)。  
-> 🎓 **核心技術**：展示 **「零程式基礎的 Code Execution 整合」** 技巧 —— 學員**完全不需要懂任何程式碼**，只需將 Excel 拖入對話框，Skill 就會指引 Claude.ai **在雲端背景自動執行 Python 計算與繪圖**，並產出專業的 IC 盡調報告。
+> 🎓 **核心技術**：展示 **「RTCCF 提示詞架構」** 與 **「零程式基礎 Code Execution 整合」** 技巧 —— 學員**完全不需要懂任何程式碼**，只需將 Excel 拖入對話框，Skill 就會依據 RTCCF 架構指引 Claude.ai **在雲端背景自動執行 Python 計算與繪圖**，產出專業的 IC 盡調報告。
 
 ---
 
-## 💡 為什麼非工程師學員也能無痛使用 Code Execution？
+## 💡 為什麼本 Skill 使用 RTCCF 提示詞架構？
 
-很多學員以為 Code Execution (程式碼執行/Code Interpreter) 需要自己寫程式或執行指令，**這是一個誤解**！
-
-在 Claude.ai 中：
-1. **AI 負責寫 Code 與跑 Code (80%)**：學員只需上傳 Excel 檔案，Claude.ai 會在**背景自動編寫 Python 代碼、自動讀取試算表、自動計算公式並自動畫出圖表**。
-2. **學員負責提問與做決策 (20%)**：學員完全不需要看懂背景的 Python Code，只需點選分析選單，並解讀最終產出的繁體中文報告與視覺化圖表。
+**RTCCF (Role, Task, Context, Constraint, Format)** 是設計高階 Agent Skill 的黃金提示詞框架：
+1. **R (Role 角色)**：明確定義 Claude 為「創投資深財務盡調專家 (VC Senior FDD Analyst)」。
+2. **T (Task 任務)**：指定掃描 Excel、提供選單、背景運算繪圖與產出報告之任務鏈。
+3. **C (Context 背景)**：結合 `references/` 中的創投指標庫與 Code 繪圖規範。
+4. **C (Constraint 限制)**：要求 100% 零數據幻覺 (全由背景 Code Execution 精確計算) 與繁體中文輸出。
+5. **F (Format 格式)**：嚴格套用 `templates/financial-report-template.md` 樣板。
 
 ---
 
-## 📁 創投 Level 3 Skill 實體目錄結構 (完全免程式)
+## 📁 創投 Level 3 Skill 實體目錄結構
 
 ```text
 VC_Financial_Analyzer/
-├── README.md                              # 本實戰教學說明文件 (零程式基礎體驗)
-├── SKILL.md                               # 主 Skill 檔 (後台 SOP：引導 Claude 背景跑 Python 運算與畫圖)
-├── references/                            # 📚 創投專業參考知識庫 (給 Claude 參照的指標庫)
-│   ├── financial-metrics-guide.md        # 1. VC 財務指標 (Runway, Burn Rate, NDR, LTV/CAC) 與 Red Flag 警訊
-│   └── code-execution-rules.md           # 2. 指引 Claude 背景寫 Python 與繪圖的美感規範
-├── templates/                             # 📄 標準 Markdown 輸出樣板
+├── README.md                              # 本實戰教學說明文件 (RTCCF 與零程式基礎導覽)
+├── SKILL.md                               # 主 Skill 檔 (以 RTCCF 提示詞框架撰寫之 SOP)
+├── references/                            # 📚 創投專業參考知識庫 (給 Claude 背景參考的 Context)
+│   ├── financial-metrics-guide.md        # 1. VC 財務指標 (Runway, Burn Rate, NDR) 與 Red Flag 警訊
+│   └── code-execution-rules.md           # 2. 指引 Claude 背景自動寫代碼與畫圖的美感規範
+├── templates/                             # 📄 標準 Markdown 輸出樣板 (Format)
 │   └── financial-report-template.md      # 1. 創投 IC 標準財務盡調與營運分析報告樣板
 └── examples/                              # 📁 零門檻！學員專用練習檔
     └── sample_startup_financials.xlsx    # 學員可直接下載上傳測試的範例 Excel 財報
@@ -33,7 +34,7 @@ VC_Financial_Analyzer/
 
 ---
 
-## 🛠️ 1 個 Skill 支援 5 大互動式財務分析模式
+## 🛠️ 1 個 Skill 支援 5 大互動式 RTCCF 分析模式
 
 本 Skill 名稱定義為 `vc-financial-analyzer`。當學員將 Excel 檔案拖入 Claude.ai 對話框時，Skill 會自動驅動 Claude 在背景掃描 Excel 欄位，並彈出以下 5 種分析選單供學員點選：
 
@@ -50,49 +51,61 @@ description: >-
 
 ---
 
-### 🔍 5 大分析模式詳細介紹
+### 🔍 5 大分析模式 RTCCF 架構細節
 
 <details>
-<summary><b>📊 模式 1：財務健康度與 Cash Runway 深度診斷</b></summary>
+<summary><b>🔹 模式 1：財務健康度與 Cash Runway 深度診斷 (Runway Auditor)</b></summary>
 
-- **應用場景**：評估新創公司現金還能撐多久、每月淨燒錢速度是否過快，以及何時達到損益平衡。
-- **Claude 背景自動化**：
-  - 自動算出每月 Net Burn Rate 與 Runway 剩餘月數。
-  - 背景自動繪製期末現金餘額與 6 個月安全警戒線 (Safety Horizon) 趨勢圖。
+- **R (Role)**：創投風險管理分析師 (VC Risk & Runway Auditor)。
+- **T (Task)**：估算剩餘營運月數 (Runway) 與月燒錢速度 (Net Burn Rate)。
+- **C (Context)**：對照 `references/financial-metrics-guide.md` 中的「Runway < 6 個月極高風險」警訊。
+- **C (Constraint)**：背景繪製「現金餘額 vs. Runway 趨勢圖」，並劃設 6 個月紅色虛線警戒線。
+- **F (Format)**：輸出包含 Runway 斷裂點與損益平衡估算的摘要表。
+
 </details>
 
 <details>
-<summary><b>📈 模式 2：營收與成本結構成長趨勢分析</b></summary>
+<summary><b>🔹 模式 2：營收與成本結構成長趨勢分析 (SaaS Financial Analyst)</b></summary>
 
-- **應用場景**：分析新創公司的營收成長動力（MRR 增幅）、毛利率變化，以及研發 (R&D) / 行銷 (S&M) / 管理 (G&A) 費用結構是否健康。
-- **Claude 背景自動化**：
-  - 自動算出 MoM / YoY 營收成長率與 Gross Margin %。
-  - 背景自動繪製 Revenue vs. OpEx 雙軸消長圖。
+- **R (Role)**：創投營運指標分析師 (SaaS Financial Analyst)。
+- **T (Task)**：計算 MoM / YoY 營收成長率與 Gross Margin %。
+- **C (Context)**：檢視 R&D、S&M、G&A 費用占比結構。
+- **C (Constraint)**：背景繪製「Revenue vs. OpEx 雙 Y 軸消長圖」（採用深藍與鐵灰配色）。
+- **F (Format)**：輸出營收結構與毛利變遷分析表。
+
 </details>
 
 <details>
-<summary><b>🎯 模式 3：SaaS Unit Economics 與客戶動態分析</b></summary>
+<summary><b>🔹 模式 3：SaaS Unit Economics 與客戶動態分析 (SaaS Unit Economics Specialist)</b></summary>
 
-- **應用場景**：針對 SaaS 或訂閱制標的，評估客戶留存狀況與單一客戶獲利能力。
-- **Claude 背景自動化**：
-  - 自動運算 ARPU (平均客單價)、Churn Rate (流失率) 與 NDR (淨營收留存率)。
-  - 自動對照頂尖 VC 基準 (如 Top-tier NDR ≥ 120%) 輸出評價。
+- **R (Role)**：SaaS 專項投資經理 (SaaS Unit Economics Specialist)。
+- **T (Task)**：評估 ARPU、Churn Rate、NDR 留存率與 LTV/CAC。
+- **C (Context)**：比對 Top-tier VC 基準 (如 NDR ≥ 120%)。
+- **C (Constraint)**：數字必須由背景 Code Execution 運算，禁止假造。
+- **F (Format)**：輸出客戶留存與獲客效率矩陣。
+
 </details>
 
 <details>
-<summary><b>🚨 模式 4：財務異常與 Red Flags 風險預警</b></summary>
+<summary><b>🔹 模式 4：財務異常與 Red Flags 風險預警 (FDD Red Flag Auditor)</b></summary>
 
-- **應用場景**：投前財務盡調 (FDD) 快速掃描，尋找報表中隱藏的財務陷阱。
-- **Claude 背景自動化**：
-  - 比對 `references/financial-metrics-guide.md`，自動標示毛利急降、行銷費用爆增但新客停滯等異常項目。
+- **R (Role)**：財務盡調稽核專家 (FDD Red Flag Auditor)。
+- **T (Task)**：掃描財報異動點，標示高風險項目。
+- **C (Context)**：引用 `references/financial-metrics-guide.md` 之 Red Flag 檢核清單。
+- **C (Constraint)**：分級標示 🔴 紅燈 (高度風險) 與 🟡 黃燈 (需注意)。
+- **F (Format)**：輸出 Red Flag 風險檢核清單與稽核說明。
+
 </details>
 
 <details>
-<summary><b>🏆 模式 5：全方位創投 IC 委員會財務盡調簡報 (推薦)</b></summary>
+<summary><b>🔹 模式 5：全方位創投 IC 委員會財務盡調簡報 (VC Managing Partner & IC Chair)</b></summary>
 
-- **應用場景**：需要一份包含完整數據、雙張趨勢圖表、風險預警與創辦人提問清單的完整簡報。
-- **Claude 背景自動化**：
-  - 綜合執行模式 1~4 之運算，渲染全套視覺化圖表，並套用 `templates/financial-report-template.md` 產出高品質報告。
+- **R (Role)**：創投合夥人與 IC 委員會主席 (VC Managing Partner & IC Chair)。
+- **T (Task)**：綜合執行模式 1~4，產出全覽式財務盡調簡報。
+- **C (Context)**：結合上述所有專業知識庫與視覺化圖表。
+- **C (Constraint)**：包含 IC 必問創辦人的 3 大關鍵財務問題。
+- **F (Format)**：完全套用 `templates/financial-report-template.md` 產出完整 Markdown 報告。
+
 </details>
 
 ---
