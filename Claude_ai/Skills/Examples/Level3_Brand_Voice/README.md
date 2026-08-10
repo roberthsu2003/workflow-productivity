@@ -1,6 +1,6 @@
 # Level 3 範例：品牌語氣稽核員（第三階：整合者）
 
-本階段重點在於學會掛載「外部知識庫檔案（References）」與「Excel 樣板（Templates）」，並透過「程式碼執行 (Code Execution)」產出實體 `.xlsx` 檔案供使用者下載。
+本階段重點在於學會掛載「外部知識庫檔案（References）」、「Excel 樣板（Templates）」與「靜態視覺資產（Assets）」，並透過「程式碼執行 (Code Execution)」產出嵌入品牌 Logo 圖片的實體 `.xlsx` 檔案供使用者下載。
 
 ## 📖 範例說明
 這個 Skill 會參考您放置於 `references/` 目錄下的公司品牌指南，稽核您輸入的宣傳文案。稽核完畢後，AI 會透過 Python 程式碼載入 `templates/` 資料夾底下的 Excel 樣板，將稽核結果寫入，**並自動將 `assets/company-logo.png` 品牌 Logo 嵌入至試算表頂部**，最終輸出一個具備公司品牌識別的實體 Excel 檔（`.xlsx`）供下載。
