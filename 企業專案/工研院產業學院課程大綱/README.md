@@ -1,7 +1,7 @@
-# 工研院產業學院課程
+# 工研院產業學院（ITRI College）課程
 ## 🚀 Claude AI 與 Skills 工作流程自動化實作
 
-> **專案簡介**：本課程專為 ITIC 團隊量身打造，旨在建立一套自動化「資料與數據收集 → 重點摘要與分析 → 彙整交付」的數位工作助理流程。
+> **專案簡介**：本課程專為工研院產業學院（**ITRI College**）團隊量身打造，旨在建立一套自動化「資料與數據收集 → 重點摘要與分析 → 彙整交付」的數位工作助理流程。
 
 ---
 
@@ -11,8 +11,8 @@
 | :--- | :--- |
 | **總時數** | 14 小時（共 2 天，每天 7 小時模組化設計） |
 | **授課形式** | 實體工作坊（觀念解說 + 實務上機操作 + 課堂演練） |
-| **適合對象** | ITIC 投資研究、營運管理及業務相關人員（無需程式背景） |
-| **課程特色** | 結合 ITIC 投資標的與營運資料實例、零代碼/低維護原生架構、文字與數據雙軌並重 |
+| **適合對象** | 工研院產業學院（ITRI College）業務企劃、專案管理、產業研究及營運相關人員（無需程式背景） |
+| **課程特色** | 結合產業培訓專案、科技情報與營運數據實例、零代碼/低維護原生架構、文字與數據雙軌並重 |
 
 ### 🎯 課程三大核心目標
 1. **自動化工作流**：獨立設計 Claude Skill，自動完成日常情報與數據分析。
@@ -22,7 +22,7 @@
 ### 💡 預期效益
 - ⏱️ **效率大幅提升**：每日新聞與 Excel 數據判讀時間縮短，聚焦策略分析與決策。
 - 📊 **產出標準化**：產出統一格式的分析報告與簡報，提升團隊溝通效率。
-- 🔧 **靈活可擴充**：學員課後可自行新增投資標的與維護分析規則。
+- 🔧 **靈活可擴充**：學員課後可自行新增產業追蹤主題與維護分析規則。
 
 ---
 
@@ -42,43 +42,43 @@
 ##### 🛠️ 課程內容與實作綱要
 - **AI 核心與 Prompt 結構化實戰**：熟悉 RTCCF 框架（Role, Task, Context, Constraint, Format）、System Prompt 角色規則與結構化輸出控制。
 - **Artifacts 實務應用與版本迭代**：透過獨立視窗生成與調校多種動態文件、視覺圖表與互動組件，掌握即時修改與歷程追蹤技巧。
-- **Anthropic PPTX Skill 實作工作坊**：練習運用 Skill 將結構化簡報大綱與投資主題自動轉換為專業 PowerPoint 簡報 (.pptx)，包含配色方案套用與版面調校。
+- **Anthropic PPTX Skill 實作工作坊**：練習運用 Skill 將結構化簡報大綱與產業科技主題自動轉換為專業 PowerPoint 簡報 (.pptx)，包含配色方案套用與版面調校。
 
 ---
 
 #### 🔹 下午模組（3.5 小時）：Projects 團隊知識庫、Connectors 雲端串接與基礎 Skills 建立
 
 ##### 📖 參考教材與延伸連結
-- [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：建立專屬知識庫，將投資標的清單與市場分析資料持續累積在 Project 中，實現跨檔案檢索與比較。
+- [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：建立專屬知識庫，將產業研究主題、培訓方案與市場分析資料持續累積在 Project 中，實現跨檔案檢索與比較。
 - [**Connectors 連結技巧(實作)**](../../Claude_ai/Connectors/README.md)：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），讓 Claude 直接存取與整合雲端資料。
 - [**Claude in Chrome 擴充功能**](../../Claude_ai/claude_in_chrome/README.md)：Anthropic 官方 Chrome 擴充功能，可在已登入環境中執行頁面操作與資料讀取，適合 Gmail、內部系統等需登入網頁。
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（在 Claude Desktop 中使用 Prompt 控制 Chrome）</b></summary>
   <br>
 
-  > 💡 **實作背景**：學員已於本機 Chrome 瀏覽器登入個人/公司帳號（如 Gmail、Google Workspace 或創投內部系統），並於 **Claude Desktop** 設定中啟用「Enable Claude in Chrome」。本驗證旨在確認學員已掌握**在 Claude Desktop 視窗直接輸入 Prompt，遠端驅動 Chrome 讀取與分析已登入網頁**的能力。
+  > 💡 **實作背景**：學員已於本機 Chrome 瀏覽器登入個人/公司帳號（如 Gmail、Google Workspace 或內部專案系統），並於 **Claude Desktop** 設定中啟用「Enable Claude in Chrome」。本驗證旨在確認學員已掌握**在 Claude Desktop 視窗直接輸入 Prompt，遠端驅動 Chrome 讀取與分析已登入網頁**的能力。
 
   ---
 
   **📝 實作驗證任務：在 Claude Desktop 輸入 Prompt 進行即時查詢**
 
-  請開啟 **Claude Desktop** 應用程式對話視窗，複製以下任一創投實務 Prompt 貼入並發送測試：
+  請開啟 **Claude Desktop** 應用程式對話視窗，複製以下任一實務 Prompt 貼入並發送測試：
 
   * **🔹 任務選項 A：已登入 Gmail 郵件檢查與摘要（使用 Claude Desktop）**
     在 Claude Desktop 中輸入 Prompt：
     ```text
     請使用 claude in chrome 開啟我的 Gmail（https://mail.google.com），檢查我最近的信件，幫我整理出：
     1. 寄件者與郵件主旨
-    2. 核心訴求 / 創投案源簡述
+    2. 核心訴求 / 合作提案簡述
     3. 需要執行的優先待辦事項與建議行動
     ```
 
-  * **🔹 任務選項 B：產業新聞與標的網站動態擷取（使用 Claude Desktop）**
+  * **🔹 任務選項 B：產業新聞與科技動態擷取（使用 Claude Desktop）**
     在 Claude Desktop 中輸入 Prompt：
     ```text
     請使用 claude in chrome 開啟科技新報（https://technews.tw）或經濟日報，搜尋關於『半導體先進封裝』或『AI伺服器』的最新新聞：
     1. 擷取新聞標題、發布時間與關鍵公司
-    2. 為 ITIC 投資評估濃縮 3 大重點摘要與潛在市場影響
+    2. 為工研院產業學院（ITRI College）產業分析與人才培育規劃濃縮 3 大重點摘要與潛在趨勢影響
     ```
 
   ---
@@ -146,26 +146,26 @@
 
 ---
 
-#### 範例 2：進階版 — 創投投資主題簡報製作（使用 Anthropic PPTX Skill）
+#### 範例 2：進階版 — 產業趨勢與培訓策略簡報製作（使用 Anthropic PPTX Skill）
 ```markdown
 ## Role
-你是一位創投（Venture Capital）簡報設計助手，擅長將投資主題與摘要轉化為結構清晰的簡報大綱，並運用 Anthropic PPTX Skill 製作專業 PowerPoint 簡報。
+你是一位產業研究與簡報設計助手，擅長將前瞻科技趨勢與人才培訓摘要轉化為結構清晰的簡報大綱，並運用 Anthropic PPTX Skill 製作專業 PowerPoint 簡報。
 
 ## Task
-請依我提供的創投主題與要點，先規劃一份簡報大綱與投影片結構，與我討論確認後，再使用 PPTX Skill 製作成 PowerPoint 簡報檔案 (.pptx) 供我下載。
+請依我提供的產業主題與要點，先規劃一份簡報大綱與投影片結構，與我討論確認後，再使用 PPTX Skill 製作成 PowerPoint 簡報檔案 (.pptx) 供我下載。
 
 ## Context
-- 簡報主題：2026 半導體與 AI 創投投資趨勢與評估
-- 報告對象：投資審查委員會
+- 簡報主題：2026 前瞻半導體與 AI 產業趨勢暨人才培育推動策略
+- 報告對象：工研院產業學院（ITRI College）專案指導委員會與企業代表
 - 主要要點：
-  1. 關注領域：半導體先進封裝（CoWoS/FOPLP）、矽光子（CPO）與 AI 伺服器供應鏈。
-  2. 投資策略：聚焦具技術壁壘的早期與成長期新創。
-  3. 風控原則：著重團隊技術專利與客戶驗證進度。
+  1. 關注領域：半導體先進封裝（CoWoS/FOPLP）、矽光子（CPO）與 AI 伺服器技術演進。
+  2. 人才推動策略：聚焦具實務技能壁壘的專業人才培訓與產學接軌方案。
+  3. 培訓成效指標：著重學員實作技能、證照接軌與企業即戰力導入。
 
 ## Constraint
 - 語言：繁體中文
 - 簡報設計配色：指定使用「Midnight Executive」配色方案（深藍 `1E2761` / 冰藍 `CADCFC` / 白 `FFFFFF`），展現專業嚴謹風格。
-- 固定 5 頁簡報結構：封面 → 投資趨勢總覽 → 重點關注領域 → 投資評估標準 → 結語與建議
+- 固定 5 頁簡報結構：封面 → 產業趨勢總覽 → 重點關注領域 → 人才培育與培訓規劃 → 結語與推動建議
 - 每頁重點條目不超過 4 條。
 - **工作流程限制**：
   1. **第一步（討論階段）**：請先使用 Claude Artifacts 功能，呈現每頁投影片的標題與內容大綱草稿。
@@ -182,7 +182,7 @@
 #### 範例 3：完整版 — 近 7 天 Email 檢查與重要性分類（配合 Gmail Connector）
 ```markdown
 ## Role
-你是一位行政與郵件管理助理，擅長資訊過濾、優先級排序與郵件分類整理。
+你是一位行政與專案郵件管理助理，擅長資訊過濾、優先級排序與郵件分類整理。
 
 ## Task
 請檢查我近 7 天（最近一週）在 Gmail 上的收件匣郵件，依據重要性與類別進行整理，並產出高優先待處理事項與郵件分類報告。
@@ -194,8 +194,8 @@
 ## Constraint
 - 僅讀取最近 7 天內的信件。
 - 依照重要性標示等級：`🔴 高優先`（需立即處理/回覆）、`🟡 中優先`（本週內處理）、`🟢 低優先`（僅供參考/例行通知）。
-- 郵件類別須歸類為：`[創投/案源]`、`[內部簽核/通知]`、`[外部廠商/合作]`、`[電子報/訂閱]`。
-- 若信件包含附件（如：NDA、BP、簡報、財報、合約），請特別標註 `📎 含附件`。
+- 郵件類別須歸類為：`[課程/培訓提案]`、`[內部簽核/通知]`、`[企業合作/講師聯繫]`、`[產業動態/電子報]`。
+- 若信件包含附件（如：課綱規劃、合作意向書、簡報、合約），請特別標註 `📎 含附件`。
 - 嚴格基於郵件實際內容整理，不可捏造；無相關信件時註明「無相關郵件」。
 
 ## Format
@@ -218,13 +218,13 @@
   <summary>💡 <b>點擊展開：學員實作驗證（Playwright MCP 本地自動化爬蟲操作）</b></summary>
   <br>
 
-  > 💡 **實作背景**：學員電腦已於 Claude Desktop 設定中配置好 `playwright` Local MCP Server。本驗證旨在確認學員掌握**使用 Playwright 本地爬蟲突破雲端白名單限制、動態渲染 JS 網頁並擷取創投資訊**的能力。
+  > 💡 **實作背景**：學員電腦已於 Claude Desktop 設定中配置好 `playwright` Local MCP Server。本驗證旨在確認學員掌握**使用 Playwright 本地爬蟲突破雲端白名單限制、動態渲染 JS 網頁並擷取產業與科技新知**的能力。
 
   ---
 
   **📝 實作驗證任務：在 Claude Desktop 使用 Playwright MCP 下指令爬取資訊**
 
-  請開啟 **Claude Desktop** 應用程式對話視窗，複製以下任一創投實務 Prompt 貼入並發送測試：
+  請開啟 **Claude Desktop** 應用程式對話視窗，複製以下任一實務 Prompt 貼入並發送測試：
 
   * **🔹 任務選項 A：動態網站資料爬取與重點整理（公開資訊/產業新聞）**
     在 Claude Desktop 中輸入 Prompt：
@@ -235,13 +235,13 @@
     3. 將結果整理成 Markdown 表格輸出
     ```
 
-  * **🔹 任務選項 B：新創標的網站動態網頁截圖與產品分析**
+  * **🔹 任務選項 B：科技標竿企業官網動態網頁截圖與技術分析**
     在 Claude Desktop 中輸入 Prompt：
     ```text
-    請使用 Playwright MCP 開啟指定的新創公司官網（或科技新聞頁面）：
+    請使用 Playwright MCP 開啟指定的科技企業官網（或產業新知頁面）：
     1. 開啟網頁並滾動頁面確保動態 JS 內容完全載入
     2. 讀取頁面文字並對首頁重要區塊進行截圖保存
-    3. 提煉出該公司的『核心產品/技術』、『應用市場』與『團隊優勢』
+    3. 提煉出該機構/企業的『核心產品/技術』、『應用市場』與『專業優勢』
     ```
 
   ---
@@ -260,27 +260,27 @@
 ##### 🛠️ 課程內容與實作綱要
 - **Local MCP 架構原理與環境診斷**：深入了解 Model Context Protocol 機制、Claude Desktop 設定與本機服務連線排錯。
 - **Playwright 動態網頁爬蟲與截圖**：學習於本機環境驅動動態網頁解析、跨過白名單限制、執行自動化滾動與截圖。
-- **產業情報與新聞自動化 Skill 打造**：結合 Playwright 爬取與情報分析規範，建立專屬的市場動態與標的追蹤自動化 Skill。
+- **產業情報與新聞自動化 Skill 打造**：結合 Playwright 爬取與情報分析規範，建立專屬的市場動態與專案追蹤自動化 Skill。
 
 ---
 
 #### 🔹 下午模組（3.5 小時）：Excel 數據分析、高階 Skill 整合者 (Code Execution)、Cowork 與 Scheduled 排程交付 + 綜合成果演練
 
 ##### 📖 參考教材與延伸連結
-- [**Projects 雲端知識沙盒 (進階持續)**](../../Claude_ai/Projects/README.md)：將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
+- [**Projects 雲端知識沙盒 (進階持續)**](../../Claude_ai/Projects/README.md)：將每日蒐集到的產業新聞、研討會與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（Projects 雲端知識庫上傳與檢索）</b></summary>
   <br>
 
-  > 💡 **實作背景**：學員已在 Projects 中建立專屬的「ITIC 投資組合與關注清單」知識庫。本驗證旨在確認學員掌握上傳關注檔案並在對話中呼叫知識庫內容進行比對的能力。
+  > 💡 **實作背景**：學員已在 Projects 中建立專屬的「ITRI 產業研究與培訓關注清單」知識庫。本驗證旨在確認學員掌握上傳關注檔案並在對話中呼叫知識庫內容進行比對的能力。
 
   ---
 
   **📝 實作驗證任務：在 Project 中上傳資料並進行跨檔案詢問**
 
-  1. 前往 **Projects** 頁面，開啟專屬的投資關注 Project。
-  2. 在 **Project Knowledge** 上傳關注產業清單文件（如：`itic_watchlist.pdf` 或 `.txt`）。
-  3. 在 Project 對話框中輸入 Prompt：「`請參考 Project 知識庫中的關注清單，比對我今天開啟的新聞標的，說明該標的是否屬於我們的重點關注領域？`」
+  1. 前往 **Projects** 頁面，開啟專屬的產業培訓與科技關注 Project。
+  2. 在 **Project Knowledge** 上傳關注產業領域文件（如：`itri_industry_watchlist.pdf` 或 `.txt`）。
+  3. 在 Project 對話框中輸入 Prompt：「`請參考 Project 知識庫中的關注清單，比對我今天開啟的新聞或技術報告，說明該主題是否屬於我們的重點培育與研析領域？`」
 
   ---
 
@@ -293,7 +293,7 @@
   </details>
 
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 第三階演進（第三階：整合者），學習運用 Code Execution 讓 Skill 自動執行指定程式碼，整合樣板與視覺資產檔（assets），實現高階工作流自動化。
-  - [**創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）**](../../Claude_ai/Skills/VC_Creator/README.md)
+  - [**產業情報與報告專屬 Skill 實戰（第二階：創作者篇）**](../../Claude_ai/Skills/VC_Creator/README.md)
   - [**品牌語氣稽核員（第三階：整合者 code execution）**](../../Claude_ai/Skills/Examples/Level3_Brand_Voice/SKILL.md)
   - [**資料分析與報告撰寫實作（第三階：整合者 code execution）**](../../Claude_ai/Skills/VC_Financial_Analyzer/README.md)
   
@@ -307,8 +307,8 @@
 
   **📝 實作驗證任務：建立整合型 Skill**
 
-  1. 建立一個名為 `ITIC Report Integrator` 的 Skill。
-  2. 在 Instructions 中定義：同時引用 Project 知識庫的關注標準、結合樣板檔格式，自動產出含分析與建議的投資摘要報告。
+  1. 建立一個名為 `ITRI_College_Report_Integrator` 的 Skill。
+  2. 在 Instructions 中定義：同時引用 Project 知識庫的關注標準、結合樣板檔格式，自動產出含分析與建議的產業研析/專案摘要報告。
   3. 在新對話中輸入測試資訊，驗證 Skill 是否能同時讀取 Project 並套用樣板輸出。
 
   ---
@@ -374,4 +374,5 @@
 - **高階 Skill 整合者實作**：將知識庫規範、樣板檔與自動化邏輯打包封裝為高階 Skill。
 - **Cowork 與 Scheduled 排程交付**：設定多步驟自主工作流程與雲端排程定時推送。
 - **綜合端到端實務演練與成果驗收**：學員綜合運用兩天所學，完成「情報爬取 ➔ 數據分析 ➔ 報告/簡報生成 ➔ 定時交付」的完整工作流。
+
 
