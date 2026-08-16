@@ -9,8 +9,8 @@
 
 | 項目 | 說明 |
 | :--- | :--- |
-| **總時數** | 12 小時（共 2 天，每天 6 小時模組化設計） |
-| **授課形式** | 實體工作坊（觀念解說 + 實務上機操作） |
+| **總時數** | 14 小時（共 2 天，每天 7 小時模組化設計） |
+| **授課形式** | 實體工作坊（觀念解說 + 實務上機操作 + 課堂演練） |
 | **適合對象** | ITIC 投資研究、營運管理及業務相關人員（無需程式背景） |
 | **課程特色** | 結合 ITIC 投資標的與營運資料實例、零代碼/低維護原生架構、文字與數據雙軌並重 |
 
@@ -28,25 +28,25 @@
 
 ## 📚 課程大綱與教材導覽
 
-### 📅 第一天（DAY 1）：Claude 核心操作、Prompt 工程、Projects 知識庫與雲端 Connectors 實戰（共 6 小時）
+### 📅 第一天（DAY 1）：Claude 核心操作、Prompt 工程、Projects 知識庫與雲端 Connectors 實戰（共 7 小時）
 
-#### 🔹 上午模組（3小時）：Claude AI 核心概念、Prompt 提示詞工程與 Artifacts / PPTX 簡報生成
+#### 🔹 上午模組（3.5 小時）：Claude AI 核心概念、Prompt 提示詞工程與 Artifacts / PPTX 簡報生成
 
 ##### 📖 參考教材與延伸連結
 - [**生成式 AI 模型基本概念**](../../生成式AI模型基本概念/README.md)：解析 LLM 底層能力與上層應用（檔案讀取、搜尋、API 串接）的演進與職場應用觀念。
-- [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言/YAML/Markdown 內容格式、System Prompt 角色設定與提示詞工程。
+- [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言/YAML/Markdown 內容格式、System Prompt 角色設定與提示詞工程（RTCCF 框架、Few-shot 範例引導、思考鏈引導）。
 - [**Claude 官方 Skill 介紹**](https://github.com/anthropics/skills)：Anthropic 官方開放的 Skills 範例庫，提供標準化 Skill 設計規範與範例。
     - [**使用Anthropic PPTX Skill製作簡報(實作)**](../../Claude_ai/Skills/GWorkspace/README.md)-->**請使用練習C1**
 - [**Artifacts 互動內容生成（實作）**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗生成長文案、數據圖表與互動原型，實現即時渲染與版本控制。
 
 ##### 🛠️ 課程內容與實作綱要
-- **AI 核心與 Prompt 基礎**：熟悉 RTCCF 框架與 System Prompt 角色規則。
-- **Artifacts 實務應用**：透過獨立視窗生成與調校多種動態文件及圖表。
-- **Anthropic PPTX Skill 實作**：練習運用 Skill 將結構化簡報大綱自動轉換為 PowerPoint 簡報 (.pptx)。
+- **AI 核心與 Prompt 結構化實戰**：熟悉 RTCCF 框架（Role, Task, Context, Constraint, Format）、System Prompt 角色規則與結構化輸出控制。
+- **Artifacts 實務應用與版本迭代**：透過獨立視窗生成與調校多種動態文件、視覺圖表與互動組件，掌握即時修改與歷程追蹤技巧。
+- **Anthropic PPTX Skill 實作工作坊**：練習運用 Skill 將結構化簡報大綱與投資主題自動轉換為專業 PowerPoint 簡報 (.pptx)，包含配色方案套用與版面調校。
 
 ---
 
-#### 🔹 下午模組（3小時）：Projects 團隊知識庫、Connectors 雲端串接與基礎 Skills 建立
+#### 🔹 下午模組（3.5 小時）：Projects 團隊知識庫、Connectors 雲端串接與基礎 Skills 建立
 
 ##### 📖 參考教材與延伸連結
 - [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：建立專屬知識庫，將投資標的清單與市場分析資料持續累積在 Project 中，實現跨檔案檢索與比較。
@@ -208,9 +208,9 @@
 
 ---
 
-### 📅 第二天（DAY 2）：進階情報擷取 (Playwright MCP)、Excel 數據分析、高階 Skill 整合與 Cowork / Scheduled 排程自動化（共 6 小時）
+### 📅 第二天（DAY 2）：進階情報擷取 (Playwright MCP)、Excel 數據分析、高階 Skill 整合與 Cowork / Scheduled 排程自動化（共 7 小時）
 
-#### 🔹 上午模組（3小時）：Playwright 本地爬蟲 (Local MCP) 與產業情報自動化蒐集 Skill
+#### 🔹 上午模組（3.5 小時）：Playwright 本地爬蟲 (Local MCP) 與產業情報自動化蒐集 Skill
 
 ##### 📖 參考教材與延伸連結
 - [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，適合存取內網與無 API 的公開網站。
@@ -258,12 +258,13 @@
 - [**自動化新聞與產業情報蒐集 Skill**](../../Claude_ai/Skills/VC_Playwright/README.md)：結合爬蟲技術與情報過濾框架（模仿者 Imitator），自動化抓取特定主題產業新聞並產出結構化日報。
 
 ##### 🛠️ 課程內容與實作綱要
-- **Local MCP 與 Playwright 架構**：學習於本機環境驅動動態網頁解析與自動化滾動截圖。
-- **產業情報與新聞自動化 Skill**：建立針對市場動態與標的追蹤的專業情報過濾與摘要 Skill。
+- **Local MCP 架構原理與環境診斷**：深入了解 Model Context Protocol 機制、Claude Desktop 設定與本機服務連線排錯。
+- **Playwright 動態網頁爬蟲與截圖**：學習於本機環境驅動動態網頁解析、跨過白名單限制、執行自動化滾動與截圖。
+- **產業情報與新聞自動化 Skill 打造**：結合 Playwright 爬取與情報分析規範，建立專屬的市場動態與標的追蹤自動化 Skill。
 
 ---
 
-#### 🔹 下午模組（3小時）：Excel 數據分析、高階 Skill 整合者 (Code Execution)、Cowork 與 Scheduled 排程交付
+#### 🔹 下午模組（3.5 小時）：Excel 數據分析、高階 Skill 整合者 (Code Execution)、Cowork 與 Scheduled 排程交付 + 綜合成果演練
 
 ##### 📖 參考教材與延伸連結
 - [**Projects 雲端知識沙盒 (進階持續)**](../../Claude_ai/Projects/README.md)：將每日蒐集到的新聞與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
@@ -367,3 +368,10 @@
   - [ ] **雲端獨立運行**：確認任務說明符合雲端遠端執行規範。
 
   </details>
+
+##### 🛠️ 課程內容與實作綱要
+- **Excel / 數據報表分析與視覺化**：運用 Code Execution 讓 Claude 自動進行表格計算、趨勢洞察與統計圖表生成。
+- **高階 Skill 整合者實作**：將知識庫規範、樣板檔與自動化邏輯打包封裝為高階 Skill。
+- **Cowork 與 Scheduled 排程交付**：設定多步驟自主工作流程與雲端排程定時推送。
+- **綜合端到端實務演練與成果驗收**：學員綜合運用兩天所學，完成「情報爬取 ➔ 數據分析 ➔ 報告/簡報生成 ➔ 定時交付」的完整工作流。
+
