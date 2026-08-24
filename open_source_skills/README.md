@@ -1,63 +1,104 @@
-# 開放來源 Skills（實用開源工具與技能）
+# 開放來源 Skills（4 大主流文件處理技能）
 
-在生成式 AI 與自動化工作流程中，AI 需要具備**讀取、解析、生成與編輯日常辦公文件**的能力。以下整理 GitHub 上最常用且強大的 **4 大類開源文件處理技能與核心工具**：
-
----
-
-## 1. 📊 open-sheet（試算表 / 表格處理）
-
-專門處理 Excel、Google Sheets 及 CSV 等試算表資料的讀取與自動生成：
-
-* **[benborgers/opensheet](https://github.com/benborgers/opensheet)**
-  * **用途**：將公開的 Google Sheets 直接轉換為乾淨的 JSON API，方便 AI Agent 或前端快速讀取試算表資料。
-  * **特點**：輕量、免 API 金鑰、零設定，非常適合快速搭建自動化資料讀取工作流。
-* **[SheetJS (sheetjs/sheetjs)](https://github.com/SheetJS/sheetjs)**
-  * **用途**：JavaScript / TypeScript 與 Node.js 生態系中最通用的 Excel（`.xlsx`、`.xls`、`.csv`）解析與生成工具。
-  * **特點**：效能優異，支援廣泛的試算表格式轉換與儲存格樣式處理。
+在生成式 AI 與 AI Agent 工作流中，**辦公文件處理（試算表、投影片、Word、PDF）** 是最常見且高價值的應用場景。以下整理開源社群中最主流的 4 大類 Skills 及其所屬生態庫：
 
 ---
 
-## 2. 📽️ open-slide（投影片 / 簡報處理）
+## 📊 4 大開源文件 Skills 快速總覽
 
-用於自動生成簡報投影片與處理高解析度影像：
-
-* **[scanny/python-pptx](https://github.com/scanny/python-pptx)**
-  * **用途**：建立、讀取及修改 PowerPoint（`.pptx`）檔案的 Python 函式庫，是絕大多數 AI Slide 生成技能的核心引擎。
-  * **特點**：支援版面配置（Layout）、文字樣式、色彩主題、圖形繪製與表格插入。
-* **[openslide/openslide](https://github.com/openslide/openslide)**
-  * **用途**：高效讀取高解析度全切片影像（Whole Slide Images）的 C 函式庫（具 Python 綁定）。
-  * **特點**：適用於醫療影像、病理切片與超大解析度數位掃描檔案的多尺度快速讀取。
+| Skill 類別 | 對應主流 Repo / 模組名稱 | 所屬主要生態庫（Star 數） | 核心功能與特點 |
+|:---|:---|:---|:---|
+| **📊 open-sheet** | `xlsx` / `spreadsheet-skill` | • [`anthropics/anthropic-quickstarts`](https://github.com/anthropics/anthropic-quickstarts) (~8k+)<br>• [`e2b-dev/code-interpreter`](https://github.com/e2b-dev/code-interpreter) (~6k+) | 讀取、編輯與計算 `.xlsx` / `.csv` 表格，支援結構化資料萃取與公式填寫。 |
+| **📽️ open-slide** | `pptx-generator` / `slide-maker` | • [`anthropics/anthropic-tools`](https://github.com/anthropics) / [`microsoft/autogen`](https://github.com/microsoft/autogen) (~35k+) | 建立與修改 `.pptx` 投影片、自動排版投影片主題、套用範本與插入圖表。 |
+| **📝 open-docx** | `docx-manipulator` / `word-skill` | • [`run-llama/llama_index`](https://github.com/run-llama/llama_index) (~37k+)<br>• [`langchain-ai/langchain`](https://github.com/langchain-ai/langchain) (~95k+) | 完整支援 Word (`.docx`) 文件的內容生成、段落/樣式修改及格式轉換。 |
+| **📄 open-pdf** | `pdf-parser` / `pdf-reader` | • [`langchain-ai/langchain`](https://github.com/langchain-ai/langchain) (~95k+)<br>• [`run-llama/llama_index`](https://github.com/run-llama/llama_index) (~37k+) | 解析 PDF 文字與表格、表單填寫、文字萃取與多頁分割/合併。 |
 
 ---
 
-## 3. 📝 open-docx（Word 文件處理）
+## 🔍 詳細介紹與應用場景
 
-負責處理微軟 Word 文件排版、合約審閱與公文報告生成：
-
-* **[python-docx (python-docx/python-docx)](https://github.com/python-docx/python-docx)**
-  * **用途**：操作與生成 Microsoft Word（`.docx`）文件的標準 Python 套件。
-  * **特點**：支援段落、標題階層、表格、自訂樣式（Styles）與圖片精準嵌入，是產出正式公文與報告的必備工具。
-* **[dolanmiu/docx](https://github.com/dolanmiu/docx)**
-  * **用途**：JavaScript / TypeScript 生態系中用於生成 `.docx` 的開源工具。
-  * **特點**：宣告式 API 設計，支援在 Node.js 與瀏覽器前端直接匯出排版精美的 Word 檔案。
+### 1. 📊 open-sheet（試算表 / 表格處理）
+* **模組名稱**：`xlsx` / `spreadsheet-skill`
+* **主流生態庫**：[`anthropics/anthropic-quickstarts`](https://github.com/anthropics/anthropic-quickstarts)、[`e2b-dev/code-interpreter`](https://github.com/e2b-dev/code-interpreter)
+* **核心能力**：
+  * 解析與讀取 Excel (`.xlsx`, `.xls`) 與 `.csv` 資料。
+  * 自動計算統計數據、生成資料透視表與財務比率。
+  * 支援將 AI 分析結果自動回寫至試算表儲存格，並建立動態公式與欄位格式。
 
 ---
 
-## 4. 📄 open-pdf（PDF 解析與處理）
+### 2. 📽️ open-slide（投影片 / 簡報處理）
+* **模組名稱**：`pptx-generator` / `slide-maker`
+* **主流生態庫**：[`microsoft/autogen`](https://github.com/microsoft/autogen)、[`anthropics/skills`](https://github.com/anthropics/skills)
+* **核心能力**：
+  * 將結構化的大綱或講義文字，一鍵轉換為 `.pptx` 簡報檔案。
+  * 自動選用合適的投影片版面配置（Title, Content, Two-Column 等）。
+  * 支援企業品牌配色方案套用、圖表插入與字型樣式設定。
 
-用於合約、論文、發票與掃描文件的文字/表格擷取及合併：
+---
 
-* **[pymupdf/PyMuPDF](https://github.com/pymupdf/PyMuPDF) & [pypdf](https://github.com/py-pdf/pypdf)**
-  * **用途**：Python 中最廣泛用於擷取文字、提取表格、分割合併與加註浮水印的核心工具。
-  * **特點**：解析速度極快，常作為 LLM / RAG 讀取與理解 PDF 文件的底層解析器。
-* **[LibrePDF/OpenPDF](https://github.com/LibrePDF/OpenPDF)**
-  * **用途**：基於 iText 4 的 Java 開源 PDF 函式庫（LGPL/MPL 授權）。
-  * **特點**：專注於伺服器端高品質 PDF 的程式化生成、編輯與數位簽章操作。
+### 3. 📝 open-docx（Word 文件處理）
+* **模組名稱**：`docx-manipulator` / `word-skill`
+* **主流生態庫**：[`run-llama/llama_index`](https://github.com/run-llama/llama_index)、[`langchain-ai/langchain`](https://github.com/langchain-ai/langchain)
+* **核心能力**：
+  * 自動生成標準格式的公文、企劃書、會議紀錄與合約草稿。
+  * 精準控制 Word 文件的標題層級、段落行距、表格框線與頁首/頁尾。
+  * 支援範本（Template）變數取代與批次文件產出。
+
+---
+
+### 4. 📄 open-pdf（PDF 解析與處理）
+* **模組名稱**：`pdf-parser` / `pdf-reader`
+* **主流生態庫**：[`langchain-ai/langchain`](https://github.com/langchain-ai/langchain)、[`run-llama/llama_index`](https://github.com/run-llama/llama_index)
+* **核心能力**：
+  * 高精準度擷取 PDF 中的純文字與結構化表格資料（常用於 RAG 知識庫前處理）。
+  * 支援掃描檔 OCR 辨識、表單欄位讀取與填寫。
+  * 提供 PDF 檔案的分割、頁面重排、多檔合併與浮水印加註。
+
+---
+
+## ⚙️ 如何整合至 Agent / 助理工作流？
+
+AI 模型本身本質上只是「文字生成大腦」，它**無法直接生出實體的 `.xlsx` 或 `.docx` 二進位檔案**。要讓 AI 擁有實際建立檔案的能力，主流有以下兩種整合方式：
+
+```mermaid
+flowchart TD
+    User([使用者提出需求: 請幫我做一份簡報]) --> LLM[AI 大腦思考]
+    
+    subgraph 途徑 A: 工具呼叫規範 [途徑 A: Tools / Skills 規範]
+        LLM -->|1. 填寫參數 input_schema| ToolCall[發出工具呼叫請求]
+        ToolCall -->|2. 後端 Python/TS 程式執行| ToolExec[執行封裝好的模組]
+        ToolExec --> FileA[產出實體檔案]
+    end
+    
+    subgraph 途徑 B: 程式碼沙盒 [途徑 B: Code Interpreter 沙盒]
+        LLM -->|1. 自己現場寫一段 Python 程式| Sandbox[在 E2B/沙盒環境直接執行]
+        Sandbox -->|2. 調用 openpyxl / python-pptx / pypdf| FileB[產出實體檔案]
+    end
+```
+
+### 1. 🔹 Anthropic Tools / Claude Skills 規範（外掛工具模式）
+* **白話比喻**：就像給 AI 一張**「家電遙控器」**。遙控器上面有按鈕（例如「按此製作投影片」），並規定按按鈕時要輸入投影片標題、頁數等資訊（這就是 `input_schema`）。
+* **運作原理**：
+  1. 開發者先定義好工具規範（`input_schema`），告訴 AI 有這個能力。
+  2. 當使用者要求產出簡報時，AI 填好參數並呼叫該工具。
+  3. 後端的 Python 或 TypeScript 程式接收到參數後，在背景將檔案建好並回傳給使用者。
+* **優點**：流程高度標準化、安全可控、適合固定格式的企業表單與流程。
+
+---
+
+### 2. 🔹 通用 Code Interpreter 方案（虛擬小電腦模式）
+* **白話比喻**：就像給 AI 一台**「具備隔離安全機制的虛擬小電腦（沙盒 Sandbox）」**，裡面已經預先裝好了 `openpyxl`（試算表）、`python-pptx`（簡報）、`python-docx`（Word）、`pypdf`（PDF）等底層套件。
+* **運作原理**：
+  1. 當使用者說「請幫我畫一個銷售趨勢 Excel」，AI 會**現場自己寫一段 Python 程式碼**。
+  2. AI 把這段程式碼送到沙盒環境（如開源的 [E2B](https://github.com/e2b-dev/code-interpreter) 或自建 Docker 容器）中即時執行。
+  3. 執行完成後，直接將沙盒中產生的實體檔案提供給使用者下載。
+* **優點**：極度靈活自由，AI 能處理各種複雜的計算、圖表繪製與客製化排版需求。
 
 ---
 
 ## 🔗 相關延伸閱讀
 
-* 📖 **[Claude 官方 Skills 指令包](../Claude_ai/Skills/README.md)**：包含 PPTX、DOCX、XLSX、PDF 的即用指令。
+* 📖 **[Claude 官方 Skills 指令包](../Claude_ai/Skills/README.md)**：包含 PPTX、DOCX、XLSX、PDF 的即用實戰指令。
 * 🔌 **[連結應用程式](../連結應用程式/README.md)**：Google Workspace、Canva 整合指南。
 * 📝 **[儲存與重複使用 AI 提示詞](../儲存與重複使用AI提示詞/README.md)**：自訂提示詞與 AI 助手。
