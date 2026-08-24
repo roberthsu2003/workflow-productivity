@@ -65,6 +65,9 @@
 
 - [資料搜尋的應用](./資料收集/README.md)
 
+- [開放來源 Skills 生態與應用](./open_source_skills/README.md)  
+  探索官方與開源社群 Skills、安裝匯入、安全評估與自訂貢獻工作流
+
 
 ---
 
