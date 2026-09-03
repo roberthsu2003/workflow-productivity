@@ -92,25 +92,33 @@
 * **核心概念**：學會如何撰寫基礎的 `SKILL.md`（定義 `Role`, `Task`, `Constraint`, `Format` 等指引）。
 * **適用場景**：純文字的格式處理、語氣修飾、日常事務摘要等。
 * **實戰範例**：👉 [**全能郵件修飾專家**](./Examples/Level1_Email_Polisher/README.md)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 1 ~ 2）與 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](#vc-playwright)。
+* **延伸實戰練習（依授課對象選用）**：
+  * 🏢 **通用辦公室情境（跨公司 / 公開班學員）**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 1 ~ 2）。
+  * 💼 **專業創投情境（企業專班 / 投資機構學員）**：請參閱 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](#vc-playwright)。
 
 ### 🔵 第二階：創作者 (Creator) —— `SKILL.md` + `references` & `templates`
 * **核心概念**：學習掛載外部參考知識（放置於 `references/`）與套用標準文件範本（放置於 `templates/`），使 Claude 產出特定格式的文件。
 * **適用場景**：符合公司特定規範的報價單、遵循特定格式的會議紀錄、參考產品手冊進行預檢等。
 * **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）與 [創投 (VC) 專屬 Skill 實戰](#vc-creator)。
+* **延伸實戰練習（依授課對象選用）**：
+  * 🏢 **通用辦公室情境（跨公司 / 公開班學員）**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）。
+  * 💼 **專業創投情境（企業專班 / 投資機構學員）**：請參閱 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](#vc-creator)。
 
 ### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo與圖片) & 程式碼執行 (Code Execution)
 * **核心概念**：運用 Claude 的「**程式碼執行 (Code Execution)**」功能，讓 Skill 會**自動執行指定的 Python 程式碼**！整合 `references/` 規章、`templates/` 報表樣板與 `assets/` 圖片（如公司 Logo），自動進行資料分析、文字稽核與圖表/圖片寫入，產出包含品牌識別與完整格式的實體檔案（如 `.xlsx`）供下載。
 * **適用場景**：自動稽核文案並呼叫 Python 寫入帶有 Logo 的 Excel 報告、自動填寫表格樣板並插入企業圖表、生成具備品牌標誌的實體報表等。
 * **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/) (自動執行 Python 讀取 Excel 樣板與 `assets/company-logo.jpeg` 圖檔產生稽核報告檔)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 5 ~ 7）。
+* **延伸實戰練習（依授課對象選用）**：
+  * 🏢 **通用辦公室情境（跨公司 / 公開班學員）**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 5 ~ 7）。
+  * 💼 **專業創投情境（企業專班 / 投資機構學員）**：請參閱 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](#vc-financial-analyzer)。
 
 ### 🔴 第四階：自動化專家 (Automator) —— `SKILL.md` + `scripts` (Python/工具調用)
 * **核心概念**：加入 `scripts/` 資料夾放置 Python 腳本或工具宣告定義。結合 Claude 的「程式碼執行 (Code Execution)」，讓 AI 在伺服器端運行腳本，實現資料運算、複雜圖表繪製或自動化處理。
 * **適用場景**：自動生成圖表簡報、進行財務數據加總小計、動態更新日程等。
 * **實戰範例**：👉 [**智能會議排程秘書**](./Examples/Level4_Meeting_Secretary/)
-* **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 8 ~ 10）。
+* **延伸實戰練習（依授課對象選用）**：
+  * 🏢 **通用辦公室情境（跨公司 / 公開班學員）**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 8 ~ 10）。
+  * 💼 **專業創投情境（企業專班 / 投資機構學員）**：請參閱 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](#vc-financial-analyzer)（含 Python 精準運算與趨勢圖表生成）。
 
 ---
 
