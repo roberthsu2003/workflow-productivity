@@ -1,8 +1,8 @@
 # Level 3 範例：差旅與公務費用報銷審核員（第三階：整合者）
 
 > **🎯 本階核心目標**  
-> 運用 Claude AI 的「**程式碼執行 (Code Execution)**」能力，讓 Skill 自動執行 Python 腳本！  
-> 整合「**外部規章 (references/)**」、「**專業報銷樣板 (templates/)**」與「**企業視覺 (assets/)**」，自動完成發票與收據審核，並將企業 Logo 與 `=SUM()` 加總公式寫入 Excel，產出兼具精準審核與高質感視覺的實體 `.xlsx` 請款單。
+> 運用 Claude AI 的「**多模態視覺辨識 (Vision)**」與「**程式碼執行 (Code Execution)**」雙重能力！  
+> 整合「**外部規章 (references/)**」、「**專業報銷樣板 (templates/)**」與「**企業視覺 (assets/)**」，同仁可直接上傳**台灣各式實體單據圖片（高鐵票根、計程車證明聯、Uber 收據、電子發票）**或輸入純文字，AI 自動完成多模態辨識與合規審核，並透過 Python 寫入企業 Logo 與原生 `=SUM()` 加總公式，產出高質感的實體 `.xlsx` 請款單。
 
 ---
 
@@ -10,7 +10,7 @@
 
 ```mermaid
 flowchart LR
-    A[同仁輸入報銷清單與發票明細] --> B[讀取 references/<br>expense-policy.md 規章]
+    A[同仁上傳單據發票圖片<br>或輸入報銷文字清單] --> B[視覺辨識 + 讀取<br>expense-policy.md 規章]
     B --> C[逐筆審核統編、限額與事由]
     C --> D[啟用 Code Execution<br>執行 Python openpyxl]
     D --> E[讀取 templates/ 樣板<br>+ 插入 assets/ Logo<br>+ 寫入原生 SUM 公式]
@@ -18,8 +18,8 @@ flowchart LR
 ```
 
 ### 💡 自動化作業四部曲
-1. **規章政策比對**：  
-   參照 `references/expense-policy.md` 檢查統一編號（`88888888`）、市區計程車單趟上限（NT$ 500 且需事由）、高鐵限標準車廂、公務用餐單人上限（NT$ 600/人）。
+1. **多模態辨識與規章比對**：  
+   支援直接拍照或截圖上傳發票收據，亦可直接輸入文字。參照 `references/expense-policy.md` 檢查統一編號（`88888888`）、市區計程車單趟上限（NT$ 500 且需事由）、高鐵限標準車廂、公務用餐單人上限（NT$ 600/人）。
 2. **自動化 Python 處理**：  
    AI 自動調用 Code Execution 載入 `templates/expense-report-template.xlsx` 商務樣板。
 3. **品牌視覺與公式保留**：  
@@ -33,20 +33,28 @@ flowchart LR
 
 | 檔案 / 資料夾路徑 | 類型 | 職責與用途 |
 | :--- | :---: | :--- |
-| 📄 [`SKILL.md`](./SKILL.md) | 主設定檔 | 定義角色、稽核規則與 Python openpyxl 插入圖片及公式的 SOP 指令 |
+| 📄 [`SKILL.md`](./SKILL.md) | 主設定檔 | 定義角色、文字/圖片多模態辨識、稽核規則與 Python openpyxl SOP 指令 |
 | 📁 `templates/` | 範本目錄 | 存放高質感報銷樣板 [`expense-report-template.xlsx`](./templates/expense-report-template.xlsx) |
 | 📁 `references/` | 參考規範 | 存放企業差旅與公務費用手冊 [`expense-policy.md`](./references/expense-policy.md) |
 | 📁 `assets/` | 靜態資產 | 存放企業標準圖檔 [`company-logo.jpeg`](./assets/company-logo.jpeg)（嵌入 Excel 表頭 A1） |
+| 📁 `assets/sample_receipts/` | 測試圖片 | 存放 5 張符合台灣常見規格之模擬報銷單據圖檔（供圖片上傳測試） |
 
 ```text
 Level3_Expense_Auditor/
-├── SKILL.md                             # 核心技能指引（含 Python openpyxl 規範）
+├── SKILL.md                                 # 核心技能指引（含多模態辨識與 Python openpyxl 規範）
 ├── templates/
-│   └── expense-report-template.xlsx     # 高質感專業報銷 Excel 樣板
+│   └── expense-report-template.xlsx         # 高質感專業報銷 Excel 樣板
 ├── references/
-│   └── expense-policy.md                # 差旅與費用報銷規範參考手冊
+│   └── expense-policy.md                    # 差旅與費用報銷規範參考手冊
 └── assets/
-    └── company-logo.jpeg                # 公司 Logo 圖檔（嵌入表頭 A1）
+    ├── company-logo.jpeg                    # 公司 Logo 圖檔（嵌入表頭 A1）
+    ├── generate_receipts.py                 # 模擬單據圖片生成腳本
+    └── sample_receipts/                     # 🧾 5 張台灣擬真單據圖片
+        ├── 01_taxi_receipt_nt380.png        # 台灣大車隊乘車證明聯 (NT$ 380)
+        ├── 02_thsr_ticket_nt700.png         # 台灣高鐵票根 (標準座 NT$ 700)
+        ├── 03_uber_receipt_nt560.png        # Uber 電子乘車收據 (無事由 NT$ 560)
+        ├── 04_client_dinner_nt2800.png      # 鼎極牛排商業宴客發票 (2人 NT$ 2,800)
+        └── 05_overbudget_dinner_nt850.png   # 燒肉加班便當發票 (超標 NT$ 850)
 ```
 
 ---
@@ -74,11 +82,12 @@ Level3_Expense_Auditor/
    使用 /skill-creator 幫我建立包含 references、templates 和 assets 資料夾的 Skill。
 
    請在 SKILL.md 中明確指定：
-   1. 依據 expense-policy.md 逐筆審核發票統編、限額規範與公務事由完整度。
-   2. 執行 Python (Code Execution) 寫入 Excel 報銷單時，
+   1. 支援使用者輸入純文字或上傳台灣各式發票/收據圖檔，自動提取各項報銷資訊。
+   2. 依據 expense-policy.md 逐筆審核發票統編、限額規範與公務事由完整度。
+   3. 執行 Python (Code Execution) 寫入 Excel 報銷單時，
       必須使用 openpyxl.drawing.image.Image 將 assets/company-logo.jpeg 
       縮放插入置於試算表頂端表頭 (Cell A1)。
-   3. 申請金額欄位必須保留原生加總公式 =SUM(...)，不得寫死數值。
+   4. 申請金額欄位必須保留原生加總公式 =SUM(...)，不得寫死數值。
    ```
 
 3. **自動完成與啟用**：
@@ -90,7 +99,7 @@ Level3_Expense_Auditor/
 #### 方案 2：先完成任務對話，再一鍵打包成技能
 1. **實測任務對話**：
    * 將上述 3 個檔案上傳至對話中。
-   * 輸入一組同仁日常報銷明細（含計程車、高鐵、公務餐費），請 Claude 先進行合規性審查，並呼叫 Python 填寫 Excel 樣板、寫入 SUM 公式及嵌入 Logo。
+   * 輸入一組同仁日常報銷明細（或直接上傳單據圖片），請 Claude 進行合規性審查，並呼叫 Python 填寫 Excel 樣板、寫入 SUM 公式及嵌入 Logo。
    * 下載檢查 Excel 成果，若排版、欄寬或狀態顏色需微調，繼續與 Claude 對話調整至完全滿意。
 
 2. **下一鍵打包指令**：成果滿意後，直接輸入多行 Prompt：
@@ -100,8 +109,8 @@ Level3_Expense_Auditor/
    使用 /skill-creator 幫我將這個功能打包建立為包含 references, templates 與 assets 的自訂技能。
 
    請確保 SKILL.md 中寫入：
-   用 openpyxl 將 assets/company-logo.jpeg 嵌入至 Excel 表頭 (Cell A1)，
-   並在總計列寫入 =SUM(...) 原生公式的 SOP 流程。
+   支援文字與發票圖片多模態辨識，並用 openpyxl 將 assets/company-logo.jpeg 
+   嵌入至 Excel 表頭 (Cell A1)，且在總計列寫入 =SUM(...) 原生公式。
    ```
 
 3. **自動生效**：Claude 打包完成後，此 Skill 即直接於當前帳號中啟用。
@@ -134,9 +143,37 @@ cp -r Level3_Expense_Auditor/ /mnt/skills/user/Level3_Expense_Auditor
 
 ## 🧪 測試與驗證
 
-安裝完成後，開啟新對話並輸入以下極具辦公室臨場感的測試案例：
+本技能支援**「純文字輸入」**與**「直接上傳發票/收據圖片」**兩種測試方式，學生可依課堂設備自由選擇體驗：
 
-### 📥 測試 Prompt（含合規、需補件、超標混合案例）
+---
+
+### 📸 測試模式一：上傳真實/模擬發票圖片（多模態視覺體驗，推薦！）
+
+在 [`assets/sample_receipts/`](./assets/sample_receipts/) 目錄中，我們為您準備了 5 張符合台灣常見公務單據規範的擬真圖片：
+
+| 單據圖檔名稱 | 單據類型 | 關鍵欄位內容 | 預期審核結果 |
+| :--- | :--- | :--- | :--- |
+| [`01_taxi_receipt_nt380.png`](./assets/sample_receipts/01_taxi_receipt_nt380.png) | 台灣大車隊乘車證明聯 | NT$ 380、統編 88888888、事由備註齊全 | `✅ 合規` |
+| [`02_thsr_ticket_nt700.png`](./assets/sample_receipts/02_thsr_ticket_nt700.png) | 台灣高鐵票根證明聯 | NT$ 700、標準車廂對號座、統編 88888888 | `✅ 合規` |
+| [`03_uber_receipt_nt560.png`](./assets/sample_receipts/03_uber_receipt_nt560.png) | Uber 電子乘車收據截圖 | NT$ 560、統編 88888888、**未填寫事由** | `⚠️ 需補件 / ❌ 超標`（超額 60 元） |
+| [`04_client_dinner_nt2800.png`](./assets/sample_receipts/04_client_dinner_nt2800.png) | 頂級牛排電子發票證明聯 | NT$ 2,800、統編 88888888、商務宴客 2 人 | `✅ 合規`（人均 NT$ 1,400 < 1,500） |
+| [`05_overbudget_dinner_nt850.png`](./assets/sample_receipts/05_overbudget_dinner_nt850.png) | 燒肉便當電子發票證明聯 | NT$ 850、統編 88888888、加班誤餐 1 人 | `❌ 超標`（人均上限 600，超額 250） |
+
+#### 📥 圖片測試步驟：
+1. 將上述 5 張圖片拖曳或上傳至 Claude 對話框中。
+2. 搭配輸入以下指令：
+
+```text
+請幫我審核附件這 5 張同仁出差與公務請款單據圖片，申請人為「業務部 陳大華 (David Chen)」。
+請進行視覺辨識並對照公司規章審查，最後調用 Python 將合格與超標明細寫入 Excel 報銷樣板，
+表頭插入公司 Logo 並提供下載。
+```
+
+---
+
+### 📝 測試模式二：純文字快速輸入（無圖快速驗證）
+
+若手邊無圖檔，亦可直接複製貼上以下文字進行全流程驗證：
 
 ```text
 請幫我審核以下這批同仁上週出差的報銷申請，申請人為「業務部 陳大華 (David Chen)」：
@@ -154,7 +191,7 @@ cp -r Level3_Expense_Auditor/ /mnt/skills/user/Level3_Expense_Auditor
 
 ### 🎯 預期執行成果
 
-Claude 將自動識別並調用本 Skill，完成以下三階段任務：
+無論透過**發票圖片**或**純文字**輸入，Claude 皆會自動調用本 Skill 完成以下三階段任務：
 
 * **🔍 階段 1・財務合規性逐筆診斷**  
   - 第 1 筆：`✅ 合規`（有攜帶樣品事由，未超額 NT$ 500）。
