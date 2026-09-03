@@ -97,19 +97,19 @@
 ### 🔵 第二階：創作者 (Creator) —— `SKILL.md` + `references` & `templates`
 * **核心概念**：學習掛載外部參考知識（放置於 `references/`）與套用標準文件範本（放置於 `templates/`），使 Claude 產出特定格式的文件。
 * **適用場景**：符合公司特定規範的報價單、遵循特定格式的會議紀錄、參考產品手冊進行預檢等。
-* **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/README.md)
+* **實戰範例**：👉 [**個人化每日報工助手**](./Examples/Level2_Daily_Report/)
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 3 ~ 4）與 [創投 (VC) 專屬 Skill 實戰](#vc-creator)。
 
 ### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo與圖片) & 程式碼執行 (Code Execution)
 * **核心概念**：運用 Claude 的「**程式碼執行 (Code Execution)**」功能，讓 Skill 會**自動執行指定的 Python 程式碼**！整合 `references/` 規章、`templates/` 報表樣板與 `assets/` 圖片（如公司 Logo），自動進行資料分析、文字稽核與圖表/圖片寫入，產出包含品牌識別與完整格式的實體檔案（如 `.xlsx`）供下載。
 * **適用場景**：自動稽核文案並呼叫 Python 寫入帶有 Logo 的 Excel 報告、自動填寫表格樣板並插入企業圖表、生成具備品牌標誌的實體報表等。
-* **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/README.md) (自動執行 Python 讀取 Excel 樣板與 `assets/company-logo.jpeg` 圖檔產生稽核報告檔)
+* **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/) (自動執行 Python 讀取 Excel 樣板與 `assets/company-logo.jpeg` 圖檔產生稽核報告檔)
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 5 ~ 7）。
 
 ### 🔴 第四階：自動化專家 (Automator) —— `SKILL.md` + `scripts` (Python/工具調用)
 * **核心概念**：加入 `scripts/` 資料夾放置 Python 腳本或工具宣告定義。結合 Claude 的「程式碼執行 (Code Execution)」，讓 AI 在伺服器端運行腳本，實現資料運算、複雜圖表繪製或自動化處理。
 * **適用場景**：自動生成圖表簡報、進行財務數據加總小計、動態更新日程等。
-* **實戰範例**：👉 [**智能會議排程秘書**](./Examples/Level4_Meeting_Secretary/README.md)
+* **實戰範例**：👉 [**智能會議排程秘書**](./Examples/Level4_Meeting_Secretary/)
 * **延伸實戰練習**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 8 ~ 10）。
 
 ---
@@ -127,9 +127,9 @@
 | :---: | :--- | :--- | :--- | :--- |
 | 1 | 🟢 第一階：模仿者 | [社群貼文文案大師](./Examples/Office_Workflow_01_Copywriter.md) | 有簡單的活動想法，需要快速撰寫成社群推廣文案 | 輸入核心概念 → 選擇平台 → 產出吸睛文案、Hashtags 與 Call-to-Action |
 | 2 | 🟢 第一階：模仿者 | [主管交辦事項整理員](./Examples/Office_Workflow_02_Task_Extractor.md) | 會議後收到一堆零散訊息，需要整理成待辦清單 | 貼上對話 → 抽取任務 → 標記負責人、期限、優先級 |
-| 3 | 🔵 第二階：創作者 | [客戶報價單產生器](./Examples/Office_Workflow_03_Customer_Quotation/README.md) | 有隨興的專案品項、金額與折讓，需要產生正式報價單 | 輸入報價項目與客戶資訊 → 進行折讓計算 → 產出標準格式報價單 |
-| 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan/README.md) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 |
-| 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover/README.md) | 員工請假時，需要整理交接事項與通知信 | 輸入請假日期與工作項目 → 產出交接清單、代理通知、主管摘要 |
+| 3 | 🔵 第二階：創作者 | [客戶報價單產生器](./Examples/Office_Workflow_03_Customer_Quotation/) | 有隨興的專案品項、金額與折讓，需要產生正式報價單 | 輸入報價項目與客戶資訊 → 進行折讓計算 → 產出標準格式報價單 |
+| 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan/) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 |
+| 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover/) | 員工請假時，需要整理交接事項與通知信 | 輸入請假日期與工作項目 → 產出交接清單、代理通知、主管摘要 |
 | 6 | 🟡 第三階：整合者 | [採購申請預檢員](./Examples/Office_Workflow_06_Purchase_Checker.md) | 行政或 IT 採購前，需要確認品項、預算、理由是否完整 | 貼上採購需求 → 檢查缺漏 → 產出補件問題與申請書草稿 |
 | 7 | 🟡 第三階：整合者 | [客戶回覆與 CRM 更新助手](./Examples/Office_Workflow_07_Customer_CRM.md) | 業務收到客戶信件後，要回覆並更新客戶狀態 | 貼上客戶信 → 判斷意圖 → 產出回信 → 產生 CRM 更新摘要 |
 | 8 | 🔴 第四階：自動化專家 | [週會資料彙整與簡報大綱助手](./Examples/Office_Workflow_08_Weekly_Brief.md) | 部門週會前，需要從多份進度回報整理重點 | 匯入多份回報 → 合併重複項 → 找風險 → 產出簡報大綱 |
@@ -148,13 +148,13 @@
 
 <div id="vc-creator"></div>
 
-* **💼 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](./VC_Creator/README.md)**
+* **💼 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](./VC_Creator/)**
   * 涵蓋：投資備忘錄 (Investment Memo) 產生器、Term Sheet 條款檢核與風險評級 (Red Flag Alerts)、Pitch Deck 簡報審查與問答生成器。
   * 技巧：結合 `references/`（創投指標規章、條款指南）與 `templates/`（標準 IC 備忘錄與風險報告範本）。
 
 <div id="vc-financial-analyzer"></div>
 
-* **💼 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](./VC_Financial_Analyzer/README.md)**
+* **💼 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](./VC_Financial_Analyzer/)**
   * 涵蓋：Excel 報表上傳自動掃描、互動式分析建議選單、100% 精準 Python 數據運算、動態渲染財務趨勢與 Runway 圖表、標準 IC 財務盡調報告產出。
   * 實戰：結合 **Code Execution (Code Interpreter)** 零數據幻覺運算 + `references/` 創投指標警訊庫 + `templates/` 標準盡調簡報樣板。
 
