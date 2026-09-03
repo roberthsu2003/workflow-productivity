@@ -64,7 +64,7 @@
 
 ---
 
-## 🔰 官方四大類別 Skills 實戰指令包
+## 🔰 官方內建四大類別 Skills 實戰指令包
 
 本節將 Anthropic 官方推出的 17 個 Skills 與實作練習，依據**文件製作、設計、開發、溝通**四大類別劃分。每個類別皆配備專屬的實作指引與直接可複製使用的 RTCCF Prompt 練習：
 
@@ -146,26 +146,31 @@
 
 ---
 
+## 💼 垂直產業專案：創投與投資機構（VC / PE / CVC）專屬工作流
+
+> **適用對象**：專門為**創投公司（Venture Capital）、私募基金（PE）、企業創投（CVC）及投資研究部門**設計的垂直實戰模組。  
+> 針對投資案源搜尋（Deal Sourcing）、盡職調查（DD）、法務 Term Sheet 風險檢核、以及零幻覺的 Python 財務報表運算與自動化圖表生成。
 
 <div id="vc-playwright"></div>
 
-* **💼 [創投 (VC) 專屬 Skill 與 Playwright MCP 自動化實戰](./VC_Playwright/README.md)**
-  * 涵蓋：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
-  * 實戰：Playwright MCP 動態抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
-  
+### 1. 🌐 [創投案源搜尋與 Playwright MCP 自動化實戰](./VC_Playwright/README.md)
+* **適用階段**：第一階～第四階（跨 MCP 工具串接）
+* **核心涵蓋**：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
+* **實戰技術**：Playwright MCP 動態網頁抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
 
 <div id="vc-creator"></div>
 
-* **💼 [創投 (VC) 專屬 Skill 實戰（第二階：創作者篇）](./VC_Creator/)**
-  * 涵蓋：投資備忘錄 (Investment Memo) 產生器、Term Sheet 條款檢核與風險評級 (Red Flag Alerts)、Pitch Deck 簡報審查與問答生成器。
-  * 技巧：結合 `references/`（創投指標規章、條款指南）與 `templates/`（標準 IC 備忘錄與風險報告範本）。
+### 2. 📝 [創投投資備忘錄與 Term Sheet 檢核實戰（第二階：創作者篇）](./VC_Creator/)
+* **適用階段**：第二階：創作者 (Creator) —— 掛載外部規章與標準樣板
+* **核心涵蓋**：投資備忘錄 (Investment Memo) 產生器、Term Sheet 條款檢核與風險評級 (Red Flag Alerts)、Pitch Deck 簡報審查與問答生成器。
+* **實戰技術**：結合 `references/`（創投指標規章、條款指南）與 `templates/`（標準 IC 備忘錄與風險報告範本）。
 
 <div id="vc-financial-analyzer"></div>
 
-* **💼 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](./VC_Financial_Analyzer/)**
-  * 涵蓋：Excel 報表上傳自動掃描、互動式分析建議選單、100% 精準 Python 數據運算、動態渲染財務趨勢與 Runway 圖表、標準 IC 財務盡調報告產出。
-  * 實戰：結合 **Code Execution (Code Interpreter)** 零數據幻覺運算 + `references/` 創投指標警訊庫 + `templates/` 標準盡調簡報樣板。
-
+### 3. 📊 [創投財報數據分析與 Code Execution 自動化實戰](./VC_Financial_Analyzer/)
+* **適用階段**：第三階／第四階 —— 整合者與自動化專家 (Code Execution)
+* **核心涵蓋**：Excel 報表上傳自動掃描、互動式分析建議選單、100% 精準 Python 數據運算、動態渲染財務趨勢與 Runway 圖表、標準 IC 財務盡調報告產出。
+* **實戰技術**：結合 **Code Execution (Code Interpreter)** 零數據幻覺運算 + `references/` 創投指標警訊庫 + `templates/` 標準盡調簡報樣板。
 
 ---
 
