@@ -28,7 +28,13 @@ Level3_Brand_Voice/
 1. **上傳檔案**：先將 [brand-voice-audit-template.xlsx](./templates/brand-voice-audit-template.xlsx) 樣板、[brand-book.md](./references/brand-book.md) 規範與 [company-logo.jpeg](./assets/company-logo.jpeg) Logo 圖片上傳至 Claude 對話中。
 2. **下指令建立**：直接對 Claude 輸入以下指令：
    ```text
-   我想建立一個品牌語氣稽核 Skill。請參考我剛才上傳的 brand-book.md 規範、Excel 樣板與 company-logo.jpeg 圖檔，使用 /skill-creator 幫我建立包含 references、templates 和 assets 資料夾的 Skill。請在 SKILL.md 中明確指定：執行 Python (Code Execution) 寫入 Excel 報表時，必須使用 openpyxl.drawing.image.Image 將 assets/company-logo.jpeg 圖片插入置於 Excel 試算表頂端表頭位置 (Cell A1)。
+   我想建立一個品牌語氣稽核 Skill。
+   請參考我剛才上傳的 brand-book.md 規範、Excel 樣板與 company-logo.jpeg 圖檔，
+   使用 /skill-creator 幫我建立包含 references、templates 和 assets 資料夾的 Skill。
+
+   請在 SKILL.md 中明確指定：
+   執行 Python (Code Execution) 寫入 Excel 報表時，
+   必須使用 openpyxl.drawing.image.Image 將 assets/company-logo.jpeg 圖片插入置於 Excel 試算表頂端表頭位置 (Cell A1)。
    ```
 3. **自動完成啟用與生效**：
    * Claude 執行 `/skill-creator` 完成後，會自動在您的帳號中建置並啟用此 Skill，您可直接在新對話中測試使用。
@@ -42,7 +48,11 @@ Level3_Brand_Voice/
 2. **下指令進行打包**：
    * 當結果完全滿意後，直接輸入指令：
      ```text
-     請參考剛才我們對話的稽核邏輯、Excel 輸出格式與公司 Logo 圖片，使用 /skill-creator 幫我將這個功能打包建立為包含 references, templates 與 assets 的自訂技能。請確保 SKILL.md 中寫入用 openpyxl 將 assets/company-logo.jpeg 嵌入至 Excel 試算表頂端表頭 (Cell A1) 的 SOP 指令。
+     請參考剛才我們對話的稽核邏輯、Excel 輸出格式與公司 Logo 圖片，
+     使用 /skill-creator 幫我將這個功能打包建立為包含 references, templates 與 assets 的自訂技能。
+
+     請確保 SKILL.md 中寫入：
+     用 openpyxl 將 assets/company-logo.jpeg 嵌入至 Excel 試算表頂端表頭 (Cell A1) 的 SOP 指令。
      ```
 3. **自動完成啟用與生效**：
    * Claude 執行打包後，該自訂技能將自動建置並直接在您當前的帳號中生效啟用。
