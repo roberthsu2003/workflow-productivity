@@ -106,8 +106,8 @@
 
 ### 🟡 第三階：整合者 (Integrator) —— `SKILL.md` + `assets` (Logo與圖片) & 程式碼執行 (Code Execution)
 * **核心概念**：運用 Claude 的「**程式碼執行 (Code Execution)**」功能，讓 Skill 會**自動執行指定的 Python 程式碼**！整合 `references/` 規章、`templates/` 報表樣板與 `assets/` 圖片（如公司 Logo），自動進行資料分析、文字稽核與圖表/圖片寫入，產出包含品牌識別與完整格式的實體檔案（如 `.xlsx`）供下載。
-* **適用場景**：自動稽核文案並呼叫 Python 寫入帶有 Logo 的 Excel 報告、自動填寫表格樣板並插入企業圖表、生成具備品牌標誌的實體報表等。
-* **實戰範例**：👉 [**品牌語氣稽核員**](./Examples/Level3_Brand_Voice/) (自動執行 Python 讀取 Excel 樣板與 `assets/company-logo.jpeg` 圖檔產生稽核報告檔)
+* **適用場景**：自動稽核差旅報銷並呼叫 Python 寫入帶有 Logo 的 Excel 請款單、自動填寫表格樣板並插入企業圖表、生成具備品牌標誌的實體報表等。
+* **實戰範例**：👉 [**差旅與公務費用報銷審核員**](./Examples/Level3_Expense_Auditor/) (自動執行 Python 讀取 Excel 報銷樣板、寫入公式並嵌入 `assets/company-logo.jpeg` 圖檔產生高質感請款審核單)
 * **延伸實戰練習（依授課對象選用）**：
   * 🏢 **通用辦公室情境（跨公司 / 公開班學員）**：請參閱底部的 [辦公室實戰工作流地圖](#workflow-map)（範例 5 ~ 7）。
   * 💼 **專業創投情境（企業專班 / 投資機構學員）**：請參閱 [創投 (VC) 財報數據分析與 Code Execution 自動化實戰](#vc-financial-analyzer)。
