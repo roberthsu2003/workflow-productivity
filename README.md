@@ -76,22 +76,10 @@
 針對現代職場兩大主流 AI 旗艦生態系，深入解析其核心功能、方案差異、自動化工作流與實務落地指引：
 
 ### 🟣 [Claude.AI 實戰全指南](./Claude_ai/README.md)
-* **定位與核心優勢**：Anthropic 旗艦生成式 AI，以頂級邏輯推理、超長脈絡窗口與卓越的中文理解著稱。
-* **重點核心單元**：
-  - 💬 **[Chats & RTCCF 框架](./Claude_ai/Chats/README.md)**：精準提示詞工程，直接產出 Word / Excel / PPT / PDF 正式商務檔案。
-  - 🎨 **[Artifacts 側欄成品](./Claude_ai/Artifacts/README.md)**：即時互動視覺化網頁、React 元件、SVG 與 Mermaid 圖表。
-  - 📁 **[Projects 知識庫沙盒](./Claude_ai/Projects/README.md)**：跨對話記憶共享、專屬系統指示與團隊協作空間。
-  - 🔌 **[Connectors & 本地 MCP](./Claude_ai/Connectors/README.md)**：安全授權連接 Slack、Google Workspace 與本機檔案資料庫。
-  - ⚡ **[自訂 Skills 實戰體系](./Claude_ai/Skills/README.md)**：自訂 `SKILL.md`，由淺入深掌握「模仿者 ➔ 創作者 ➔ 整合者 ➔ 自動化專家」四階進化。
-  - 💼 **[企業級進階代理](./Claude_ai/cowork/README.md)**：深入探索 Cowork、Claude Code、Scheduled 排程任務與 Computer Use。
+Anthropic 旗艦生成式 AI，以頂級邏輯推理、超長脈絡窗口與卓越的中文理解著稱。核心優勢在於能直接透過對話執行程式碼並產出 Word、Excel、PPT、PDF 等正式商務檔案，並具備 Artifacts 互動畫布、Projects 知識庫沙盒、自訂 Skills 技能體系，以及能跨應用程式自主操作的進階代理人（Agent）能力，特別適合高複雜度的長文分析、規章稽核與專業公務自動化。
 
 ### 🟢 [ChatGPT & Codex 智慧協作指南](./chatGPT_codex/README.md)
-* **定位與核心優勢**：OpenAI 旗艦多模態生態系，結合強大的 GPT-4o / o1 深度思考模型、進階資料分析（Advanced Data Analysis）與龐大 GPTs 生態。
-* **重點核心單元**：
-  - 🧠 **進階資料分析 (Data Analysis)**：直覺上傳試算表與數據檔，AI 自動撰寫 Python 清洗資料、繪製互動圖表與統計建模。
-  - 🛠️ **Custom GPTs 助手打造**：免寫程式自訂專屬角色、掛載知識庫與呼叫 Action API，客製化辦公室專用小幫手。
-  - 💻 **Codex & 程式協作**：輔助程式設計、自動生成自動化腳本、SQL 語法優化與工作流程排程。
-  - 🔍 **Canvas 畫布協作**：在獨立介面中與 AI 進行長文本寫作、程式碼細緻重構與段落即時微調。
+OpenAI 旗艦多模態 AI 生態系，以領先業界的 GPT-4o / o1 深度思考推理模型與豐富的外掛生態為核心。優勢在於免安裝環境即可由 AI 自行撰寫 Python 進行進階數據分析（Advanced Data Analysis）與圖表繪製，結合零程式碼的 Custom GPTs 專屬小幫手打造、Canvas 互動畫布精修長文，以及強大的 Codex 程式輔助能力，是跨領域創意發想、數據洞察與日常多工協作的強大副駕。
 
 ---
 
