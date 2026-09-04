@@ -47,28 +47,30 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 - [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言與 Markdown 內容格式、RTCCF 框架、System Prompt 角色設定與提示詞工程。
 - [**Context Window（上下文視窗）與 Token 機制（實作）**](../../Context_Window/README.md)：掌握 Session 歷史對話持續疊加真相、Token 計價本質、注意力極限，以及「Word/Excel 轉 Markdown/CSV 中間純文字、最後出成品」之 70% 極致省 Token 工作流。
 - [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：建立綠能所專屬主題知識庫，上傳法規、研究報告或專案規格文件，讓 Claude 具備領域專家視角。
-- [**大量檔案搜尋與文字檢索實戰（綠能所專案指南）**](./大量檔案搜尋與文字檢索實戰.md)：解析一般 Chat 處理大量檔案的限制（30MB / 20 檔 / Token 全量重讀），並實作 Projects 知識庫跨法規與技術規格書交叉比對。
 
 #### 🛠️ 課程內容與實作綱要
 - **AI 核心與 Prompt 基礎**：熟悉 RTCCF 框架與 System Prompt 角色規則，精準下達研發與行政指令。
 - **Context Window 與 Token 成本控制**：了解對話疊加與 Token 計費本質，實作 Office 檔案轉 CSV/Markdown 純文字對話，最後一步才調用工具匯出實體報表。
-- **Projects 知識庫建立**：上傳綠能技術文件、淨零標準規範與計畫指引，打造專案專屬雲端知識庫。
-- **跨檔案檢索與比對**：實作多份技術白皮書或法規的交叉比對與重點問答（參考 [大量檔案搜尋與文字檢索實戰](./大量檔案搜尋與文字檢索實戰.md)）。
+- **Projects 知識庫建立與設定**：上傳綠能技術文件、淨零標準規範與計畫指引，打造專案專屬雲端知識沙盒。
+
 
 
 ---
 
-### 🔹 Day 2（3.5 小時）：Connectors 雲端整合、Anthropic PPTX 簡報與 Artifacts 互動
+### 🔹 Day 2（3.5 小時）：大量檔案檢索實戰、Connectors 雲端整合、PPTX 簡報與 Artifacts 互動
 
 #### 📖 參考教材與延伸連結
+- [**大量檔案搜尋與文字檢索實戰（綠能所專案指南）**](./大量檔案搜尋與文字檢索實戰.md)：解析一般 Chat 處理大量檔案的限制（30MB / 20 檔 / Token 全量重讀），並實作 Projects 知識庫跨法規與技術規格書交叉比對。
 - [**Connectors 連結技巧(實作)**](../../Claude_ai/Connectors/README.md)：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），直接存取與整合雲端資料。
 - [**使用 Anthropic PPTX Skill 製作簡報(實作)**](../../Claude_ai/Skills/GWorkspace/README.md)：透過標準化 Skill 將技術摘要自動轉化為專業簡報。
 - [**Artifacts 互動內容生成（實作）**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗生成長篇文案、技術架構圖與互動原型，實現即時渲染與版本控制。
 
 #### 🛠️ 課程內容與實作綱要
+- **跨檔案檢索與比對實戰**：實作多份綠能技術白皮書或國內外法規的交叉比對與重點問答（參考 [大量檔案搜尋與文字檢索實戰](./大量檔案搜尋與文字檢索實戰.md)）。
 - **雲端資料串接**：透過 Connectors 整合 Gmail 與 Google Calendar，快速整理會議日程與重要合作信件。
 - **專業簡報自動生成**：掌握 PPTX Skill 設計流程（草稿討論 ➔ 大綱確認 ➔ 套用專業配色 ➔ 匯出 .pptx）。
 - **互動內容生成**：運用 Artifacts 產生技術架構圖（Mermaid）與標準作業流程（SOP）表單。
+
 
 <details>
 <summary>💡 課堂練習／實作驗證範例（RTCCF Prompt 範例）</summary>
