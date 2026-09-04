@@ -31,30 +31,35 @@ flowchart LR
 
 ## 📁 資料夾與檔案結構
 
+### 1. 核心 Skill 設定架構（安裝 Skill 時所需之標準結構）
 | 檔案 / 資料夾路徑 | 類型 | 職責與用途 |
 | :--- | :---: | :--- |
 | 📄 [`SKILL.md`](./SKILL.md) | 主設定檔 | 定義角色、文字/圖片多模態辨識、稽核規則與 Python openpyxl SOP 指令 |
 | 📁 `templates/` | 範本目錄 | 存放高質感報銷樣板 [`expense-report-template.xlsx`](./templates/expense-report-template.xlsx) |
 | 📁 `references/` | 參考規範 | 存放企業差旅與公務費用手冊 [`expense-policy.md`](./references/expense-policy.md) |
 | 📁 `assets/` | 靜態資產 | 存放企業標準圖檔 [`company-logo.jpeg`](./assets/company-logo.jpeg)（嵌入 Excel 表頭 A1） |
-| 📁 `assets/sample_receipts/` | 測試圖片 | 存放 5 張符合台灣常見規格之模擬報銷單據圖檔（供圖片上傳測試） |
+
+### 2. 課堂實測教材（獨立測試資料夾，供學生上傳練習）
+| 檔案 / 資料夾路徑 | 類型 | 職責與用途 |
+| :--- | :---: | :--- |
+| 📁 [`sample_receipts/`](./sample_receipts/) | 測試單據 | 存放 5 張符合台灣常見規格之模擬報銷單據圖檔（供圖片上傳測試） |
 
 ```text
 Level3_Expense_Auditor/
-├── SKILL.md                                 # 核心技能指引（含多模態辨識與 Python openpyxl 規範）
+├── SKILL.md                             # 核心技能指引（含多模態辨識與 Python openpyxl 規範）
 ├── templates/
-│   └── expense-report-template.xlsx         # 高質感專業報銷 Excel 樣板
+│   └── expense-report-template.xlsx     # 高質感專業報銷 Excel 樣板
 ├── references/
-│   └── expense-policy.md                    # 差旅與費用報銷規範參考手冊
-└── assets/
-    ├── company-logo.jpeg                    # 公司 Logo 圖檔（嵌入表頭 A1）
-    ├── generate_receipts.py                 # 模擬單據圖片生成腳本
-    └── sample_receipts/                     # 🧾 5 張台灣擬真單據圖片
-        ├── 01_taxi_receipt_nt380.png        # 台灣大車隊乘車證明聯 (NT$ 380)
-        ├── 02_thsr_ticket_nt700.png         # 台灣高鐵票根 (標準座 NT$ 700)
-        ├── 03_uber_receipt_nt560.png        # Uber 電子乘車收據 (無事由 NT$ 560)
-        ├── 04_client_dinner_nt2800.png      # 鼎極牛排商業宴客發票 (2人 NT$ 2,800)
-        └── 05_overbudget_dinner_nt850.png   # 燒肉加班便當發票 (超標 NT$ 850)
+│   └── expense-policy.md                # 差旅與費用報銷規範參考手冊
+├── assets/
+│   └── company-logo.jpeg                # 公司 Logo 圖檔（嵌入表頭 A1）
+│
+└── sample_receipts/                     # 🧾 獨立課堂測試單據（不混入 assets 架構）
+    ├── 01_taxi_receipt_nt380.png        # 台灣大車隊乘車證明聯 (NT$ 380)
+    ├── 02_thsr_ticket_nt700.png         # 台灣高鐵票根 (標準座 NT$ 700)
+    ├── 03_uber_receipt_nt560.png        # Uber 電子乘車收據 (無事由 NT$ 560)
+    ├── 04_client_dinner_nt2800.png      # 鼎極牛排商業宴客發票 (2人 NT$ 2,800)
+    └── 05_overbudget_dinner_nt850.png   # 燒肉加班便當發票 (超標 NT$ 850)
 ```
 
 ---
@@ -149,15 +154,15 @@ cp -r Level3_Expense_Auditor/ /mnt/skills/user/Level3_Expense_Auditor
 
 ### 📸 測試模式一：上傳真實/模擬發票圖片（多模態視覺體驗，推薦！）
 
-在 [`assets/sample_receipts/`](./assets/sample_receipts/) 目錄中，我們為您準備了 5 張符合台灣常見公務單據規範的擬真圖片：
+在 [`sample_receipts/`](./sample_receipts/) 目錄中，我們為您準備了 5 張符合台灣常見公務單據規範的擬真圖片：
 
 | 單據圖檔名稱 | 單據類型 | 關鍵欄位內容 | 預期審核結果 |
 | :--- | :--- | :--- | :--- |
-| [`01_taxi_receipt_nt380.png`](./assets/sample_receipts/01_taxi_receipt_nt380.png) | 台灣大車隊乘車證明聯 | NT$ 380、統編 88888888、事由備註齊全 | `✅ 合規` |
-| [`02_thsr_ticket_nt700.png`](./assets/sample_receipts/02_thsr_ticket_nt700.png) | 台灣高鐵票根證明聯 | NT$ 700、標準車廂對號座、統編 88888888 | `✅ 合規` |
-| [`03_uber_receipt_nt560.png`](./assets/sample_receipts/03_uber_receipt_nt560.png) | Uber 電子乘車收據截圖 | NT$ 560、統編 88888888、**未填寫事由** | `⚠️ 需補件 / ❌ 超標`（超額 60 元） |
-| [`04_client_dinner_nt2800.png`](./assets/sample_receipts/04_client_dinner_nt2800.png) | 頂級牛排電子發票證明聯 | NT$ 2,800、統編 88888888、商務宴客 2 人 | `✅ 合規`（人均 NT$ 1,400 < 1,500） |
-| [`05_overbudget_dinner_nt850.png`](./assets/sample_receipts/05_overbudget_dinner_nt850.png) | 燒肉便當電子發票證明聯 | NT$ 850、統編 88888888、加班誤餐 1 人 | `❌ 超標`（人均上限 600，超額 250） |
+| [`01_taxi_receipt_nt380.png`](./sample_receipts/01_taxi_receipt_nt380.png) | 台灣大車隊乘車證明聯 | NT$ 380、統編 88888888、事由備註齊全 | `✅ 合規` |
+| [`02_thsr_ticket_nt700.png`](./sample_receipts/02_thsr_ticket_nt700.png) | 台灣高鐵票根證明聯 | NT$ 700、標準車廂對號座、統編 88888888 | `✅ 合規` |
+| [`03_uber_receipt_nt560.png`](./sample_receipts/03_uber_receipt_nt560.png) | Uber 電子乘車收據截圖 | NT$ 560、統編 88888888、**未填寫事由** | `⚠️ 需補件 / ❌ 超標`（超額 60 元） |
+| [`04_client_dinner_nt2800.png`](./sample_receipts/04_client_dinner_nt2800.png) | 頂級牛排電子發票證明聯 | NT$ 2,800、統編 88888888、商務宴客 2 人 | `✅ 合規`（人均 NT$ 1,400 < 1,500） |
+| [`05_overbudget_dinner_nt850.png`](./sample_receipts/05_overbudget_dinner_nt850.png) | 燒肉便當電子發票證明聯 | NT$ 850、統編 88888888、加班誤餐 1 人 | `❌ 超標`（人均上限 600，超額 250） |
 
 #### 📥 圖片測試步驟：
 1. 將上述 5 張圖片拖曳或上傳至 Claude 對話框中。
