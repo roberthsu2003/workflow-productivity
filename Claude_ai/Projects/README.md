@@ -109,7 +109,7 @@ graph TD
 
 ---
 
-## 🚀 由淺至深：五大模組化實戰教學矩陣
+## 🚀 由淺至深：六大模組化實戰教學矩陣
 
 本教學設計遵循**由淺入深的四階學習曲線**，每個範例皆自帶獨立資料夾、詳細操作指引、一鍵複製的 `Instructions.md` 與**完整的實體偽資料/圖片下載連結**：
 
@@ -117,7 +117,7 @@ graph TD
 graph LR
     L1["🟢 Level 1 入門<br/>行政特助<br/>(單檔術語/格式)"] --> L2["🔵 Level 2 進階<br/>品牌行銷 & 英文教練<br/>(規範約束/圖文/雙軌)"]
     L2 --> L3["🟡 Level 3 高階<br/>商業數據庫<br/>(跨期合併/自動進化)"]
-    L3 --> L4["🔴 Level 4 專家<br/>創投盡調與合規<br/>(跨文檔偵探/法規)"]
+    L3 --> L4["🔴 Level 4 專家<br/>創投盡調 & 綠能合規<br/>(跨文檔偵探/技術標準)"]
 ```
 
 | 階梯層級 | 實戰範例模組 | 適合對象 | 配套偽資料（點擊下載） | 核心學習亮點 |
@@ -127,6 +127,7 @@ graph LR
 | **🔵 Level 2**<br/>進階應用 | [🎓 **個人化英語學習教練**](./Examples/03_Personal_Coach/README.md) | 學生<br>跨國職場人士 | [📄 英文寫作樣本_自我介紹.md](./Examples/03_Personal_Coach/sample_files/英文寫作樣本_自我介紹.md)<br>[📝 英文求職信草稿_Cover_Letter.md](./Examples/03_Personal_Coach/sample_files/英文求職信草稿_Cover_Letter.md) | 建立個人寫作基準線、雙軌回饋機制（地道改寫＋觀念解析）、老毛病盲點追蹤。 |
 | **🟡 Level 3**<br/>高階分析 | [📊 **商業數據分析庫**](./Examples/04_Business_Intelligence/README.md) | 主管 / 營運<br>商業分析師 | [📄 sales_Q1.md](./Examples/04_Business_Intelligence/sample_files/sales_Q1.md)<br>[📄 sales_Q2.md](./Examples/04_Business_Intelligence/sample_files/sales_Q2.md)<br>[📊 上半年銷售數據.xlsx](./Examples/04_Business_Intelligence/sample_files/星橋科技_2026上半年產品銷售數據.xlsx) | 多季資料動態合併、**不改 Prompt 僅增新檔見證圖表自動進化**、Artifact 互動圖表。 |
 | **🔴 Level 4**<br/>專家審查 | [🔍 **創投盡調與政府合規審查**](./Examples/05_Due_Diligence_and_Audit/README.md) | 創投 (VC/PE)<br>法務 / 財務風控 | [📄 WeWork S-1 招股書.md](./Examples/05_Due_Diligence_and_Audit/sample_files/WeWork_2019_SEC_S1_Registration_Statement.md)<br>[📊 WeWork 財務表.xlsx](./Examples/05_Due_Diligence_and_Audit/sample_files/WeWork_2018_2019_Financial_Breakdown_BurnRate.xlsx)<br>[📊 Gogoro 車輛毛利.xlsx](./Examples/05_Due_Diligence_and_Audit/sample_files/Gogoro_車輛毛利與補助依存度.xlsx)<br>[📝 產發署國產化審查公文.md](./Examples/05_Due_Diligence_and_Audit/sample_files/經濟部產發署_睿能馬達國產化審查意見書.md) | 跨文檔偵探抓包、Non-GAAP 指標粉飾破解、**美股 SPAC 招股書對接台灣產發署補助法規**。 |
+| **🔴 Level 4**<br/>專家審查 | [⚡ **工研院綠能所：儲能安全標準審查**](./Examples/06_Green_Energy_Standards/README.md) | 綠能所研究員<br>能源工程師 / 顧問 | [📄 儲能安全標準指引草案.md](./Examples/06_Green_Energy_Standards/sample_files/儲能系統安全技術標準指引草案.md)<br>[📝 示範園區儲能企劃申請書.md](./Examples/06_Green_Energy_Standards/sample_files/示範園區儲能建置企劃申請書.md)<br>[🖼️ 儲能系統安全配置示意圖.jpg](./Examples/06_Green_Energy_Standards/sample_files/工業級儲能系統_BESS_安全配置示意圖.jpg) | 綠能法規與技術標準 RAG 檢索、**建置企劃跨文檔條文合規差異抓包 (Gap Analysis)**、工程配置圖視覺審查。 |
 
 ---
 
