@@ -1,141 +1,144 @@
-# Projects（專案）：讓 Claude 記得你的一切
+# Claude Projects（專案沙盒）：打造具備長期記憶的專屬工作空間
 
-> 🟢 **方案需求**：**Free 帳號可建立最多 5 個專案**；Pro 帳號（$20/月起）可建立無限個專案，並享有更大容量的知識庫 (RAG) 與進階模型。
->
-> **使用建議**：Free 帳號的 5 個專案額度足夠完成本章全部練習。若額度不夠，可封存或刪除舊專案。
+> 專為職場人士與各領域學員設計，學習如何將 Claude 轉變為擁有組織記憶、熟悉業務規範且具備專屬邊界的「長期工作站」。
 
 ---
 
-## 😩 你是否遇過這些情況？
+## 💡 為什麼你需要 Projects？
 
-- 每次開新對話，都要**重新自我介紹一次**：「我是行政人員，我們公司的報告格式是……」
-- 同一份檔案**上傳了五次**，因為每個對話都不記得上一個對話看過什麼
-- 精心調校好的指令存在記事本裡，每次都要**複製貼上**
+如果你只使用一般對話（Chats），你一定常經歷這些「金魚腦痛點」：
+- **每次開新對話都要重新交代背景**：「我們是科技公司、主管叫王大明、請用台灣繁體中文……」
+- **同一份參考手冊/規章上傳了幾十次**，對話一關閉，記憶立刻煙消雲散。
+- **精心調校好的 System Prompt 只能存在記事本**，每次提問前手動複製貼上。
 
-一般對話就像金魚腦——**對話關掉，一切歸零**。
+```mermaid
+graph LR
+    subgraph 一般對話 Chats
+        C1["💬 對話 1<br/>（上傳規章）"] -.->|關閉對話| X1["❌ 記憶歸零"]
+        C2["💬 對話 2<br/>（重新自我介紹）"] -.->|關閉對話| X2["❌ 記憶歸零"]
+    end
 
-**Projects 就是解藥**：把角色指令（Instructions）、參考檔案（Knowledge）、工具連線（Connectors）**設定一次**，之後在這個專案裡開的**每一個對話**都自動繼承這些設定。
+    subgraph Projects 專案沙盒
+        P["📁 Project 沙盒空間"]
+        P --> I["📋 Instructions（人格與憲法）"]
+        P --> K["📂 Knowledge（上傳規章與數據）"]
+        P --> Con["🔌 Capabilities & Connectors"]
+        P ==> W1["💬 對話 A"]
+        P ==> W2["💬 對話 B"]
+        P ==> W3["💬 對話 C<br/>（全部自動繼承，永久記得）"]
+    end
+```
 
-## 🧠 一分鐘看懂 Projects
+| 比較維度 | 一般對話 (Chats) | Claude Projects |
+|:---|:---|:---|
+| **角色與語氣設定** | 每次提問需重新輸入 Prompt | **一次設定，所有對話永久生效** |
+| **參考文件與數據** | 每次開新對話需重新上傳 | **上傳一次，沙盒內所有對話共用** |
+| **組織術語與黑話** | 每次都要逐句解釋 | **讀過知識庫，全對話無縫理解** |
+| **外部資料庫連線** | 難以針對單一專案隔離授權 | **可針對特定專案獨立掛載 Google Drive/GitHub** |
+
+---
+
+## 🟢 方案需求與規格建議
+
+- **Free 帳號**：可免費建立最多 **5 個專案**（額度足夠完成本章所有 Level 1 ~ Level 4 練習）。
+- **Pro / Max 帳號**：可建立**無限個專案**，並享有 200K Tokens 大容量知識庫與更高運算額度。
+- **Team / Enterprise 帳號**：支援跨成員**專案共用與協作 (Shared Projects)**，為團隊建立中央標準知識庫。
+
+---
+
+## 🧠 Projects 四位一體現代架構
+
+一個完整的現代 Claude Project 由四大核心柱構成：
 
 ```mermaid
 graph TD
-    P["📁 Project：我的行政助理"]
-    P --> I["📋 Instructions<br/>它是誰、怎麼做事"]
-    P --> K["📂 Knowledge<br/>它知道什麼<br/>（上傳的檔案）"]
-    P --> C["🔌 Connectors<br/>它能碰什麼<br/>（Drive、GitHub…）"]
-    P --> C1["💬 對話 1"]
-    P --> C2["💬 對話 2"]
-    P --> C3["💬 對話 3<br/>全部自動繼承上面的設定"]
+    Proj["📁 Claude Project 沙盒空間"]
+    Proj --> A["1. Instructions（行為憲法）<br/>定義角色、任務、負面約束與輸出格式"]
+    Proj --> B["2. Project Knowledge（知識庫）<br/>上傳 SOP、術語表、數據報表（享受 Prompt Caching）"]
+    Proj --> C["3. Capabilities & Connectors（連接器）<br/>專案層級獨立開啟 Google Drive、GitHub 等外部服務"]
+    Proj --> D["4. Analysis & Artifacts（執行沙盒）<br/>專案內可直接執行 Python 數據分析與產出互動儀表板"]
 ```
-
-| | 一般對話 | Project |
-|---|---|---|
-| 角色設定 | 每次重新輸入 | 設定一次，永久生效 |
-| 參考檔案 | 每次重新上傳 | 上傳一次，所有對話共用 |
-| 專業術語 | 不認識 | 讀過你的檔案，全都認識 |
 
 ---
 
-## 🧪 10 分鐘實作：親眼見證差異
+## 📚 Projects 核心技術與設定深度指南
 
-> 這個實驗會用到兩份模擬檔案：[內部術語對照表](./Examples/sample_files/內部術語對照表.md) 和 [會議逐字稿](./Examples/sample_files/會議逐字稿_產品週會.md)。
-> 它們來自虛構公司「星橋科技」——裡面有「紅單」「過橋」「北極星」這種**只有內部人才懂的黑話**。
+在正式動手建立專案前，建議先閱讀以下深度指南，幫助您建立正確的架構思維：
 
-### 第一步：先在「一般對話」做實驗（Before）
+* ⚡ **[01. Prompt Caching 與 Token 成本精算指南](./Guide/01_Prompt_Caching_and_Tokens.md)**  
+  *深入解密為什麼專案知識庫上傳大量文件不會越聊越貴？快取如何幫您節省高達 90% 的成本。*
+* 📑 **[02. 知識庫工程：檔案格式挑選與防污染心法](./Guide/02_Knowledge_Engineering.md)**  
+  *Markdown vs. CSV vs. PDF 效率大評比、標題階層規劃、以及如何避免新舊文件打架導致 AI 產生幻覺。*
+* 🏛️ **[03. RTCCF 專案指令撰寫架構學](./Guide/03_Instructions_Architecture.md)**  
+  *以 Role, Task, Context, Constraint, Format 五大維度撰寫堅不可摧的專案 Instructions。*
 
-開一個**一般對話**，貼上[會議逐字稿](./Examples/sample_files/會議逐字稿_產品週會.md)的內容，然後輸入：
+---
 
+## 🧪 10 分鐘快速實作：親眼見證 Projects 的威力
+
+> 📥 **課堂模擬檔案下載**：
+> - [📄 **內部術語對照表.md**](./Examples/01_Office_Administration/sample_files/內部術語對照表.md)（點擊下載/另存檔案）：星橋科技內部黑話對照表。
+> - [📝 **會議逐字稿_產品週會.md**](./Examples/01_Office_Administration/sample_files/會議逐字稿_產品週會.md)（點擊下載/另存檔案）：包含內部黑話的真實會議逐字稿。
+
+### 第一步：在「一般對話」測試（Before）
+開一個普通對話，貼上 [會議逐字稿](./Examples/01_Office_Administration/sample_files/會議逐字稿_產品週會.md) 全文並輸入：
 ```text
-幫我把這份逐字稿整理成會議紀錄，包含決議事項與待辦清單。
+幫我把這份逐字稿整理成會議紀錄，列出決議事項與待辦清單。
 ```
+**觀察結果**：Claude 只能照字面胡亂猜測——它不知道「紅單」是最高優先級障礙單、「過橋」是部署到正式環境。
 
-**觀察結果**：Claude 只能照字面猜——它不知道「紅單」是最高優先級障礙單、「過橋」是部署到正式環境、「北極星」是智慧客服系統 2.0。整理出來的紀錄，新同事看了還是一頭霧水。
+### 第二步：建立你的第一個 Project（After）
+1. 點擊左側選單 **Projects** ➔ **New project**。
+2. 專案名稱輸入：`星橋科技行政特助`，目標輸入：`整理會議紀錄`，點擊建立。
+3. 在 **Instructions** 貼入：
+   ```text
+   你是星橋科技的資深行政特助。整理文件時，先比對專案知識庫中的「內部術語對照表」，將所有內部術語標註正式名稱（例如：紅單/最高優先級障礙單）。會議紀錄固定包含：會議重點、決議事項、待辦清單（含負責人與期限）。
+   ```
+4. 在 **Project Knowledge** 區塊，點擊 **Add content** 上傳下載好的 [內部術語對照表.md](./Examples/01_Office_Administration/sample_files/內部術語對照表.md)。
 
-### 第二步：建立你的第一個 Project
+### 第三步：在 Project 裡重做同一件事
+在該專案內開新對話，貼上同一份逐字稿、輸入同一句指令。  
+**觀察結果**：Claude 自動寫出「收到兩張紅單（最高優先級障礙單，需 24 小時內回應）」「需經 CAB 核准後過橋（部署至正式環境）」——**你一個字都不需要多解釋！**
 
-1. 在 Claude 左側欄點選 **Projects** → **New project**，會出現「**Create a project**」視窗
-2. **What are you working on?**（專案名稱）輸入：`星橋科技行政助理`
-3. **What are you trying to achieve?**（目標描述）輸入：`整理會議紀錄、潤飾商務郵件`，然後按 **Create project**
-4. 進入專案頁面後，找到 **Instructions**（專案指令）區塊，貼入：
-
+### 第四步：跨對話殺手級驗證
+在該專案裡**再開一個全新對話**，什麼檔案都不貼，直接問：
 ```text
-你是星橋科技的資深行政特助。
-整理會議紀錄時，請比對專案知識庫中的「內部術語對照表」，
-將所有內部術語標註正式名稱，例如：北極星（智慧客服系統 2.0）。
-會議紀錄固定包含：會議重點、決議事項、待辦清單（負責人＋期限）。
+我們公司的「小火箭」是什麼？T0 客戶紅單的時限是多久？
+```
+**觀察結果**：Claude 秒回「90 天新人入職培訓計畫，T0 紅單為 24 小時內回應」——**知識上傳一次，每個新對話永遠記得！**
+
+---
+
+## 🚀 由淺至深：五大模組化實戰教學矩陣
+
+本教學設計遵循**由淺入深的四階學習曲線**，每個範例皆自帶獨立資料夾、詳細操作指引、一鍵複製的 `Instructions.md` 與**完整的實體偽資料/圖片下載連結**：
+
+```mermaid
+graph LR
+    L1["🟢 Level 1 入門<br/>行政特助<br/>(單檔術語/格式)"] --> L2["🔵 Level 2 進階<br/>品牌行銷 & 英文教練<br/>(規範約束/圖文/雙軌)"]
+    L2 --> L3["🟡 Level 3 高階<br/>商業數據庫<br/>(跨期合併/自動進化)"]
+    L3 --> L4["🔴 Level 4 專家<br/>創投盡調與合規<br/>(跨文檔偵探/法規)"]
 ```
 
-5. 在 **Knowledge**（或 Files）區塊，上傳[內部術語對照表](./Examples/sample_files/內部術語對照表.md)（可先下載檔案，或複製內容另存成 .md / .txt 上傳）
-
-### 第三步：在 Project 裡重做同一件事（After）
-
-在這個 Project 中開新對話，貼上**同一份逐字稿**、輸入**同一句指令**。
-
-**觀察結果**：這次 Claude 會自動寫出「收到兩張紅單（最高優先級障礙單，需 24 小時內回應）」「需經 CAB（變更諮詢委員會）核准後過橋（部署至正式環境）」——你**一個字都沒有多解釋**。
-
-### 第四步：殺手級驗證——開第二個全新對話
-
-在同一個 Project 裡**再開一個全新對話**，什麼都不貼，直接問：
-
-```text
-我們公司的「小火箭」是什麼？下一梯什麼時候開始？
-```
-
-Claude 直接回答「90 天新人入職培訓計畫」——**不用重新上傳、不用重新解釋**。
-
-> 💡 這就是 Projects 的本質：**知識上傳一次，每個對話都記得。**
+| 階梯層級 | 實戰範例模組 | 適合對象 | 配套偽資料（點擊下載） | 核心學習亮點 |
+|:---:|:---|:---|:---|:---|
+| **🟢 Level 1**<br/>基礎入門 | [💼 **專業辦公行政特助**](./Examples/01_Office_Administration/README.md) | 一般上班族<br>行政 / 助理 | [📄 內部術語對照表.md](./Examples/01_Office_Administration/sample_files/內部術語對照表.md)<br>[📝 會議逐字稿_產品週會.md](./Examples/01_Office_Administration/sample_files/會議逐字稿_產品週會.md) | 掌握 Projects 三步驟建置、術語對照轉譯、跨對話長期記憶。 |
+| **🔵 Level 2**<br/>進階應用 | [✍️ **品牌行銷文案守門人**](./Examples/02_Brand_and_Marketing/README.md) | 社群小編<br>行銷企劃 | [📄 品牌語調指南_山嵐茶飲.md](./Examples/02_Brand_and_Marketing/sample_files/品牌語調指南_山嵐茶飲.md)<br>[🖼️ 蜜香烏龍冷萃_商品示意圖.jpg](./Examples/02_Brand_and_Marketing/sample_files/山嵐茶飲_蜜香烏龍冷萃_商品示意圖.jpg) | 品牌語調約束、**實體商品圖看圖寫文**、防聳動違規字詞過濾。 |
+| **🔵 Level 2**<br/>進階應用 | [🎓 **個人化英語學習教練**](./Examples/03_Personal_Coach/README.md) | 學生<br>跨國職場人士 | [📄 英文寫作樣本_自我介紹.md](./Examples/03_Personal_Coach/sample_files/英文寫作樣本_自我介紹.md)<br>[📝 英文求職信草稿_Cover_Letter.md](./Examples/03_Personal_Coach/sample_files/英文求職信草稿_Cover_Letter.md) | 建立個人寫作基準線、雙軌回饋機制（地道改寫＋觀念解析）、老毛病盲點追蹤。 |
+| **🟡 Level 3**<br/>高階分析 | [📊 **商業數據分析庫**](./Examples/04_Business_Intelligence/README.md) | 主管 / 營運<br>商業分析師 | [📄 sales_Q1.md](./Examples/04_Business_Intelligence/sample_files/sales_Q1.md)<br>[📄 sales_Q2.md](./Examples/04_Business_Intelligence/sample_files/sales_Q2.md)<br>[📊 上半年銷售數據.xlsx](./Examples/04_Business_Intelligence/sample_files/星橋科技_2026上半年產品銷售數據.xlsx) | 多季資料動態合併、**不改 Prompt 僅增新檔見證圖表自動進化**、Artifact 互動圖表。 |
+| **🔴 Level 4**<br/>專家審查 | [🔍 **創投盡調與政府合規審查**](./Examples/05_Due_Diligence_and_Audit/README.md) | 創投 (VC/PE)<br>法務 / 財務風控 | [📄 WeWork S-1 招股書.md](./Examples/05_Due_Diligence_and_Audit/sample_files/WeWork_2019_SEC_S1_Registration_Statement.md)<br>[📊 WeWork 財務表.xlsx](./Examples/05_Due_Diligence_and_Audit/sample_files/WeWork_2018_2019_Financial_Breakdown_BurnRate.xlsx)<br>[📊 Gogoro 車輛毛利.xlsx](./Examples/05_Due_Diligence_and_Audit/sample_files/Gogoro_車輛毛利與補助依存度.xlsx)<br>[📝 產發署國產化審查公文.md](./Examples/05_Due_Diligence_and_Audit/sample_files/經濟部產發署_睿能馬達國產化審查意見書.md) | 跨文檔偵探抓包、Non-GAAP 指標粉飾破解、**美股 SPAC 招股書對接台灣產發署補助法規**。 |
 
 ---
 
-## 🚀 六個實戰範例
+## 💡 進階管理與安全原則
 
-做完上面的實驗後，挑一個貼近你身分的範例，跟著做完整版：
+### 1. 專案隔離原則 (Project Isolation)
+- **一個任務領域，一個專案**。
+- 切勿將法務、工程代碼、行銷與個人日程全塞在同一個超級專案中。過於雜亂的檔案會擠壓 Context Window 與 Prompt Cache，造成模型注意力分散並增加幻覺機率。
 
-| 範例 | 適合對象 | 難度 | 核心亮點 |
-|------|----------|:---:|----------|
-| [💼 專業辦公行政助手](./Examples/Office_Assistant.md) | 上班族 | ⭐ | 術語表＋逐字稿的完整工作流 |
-| [✍️ 社群行銷文案大師](./Examples/Marketing_Copywriter.md) | 社群小編 | ⭐⭐ | 上傳品牌指南，AI 自動守住品牌語調 |
-| [🎓 英語學習與口語教練](./Examples/English_Learning.md) | 學生 | ⭐⭐ | 上傳寫作樣本，得到個人化錯誤診斷 |
-| [📊 商業數據分析庫（會自動進化的圖表）](./Examples/Business_Brain.md) | 業務/行銷/主管 | ⭐⭐⭐ | 透過多種方式更新資料表，免改 Prompt 見證圖表自動合併新數據 |
-| [🔍 創投盡調與招股書防坑大師（WeWork 真實案例）](./Examples/VC_Due_Diligence.md) | 創投/經理/法務/財務 | ⭐⭐⭐ | 整合 PDF、Word、Excel 多格式，自動抓包財務矛盾與投審會風險 |
-| [🛵 Gogoro 美股上市與政府補助審查（台灣在地真實案例）](./Examples/Taiwan_VC_Gogoro.md) | 台灣創投/法務/風控 | ⭐⭐⭐ | 跨國 SEC F-4 財報對接台灣經濟部產發署補助規章，精算政策依存風險 |
-
----
-
-## 🧠 現在你懂了：Projects 的本質
-
-做完實驗再回頭看理論，就很好懂了。Project 是一個**雲端知識沙盒**：
-
-1. **知識沙盒 (Knowledge Sandbox)**：上傳的檔案只在這個專案內有效，專案之間互相隔離。
-2. **行為約束器 (Custom Instructions)**：Instructions 定義沙盒內的「物理規則」——AI 的角色、格式、禁忌。
-3. **運算沙盒 (Execution Sandbox)**：內建 Analysis Tool，可以在專案內執行 Python 運算。
-
-## 🛠️ 客製化專案能力 (Capabilities)
-
-每個專案可以**獨立勾選**要開啟哪些 Connectors（如 Google Drive、GitHub）——行政助理專案連 Drive、程式專案連 GitHub，互不干擾。
-
-## 💡 進階技巧：專案隔離 (Project Isolation)
-
-**一個任務，一個專案**，且只開啟必要的 Connectors。過多的工具定義（Tool Definitions）會擠壓系統 Token 空間，讓背景資訊臃腫，降低 AI 的推理精確度與反應速度。
-
-## 🔐 安全性 QA：我的 Token 放在哪？
-
-**Q：授權雲端服務（如 Gmail、Supabase）後，鑰匙存在哪裡？**
-A：存在 **Anthropic 雲端伺服器的加密保險箱 (Secure Vault)**。因為專案在雲端執行，雲端的 Claude 需要這把鑰匙即時讀取資料。Token 與你的帳號綁定，僅在授權的專案中有效。
-
-**Q：本地 MCP 的鑰匙呢？**
-A：**完全存在你的電腦上**（macOS Keychain 或 Windows Credential Manager），雲端伺服器不持有任何長期存取鑰匙。
-
----
-
-## 🏆 課後挑戰
-
-為**你自己的真實需求**建立一個 Project：
-
-1. 想一個你每週重複做超過三次的任務（整理筆記？回覆固定類型的訊息？）
-2. 寫 Instructions、上傳 1–2 份你真實會用到的參考檔案
-3. 驗收標準：開兩個不同的對話測試，**兩邊都不需要重新解釋背景**就能得到正確結果
+### 2. Connectors 授權與金鑰安全性
+- **雲端 Connectors（如 Google Drive / Gmail）**：OAuth 憑證存放在 Anthropic 雲端的 Secure Vault 中，專案間彼此隔離。
+- **本地 MCP 伺服器**：連線憑證存在您的本地電腦中，專案雲端不持有您的本機檔案長期金鑰。
 
 ---
 
