@@ -50,14 +50,18 @@ graph LR
 
 一個完整的現代 Claude Project 由四大核心柱構成：
 
-```mermaid
-graph TD
-    Proj["📁 Claude Project 沙盒空間"]
-    Proj --> A["1. Instructions（行為憲法）<br/>定義角色、任務、負面約束與輸出格式"]
-    Proj --> B["2. Project Knowledge（知識庫）<br/>上傳 SOP、術語表、數據報表（享受 Prompt Caching）"]
-    Proj --> C["3. Capabilities & Connectors（連接器）<br/>專案層級獨立開啟 Google Drive、GitHub 等外部服務"]
-    Proj --> D["4. Analysis & Artifacts（執行沙盒）<br/>專案內可直接執行 Python 數據分析與產出互動儀表板"]
+```text
+📁 Claude Project 沙盒空間
+├── 1. Instructions（行為憲法）
+│   └── 定義角色、任務、負面約束與輸出格式
+├── 2. Project Knowledge（知識庫）
+│   └── 上傳 SOP、術語表、數據報表（享受 Prompt Caching）
+├── 3. Capabilities & Connectors（連接器）
+│   └── 專案層級獨立開啟 Google Drive、GitHub 等外部服務
+└── 4. Analysis & Artifacts（執行沙盒）
+    └── 專案內可直接執行 Python 數據分析與產出互動儀表板
 ```
+
 
 ---
 
