@@ -34,7 +34,7 @@
 
 ##### 📖 參考教材與延伸連結
 - [**AI Agent 基本概念**](../../AI_Agent基本概念/README.md)：解析從語言模型到多功能 AI Agent（思考大腦、規劃、工具調用、記憶與感知）的演進與職場應用觀念。
-- [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言/YAML/Markdown 內容格式、System Prompt 角色設定與提示詞工程（RTCCF 框架、Few-shot 範例引導、思考鏈引導）。
+- [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言與 Markdown 內容格式、System Prompt 角色設定與提示詞工程（RTCCF 框架、Few-shot 範例引導、思考鏈引導）。
 - [**Claude 官方 Skill 介紹**](https://github.com/anthropics/skills)：Anthropic 官方開放的 Skills 範例庫，提供標準化 Skill 設計規範與範例。
     - [**使用Anthropic PPTX Skill製作簡報(實作)**](../../Claude_ai/Skills/GWorkspace/README.md)-->**請使用練習C1**
 - [**Artifacts 互動內容生成（實作）**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗生成長文案、數據圖表與互動原型，實現即時渲染與版本控制。

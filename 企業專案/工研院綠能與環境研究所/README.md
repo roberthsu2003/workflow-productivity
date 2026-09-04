@@ -44,7 +44,7 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 
 #### 📖 參考教材與延伸連結
 - [**AI Agent 基本概念**](../../AI_Agent基本概念/README.md)：解析從語言模型到多功能 AI Agent（思考大腦、規劃、工具調用、記憶與感知）的演進與職場應用觀念。
-- [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言/YAML/Markdown 內容格式、RTCCF 框架、System Prompt 角色設定與提示詞工程。
+- [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言與 Markdown 內容格式、RTCCF 框架、System Prompt 角色設定與提示詞工程。
 - [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：建立綠能所專屬主題知識庫，上傳法規、研究報告或專案規格文件，讓 Claude 具備領域專家視角。
 - [**大量檔案搜尋與文字檢索實戰（綠能所專案指南）**](./大量檔案搜尋與文字檢索實戰.md)：解析一般 Chat 處理大量檔案的限制（30MB / 20 檔 / Token 全量重讀），並實作 Projects 知識庫跨法規與技術規格書交叉比對。
 
