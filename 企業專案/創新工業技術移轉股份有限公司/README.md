@@ -31,6 +31,8 @@
 ### 🔹 第一章：Claude 核心操作、Projects 知識庫與關注清單 Skill
 
 #### 📖 參考教材與延伸連結
+- [**ITIC 專屬學員講義（12小時精華完整版）**](./ITIC_學員講義.md)：涵蓋三章節之觀念建立、操作筆記、Prompt 範本與實務踩雷提醒。
+- [**每日產業新聞情報蒐集實戰（ITIC 專案指南）**](./每日產業新聞情報蒐集實戰.md)：深度解析「泛用搜尋 vs 定點爬蟲」之策略選型、發布時間檢驗與自動化情報蒐集 Prompt。
 - [**生成式 AI 模型基本概念**](../../生成式AI模型基本概念/README.md)：解析 LLM 底層能力與上層應用（檔案讀取、搜尋、API 串接）的演進與職場應用觀念。
 - [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言/YAML/Markdown 內容格式、System Prompt 角色設定與提示詞工程。
 - [**Claude 官方 Skill 介紹**](https://github.com/anthropics/skills)：Anthropic 官方開放的 Skills 範例庫，提供標準化 Skill 設計規範與範例。
