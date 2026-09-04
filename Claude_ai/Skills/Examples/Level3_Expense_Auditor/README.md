@@ -21,11 +21,16 @@ flowchart LR
 1. **多模態辨識與規章比對**：  
    支援直接拍照或截圖上傳發票收據，亦可直接輸入文字。參照 `references/expense-policy.md` 檢查統一編號（`88888888`）、市區計程車單趟上限（NT$ 500 且需事由）、高鐵限標準車廂、公務用餐單人上限（NT$ 600/人）。
 2. **自動化 Python 處理**：  
-   AI 自動調用 Code Execution 載入 `templates/expense-report-template.xlsx` 商務樣板。
+   AI 自動調用 Code Execution 載入 `templates/expense-report-template.xlsx` 商務樣板（樣板底部已預先內建高質感企業 Footer 橫幅）。
 3. **品牌視覺與公式保留**：  
-   呼叫 `openpyxl.drawing.image.Image` 將 `assets/company-logo.jpeg` 插入頂部表頭（Cell A1），並保留總計列的原生加總公式（`=SUM(F9:F18)`）。
+   呼叫 `openpyxl.drawing.image.Image` 將 `assets/company-logo.jpeg` 動態縮放插入頂部表頭（Cell A1），並保留總計列的原生加總公式（`=SUM(F9:F18)`）。
 4. **實體報表交付**：  
-   將申請人資訊、費用明細、稽核狀態（`✅ 合規` / `⚠️ 需補件` / `❌ 超標`）與財務備註填入指定儲存格，生成帶有企業品牌識別的完整實體 Excel 檔供下載。
+   將申請人資訊、費用明細、稽核狀態（`✅ 合規` / `⚠️ 需補件` / `❌ 超標`）與財務備註填入指定儲存格，生成頂部有 Logo、底部有 Footer 的完整實體 Excel 檔供下載。
+
+> [!NOTE]
+> **💡 教學觀念解惑：圖片到底該「直接放進樣板」還是「由 Python 動態插入」？**
+> * **固定背景與 Footer（直接做進樣板）**：像底部的公司版權資訊、防偽浮水印或固定邊框，最推薦直接做在 `templates/` 的空白樣板中，Python 完全不需要花運算資源重新填入。
+> * **動態資產與 Logo（由 Python 從 `assets/` 動態載入）**：這正是 **Level 3 核心精髓**！讓學生掌握如何透過 Python 將外部獨立的圖片資產（如公司 Logo、電子簽核章、動態圖表）精準合成至指定儲存格（Cell A1），實現真正的「多媒體資產整合者」！
 
 ---
 
