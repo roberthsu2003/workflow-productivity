@@ -31,7 +31,7 @@
 ---
 ## 簡單AI應用
 
-- [AI Agent 基本概念：多功能智慧代理人](./生成式AI模型基本概念/README.md)  
+- [AI Agent 基本概念：多功能智慧代理人](./AI_Agent基本概念/README.md)  
   從「單純生成」到「自主代理」：了解 ChatGPT 與 Claude.ai 作為多功能 AI Agent 的五大架構與核心能力邊界
 
 - [prompt工程指南](./prompt/README.md)   
