@@ -137,9 +137,9 @@
 | 2 | 🟢 第一階：模仿者 | [主管交辦事項整理員](./Examples/Office_Workflow_02_Task_Extractor.md) | 會議後收到一堆零散訊息，需要整理成待辦清單 | 貼上對話 → 抽取任務 → 標記負責人、期限、優先級 |
 | 3 | 🔵 第二階：創作者 | [客戶報價單產生器](./Examples/Office_Workflow_03_Customer_Quotation/) | 有隨興的專案品項、金額與折讓，需要產生正式報價單 | 輸入報價項目與客戶資訊 → 進行折讓計算 → 產出標準格式報價單 |
 | 4 | 🔵 第二階：創作者 | [會議紀錄轉行動計畫助手](./Examples/Office_Workflow_04_Meeting_Action_Plan/) | 會議逐字稿太長，主管只想看結論與下一步 | 貼上逐字稿 → 摘要決議 → 產出 Action Items → 寄送前檢查 |
-| 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover/) | 員工請假時，需要整理交接事項與通知信 | 輸入請假日期與工作項目 → 產出交接清單、代理通知、主管摘要 |
-| 6 | 🟡 第三階：整合者 | [採購申請預檢員](./Examples/Office_Workflow_06_Purchase_Checker.md) | 行政或 IT 採購前，需要確認品項、預算、理由是否完整 | 貼上採購需求 → 檢查缺漏 → 產出補件問題與申請書草稿 |
-| 7 | 🟡 第三階：整合者 | [客戶回覆與 CRM 更新助手](./Examples/Office_Workflow_07_Customer_CRM.md) | 業務收到客戶信件後，要回覆並更新客戶狀態 | 貼上客戶信 → 判斷意圖 → 產出回信 → 產生 CRM 更新摘要 |
+| 5 | 🟡 第三階：整合者 | [請假與代理安排助手](./Examples/Office_Workflow_05_Leave_Handover/) | 員工請假或突發病假，需要盤點期間任務與交接代理 | 輸入請假事項或上傳假單截圖 → 檢查交接風險與防退件 → 產出主管信、代理人指南、OOO回覆與含Logo實體Excel交接單 |
+| 6 | 🟡 第三階：整合者 | [採購申請預檢員](./Examples/Office_Workflow_06_Purchase_Checker/) | 行政或 IT 採購前，需要確認品項、比價家數、預算代碼 | 貼上採購需求或上傳廠商報價單/比價截圖 → 檢查退件風險 → 產出主管呈報說帖與含Logo實體Excel請購單 |
+| 7 | 🟡 第三階：整合者 | [客戶回覆與 CRM 更新助手](./Examples/Office_Workflow_07_Customer_CRM/) | 業務或客服收到客戶信件，要同理回覆並更新 CRM | 貼上客戶信或上傳郵件截圖 → 診斷意圖情緒與商機金額 → 產出高EQ回信、CRM Note與含Logo實體Excel紀錄單 |
 | 8 | 🔴 第四階：自動化專家 | [週會資料彙整與簡報大綱助手](./Examples/Office_Workflow_08_Weekly_Brief.md) | 部門週會前，需要從多份進度回報整理重點 | 匯入多份回報 → 合併重複項 → 找風險 → 產出簡報大綱 |
 | 9 | 🔴 第四階：自動化專家 | [跨部門簽核追蹤秘書](./Examples/Office_Workflow_09_Approval_Tracker.md) | 文件需要法務、財務、主管多方簽核，容易卡關 | 輸入簽核流程 → 查目前狀態 → 找卡點 → 產出催辦訊息 |
 | 10 | 🔴 第四階：自動化專家 | [辦公室營運儀表板代理人](./Examples/Office_Workflow_10_Operations_Dashboard.md) | 主管每天想知道會議、待辦、客訴、採購、簽核的整體狀態 | 讀取多來源資料 → 分析異常 → 產出每日營運摘要 → 建議下一步 |
