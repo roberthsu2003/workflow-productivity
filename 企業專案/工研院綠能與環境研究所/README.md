@@ -56,7 +56,10 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 <details>
 <summary>💡 課後實作驗證範例：Projects 綠能技術標準與法規比對助手（RTCCF Prompt）</summary>
 
-> 💡 **情境說明**：學員已在 Claude Projects 中上傳 1~2 份綠能標準或研發規格文件（如：儲能系統消防安全標準、太陽光電設置規範）。本練習運用 RTCCF 框架設定專案助理，進行跨章節比對並精簡 Token 消耗。
+> 💡 **情境說明**：學員需在 Claude Projects 知識庫中上傳綠能技術規範文件。本練習運用 RTCCF 框架設定專案助理，進行跨章節條文比對並精簡 Token 消耗。
+>
+> 📥 **課堂模擬檔案下載**：
+> - [📄 **儲能系統安全技術標準指引草案.md**](./data/儲能系統安全技術標準指引草案.md)（點擊下載/另存檔案）：包含安全間距、消防防爆、BMS 通訊與 EPO 緊急切斷規範之示範技術標準草案，請下載後直接上傳至您的 Claude Project 知識庫中。
 
 ```markdown
 ## Role
@@ -102,6 +105,9 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 <summary>💡 課後實作驗證範例：綠能技術研發與產學合作簡報製作（Anthropic PPTX Skill）</summary>
 
 > 💡 **情境說明**：綠能所研究員經常需對外進行技術成果審查或產學合作提案。本練習讓學員依循「討論大綱 ➔ 確認結構 ➔ 調用 PPTX Skill」標準三步驟，一鍵產出具備綠能視覺風格的專業簡報。
+>
+> 📥 **課堂模擬圖片下載**：
+> - [🖼️ **智慧微電網與儲能系統示意圖.jpg**](./data/智慧微電網與儲能系統示意圖.jpg)（點擊下載/另存圖片）：包含太陽能、風機、MW 級儲能貨櫃（BESS）與 EMS 智慧電網調度之 16:9 簡報配圖，可在 Claude 對話中上傳作為簡報封面或技術架構視覺圖。
 
 ```markdown
 ## Role
@@ -155,7 +161,12 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 <details>
 <summary>💡 課後實作驗證範例：國內外綠能政策與法規情報爬取（Playwright MCP / Chrome）</summary>
 
-> 💡 **情境說明**：綠能所團隊需持續追蹤國內外淨零政策草案與產業規範（如：經濟部能源署、環境部氣候變遷署、IEA）。本練習讓學員使用 Playwright MCP 或 Claude in Chrome 進行動態爬取與情報摘要。
+> 💡 **情境說明**：綠能所團隊需持續追蹤國內外淨零政策草案與產業規範。本練習讓學員使用 Playwright MCP 或 Claude in Chrome 進行動態爬取與情報摘要。
+>
+> 🌐 **實作推薦公開目標網址（點擊直接測試或提供給 Claude）**：
+> - [經濟部能源署 - 新聞與公告](https://www.moeaea.gov.tw/)
+> - [環境部氣候變遷署 - 最新消息與碳費法規專區](https://cca.moenv.gov.tw/)
+> - [科技新報 - 綠能與儲能科技產業專區](https://technews.tw/category/greentech/)
 
 ```markdown
 ## Role
@@ -199,7 +210,11 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 <details>
 <summary>💡 課後實作驗證範例：示範場域能耗與碳盤查數據分析（Code Execution 整合者 Skill）</summary>
 
-> 💡 **情境說明**：學員已準備 1 份示範場域的用電/發電或碳排放 Excel 檔案。本練習運用 Code Execution（Python 分析）自動運算負載指標、標註異常能耗，並產出專業評估報告。
+> 💡 **情境說明**：學員需準備 1 份示範場域的用電/發電或碳排放 Excel 檔案。本練習運用 Code Execution（Python 分析）自動運算負載指標、標註異常能耗，並產出專業評估報告。
+>
+> 📥 **課堂模擬數據集下載**：
+> - [📊 **示範場域一週能源監測與碳盤查數據.xlsx**](./data/示範場域一週能源監測與碳盤查數據.xlsx)（點擊下載 Excel 檔）：包含 7 天 168 筆逐時數據（場區需量、契約容量 500kW、太陽光電發電量、電網購電量、超約警示標記與碳排量）。
+> - [📄 **示範場域一週能源監測與碳盤查數據.csv**](./data/示範場域一週能源監測與碳盤查數據.csv)（點擊下載 CSV 純文字檔）：供學員體驗將 Office 轉純文字之 Token 精省對話流程。
 
 ```markdown
 ## Role
