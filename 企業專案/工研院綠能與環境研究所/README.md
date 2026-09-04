@@ -30,7 +30,7 @@
 ## 📅 4 天課程時數與進度分配（每天 3.5 小時，共 14 小時）
 
 ```text
-Day 1 (3.5h)：Claude 核心思維、提示工程（Prompt）與 Projects 專案知識庫
+Day 1 (3.5h)：Claude 核心思維、Prompt 工程、Context Window 與 Projects 專案知識庫
 Day 2 (3.5h)：Connectors 雲端整合、Anthropic PPTX 簡報生成與 Artifacts 互動內容
 Day 3 (3.5h)：Claude in Chrome 網頁操作、Playwright 本地爬蟲與自訂 Skills（模仿者/創作者）
 Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Cowork 協作與 Scheduled 排程
@@ -40,18 +40,21 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 
 ## 📚 課程大綱與教材導覽
 
-### 🔹 Day 1（3.5 小時）：Claude 核心操作、Prompt 提示工程與 Projects 知識庫
+### 🔹 Day 1（3.5 小時）：Claude 核心操作、Prompt 提示工程、Context Window 與 Projects 知識庫
 
 #### 📖 參考教材與延伸連結
 - [**AI Agent 基本概念**](../../AI_Agent基本概念/README.md)：解析從語言模型到多功能 AI Agent（思考大腦、規劃、工具調用、記憶與感知）的演進與職場應用觀念。
 - [**Prompt 撰寫技巧（實作）**](../../prompt/README.md)：掌握自然語言與 Markdown 內容格式、RTCCF 框架、System Prompt 角色設定與提示詞工程。
+- [**Context Window（上下文視窗）與 Token 機制（實作）**](../../Context_Window/README.md)：掌握 Session 歷史對話持續疊加真相、Token 計價本質、注意力極限，以及「Word/Excel 轉 Markdown/CSV 中間純文字、最後出成品」之 70% 極致省 Token 工作流。
 - [**Projects 雲端知識沙盒(實作)**](../../Claude_ai/Projects/README.md)：建立綠能所專屬主題知識庫，上傳法規、研究報告或專案規格文件，讓 Claude 具備領域專家視角。
 - [**大量檔案搜尋與文字檢索實戰（綠能所專案指南）**](./大量檔案搜尋與文字檢索實戰.md)：解析一般 Chat 處理大量檔案的限制（30MB / 20 檔 / Token 全量重讀），並實作 Projects 知識庫跨法規與技術規格書交叉比對。
 
 #### 🛠️ 課程內容與實作綱要
 - **AI 核心與 Prompt 基礎**：熟悉 RTCCF 框架與 System Prompt 角色規則，精準下達研發與行政指令。
+- **Context Window 與 Token 成本控制**：了解對話疊加與 Token 計費本質，實作 Office 檔案轉 CSV/Markdown 純文字對話，最後一步才調用工具匯出實體報表。
 - **Projects 知識庫建立**：上傳綠能技術文件、淨零標準規範與計畫指引，打造專案專屬雲端知識庫。
 - **跨檔案檢索與比對**：實作多份技術白皮書或法規的交叉比對與重點問答（參考 [大量檔案搜尋與文字檢索實戰](./大量檔案搜尋與文字檢索實戰.md)）。
+
 
 ---
 
