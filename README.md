@@ -31,8 +31,8 @@
 ---
 ## 簡單AI應用
 
-- [代理式AI模型基本概念](./生成式AI模型基本概念/README.md)  
-  了解 LLM 從「模型」到「應用程式」的演進，掌握 AI 工具的本質與能力邊界
+- [AI Agent 基本概念：多功能智慧代理人](./生成式AI模型基本概念/README.md)  
+  從「單純生成」到「自主代理」：了解 ChatGPT 與 Claude.ai 作為多功能 AI Agent 的五大架構與核心能力邊界
 
 - [prompt工程指南](./prompt/README.md)   
   輸入格式、系統提示詞、ROSES 框架與 4 要素，學會正確下指令讓 AI 產出更好
