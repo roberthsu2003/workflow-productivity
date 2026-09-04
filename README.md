@@ -37,7 +37,11 @@
 - [prompt工程指南](./prompt/README.md)   
   輸入格式、系統提示詞、ROSES 框架與 4 要素，學會正確下指令讓 AI 產出更好
 
+- [Context Window（上下文視窗）與 Token 機制](./Context_Window/README.md)  
+  Session 內容持續疊加的真相：Input / Output / Cached Token 成本解析，以及注意力機制過長失去焦點的應對策略
+
 - [討論方式的內容生成](./討論方式的內容生成/README.md)  
+
   善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出docx,xlsx,pptx,pdf,markdown,網頁等格式 
 
 ## 常見的AI應用
