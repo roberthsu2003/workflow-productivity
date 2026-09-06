@@ -126,6 +126,21 @@ graph LR
 
 ---
 
+### ⚡ 垂直領域進階實戰範例：工研院綠能所多階段審查與行政自動化（做 1 件事以上 + Human-in-the-Loop）
+
+除了上述三大通用模組，本單元特別為**工研院綠能與環境研究所（綠能所）**建立了專屬的高階多階段人機協同實戰範例：
+
+- 🏢 **專案情境**：沙崙綠能園區工業儲能建置申請案（2MW/4MWh）。
+- 🔗 **跨系統串接**：結合 **Projects 知識庫**（常駐安全技術指引草案）與 **Google Workspace 連接器**（Drive 企劃案讀取、Gmail 通知、Calendar 排程）。
+- 🛡️ **核心架構**：採用嚴格的 **Stage-Gating Protocol（階段閘門協議）**，AI 完成技術審查後**強制踩剎車**，等待研究員核可後才解鎖起草公文；公文核可後才解鎖推進郵件發送與日曆排程，絕不擅自越權！
+- 📖 **實作教學**：👉 **[點此直接進入：Google Workspace 次章節 測試 4（進階實戰範例）](./01_Google_Workspace/README.md#測試-4進階實戰範例--工研院綠能所儲能建置企劃跨系統審查與行政公文自動化做-1-件事以上--human-in-the-loop)**
+- 📥 **配套專屬偽檔案**：
+  - 📄 [儲能系統安全技術標準指引草案.md](../Projects/Examples/06_Green_Energy_Standards/sample_files/儲能系統安全技術標準指引草案.md)
+  - 📝 [示範園區儲能建置企劃申請書.md](../Projects/Examples/06_Green_Energy_Standards/sample_files/示範園區儲能建置企劃申請書.md)
+  - 🖼️ [工業級儲能系統_BESS_安全配置示意圖.jpg](../Projects/Examples/06_Green_Energy_Standards/sample_files/工業級儲能系統_BESS_安全配置示意圖.jpg)
+
+---
+
 ## 🔍 配套偽檔案檢查清單（Checklist）
 
 為確保每位學員在沒有企業真實私有資料的情況下，依然能 100% 順暢走完所有範例，本章節所有偽檔案均已完成以下驗證：

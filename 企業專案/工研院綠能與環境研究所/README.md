@@ -90,7 +90,7 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 
 #### 📖 參考教材與延伸連結
 - [**大量檔案搜尋與文字檢索實戰（綠能所專案指南）**](./大量檔案搜尋與文字檢索實戰.md)：解析一般 Chat 處理大量檔案的限制（30MB / 20 檔 / Token 全量重讀），並實作 Projects 知識庫跨法規與技術規格書交叉比對。
-- [**Connectors 連結技巧(實作)**](../../Claude_ai/Connectors/README.md)：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），直接存取與整合雲端資料。
+- [**Connectors 連結技巧(實作)**](../../Claude_ai/Connectors/README.md)：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），直接存取與整合雲端資料。（💡 **專屬提示**：單元內已特別為工研院綠能所建立「**儲能安全審查、公文草擬與行事曆協調（Human-in-the-Loop）**」進階實戰範例，可直接點擊演練！）
 - [**使用 Anthropic PPTX Skill 製作簡報(實作)**](../../Claude_ai/Skills/GWorkspace/README.md)：透過標準化 Skill 將技術摘要自動轉化為專業簡報。
 - [**Artifacts 互動內容生成（實作）**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗生成長篇文案、技術架構圖與互動原型，實現即時渲染與版本控制。
 
