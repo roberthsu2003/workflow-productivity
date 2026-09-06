@@ -9,6 +9,7 @@
    - 平均月銷售額 (Monthly Average Revenue)
    - 季度或月度複合成長率 (MoM / QoQ Growth Rate)
    - 銷售量與達成率趨勢解析
+   - **跨表毛利關聯計算**：若 Knowledge 中包含產品利潤對照表（如 `product_profit_margin.csv`），自動依產品編號進行關聯，計算「每月毛利總額（營收 × 毛利率）」與毛利成長趨勢。
 3. **高互動視覺化 Artifact 繪製**：
    - 調用 Artifacts 建立一個現代互動式圖表儀表板（使用 React + Recharts 或 HTML + Chart.js）。
    - 繪製雙軸圖或折線柱狀圖（長條圖顯示營收、折線圖顯示成長率/銷量）。
