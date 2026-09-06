@@ -120,7 +120,7 @@ graph LR
 
 ---
 
-## 🚀 由淺至深：六大模組化實戰教學矩陣
+## 🚀 由淺至深：五大進階實戰教學矩陣
 
 本教學設計遵循**由淺入深的四階學習曲線**，每個範例皆自帶獨立資料夾、詳細操作指引、一鍵複製的 `Instructions.md` 與**完整的實體偽資料/圖片下載連結**：
 
@@ -133,7 +133,6 @@ graph LR
 
 | 階梯層級 | 實戰範例模組 | 適合對象 | 配套偽資料（點擊下載） | 核心學習亮點 |
 |:---:|:---|:---|:---|:---|
-| **🟢 Level 1**<br/>基礎入門 | [💼 **專業辦公行政特助**](./Examples/01_Office_Administration/README.md) | 一般上班族<br>行政 / 助理 | [📄 內部術語對照表.md](./Examples/01_Office_Administration/sample_files/內部術語對照表.md)<br>[📝 會議逐字稿_產品週會.md](./Examples/01_Office_Administration/sample_files/會議逐字稿_產品週會.md) | 掌握 Projects 三步驟建置、術語對照轉譯、跨對話長期記憶。 |
 | **🔵 Level 2**<br/>進階應用 | [✍️ **品牌行銷文案守門人**](./Examples/02_Brand_and_Marketing/README.md) | 社群小編<br>行銷企劃 | [📄 品牌語調指南_山嵐茶飲.md](./Examples/02_Brand_and_Marketing/sample_files/品牌語調指南_山嵐茶飲.md)<br>[🖼️ 蜜香烏龍冷萃_商品示意圖.jpg](./Examples/02_Brand_and_Marketing/sample_files/山嵐茶飲_蜜香烏龍冷萃_商品示意圖.jpg) | 品牌語調約束、**實體商品圖看圖寫文**、防聳動違規字詞過濾。 |
 | **🔵 Level 2**<br/>進階應用 | [🎓 **個人化英語學習教練**](./Examples/03_Personal_Coach/README.md) | 學生<br>跨國職場人士 | [📄 英文寫作樣本_自我介紹.md](./Examples/03_Personal_Coach/sample_files/英文寫作樣本_自我介紹.md)<br>[📝 英文求職信草稿_Cover_Letter.md](./Examples/03_Personal_Coach/sample_files/英文求職信草稿_Cover_Letter.md) | 建立個人寫作基準線、雙軌回饋機制（地道改寫＋觀念解析）、老毛病盲點追蹤。 |
 | **🟡 Level 3**<br/>高階分析 | [📊 **商業數據分析庫**](./Examples/04_Business_Intelligence/README.md) | 主管 / 營運<br>商業分析師 | [📄 sales_Q1.md](./Examples/04_Business_Intelligence/sample_files/sales_Q1.md)<br>[📄 sales_Q2.md](./Examples/04_Business_Intelligence/sample_files/sales_Q2.md)<br>[📊 上半年銷售數據.xlsx](./Examples/04_Business_Intelligence/sample_files/星橋科技_2026上半年產品銷售數據.xlsx) | 多季資料動態合併、**不改 Prompt 僅增新檔見證圖表自動進化**、Artifact 互動圖表。 |
