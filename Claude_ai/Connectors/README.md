@@ -1,186 +1,153 @@
-# Connectors（連接器）：AI 的資料橋樑
+# Connectors（連接器）：打通雲端服務與組織數據的 AI 橋樑 🔌
 
-> **💡 三種擴充功能快速對照**
->
-> | 類型 | 解決什麼 | 比喻 |
-> |------|---------|------|
-> | **Skills（技能）** | 教 Claude 怎麼把某類任務做好（不連外部服務） | 食譜／SOP |
-> | **Connectors（連接器）** | 讓 Claude 能存取資料或操作其他系統 | 對外的插座、橋樑 |
-> | **Plugins（外掛）** | 把多種能力打包成一個可安裝單位 | 整套工具箱 |
->
-> **Connectors** 讓 Claude 連到外部服務、讀寫你的資料，底層多半是 MCP（Model Context Protocol）。例如 Google Drive、Gmail、Google Sheets、Supabase、n8n。提供的是**工具（tools）**，不是流程說明。  
-> 若需要教 Claude 執行某類工作請看 [Skills](../Skills/README.md)；若要打包整套設定請看 [Plugins](../Plugins/README.md)。
-
-> 🟢 **方案需求**：Free（可用）。Free 帳號可使用 Slack、Google Workspace 等官方連接器，以及任意 Remote MCP，但每段對話與每日訊息用量比 Pro 低（Pro 至少 5×）。
-
-**Connectors** 是 Claude 的一個強大擴充功能。想像它是一座**專屬大橋**，將 Claude 直接連到您常用的雲端服務（如 Google Drive, Gmail, GitHub, Supabase 等）。
-
-透過 Connectors，您不需要再手動將資料複製貼上到對話框。Claude 可以在您的授權下，直接「走過這座橋」去讀取、分析或摘要您放在雲端的資料。
+> 專為職場專業人士與知識工作者設計，學習如何透過官方雲端連接器（Connectors），讓 Claude 安全連線至 **Google Workspace**、**Canva** 與 **Notion**，告別無休止的複製貼上與檔案搬運，建立自動化資料高速通道。
 
 ---
 
-## 為什麼要學 Connectors？
+## 💡 為什麼你需要 Connectors？
 
-| 傳統做法 ❌ | 使用 Connectors ✅ |
-| :--- | :--- |
-| 打開信箱 -> 複製內文 -> 貼回 Claude | 在 Claude 直接說：「摘要我上週的郵件」 |
-| 下載 Excel -> 上傳至對話框 | 讓 Claude 直接讀取 Google Sheets 的數據 |
-| 手動整理行事曆衝突 | 讓 Claude 幫您掃描日曆並找出空檔 |
+在沒有連接器之前，你的日常 AI 工作流程充滿了瑣碎的「人肉搬運」痛點：
+- **下載又上傳**：從 Google Drive 下載報表 ➔ 拖進對話框 ➔ 關掉對話後下次又要再下載一次。
+- **視窗切換地獄**：開著郵件複製內容、開著日曆查空檔、開著 Notion 找規格，手忙腳亂。
+- **設計與文案斷層**：在 AI 產生了行銷文案，卻要手動打開 Canva 一個字一個字貼上、手動翻找符合風格的範本。
 
----
+```mermaid
+graph LR
+    subgraph 傳統手動搬運 ❌
+        S1["☁️ 雲端服務<br/>(Drive / Gmail / Notion)"] -->|手動下載 / 複製| PC["💻 個人電腦剪貼簿"]
+        PC -->|手動上傳 / 貼入| C1["💬 Claude 聊天室"]
+    end
 
-## 核心運作機制
-
-為了確保資料傳輸的安全，Connectors 背後有兩個關鍵技術：
-
-1.  **OAuth 2.0 (授權碼)**：這就像是一張「限時、限權」的通行證，讓 Claude 可以在不看到您密碼的情況下獲得存取權。
-2.  **MCP (Model Context Protocol)**：這是兩端溝通的「共同語言」。
-
-> **想要成為高手嗎？** 🛠️
-> 如果您想深入了解 OAuth 如何運作、Access Token 存在哪裡，以及如何管理安全控管，請點擊閱讀：
-> 👉 [**OAuth 2.0 與安全機制深度解析**](./OAuth.md)
-
----
-
-## 🔌 Connectors 與 Extensions (擴充功能) 的關係
-
-在 **Claude Desktop (桌面版)** 中，Connectors 與 Extensions 兩者在概念與 UI 上是高度綁定的：
-
-1. **安裝與呈現**：當您在設定的 `Directory -> Connectors` 挑選並安裝某個連接器（例如 `Control Chrome` 或 `Context7`）之後，它會做為一項 **Extension (擴充功能)** 出現在您的 `Settings -> Extensions`（已安裝在您的電腦上）列表中。
-2. **細粒度工具權限控制 (Tool permissions)**：
-   在 `Settings -> Extensions` 中點進具體的擴充功能，您可以針對該連接器所屬的每個 Tool（例如 `Get Current Tab`、`Open URL`）進行獨立權限設定：
-   - **允許 (Allow)**：AI 呼叫時直接執行。
-   - **每次詢問 (Ask)**：AI 呼叫前需跳出視窗徵求您的同意（預設通常為人型小圖示）。
-   - **禁止 (Deny)**：禁用該特定功能。
-3. **擴充功能安裝包 (.MCPB 與 .DXT)**：在 Extensions 頁面下方，支援直接拖曳（Drag and Drop）手動安裝封裝檔案：
-   - **`.MCPB` (Model Context Protocol Bundle)**：這是 MCP 伺服器的**執行程式封裝包**。它將伺服器程式碼、環境相依性與啟動設定直接打包成單一檔案，讓您拖曳即可一鍵安裝，完全免去手動安裝 Node.js/Python 與編輯 JSON 設定檔的繁瑣步驟。
-   - **`.DXT` (Desktop Extension)**：這是擴充功能的**宣告與權限設定檔**。它定義了該擴充功能所需要的工具權限與 UI 配置，拖入後 Claude Desktop 會自動為其建立 Tool permissions 設定面板。
-
----
-
-## 快速設定步驟
-
-1.  **進入設定**：登入 [claude.ai](https://claude.ai)，點擊左下角頭像 -> **Settings** -> **Connectors**。
-2.  **選擇服務**：找到您想連線的服務（例如 Google Calendar 或 Supabase）。
-3.  **完成授權**：點擊 **Connect**，在跳出的視窗中登入該服務並點擊「允許」。
-4.  **開始提問**：回到聊天室，直接用自然語言下指令。
-
----
-
-## 🖥️ Connectors 管理面板與狀態說明
-
-當您進入 Claude Desktop 的 `Settings -> Connectors` 設定畫面時，會看到以下管理面板。此面板主要分為三個標籤頁，用於監控與配置不同的連接器狀態：
-
-### 1. 三大頁籤說明
-
-| 頁籤名稱 | 說明 | 預期截圖對照 |
-| :--- | :--- | :--- |
-| **All (全部)** | 顯示系統支援的所有連接器清單，不論是否已連接。 | `![All 頁籤](./images/connectors_all.png)` |
-| **Connected (已連接)** | 僅顯示目前已成功授權且運作正常的連接器，供您快速檢查。 | `![Connected 頁籤](./images/connectors_connected.png)` |
-| **Not connected (未連接)** | 顯示尚未連線、或當前連線有問題（例如 `Connection issue`）的項目。 | `![Not connected 頁籤](./images/connectors_not_connected.png)` |
-
----
-
-### 2. 關鍵欄位解讀
-
-在管理面板中，每一個連接器都包含兩個主要屬性：
-
-#### 💡 類型 (Type)
-- **Web**：代表**雲端型連接器**。這類服務（例如 Google Drive、Gmail、Canva、n8n）執行在遠端伺服器上，需要透過點擊 `Connect` 按鈕並利用 OAuth 2.0 通行證進行雲端授權。
-- **Desktop**：代表**本機型連接器 (Local MCP)**。
-  - 標示為 **`Included`**（如 `Claude in Chrome`）：表示為 Claude 桌面版內建的本地端控制工具。
-  - 標示為 **`Local dev`**（如 `playwright`）：表示您透過修改 `claude_desktop_config.json` 設定檔，在本機開發並手動掛載的本地 MCP 伺服器。
-
-#### 💡 狀態 (Status)
-- **勾號 `✓`**：連接器運作正常，Claude 已載入其提供的 Tools。
-- **`Connect` 按鈕**：代表此連接器目前為閒置/未授權狀態，點擊後會引導您登入該服務授權。
-- **破折號 `—`**：通常用於本地端（Desktop）項目，代表該本地擴充尚未在 `Extensions` 頁面中被啟用。
-- **⚠️ Connection issue**：代表連線異常。這通常發生在遠端 OAuth Token 到期需要重新授權，或是本地服務（如 n8n 本地端）未開啟而無法通訊時。此時可點擊該項目並點選重連或檢視 Logs。
-
----
-
-## 📖 經典範例與 Prompt 範本
-
-您可以直接複製以下經過潤飾的實用 Prompt 來與 Claude 進行互動：
-
-### 範例一：Google Calendar (本週行程與準備建議)
-當您連結了 **Google Calendar** 後，可以使用此 Prompt 整理行程：
-
-```markdown
-"""
-## Role
-你是一位資深的行政效率專家。
-
-## Task
-請讀取我已連結的 **Google Calendar**，整理 **{請填：本週／下週}** 的會議摘要。
-輸出需包含：時間、主題、地點/連結，以及針對每個會議的「準備建議」。
-
-## Context
-- 我的時區：Asia/Taipei。
-- 若有行程衝突（重疊），請特別用「⚠️」標示。
-
-## Constraint
-- 僅根據日曆內容回答，不可自行推測行程。
-- 語言：繁體中文。
-
-## Format
-- 使用 Markdown 表格呈現。
-"""
+    subgraph Connectors 智能直連 ✅
+        S2["☁️ 雲端服務<br/>(Google / Canva / Notion)"] <===>|OAuth 2.0 安全雙向通道| C2["🤖 Claude 智能核心<br/>(自動檢索 / 分析 / 排版 / 更新)"]
+    end
 ```
 
-### 範例二：GitHub (說明文件與知識庫管理)
-當您在 Directory 連結了 **GitHub Integration** 後，可以使用此 Prompt 協助整理與閱讀說明文件與知識庫：
+| 比較維度 | 傳統手動搬運 ❌ | 使用 Connectors 直連 ✅ |
+|:---|:---|:---|
+| **跨文件搜尋** | 手動翻找資料夾、下載多份檔案逐一上傳 | **自然語言一句話：「搜尋 Drive 裡 Q1 的客訴報表」** |
+| **即時通訊與郵件** | 複製信件內文 ➔ 貼給 AI ➔ 複製回信草稿貼回信箱 | **Claude 直接讀取 Gmail 收件匣並自動擬妥回覆草稿** |
+| **設計視覺化** | 複製文案 ➔ 打開 Canva 搜尋範本 ➔ 手工排版換色 | **一鍵匹配 Canva 範本，注入文字並生成直達設計連結** |
+| **團隊知識與看板** | 在 Notion 各頁面間迷航，肉眼比對任務關聯 | **直接跨 Notion Database 查詢 PRD 狀態與 Blocker** |
 
-```markdown
-"""
-## Role
-你是一位優秀的知識管理專家。
+---
 
-## Task
-請使用 GitHub 連接器讀取我已連結的倉庫 `{roberthsu2003/workflow-productivity}` 中的說明文件（通常是 README.md 或 `.md` 檔案）：
-1. 請幫我分析這個倉庫的結構，並列出裡面所有的主要說明文件檔名。
-2. 讀取 `README.md` 的內容，並幫我整理出一份結構化的「專案大綱與重點導覽」摘要。
-3. 如果倉庫中還有其他 Markdown 文件，請列出它們的標題與主要探討的主題。
+## 🟢 方案需求與規格建議
 
-## Constraint
-- 僅根據倉庫內的 Markdown 說明文件內容回答。
-- 語言：繁體中文。
+- **Free 帳號**：可免費使用 Google Workspace、Canva、Notion 等官方雲端連接器，享有基礎工具調用額度。
+- **Pro / Max 帳號**：享有高達 5 倍以上的訊息用量額度與運算優先級，適合處理大量雲端文件與高頻率跨系統呼叫。
+- **Team / Enterprise 帳號**：支援組織級集中管理、SSO 單一登入、統一網域白名單與完整 Audit Log 稽核日誌。
 
-## Format
-- 整理成一份精美的 Markdown 摘要報告。
-"""
-```
+---
 
-### 範例三：Control Chrome (DevTools 網頁診斷與 Debug)
-當您啟用了內建的 **Control Chrome** 擴充功能後，請先在瀏覽器中開啟 [數位發展部全球資訊網](https://moda.gov.tw)，接著您可以使用此 Prompt 對該網頁進行深度診斷與效能分析：
+## 🧠 Connectors 四維安全運作架構
 
-```markdown
-"""
-## Role
-你是一位資深的前端效能優化專家。
+一個健全的 Claude 連接器整合體系，由四大安全基石所支撐：
 
-## Task
-請使用 **Control Chrome** 工具對我目前開啟的 **[數位發展部全球資訊網](https://moda.gov.tw)** 分頁進行網頁診斷：
-1. 讀取並分析該分頁的 Console 日誌 (Console Logs)，檢查是否有任何錯誤 (Error) 或警告 (Warning)，並指出可能的出錯原因。
-2. 使用開發者工具分析該分頁的載入效能，檢查是否存在載入過慢或網路資源請求超時 (Timeout) 的問題。
-3. 幫我檢視網頁當前 DOM 結構，指出是否有不符合 Accessibility (A11y) 無障礙網頁規範（例如圖片缺失 alt 屬性）的地方。
-
-## Format
-- 整理成一份精美的前端診斷報告（包含：Console 錯誤、效能瓶頸、無障礙改善建議）。
-"""
+```text
+🔌 Claude Connectors 整合體系
+├── 1. OAuth 2.0 授權機制（通行證）
+│   └── 無需暴露密碼，透過權限代碼（Token）進行限時、限權之雲端存取
+├── 2. Remote MCP 協議（通訊語言）
+│   └── 依據 Model Context Protocol 標準，將雲端 API 轉換為模型可理解的 Tools
+├── 3. Tool Permissions（治理閘門）
+│   └── 支援 Allow（放行）、Ask（每次確認）、Deny（禁用）三級防護
+└── 4. Project-Level Attachment（專案隔離）
+    └── 可在不同 Project 沙盒中獨立開啟所需連接器，避免 Context 污染與 Token 浪費
 ```
 
 ---
 
-## 學生常見問題 FAQ
+## 📚 Connectors 核心技術與安全深度指南
 
-**Q：為什麼有些工具要寫設定檔，有些只要按 Connect 鈕？**
-*   **本地 MCP**：像是在您電腦裡安裝小工具，需要改設定檔，適合存取本機檔案。
-*   **Connectors (遠端 MCP)**：像是雲端服務對話，只要 OAuth 登入（Connect）就能用。
+在正式連線外部系統前，建議先閱讀以下深度技術指南，建立完整的雲端資料安全防護意識：
 
-**Q：連線後，Claude 會偷看我所有的資料嗎？**
-*   不會。Claude 只有在收到您的指令、且該指令需要用到相關資料時，才會透過 Connectors 去索取資料。您也可以隨時在設定中切斷連線。
+* 🔐 **[01. OAuth 2.0 授權機制與雲端隱私安全指南](./Guide/01_OAuth_and_Security.md)**  
+  *深入解析授權碼流程（Auth Code Flow）、Token 儲存機制、最小授權原則與隨時撤銷連線技巧。*
+* 🚦 **[02. 工具權限分級（Tool Permissions）與企業級治理架構](./Guide/02_Tool_Permissions_and_Governance.md)**  
+  *剖析 Allow / Ask / Deny 三級管控策略、防範間接提示詞注入（Indirect Prompt Injection）與人機協作安全閉環。*
+* 🏗️ **[03. 雲端連接器 (Connectors) vs 本地端 MCP (Local MCP) 架構評估與成本決策](./Guide/03_Connectors_vs_Local_MCP.md)**  
+  *比較雲端託管與本機環境的優缺點，揭密 Tool Definitions 對 System Prompt Token 開銷的影響與最佳配置策略。*
 
 ---
 
-← [返回上層：Claude_AI 索引](../README.md) · [前往下一章：OAuth 詳解](./OAuth.md)
+## 🧪 10 分鐘快速實作：親身體驗「直連 vs 搬運」
+
+本實作以**「查詢最新產品滿意度與客訴」**為例，透過 Before / After 的直接對照，讓您在 10 分鐘內親身感受 Connectors 如何省去重複下載與檔案搬移。
+
+---
+
+### 📥 步驟 0：下載實測練習檔案（偽檔案）
+請先下載下方這份極度仿真的營運分析表（零個資疑慮，放心使用）：
+- 📊 [**星橋科技_2026年度產品營運與客戶滿意度分析表.csv**](./01_Google_Workspace/sample_files/星橋科技_2026年度產品營運與客戶滿意度分析表.csv)
+
+---
+
+### ❌ 步驟 1：傳統方式（Before：手動搬運）
+1. 開啟一般對話，在電腦裡找到剛才下載的 CSV 檔案。
+2. 手動將檔案拖入對話框，輸入指令：
+   ```text
+   請告訴我 2026 年哪一季的客戶滿意度最低？主要客訴原因是什麼？
+   ```
+> 📉 **痛點體驗**：  
+> 當您明天開了一個新對話，想要再問：「那這項產品在 Q4 的營收是多少？」，您又必須**再手動上傳一次檔案**！對話一多，電腦下載區塞滿重複檔案。
+
+---
+
+### ⚙️ 步驟 2：啟用 Connectors 直連（After）
+1. 將下載的 `星橋科技_2026年度產品營運與客戶滿意度分析表.csv` 上傳到您的 [Google Drive](https://drive.google.com)。
+2. 在 Claude.ai 點選 **Settings ➔ Connectors ➔ 找到 Google Workspace 點擊 Connect** 完成授權。
+3. 回到 Claude 開啟全新對話，**完全不附帶任何檔案**，直接提問：
+   ```text
+   請搜尋我 Google Drive 裡的「星橋科技_2026年度產品營運與客戶滿意度分析表」，告訴我全年度客戶滿意度最低的產品是哪一項？主要客訴原因是什麼？
+   ```
+
+> 🚀 **執行結果（效果見證）**：  
+> Claude 自動調用 Google Drive 搜尋工具，在 3 秒內精準回覆：「微電網網關（BridgeGrid-X）在 Q1 滿意度最低（4.1 分），主要原因為 Modbus 協議相容性問題」。  
+> **您的雲端硬碟正式成為 Claude 的外掛知識大腦，隨時提問、即時穿透讀取！**
+
+---
+
+## 🚀 三大主軸實戰次章節矩陣
+
+本模組精選職場最核心的三大雲端生態系，規劃了三個由淺入深的實戰次章節。每個次章節皆自帶獨立目錄、Step-by-Step 操作說明、實測提問 Prompt，以及**完整的實體偽檔案（Mock Sample Files）**供您直接下載演練：
+
+```mermaid
+graph LR
+    C1["📂 01. Google Workspace<br/>(雲端硬碟 / 報表 / 郵件 / 日曆)"] --> C2["🎨 02. Canva<br/>(行銷企劃 / 範本推薦 / 品牌規範)"]
+    C2 --> C3["📝 03. Notion<br/>(專案看板 / PRD 庫 / 團隊手冊)"]
+```
+
+| 次章節模組 | 適合對象 | 配套偽檔案清單（點擊直接檢視/下載） | 核心實戰學習亮點 |
+| :--- | :--- | :--- | :--- |
+| [📂 **01. Google Workspace 實戰**](./01_Google_Workspace/README.md) | 營運主管<br>行政特助<br>專案經理 | 📊 [產品營運與滿意度分析表.csv](./01_Google_Workspace/sample_files/星橋科技_2026年度產品營運與客戶滿意度分析表.csv)<br>📄 [海外擴展策略備忘錄.md](./01_Google_Workspace/sample_files/星橋科技_2026年度產品策略與海外擴展備忘錄.md)<br>📬 [模擬客戶郵件與行事曆日程.md](./01_Google_Workspace/sample_files/模擬客戶郵件與行事曆日程資料.md) | 跨文件語意比對（Docs + Sheets 交叉分析）、緊急客訴郵件辨識與日文/中文雙語回信草擬、行事曆重疊衝突智慧調配。 |
+| [🎨 **02. Canva 設計自動化**](./02_Canva/README.md) | 社群行銷企劃<br>內容創作者<br>視覺設計師 | 📄 [夏季新品行銷企劃規格書.md](./02_Canva/sample_files/山嵐茶飲_2026夏季新品行銷企劃與視覺規格書.md)<br>🎨 [品牌視覺規範與色彩配置表.json](./02_Canva/sample_files/山嵐茶飲_品牌視覺規範與色彩配置表.json)<br>📝 [新品社群文案庫與排版草案.md](./02_Canva/sample_files/夏季新品社群文案庫與排版草案.md) | 文案一鍵搜尋匹配 Canva 商業簡報（Pitch Deck）、Instagram 貼文自動套用 Brand Kit 品牌色票、直立限動海報版型生成與直達編輯連結。 |
+| [📝 **03. Notion 知識庫與專案管理**](./03_Notion/README.md) | 產品經理 (PM)<br>工程主管<br>敏捷教練 | 📊 [產品需求規格庫_PRD.csv](./03_Notion/sample_files/星橋科技_產品需求規格庫_PRD.csv)<br>📋 [團隊任務看板_Sprint_Tasks.csv](./03_Notion/sample_files/團隊任務與衝刺看板_Sprint_Tasks.csv)<br>📑 [工程與設計協作手冊.md](./03_Notion/sample_files/星橋科技_工程與設計協作手冊_Engineering_Handbook.md) | 一鍵匯入 CSV 生成標準 Notion Database、跨資料庫多對多關聯排查、P0 級阻礙任務（Blocker）自動挖掘、依據內部手冊自動產生標準 PRD。 |
+
+---
+
+## 🔍 配套偽檔案檢查清單（Checklist）
+
+為確保每位學員在沒有企業真實私有資料的情況下，依然能 100% 順暢走完所有範例，本章節所有偽檔案均已完成以下驗證：
+
+- [x] **格式相容性**：所有 `.csv` 均採用標準 UTF-8 編碼與逗號分隔，可被 Google Sheets、Excel 與 Notion 一鍵完美解析。
+- [x] **情境一致性**：虛擬案例貫穿「星橋科技（硬體/微電網）」與「山嵐茶飲（生活品牌）」，數據與故事環環相扣。
+- [x] **零外部相依**：所有偽檔案均儲存於本倉庫各次章節的 `sample_files/` 目錄中，離線或線上皆可隨時取用。
+- [x] **去識別化安全**：所有姓名、電子郵件（`.example.com`）、電話與數據皆為虛構，符合嚴格資訊安全規範。
+
+---
+
+## 🖥️ 管理面板狀態速查
+
+在 Claude Desktop 或網頁版的 `Settings -> Connectors` 中：
+
+| 狀態圖示 | 意義說明 | 建議處置 |
+| :---: | :--- | :--- |
+| **`✓ Connected`** | 連接器已成功認證，工具正常載入 | 可直接在對話中下達調用指令 |
+| **`Connect` 按鈕** | 處於未連線狀態 | 點擊按鈕完成 OAuth 登入授權 |
+| **`⚠️ Connection issue`** | 授權憑證到期或連線超時 | 點擊重新登入授權或檢查遠端網路狀態 |
+| **`—`（破折號）** | 本機端 Extension 尚未在設定中啟用 | 前往 `Settings -> Extensions` 開啟權限 |
+
+---
+
+← [返回上層：Claude_AI 導覽總索引](../README.md) · [前往次章節 1：Google Workspace 實戰](./01_Google_Workspace/README.md)

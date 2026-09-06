@@ -54,8 +54,12 @@
 
 ### 🟢 Connectors（連接器）— **Free（用量限制）**
 > **📂 [進入主題筆記：Connectors](./Connectors/README.md)**  
-> 透過 OAuth 連接 Slack、Google Workspace（Gmail、Drive、Calendar）以及任意 Remote MCP。Free 可用但有用量限制。  
-> 進階閱讀：[OAuth 2.0 授權機制深度解析](./Connectors/OAuth.md)
+> 透過 OAuth 2.0 與 Remote MCP 安全直連外部雲端服務，告別手動複製貼上與檔案搬運。  
+> 內含三大實戰次章節與完整配套偽檔案（可直接下載上傳/匯入測試）：
+> - 📂 [01. Google Workspace 實戰](./Connectors/01_Google_Workspace/README.md)：Drive 跨檔分析、Gmail 摘要與日曆衝突調配（附營運數據 CSV、策略備忘錄 MD、模擬郵件）。
+> - 🎨 [02. Canva 設計自動化](./Connectors/02_Canva/README.md)：文案一鍵匹配商務簡報範本、社群貼文 Brand Kit 色彩審查（附行銷企劃 MD、色票規範 JSON、排版文案）。
+> - 📝 [03. Notion 知識庫實戰](./Connectors/03_Notion/README.md)：跨資料庫自然語言搜尋、Sprint 看板健康度與 Blocker 挖掘（附 PRD CSV、Sprint Tasks CSV、協作手冊 MD）。  
+> 進階閱讀：[OAuth 2.0 與雲端隱私安全深度指南](./Connectors/Guide/01_OAuth_and_Security.md)
 
 ### 🟢 Skills（技能）— **Free**
 > **📂 [進入主題筆記：Skills](./Skills/README.md)**  
