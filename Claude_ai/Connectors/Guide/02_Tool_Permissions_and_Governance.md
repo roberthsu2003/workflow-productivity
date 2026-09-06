@@ -12,9 +12,9 @@
 graph TD
     Trigger["🤖 Claude 嘗試呼叫外部 Tool<br/>（例如：發送郵件 / 建立行事曆 / 刪除檔案）"] --> Check{"檢查 Tool Permissions 設定"}
 
-    Check -->|🟢 Allow (允許)| Exec["⚡ 自動執行<br/>（高頻、唯讀操作）"]
-    Check -->|🟡 Ask (每次詢問)| Prompt["👤 跳出確認視窗 (Human-in-the-loop)<br/>（由使用者點擊同意或拒絕）"]
-    Check -->|🔴 Deny (禁止)| Block["🛑 拒絕呼叫<br/>（系統直接回報不可用）"]
+    Check -->|"🟢 Allow（允許）"| Exec["⚡ 自動執行<br/>（高頻、唯讀操作）"]
+    Check -->|"🟡 Ask（每次詢問）"| Prompt["👤 跳出確認視窗（Human-in-the-loop）<br/>（由使用者點擊同意或拒絕）"]
+    Check -->|"🔴 Deny（禁止）"| Block["🛑 拒絕呼叫<br/>（系統直接回報不可用）"]
 
     Prompt -->|使用者點擊允許| Exec
     Prompt -->|使用者點擊拒絕| Block

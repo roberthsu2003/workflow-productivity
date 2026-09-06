@@ -13,13 +13,13 @@
 
 ```mermaid
 graph LR
-    subgraph 傳統手動搬運 ❌
-        S1["☁️ 雲端服務<br/>(Drive / Gmail / Notion)"] -->|手動下載 / 複製| PC["💻 個人電腦剪貼簿"]
-        PC -->|手動上傳 / 貼入| C1["💬 Claude 聊天室"]
+    subgraph Manual ["傳統手動搬運 ❌"]
+        S1["☁️ 雲端服務<br/>(Drive / Gmail / Notion)"] -->|手動下載與複製| PC["💻 個人電腦剪貼簿"]
+        PC -->|手動上傳與貼入| C1["💬 Claude 聊天室"]
     end
 
-    subgraph Connectors 智能直連 ✅
-        S2["☁️ 雲端服務<br/>(Google / Canva / Notion)"] <===>|OAuth 2.0 安全雙向通道| C2["🤖 Claude 智能核心<br/>(自動檢索 / 分析 / 排版 / 更新)"]
+    subgraph Direct ["Connectors 智能直連 ✅"]
+        S2["☁️ 雲端服務<br/>(Google / Canva / Notion)"] <==>|"OAuth 2.0 安全雙向通道"| C2["🤖 Claude 智能核心<br/>(自動檢索 / 分析 / 排版 / 更新)"]
     end
 ```
 

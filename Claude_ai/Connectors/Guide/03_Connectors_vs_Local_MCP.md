@@ -8,13 +8,13 @@
 
 ```mermaid
 graph TB
-    subgraph 雲端連接器 (Cloud Connectors)
-        C_AI["🌐 Claude.ai 網頁版 / 雲端平台"] -->|OAuth 2.0 授權通道| SaaS["☁️ 遠端 SaaS 服務<br/>(Google Workspace, Canva, Notion)"]
+    subgraph Cloud_Connectors ["雲端連接器 (Cloud Connectors)"]
+        C_AI["🌐 Claude.ai 網頁版 / 雲端平台"] -->|"OAuth 2.0 授權通道"| SaaS["☁️ 遠端 SaaS 服務<br/>(Google Workspace, Canva, Notion)"]
         Note1["優勢：免裝環境、免開電腦、跨裝置同步"]
     end
 
-    subgraph 本地端 MCP (Local MCP Servers)
-        Desktop["💻 Claude Desktop 本地應用程式"] -->|stdio / 本地處理程序| LocalServ["⚙️ 本機執行之 MCP Server<br/>(Node.js / Python Script)"]
+    subgraph Local_MCP_Servers ["本地端 MCP (Local MCP Servers)"]
+        Desktop["💻 Claude Desktop 本地應用程式"] -->|"stdio / 本地處理程序"| LocalServ["⚙️ 本機執行之 MCP Server<br/>(Node.js / Python Script)"]
         LocalServ --> LocalFile["📂 個人電腦硬碟 / SQLite / 本地 Docker"]
         Note2["優勢：可存取私人內網、本機終端機與私有檔案"]
     end
