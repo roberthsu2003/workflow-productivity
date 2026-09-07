@@ -2,7 +2,7 @@
 
 > **專案代號**：ITRI-GEL-WIND-2026-DESIGN  
 > **適用範圍**：大型陸域與離岸風力發電技術評估、產學研發提案、主管審查與正式成果交付簡報  
-> **目標工具**：Claude Python PPTX Skill / Microsoft PowerPoint / Google Slides  
+> **目標工具**：Claude PPTX Skill / Microsoft PowerPoint / Google Slides  
 
 ---
 
