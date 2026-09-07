@@ -1,0 +1,70 @@
+{
+  "brand_name": "山嵐茶飲 (Shan-Lan Tea Studio)",
+  "version": "2026.1",
+  "brand_core_values": ["純粹自然", "職人慢萃", "生活留白", "永續友善"],
+  "color_palette": {
+    "primary": {
+      "name": "山嵐深霧綠 (Misty Forest Green)",
+      "hex": "#243E36",
+      "rgb": [36, 62, 54],
+      "usage": "標題文字、品牌 Logo、沉穩底色"
+    },
+    "secondary": {
+      "name": "琥珀茶湯金 (Amber Oolong Gold)",
+      "hex": "#C59B27",
+      "rgb": [197, 155, 39],
+      "usage": "重點標籤、裝飾線條、獲獎印記"
+    },
+    "accent": {
+      "name": "舞鶴晨曦橘 (Dawn Apricot)",
+      "hex": "#E0876A",
+      "rgb": [224, 135, 106],
+      "usage": "CTA 按鈕、限量特價醒目標示"
+    },
+    "neutral_light": {
+      "name": "晨曦雲霧白 (Cloud Mist White)",
+      "hex": "#F8F7F2",
+      "rgb": [248, 247, 242],
+      "usage": "簡報背景、卡片襯底、純淨留白"
+    },
+    "neutral_dark": {
+      "name": "炭焙岩石黑 (Charcoal Slate)",
+      "hex": "#1F2421",
+      "rgb": [31, 36, 33],
+      "usage": "正文內文、說明附註"
+    }
+  },
+  "typography": {
+    "heading_font_family": "Noto Serif TC / 源流明體 (明體/襯線體)",
+    "body_font_family": "Noto Sans TC / 台北黑體 (無襯線體)",
+    "font_scale": {
+      "hero_title": "48px ~ 64px (Bold)",
+      "section_heading": "28px ~ 36px (Semi-Bold)",
+      "sub_heading": "20px ~ 24px (Medium)",
+      "body_text": "14px ~ 16px (Regular)",
+      "caption": "12px (Light)"
+    }
+  },
+  "canva_canvas_presets": [
+    {
+      "format": "presentation",
+      "dimensions": "1920x1080",
+      "target_canva_category": "Presentations / Business Proposal"
+    },
+    {
+      "format": "instagram_post",
+      "dimensions": "1080x1080",
+      "target_canva_category": "Social Media / Instagram Square Post"
+    },
+    {
+      "format": "instagram_story",
+      "dimensions": "1080x1920",
+      "target_canva_category": "Social Media / Instagram Story"
+    },
+    {
+      "format": "web_banner",
+      "dimensions": "1200x630",
+      "target_canva_category": "Marketing / Web Banner & Facebook Cover"
+    }
+  ]
+}
