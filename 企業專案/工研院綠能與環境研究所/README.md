@@ -101,17 +101,6 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 - **多階段工作流與 Human-in-the-Loop 審核機制**：整合 Projects 專案知識庫與 Connectors 雲端服務，建立具備多階段中繼檢核點（Stage Gates）的高級工作流，確保 AI 每完成一階段任務後強制暫停等待研究員人工核可，確認無誤後才推進下一項工作。
 - **互動內容生成**：運用 Artifacts 產生技術架構圖（Mermaid）與標準作業流程（SOP）表單。
 
-
-> 💡 **課後實作驗證範例 1（Anthropic PPTX Skill 綠能風電簡報製作）**：  
-> 本實戰已模組化並獨立為專屬教學空間，內建前置條件需求說明、官方翡翠綠配色規範、實體配圖與專屬測試偽檔案（包含已套用配色的實體 `.pptx` 簡報、航拍級大型陸域與離岸風機工程圖 `.jpg` 與 Word 備忘錄 `.docx`），請直接點擊前往演練：  
-> 👉 [**點此前往實作：工研院綠能所 — 大型陸域與離岸風電技術評估與智慧運維提案簡報 ➔**](../../Claude_ai/Skills/GWorkspace/05_ITRI_Green_Energy_PPTX/README.md)
-
-
-> 💡 **課後實作驗證範例 2（Projects + Connectors 多階段審查與行政公文自動化）**：  
-> 本實戰已模組化並獨立為專屬教學空間，內建完整 Step-by-Step 操作、常駐 Project Instructions、雙道 Human-in-the-Loop 煞車指令與專屬測試偽資料庫（法規草案、待審企劃書與 3D 圖面），請直接點擊前往演練：  
-> 👉 [**點此前往實作：工研院綠能所 — 儲能審查與跨系統行政自動化 ➔**](../../Claude_ai/Connectors/01_Google_Workspace/04_Green_Energy_Audit/README.md)
-
-
 ---
 
 ### 🔹 Day 3（3.5 小時）：Claude in Chrome、Playwright 爬蟲與自訂 Skills 實作
