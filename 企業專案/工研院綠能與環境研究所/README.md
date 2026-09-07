@@ -91,7 +91,7 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 #### 📖 參考教材與延伸連結
 - [**大量檔案搜尋與文字檢索實戰（綠能所專案指南）**](./大量檔案搜尋與文字檢索實戰.md)：解析一般 Chat 處理大量檔案的限制（30MB / 20 檔 / Token 全量重讀），並實作 Projects 知識庫跨法規與技術規格書交叉比對。
 - [**Connectors 連結技巧(實作)**](../../Claude_ai/Connectors/README.md)：設定 Connectors 串接 Google Workspace（Drive、Gmail、Calendar、Sheets），直接存取與整合雲端資料。（💡 **專屬提示**：單元內已特別為工研院綠能所建立「[**儲能安全審查、公文草擬與行事曆協調（Human-in-the-Loop）**](../../Claude_ai/Connectors/01_Google_Workspace/04_Green_Energy_Audit/README.md)」進階實戰獨立模組，可直接點擊演練！）
-- [**使用 Anthropic PPTX Skill 製作簡報(實作)**](../../Claude_ai/Skills/GWorkspace/README.md)：透過標準化 Skill 將技術摘要自動轉化為專業簡報。
+- [**使用 Anthropic PPTX Skill 製作簡報(實作)**](../../Claude_ai/Skills/GWorkspace/README.md)：透過標準化 Skill 將技術摘要自動轉化為專業簡報。（💡 **專屬提示**：單元內已特別為工研院綠能所建立「[**大型陸域與離岸風電技術評估與智慧運維提案簡報**](../../Claude_ai/Skills/GWorkspace/05_ITRI_Green_Energy_PPTX/README.md)」進階實戰獨立模組，可直接點擊演練！）
 - [**Artifacts 互動內容生成（實作）**](../../Claude_ai/Artifacts/README.md)：透過獨立預覽視窗生成長篇文案、技術架構圖與互動原型，實現即時渲染與版本控制。
 
 #### 🛠️ 課程內容與實作綱要
@@ -102,46 +102,10 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 - **互動內容生成**：運用 Artifacts 產生技術架構圖（Mermaid）與標準作業流程（SOP）表單。
 
 
-<details>
-<summary>💡 課後實作驗證範例 1：綠能技術研發與產學合作簡報製作（Anthropic PPTX Skill）</summary>
+> 💡 **課後實作驗證範例 1（Anthropic PPTX Skill 綠能風電簡報製作）**：  
+> 本實戰已模組化並獨立為專屬教學空間，內建前置條件需求說明、官方翡翠綠配色規範、實體配圖與專屬測試偽檔案（包含已套用配色的實體 `.pptx` 簡報、航拍級大型陸域與離岸風機工程圖 `.jpg` 與 Word 備忘錄 `.docx`），請直接點擊前往演練：  
+> 👉 [**點此前往實作：工研院綠能所 — 大型陸域與離岸風電技術評估與智慧運維提案簡報 ➔**](../../Claude_ai/Skills/GWorkspace/05_ITRI_Green_Energy_PPTX/README.md)
 
-> 💡 **情境說明**：綠能所研究員經常需對外進行技術成果審查或產學合作提案。本練習讓學員依循「討論大綱 ➔ 確認結構 ➔ 調用 PPTX Skill」標準三步驟，一鍵產出具備綠能視覺風格的專業簡報。
->
-> 📥 **課堂模擬圖片下載**：
-> - [🖼️ **智慧微電網與儲能系統示意圖.jpg**](./data/智慧微電網與儲能系統示意圖.jpg)（點擊下載/另存圖片）：包含太陽能、風機、MW 級儲能貨櫃（BESS）與 EMS 智慧電網調度之 16:9 簡報配圖，可在 Claude 對話中上傳作為簡報封面或技術架構視覺圖。
-
-```markdown
-## Role
-你是一位綠能與永續科技領域的技術簡報設計助手，擅長將技術研發成果與合作要點轉化為結構清晰的簡報大綱，並運用 Anthropic PPTX Skill 製作專業 PowerPoint 簡報。
-
-## Task
-請依我提供的綠能技術主題與要點，先規劃一份簡報大綱與投影片結構，與我討論確認後，再使用 PPTX Skill 製作成 PowerPoint 簡報檔案 (.pptx) 供我下載。
-
-## Context
-- 簡報主題：2026 智慧微電網與儲能系統技術應用與產學合作提案
-- 報告對象：產學合作企業與技術審查委員
-- 主要要點：
-  1. 技術背景：再生能源高滲透率下的電網調度與儲能需求。
-  2. 核心技術：分佈式能源管理系統（EMS）、雙向充放電控制演算法。
-  3. 實證效益：示範場域削峰填谷成效、節能率達 18%、降低契約容量超約罰款。
-  4. 合作模式：技術移轉、場域實證與共同研發。
-
-## Constraint
-- 語言：繁體中文
-- 簡報設計配色：指定使用綠能科技風格配色（森林翡翠綠 `0F5132` / 活力淺綠 `D1E7DD` / 深灰文字 `212529` / 白底 `FFFFFF`）。
-- 固定 5 頁簡報結構：封面 → 產業痛點與背景 → 核心技術突破 → 示範場域成果 → 合作推廣模式。
-- 每頁重點條目不超過 4 條。
-- **工作流程限制**：
-  1. **第一步（大綱草稿）**：請先使用 Claude Artifacts 呈現每頁投影片的標題與內容大綱草稿。
-  2. **第二步（確認階段）**：詢問我是否需要微調，在此步驟**不可**調用 PPTX 產生工具。
-  3. **第三步（實體匯出）**：待我確認「大綱核可」後，呼叫內建 PPTX Skill 將此大綱內容製作成實體 .pptx 簡報檔案。
-
-## Format
-- 套用指定綠能配色，匯出 PowerPoint 簡報檔案 (.pptx) 並提供下載連結。
-- 附帶簡短列出每頁投影片之標題與核心摘要。
-```
-
-</details>
 
 > 💡 **課後實作驗證範例 2（Projects + Connectors 多階段審查與行政公文自動化）**：  
 > 本實戰已模組化並獨立為專屬教學空間，內建完整 Step-by-Step 操作、常駐 Project Instructions、雙道 Human-in-the-Loop 煞車指令與專屬測試偽資料庫（法規草案、待審企劃書與 3D 圖面），請直接點擊前往演練：  
