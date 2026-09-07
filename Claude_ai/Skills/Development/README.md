@@ -22,28 +22,31 @@
 
 ### 📋 RTCCF Prompt（直接複製使用）
 
+本範例採用 **RTCCF 模型** 組織提示詞結構（其中 **R、C、C、F 為 Optional 選填**，學員可依需求調整；`Task` 為核心必要項目）。
+
 ```markdown
-## Role
-你是一位資深前端 UI 工程師，擅長運用 frontend-design 與 web-artifacts-builder 技能，設計出美觀且具備良好狀態管理的 React 互動式儀表板。
+## Role (Optional)
+你是一位資深前端 UI 工程師，
+擅長運用 frontend-design 與 web-artifacts-builder 技能，設計出美觀且具備良好狀態管理的 React 互動式儀表板。
 
 ## Task
 請幫我開發一個「個人記帳與財務分析儀表板」的單頁應用程式 (SPA)。
 
-## Context
+## Context (Optional)
 功能需求：
 - 記帳功能：可新增、刪除、分類（餐飲、交通、娛樂、其他）消費紀錄，並動態計算總額。
 - 圖表分析：以圓餅圖呈現各分類消費佔比，並以長條圖呈現月份消費趨勢。
 - 測試數據：預載 3 筆不同分類的消費紀錄以供展示。
 
-## Constraint
+## Constraint (Optional)
 - 語言：繁體中文介面
 - 技術規範：
-  1. 使用 React (可搭配 Lucide Icons) 與 Tailwind CSS 進行排版。
-  2. 調用 frontend-design 確保設計細節（如按鈕點擊微動畫、玻璃縮影效果、符合 AAA 無障礙對比度標準）。
-  3. 調用 web-artifacts-builder 進行狀態管理，確保新增資料時圖表會即時反應變更。
+  1. 使用 React 與 Tailwind CSS 進行排版。
+  2. 調用 frontend-design 確保設計細節（如按鈕微動畫、玻璃擬態質感、符合 AAA 無障礙對比標準）。
+  3. 調用 web-artifacts-builder 進行狀態管理，確保新增資料時圖表即時連動更新。
   4. 畫面必須在 Artifact 中可直接運行並互動。
 
-## Format
+## Format (Optional)
 - 在 Artifact 中輸出完整的 React 元件程式碼
 - 回傳說明在 UI 設計中套用了哪些 frontend-design 無障礙與美學規範
 ```
@@ -57,27 +60,31 @@
 
 ### 📋 RTCCF Prompt（直接複製使用）
 
+本範例採用 **RTCCF 模型** 組織提示詞結構（其中 **R、C、C、F 為 Optional 選填**，學員可依需求調整；`Task` 為核心必要項目）。
+
 ```markdown
-## Role
-你是資深測試工程師 (QA Engineer)，專精於使用 webapp-testing 技能為 React 應用程式撰寫 Robust 的 Playwright 自動化測試。
+## Role (Optional)
+你是資深測試工程師 (QA Engineer)，
+專精於使用 webapp-testing 技能為 React 應用程式撰寫健全的 Playwright 自動化測試。
 
 ## Task
-請針對上一練習中建立的「個人記帳與財務分析儀表板」，使用 webapp-testing 撰寫一套完整的 Playwright 端對端 (E2E) 測試腳本。
+請針對上一練習中建立的「個人記帳與財務分析儀表板」，
+使用 webapp-testing 撰寫一套完整的 Playwright 端對端 (E2E) 測試腳本。
 
-## Context
+## Context (Optional)
 測試場景需要包含：
 1. 首頁載入驗證：確認標題與預載消費紀錄正常顯示。
 2. 新增消費功能驗證：模擬填寫金額 $150 元、分類「餐飲」，點擊新增，並確認列表與總金額正確更新。
 3. 刪除消費功能驗證：點擊刪除按鈕，確認該筆消費從列表消失。
 
-## Constraint
+## Constraint (Optional)
 - 語言：繁體中文註解
 - 技術規範：
-  1. 呼叫 webapp-testing 規範，使用 Page Object Model (POM) 結構來組織測試程式碼。
+  1. 呼叫 webapp-testing 規範，使用 Page Object Model (POM) 結構組織測試代碼。
   2. 元素選取器優先使用 `getByRole`、`getByText` 等語意化選取器，避免使用脆弱的 CSS class。
   3. 每個測試步驟需附上清晰的預期結果斷言 (Assertions)。
 
-## Format
+## Format (Optional)
 - 在對話中輸出完整的 `finance-dashboard.spec.js` 測試程式碼
 - 簡要說明如何在本機運行此 Playwright 測試與產出 HTML 測試報告
 ```
@@ -91,26 +98,30 @@
 
 ### 📋 RTCCF Prompt（直接複製使用）
 
+本範例採用 **RTCCF 模型** 組織提示詞結構（其中 **R、C、C、F 為 Optional 選填**，學員可依需求調整；`Task` 為核心必要項目）。
+
 ```markdown
-## Role
-你是系統架構師，擅長運用 mcp-builder 技能設計符合官方標準的 Model Context Protocol 伺服器。
+## Role (Optional)
+你是系統架構師，
+擅長運用 mcp-builder 技能設計符合官方標準的 Model Context Protocol (MCP) 伺服器。
 
 ## Task
-我需要建立一個自訂的 MCP 伺服器，讓 Claude 可以讀取與更新我的「Notion 待辦清單」。請使用 mcp-builder 為我產生伺服器的 API 規格與基礎程式碼範本。
+我需要建立一個自訂的 MCP 伺服器，讓 Claude 可以讀取與更新我的「Notion 待辦清單」。
+請使用 mcp-builder 為我產生伺服器的 API 規格與基礎程式碼範本。
 
-## Context
+## Context (Optional)
 伺服器功能需求：
 1. Tool A: `list_notion_tasks` -> 查詢 Notion 指定 Database 中的所有待辦任務，參數為 `database_id`。
 2. Tool B: `add_notion_task` -> 新增一筆任務，參數為 `title` (字串)、`due_date` (日期)。
 3. 使用 Node.js/TypeScript 進行開發。
 
-## Constraint
+## Constraint (Optional)
 - 語言：繁體中文說明與英文程式碼
 - 規範：
-  1. 調用 mcp-builder 規範，輸出完整且符合 TypeScript 規範的 MCP SDK 初始化與 Tool 註冊邏輯。
+  1. 調用 mcp-builder 規範，輸出符合 TypeScript 規範的 MCP SDK 初始化與 Tool 註冊邏輯。
   2. 詳細列出工具參數的 JSON Schema，確保 Claude 在調用時能正確解析參數。
 
-## Format
+## Format (Optional)
 - 輸出 MCP 伺服器的核心 `index.ts` 程式碼
 - 提供如何將該 MCP 伺服器設定加入 Claude Desktop 中 `mcp_config.json` 的設定檔範本
 ```
@@ -124,29 +135,32 @@
 
 ### 📋 RTCCF Prompt（直接複製使用）
 
+本範例採用 **RTCCF 模型** 組織提示詞結構（其中 **R、C、C、F 為 Optional 選填**，學員可依需求調整；`Task` 為核心必要項目）。
+
 ```markdown
-## Role
-你是 Claude 自訂技能開發專家，擅長運用 skill-creator (Meta Skill) 指引使用者開發符合生產標準的自訂 Skill 資料夾。
+## Role (Optional)
+你是 Claude 自訂技能開發專家，
+擅長運用 skill-creator (Meta Skill) 指引使用者開發符合生產標準的自訂 Skill 資料夾。
 
 ## Task
-我想要建立一個名為「合約預檢專家 (contract-auditor)」的自訂 Skill。請調用 skill-creator 引導我完成該 Skill 的定義。
+我想要建立一個名為「合約預檢專家 (contract-auditor)」的自訂 Skill。
+請調用 skill-creator 引導我完成該 Skill 的定義。
 
-## Context
+## Context (Optional)
 合約預檢專家的需求：
 - 角色：法律助理與合約審查專家。
 - 任務：檢查上傳的 PDF 合約中是否包含「保密條款」、「終止條款」與「違約金比例」，並找出對我方不利的條款。
 - 需要外部參考：我有一份公司標準的「合約範本規約.pdf」。
 
-## Constraint
+## Constraint (Optional)
 - 語言：繁體中文
 - 規範：
-  1. 調用 skill-creator 的引導框架，第一步先與我對話，確認 `contract-auditor` 的 YAML Frontmatter（特別是 `name` 與 `description`，因為這會影響觸發精準度）。
+  1. 調用 skill-creator 的引導框架，第一步先與我對話，確認 `contract-auditor` 的 YAML Frontmatter（特別是 `name` 與 `description`）。
   2. 設計該 Skill 資料夾結構，包含 `SKILL.md`、`references/` 與 `templates/`。
   3. 提供該 Skill 的引導問答，在此階段**不要**直接把整個技能寫完，而是先給我第一步的設計建議與提問。
 
-## Format
-- 輸出該 Skill 的初步設計草案（YAML Frontmatter 與結構說明）
-- 提出 2 ~ 3 個需要我進一步回答的設計問題以利完善 Skill
+## Format (Optional)
+- 輸出第一步問答提問與 YAML Frontmatter 建議草案
 ```
 
 ---

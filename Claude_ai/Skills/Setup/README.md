@@ -10,18 +10,22 @@
 > 2. 開啟一個新對話，直接複製發送以下 **探測 System Instruction Prompt** 給 Claude：
 > 
 > ```markdown
-> ## Role
+> ## Role (Optional)
 > 你是 Claude 系統大師，對目前此環境中已載入、可用的 Skills (技能) 系統瞭若指掌。
 > 
 > ## Task
 > 請幫我查詢並報告目前此對話中已加載的技能，包含：
 > 1. 自動生效的已啟用核心技能（檔案路徑 `/mnt/skills/public/`）有哪些？
-> 2. 存放在磁碟中的範例技能（檔案路徑 `/mnt/skills/examples/`）共有多少個？並請列出這些範例技能的目錄名稱。
-> 3. 存放在磁碟中的自訂技能（檔案路徑 `/mnt/skills/user/`）共有多少個？並請列出這些自訂技能的目錄名稱。
+> 2. 存放在磁碟中的範例技能（檔案路徑 `/mnt/skills/examples/`）共有多少個？並請列出目錄名稱。
+> 3. 存放在磁碟中的自訂技能（檔案路徑 `/mnt/skills/user/`）共有多少個？並請列出目錄名稱。
 > 
-> ## Constraint
+> ## Constraint (Optional)
 > - 語言：繁體中文。
-> - 格式：以表格呈現 Public 核心技能名稱與功能說明，並列出 examples 範例技能總個數與名稱清單，以及 user 自訂技能總個數與名稱清單。
+> 
+> ## Format (Optional)
+> - 以表格呈現 Public 核心技能名稱與功能說明
+> - 列出 examples 範例技能總個數與名稱清單
+> - 列出 user 自訂技能總個數與名稱清單
 > ```
 > 
 > 3. **驗證與診斷**：
@@ -34,19 +38,36 @@
 > *   **📊 範例 1：設計主題簡報（`pptx` 核心 + `theme-factory` 範例）**
 >     - **Prompt**：
 >     ```markdown
->     請幫我規劃一份 3 頁的『AI 在辦公室的應用』簡報大綱。請先讀取 theme-factory 範例技能，為我推薦 3 種配色，並將其中最適合科技感的主題色彩（例如深藍配橘色）直接套用到簡報設計中，最後使用內建的 pptx 技能生成實體 .pptx 簡報檔案供我下載。
+>     ## Task
+>     請幫我規劃一份 3 頁的『AI 在辦公室的應用』簡報大綱。
+>     請先讀取 theme-factory 範例技能為我推薦 3 種配色，
+>     並將其中最適合科技感的主題色彩（例如深藍配橘色）直接套用到簡報設計中。
+>     
+>     ## Format (Optional)
+>     使用內建的 pptx 技能生成實體 .pptx 簡報檔案供我下載。
 >     ```
 >     - **驗證點**：Claude 會先讀取 `theme-factory` 規範，再執行 Python 代碼在右側生成一個套用該主題配色的實體簡報檔案。
 > *   **📈 範例 2：品牌配色銷售報表（`xlsx` 核心 + `brand-guidelines` 範例）**
 >     - **Prompt**：
 >     ```markdown
->     請為我模擬一份本月電子產品銷售數據 Excel。請先參考 brand-guidelines 範例技能中的 Anthropic 官方品牌配色規範，利用 xlsx 技能在 Python 沙盒中生成一個套用該官方色彩的 Excel 報表供我下載。
+>     ## Task
+>     請為我模擬一份本月電子產品銷售數據 Excel。
+>     請先參考 brand-guidelines 範例技能中的 Anthropic 官方品牌配色規範。
+>     
+>     ## Format (Optional)
+>     利用 xlsx 技能在 Python 沙盒中生成一個套用該官方色彩的 Excel 報表供我下載。
 >     ```
 >     - **驗證點**：Claude 能否依據 `brand-guidelines` 色彩樣式，利用 `pandas` 或 `openpyxl` 產出具備官方品牌設計感的實體 `.xlsx` 檔案。
 > *   **🎨 範例 3：無障礙前端元件（`frontend-design` 核心 + `web-artifacts-builder` 範例）**
 >     - **Prompt**：
 >     ```markdown
->     我需要一個具有深色模式切換功能的『個人待辦事項 (Todo List)』React 元件。請使用 web-artifacts-builder 的多頁面/狀態管理架構，並搭配內建的 frontend-design 無障礙 UI 規範，為我建立一個可在對話右側即時展示與操作的網頁看板（HTML Artifact）。
+>     ## Task
+>     我需要一個具有深色模式切換功能的『個人待辦事項 (Todo List)』React 元件。
+>     請使用 web-artifacts-builder 的多頁面/狀態管理架構，
+>     並搭配內建的 frontend-design 無障礙 UI 規範。
+>     
+>     ## Format (Optional)
+>     為我建立一個可在對話右側即時展示與操作的網頁看板（HTML Artifact）。
 >     ```
 >     - **驗證點**：Claude 是否會在對話右側產生一個符合現代 UI 無障礙規範、支援即時互動的 React 網頁 Artifact。
 

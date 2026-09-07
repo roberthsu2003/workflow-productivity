@@ -14,7 +14,7 @@
 | :--- | :--- | :--- |
 | **案例 1：無人機國家隊盡職調查 (DD)** | • 智飛科技 ([taiwan-uav.com](https://www.taiwan-uav.com)) <br>• 經緯航太 ([geosat.com.tw](https://www.geosat.com.tw)) | 非紅供應鏈、軍規光電/飛控技術自研率、災防與防衛標案營收 |
 | **案例 2：矽光子與邊緣 AI 晶片市場地圖** | • 創鑫智慧 ([neuchips.ai](https://www.neuchips.ai)) <br>• 耐能智慧 ([kneron.com](https://www.kneron.com)) | 算力能效比 (TOPS/W)、地端生成式 AI 晶片 vs CPO 封裝 |
-| **案例 3：台灣新創標的發現 (Deal Source)** | • 創業小聚 ([meet.bnext.com.tw](https://meet.bnext.com.tw)) <br>• FINDIT 平台 ([findit.org.tw](https://findit.org.tw)) | 台灣 Meet Neo Star 評選熱門、早期募資訊號、垂直賽道潛力 |
+| **案例 3：台灣新創標的發現 (Deal Sourcing)** | • 創業小聚 ([meet.bnext.com.tw](https://meet.bnext.com.tw)) <br>• FINDIT 平台 ([findit.org.tw](https://findit.org.tw)) | 台灣 Meet Neo Star 評選熱門、早期募資訊號、垂直賽道潛力 |
 | **案例 4：工業 AI 投後營運與擴張追蹤** | • 杰倫智能招募 ([profetai.com/careers](https://www.profetai.com/careers)) <br>• 杰倫智能官網 ([profetai.com](https://www.profetai.com)) | 製造業 SaaS 落地速度、海外拓展（日本/東南亞）招募 |
 
 ---
@@ -30,7 +30,18 @@
 
 #### 📋 講師課堂示範指令（直接複製發送給 Claude）：
 ```markdown
-請使用 Playwright MCP 造訪台灣無人機廠商智飛科技官網 (https://www.taiwan-uav.com) 與經緯航太官網 (https://www.geosat.com.tw)，擷取兩家公司的核心技術訴求。幫我產出一份「台灣無人機產業競品分析報告」，包含：核心產品類別（如垂直起降 VTOL、災防/軍規）、自研飛控能力與應用場景對照表。
+## Task
+請使用 Playwright MCP 造訪台灣無人機廠商：
+1. 智飛科技官網：https://www.taiwan-uav.com
+2. 經緯航太官網：https://www.geosat.com.tw
+
+擷取兩家公司的核心技術訴求，幫我產出一份「台灣無人機產業競品分析報告」。
+
+## Format (Optional)
+包含：
+- 核心產品類別（如垂直起降 VTOL、災防/軍規）
+- 自研飛控能力
+- 應用場景對照表（Markdown 表格）
 ```
 
 ---
@@ -46,7 +57,19 @@
 
 #### 📋 示範指令（直接複製發送給 Claude）：
 ```markdown
-請使用 Playwright MCP 造訪台灣 AI 晶片新創創鑫智慧 (https://www.neuchips.ai) 與耐能智慧 (https://www.kneron.com)，比較兩家的產品與技術定位。請擷取兩家的：1. 核心 AI 晶片架構與訴求 2. 目標應用場景（伺服器加速 vs 邊緣終端）3. 能效與算力優勢，並整理成 Markdown 競品對照矩陣。
+## Task
+請使用 Playwright MCP 造訪台灣 AI 晶片新創：
+1. 創鑫智慧：https://www.neuchips.ai
+2. 耐能智慧：https://www.kneron.com
+
+比較兩家的產品與技術定位。
+
+## Format (Optional)
+請擷取兩家的：
+1. 核心 AI 晶片架構與訴求
+2. 目標應用場景（伺服器加速 vs 邊緣終端）
+3. 能效與算力優勢
+並整理成 Markdown 競品對照矩陣。
 ```
 
 ---
@@ -59,7 +82,16 @@
 
 #### 📋 示範指令（直接複製發送給 Claude）：
 ```markdown
-請使用 Playwright MCP 造訪台灣創業小聚網站 (https://meet.bnext.com.tw)，瀏覽最新報導與新創新聞，挑選 3 家近期受到關注的台灣新創公司。請整理出：公司名稱、所屬賽道（如 AI、醫療、綠能、物聯網）、核心解決方案與官網連結。
+## Task
+請使用 Playwright MCP 造訪台灣創業小聚網站 (https://meet.bnext.com.tw)，
+瀏覽最新報導與新創新聞，挑選 3 家近期受到關注的台灣新創公司。
+
+## Format (Optional)
+請整理出 Markdown 表格，包含：
+- 公司名稱
+- 所屬賽道（如 AI、醫療、綠能、物聯網）
+- 核心解決方案
+- 官網連結
 ```
 
 ---
@@ -74,7 +106,13 @@
 
 #### 📋 示範指令（直接複製發送給 Claude）：
 ```markdown
-請使用 Playwright MCP 造訪台灣工業 AI 新創 Profet AI 官網 (https://www.profetai.com)，導覽至其產品介紹頁與招募頁面。統計該公司主打的製造業 AI 應用場景，以及目前招募的職缺類型，產出一份「Profet AI 產品定位與海外擴張訊號報告」。
+## Task
+請使用 Playwright MCP 造訪台灣工業 AI 新創 Profet AI 官網 (https://www.profetai.com)，
+導覽至其產品介紹頁與招募頁面。
+
+## Format (Optional)
+統計該公司主打的製造業 AI 應用場景，以及目前招募的職缺類型，
+產出一份「Profet AI 產品定位與海外擴張訊號報告」。
 ```
 
 ---
