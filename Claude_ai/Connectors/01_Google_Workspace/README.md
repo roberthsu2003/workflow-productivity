@@ -17,7 +17,10 @@
 
 > 💡 **1 分鐘無痛上傳指引**：  
 > 1. 將上述前兩份檔案下載至您的電腦。  
-> 2. 打開您的個人 [Google Drive](https://drive.google.com)，建立一個名為 `星橋科技測試資料` 的資料夾。  
+> 2. 打開您的個人 [Google Drive](https://drive.google.com)，建立資料夾（資料夾名稱可直接點擊複製）：  
+>    ```text
+>    星橋科技測試資料
+>    ```
 > 3. 將兩份檔案直接拖入該資料夾中即完成準備！
 
 ---
@@ -135,12 +138,28 @@
 > 🛡️ **安全閘門（Human-in-the-Loop）**：  
 > 流程中設置了兩道嚴格的中繼暫停點，AI 每完成一項任務必須強制暫停，等待研究員審核核准後才可推進，防止 AI 擅自對外發送公文或郵件！
 
-#### 📥 配套偽檔案（點擊下載/上傳至 Google Drive 或 Project Knowledge）：
-- 📄 [**儲能系統安全技術標準指引草案.md**](../../Projects/Examples/06_Green_Energy_Standards/sample_files/儲能系統安全技術標準指引草案.md)：工研院綠能所安全技術標準（上傳至 Project Knowledge）。
-- 📝 [**示範園區儲能建置企劃申請書.md**](../../Projects/Examples/06_Green_Energy_Standards/sample_files/示範園區儲能建置企劃申請書.md)：外部廠商提交之申請企劃書（存於 Google Drive 或對話上傳，內含 4 處違規暗坑）。
-- 🖼️ [**工業級儲能系統_BESS_安全配置示意圖.jpg**](../../Projects/Examples/06_Green_Energy_Standards/sample_files/工業級儲能系統_BESS_安全配置示意圖.jpg)：3D 工程配置圖。
+#### 🛠️ 專案建置設定（Claude Projects Configuration）：
+1. 在 Claude 左側選單點選 **Projects ➔ New project**。
+2. 填入專案基本資訊（點擊程式碼區塊右上角即可一鍵複製）：
+   - **專案名稱（Project Name）**：
+     ```text
+     工研院綠能所_儲能審查與跨系統行政自動化
+     ```
+   - **專案描述（Project Description）**：
+     ```text
+     結合儲能安全技術指引草案與 Google Workspace 連接器，執行示範案場多階段合規差異審查、正式公函草擬與 Gmail/Calendar 雲端行政協調。
+     ```
+3. 點擊 **Create project** 建立專案。
+
+#### 📥 資料配置（Project Knowledge 與 Google Drive）：
+- 📁 **專案知識庫（Project Knowledge）**：
+  - 📄 [**儲能系統安全技術標準指引草案.md**](../../Projects/Examples/06_Green_Energy_Standards/sample_files/儲能系統安全技術標準指引草案.md)：工研院綠能所內部安全技術標準（下載後點選專案內的 **Add content** 上傳至 Knowledge 作為基準法規）。
+- ☁️ **Google Drive 雲端待審文件（透過 Connectors 直連）**：
+  - 📝 [**示範園區儲能建置企劃申請書.md**](../../Projects/Examples/06_Green_Energy_Standards/sample_files/示範園區儲能建置企劃申請書.md)：外部廠商提交之申請企劃書（下載後上傳至您的 Google Drive，內含 4 處違規暗坑供測試）。
+  - 🖼️ [**工業級儲能系統_BESS_安全配置示意圖.jpg**](../../Projects/Examples/06_Green_Energy_Standards/sample_files/工業級儲能系統_BESS_安全配置示意圖.jpg)：3D 工程配置圖（可一併存放於 Google Drive 備查）。
 
 #### 📋 高階 RTCCF 多階段閘門提示詞（Prompt 範本）：
+在已連結 Google Workspace 的該專案中開啟新對話，複製貼入以下指令啟動第一階段：
 
 ```markdown
 ## Role
@@ -178,6 +197,20 @@
 - 階段二：工研院正式公函 Markdown 版面。
 - 階段三：Gmail 郵件 Markdown 模板 + Google Calendar 會議卡片。
 ```
+
+#### 💬 多階段通關回覆指令（學生實作逐步貼上用）：
+
+當 Claude 在中繼點停下來等待審核時，請直接點擊下方指令右上角複製貼入：
+
+- **👉 階段一審核無誤，推進至階段二（起草公文）：**
+  ```text
+  審核通過，產出公文
+  ```
+
+- **👉 階段二公函核可，推進至階段三（排定 Gmail 與 Calendar 雲端行政）：**
+  ```text
+  公文確認，執行雲端行政
+  ```
 
 **✅ 成果驗收點**：
 - [ ] **多階段控制**：Claude 完成階段一審核後，嚴格踩剎車，不會提前輸出公函或信件。
