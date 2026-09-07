@@ -1,44 +1,34 @@
-# ChatGPT & OpenAI 生態系實戰指南
+# ChatGPT Codex 教學講義
 
-本指南涵蓋 OpenAI 旗下最具生產力的兩大核心應用模組：**ChatGPT 智慧對話助理** 與 **Codex / Advanced Data Analysis 程式碼與數據分析**，幫助學員掌握從日常行政、商務決策到資料自動化的全方位應用。
+這套教材以 **ChatGPT 桌面版中的 Codex** 為主，並補充 Codex CLI、IDE extension 與 cloud。內容依 `Claude_ai` 的功能地圖建立，但採用 OpenAI 實際的名稱與操作方式。
 
----
+> 最後查核：2026-09-07。介面與方案可能更新，授課前請查看 [OpenAI 官方 Codex 文件](https://learn.chatgpt.com/docs)。
 
-## 🎯 核心學習模組
+## 功能對照
 
-```mermaid
-flowchart TD
-    User[職場使用者] --> Mod1[🧠 GPT-4o / o1 深度思考與推理]
-    User --> Mod2[📊 Advanced Data Analysis 數據分析]
-    User --> Mod3[🛠️ Custom GPTs 客製化助理打造]
-    User --> Mod4[🎨 Canvas 畫布協同創作]
-    
-    Mod1 --> Deliver[高說服力企劃、決策分析報告]
-    Mod2 --> Deliver2[Python 清洗資料、互動統計圖表]
-    Mod3 --> Deliver3[企業內部專用知識庫與工作流代理]
-    Mod4 --> Deliver4[長文精修、程式碼微調與自動化腳本]
-```
+| Claude_ai 單元 | ChatGPT Codex 對應 | 教材 |
+|---|---|---|
+| Chats | Tasks / chats、提示詞、附件 | [Tasks](./Tasks/README.md) |
+| Artifacts | Files、Preview、Visualizations、Sites | [Visualizations](./Visualizations/README.md) |
+| Projects | Projects、local/worktree/cloud | [Projects](./Projects/README.md) |
+| Connectors | Apps、plugins、MCP | [Connectors](./Connectors/README.md) |
+| Skills | `SKILL.md` skills | [Skills](./Skills/README.md) |
+| Plugins | Skills + MCP server + optional UI | [Plugins](./Plugins/README.md) |
+| Local MCP | MCP 設定與本機工具 | [MCP](./MCP/README.md) |
+| Claude in Chrome | Browser / browser extension / computer use | [Browser](./Browser/README.md) |
+| Cowork / Code | Desktop、CLI、IDE、local/worktree/cloud | [Workspaces](./Workspaces/README.md) |
+| Scheduled | Scheduled tasks / heartbeat / cron | [Automations](./Automations/README.md) |
+| Dispatch | Remote / cloud tasks、跨裝置接續 | [Remote](./Remote/README.md) |
+| Settings | `config.toml`、permissions、sandbox、network | [Settings](./Settings/README.md) |
+| Custom Instructions | `AGENTS.md`（目錄作用域） | [Agent Configuration](./Agent_Configuration/README.md) |
 
----
+## 建議學習順序
 
-## 📚 學習重點單元
+1. [快速開始](./Quickstart/README.md) → [Tasks](./Tasks/README.md)
+2. [Projects](./Projects/README.md) → [Agent Configuration](./Agent_Configuration/README.md)
+3. [Skills](./Skills/README.md) → [Connectors](./Connectors/README.md) → [MCP](./MCP/README.md)
+4. [Automations](./Automations/README.md)
 
-### 1. 🧠 GPT-4o / o1 深度思考與邏輯推理
-- **多模態輸入辨識**：同時處理照片、報表截圖、手繪草圖與長篇 PDF。
-- **深度推理 (Reasoning)**：針對複雜商業決策、合約條款陷阱分析與多步驟邏輯推導。
-
-### 2. 📊 Advanced Data Analysis（進階資料分析）
-- **免裝環境的 Python 運算**：直接上傳 `.csv` 或 `.xlsx`，由 AI 在沙盒中自動寫程式分析。
-- **自動化圖表製作**：繪製專業長條圖、趨勢折線圖、熱力圖，並提供洞察解讀。
-
-### 3. 🛠️ Custom GPTs 客製化助理
-- **零程式碼建置**：透過自然語言對話設定專屬 Instructions 與 Knowledge 檔案。
-- **Actions API 串接**：讓 GPTs 呼叫外部 API，自動查詢內部資料庫或發送工作通知。
-
-### 4. 🎨 Canvas 畫布協作
-- **文字與程式專屬畫布**：在雙欄分割視窗中，針對特定段落要求 AI 改寫、擴充或修復 Bug。
-- **一鍵快捷調整**：微調閱讀難易度、文章長度、語氣風格，達到人類副駕（Copilot）的高效協同。
-
----
+Codex 是會讀檔、改檔、執行命令與驗證結果的代理，不只是程式碼聊天室。專案規則放 `AGENTS.md`；跨專案重複流程做成 Skill；外部服務優先使用已安裝的 app/plugin，沒有現成整合時再評估 MCP。
 
 [← 返回專案首頁](../README.md)
