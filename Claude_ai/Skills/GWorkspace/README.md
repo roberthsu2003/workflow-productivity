@@ -208,6 +208,7 @@ sequenceDiagram
   - 套用官方指定「綠能翡翠深綠（`#0F5132`）」配色，生成 5 頁兼具陸域與離岸大型風電之正式商務簡報。
   - 整合 15MW+ 巨型風機抗颱 Class T 規範、UAV 毫米級葉片裂紋巡檢與數位分身（Digital Twin）高頻振動預警。
 * **專屬偽檔案**：
+  - 🎨 [Design.md](./05_ITRI_Green_Energy_PPTX/sample_files/Design.md)
   - 🖥️ [2026_大型陸域與離岸風電技術評估與智慧運維提案.pptx](./05_ITRI_Green_Energy_PPTX/sample_files/2026_大型陸域與離岸風電技術評估與智慧運維提案.pptx)
   - 🖼️ [大型陸域與離岸風力發電運維工程示意圖.jpg](./05_ITRI_Green_Energy_PPTX/sample_files/大型陸域與離岸風力發電運維工程示意圖.jpg)
   - 📄 [2026_大型風電與智慧運維產學合作技術備忘錄.docx](./05_ITRI_Green_Energy_PPTX/sample_files/2026_大型風電與智慧運維產學合作技術備忘錄.docx)
