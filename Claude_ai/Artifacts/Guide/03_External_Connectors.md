@@ -32,12 +32,12 @@
 ```mermaid
 graph LR
     subgraph 外部真實資料庫
-        GD["📂 Google Drive<br/>(銷售試算表 .xlsx)"]
-        GM["✉️ Gmail<br/>(專案往來信件)"]
+        GD["📂 Google Drive<br/>（銷售試算表 .xlsx）"]
+        GM["✉️ Gmail<br/>（專案往來信件）"]
     end
 
     subgraph Claude 運算中樞
-        C["🧠 Claude<br/>(Connectors 安全授權)"]
+        C["🧠 Claude<br/>（Connectors 安全授權）"]
     end
 
     subgraph 最終成果物
@@ -45,8 +45,10 @@ graph LR
         A2["📋 待辦跟催表 Artifact"]
     end
 
-    GD -->|自動讀取| C -->|生成| A1
-    GM -->|搜尋信件| C -->|生成| A2
+    GD -->|自動讀取| C
+    C -->|生成| A1
+    GM -->|搜尋信件| C
+    C -->|生成| A2
 ```
 
 1. **Google Sheets ➔ 即時互動戰情室**：
