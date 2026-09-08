@@ -1,0 +1,16 @@
+{
+  "name": "tideflow-portal-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "潮汐物流 Codex 教學用零依賴練習專案",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "lint": "node scripts/lint.js",
+    "report": "node scripts/generate-weekly-report.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -7,6 +7,15 @@
 | `generate_sample_data.py` | 產生 CSV 資料 | 無（標準庫） |
 | `generate_office_files.py` | 產生 xlsx / pptx / docx / png 示範檔 | openpyxl、python-pptx、python-docx、pillow |
 | `generate_skill_templates.py` | 產生 skill 範本與模擬掃描件 | openpyxl、pillow |
+| `validate_structure.py` | 檢查必備章節、案例入口、空目錄與相對連結 | 無（標準庫） |
+
+## 驗證整套講義架構
+
+```bash
+python3 chatGPT_codex/tools/validate_structure.py
+```
+
+成功時會列出通過檢查的必備目錄、Markdown 與全部檔案數；失敗時會逐項列出缺少的入口或失效連結。
 
 ## 重新產生示範資料
 

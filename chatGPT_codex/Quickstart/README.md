@@ -36,6 +36,8 @@
 
 ## 🚀 五個步驟跑完第一個 task
 
+> **建議使用本講義提供的完整專案**：先依 [`student-lab` 說明](../student-lab/README.md)複製並初始化 `tideflow-portal`。下方的空白專案做法只適合練習 Git 基本操作，因為它沒有 `package.json` 與測試。
+
 ### Step 1：建立或選取 project
 
 在 Codex 中加入一個 **saved project**——通常是一個本機資料夾或 Git repository。
@@ -107,6 +109,8 @@ git restore .
 ## 🧪 課堂練習：潮汐物流的第一天
 
 用本講義的示範情境走一次完整流程。假設你剛接手 **潮汐物流（TideFlow Logistics）** 的 `tideflow-portal` 專案。
+
+實際檔案位於 [`student-lab/tideflow-portal`](../student-lab/tideflow-portal/README.md)，請先建立副本，不要直接修改教材原檔。
 
 | 階段 | Task | 授權範圍 |
 | :--- | :--- | :--- |

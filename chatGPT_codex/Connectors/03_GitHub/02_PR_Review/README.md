@@ -18,6 +18,8 @@
 - 三個特別區域（`src/legacy/`、`services/payments/`、`migrations/`）
 - 審查意見的格式要求與安全替代方案
 
+可直接審查的程式位於 [`student-lab/tideflow-portal/src/checkout/calcTotal.js`](../../../student-lab/tideflow-portal/src/checkout/calcTotal.js)。沒有 GitHub 權限時，直接在本機對該檔做 review；有權限時再由自己的副本建立 PR，**不要把練習 PR 開到教材 repository**。
+
 ---
 
 ## 🥇 練習一：把規則裝進 `AGENTS.md`

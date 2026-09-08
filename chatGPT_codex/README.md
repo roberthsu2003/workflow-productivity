@@ -2,6 +2,11 @@
 
 這份講義以 **ChatGPT 桌面版中的 Codex** 為主軸，分為「基礎核心單元」與「進階與代理功能」兩大部分，各單元皆清楚標示適用方案，方便對照使用。內容依 `Claude_ai` 的功能地圖建立，但採用 OpenAI 實際的名稱與操作方式。
 
+> 🧭 想先了解整套資料夾如何組成，請看 [架構總覽](./ARCHITECTURE.md)；維護者可執行 `python3 chatGPT_codex/tools/validate_structure.py` 做完整性檢查。
+>
+> 🧪 學生可從[完整離線練習專案](./student-lab/README.md)開始；卡關時看[除錯手冊](./Troubleshooting/README.md)，完成後再開[參考答案](./Answer_Key/README.md)。沒有付費方案或外部服務權限，也能用偽資料完成核心學習目標。
+> 外部服務章節統一依[離線實作模式](./Offline_Mode/README.md)完成，真實帳號連線只作選修展示。
+
 > **官方來源**：[Codex 文件首頁](https://learn.chatgpt.com/docs) · [Pricing](https://learn.chatgpt.com/docs/pricing) · [Features 總覽](https://learn.chatgpt.com/docs/features) · [Skills & Plugins](https://learn.chatgpt.com/docs/skills-and-plugins)
 >
 > 最後查核：2026-09-08。Codex 改版頻繁，授課前請以官方 [Changelog](https://learn.chatgpt.com/docs/changelog) 與 [Feature Maturity](https://learn.chatgpt.com/docs/feature-maturity) 為準。

@@ -1,5 +1,7 @@
 # 範例 01：平行 Worktree
 
+> **練習專案**：先依 [`student-lab`](../../../student-lab/README.md)建立 `tideflow-portal` Git repository，再執行本章命令。專案內已有程式、測試與刻意保留的 review 題。
+
 > 🟢 **方案需求**：Free。
 
 **情境**：週一早上，你手上有三件不相干的事要改同一個 repo：修結帳頁的 bug、遷移日期函式庫、補 `AGENTS.md`。你想同時進行。

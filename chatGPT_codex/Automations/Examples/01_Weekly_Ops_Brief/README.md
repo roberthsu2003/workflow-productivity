@@ -18,6 +18,8 @@
 
 ## 📋 建立前的必要步驟
 
+本章可完全離線練習：[`student-lab/tideflow-portal`](../../../student-lab/tideflow-portal/README.md)已附配送、Issue、PR、commit 偽資料與週報產生器。先在副本執行 `npm run report`；有 Automation 權限時，再把相同規則設成排程。
+
 > [!IMPORTANT]
 > **先在一般 chat 手動跑一次。** 排程出錯時你不在現場。
 
