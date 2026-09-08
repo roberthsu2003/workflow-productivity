@@ -88,9 +88,9 @@ graph LR
 
 ```mermaid
 graph LR
-    A["步驟 1：輸入 Prompt<br/>產出 V1 互動網頁"] --> B["步驟 2：長官檢視反饋<br/>(具體成品激發精確意見)"]
-    B --> C["步驟 3：對話指令修訂<br/>(升級 V2，保留版本歷史)"]
-    C --> D["步驟 4：發布 HTML 連結<br/>(開會投影 / 群組同步操作)"]
+    A["步驟 1：輸入 Prompt<br/>產出 V1 互動網頁"] --> B["步驟 2：長官檢視反饋<br/>（具體成品激發精確意見）"]
+    B --> C["步驟 3：對話指令修訂<br/>（升級 V2，保留版本歷史）"]
+    C --> D["步驟 4：發布 HTML 連結<br/>（開會投影與群組同步操作）"]
 ```
 
 ---
@@ -153,9 +153,9 @@ graph LR
 
 ```mermaid
 graph LR
-    L1["🟢 Level 1 入門實戰<br/>辦公行政 & 行銷文案<br/>(HTML小工具 / 結構化Markdown)"] --> L2["🔵 Level 2 進階開發<br/>工程代碼 & 課堂工作坊<br/>(Python PEP8 / 多格式實作)"]
-    L2 --> L3["🟡 Level 3 高階分析<br/>數據戰情室 & 產品原型<br/>(React Recharts / UI與localStorage)"]
-    L3 --> L4["🔴 Level 4 專家整合<br/>AI大腦 & 雲端串接<br/>(Claude in Claude / Google Drive)"]
+    L1["🟢 Level 1 入門實戰<br/>辦公行政與行銷文案<br/>（HTML小工具 / 結構化Markdown）"] --> L2["🔵 Level 2 進階開發<br/>工程代碼與課堂工作坊<br/>（Python PEP8 / 多格式實作）"]
+    L2 --> L3["🟡 Level 3 高階分析<br/>數據戰情室與產品原型<br/>（React Recharts / UI與localStorage）"]
+    L3 --> L4["🔴 Level 4 專家整合<br/>AI大腦與雲端串接<br/>（Claude in Claude / Google Drive）"]
 ```
 
 | 階梯層級 | 實戰範例模組 | 適合對象 | 產出格式 | 核心學習亮點 |
