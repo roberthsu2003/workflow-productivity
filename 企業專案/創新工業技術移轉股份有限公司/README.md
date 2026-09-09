@@ -180,7 +180,7 @@
   - [ ] **結果回傳 Desktop**：頁面讀取與分析結果能自動回傳並結構化呈現於 Claude Desktop 對話視窗中。
 
   </details>
-- [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，適合存取內網與無 API 的公開網站。
+- [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)（[創投實務演練專頁](../../Claude_ai/Local_MCP/examples/venture_capital.md)）：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，適合存取內網與無 API 的公開網站。
   <details>
   <summary>💡 <b>點擊展開：學員實作驗證（Playwright MCP 本地自動化爬蟲操作）</b></summary>
   <br>

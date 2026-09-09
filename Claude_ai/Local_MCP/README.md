@@ -1,58 +1,113 @@
-# Local MCP Servers（本地端伺服器）
+# Local MCP Servers（本地端伺服器）安裝配置與操作手冊
 
-> 🟢 **方案需求**：Free（可用）。Claude Desktop 的 Desktop Extensions / Local MCP 機制在 Free 帳號即開放，需要的只是下載桌面版並開啟 Developer 模式。
-
-**Local MCP Servers** 是執行在您個人電腦（Mac/PC）上的擴充服務。與雲端託管的 Connectors 不同，本地 MCP 讓 Claude 能夠存取您**本機的檔案、資料庫、甚至是執行本機的腳本與指令**。
-
-這是在 Claude Desktop 上進行深度客製化、實現「AI 操控電腦」的核心機制。
+> 🟢 **方案需求**：Free / Pro 皆適用。Claude Desktop 的 Local MCP 機制在免費帳號即開放，只需下載電腦桌面版並啟用 Developer 模式。  
+> 💡 **核心概念**：**Local MCP Servers** 是直接執行在您個人電腦（Mac / Windows）上的擴充伺服器。不同於雲端託管的 Connectors，本地 MCP 能讓 Claude 存取本機檔案系統、資料庫、真實瀏覽器以及本機終端腳本，是實現「AI 操控電腦」的核心基礎。
 
 ---
 
-## 📋 前置準備：執行環境 (uv 與 Node.js)
+## 📑 目錄導覽
 
-本地 MCP 伺服器本質上是執行在您個人電腦上的程式，它們多數是基於 **Python** 或 **Node.js (JavaScript/TypeScript)** 開發。
-為了讓 Claude 能夠下載並啟動這些伺服器，您的電腦需要先安裝 `uv` 與 `Node.js`。
+1. [運作架構與核心優勢](#-運作架構與核心優勢)
+2. [前置環境安裝（Node.js 與 uv）](#-前置環境安裝nodejs-與-uv)
+3. [快速配置流程（claude_desktop_config.json）](#-快速配置流程)
+4. [常用核心 MCP 伺服器配置範本](#-常用核心-mcp-伺服器配置範本)
+5. [維運管理與排錯技巧](#-維運管理與排錯技巧)
+6. [🚀 跨產業實戰應用案例庫（Industry Scenarios）](#-跨產業實戰應用案例庫industry-scenarios)
+7. [觀念比較：本地 MCP vs. 遠端 Connectors](#-觀念比較本地-mcp-vs-遠端-connectors)
 
-### 1. Node.js (與 npx)
-- **為什麼需要**：許多 MCP 伺服器是用 JavaScript/TypeScript 寫成的。`npx` 是 Node.js 內建的工具，它能讓 Claude Desktop 直接從網路下載並執行 Node.js 開發的 MCP 伺服器（例如 Playwright MCP），免去手動管理本地套件的麻煩。
-- **如何安裝**：
-  - **推薦方式（一般使用者）**：前往 [Node.js 官方網站](https://nodejs.org/) 下載並安裝 **LTS (長期支援版本)** 官方安裝包（`.pkg` 或 `.msi`），依預設提示完成安裝即可。
-  - **命令行方式（進階使用者）**：
+---
+
+## 🏗️ 運作架構與核心優勢
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│ 個人電腦本機 (Mac / Windows)                                 │
+│                                                             │
+│  Claude Desktop (對話介面)                                  │
+│        │                                                    │
+│        ▼ [MCP 協定 (標準輸入/輸出 stdio)]                    │
+│  Local MCP Server (本機背景行程，如 Playwright MCP)          │
+│        │                                                    │
+│        ▼ [本機 API / 驅動程式]                              │
+│  真實本機環境 (Chromium 瀏覽器 / 本機目錄 / 腳本執行)        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 突破「雲端網路白名單」限制
+- **雲端網頁版 (`claude.ai`)**：連線工具跑在官方雲端伺服器，受限於安全性白名單政策，無法存取未經授權的網站或企業內部網路，且極易觸發目標網站的反爬機制。
+- **本地 MCP (Claude Desktop)**：直接以**您個人電腦的網路環境與 IP 權限**發出請求。只要您的電腦瀏覽器開得起來的網站（包含公司內部 Intranet、需登入系統、動態 JS 渲染網頁），本地 MCP 都能順暢存取與操作。
+
+---
+
+## 📋 前置環境安裝（Node.js 與 uv）
+
+大部分本地 MCP 伺服器是以 **Node.js** 或 **Python** 開發。為了讓 Claude 能以暫存或背景方式自動啟動這些伺服器，建議先於本機安裝好以下兩大執行環境：
+
+### 1. Node.js (提供 `npx` 指令)
+- **主要用途**：執行 JavaScript/TypeScript 開發的 MCP 伺服器（如 `@playwright/mcp`）。
+- **安裝方式**：
+  - **推薦方式（一般使用者）**：前往 [Node.js 官方網站](https://nodejs.org/) 下載安裝 **LTS（長期支援版本）**。
+  - **命令列安裝**：
     - **macOS (Homebrew)**：`brew install node`
     - **Windows (Winget)**：`winget install OpenJS.NodeJS`
 
-### 2. uv (與 uvx)
-- **為什麼需要**：許多 MCP 伺服器是用 Python 寫成的。`uv` 是極速的 Python 套件與環境管理工具，而 `uvx` 能讓 Claude Desktop 自動在臨時的虛擬環境中下載並運行 Python 的 MCP 伺服器（例如 Time MCP），不需要您手動建立或管理繁瑣的 Python 環境。
-- **如何安裝**：
-  - **macOS / Linux**：開啟終端機並輸入：
+### 2. uv (提供 `uvx` 指令)
+- **主要用途**：以極速臨時虛擬環境運行 Python 開發的 MCP 伺服器（如 `mcp-server-time`），無需手動管理 Python 環境。
+- **安裝方式**：
+  - **macOS / Linux**：
     ```bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
-    （或使用 Homebrew：`brew install uv`）
-  - **Windows**：開啟 PowerShell 並輸入：
+    （或 `brew install uv`）
+  - **Windows (PowerShell)**：
     ```powershell
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
     ```
-    （或使用 Winget：`winget install astral-sh.uv`）
+    （或 `winget install astral-sh.uv`）
 
 ---
 
-## 如何設定本地 MCP？
+## ⚙️ 快速配置流程
 
-### 1. 進入開發者模式
-- 開啟 **Claude Desktop**。
-- 點擊左下角頭像 -> **Settings**。
-- 在左側選單最下方找到 **Developer**。
+### 步驟 1：開啟開發者模式
+1. 啟動 **Claude Desktop**。
+2. 點擊左下角個人頭像 ➔ **Settings**。
+3. 於左側選單點擊 **Developer**。
 
-### 2. 修改設定檔 (Edit Config)
-- 點擊 **Edit Config** 按鈕，系統會以預設編輯器開啟 `claude_desktop_config.json`。
-- 這個檔案定義了 Claude 啟動時要同時開啟哪些 MCP 伺服器。
+### 步驟 2：編輯設定檔
+點擊 **Edit Config** 按鈕，系統會以預設文字編輯器開啟 `claude_desktop_config.json`。
 
-### 3. 設定範例
+> 📁 **設定檔本機路徑備忘**：
+> - **macOS**：`~/Library/Application Support/Claude/claude_desktop_config.json`
+> - **Windows**：`%APPDATA%\Claude\claude_desktop_config.json`
 
-#### 範例 A：Time 伺服器 (時間查詢)
+---
 
-如果您想讓 Claude 具備查詢精確本地時間的能力，可以在 `mcpServers` 區塊加入以下內容：
+## 📦 常用核心 MCP 伺服器配置範本
+
+將以下設定貼入 `claude_desktop_config.json` 中的 `mcpServers` 物件內：
+
+### 1. Playwright 伺服器（動態網頁爬蟲與自動化）
+由 Microsoft 官方維護，能啟動真實瀏覽器執行網頁滾動、截圖、按鈕點擊與動態內容讀取。
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}
+```
+
+> 💡 **視窗模式提示**：
+> - **預設有頭模式 (Headed)**：執行時會彈出可見的瀏覽器視窗，適合需要視覺化確認、截圖存證或人工手動登入的場合。
+> - **無頭/背景模式 (Headless)**：若不希望彈出視窗干擾工作，可在 `args` 陣列加入 `"--headless"`：
+>   `"args": ["@playwright/mcp@latest", "--headless"]`
+
+### 2. Time 伺服器（本地即時時間）
+提供 Claude 精確的時間感知與時區換算能力。
 
 ```json
 {
@@ -65,34 +120,7 @@
 }
 ```
 
-- **command**: 啟動指令（如 `uvx`, `npx`, `python` 等）。
-- **args**: 傳遞給指令的參數或套件名稱。
-
-#### 範例 B：Playwright 伺服器 (網頁自動化與爬蟲)
-
-因為 Claude Desktop 跑在您自己的電腦上，MCP Server（包含 Playwright MCP）也是在本機執行，沒有像 claude.ai 網頁版那樣的網路白名單限制，可以正常連上任何網站。
-
-> 💡 **小知識：什麼是「網路白名單」限制？**  
-> 雲端網頁版（如 `claude.ai`）的連線工具運作在官方雲端伺服器上，基於資安、合規與防範濫用考量，官方通常會設置**網路白名單（Network Whitelist）**，意即**僅允許 AI 存取經過官方審核與信任的特定網站或 API**。  
-> 相較之下，**Claude Desktop + 本地 MCP** 是直接以您個人電腦的網路與 IP 權限發出請求，因此**完全不受雲端白名單限制**——只要您電腦瀏覽器開得起來的網站（包含公司內部網路、需要驗證登入的系統或一般外網），Playwright MCP 都能正常瀏覽與操作。
-
-##### 運作原理
-
-```
-Claude Desktop (對話介面)
-      ↓ MCP 協定 (navigate、click、type...)
-Playwright MCP Server (本機執行)
-      ↓
-真實瀏覽器 (Chromium/Firefox/WebKit)
-```
-
-您使用自然語言下指令，Claude 會把它翻譯成 Playwright 的操作（開啟網址、點擊、輸入文字、截圖、讀取頁面內容），實際執行的是本機那個瀏覽器。
-
-##### 設定步驟
-
-> 🟢 **前置需求**：Node.js 18 以上版本
-
-編輯 Claude Desktop 的設定檔 `claude_desktop_config.json`（路徑請參考前述）：
+### 3. 多伺服器整合範例
 
 ```json
 {
@@ -100,155 +128,75 @@ Playwright MCP Server (本機執行)
     "playwright": {
       "command": "npx",
       "args": ["@playwright/mcp@latest"]
+    },
+    "time": {
+      "command": "uvx",
+      "args": ["mcp-server-time"]
     }
   }
 }
 ```
----
 
-### 測試方式
-
-重新啟動 Claude Desktop。連線成功後會在介面上看到 `playwright` 這個 MCP Server 已連接。
-直接下指令測試，例如您可以輸入以下經過潤飾的實用 Prompt：
-
-* **範例一 (單純網頁資訊爬取)**：
-  ````markdown
-  """
-  請使用 Playwright 開啟台灣銀行牌告匯率網頁（https://rate.bot.com.tw），查詢今日美金 (USD)、日圓 (JPY) 與 歐元 (EUR) 對新台幣的『現鈔買入』與『現鈔賣出』匯率，並將結果整理成 Markdown 表格輸出。
-  """
-  ````
-
-* **範例二 (動態搜尋與商品比價)**：
-  ````markdown
-  """
-  請使用 Playwright 開啟 momo 購物網（https://www.momoshop.com.tw），在搜尋框中輸入『毛寶洗碗精』並進行搜尋。請幫我收集搜尋結果前 5 筆商品的『商品名稱』與『促銷價格』，並將結果整理成 Markdown 表格輸出。
-  """
-  ````
-
-* **範例三 (競品市場調查與對比分析)**：
-  ````markdown
-  """
-  請使用 Playwright 開啟 momo 購物網（https://www.momoshop.com.tw）：
-  1. 在搜尋框中輸入『毛寶 小蘇打洗碗精 無香精』並進行搜尋，先幫我記錄我方產品的促銷價格與規格。
-  2. 接著，重新搜尋『小蘇打洗碗精』，尋找其他競爭品牌（例如橘子工坊、茶籽堂、淨毒五郎等）的類似產品。
-  3. 幫我收集前 5 筆競品商品的『品牌名稱』、『商品名稱』、『容量』與『促銷價格』。
-  4. 最後，將我方產品與這 5 筆競品進行交叉對比，整理成一個 Markdown 比較表格，並針對我們產品的價格競爭力提供簡單的對比建議。
-  """
-  ````
-
-Claude 會自動呼叫 `browser_navigate`、`browser_snapshot` 這類工具，實際在您的電腦上打開一個瀏覽器視窗，前往該網站並自動爬取資料呈現在對話框中。
+設定完成後，**完全關閉並重啟 Claude Desktop** 即可生效。
 
 ---
 
-##### 實務注意事項
+## 🛠️ 維運管理與排錯技巧
 
-* **官方套件**：官方套件是 `@playwright/mcp`（Microsoft 出的）。市面上還有一個 `@executeautomation/playwright-mcp-server`，是另一個社群專案、API 不太一樣，設定時請注意別搞混。
-* **預設為有頭模式 (Headed Mode)**：預設會彈出「看得見」的瀏覽器視窗，非常適合教學展示與視覺化確認；若需要背景悄悄執行（不彈出視窗），可以在 `claude_desktop_config.json` 的 `args` 參數陣列中加上 `"--headless"`。
+### 1. 狀態燈號判讀
+在 **Settings ➔ Developer** 頁面中：
+- **Running (藍色/綠色)**：表示 MCP 伺服器行程已成功啟動並與 Claude 完成握手連線。
+- **View Logs**：若伺服器啟動失敗或亮紅燈，點擊此處可檢視詳細的錯誤輸出，是排查環境變數與套件安裝問題的首要步驟。
+- **Managed by an extension**：若顯示由擴充套件代管，代表該伺服器是由 `Settings -> Extensions` 安裝，無法透過手動編輯 JSON 進行管理。
 
-  **JSON 設定範例（無頭/背景模式）：**
-  ```json
-  {
-    "mcpServers": {
-      "playwright": {
-        "command": "npx",
-        "args": ["@playwright/mcp@latest", "--headless"]
-      }
+### 2. 避免「工具過載 (Tool Bloat)」與資源損耗
+- **Token 消耗**：每個啟用的 MCP 都會將其定義注入至 System Prompt，啟用過多會壓縮 Context Window。
+- **電腦效能**：像 Playwright 每次開啟瀏覽器皆會佔用 CPU 與記憶體，建議平時僅啟用當前任務所需的 **2～4 個 MCP 伺服器**。
+
+### 3. 如何安全「停用」暫不使用的伺服器？
+> ⚠️ **重要提醒**：`claude_desktop_config.json` 為標準 JSON，**不支援 `//` 或 `/* */` 註解語法**，寫入註解會導致 Claude Desktop 解析失敗。
+
+**推薦做法（改名停用法）**：
+在伺服器名稱前加入底線（例如將 `"playwright"` 改為 `"_playwright"`），Claude 啟動時會忽略非標準名稱，同時完整保留所有參數設定：
+```json
+{
+  "mcpServers": {
+    "_playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
     }
   }
-  ```
-* **登入型網站（半自動手動輔助登入）**：
-  因為 Playwright 預設會彈出看得見的瀏覽器視窗，遇到需要密碼或雙重驗證 (2FA) 的登入型網站時，非常適合採取「AI 開頁面 → 人手動登入 → AI 接手操作」的協作模式。
-
-  > ⚠️ **關鍵注意事項**：
-  > 在 `claude_desktop_config.json` 的 `args` 設定中**絕對不能加入 `"--headless"` 參數**！必須保持預設的有頭 (Headed) 模式，否則視窗會在背景偷偷執行，您將無法在螢幕上看見登入畫面進行手動輸入與驗證。
-
-  **Prompt 範例（會員登入與訂單查詢）：**
-  ```text
-  請使用 Playwright 開啟 momo 購物網登入頁（https://www.momoshop.com.tw/member/Login.jsp）：
-  1. 請開啟頁面後停在登入畫面，提示我進行手動登入。
-  2. 當我在對話框回覆「我已完成登入」後，請幫我前往『會員中心 -> 訂單查詢』。
-  3. 幫我收集最近 3 筆訂單的『訂單編號』、『訂購日期』與『訂單金額』，整理成 Markdown 表格輸出。
-  ```
-
-  **操作流程說明：**
-  1. 下達指令後，Claude 會呼叫 Playwright 開啟一個實體瀏覽器視窗並前往登入頁。
-  2. 您直接在彈出的瀏覽器視窗中手動輸入帳號、密碼或驗證碼並登入。
-  3. 登入成功後，在 Claude 對話框輸入：「我已完成登入，請繼續」。
-  4. Claude 便會沿用該 Session 已登入的 Cookie 狀態，繼續接手執行分頁切換與資料擷取。
-* **低門檻操作**：這是 Claude 自己在寫/呼叫指令，不是您自己寫 Playwright 程式碼，對不熟程式的老師或學生來說門檻很低，非常適合當作教學示範。
-* **正式爬蟲建議**：如果要做「排程、大量爬取」的正式爬蟲（例如每天固定抓某個資料），Playwright MCP 這種互動式操控比較適合「示範、探索、驗證邏輯」，真正大量執行時，仍建議請 Claude 幫您產生一支獨立的 Python/Node Playwright 腳本，排程執行會更穩定且節省資源。
+}
+```
 
 ---
 
-## 🛠️ 管理與排錯
+## 🚀 跨產業實戰應用案例庫（Industry Scenarios）
 
-在 **Settings -> Developer** 畫面中，您可以即時監控本地伺服器的連接狀態。
+本目錄規劃了針對不同垂直產業的真實實務 Prompt 與驗證流程。請點擊連結檢視完整教學：
 
-### 1. 狀態與控制項說明
-
-- **Running (藍色標籤)**：
-  - **意義**：代表該 MCP 伺服器已在本機電腦的背景成功啟動，且與 Claude Desktop 建立起正常的 MCP 協定通訊（握手成功）。
-  - **效果**：該伺服器所提供的工具（Tools）已載入至 Claude 中，對話時 Claude 可隨時調用。
-- **View Logs**：當伺服器無法啟動（例如顯示為紅色錯誤或停止）時，點擊此處查看詳細的錯誤日誌，這是除錯最關鍵的第一步。
-- **垃圾桶圖示**：點擊可直接從 `claude_desktop_config.json` 中移除該伺服器的設定。
-- **Extension 代管狀態 (Managed by an extension)**：
-  - 如果伺服器狀態顯示 `"This server is managed by an extension"`（此伺服器由擴充功能管理），代表它是由您在 `Settings -> Extensions` 安裝的 Connector 所託管。
-  - **無法直接編輯 JSON**：這類伺服器不需要、也無法透過手動編輯 `claude_desktop_config.json` 來啟動或以垃圾桶圖示刪除。若要管理（如啟用、停用、卸載、調整單一 Tools 讀寫權限），必須至 `Settings -> Extensions` 頁面進行操作。
-
-### 2. ⚠️ 啟用過多 MCP 伺服器的負面影響
-
-雖然 MCP 帶來極高擴充性，但**同時啟用過多伺服器（例如 5 個以上）**會對使用體驗產生以下副作用：
-
-1. **AI 決策混淆與 Token 消耗 (Tool Bloat)**
-   - 每個伺服器都會將工具的定義與格式作為系統提示詞（System Prompt）輸入給 Claude，這會消耗大量 Context Window Token，增加每次對話的隱性成本。
-   - 可用工具過多或功能相似時，Claude 容易混淆、用錯工具，或是拉長思考與回覆的時間。
-2. **本機資源消耗 (Resource Drain)**
-   - 每個本地 MCP 都是在背景執行的獨立 Python/Node.js 進程。
-   - 像是 Playwright 等需要操作瀏覽器的 MCP，在執行時會吃掉大量的記憶體 (RAM) 與 CPU，開太多會導致電腦卡頓或耗電。
-3. **啟動超時與連線不穩定**
-   - Claude Desktop 在啟動時會同時初始化所有定義的伺服器。伺服器過多容易導致啟動變慢，甚至因為搶奪硬體資源而發生載入逾時（Timeout）錯誤。
-4. **安全風險增加**
-   - 本地 MCP 具備存取本機檔案與執行指令的高權限。加載過多未經審查的第三方 MCP 伺服器，會增加系統的安全威脅。
-
-> 💡 **最佳實踐**：建議平時僅啟用當下工作必備的 2~4 個 MCP 伺服器。
-> 
-> #### 📝 如何在 JSON 設定檔中「註解」停用？
-> 
-> ⚠️ **特別注意**：`claude_desktop_config.json` 使用的是標準 **JSON 格式，JSON 預設不支援 `//` 或 `/* */` 的註解語法**。如果您直接在檔案中加入註解，會導致 Claude Desktop 解析失敗而無法啟動或載入任何 MCP。
-> 
-> 若想暫時停用某個 MCP 伺服器，請使用以下安全替代方案：
-> 
-> 1. **重新命名鍵名 (推薦)**：在伺服器名稱前加上底線（例如將 `"playwright"` 修改為 `"_playwright"`）。這樣既能完整保留該伺服器的參數設定，Claude 啟動時也會因為識別不到標準名稱而自動忽略它。
->    ```json
->    {
->      "mcpServers": {
->        "_playwright": {
->          "command": "npx",
->          "args": ["@playwright/mcp@latest"]
->        }
->      }
->    }
->    ```
-> 2. **剪下備份法**：將不使用的伺服器 JSON 區塊剪下，暫時存放在外部的 `.txt` 或 `.md` 檔案中，需要使用時再貼回。
-
----
-
-## 觀念比較：本地 MCP vs. 遠端 Connectors
-
-| 特性 | 本地 MCP (Local) | 遠端連接器 (Connectors) |
+| 產業賽道 | 案例文件連結 | 核心任務說明 |
 | :--- | :--- | :--- |
-| **執行位置** | 您自己的電腦 | 服務商的雲端伺服器 |
-| **驗證方式** | 系統權限 (Local Auth) | **OAuth 2.0** |
-| **設定方式** | 修改 JSON 設定檔 | 網頁按鈕一鍵授權 |
-| **擅長任務** | 存取本機檔案、私有資料、內網設備 | 存取 Gmail、GitHub、Supabase 雲端資料 |
+| 💼 **創投與投資評估 (VC)** | [**創投產業實務範例**](./examples/venture_capital.md) | • 公開科技新聞爬取（半導體先進封裝、CPO 矽光子情報）<br>• 新創標的官網動態渲染、截圖存證與產品/市場/團隊分析<br>• 競品初階 DD 交叉比對矩陣 |
+| 🛒 **電商與零售通路 (Retail)** | [**電商與零售實務範例**](./examples/ecommerce.md) | • 公開匯率牌告爬取（台灣銀行）<br>• 電商動態搜尋與商品比價（momo 購物網）<br>• 競品規格矩陣交叉對比<br>• 需 2FA/密碼驗證之會員後台半自動登入協作 |
+| 🌐 **更多產業案例** | *持續擴充中* | 歡迎依照 `examples/` 格式新增醫療生技、金融風控、智慧製造等產業情境 |
+
+> 💡 **如何新增自訂產業範例**：
+> 1. 於 `Claude_ai/Local_MCP/examples/` 目錄下建立 `<industry_name>.md`。
+> 2. 參照範例格式撰寫：業務背景 ➔ 實作 Prompt 任務 ➔ Checklist 檢核點。
+> 3. 將新文件連結登錄於本表格中。
 
 ---
 
-## 常用工具建議
-- **uvx**: Python 生態系的快速執行工具（推薦使用）。
-- **npx**: Node.js 生態系的快速執行工具。
-- **Smithery.ai**: 可以搜尋並發現更多社群建立的 MCP 伺服器。
+## ⚖️ 觀念比較：本地 MCP vs. 遠端 Connectors
+
+| 特性 | 本地端伺服器 (Local MCP) | 雲端連接器 (Remote Connectors) |
+| :--- | :--- | :--- |
+| **執行主機** | 您個人的電腦本機 (Mac / PC) | 服務商官方雲端伺服器 |
+| **授權驗證** | 本機系統權限 / 本地 Session | **OAuth 2.0 網頁授權** |
+| **設定方式** | 編輯 `claude_desktop_config.json` | 於網頁介面點擊授權按鈕 |
+| **最佳應用情境** | • 存取本機私有資料與本機目錄<br>• 存取企業內部網路 (Intranet)<br>• 驅動真實瀏覽器爬取動態網頁 | • 存取雲端 SaaS 服務（Gmail、Google Drive、GitHub、Notion、Supabase） |
 
 ---
 
-← [返回上層：Claude_AI 索引](../README.md)
+← [返回 Claude AI 模組總覽](../README.md)
