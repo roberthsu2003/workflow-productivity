@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工研院綠能所 - 大型風力發電 3D 數位分身與智慧運維模擬系統</title>
+  <!-- Three.js 核心庫與控制器 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- Lucide Icons (Vanilla) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --itri-green: #0F5132;
+      --itri-light-green: #10B981;
+      --itri-mint: #D1E7DD;
+      --itri-cyan: #06B6D4;
+      --itri-warning: #F59E0B;
+      --itri-danger: #EF4444;
+      --bg-glass: rgba(15, 23, 42, 0.82);
+      --border-glass: rgba(255, 255, 255, 0.12);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #0b1320;
+      color: var(--text-main);
+    }
+
+    #webgl-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* 頂部導航標題列 */
+    .top-header {
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      padding: 10px 20px;
+      border-radius: 12px;
+      pointer-events: auto;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #0F5132, #10B981);
+      color: white;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(to right, #FFFFFF, #D1E7DD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-status-group {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+    }
+
+    .status-pill {
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--itri-light-green);
+      box-shadow: 0 0 10px var(--itri-light-green);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* 左側控制面板 */
+    .control-panel {
+      position: absolute;
+      top: 86px;
+      left: 20px;
+      width: 320px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 18px;
+      z-index: 10;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+
+    .control-panel::-webkit-scrollbar {
+      width: 4px;
+    }
+    .control-panel::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .section-title i {
+      color: var(--itri-light-green);
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ctrl-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .ctrl-val {
+      font-weight: 700;
+      color: #38BDF8;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #1E293B;
+      outline: none;
+      transition: background 0.2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--itri-light-green);
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--itri-light-green);
+      transition: transform 0.1s;
+    }
+
+    .slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* 模式切換按鈕組 */
+    .button-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .mode-btn {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #CBD5E1;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .mode-btn:hover {
+      background: rgba(51, 65, 85, 0.9);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, rgba(15, 81, 50, 0.9), rgba(16, 185, 129, 0.8));
+      border-color: var(--itri-light-green);
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .switch-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #CBD5E1;
+      background: rgba(30, 41, 59, 0.5);
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 40px;
+      height: 20px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #334155;
+      transition: .3s;
+      border-radius: 20px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: var(--itri-light-green);
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+    /* 右側戰情室即時數據面板 */
+    .dashboard-panel {
+      position: absolute;
+      top: 86px;
+      right: 20px;
+      width: 320px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 18px;
+      z-index: 10;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .metric-hero {
+      background: linear-gradient(135deg, rgba(15, 81, 50, 0.5), rgba(6, 182, 212, 0.2));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 14px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .metric-hero-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--itri-mint);
+      margin-bottom: 4px;
+    }
+
+    .metric-hero-value {
+      font-size: 34px;
+      font-weight: 800;
+      font-family: monospace;
+      color: #FFFFFF;
+      text-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+    }
+
+    .metric-hero-sub {
+      font-size: 11px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .metric-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+
+    .metric-card-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .metric-card-val {
+      font-size: 18px;
+      font-weight: 700;
+      font-family: monospace;
+      color: #F1F5F9;
+    }
+
+    .metric-card-unit {
+      font-size: 10px;
+      color: #64748B;
+      font-weight: normal;
+      margin-left: 2px;
+    }
+
+    /* 警告與風機狀態通知條 */
+    .alert-banner {
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #A7F3D0;
+      transition: all 0.3s;
+    }
+
+    .alert-banner.warning {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #FDE68A;
+    }
+
+    .alert-banner.danger {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.5);
+      color: #FECACA;
+      animation: alertBlink 1s infinite alternate;
+    }
+
+    @keyframes alertBlink {
+      from { opacity: 0.8; }
+      to { opacity: 1; filter: brightness(1.2); }
+    }
+
+    /* 底部操作小提示與視角切換 */
+    .bottom-bar {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      padding: 8px 20px;
+      border-radius: 30px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .view-btn {
+      background: transparent;
+      border: none;
+      color: #CBD5E1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .view-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    /* 3D 浮動標籤（無人機巡檢） */
+    #drone-label {
+      position: absolute;
+      display: none;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid #38BDF8;
+      color: #E0F2FE;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      pointer-events: none;
+      z-index: 20;
+      transform: translate(-50%, -120%);
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+    }
+
+    #drone-label::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px 6px 0;
+      border-style: solid;
+      border-color: #38BDF8 transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- WebGL 畫布容器 -->
+  <div id="webgl-container"></div>
+
+  <!-- 無人機 3D 浮標 -->
+  <div id="drone-label">
+    <i class="fa-solid fa-crosshairs" style="color: #38BDF8;"></i>
+    <strong>AI 葉片巡檢：</strong> 表面正常 (裂紋深度 < 0.05mm)
+  </div>
+
+  <!-- 頂部資訊列 -->
+  <header class="top-header">
+    <div class="brand-title">
+      <div class="brand-badge">ITRI GEL</div>
+      <div class="brand-text">
+        <h1>工研院綠能所 · 大型風機 3D 數位分身監控系統</h1>
+        <p>ITRI 6.0 MW 標竿風力發電機組 · 智慧運維與即時物理動態模擬</p>
+      </div>
+    </div>
+    <div class="header-status-group">
+      <div class="status-pill">
+        <div class="pulse-dot" id="system-dot"></div>
+        <span id="system-status-text">機組正常連線運轉中</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 左側控制面板 -->
+  <aside class="control-panel">
+    <div class="section-title">
+      <i class="fa-solid fa-wind"></i> 風況物理參數模擬
+    </div>
+
+    <!-- 風速控制 -->
+    <div class="ctrl-group">
+      <div class="ctrl-label-row">
+        <span>環境風速 (Wind Speed)</span>
+        <span class="ctrl-val" id="val-wind-speed">11.5 m/s</span>
+      </div>
+      <input type="range" class="slider" id="input-wind-speed" min="0" max="32" step="0.5" value="11.5">
+      <div style="display: flex; justify-content: space-between; font-size: 10px; color: #64748B;">
+        <span>切入 3.0</span>
+        <span>額定 12.0</span>
+        <span>切出 25.0 (抗颱保護)</span>
+      </div>
+    </div>
+
+    <!-- 風向控制 -->
+    <div class="ctrl-group">
+      <div class="ctrl-label-row">
+        <span>環境風向 (Wind Direction)</span>
+        <span class="ctrl-val" id="val-wind-dir">0° (正北)</span>
+      </div>
+      <input type="range" class="slider" id="input-wind-dir" min="0" max="360" step="5" value="0">
+    </div>
+
+    <!-- 偏航系統自動追風 -->
+    <div class="switch-row">
+      <span><i class="fa-solid fa-compass" style="color: #38BDF8; margin-right: 6px;"></i>自動偏航追風 (Auto Yaw)</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="check-auto-yaw" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <!-- 葉片節距角控制 -->
+    <div class="ctrl-group">
+      <div class="ctrl-label-row">
+        <span>葉片節距角 (Blade Pitch)</span>
+        <span class="ctrl-val" id="val-blade-pitch">2.0°</span>
+      </div>
+      <input type="range" class="slider" id="input-blade-pitch" min="0" max="90" step="0.5" value="2.0">
+      <div style="display: flex; justify-content: space-between; font-size: 10px; color: #64748B;">
+        <span>0° (最大迎角)</span>
+        <span>90° (完全順槳剎車)</span>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <i class="fa-solid fa-mountain-sun"></i> 風場環境與基礎工法
+    </div>
+
+    <div class="button-grid">
+      <button class="mode-btn active" id="btn-env-offshore">
+        <i class="fa-solid fa-water"></i> 離岸風場 (套管)
+      </button>
+      <button class="mode-btn" id="btn-env-onshore">
+        <i class="fa-solid fa-mountain"></i> 陸域風場 (混擬土)
+      </button>
+    </div>
+
+    <div class="section-title">
+      <i class="fa-solid fa-microscope"></i> 工研院綠能智慧運維模式
+    </div>
+
+    <div class="button-grid">
+      <button class="mode-btn active" id="btn-mode-std">
+        <i class="fa-solid fa-eye"></i> 標準運轉視角
+      </button>
+      <button class="mode-btn" id="btn-mode-stress">
+        <i class="fa-solid fa-temperature-half"></i> 葉片應力分析
+      </button>
+      <button class="mode-btn" id="btn-mode-uav">
+        <i class="fa-solid fa-drone"></i> 無人機巡檢
+      </button>
+      <button class="mode-btn" id="btn-mode-xray">
+        <i class="fa-solid fa-cube"></i> 機艙透視模式
+      </button>
+    </div>
+
+    <!-- 風場粒子流開關 -->
+    <div class="switch-row">
+      <span><i class="fa-solid fa-bars-staggered" style="color: #38BDF8; margin-right: 6px;"></i>空氣流線粒子 (Airflow Particles)</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="check-particles" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </aside>
+
+  <!-- 右側戰情室儀表板 -->
+  <aside class="dashboard-panel">
+    <div class="section-title">
+      <i class="fa-solid fa-chart-line"></i> 即時發電與機電指標
+    </div>
+
+    <!-- 核心發電功率指標 -->
+    <div class="metric-hero">
+      <div class="metric-hero-label">即時發電功率 (Active Power)</div>
+      <div class="metric-hero-value" id="disp-power">5,420</div>
+      <div class="metric-hero-sub">kW (機組額定容量: 6,000 kW)</div>
+    </div>
+
+    <!-- 狀態通知條 -->
+    <div class="alert-banner" id="alert-box">
+      <i class="fa-solid fa-circle-check"></i>
+      <span id="alert-text">機組處於最適功率輸出區間</span>
+    </div>
+
+    <!-- 數值卡片網格 -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-card-title"><i class="fa-solid fa-rotate"></i> 轉子轉速</div>
+        <div class="metric-card-val"><span id="disp-rpm">11.8</span><span class="metric-card-unit">RPM</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-title"><i class="fa-solid fa-arrows-to-dot"></i> 尖速比 (TSR)</div>
+        <div class="metric-card-val"><span id="disp-tsr">7.4</span><span class="metric-card-unit">λ</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-title"><i class="fa-solid fa-gauge-high"></i> 發電效率 Cp</div>
+        <div class="metric-card-val"><span id="disp-cp">0.46</span><span class="metric-card-unit">/ 0.59</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-title"><i class="fa-solid fa-bolt"></i> 功率負載率</div>
+        <div class="metric-card-val"><span id="disp-load">90.3</span><span class="metric-card-unit">%</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-title"><i class="fa-solid fa-temperature-arrow-up"></i> 齒輪箱油溫</div>
+        <div class="metric-card-val"><span id="disp-temp">64.2</span><span class="metric-card-unit">°C</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-card-title"><i class="fa-solid fa-cloud-arrow-down"></i> 累積減碳量</div>
+        <div class="metric-card-val"><span id="disp-carbon">1,842</span><span class="metric-card-unit">噸</span></div>
+      </div>
+    </div>
+
+    <!-- 偏航角誤差指示 -->
+    <div class="metric-card" style="margin-top: 4px;">
+      <div class="ctrl-label-row">
+        <span>機艙偏航角 (Yaw Angle) / 迎風夾角</span>
+        <span class="ctrl-val" id="disp-yaw-angle">0.0° / 0.0°</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 底部視角快捷列 -->
+  <div class="bottom-bar">
+    <span><i class="fa-solid fa-arrows-up-down-left-right"></i> 滑鼠左鍵旋轉 · 右鍵平移 · 滾輪縮放</span>
+    <span style="color: rgba(255,255,255,0.2);">|</span>
+    <button class="view-btn" id="btn-cam-front"><i class="fa-solid fa-video"></i> 正面迎風視角</button>
+    <button class="view-btn" id="btn-cam-side"><i class="fa-solid fa-video"></i> 側面剖視</button>
+    <button class="view-btn" id="btn-cam-nacelle"><i class="fa-solid fa-video"></i> 機艙近景</button>
+    <button class="view-btn" id="btn-cam-overview"><i class="fa-solid fa-video"></i> 風場全景</button>
+  </div>
+
+  <!-- 3D 模擬核心邏輯 -->
+  <script>
+    // --- 系統全域變數 ---
+    let scene, camera, renderer, controls;
+    let tower, nacelle, hub, bladeGroup, blades = [];
+    let waterMesh, terrainMesh, jacketFoundation, onshoreFoundation;
+    let particleSystem, particleGeometry, particleCount = 1200;
+    let droneGroup;
+
+    // 物理與模擬狀態
+    const state = {
+      windSpeed: 11.5,        // m/s
+      windDir: 0,             // 度 (0~360)
+      yawAngle: 0,            // 機艙當前角度
+      autoYaw: true,          // 自動追風
+      bladePitch: 2.0,        // 葉片節距 (度)
+      rotorRpm: 11.8,         // 轉速
+      rotorAngle: 0,          // 旋轉角累計
+      powerKw: 5420,
+      ratedCapacity: 6000,    // 6.0 MW
+      rotorDiameter: 154,     // 直徑 154 米
+      hubHeight: 110,         // 輪轂高度 110 米
+      environment: 'offshore',// 'offshore' 或 'onshore'
+      viewMode: 'standard',   // 'standard', 'stress', 'uav', 'xray'
+      showParticles: true,
+      internalTemp: 64.2
+    };
+
+    // 初始化程式入口
+    window.addEventListener('DOMContentLoaded', init);
+
+    function init() {
+      const container = document.getElementById('webgl-container');
+
+      // 1. Scene
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0a1220);
+      scene.fog = new THREE.FogExp2(0x0a1220, 0.0018);
+
+      // 2. Camera
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
+      camera.position.set(130, 120, 220);
+
+      // 3. Renderer
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.1;
+      container.appendChild(renderer.domElement);
+
+      // 4. OrbitControls
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.maxPolarAngle = Math.PI / 2 + 0.02; // 避免沉入水下
+      controls.minDistance = 20;
+      controls.maxDistance = 600;
+      controls.target.set(0, 75, 0);
+
+      // 5. 燈光設置
+      setupLighting();
+
+      // 6. 建構 3D 模型
+      buildEnvironment();
+      buildWindTurbine();
+      buildParticles();
+      buildDrone();
+
+      // 7. 綁定 UI 事件
+      bindEvents();
+
+      // 8. 視窗尺寸監聽
+      window.addEventListener('resize', onWindowResize);
+
+      // 9. 開始渲染迴圈
+      animate();
+    }
+
+    // --- 燈光系統 ---
+    function setupLighting() {
+      const ambientLight = new THREE.AmbientLight(0xdcf0f8, 0.65);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0xffffff, 1.3);
+      dirLight.position.set(150, 250, 180);
+      dirLight.castShadow = true;
+      dirLight.shadow.mapSize.width = 2048;
+      dirLight.shadow.mapSize.height = 2048;
+      dirLight.shadow.camera.near = 10;
+      dirLight.shadow.camera.far = 800;
+      const d = 160;
+      dirLight.shadow.camera.left = -d;
+      dirLight.shadow.camera.right = d;
+      dirLight.shadow.camera.top = d;
+      dirLight.shadow.camera.bottom = -d;
+      scene.add(dirLight);
+
+      // 海面反光副光源
+      const fillLight = new THREE.DirectionalLight(0x06B6D4, 0.45);
+      fillLight.position.set(-150, 30, -150);
+      scene.add(fillLight);
+    }
+
+    // --- 風場環境模型 (離岸水面 / 陸域地面) ---
+    function buildEnvironment() {
+      // 離岸海面
+      const waterGeo = new THREE.PlaneGeometry(1200, 1200, 48, 48);
+      const waterMat = new THREE.MeshStandardMaterial({
+        color: 0x0c2738,
+        metalness: 0.85,
+        roughness: 0.2,
+        transparent: true,
+        opacity: 0.92
+      });
+      waterMesh = new THREE.Mesh(waterGeo, waterMat);
+      waterMesh.rotation.x = -Math.PI / 2;
+      waterMesh.position.y = 0;
+      waterMesh.receiveShadow = true;
+      scene.add(waterMesh);
+
+      // 陸域地表 (預設隱藏)
+      const landGeo = new THREE.PlaneGeometry(1200, 1200, 32, 32);
+      const landMat = new THREE.MeshStandardMaterial({
+        color: 0x1e3a24,
+        roughness: 0.85,
+        metalness: 0.1
+      });
+      terrainMesh = new THREE.Mesh(landGeo, landMat);
+      terrainMesh.rotation.x = -Math.PI / 2;
+      terrainMesh.position.y = 0;
+      terrainMesh.receiveShadow = true;
+      terrainMesh.visible = false;
+      scene.add(terrainMesh);
+    }
+
+    // --- 建構大型 6MW 風力發電機 ---
+    function buildWindTurbine() {
+      const turbineRoot = new THREE.Group();
+      scene.add(turbineRoot);
+
+      // 1. 離岸水下四腳套管基礎 (Jacket Foundation)
+      jacketFoundation = new THREE.Group();
+      const legMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.6, roughness: 0.4 });
+      const yellowMat = new THREE.MeshStandardMaterial({ color: 0xFACC15, metalness: 0.4, roughness: 0.3 }); // 離岸海事警戒黃
+
+      // 四支主腳柱 (從 -25m 延伸到 +15m)
+      const legGeo = new THREE.CylinderGeometry(1.2, 1.6, 40, 16);
+      const positions = [
+        { x: -10, z: -10, rx: 0.08, rz: -0.08 },
+        { x: 10, z: -10, rx: 0.08, rz: 0.08 },
+        { x: -10, z: 10, rx: -0.08, rz: -0.08 },
+        { x: 10, z: 10, rx: -0.08, rz: 0.08 },
+      ];
+      positions.forEach(p => {
+        const leg = new THREE.Mesh(legGeo, legMat);
+        leg.position.set(p.x, -5, p.z);
+        leg.rotation.set(p.rx, 0, p.rz);
+        jacketFoundation.add(leg);
+      });
+
+      // 過渡段黃色維修平台 (Transition Piece)
+      const tpGeo = new THREE.CylinderGeometry(5.2, 5.2, 8, 32);
+      const tpMesh = new THREE.Mesh(tpGeo, yellowMat);
+      tpMesh.position.y = 10;
+      jacketFoundation.add(tpMesh);
+
+      turbineRoot.add(jacketFoundation);
+
+      // 2. 陸域混擬土圓盤基礎 (Onshore Foundation)
+      onshoreFoundation = new THREE.Group();
+      const concreteMat = new THREE.MeshStandardMaterial({ color: 0x64748B, roughness: 0.9 });
+      const cGeo = new THREE.CylinderGeometry(8, 10, 4, 32);
+      const cMesh = new THREE.Mesh(cGeo, concreteMat);
+      cMesh.position.y = 2;
+      onshoreFoundation.add(cMesh);
+      onshoreFoundation.visible = false;
+      turbineRoot.add(onshoreFoundation);
+
+      // 3. 風機塔架 (Tower, 錐形柱高約 95 米，從 y=14 到 y=110)
+      const towerGeo = new THREE.CylinderGeometry(2.6, 4.8, 96, 32);
+      const towerMat = new THREE.MeshStandardMaterial({
+        color: 0xE2E8F0,
+        metalness: 0.35,
+        roughness: 0.4
+      });
+      tower = new THREE.Mesh(towerGeo, towerMat);
+      tower.position.y = 14 + 48; // 中心點高度
+      tower.castShadow = true;
+      tower.receiveShadow = true;
+
+      // 工研院 ITRI 標誌綠能識別飾帶 (綠色環)
+      const bandGeo = new THREE.CylinderGeometry(4.2, 4.3, 3, 32);
+      const bandMat = new THREE.MeshStandardMaterial({ color: 0x0F5132, roughness: 0.3 });
+      const bandMesh = new THREE.Mesh(bandGeo, bandMat);
+      bandMesh.position.y = -35;
+      tower.add(bandMesh);
+
+      turbineRoot.add(tower);
+
+      // 4. 機艙 (Nacelle, 包含偏航軸心)
+      nacelle = new THREE.Group();
+      nacelle.position.set(0, 110, 0); // 輪轂中心高度
+
+      // 機艙外殼本體
+      const nacelleBodyGeo = new THREE.BoxGeometry(6, 6.5, 18);
+      const nacelleMat = new THREE.MeshStandardMaterial({
+        color: 0xF8FAFC,
+        metalness: 0.4,
+        roughness: 0.3
+      });
+      const nacelleBody = new THREE.Mesh(nacelleBodyGeo, nacelleMat);
+      nacelleBody.position.set(0, 0, -4);
+      nacelleBody.castShadow = true;
+      nacelle.add(nacelleBody);
+
+      // 工研院綠色品牌側線
+      const stripeGeo = new THREE.BoxGeometry(6.1, 1.2, 16);
+      const stripeMesh = new THREE.Mesh(stripeGeo, bandMat);
+      stripeMesh.position.set(0, 0, -4);
+      nacelle.add(stripeMesh);
+
+      // 機艙頂部冷卻器與測風塔
+      const radGeo = new THREE.CylinderGeometry(0.8, 0.8, 4, 16);
+      const radMesh = new THREE.Mesh(radGeo, legMat);
+      radMesh.position.set(0, 4.5, -9);
+      nacelle.add(radMesh);
+
+      turbineRoot.add(nacelle);
+
+      // 5. 轉子輪轂 (Rotor Hub)
+      hub = new THREE.Group();
+      hub.position.set(0, 0, 5.5); // 稍微朝機艙前端凸出
+      nacelle.add(hub);
+
+      const hubGeo = new THREE.SphereGeometry(3.2, 32, 24);
+      hubGeo.scale(1, 1, 1.4);
+      const hubMat = new THREE.MeshStandardMaterial({
+        color: 0xE2E8F0,
+        metalness: 0.3,
+        roughness: 0.35
+      });
+      const hubMesh = new THREE.Mesh(hubGeo, hubMat);
+      hubMesh.rotation.x = Math.PI / 2;
+      hub.add(hubMesh);
+
+      // 6. 葉片組 (3 支流線型葉片，長度約 75 米)
+      bladeGroup = new THREE.Group();
+      hub.add(bladeGroup);
+
+      const bladeGeo = createBladeGeometry();
+      const bladeMat = new THREE.MeshStandardMaterial({
+        color: 0xF8FAFC,
+        metalness: 0.25,
+        roughness: 0.3
+      });
+
+      for (let i = 0; i < 3; i++) {
+        const angle = (i * 2 * Math.PI) / 3;
+        const bladePivot = new THREE.Group();
+        bladePivot.rotation.z = angle;
+
+        const bMesh = new THREE.Mesh(bladeGeo, bladeMat.clone());
+        bMesh.position.y = 2.5; // 從輪轂外緣開始
+        bMesh.castShadow = true;
+        bMesh.receiveShadow = true;
+
+        // 葉尖警示紅漆 (抗鳥擊與航管標示)
+        const tipGeo = new THREE.BoxGeometry(1.6, 8, 0.35);
+        const tipMat = new THREE.MeshStandardMaterial({ color: 0xEF4444 });
+        const tipMesh = new THREE.Mesh(tipGeo, tipMat);
+        tipMesh.position.set(0, 68, 0);
+        bMesh.add(tipMesh);
+
+        bladePivot.add(bMesh);
+        bladeGroup.add(bladePivot);
+        blades.push(bMesh);
+      }
+    }
+
+    // 建立逼真的空氣動力學風機葉片幾何體
+    function createBladeGeometry() {
+      const shape = new THREE.Shape();
+      // 翼型剖面 (NACA 簡化流線)
+      shape.moveTo(0, 0);
+      shape.quadraticCurveTo(0.8, 0.3, 1.6, 0);
+      shape.quadraticCurveTo(0.9, -0.2, 0, 0);
+
+      // 沿 Y 軸長度擠出
+      const extrudeSettings = {
+        steps: 20,
+        depth: 72, // 葉片長度 72 米
+        bevelEnabled: true,
+        bevelSegments: 2,
+        steps: 2,
+        bevelSize: 0.1,
+        bevelThickness: 0.1
+      };
+
+      const geo = new THREE.CylinderGeometry(0.3, 1.8, 72, 16, 24);
+      geo.scale(1, 1, 0.35); // 壓扁呈現流線翼型
+      geo.translate(0, 36, 0); // 將軸心平移至根部
+      return geo;
+    }
+
+    // --- 風流粒子特效 (動態空氣流線) ---
+    function buildParticles() {
+      particleGeometry = new THREE.BufferGeometry();
+      const posArray = new Float32Array(particleCount * 3);
+      const speedArray = new Float32Array(particleCount);
+
+      for (let i = 0; i < particleCount; i++) {
+        posArray[i * 3] = (Math.random() - 0.5) * 260;
+        posArray[i * 3 + 1] = 20 + Math.random() * 180; // 高度在葉片涵蓋範圍
+        posArray[i * 3 + 2] = -180 + Math.random() * 360;
+        speedArray[i] = 0.5 + Math.random() * 0.8;
+      }
+
+      particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      particleGeometry.setAttribute('speed', new THREE.BufferAttribute(speedArray, 1));
+
+      const particleMat = new THREE.PointsMaterial({
+        color: 0x38BDF8,
+        size: 2.2,
+        transparent: true,
+        opacity: 0.65,
+        blending: THREE.AdditiveBlending
+      });
+
+      particleSystem = new THREE.Points(particleGeometry, particleMat);
+      scene.add(particleSystem);
+    }
+
+    // --- 無人機 3D 模型與巡檢動畫組件 ---
+    function buildDrone() {
+      droneGroup = new THREE.Group();
+      
+      const bodyGeo = new THREE.BoxGeometry(2, 0.6, 2);
+      const droneMat = new THREE.MeshStandardMaterial({ color: 0x0284C7, metalness: 0.7, roughness: 0.3 });
+      const droneBody = new THREE.Mesh(bodyGeo, droneMat);
+      droneGroup.add(droneBody);
+
+      // 旋翼臂
+      const armGeo = new THREE.CylinderGeometry(0.1, 0.1, 3);
+      const arm1 = new THREE.Mesh(armGeo, droneMat);
+      arm1.rotation.z = Math.PI / 4;
+      const arm2 = new THREE.Mesh(armGeo, droneMat);
+      arm2.rotation.z = -Math.PI / 4;
+      droneGroup.add(arm1, arm2);
+
+      // 雲台相機光束 (探測錐形)
+      const scanGeo = new THREE.ConeGeometry(4, 18, 16, 1, true);
+      const scanMat = new THREE.MeshBasicMaterial({
+        color: 0x38BDF8,
+        transparent: true,
+        opacity: 0.25,
+        wireframe: true,
+        side: THREE.DoubleSide
+      });
+      const scanCone = new THREE.Mesh(scanGeo, scanMat);
+      scanCone.position.y = -9;
+      droneGroup.add(scanCone);
+
+      droneGroup.position.set(35, 120, 30);
+      droneGroup.visible = false;
+      scene.add(droneGroup);
+    }
+
+    // --- UI 互動與事件綁定 ---
+    function bindEvents() {
+      // 風速滑桿
+      const windInput = document.getElementById('input-wind-speed');
+      windInput.addEventListener('input', (e) => {
+        state.windSpeed = parseFloat(e.target.value);
+        document.getElementById('val-wind-speed').innerText = `${state.windSpeed.toFixed(1)} m/s`;
+        updatePhysics();
+      });
+
+      // 風向滑桿
+      const dirInput = document.getElementById('input-wind-dir');
+      dirInput.addEventListener('input', (e) => {
+        state.windDir = parseFloat(e.target.value);
+        document.getElementById('val-wind-dir').innerText = `${state.windDir}°`;
+        updatePhysics();
+      });
+
+      // 自動偏航開關
+      const yawCheck = document.getElementById('check-auto-yaw');
+      yawCheck.addEventListener('change', (e) => {
+        state.autoYaw = e.target.checked;
+      });
+
+      // 節距角滑桿
+      const pitchInput = document.getElementById('input-blade-pitch');
+      pitchInput.addEventListener('input', (e) => {
+        state.bladePitch = parseFloat(e.target.value);
+        document.getElementById('val-blade-pitch').innerText = `${state.bladePitch.toFixed(1)}°`;
+        updatePhysics();
+      });
+
+      // 流線粒子開關
+      document.getElementById('check-particles').addEventListener('change', (e) => {
+        state.showParticles = e.target.checked;
+        particleSystem.visible = state.showParticles;
+      });
+
+      // 環境切換 (離岸 / 陸域)
+      const btnOffshore = document.getElementById('btn-env-offshore');
+      const btnOnshore = document.getElementById('btn-env-onshore');
+      btnOffshore.addEventListener('click', () => {
+        state.environment = 'offshore';
+        btnOffshore.classList.add('active');
+        btnOnshore.classList.remove('active');
+        waterMesh.visible = true;
+        terrainMesh.visible = false;
+        jacketFoundation.visible = true;
+        onshoreFoundation.visible = false;
+        scene.fog.color.setHex(0x0a1220);
+      });
+      btnOnshore.addEventListener('click', () => {
+        state.environment = 'onshore';
+        btnOnshore.classList.add('active');
+        btnOffshore.classList.remove('active');
+        waterMesh.visible = false;
+        terrainMesh.visible = true;
+        jacketFoundation.visible = false;
+        onshoreFoundation.visible = true;
+        scene.fog.color.setHex(0x13221a);
+      });
+
+      // 運維檢視模式切換
+      const modeBtns = {
+        'standard': document.getElementById('btn-mode-std'),
+        'stress': document.getElementById('btn-mode-stress'),
+        'uav': document.getElementById('btn-mode-uav'),
+        'xray': document.getElementById('btn-mode-xray')
+      };
+
+      Object.keys(modeBtns).forEach(mode => {
+        modeBtns[mode].addEventListener('click', () => {
+          Object.values(modeBtns).forEach(b => b.classList.remove('active'));
+          modeBtns[mode].classList.add('active');
+          setInspectionMode(mode);
+        });
+      });
+
+      // 視角快捷切換
+      document.getElementById('btn-cam-front').addEventListener('click', () => {
+        tweenCamera(new THREE.Vector3(0, 110, 180), new THREE.Vector3(0, 110, 0));
+      });
+      document.getElementById('btn-cam-side').addEventListener('click', () => {
+        tweenCamera(new THREE.Vector3(200, 110, 0), new THREE.Vector3(0, 110, 0));
+      });
+      document.getElementById('btn-cam-nacelle').addEventListener('click', () => {
+        tweenCamera(new THREE.Vector3(25, 125, 35), new THREE.Vector3(0, 110, 0));
+      });
+      document.getElementById('btn-cam-overview').addEventListener('click', () => {
+        tweenCamera(new THREE.Vector3(220, 180, 260), new THREE.Vector3(0, 60, 0));
+      });
+    }
+
+    // 平滑相機切換
+    function tweenCamera(targetPos, targetLookAt) {
+      camera.position.copy(targetPos);
+      controls.target.copy(targetLookAt);
+    }
+
+    // 切換運維模式
+    function setInspectionMode(mode) {
+      state.viewMode = mode;
+      const droneLabel = document.getElementById('drone-label');
+
+      if (mode === 'stress') {
+        // 彩虹應力熱圖材質
+        blades.forEach(b => {
+          b.material.color.setHex(0xF59E0B); // 受力黃
+          b.material.wireframe = true;
+        });
+        droneGroup.visible = false;
+        droneLabel.style.display = 'none';
+      } else if (mode === 'uav') {
+        // 啟用無人機巡檢
+        blades.forEach(b => {
+          b.material.color.setHex(0xF8FAFC);
+          b.material.wireframe = false;
+        });
+        droneGroup.visible = true;
+        droneLabel.style.display = 'block';
+      } else if (mode === 'xray') {
+        // 機艙透視
+        nacelle.children.forEach(c => {
+          if (c.material) {
+            c.material.transparent = true;
+            c.material.opacity = 0.35;
+            c.material.wireframe = true;
+          }
+        });
+        droneGroup.visible = false;
+        droneLabel.style.display = 'none';
+      } else {
+        // 標準視角
+        blades.forEach(b => {
+          b.material.color.setHex(0xF8FAFC);
+          b.material.wireframe = false;
+        });
+        nacelle.children.forEach(c => {
+          if (c.material) {
+            c.material.transparent = false;
+            c.material.opacity = 1.0;
+            c.material.wireframe = false;
+          }
+        });
+        droneGroup.visible = false;
+        droneLabel.style.display = 'none';
+      }
+    }
+
+    // --- 綠能發電物理與流體動態計算 ---
+    function updatePhysics() {
+      const v = state.windSpeed;
+      const alertBox = document.getElementById('alert-box');
+      const alertText = document.getElementById('alert-text');
+      const sysDot = document.getElementById('system-dot');
+      const sysText = document.getElementById('system-status-text');
+
+      // 1. 風況運轉判定 (Cut-in: 3.0 m/s, Rated: 12.0 m/s, Cut-out: 25.0 m/s)
+      if (v < 3.0) {
+        // 靜止 / 待機
+        state.rotorRpm = 0.5 * v;
+        state.powerKw = 0;
+        alertBox.className = 'alert-banner';
+        alertText.innerText = '風速低於切入風速 (3.0 m/s)，機組處於熱機待命狀態';
+        sysDot.style.background = '#94A3B8';
+        sysDot.style.boxShadow = 'none';
+        sysText.innerText = '微風待命';
+      } else if (v >= 3.0 && v <= 12.0) {
+        // 功率爬升區間 (貝茨極限 P = 0.5 * rho * A * v^3 * Cp)
+        const ratio = (v - 3.0) / (12.0 - 3.0);
+        state.powerKw = Math.round(state.ratedCapacity * Math.pow(ratio, 2.7));
+        state.rotorRpm = 6.0 + ratio * 6.5; // 6.0 ~ 12.5 RPM
+        alertBox.className = 'alert-banner';
+        alertText.innerText = '機組處於最佳葉尖速比 (TSR) 爬升發電區間';
+        sysDot.style.background = '#10B981';
+        sysDot.style.boxShadow = '0 0 10px #10B981';
+        sysText.innerText = '正常併網發電中';
+      } else if (v > 12.0 && v <= 25.0) {
+        // 額定功率運轉區間 (變槳調控維護 6.0MW)
+        state.powerKw = state.ratedCapacity;
+        state.rotorRpm = 12.5;
+        alertBox.className = 'alert-banner warning';
+        alertText.innerText = '達到額定滿載！自動增加變槳角以恆定 6.0 MW 輸出';
+        sysDot.style.background = '#F59E0B';
+        sysDot.style.boxShadow = '0 0 10px #F59E0B';
+        sysText.innerText = '額定滿載運轉';
+      } else {
+        // 超過 25.0 m/s 強颱切出保護 (Storm Cut-out & Feathering)
+        state.powerKw = 0;
+        state.rotorRpm = Math.max(0, state.rotorRpm * 0.9);
+        alertBox.className = 'alert-banner danger';
+        alertText.innerText = '⚠️ 陣風超限 (>25 m/s)！啟動抗颱 90° 順槳煞車保護機制';
+        sysDot.style.background = '#EF4444';
+        sysDot.style.boxShadow = '0 0 10px #EF4444';
+        sysText.innerText = '抗颱強迫停機';
+      }
+
+      // 若手動順槳至 80° 以上，強制煞車
+      if (state.bladePitch >= 80) {
+        state.powerKw = 0;
+        state.rotorRpm = Math.min(state.rotorRpm, 0.8);
+      }
+
+      // 更新儀表板 UI
+      document.getElementById('disp-power').innerText = state.powerKw.toLocaleString();
+      document.getElementById('disp-rpm').innerText = state.rotorRpm.toFixed(1);
+      
+      const tsr = v > 0.5 ? ((state.rotorRpm * (2 * Math.PI / 60) * (state.rotorDiameter / 2)) / v).toFixed(1) : 0;
+      document.getElementById('disp-tsr').innerText = tsr;
+
+      const cp = (state.powerKw > 0 && v > 0) ? Math.min(0.48, (state.powerKw / (0.5 * 1.225 * Math.PI * Math.pow(state.rotorDiameter/2, 2) * Math.pow(v, 3) / 1000))).toFixed(2) : 0;
+      document.getElementById('disp-cp').innerText = cp;
+
+      const load = ((state.powerKw / state.ratedCapacity) * 100).toFixed(1);
+      document.getElementById('disp-load').innerText = load;
+
+      document.getElementById('disp-temp').innerText = (55.0 + (state.powerKw / state.ratedCapacity) * 12.5).toFixed(1);
+    }
+
+    // --- 動畫渲染迴圈 ---
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // 1. 風機葉片轉動物理
+      const deltaRotation = (state.rotorRpm * 2 * Math.PI / 60) * 0.016;
+      bladeGroup.rotation.z += deltaRotation;
+
+      // 2. 葉片節距角旋轉 (Pitch)
+      const pitchRad = THREE.MathUtils.degToRad(state.bladePitch);
+      blades.forEach(b => {
+        b.rotation.y = pitchRad;
+      });
+
+      // 3. 自動追風偏航系統 (Yaw System)
+      const targetYawRad = THREE.MathUtils.degToRad(state.windDir);
+      if (state.autoYaw) {
+        nacelle.rotation.y = THREE.MathUtils.lerp(nacelle.rotation.y, targetYawRad, 0.02);
+      }
+      const currentYawDeg = THREE.MathUtils.radToDeg(nacelle.rotation.y) % 360;
+      const yawDiff = Math.abs(currentYawDeg - state.windDir).toFixed(1);
+      document.getElementById('disp-yaw-angle').innerText = `${currentYawDeg.toFixed(0)}° / 誤差 ${yawDiff}°`;
+
+      // 4. 海浪波紋微動
+      if (waterMesh && waterMesh.visible) {
+        const time = Date.now() * 0.0012;
+        const pos = waterMesh.geometry.attributes.position;
+        for (let i = 0; i < pos.count; i++) {
+          const u = pos.getX(i);
+          const v = pos.getY(i);
+          pos.setZ(i, Math.sin(u * 0.03 + time) * 1.2 + Math.cos(v * 0.03 + time) * 1.0);
+        }
+        waterMesh.geometry.attributes.position.needsUpdate = true;
+      }
+
+      // 5. 空氣流線粒子動畫
+      if (state.showParticles && particleGeometry) {
+        const positions = particleGeometry.attributes.position.array;
+        const speeds = particleGeometry.attributes.speed.array;
+        const flowSpeed = Math.max(0.5, state.windSpeed * 0.15);
+        const cosY = Math.cos(targetYawRad);
+        const sinY = Math.sin(targetYawRad);
+
+        for (let i = 0; i < particleCount; i++) {
+          // 沿著風向運動
+          positions[i * 3 + 2] += flowSpeed * speeds[i] * cosY;
+          positions[i * 3] += flowSpeed * speeds[i] * sinY;
+
+          // 超出邊界重置
+          if (positions[i * 3 + 2] > 180 || positions[i * 3 + 2] < -180 || positions[i * 3] > 150 || positions[i * 3] < -150) {
+            positions[i * 3 + 2] = -160 * cosY + (Math.random() - 0.5) * 60;
+            positions[i * 3] = -160 * sinY + (Math.random() - 0.5) * 60;
+            positions[i * 3 + 1] = 20 + Math.random() * 180;
+          }
+        }
+        particleGeometry.attributes.position.needsUpdate = true;
+      }
+
+      // 6. 無人機繞圈巡檢軌跡
+      if (droneGroup && droneGroup.visible) {
+        const droneTime = Date.now() * 0.001;
+        droneGroup.position.x = Math.sin(droneTime) * 35;
+        droneGroup.position.z = Math.cos(droneTime) * 35 + 20;
+        droneGroup.position.y = 110 + Math.sin(droneTime * 2) * 15;
+        droneGroup.rotation.y = droneTime + Math.PI / 2;
+
+        // 更新 2D 螢幕浮標位置
+        const dronePos = droneGroup.position.clone().project(camera);
+        const label = document.getElementById('drone-label');
+        const x = (dronePos.x * 0.5 + 0.5) * window.innerWidth;
+        const y = (-(dronePos.y * 0.5) + 0.5) * window.innerHeight;
+        label.style.left = `${x}px`;
+        label.style.top = `${y}px`;
+      }
+
+      // 控制器更新與渲染
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+  </script>
+</body>
+</html>
