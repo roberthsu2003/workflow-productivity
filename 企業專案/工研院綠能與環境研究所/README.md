@@ -109,7 +109,7 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 - [**Claude in Chrome 擴充功能**](../../Claude_ai/claude_in_chrome/README.md)：Anthropic 官方 Chrome 擴充功能，可在已登入環境中執行頁面操作與資料讀取。
 - [**Playwright 本地爬蟲技巧**](../../Claude_ai/Local_MCP/README.md)：透過本機真實瀏覽器支援動態 JS 渲染與頁面互動，存取無 API 之公開情報網站。（💡 **專屬提示**：單元內已特別為工研院綠能所建立「[**台電電力即時負載、淨零法規動態與儲能規格調研**](../../Claude_ai/Local_MCP/examples/green_energy.md)」進階實戰獨立模組，可直接點擊演練！）
 - [**Claude Skills 建立指南**](../../Claude_ai/Skills/README.md)：自訂 Skill 前兩階演進（第一階：模仿者 ➔ 第二階：創作者），學習建立標準化工作流程。（💡 **專屬提示**：單元內已特別為工研院綠能所建立「[**第一階：公文與產學回函修飾專家**](../../Claude_ai/Skills/ITRI_Imitator/README.md)」與「[**第二階：綠能專案技術摘要與規格評核專家**](../../Claude_ai/Skills/ITRI_Creator/README.md)」兩大實戰模組，可直接點擊演練！）
-- [**每日產業新聞與情報自動化蒐集(模仿者)**](../../Claude_ai/Skills/VC_Playwright/README.md)：利用 Playwright + Prompt 自動抓取並結構化輸出每日產業新知。
+
 
 #### 🛠️ 課程內容與實作綱要
 - **網頁自動化瀏覽**：運用 Claude in Chrome 快速分析線上能源政策、學術期刊或競品技術公告。
