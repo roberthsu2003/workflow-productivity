@@ -54,7 +54,10 @@ const result = await window.claude.complete("請將以下文字濃縮為 3 個�
 ### 🎯 如何要求 Claude 幫你製作？（提示詞 Prompt）
 > 「請幫我建立一個單一檔案的 HTML Artifact 小工具，做為『公文語氣潤飾器』。畫面上要有輸入框、轉換按鈕與結果區域，並**使用 `window.claude.complete` 介面**直接在瀏覽器端調用 AI 大腦來潤飾文字，同時附上載入中的 Loading 狀態與防呆處理。」
 
-### 📝 完整實作程式碼範例 (Single File HTML)
+### 📝 完整實作程式碼範例
+
+<details>
+<summary><b>點擊展開查看完整 HTML 程式碼 (Single File)</b></summary>
 
 ```html
 <!DOCTYPE html>
@@ -124,6 +127,9 @@ const result = await window.claude.complete("請將以下文字濃縮為 3 個�
 </body>
 </html>
 ```
+
+</details>
+
 
 ---
 
