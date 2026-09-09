@@ -51,8 +51,26 @@ const result = await window.claude.complete("請將以下文字濃縮為 3 個�
 
 你可以直接複製以下 Prompt 讓 Claude 產生，或是直接檢視這份標準的前端 HTML 程式碼架構：
 
-### 🎯 如何要求 Claude 幫你製作？（提示詞 Prompt）
-> 「請幫我建立一個單一檔案的 HTML Artifact 小工具，做為『公文語氣潤飾器』。畫面上要有輸入框、轉換按鈕與結果區域，並**使用 `window.claude.complete` 介面**直接在瀏覽器端調用 AI 大腦來潤飾文字，同時附上載入中的 Loading 狀態與防呆處理。」
+### 🎯 如何要求 Claude 幫你製作？（RTCCF 提示詞 Prompt）
+
+```markdown
+## Role
+你是一位精通前端開發與 AI 應用的資深架構師。
+
+## Task
+建立一個單一檔案的 HTML Artifact 小工具：「公文語氣潤飾器」。
+
+## Context
+使用者需要將口語、粗糙的備忘草稿，即時轉換為正式、條理分明的公文或簽呈文稿。
+
+## Constraint
+1. 必須**使用 Claude Artifacts 內建的 `window.claude.complete()` API** 直接在瀏覽器前端調用 Claude 大腦，免 API Key、免架設後端伺服器。
+2. 需加入環境防呆檢測：若 `!window.claude?.complete`，提示使用者需在 Claude.ai 預覽環境中運行。
+3. 介面需包含輸入文字框、轉換按鈕、按鈕 Loading 狀態（思考中動畫）、以及結果呈現區域。
+
+## Format
+產出為單一 **HTML Artifact**，可在右側側欄即時預覽與測試。
+```
 
 ### 📋 實測範例文字（可直接複製貼入「原始文字」框）
 

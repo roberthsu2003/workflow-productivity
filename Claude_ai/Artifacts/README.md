@@ -147,20 +147,19 @@ graph LR
 
 ---
 
-## 🚀 由淺至深：六大實戰教學範例矩陣
+## 🚀 由淺至深：五大進階實戰教學範例矩陣
 
-本教學遵循**由淺入深的四階學習曲線**，涵蓋多種主流格式。每個範例皆具備獨立資料夾、詳細操作指引、一鍵複製的 Prompt 與演練重點：
+除了前述「10 分鐘快速實作」的辦公行政小工具外，本手冊依**由淺入深的四階學習曲線**，規劃了涵蓋多種主流格式的五大進階範例模組。每個範例皆具備獨立資料夾、詳細操作指引、一鍵複製的 RTCCF Prompt 與演練重點：
 
 ```mermaid
 graph LR
-    L1["🟢 Level 1 入門實戰<br/>辦公行政與行銷文案<br/>（HTML小工具 / 結構化Markdown）"] --> L2["🔵 Level 2 進階開發<br/>工程代碼與課堂工作坊<br/>（Python PEP8 / 多格式實作）"]
+    L1["🟢 Level 1 入門實戰<br/>行銷企劃與社群文案<br/>（結構化Markdown）"] --> L2["🔵 Level 2 進階開發<br/>工程代碼與課堂工作坊<br/>（Python PEP8 / 多格式實作）"]
     L2 --> L3["🟡 Level 3 高階分析<br/>數據戰情室與產品原型<br/>（React Recharts / UI與localStorage）"]
     L3 --> L4["🔴 Level 4 專家整合<br/>AI大腦與雲端串接<br/>（Claude in Claude / Google Drive）"]
 ```
 
 | 階梯層級 | 實戰範例模組 | 適合對象 | 產出格式 | 核心學習亮點 |
 | :---: | :---| :---| :---| :---|
-| **🟢 Level 1**<br/>入門實戰 | [🏢 **辦公行政規則查詢小工具**](./Examples/01_Office_Administration/README.md) | 行政總務<br>HR / 專案管理 | **HTML 網頁** | Tab 切換、即時搜尋過濾、長官反饋版本演進、開會展示 SOP。 |
 | **🟢 Level 1**<br/>入門實戰 | [✍️ **產品銷售頁文案守門人**](./Examples/02_Marketing_and_Copywriting/README.md) | 行銷企劃<br>社群小編 | **Markdown 文件** | 銷售賣點結構化、規格對比表、受眾語調快速切換 (A/B Test)。 |
 | **🔵 Level 2**<br/>進階開發 | [💻 **工程師的 Python 邏輯函數**](./Examples/03_Software_Engineering/README.md) | 軟體工程師<br>資料分析師 | **Python 程式碼** | 嚴格 PEP 8 規範、Google Docstring、邊界異常處理與單元測試。 |
 | **🔵 Level 2**<br/>進階開發 | [🧪 **學生實作多格式工作坊**](./Examples/06_Student_Lab/README.md) | 學生學員<br>跨領域自學者 | **多格式綜合**<br>(SVG/Mermaid) | 單字測驗、光合作用流程圖、園遊會記帳、班徽向量圖。 |
