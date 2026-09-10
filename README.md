@@ -83,7 +83,7 @@
 ### 🟣 [Claude.AI 實戰全指南](./Claude_ai/README.md)
 Anthropic 旗艦生成式 AI，以頂級邏輯推理、超長脈絡窗口與卓越的中文理解著稱。核心優勢在於能直接透過對話執行程式碼並產出 Word、Excel、PPT、PDF 等正式商務檔案，並具備 Artifacts 互動畫布、Projects 知識庫沙盒、自訂 Skills 技能體系，以及能跨應用程式自主操作的進階代理人（Agent）能力，特別適合高複雜度的長文分析、規章稽核與專業公務自動化。
 
-### 🟢 [ChatGPT 現代職場工作流全指南](./chatGPT_codex/README.md)
+### 🟢 [ChatGPT 現代職場工作流全指南](./chatGPT/README.md)
 OpenAI 旗艦多模態 AI 生態系，專為日常知識工作者打造的生產力副駕。全篇聚焦於一般人在 Web 與桌面版圖形介面的實用功能（完全免寫程式、免用 CLI 終端機）：透過 Canvas 雙欄畫布協作精修長文與公文、免環境上傳 Excel 自動清洗並產出正式商務圖表與 Office 下載檔（Advanced Data Analysis）、零程式碼打造專屬 Custom GPTs 助理與上傳內部規章知識庫、Deep Research 多步驟深度產業調研、Advanced Voice Mode 進階口說演練，以及 Google Drive 雲端硬碟直連，是跨領域企劃、行政管理、數據洞察與日常多工協作的強大幫手。
 
 ---
