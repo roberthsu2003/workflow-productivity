@@ -63,8 +63,8 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 ### 🟢 [02. Chats（對話、思考模式與提示詞工程）](./02_Chats/README.md) — Free / Plus
 > 掌握 ChatGPT 兩大運算模式：**通用多工旗艦模式**（日常文案、郵件、多模態圖片/檔案處理）與 **深度思考推理模式（Reasoning）**（專注於複雜邏輯、合規審查與決策推演）。掌握職場必備 **ROSES 框架**（Role, Objective, Scenario, Expected Outcome, Steps），輕鬆應對複雜商務溝通。
 
-### 🎨 [03. Canvas（畫布互動協作：長文精修）](./03_Canvas/README.md) — Free / Plus
-> ChatGPT 的王牌協作功能！擺脫「一次性生成一大段文字」的舊習慣，在右側畫布進行「行內劃重點反饋」、「一鍵調整閱讀層級（小學生到研究生）」、「改變長度」、「自動潤稿」，大幅提升人機協同產出效率。
+### 🎨 [03. 討論方式的內容生成：Canvas 畫布協作](./03_Canvas/README.md) — Free / Plus
+> **討論式內容生成的 ChatGPT 專屬解法**！核心實作心法：**必須先產生 Markdown 檔案進入右側獨立畫布，人機才能在畫布上進行行內劃重點反饋、調整長度、自動潤稿與反覆打磨，確認定稿後再一鍵下載 Word/Excel/PPT/PDF**！
 
 ### 🧠 [04. Custom Instructions & Memory（個人化設定與長期記憶）](./04_Custom_Instructions_Memory/README.md) — Free / Plus
 > 讓 ChatGPT 成為懂你的專屬秘書。精準設定 Custom Instructions 的兩大區塊（你的背景與期待的回覆格式）；解密 ChatGPT 的 **Memory（記憶）機制**，學會如何查詢、手動注入、單筆刪除與重置長期記憶，避免資訊混淆。
