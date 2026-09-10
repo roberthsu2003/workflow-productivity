@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the structure and local links of the chatGPT_codex handbook."""
+"""Validate the structure and local links of the ChatGPT productivity handbook."""
 
 from __future__ import annotations
 
@@ -11,24 +11,19 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP_LEVEL = (
-    "Quickstart",
-    "Settings",
-    "Tasks",
-    "Projects",
-    "Agent_Configuration",
-    "Skills",
-    "Connectors",
-    "Plugins",
-    "MCP",
-    "Browser",
-    "Visualizations",
-    "Workspaces",
-    "Automations",
-    "Remote",
+    "01_Settings",
+    "02_Chats",
+    "03_Canvas",
+    "04_Custom_Instructions_Memory",
+    "05_Advanced_Data_Analysis",
+    "06_Custom_GPTs",
+    "07_Projects",
+    "08_Deep_Research",
+    "09_Voice_Vision",
+    "10_Connectors",
+    "11_DALL_E",
     "student-lab",
-    "Answer_Key",
     "Troubleshooting",
-    "Offline_Mode",
     "tools",
 )
 LINK_PATTERN = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
@@ -58,36 +53,13 @@ def validate() -> list[str]:
         if not any(directory.iterdir()):
             errors.append(f"空資料夾：{directory.relative_to(ROOT)}/")
 
-    for examples in sorted(ROOT.rglob("Examples")):
-        for item in sorted(path for path in examples.iterdir() if path.is_dir()):
-            has_entry = (item / "README.md").is_file() or any(item.glob("*.md"))
-            if not has_entry:
-                errors.append(f"案例沒有 Markdown 入口：{item.relative_to(ROOT)}/")
-
-    for skill_file in sorted(ROOT.rglob("SKILL.md")):
-        if skill_file.stat().st_size == 0:
-            errors.append(f"空白 skill：{skill_file.relative_to(ROOT)}")
-
-    lab = ROOT / "student-lab" / "tideflow-portal"
-    for relative in (
-        "package.json", "AGENTS.md", "src/server.js", "src/shipping.js",
-        "src/checkout/calcTotal.js", "test/shipping.test.js",
-        "scripts/bootstrap.sh", "scripts/generate-weekly-report.js",
-        "data/delivery_2026-W36.csv", "data/issues.csv",
-        "data/pull_requests.csv", "data/commits.md",
-        "data/public_equity_source_snapshot.md",
-    ):
-        if not (lab / relative).is_file():
-            errors.append(f"學生練習專案缺少：student-lab/tideflow-portal/{relative}")
-
-    for markdown_file in sorted(ROOT.rglob("*.md")):
-        content = markdown_file.read_text(encoding="utf-8")
+    markdown_files = sorted(ROOT.rglob("*.md"))
+    for md in markdown_files:
+        content = md.read_text(encoding="utf-8")
         for match in LINK_PATTERN.finditer(content):
-            target = local_target(markdown_file, match.group(1))
-            if target is not None and not target.exists():
-                line = content.count("\n", 0, match.start()) + 1
-                relative_file = markdown_file.relative_to(ROOT)
-                errors.append(f"失效連結：{relative_file}:{line} -> {match.group(1)}")
+            target = local_target(md, match.group(1))
+            if target and not target.exists():
+                errors.append(f"{md.relative_to(ROOT)}: 連結失效 -> {match.group(1)}")
 
     return errors
 
@@ -95,14 +67,17 @@ def validate() -> list[str]:
 def main() -> int:
     errors = validate()
     if errors:
-        print(f"FAIL: 發現 {len(errors)} 個架構問題")
+        print("❌ 架構驗證失敗：")
         for error in errors:
-            print(f"- {error}")
+            print(f"  - {error}")
         return 1
 
-    markdown_count = sum(1 for _ in ROOT.rglob("*.md"))
-    file_count = sum(1 for path in ROOT.rglob("*") if path.is_file())
-    print(f"PASS: {len(REQUIRED_TOP_LEVEL)} 個必備目錄、{markdown_count} 份 Markdown、{file_count} 個檔案皆通過檢查")
+    md_count = len(list(ROOT.rglob("*.md")))
+    file_count = len([p for p in ROOT.rglob("*") if p.is_file()])
+    print("✅ ChatGPT 講義架構驗證通過！")
+    print(f"  - 必備目錄數：{len(REQUIRED_TOP_LEVEL)}")
+    print(f"  - Markdown 文件數：{md_count}")
+    print(f"  - 全部檔案數：{file_count}")
     return 0
 
 

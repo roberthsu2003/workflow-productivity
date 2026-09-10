@@ -1,71 +1,76 @@
-# ChatGPT Codex 講義架構
+# ChatGPT 講義架構與學習地圖（一般人日常生產力介面）
 
-本目錄以 `Claude_ai` 的教學層次為參考，但使用 Codex 的實際產品概念重新分組；它不是逐字複製，而是功能對等的教材架構。
+本目錄專為 **ChatGPT 現代職場工作流與一般人生產力應用** 量身打造，徹底摒除任何終端機命令（CLI）與寫程式碼的內容，全面回歸一般人在瀏覽器網頁版、桌面版與手機 App 使用的官方圖形化介面。架構對標 `Claude_ai` 的學習進階階梯，引導學員從基礎設定一路晉升至進階多模態與客製化 AI 助理。
 
-## 目錄地圖
+---
+
+## 🗺️ 目錄架構一覽
 
 ```text
 chatGPT_codex/
-├── README.md                 # 全教材入口、方案與授課順序
-├── Quickstart/               # 第一次安全操作
-├── Settings/                 # 權限、sandbox、network、config.toml
-├── Tasks/                    # 任務描述、長時工作與驗收
-├── Projects/                 # 專案知識、Instructions 與案例
-├── Agent_Configuration/      # AGENTS.md 的作用域與規則
-├── Skills/                   # SKILL.md、四階範例與職能專題
-├── Connectors/               # Google Workspace、Canva、GitHub
-├── Plugins/                  # 可安裝的能力套件
-├── MCP/                      # 自建工具與外部系統協定
-├── Browser/                  # Browser、瀏覽器擴充與安全操作
-├── Visualizations/           # 視覺化、Sites 與發佈治理
-├── Workspaces/               # Desktop、CLI、IDE、Cloud 與 worktree
-├── Automations/              # 排程、事件觸發與監控案例
-├── Remote/                   # 跨裝置交辦、核准與審查
-├── student-lab/              # 可離線執行的完整 TideFlow 練習專案
-├── Answer_Key/               # 預期發現、驗收答案與評分規準
-├── Troubleshooting/          # 自學時的環境、Git 與權限除錯
-├── Offline_Mode/             # 外部服務章節的無帳號替代方案
-└── tools/                    # 示範資料產生與架構驗證工具
+├── README.md                          # 全教材入口、方案速覽、與 Claude_ai 對照表
+├── ARCHITECTURE.md                    # 架構設計、學習進階路徑與模組清單（本文件）
+├── 01_Settings/                       # 帳號偏好、隱私安全、資料控制與桌面版快捷操作
+├── 02_Chats/                          # 現代模型陣容（GPT-4o/o1/o3-mini）、ROSES 提示詞框架
+├── 03_Canvas/                         # Canvas 畫布：雙欄協作、劃記精修、長文寫作與潤飾
+├── 04_Custom_Instructions_Memory/     # Custom Instructions 雙區塊設定 + Memory 長期記憶管理
+├── 05_Advanced_Data_Analysis/         # 免寫程式！數據分析、商務圖表繪製、直接產出 Word/Excel/PPT
+│   └── sample_data/                   # 示範銷售與營運數據集（CSV）
+├── 06_Custom_GPTs/                    # 零程式碼打造專屬小幫手、知識庫 RAG、分享與發佈
+│   └── templates/                     # 實務專用 Prompt 範本庫（公文審查、行銷企劃教練）
+├── 07_Projects/                       # ChatGPT 專案資料夾、知識庫集中管理與協作
+├── 08_Deep_Research/                  # 即時聯網搜尋（Web Search）+ 多步驟深度研究（Deep Research）
+├── 09_Voice_Vision/                   # Advanced Voice Mode 進階語音情境模擬 + 視覺拍照與螢幕辨識
+├── 10_Connectors/                     # Google Drive / OneDrive 雲端硬碟直連與跨檔分析
+├── 11_DALL_E/                         # DALL·E 3 商業視覺生成、簡報配圖與畫筆局部修圖（Inpainting）
+├── student-lab/                       # 學生綜合實戰工作坊（全套綠色家電上市推廣案實做）
+│   └── materials/                     # 實作情境與配套素材
+├── Troubleshooting/                   # 常見疑難排查（額度上限、聯網異常、解析失敗、幻覺矯正）
+└── tools/                             # 輔助維護與測試數據工具
 ```
 
-## 與 Claude_ai 的功能對照
+---
 
-| Claude_ai | chatGPT_codex | 說明 |
-|---|---|---|
-| Chats | Tasks | 對話改以可執行、可驗收的 task 教學 |
-| Artifacts | Visualizations | 拆成 workspace 檔案、視覺化、Sites 與圖片 |
-| Projects | Projects | 加入本機資料夾、Git 與 worktree 概念 |
-| Custom Instructions | Agent_Configuration | 以具目錄作用域的 `AGENTS.md` 為核心 |
-| Connectors | Connectors | 依實際 app／服務分組 |
-| Skills | Skills | 使用 `SKILL.md`，並保留四階學習路線 |
-| Plugins | Plugins | 說明 skill、MCP 與 UI 的組合關係 |
-| Local_MCP | MCP | 同時涵蓋本機與遠端 MCP |
-| claude_in_chrome | Browser | 以 Codex／ChatGPT 的瀏覽器操作方式重寫 |
-| cowork | Workspaces | 對照 Desktop、CLI、IDE、Cloud |
-| Scheduled | Automations | 排程、監控與事件型工作 |
-| Dispatch | Remote | 手機交辦、核准與成果審查 |
-| Settings | Settings | 權限、sandbox、network 與設定檔 |
+## 📈 三階段學習路徑
 
-Codex 另外需要兩個 Claude 原目錄沒有獨立呈現的入口：`Quickstart` 用於第一次安全實作，`Agent_Configuration` 用於持久化 repository 規則。
+```mermaid
+graph TD
+    subgraph Phase 1: 基礎核心（所有方案均可上手）
+        A[01_Settings<br>隱私安全與桌面版快捷鍵] --> B[02_Chats<br>模型選用與 ROSES 提示詞]
+        B --> C[03_Canvas<br>畫布人機協作精修長文]
+        B --> D[04_Custom_Instructions_Memory<br>打造專屬個人風格與記憶]
+    end
 
-## 每類目錄的完成條件
+    subgraph Phase 2: 生產力倍增（數據分析與客製化）
+        C --> E[05_Advanced_Data_Analysis<br>免寫程式！數據分析與產出 Office]
+        D --> F[06_Custom_GPTs<br>零程式碼專屬助理與知識庫]
+        B --> G[10_Connectors<br>直連雲端硬碟 Google Drive/OneDrive]
+    end
 
-- 主題目錄必須有 `README.md`，並可返回教材首頁。
-- `Examples/` 下的每個案例必須有 `README.md` 或可直接閱讀的 `.md` 教材。
-- 可安裝 skill 必須以 `SKILL.md` 為入口；需要時再搭配 `references/`、`templates/`、`scripts/`。
-- 練習所引用的本機素材必須存在；Markdown 相對連結不可失效。
-- 不保留空資料夾；可重建的二進位教材要有 `tools/` 腳本與固定資料種子。
-- 方案、功能狀態與操作介面會變動；授課前仍須依 README 所列官方文件複核。
+    subgraph Phase 3: 旗艦進階（深度研究、多模態與協作）
+        E --> H[07_Projects<br>專案空間集中管理]
+        F --> I[08_Deep_Research<br>多步驟深度自主研究代理]
+        B --> J[09_Voice_Vision<br>進階語音口說演練與螢幕辨識]
+        B --> K[11_DALL_E<br>商業視覺生成與局部修圖]
+    end
 
-## 驗證
-
-在 repository 根目錄執行：
-
-```bash
-python3 chatGPT_codex/tools/validate_structure.py
+    subgraph 綜合實戰檢驗
+        H & I & E & F --> L[student-lab<br>新產品上市綜合專案演練]
+    end
 ```
 
-驗證器會檢查必備章節、主題入口、案例入口、skill 入口、空資料夾及 Markdown 相對連結。它只讀取檔案，不會修改教材。
+---
+
+## 🎯 學習成果與能力指標
+
+完成本系列講義學習後，學員將具備以下能力：
+
+1. **資訊安全與隱私防護能力**：清楚知道如何在公務情境中正確關閉資料訓練授權，安全處理公務資料。
+2. **高效提示詞架構能力**：熟練掌握 **ROSES 框架**，能在 3 分鐘內引導 ChatGPT 產出結構清晰、符合商務標準的高品質產出。
+3. **極致人機協作效率**：善用 **Canvas 雙欄畫布** 進行劃記修改，徹底告別「整篇重新生成」的等待浪費。
+4. **數據分析與報表自動產出**：利用 **Advanced Data Analysis**，完全不需懂程式碼，就能自動清洗 Excel 資料，並一鍵產出格式完整的 Word、Excel、PowerPoint 或 PDF 檔案。
+5. **打造個人與團隊專屬助理**：運用 **Custom GPTs**，零程式碼將內部 SOP、產品規格書或政策手冊轉化為 24 小時在線的智能專屬專家。
+6. **深度調研與決策支援**：善用 **Deep Research** 與即時 Web Search，在數十分鐘內取得詳盡、具真實來源引證的專業產業分析報告。
 
 ---
 
