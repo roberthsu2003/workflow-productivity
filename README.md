@@ -41,9 +41,7 @@
   Session 內容持續疊加的真相：Input / Output / Cached Token 解析，與 Word/Excel/PPT/PDF 轉 Markdown/CSV 之「中間純文字、最後出成品」極致省 Token 工作流
 
 - [討論方式的內容生成](./討論方式的內容生成/README.md)  
-
-
-  善用 Canvas、畫布、Artifacts 與 AI 反覆討論，產出docx,xlsx,pptx,pdf,markdown,網頁等格式 
+  各平台功能名稱不同（**ChatGPT 稱為 Canvas 畫布**、**Claude 稱為 Artifacts**、**Gemini 稱為 Canvas**）。**核心實作心法：必須「先產生 Markdown 檔案」才能真正展開人機協作**，透過在畫布上反覆討論、選取劃記微調，確認定稿後再一鍵轉出為 docx, xlsx, pptx, pdf, 網頁等正式格式。
 
 ## 常見的AI應用
 
