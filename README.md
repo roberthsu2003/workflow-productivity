@@ -40,11 +40,10 @@
 - [Context Window（上下文視窗）與 Token 機制](./Context_Window/README.md)  
   Session 內容持續疊加的真相：Input / Output / Cached Token 解析，與 Word/Excel/PPT/PDF 轉 Markdown/CSV 之「中間純文字、最後出成品」極致省 Token 工作流
 
-- [討論方式的內容生成：人機協作實戰](./討論方式的內容生成/README.md)  
-  **核心實作心法：必須「先產生 Markdown 檔案」進入畫布才能真正展開人機協作**，反覆打磨後再匯出正式檔案。授課時可依工具直接開啟專屬章節：
-  - 🟢 **ChatGPT 專用講義**：[03. Canvas 畫布協作（討論式內容生成）](./chatGPT/03_Canvas/README.md)
-  - 🟣 **Claude 專用講義**：[Artifacts 成品畫布（討論式內容生成）](./Claude_ai/Artifacts/README.md)
-  - 🌐 **跨平台對照總覽**：[三大工具（含 Gemini Canvas）功能綜合對比](./討論方式的內容生成/README.md)
+- 討論方式的內容生成  
+  各平台功能名稱不同（**ChatGPT 稱為 Canvas 畫布**、**Claude 稱為 Artifacts**）。**核心實作心法：必須「先產生 Markdown 檔案」才能真正展開人機協作**，透過在畫布上反覆討論、選取劃記微調，確認定稿後再一鍵轉出為 docx, xlsx, pptx, pdf, 網頁等正式格式。
+  - 🟢 **ChatGPT 專用講義**：[03. Canvas 畫布協作](./chatGPT/03_Canvas/README.md)
+  - 🟣 **Claude 專用講義**：[Artifacts 成品畫布](./Claude_ai/Artifacts/README.md)
 
 ## 常見的AI應用
 
