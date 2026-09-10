@@ -44,9 +44,13 @@
 > 學會 **RTCCF 框架**（Role/Task/Context/Constraint/Format）撰寫高品質 Prompt，並透過自然指令產出 Markdown / Word / Excel / PowerPoint / PDF。  
 > 內含五個產出範例（.md / .docx / .xlsx / .pptx / .pdf），全部 Free 可用。
 
-### 🟢 討論方式的內容生成：Artifacts（成品畫布）— **Free**
-> **📂 [進入主題筆記：Artifacts 畫布協作](./Artifacts/README.md)**  
-> **討論式內容生成的 Claude 專屬解法**！核心實作心法：**必須先產出 Markdown 檔案進入右側獨立畫布，人與 AI 才能在畫布上反覆討論、局部精修，確認定稿後再一鍵轉出 Word/Excel/PPT/PDF 或互動網頁**，徹底避免被對話洗版並極致省 Token。
+### 🟢 Artifacts（成品畫布）— **Free**
+> **📂 [進入主題筆記：Artifacts](./Artifacts/README.md)**  
+> 在側欄即時顯示可互動的 HTML、React、SVG、Mermaid 內容，適合做小工具原型、查詢頁、資訊圖。最容易讓學生產生成就感的章節。
+
+### 🟢 討論方式的內容生成（人機協作實戰）— **Free（核心工作流）**
+> **📂 [進入主題筆記：討論方式的內容生成](./討論方式的內容生成/README.md)**  
+> **不需要進入 Artifacts 也可以使用！** 揭密人機協作最關鍵心法：**在任何介面（Chats、Artifacts、Projects），只要「先產生 Markdown」，就可以透過討論方式展開高效率的人機協作**！反覆打磨確認定稿後，再一鍵轉出 Word/Excel/PPT/PDF，極致省 Token 且精準交付。
 
 ### 🟢 Projects（雲端知識沙盒）— **Free（限 5 個）／Pro（無限制）**
 > **📂 [進入主題筆記：Projects](./Projects/README.md)**  
