@@ -7,11 +7,11 @@
 ## 🗺️ 目錄架構一覽
 
 ```text
-chatGPT_codex/
+chatGPT/
 ├── README.md                          # 全教材入口、方案速覽、與 Claude_ai 對照表
 ├── ARCHITECTURE.md                    # 架構設計、學習進階路徑與模組清單（本文件）
 ├── 01_Settings/                       # 帳號偏好、隱私安全、資料控制與桌面版快捷操作
-├── 02_Chats/                          # 現代模型陣容（GPT-4o/o1/o3-mini）、ROSES 提示詞框架
+├── 02_Chats/                          # 運算模式（通用多工 vs 深度思考）、ROSES 提示詞框架
 ├── 03_Canvas/                         # Canvas 畫布：雙欄協作、劃記精修、長文寫作與潤飾
 ├── 04_Custom_Instructions_Memory/     # Custom Instructions 雙區塊設定 + Memory 長期記憶管理
 ├── 05_Advanced_Data_Analysis/         # 免寫程式！數據分析、商務圖表繪製、直接產出 Word/Excel/PPT
