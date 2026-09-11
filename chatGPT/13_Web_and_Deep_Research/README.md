@@ -1,7 +1,7 @@
-# 08. Deep Research（告別手動 Google！即時搜尋與深度自主研究報告）
+# 13. 網站即時搜尋與 Deep Research 深度自主研究
 
 > 🟢 **Web Search 聯網搜尋**：Free / Plus 全方案可用  
-> 🔵 **Deep Research 深度研究**：Plus / Pro / Team 方案可用
+> 🟣 **Deep Research 深度研究**：付費專屬（Plus / Pro / Team / Enterprise）
 
 一般人在做市場調查、產業競品分析或準備重大簡報時，傳統做法通常是：**打開瀏覽器搜尋關鍵字，點開 20~30 個分頁，過濾掉一堆廣告與內容農場，再手動複製貼上到 Word 裡辛苦拼湊成報告**。
 
@@ -71,4 +71,4 @@ Deep Research 不只是「搜尋一次」，它是一個具有**自主思考與�
 
 ---
 
-← [上一章：07. Projects 專案空間](../07_Projects/README.md) ｜ [下一章：09. Voice 與 Vision 多模態 →](../09_Voice_Vision/README.md)
+← [上一章：12. Custom GPTs 打造專屬助理](../12_Custom_GPTs/README.md) ｜ [下一章：14. ChatGPT Images 2.5 圖像生成 →](../14_Images/README.md)

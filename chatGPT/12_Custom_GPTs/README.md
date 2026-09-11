@@ -1,6 +1,6 @@
-# 06. Custom GPTs（零程式碼！打造個人與團隊專屬 AI 助理）
+# 12. Custom GPTs（零程式碼！打造個人與團隊專屬 AI 助理）
 
-> 🟢 **適用方案**：Free（可自由使用市集上的 GPTs） / 🔵 Plus（可親手自建、設定與分享） / 🏢 Team（團隊內部私密共享）
+> 🟣 **適用方案**：付費功能（Free 可使用公開 GPTs；自建、上傳知識庫與分享需 Plus / Team / Enterprise）
 
 在日常工作中，如果你有一套經常重複使用的標準作業程序（SOP）、專屬文案風格，或是需要經常查閱厚厚一本的「員工手冊」或「產品規格書」，每次都要重新貼給 ChatGPT 非常麻煩。
 
@@ -79,4 +79,4 @@
 
 ---
 
-← [上一章：05. Advanced Data Analysis 數據分析](../05_Advanced_Data_Analysis/README.md) ｜ [下一章：07. Projects 專案空間 →](../07_Projects/README.md)
+← [上一章：11. Local MCP 本機擴充協定](../11_Local_MCP/README.md) ｜ [下一章：13. Web Search 與 Deep Research 深度研究 →](../13_Web_and_Deep_Research/README.md)

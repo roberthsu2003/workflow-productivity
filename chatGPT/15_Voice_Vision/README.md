@@ -1,4 +1,4 @@
-# 09. Voice & Vision（進階語音模式與視覺多模態辨識）
+# 15. Voice & Vision（進階語音模式與視覺多模態辨識）
 
 > 🟢 **適用方案**：Free（基礎語音與拍照辨識） / 🔵 Plus（Advanced Voice Mode 進階端到端語音與桌面即時畫面共享）
 
@@ -45,4 +45,4 @@
 
 ---
 
-← [上一章：08. Deep Research 深度研究](../08_Deep_Research/README.md) ｜ [下一章：10. Connectors 雲端硬碟串接 →](../10_Connectors/README.md)
+← [上一章：14. ChatGPT Images 2.5 圖像生成](../14_Images/README.md) ｜ [下一章：實戰工作坊（student-lab） →](../student-lab/README.md)

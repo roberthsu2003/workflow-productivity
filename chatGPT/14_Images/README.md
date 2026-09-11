@@ -1,4 +1,4 @@
-# 11. ChatGPT Images 2.5（圖像生成、草圖與精準批註修圖）
+# 14. ChatGPT Images 2.5（圖像生成、草圖與精準批註修圖）
 
 > 🟢 **適用方案**：Free（免費版提供基礎體驗額度） / 🔵 Plus / Team / Pro（高用量額度與極速生成）
 
@@ -79,4 +79,4 @@ OpenAI 於 2026 年正式推出全新一代 **ChatGPT Images 2.5**，不僅在�
 
 ---
 
-← [上一章：10. Connectors 雲端硬碟串接](../10_Connectors/README.md) ｜ [下一章：實戰工作坊（student-lab） →](../student-lab/README.md)
+← [上一章：13. Web Search 與 Deep Research 深度研究](../13_Web_and_Deep_Research/README.md) ｜ [下一章：15. Voice & Vision 進階語音與視覺多模態 →](../15_Voice_Vision/README.md)

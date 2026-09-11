@@ -143,4 +143,4 @@ graph TD
 
 ---
 
-← [上一章：02. Personalization 個人化設定與長期記憶](../02_Personalization/README.md) ｜ [下一章：05. Advanced Data Analysis 數據分析與產檔 →](../05_Advanced_Data_Analysis/README.md)
+← [上一章：02. Personalization 個人化設定與長期記憶](../02_Personalization/README.md) ｜ [下一章：04. Chats 對話思維與提問心法 →](../04_Chats/README.md)

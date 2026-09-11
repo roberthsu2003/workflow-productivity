@@ -1,4 +1,4 @@
-# 10. Connectors（雲端硬碟直連：Google Drive 與 OneDrive）
+# 08. Connectors（雲端硬碟直連：Google Drive 與 OneDrive）
 
 > 🟢 **適用方案**：Free / Plus / Team / Enterprise 全方案適用
 
@@ -47,4 +47,4 @@ ChatGPT 提供的 **Connectors（已連接的雲端應用）** 功能，讓你�
 
 ---
 
-← [上一章：09. Voice 與 Vision 多模態](../09_Voice_Vision/README.md) ｜ [下一章：11. ChatGPT Images 2.5 圖像生成 →](../11_Images/README.md)
+← [上一章：07. Projects 專案資料夾與團隊協作](../07_Projects/README.md) ｜ [下一章：09. Plugins 外掛程式生態 →](../09_Plugins/README.md)

@@ -53,4 +53,4 @@
 
 ---
 
-← [上一章：06. Custom GPTs 打造專屬助理](../06_Custom_GPTs/README.md) ｜ [下一章：08. Deep Research 深度研究 →](../08_Deep_Research/README.md)
+← [上一章：06. Work 桌面版工作模式](../06_Work/README.md) ｜ [下一章：08. Connectors 雲端硬碟串接 →](../08_Connectors/README.md)

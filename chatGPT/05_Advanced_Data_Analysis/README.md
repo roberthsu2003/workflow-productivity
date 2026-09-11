@@ -81,4 +81,4 @@ ChatGPT 內建了強大的雲端數據運算能力（原名 Code Interpreter）�
 
 ---
 
-← [上一章：03. 討論方式的內容生成（Canvas 畫布協作）](../03_Canvas/README.md) ｜ [下一章：06. Custom GPTs 打造專屬助理 →](../06_Custom_GPTs/README.md)
+← [上一章：04. Chats 對話思維與提問心法](../04_Chats/README.md) ｜ [下一章：06. Work 桌面版工作模式 →](../06_Work/README.md)

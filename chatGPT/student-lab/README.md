@@ -98,4 +98,4 @@
 
 ---
 
-← [上一章：11. ChatGPT Images 2.5 圖像生成](../11_Images/README.md) ｜ [下一章：常見疑難排查（Troubleshooting） →](../Troubleshooting/README.md)
+← [上一章：15. Voice & Vision 進階語音與視覺多模態](../15_Voice_Vision/README.md) ｜ [下一章：常見疑難排查（Troubleshooting） →](../Troubleshooting/README.md)
