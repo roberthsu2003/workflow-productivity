@@ -1,5 +1,7 @@
 # 範例 03 ｜ 跨平台行銷數據交叉分析與異常診斷
 
+> 🟢 **適用代理平台**：ChatGPT Agent（推薦模式：專案 Projects / Advanced Data Analysis 數據分析沙盒）
+
 經營品牌時，往往同時擁有品牌官網（Google Analytics 4）、Facebook 粉專與 Instagram 帳號。不同平台的指標名稱與統計邏輯不同，導致跨平台分析非常耗時。本範例示範如何透過建立專案指令與指標對照，讓 AI 成為你的專屬數據分析師。
 
 ---
