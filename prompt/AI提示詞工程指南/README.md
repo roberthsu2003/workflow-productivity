@@ -408,7 +408,7 @@
 
 ## ROSES：適合長篇 Instructions 與工作流
 
-當你需要把 Prompt 當成**長期使用的指令**（例如專案 **Instructions**、Gem **使用說明**、多步驟客服／RAG 規則），**ROSES** 較容易拆段維護，也與本倉庫 [RAG 的應用](../../RAG的應用/README.md) 等單元一致。
+當你需要把 Prompt 當成**長期使用的指令**（例如專案 **Instructions**、Gem **使用說明**、多步驟客服／RAG 規則），**ROSES** 較容易拆段維護，也與本倉庫 [RAG 的應用](../../常見的AI應用/RAG的應用/README.md) 等單元一致。
 
 ![ROSES 框架：Role, Objective, Steps, Example／output format, Scope & style](./assets/ROSES.png)
 
