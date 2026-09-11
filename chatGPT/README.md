@@ -24,42 +24,14 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 | **Projects（專案資料夾與知識隔離）** | — | — | ✓（Team/Enterprise 標配） | [07_Projects](./07_Projects/README.md) |
 | **Connected Apps（Google Drive / OneDrive）** | ✓ | ✓ | ✓（管理員控制） | [08_Connectors](./08_Connectors/README.md) |
 | **Plugins（外掛程式市集與工具整合）** | ✓ | ✓ | ✓ | [09_Plugins](./09_Plugins/README.md) |
-| **Skills（技能機制與流程自動化）** | ✓ | ✓ | ✓ | [10_Skills](./10_Skills/README.md) |
-| **Local MCP（本機模型上下文協定）** | ✓ | ✓ | ✓ | [11_Local_MCP](./11_Local_MCP/README.md) |
-| **Custom GPTs（零程式碼客製小幫手）** | 可瀏覽與使用 | 可自建、發佈與使用 | 企業內部專屬發佈與共用 | [12_Custom_GPTs](./12_Custom_GPTs/README.md) |
-| **網站即時搜尋（Web Search）** | ✓ | ✓ | ✓ | [13_Web_and_Deep_Research](./13_Web_and_Deep_Research/README.md) |
-| **Deep Research（多步驟自主深度研究）** | — | ✓（每月額度） | ✓（高額度） | [13_Web_and_Deep_Research](./13_Web_and_Deep_Research/README.md) |
-| **ChatGPT Images 2.5（圖像生成與批註）** | ✓（基礎體驗額度） | ✓（高額度日常使用） | ✓ | [14_Images](./14_Images/README.md) |
-| **Voice & Vision（進階語音與桌面視覺）** | ✓（基礎識圖/語音）| ✓（Advanced Voice 模式）| ✓ | [15_Voice_Vision](./15_Voice_Vision/README.md) |
+| **Skills（技能模組化與 SOP 標準化）** | ✓ | ✓ | ✓ | [10_Skills](./10_Skills/README.md) |
+| **Local MCP（本地私有資料與安全檢索）** | ✓ | ✓ | ✓ | [11_Local_MCP](./11_Local_MCP/README.md) |
+| **Custom GPTs（自訂專屬助理與應用市集）** | ✓（僅使用） | ✓（可建立與分享） | ✓（企業內部私有庫） | [12_Custom_GPTs](./12_Custom_GPTs/README.md) |
+| **Web Search & Deep Research（深度研究報告）** | ✓（基礎聯網） | ✓（含 Deep Research） | ✓ | [13_Web_and_Deep_Research](./13_Web_and_Deep_Research/README.md) |
+| **Images 2.5（草圖、修圖與多風格生成）** | ✓（每日限額） | ✓（高品質高額度） | ✓ | [14_Images](./14_Images/README.md) |
+| **Voice & Vision（高級語音與視覺多模態）** | ✓（基礎語音） | ✓（Advanced Voice） | ✓ | [15_Voice_Vision](./15_Voice_Vision/README.md) |
 
-> 💡 **教學與自學指引**：
-> - **學生端**：註冊免費版（Free）即可完整實作主題一與主題二中絕大部分核心操作（00 ~ 06、08 ~ 11、14 ~ 15），並可體驗 Canvas 協作、Python 數據分析與多模態影像辨識。
-> - **講師端與商務進階**：建議使用 Plus 帳號，以便示範付費專屬功能（「自建 Custom GPTs 知識庫」、「Deep Research 深度產業報告生成」以及「Advanced Voice Mode 口說情境模擬」）。
-
----
-
-## 🔁 與 Claude_ai 講義之完整功能對照
-
-本教材與本專案同級的 [Claude.ai 實戰全指南](../Claude_ai/README.md) 採用相同的教學層次，方便使用者同時掌握兩大旗艦 AI 平台的異曲同工之妙：
-
-| 職場學習主題 | Claude.ai 對應功能 | ChatGPT 對應功能（本指南） | 核心價值與亮點 |
-|---|---|---|---|
-| **免費額度與跨端分流** | Free 方案原則 | [00_Free_Desktop_vs_Web](./00_Free_Desktop_vs_Web/README.md) | 桌面版（月度倒扣儀表板）vs 網頁版（動態冷卻）、對話與工作分流、零花費省額心法 |
-| **環境準備與安全** | Settings | [01_Settings](./01_Settings/README.md) | 帳號偏好、關閉資料訓練、桌面版全域快捷鍵（Option+Space） |
-| **個人化風格與長期記憶** | Custom Instructions | [02_Personalization](./02_Personalization/README.md) | 最新風格與特質微調（溫暖/熱情/排版/Emoji）、夥伴、關於你 + **Memory 長期跨對話記憶庫** |
-| **互動式協作畫布** | Artifacts（側欄動態預覽） | [03_Canvas](./03_Canvas/README.md) | **Canvas** 雙欄畫布：即時反饋、語氣調整、長文精修與版本歷程 |
-| **對話思維與提問架構** | Chats（RTCCF 框架） | [04_Chats](./04_Chats/README.md) | 結構化提問、角色規範、邊界條件與反思追問技巧 |
-| **程式運算與檔案生成** | Code Execution（檔案產出） | [05_Advanced_Data_Analysis](./05_Advanced_Data_Analysis/README.md) | **免寫程式**：輸入框「+」上傳 Excel，直出圖表與 Word/Excel/PPT/PDF |
-| **任務成果交付模式** | Cowork 工作空間 | [06_Work](./06_Work/README.md) | **Work 桌面版模式**：對接本機資料夾、多步驟自主執行、交付成果儀表板 |
-| **多專案知識隔離** | Projects（專案沙盒） | [07_Projects](./07_Projects/README.md) | **Projects**：集中管理專案 Chats、共享專案參考文件與自訂 GPTs |
-| **外部雲端硬碟整合** | Connectors（Google/Notion）| [08_Connectors](./08_Connectors/README.md) | 直連 Google Drive 與 OneDrive，免下載手動搬運檔案 |
-| **外掛生態與工具呼叫** | Plugins 外掛瀏覽 | [09_Plugins](./09_Plugins/README.md) | 連接 Wolfram、Expedia、Zapier 等第三方權威服務 |
-| **專業技能與流程標準化**| Skills（自訂技能） | [10_Skills](./10_Skills/README.md) | 模組化執行特定 SOP（公文審查、財務指標檢核） |
-| **本機私有資料與工具** | Local MCP | [11_Local_MCP](./11_Local_MCP/README.md) | 本機模型上下文協定，數據不出本機安全檢索 SQLite 與目錄 |
-| **專屬助理與自訂技能** | Projects + Skills | [12_Custom_GPTs](./12_Custom_GPTs/README.md) | **Custom GPTs**：零程式碼打造專屬小幫手、知識庫 RAG 與外部 API Actions |
-| **深度研究與情報探勘** | Research Mode | [13_Web_and_Deep_Research](./13_Web_and_Deep_Research/README.md) | **Deep Research**：自主規劃多輪網路搜尋、交叉驗證數十個網站之綜合報告 |
-| **視覺素材與圖表生成** | SVG / Mermaid 生成 | [14_Images](./14_Images/README.md) | **ChatGPT Images 2.5**：側欄專屬空間、@Sketch 草圖生成、商業範本與 Comments 批註修圖 |
-| **多模態互動與語音** | — | [15_Voice_Vision](./15_Voice_Vision/README.md) | **Advanced Voice Mode** 原生端到端情感語音 + 螢幕即時視覺共享 |
+> 💡 **教學與自學指引**：全指南各章節標題皆以【Free】、【Plus】或【Team】標註適用門檻，學生與免費版學員可一路暢行學習「主題一」與「主題二基礎功能」，需要進階能力時再評估訂閱方案。
 
 ---
 
