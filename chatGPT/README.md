@@ -24,7 +24,7 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 | **Advanced Voice Mode（進階原生語音模式）** | ✓（每月體驗預覽） | ✓（每日充裕時間） | ✓ | [09_Voice_Vision](./09_Voice_Vision/README.md) |
 | **Vision & 桌面畫面共享** | ✓（基礎識圖） | ✓（支援桌面即時畫面） | ✓ | [09_Voice_Vision](./09_Voice_Vision/README.md) |
 | **Connected Apps（Google Drive / OneDrive 直連）** | ✓ | ✓ | ✓（管理員控制） | [10_Connectors](./10_Connectors/README.md) |
-| **DALL·E 3（商業圖像生成與畫筆局部修圖）** | 限每日 2~3 張 | ✓（高額度日常使用） | ✓ | [11_DALL_E](./11_DALL_E/README.md) |
+| **ChatGPT Images 2.5（圖像生成、草圖與精準批註修圖）** | ✓（基礎體驗額度） | ✓（高額度日常使用） | ✓ | [11_Images](./11_Images/README.md) |
 | **資料隱私保障（不將公務數據用於訓練）** | 需手動關閉歷史紀錄 | 需手動設定關閉 | 預設不參與模型訓練 | [01_Settings](./01_Settings/README.md) |
 
 > 💡 **教學與自學指引**：
@@ -48,7 +48,7 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 | **深度研究與情報探勘** | Research Mode | [08_Deep_Research](./08_Deep_Research/README.md) | **Deep Research**：自主規劃多輪網路搜尋、交叉驗證數十個網站之綜合報告 |
 | **多模態互動與語音** | — | [09_Voice_Vision](./09_Voice_Vision/README.md) | **Advanced Voice Mode** 原生端到端情感語音 + 螢幕即時視覺共享 |
 | **外部雲端硬碟整合** | Connectors（Google/Notion）| [10_Connectors](./10_Connectors/README.md) | 直連 Google Drive 與 OneDrive，免下載手動搬運檔案 |
-| **視覺素材與圖表生成** | SVG / Mermaid 生成 | [11_DALL_E](./11_DALL_E/README.md) | **DALL·E 3**：商業簡報插圖、品牌視覺概念與畫筆局部重繪（Inpainting） |
+| **視覺素材與圖表生成** | SVG / Mermaid 生成 | [11_Images](./11_Images/README.md) | **ChatGPT Images 2.5**：側欄專屬空間、@Sketch 草圖生成、商業範本與 Comments 精準批註修圖 |
 
 ---
 
@@ -67,7 +67,7 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 > 免安裝本機 Python，由 ChatGPT 在雲端沙盒直接執行運算。實作銷售數據清洗、樞紐分析、產出頂級商業圖表，並直接生成正式 **Word (.docx)**、**Excel (.xlsx)**、**簡報 (.pptx)** 與 **PDF** 供一鍵下載！
 
 ### 🤖 [06. Custom GPTs（零程式碼自訂專屬 AI 助理）](./06_Custom_GPTs/README.md) — Free（使用）/ Plus（自建）
-> 打造客製化 GPT 助理：設定核心 System Prompt、上傳專業內部規章知識庫（Knowledge Files / RAG）、開啟 Web Search / Code Interpreter / DALL·E 權限，並可一鍵分享給同事或發布至 GPT Store。
+> 打造客製化 GPT 助理：設定核心 System Prompt、上傳專業內部規章知識庫（Knowledge Files / RAG）、開啟 Web Search / Code Interpreter / 圖像生成（Images）權限，並可一鍵分享給同事或發布至 GPT Store。
 
 ### 📁 [07. Projects（專案資料夾與團隊協作）](./07_Projects/README.md) — Team / Enterprise / Plus
 > 擺脫混亂的歷史對話列表！建立專案獨立空間，將同一個客戶、產品線或專案的所有對話、參考文檔與專用 GPTs 統一納管，實現跨對話知識共享與團隊隔離。
@@ -81,8 +81,8 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 ### 🔗 [10. Connectors（雲端硬碟直連與外部應用串接）](./10_Connectors/README.md) — Free / Plus / Team
 > 告別繁瑣的手動下載上傳！設定 ChatGPT 直接連接 Google Drive 與 Microsoft OneDrive，對雲端試算表與簡報進行跨檔案綜合分析。
 
-### 🖼️ [11. DALL·E 3（商業視覺生成與局部重繪）](./11_DALL_E/README.md) — Plus
-> 掌握精準的圖像生成 Prompt 語法，生成商業報告插圖、行銷社群貼圖與概念視覺；善用內建「畫筆工具（Inpainting）」進行局部選取重繪，無痕替換畫面物件或修飾細節。
+### 🖼️ [11. ChatGPT Images 2.5（圖像生成、草圖與精準批註修圖）](./11_Images/README.md) — Free / Plus
+> 側邊欄全新專屬「圖像」入口！體驗生成速度提升 50% 的飛躍進化；善用 **@Sketch 手繪草圖** 直接勾勒版面構圖、套用 **Templates 商務範本**，並透過 **Comments 區域批註** 在圖片特定位置精準微調，維持跨輪次超高畫面一致性。
 
 ---
 

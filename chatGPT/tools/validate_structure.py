@@ -20,7 +20,7 @@ REQUIRED_TOP_LEVEL = (
     "08_Deep_Research",
     "09_Voice_Vision",
     "10_Connectors",
-    "11_DALL_E",
+    "11_Images",
     "student-lab",
     "Troubleshooting",
     "tools",

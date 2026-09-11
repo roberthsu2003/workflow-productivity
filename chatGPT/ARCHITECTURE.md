@@ -21,7 +21,7 @@ chatGPT/
 ├── 08_Deep_Research/                  # 即時聯網搜尋（Web Search）+ 多步驟深度研究（Deep Research）
 ├── 09_Voice_Vision/                   # Advanced Voice Mode 進階語音情境模擬 + 視覺拍照與螢幕辨識
 ├── 10_Connectors/                     # Google Drive / OneDrive 雲端硬碟直連與跨檔分析
-├── 11_DALL_E/                         # DALL·E 3 商業視覺生成、簡報配圖與畫筆局部修圖（Inpainting）
+├── 11_Images/                         # ChatGPT Images 2.5 圖像生成、@Sketch 草圖、範本與 Comments 批註修圖
 ├── student-lab/                       # 學生綜合實戰工作坊（全套綠色家電上市推廣案實做）
 │   └── materials/                     # 實作情境與配套素材
 ├── Troubleshooting/                   # 常見疑難排查（額度上限、聯網異常、解析失敗、幻覺矯正）
@@ -49,7 +49,7 @@ graph TD
         E --> H[07_Projects<br>專案空間集中管理]
         F --> I[08_Deep_Research<br>多步驟深度自主研究代理]
         A --> J[09_Voice_Vision<br>進階語音口說演練與螢幕辨識]
-        A --> K[11_DALL_E<br>商業視覺生成與局部修圖]
+        A --> K[11_Images<br>Images 2.5 圖像生成與批註修圖]
     end
 
     subgraph 綜合實戰檢驗

@@ -56,7 +56,7 @@
 ### 4. Capabilities（能力勾選開關）
 - **Web Search（網路搜尋）**：讓小幫手能即時上網查時事。
 - **Canvas**：啟用畫布協同編輯長文。
-- **DALL·E Image Generation**：允許產出圖片。
+- **Image Generation（ChatGPT Images 2.5 圖像生成）**：允許產出高品質商務圖片。
 - **Code Interpreter（數據分析）**：允許解析 Excel、繪製圖表並產出 Word/Excel 檔案下載。
 
 ---
