@@ -10,6 +10,7 @@
 chatGPT/
 ├── README.md                          # 全教材入口、方案速覽、與 Claude_ai 對照表
 ├── ARCHITECTURE.md                    # 架構設計、學習進階路徑與模組清單（本文件）
+├── 00_Free_Desktop_vs_Web/            # 學生免費版通關指南：桌面版 vs 網頁版額度機制與省額心法
 ├── 01_Settings/                       # 帳號偏好、隱私安全、資料控制與桌面版快捷操作
 ├── 02_Personalization/                # 個人化設定（風格語氣/特質/夥伴/關於你）、自訂指令與長期記憶
 ├── 03_Canvas/                         # Canvas 畫布：雙欄協作、劃記精修、長文寫作與潤飾
@@ -35,7 +36,8 @@ chatGPT/
 ```mermaid
 graph TD
     subgraph Phase 1: 基礎核心（所有方案均可上手）
-        A[01_Settings<br>隱私安全與桌面版快捷鍵] --> B[02_Personalization<br>個人化風格特質與長期記憶]
+        PRE[00_Free_Desktop_vs_Web<br>免費版桌面 vs 網頁額度心法] --> A[01_Settings<br>隱私安全與桌面版快捷鍵]
+        A --> B[02_Personalization<br>個人化風格特質與長期記憶]
         B --> C[03_Canvas<br>畫布人機協作精修長文]
     end
 

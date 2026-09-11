@@ -14,6 +14,7 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 
 | 能力與功能模組 | 🟢 Free（免費版） | 🔵 Plus（$20/月） | 🏢 Team / Pro / 企業版 | 本指南章節 |
 | :--- | :---: | :---: | :---: | :--- |
+| **免費版額度機制（桌面版 vs 網頁版）** | ✓（純文字無限量） | ✓（極高額度） | ✓（企業專屬額度） | [00_Free_Desktop_vs_Web](./00_Free_Desktop_vs_Web/README.md) |
 | **個人化風格、特質微調與長期記憶** | ✓ | ✓ | ✓（Team 可控） | [02_Personalization](./02_Personalization/README.md) |
 | **Canvas 雙欄互動畫布** | ✓（已全面開放） | ✓ | ✓ | [03_Canvas](./03_Canvas/README.md) |
 | **Advanced Data Analysis（免寫程式數據分析與 Office 產檔）** | ✓（有次數上限） | ✓ | ✓ | [05_Advanced_Data_Analysis](./05_Advanced_Data_Analysis/README.md) |
@@ -28,7 +29,7 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 | **資料隱私保障（不將公務數據用於訓練）** | 需手動關閉歷史紀錄 | 需手動設定關閉 | 預設不參與模型訓練 | [01_Settings](./01_Settings/README.md) |
 
 > 💡 **教學與自學指引**：
-> - **學生端**：註冊免費版（Free）即可完整實作 01 ~ 03、05 單元的所有基礎操作，並可體驗個人化設定、Canvas 協作、Python 數據分析與多模態影像辨識。
+> - **學生端**：註冊免費版（Free）即可完整實作 00 ~ 03、05 單元的所有基礎操作，並可體驗個人化設定、Canvas 協作、Python 數據分析與多模態影像辨識。
 > - **講師端與商務進階**：建議使用 Plus 帳號，以便示範「自建 Custom GPTs 知識庫」、「Deep Research 深度產業報告生成」以及「Advanced Voice Mode 口說情境模擬」。
 
 ---
@@ -39,6 +40,7 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 
 | 職場學習主題 | Claude.ai 對應功能 | ChatGPT 對應功能（本指南） | 核心價值與亮點 |
 |---|---|---|---|
+| **免費額度與跨端分流** | Free 方案原則 | [00_Free_Desktop_vs_Web](./00_Free_Desktop_vs_Web/README.md) | 桌面版（月度倒扣儀表板）vs 網頁版（動態冷卻）、對話與工作分流、零花費省額心法 |
 | **環境準備與安全** | Settings | [01_Settings](./01_Settings/README.md) | 帳號偏好、關閉資料訓練、桌面版全域快捷鍵（Option+Space） |
 | **個人化風格與長期記憶** | Custom Instructions | [02_Personalization](./02_Personalization/README.md) | 最新風格與特質微調（溫暖/熱情/排版/Emoji）、夥伴、關於你 + **Memory 長期跨對話記憶庫** |
 | **互動式協作畫布** | Artifacts（側欄動態預覽） | [03_Canvas](./03_Canvas/README.md) | **Canvas** 雙欄畫布：即時反饋、語氣調整、長文精修與版本歷程 |
@@ -53,6 +55,9 @@ ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用
 ---
 
 ## 📚 核心章節導覽
+
+### 🎓 [00. 學生免費版通關指南：桌面版 vs 網頁版額度機制與省額心法](./00_Free_Desktop_vs_Web/README.md) — Free
+> 學生與自學者必讀第一篇！徹底解析 **桌面版（月度倒扣儀表板 1 個月 100% 重設日）** 與 **網頁版（短期動態滾動冷卻）** 的額度計算差異；釐清「純文字對話無限暢用」與「高階運算（圖像/數據/推理）計量消耗」的本質差別，並傳授「日常用對話、交付開工作」、「先 Markdown 討論定稿最後再出檔」的零花費省額工作流。
 
 ### ⚙️ [01. Settings（環境準備、隱私與安全）](./01_Settings/README.md) — Free / Plus
 > 上課第一步：介面語言、深淺主題切換、多因子驗證（2FA）。**公務機密防護關鍵**：如何在 Data Controls 中關閉「改善所有人的模型」，並在 macOS / Windows 安裝桌面版 App，設定 `Option + Space` 全域快捷叫出對話懸浮窗。
