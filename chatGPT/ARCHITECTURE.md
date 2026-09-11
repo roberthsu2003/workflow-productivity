@@ -11,8 +11,8 @@ chatGPT/
 ├── README.md                          # 全教材入口、方案速覽、與 Claude_ai 對照表
 ├── ARCHITECTURE.md                    # 架構設計、學習進階路徑與模組清單（本文件）
 ├── 01_Settings/                       # 帳號偏好、隱私安全、資料控制與桌面版快捷操作
+├── 02_Personalization/                # 個人化設定（風格語氣/特質/夥伴/關於你）、自訂指令與長期記憶
 ├── 03_Canvas/                         # Canvas 畫布：雙欄協作、劃記精修、長文寫作與潤飾
-├── 04_Custom_Instructions_Memory/     # Custom Instructions 雙區塊設定 + Memory 長期記憶管理
 ├── 05_Advanced_Data_Analysis/         # 免寫程式！數據分析、商務圖表繪製、直接產出 Word/Excel/PPT
 │   └── sample_data/                   # 示範銷售與營運數據集（CSV）
 ├── 06_Custom_GPTs/                    # 零程式碼打造專屬小幫手、知識庫 RAG、分享與發佈
@@ -35,21 +35,21 @@ chatGPT/
 ```mermaid
 graph TD
     subgraph Phase 1: 基礎核心（所有方案均可上手）
-        A[01_Settings<br>隱私安全與桌面版快捷鍵] --> C[03_Canvas<br>畫布人機協作精修長文]
-        A --> D[04_Custom_Instructions_Memory<br>打造專屬個人風格與記憶]
+        A[01_Settings<br>隱私安全與桌面版快捷鍵] --> B[02_Personalization<br>個人化風格特質與長期記憶]
+        B --> C[03_Canvas<br>畫布人機協作精修長文]
     end
 
     subgraph Phase 2: 生產力倍增（數據分析與客製化）
         C --> E[05_Advanced_Data_Analysis<br>免寫程式！數據分析與產出 Office]
-        D --> F[06_Custom_GPTs<br>零程式碼專屬助理與知識庫]
-        A --> G[10_Connectors<br>直連雲端硬碟 Google Drive/OneDrive]
+        B --> F[06_Custom_GPTs<br>零程式碼專屬助理與知識庫]
+        B --> G[10_Connectors<br>直連雲端硬碟 Google Drive/OneDrive]
     end
 
     subgraph Phase 3: 旗艦進階（深度研究、多模態與協作）
         E --> H[07_Projects<br>專案空間集中管理]
         F --> I[08_Deep_Research<br>多步驟深度自主研究代理]
-        A --> J[09_Voice_Vision<br>進階語音口說演練與螢幕辨識]
-        A --> K[11_Images<br>Images 2.5 圖像生成與批註修圖]
+        B --> J[09_Voice_Vision<br>進階語音口說演練與螢幕辨識]
+        B --> K[11_Images<br>Images 2.5 圖像生成與批註修圖]
     end
 
     subgraph 綜合實戰檢驗

@@ -12,8 +12,8 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_TOP_LEVEL = (
     "01_Settings",
+    "02_Personalization",
     "03_Canvas",
-    "04_Custom_Instructions_Memory",
     "05_Advanced_Data_Analysis",
     "06_Custom_GPTs",
     "07_Projects",
