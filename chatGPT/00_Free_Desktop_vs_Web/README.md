@@ -53,7 +53,7 @@
 
 ### 🔴 2. 會實質扣除高階額度（有配額上限，謹慎使用）
 - **ChatGPT Images 2.5 圖像生成**：包含對話出圖、`@Sketch` 草圖轉成品圖、Comments 批註改圖。
-- **Advanced Data Analysis（檔案上傳分析）**：上傳 Excel/CSV 要求執行 Python 清洗、計算相關係數或繪製折線圖。
+- **檔案上傳與數據分析（點擊輸入框「+」上傳 Excel/CSV，過去稱為 Advanced Data Analysis）**：上傳試算表要求執行數據清洗、統計分析、繪製圖表或輸出新檔案。
 - **實體檔案生成下載**：要求 ChatGPT 直接打包產出 `.docx`、`.xlsx`、`.pptx` 實體檔案。
 - **觸發深度思考推理（Reasoning）**：當題目涉及極度繁複的邏輯數學推演，系統啟動長時間深度思考時。
 
