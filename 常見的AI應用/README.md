@@ -4,19 +4,19 @@
 
 ---
 
-## 🧭 六大應用主題分類導覽
+## 🧭 應用主題分類導覽
 
-### 📑 一、職場實戰範例庫（Practical Examples）
+### 📑 職場實戰範例庫（Practical Examples）
 各代理平台（如 ChatGPT Canvas、Claude Artifacts）討論式生成的真實落地情境：
 - **[現代職場三大實戰範例庫](./實戰範例/README.md)**  
-  職場三大高頻實作情境：
+  職場高頻實作情境：
   - **[範例 01：門市人力排班與規則檢核](./實戰範例/01_門市人力排班與規則檢核/README.md)**（對話 / Canvas 畫布微調、規則防呆）
   - **[範例 02：社群行銷素材多格式產出](./實戰範例/02_社群行銷素材多格式產出/README.md)**（多格式文案包、影音腳本、禁詞防護）
   - **[範例 03：跨平台成效數據交叉分析](./實戰範例/03_跨平台成效數據交叉分析/README.md)**（跨平台成效分析專案、異常波動診斷）
 
 ---
 
-### 📊 二、簡報和資訊圖表（Presentations & Infographics）
+### 📊 簡報和資訊圖表（Presentations & Infographics）
 - **[簡報和資訊圖表的差異](./簡報和資訊圖表/簡報和資訊圖表的差異.md)**  
   釐清簡報（口頭報告視覺引導）與資訊圖表（獨立傳播資訊載體）的版面邏輯與視覺動線。
 - **[簡報的生成](./簡報和資訊圖表/簡報的生成.md)**  
@@ -26,13 +26,13 @@
 
 ---
 
-### 🎙️ 三、會議應用與語音摘要（Meeting Minutes & Audio）
+### 🎙️ 會議應用與語音摘要（Meeting Minutes & Audio）
 - **[mp3 ➔ 會議紀錄與摘要](./會議紀錄與摘要/README.md)**  
   音訊轉逐字稿、清洗雜訊、提取討論提案、決議事項與行動清單（To-Do List）的標準化工作流。
 
 ---
 
-### 🧠 四、個人知識庫與資料檢索（Knowledge Base & Research）
+### 🧠 個人知識庫與資料檢索（Knowledge Base & Research）
 - **[個人知識庫（RAG 的應用）](./RAG的應用/README.md)**  
   檢索增強生成（RAG）架構解析、向量知識庫建構與真實文件檢索問答；範例素材見 [知識庫原始檔](./RAG的應用/知識庫原始檔/README.md)。
 - **[資料搜尋與收集](./資料收集/README.md)**  
@@ -40,7 +40,7 @@
 
 ---
 
-### ⚙️ 五、提示詞資產與自動化擴充（Prompt Assets & Skills）
+### ⚙️ 提示詞資產與自動化擴充（Prompt Assets & Skills）
 - **[儲存與重複使用 AI 提示詞](./儲存與重複使用AI提示詞/README.md)**  
   ChatGPT 自訂 GPTs、Gemini Gem、Claude Projects — 將成熟 Prompt 固化為日常隨選即用的數位分身。
 - **[連結應用程式](./連結應用程式/README.md)**  
@@ -50,7 +50,7 @@
 
 ---
 
-### 🎬 六、影音多媒體生成（Video & Multimedia Generation）
+### 🎬 影音多媒體生成（Video & Multimedia Generation）
 - **[影音生成應用程式](./影音生成/README.md)**  
   現代 AI 影音生成工具、腳本分鏡到影片產出的工作流程與實踐。
 
