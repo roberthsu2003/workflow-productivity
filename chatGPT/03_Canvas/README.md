@@ -75,7 +75,7 @@ flowchart LR
 > 💬 **你在 Chat 輸入（白話自然語言）**：
 > ```text
 > 我們品牌下週要舉辦一場「夏季新品線上直播發表會」，預計時長 60 分鐘，我想寫一份高質量的活動企劃大綱。
-> 請根據「AI 提示詞工程」標準，用繁體中文幫我產出一份專業的 RTCCF (Role, Task, Context, Constraint, Format) 提示詞範本，好讓我稍後可以拿去 Work 模式正式執行。
+> 請根據「AI 提示詞工程」標準，用繁體中文幫我產出一份專業的 RTCCF (Role, Task, Context, Constraint, Format) 提示詞範本，好讓我產生一個 Markdown 檔案；只要是 Markdown 檔案，就可以進入 Canvas 模式。
 > ```
 
 #### 步驟 1-2：在 Chat 模式展開人機協作，微調修訂出最完美的 RTCCF 格式
@@ -89,7 +89,7 @@ AI 產出初步範本後，你在 Chat 裡進一步補充限制，**並嚴格落
 > 請直接輸出修訂後的完整 RTCCF Prompt，讓我可以直接複製。
 > ```
 
-🚀 **此時 AI 會輸出打磨完成的正式 RTCCF Prompt（複製它，準備進入 Work 模式）**：
+🚀 **此時 AI 會輸出打磨完成的正式 RTCCF Prompt（複製它，準備產生 Markdown 檔案進入 Canvas 模式）**：
 
 ```markdown
 ## Role
