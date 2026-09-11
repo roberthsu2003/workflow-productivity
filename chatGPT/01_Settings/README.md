@@ -66,4 +66,4 @@ OpenAI 推出了專為 **macOS** 與 **Windows** 設計的 ChatGPT 官方桌面�
 
 ---
 
-← [上一章：架構總覽](../ARCHITECTURE.md) ｜ [下一章：02. Chats 對話與提示詞工程 →](../02_Chats/README.md)
+← [上一章：架構總覽](../ARCHITECTURE.md) ｜ [下一章：03. 討論方式的內容生成（Canvas 畫布協作）→](../03_Canvas/README.md)

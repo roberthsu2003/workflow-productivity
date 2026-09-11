@@ -143,4 +143,4 @@ graph TD
 
 ---
 
-← [上一章：02. Chats 對話與提示詞](../02_Chats/README.md) ｜ [下一章：04. Custom Instructions 與 Memory →](../04_Custom_Instructions_Memory/README.md)
+← [上一章：01. Settings 環境準備與安全](../01_Settings/README.md) ｜ [下一章：04. Custom Instructions 與 Memory →](../04_Custom_Instructions_Memory/README.md)
