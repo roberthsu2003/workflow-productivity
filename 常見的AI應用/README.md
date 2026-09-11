@@ -6,10 +6,8 @@
 
 ## 🧭 六大應用主題分類導覽
 
-### 📑 一、內容討論式生成與實戰範例（Content Collaboration & Examples）
-善用 ChatGPT Canvas 雙欄畫布、Claude Artifacts 進行人機反覆打磨與多格式產出。
-- **[討論方式的內容生成](./討論方式的內容生成/README.md)**  
-  掌握「中間打磨 Markdown 純文字，最後定稿一鍵出成果」的核心思維；涵蓋會議記錄範本、時間管理技巧、學期讀書計畫等多輪優化實戰。
+### 📑 一、職場實戰範例庫（Practical Examples）
+各代理平台（如 ChatGPT Canvas、Claude Artifacts）討論式生成的真實落地情境：
 - **[現代職場三大實戰範例庫](./實戰範例/README.md)**  
   職場三大高頻實作情境：
   - **[範例 01：門市人力排班與規則檢核](./實戰範例/01_門市人力排班與規則檢核/README.md)**（對話 / Canvas 畫布微調、規則防呆）

@@ -1,7 +1,7 @@
 # Claude Artifacts（成品畫布：討論方式的內容生成）
 
 > 專為職場人士與各領域學員設計，學習如何將 Claude 對話中的長篇文字、圖表與程式碼，轉化為右側獨立、可即時預覽、支援版本演進並可一鍵開會展示的「數位成品」。  
-> 🔗 **全域概念對照**：本單元即為專案總覽中的 [討論方式的內容生成](../../常見的AI應用/討論方式的內容生成/README.md)（各大工具稱呼不同：**Claude 稱為 Artifacts**，**ChatGPT 稱為 Canvas 畫布**，**Gemini 稱為 Canvas**）。
+> 🔗 **全域概念對照**：本單元聚焦於討論方式的內容生成（**Claude 稱為 Artifacts**，**ChatGPT 稱為 Canvas 畫布**，詳見 [ChatGPT Canvas 篇](../../chatGPT/03_Canvas/README.md)）。實戰應用請參考 [常見的 AI 應用：現代職場三大實戰範例庫](../../常見的AI應用/實戰範例/README.md)。
 
 ---
 

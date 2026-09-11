@@ -204,7 +204,7 @@
 
 </details>
 
-**延伸閱讀**：[公文與文案的生成](../公文與文案的生成.md)（技巧二：ChatGPT Canvas）、[討論方式的內容生成](../../../常見的AI應用/討論方式的內容生成/README.md)。
+**延伸閱讀**：[公文與文案的生成](../公文與文案的生成.md)（技巧二：ChatGPT Canvas）、[ChatGPT Canvas 畫布篇](../../../chatGPT/03_Canvas/README.md)。
 
 ---
 
