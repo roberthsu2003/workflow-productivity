@@ -8,34 +8,8 @@
 
 ---
 
-## 🎯 方案速覽：Free vs Plus vs Team / Pro
-
-ChatGPT 的方案劃分直接對應功能權限與模型額度。初學者可用 Free 方案完成大部分日常對話、提示詞練習、基礎數據分析與 Canvas 畫布操作；進階職場協作與深度研發則推薦使用 Plus 或 Team 方案。
-
-| 能力與功能模組 | 🟢 Free（免費版） | 🔵 Plus（$20/月） | 🏢 Team / Pro / 企業版 | 本指南章節 |
-| :--- | :---: | :---: | :---: | :--- |
-| **免費版額度機制（桌面版 vs 網頁版）** | ✓（純文字無限量） | ✓（極高額度） | ✓（企業專屬額度） | [00_Free_Desktop_vs_Web](./00_Free_Desktop_vs_Web/README.md) |
-| **環境準備、安全防護與隱私控制** | ✓ | ✓ | ✓（預設不訓練） | [01_Settings](./01_Settings/README.md) |
-| **個人化風格、特質微調與長期記憶** | ✓ | ✓ | ✓（Team 可控） | [02_Personalization](./02_Personalization/README.md) |
-| **Canvas 雙欄互動畫布** | ✓（已全面開放） | ✓ | ✓ | [03_Canvas](./03_Canvas/README.md) |
-| **Chats 對話思維與提問架構** | ✓ | ✓ | ✓ | [04_Chats](./04_Chats/README.md) |
-| **檔案上傳數據分析與產檔** | ✓（有次數上限） | ✓ | ✓ | [05_Advanced_Data_Analysis](./05_Advanced_Data_Analysis/README.md) |
-| **Work 桌面版工作模式（本機檔案）** | ✓（基礎額度） | ✓ | ✓ | [06_Work](./06_Work/README.md) |
-| **Projects（專案資料夾與知識隔離）** | — | — | ✓（Team/Enterprise 標配） | [07_Projects](./07_Projects/README.md) |
-| **Connected Apps（Google Drive / OneDrive）** | ✓ | ✓ | ✓（管理員控制） | [08_Connectors](./08_Connectors/README.md) |
-| **Plugins（外掛程式市集與工具整合）** | ✓ | ✓ | ✓ | [09_Plugins](./09_Plugins/README.md) |
-| **Skills（技能模組化與 SOP 標準化）** | ✓ | ✓ | ✓ | [10_Skills](./10_Skills/README.md) |
-| **Local MCP（本地私有資料與安全檢索）** | ✓ | ✓ | ✓ | [11_Local_MCP](./11_Local_MCP/README.md) |
-| **Custom GPTs（自訂專屬助理與應用市集）** | ✓（僅使用） | ✓（可建立與分享） | ✓（企業內部私有庫） | [12_Custom_GPTs](./12_Custom_GPTs/README.md) |
-| **Web Search & Deep Research（深度研究報告）** | ✓（基礎聯網） | ✓（含 Deep Research） | ✓ | [13_Web_and_Deep_Research](./13_Web_and_Deep_Research/README.md) |
-| **Images 2.5（草圖、修圖與多風格生成）** | ✓（每日限額） | ✓（高品質高額度） | ✓ | [14_Images](./14_Images/README.md) |
-| **Voice & Vision（高級語音與視覺多模態）** | ✓（基礎語音） | ✓（Advanced Voice） | ✓ | [15_Voice_Vision](./15_Voice_Vision/README.md) |
-
-> 💡 **教學與自學指引**：全指南各章節標題皆以【Free】、【Plus】或【Team】標註適用門檻，學生與免費版學員可一路暢行學習「主題一」與「主題二基礎功能」，需要進階能力時再評估訂閱方案。
-
----
-
 # 📚 三大主題核心導覽
+
 
 ---
 
