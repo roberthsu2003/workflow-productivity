@@ -1,8 +1,14 @@
-[← 上一章：03 決策邏輯](./03_決策邏輯：條件分支與情境應變.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：05 停止條件 →](./05_停止條件：安全邊界與人工介入機制.md)
+[← 上一章：03 決策邏輯](../03_決策邏輯_條件分支與情境應變/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：05 停止條件 →](../05_停止條件_安全邊界與人工介入機制/README.md)
 
 ---
 
 # 04｜驗證迴圈：自我檢查與有限次修正
+
+> 📁 **本單元學員實作練習檔（偽資料）**：
+> - [`sample_files/highschool_curriculum_standard.md`](./sample_files/highschool_curriculum_standard.md)：高中課綱允許語法與禁止超綱清單（供範例 1 出題 Rubric 自檢演練）。
+> - [`sample_files/candidate_resume_draft.md`](./sample_files/candidate_resume_draft.md)：應屆畢業生初版履歷與職缺標準（供範例 2 STAR 原則與量化數據自檢演練）。
+> - [`sample_files/locale_en_raw.json`](./sample_files/locale_en_raw.json)：含變數佔位符的英文語系檔（供範例 3 JSON 格式與佔位符完整性自檢演練）。
+
 
 在日常使用 AI 時，最常見的失敗模式之一就是：AI 信心滿滿地產出了一篇看似華麗、實際上卻包含嚴重事實錯誤或不合規則的答案。
 
@@ -188,4 +194,4 @@ flowchart TD
 
 ---
 
-[← 上一章：03 決策邏輯](./03_決策邏輯：條件分支與情境應變.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：05 停止條件 →](./05_停止條件：安全邊界與人工介入機制.md)
+[← 上一章：03 決策邏輯](../03_決策邏輯_條件分支與情境應變/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：05 停止條件 →](../05_停止條件_安全邊界與人工介入機制/README.md)

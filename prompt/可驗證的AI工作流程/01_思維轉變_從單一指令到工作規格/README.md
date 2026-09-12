@@ -1,8 +1,13 @@
-[← 返回專題總覽](./README.md) ｜ [下一章：02 多步驟拆解 →](./02_多步驟拆解：循序規劃與分階段交付.md)
+[← 返回專題總覽](../README.md) ｜ [下一章：02 多步驟拆解 →](../02_多步驟拆解_循序規劃與分階段交付/README.md)
 
 ---
 
 # 01｜思維轉變：從單一指令到工作規格
+
+> 📁 **本單元學員實作練習檔（偽資料）**：
+> - [`sample_files/python_course_syllabus.md`](./sample_files/python_course_syllabus.md)：學生已學語法與禁止超綱清單（供出題範例演練）。
+> - [`sample_files/course_promotion_brief.md`](./sample_files/course_promotion_brief.md)：職場自動化課程資訊與受眾痛點（供文案範例演練）。
+
 
 在開始學習更複雜的 AI Agent、自動化工作流或客製化 Skill（技能包）之前，我們必須先完成最關鍵的一步思維躍遷：**從「跟 AI 聊天」轉變為「向 AI 交付一份可執行的工作規格書」**。
 
@@ -239,4 +244,4 @@ flowchart TD
 
 ---
 
-[← 返回專題總覽](./README.md) ｜ [下一章：02 多步驟拆解 →](./02_多步驟拆解：循序規劃與分階段交付.md)
+[← 返回專題總覽](../README.md) ｜ [下一章：02 多步驟拆解 →](../02_多步驟拆解_循序規劃與分階段交付/README.md)

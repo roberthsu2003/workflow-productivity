@@ -1,8 +1,14 @@
-[← 上一章：02 多步驟拆解](./02_多步驟拆解：循序規劃與分階段交付.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：04 驗證迴圈 →](./04_驗證迴圈：自我檢查與有限次修正.md)
+[← 上一章：02 多步驟拆解](../02_多步驟拆解_循序規劃與分階段交付/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：04 驗證迴圈 →](../04_驗證迴圈_自我檢查與有限次修正/README.md)
 
 ---
 
 # 03｜決策邏輯：條件分支與情境應變
+
+> 📁 **本單元學員實作練習檔（偽資料）**：
+> - [`sample_files/assignment_requirements.md`](./sample_files/assignment_requirements.md)：階梯電費計算作業規格與測資（供範例 1 作業批改對照）。
+> - [`sample_files/student_homework_submissions.py`](./sample_files/student_homework_submissions.py)：包含 3 位學生實例程式碼（語法錯誤、邏輯錯誤、合格待優化）。
+> - [`sample_files/support_tickets_sample.csv`](./sample_files/support_tickets_sample.csv)：5 筆真實報修工單（供範例 2 客服工單分流與 SLA 演練）。
+
 
 在現實世界中，任務很少是單一直線運行的。同一個輸入資料，可能會因為「情況 A」而需要走方案甲，或是因為「情況 B」而改走方案乙。
 
@@ -179,4 +185,4 @@ HR 在大量履歷中挑選合適人才時，必須有客觀標準與嚴謹的�
 
 ---
 
-[← 上一章：02 多步驟拆解](./02_多步驟拆解：循序規劃與分階段交付.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：04 驗證迴圈 →](./04_驗證迴圈：自我檢查與有限次修正.md)
+[← 上一章：02 多步驟拆解](../02_多步驟拆解_循序規劃與分階段交付/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：04 驗證迴圈 →](../04_驗證迴圈_自我檢查與有限次修正/README.md)

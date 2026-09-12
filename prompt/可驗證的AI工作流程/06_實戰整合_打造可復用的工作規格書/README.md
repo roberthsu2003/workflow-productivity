@@ -1,8 +1,14 @@
-[← 上一章：05 停止條件](./05_停止條件：安全邊界與人工介入機制.md) ｜ [返回專題總覽](./README.md)
+[← 上一章：05 停止條件](../05_停止條件_安全邊界與人工介入機制/README.md) ｜ [返回專題總覽](../README.md)
 
 ---
 
 # 06｜實戰整合：打造可復用的工作規格書
+
+> 📁 **本單元學員實作練習檔（偽資料）**：
+> - [`sample_files/campus_book_project_brief.md`](./sample_files/campus_book_project_brief.md)：二手書租借平台專案需求書與 5 萬預算限制（供範例 1 專案提案演練）。
+> - [`sample_files/database_order_schema.sql`](./sample_files/database_order_schema.sql)：訂單系統 PostgreSQL Schema（供範例 2 RESTful API 規格對照演練）。
+> - [`sample_files/PROJECT_SPEC_TEMPLATE.md`](./sample_files/PROJECT_SPEC_TEMPLATE.md)：通用 ROSES 整合空白模板（可直接複製修改）。
+
 
 恭喜你！學到這裡，你已經掌握了進階 AI 工作流程的四大核心積木：
 1. **多步驟拆解（Steps）**：先分析、再規劃、後產出，產物可視化。
@@ -195,4 +201,4 @@ classDiagram
 
 ---
 
-[← 上一章：05 停止條件](./05_停止條件：安全邊界與人工介入機制.md) ｜ [返回專題總覽](./README.md)
+[← 上一章：05 停止條件](../05_停止條件_安全邊界與人工介入機制/README.md) ｜ [返回專題總覽](../README.md)

@@ -1,0 +1,7 @@
+{
+  "auth.login.title": "Welcome back, {username}!",
+  "auth.login.failed": "Invalid email or password. You have {remaining_attempts} attempts left.",
+  "dashboard.storage.usage": "You have used {used_gb} GB of your {total_gb} GB storage quota ({percent}%).",
+  "billing.invoice.overdue": "Warning: Invoice #{invoice_id} is overdue by {days} days. Please pay ${amount} immediately to prevent service interruption.",
+  "settings.export.success": "Your data export is ready. Click \"Download Now\" to retrieve your archive ({file_size} MB)."
+}

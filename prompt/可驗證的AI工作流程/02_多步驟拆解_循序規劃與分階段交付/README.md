@@ -1,8 +1,14 @@
-[← 上一章：01 思維轉變](./01_思維轉變：從單一指令到工作規格.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：03 決策邏輯 →](./03_決策邏輯：條件分支與情境應變.md)
+[← 上一章：01 思維轉變](../01_思維轉變_從單一指令到工作規格/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：03 決策邏輯 →](../03_決策邏輯_條件分支與情境應變/README.md)
 
 ---
 
 # 02｜多步驟拆解：循序規劃與分階段交付
+
+> 📁 **本單元學員實作練習檔（偽資料）**：
+> - [`sample_files/lesson_context_grade8.txt`](./sample_files/lesson_context_grade8.txt)：國中八年級先備知識與 50 分鐘教學目標（供範例 1 課堂教案拆解演練）。
+> - [`sample_files/feature_request_raw_notes.md`](./sample_files/feature_request_raw_notes.md)：使用者真實痛點訪談筆記（供範例 2 PRD 功能規格拆解演練）。
+> - [`sample_files/client_pain_points_factory.csv`](./sample_files/client_pain_points_factory.csv)：工廠目檢瑕疵與工時損失數據（供範例 3 商業提案簡報拆解演練）。
+
 
 在單回合對話中，若你直接要求 AI「產出一份 3000 字的年度行銷計畫」，AI 通常會跳過深度思考，直接吐出看起來很長、實則泛泛而談的內容。
 
@@ -164,4 +170,4 @@ flowchart LR
 
 ---
 
-[← 上一章：01 思維轉變](./01_思維轉變：從單一指令到工作規格.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：03 決策邏輯 →](./03_決策邏輯：條件分支與情境應變.md)
+[← 上一章：01 思維轉變](../01_思維轉變_從單一指令到工作規格/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：03 決策邏輯 →](../03_決策邏輯_條件分支與情境應變/README.md)

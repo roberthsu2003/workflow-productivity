@@ -25,14 +25,14 @@ flowchart LR
     C5 --> C6["06 實戰整合<br>(銜接 Agent Skill)"]
 ```
 
-| 次章節 | 核心主題 | 學習焦點與關鍵收穫 |
-|:---|:---|:---|
-| **01｜[思維轉變：從單一指令到工作規格](./01_思維轉變：從單一指令到工作規格.md)** | **演算法思維** | 為什麼單句指令不夠？用自然語言寫演算法；RTCCF 與 ROSES 框架定位。 |
-| **02｜[多步驟拆解：循序規劃與分階段交付](./02_多步驟拆解：循序規劃與分階段交付.md)** | **Pipeline 管線化** | 先規劃再產出；定義前一步驟產出做為下一步驟輸入；階段產物可視化。 |
-| **03｜[決策邏輯：條件分支與情境應變](./03_決策邏輯：條件分支與情境應變.md)** | **條件分支與防呆** | Prompt 裡的 `if / else`；多情境分流、優先權排序；資訊不足時主動提問。 |
-| **04｜[驗證迴圈：自我檢查與有限次修正](./04_驗證迴圈：自我檢查與有限次修正.md)** | **反思與自我修正** | 導入客觀評量規準（Rubric）；While 迴圈自我檢驗；設置修正次數上限防死循環。 |
-| **05｜[停止條件：安全邊界與人工介入機制](./05_停止條件：安全邊界與人工介入機制.md)** | **安全護欄（Guardrails）** | 杜絕 AI 幻覺；何時必須停下來提問；Human-in-the-Loop 人機協同。 |
-| **06｜[實戰整合：打造可復用的工作規格書](./06_實戰整合：打造可復用的工作規格書.md)** | **邁向 Agent Skill** | 終極 ROSES+V 整合模板；大型實戰範例；與 `SKILL.md` 的結構一對一映射。 |
+| 次章節 | 核心主題 | 學習焦點與關鍵收穫 | 配套學員實作練習檔 (`sample_files/`) |
+|:---|:---|:---|:---|
+| **01｜[思維轉變：從單一指令到工作規格](./01_思維轉變_從單一指令到工作規格/README.md)** | **演算法思維 & Artifacts 模式** | 為什麼單句指令不夠？用自然語言寫演算法；透過 Artifacts 側邊欄漸進式迭代規格。 | • `python_course_syllabus.md`<br/>• `course_promotion_brief.md` |
+| **02｜[多步驟拆解：循序規劃與分階段交付](./02_多步驟拆解_循序規劃與分階段交付/README.md)** | **Pipeline 管線化** | 先規劃再產出；定義前一步驟產出做為下一步驟輸入；階段產物可視化。 | • `lesson_context_grade8.txt`<br/>• `feature_request_raw_notes.md`<br/>• `client_pain_points_factory.csv` |
+| **03｜[決策邏輯：條件分支與情境應變](./03_決策邏輯_條件分支與情境應變/README.md)** | **條件分支與防呆** | Prompt 裡的 `if / else`；多情境分流、優先權排序；資訊不足時主動提問。 | • `assignment_requirements.md`<br/>• `student_homework_submissions.py`<br/>• `support_tickets_sample.csv` |
+| **04｜[驗證迴圈：自我檢查與有限次修正](./04_驗證迴圈_自我檢查與有限次修正/README.md)** | **反思與自我修正** | 導入客觀評量規準（Rubric）；While 迴圈自我檢驗；設置修正次數上限防死循環。 | • `highschool_curriculum_standard.md`<br/>• `candidate_resume_draft.md`<br/>• `locale_en_raw.json` |
+| **05｜[停止條件：安全邊界與人工介入機制](./05_停止條件_安全邊界與人工介入機制/README.md)** | **安全護欄（Guardrails）** | 杜絕 AI 幻覺；何時必須停下來提問；Human-in-the-Loop 人機協同。 | • `sample_partner_NDA.txt`<br/>• `cloud_migration_checklist.md`<br/>• `health_consultation_inquiry.txt` |
+| **06｜[實戰整合：打造可復用的工作規格書](./06_實戰整合_打造可復用的工作規格書/README.md)** | **邁向 Agent Skill** | 終極 ROSES 整合模板；大型實戰範例；與 `SKILL.md` 的結構一對一映射。 | • `campus_book_project_brief.md`<br/>• `database_order_schema.sql`<br/>• `PROJECT_SPEC_TEMPLATE.md` |
 
 ---
 
@@ -63,4 +63,4 @@ flowchart LR
 ---
 
 👉 **準備好了嗎？讓我們從第一章開始學習：**  
-[進入 01｜思維轉變：從單一指令到工作規格 →](./01_思維轉變：從單一指令到工作規格.md)
+[進入 01｜思維轉變：從單一指令到工作規格 →](./01_思維轉變_從單一指令到工作規格/README.md)

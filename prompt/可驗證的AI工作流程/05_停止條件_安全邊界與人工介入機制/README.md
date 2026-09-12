@@ -1,8 +1,14 @@
-[← 上一章：04 驗證迴圈](./04_驗證迴圈：自我檢查與有限次修正.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：06 實戰整合 →](./06_實戰整合：打造可復用的工作規格書.md)
+[← 上一章：04 驗證迴圈](../04_驗證迴圈_自我檢查與有限次修正/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：06 實戰整合 →](../06_實戰整合_打造可復用的工作規格書/README.md)
 
 ---
 
 # 05｜停止條件：安全邊界與人工介入機制
+
+> 📁 **本單元學員實作練習檔（偽資料）**：
+> - [`sample_files/sample_partner_NDA.txt`](./sample_files/sample_partner_NDA.txt)：包含無期限保密與單方無限賠償之高危合約條款（供範例 1 合約審閱阻斷演練）。
+> - [`sample_files/cloud_migration_checklist.md`](./sample_files/cloud_migration_checklist.md)：缺少 RTO/RPO 關鍵指標之企業遷移問卷（供範例 2 技術架構硬性中斷演練）。
+> - [`sample_files/health_consultation_inquiry.txt`](./sample_files/health_consultation_inquiry.txt)：急診病患諮詢用藥信件（供範例 3 醫療紅線與免責導流演練）。
+
 
 在構建 AI 工作流程時，許多初學者常犯的一個大忌是：**試圖讓 AI 在任何情況下都「強行完成任務」**。
 
@@ -180,4 +186,4 @@ flowchart TD
 
 ---
 
-[← 上一章：04 驗證迴圈](./04_驗證迴圈：自我檢查與有限次修正.md) ｜ [返回專題總覽](./README.md) ｜ [下一章：06 實戰整合 →](./06_實戰整合：打造可復用的工作規格書.md)
+[← 上一章：04 驗證迴圈](../04_驗證迴圈_自我檢查與有限次修正/README.md) ｜ [返回專題總覽](../README.md) ｜ [下一章：06 實戰整合 →](../06_實戰整合_打造可復用的工作規格書/README.md)
