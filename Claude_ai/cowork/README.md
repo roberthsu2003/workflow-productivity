@@ -16,9 +16,9 @@
 傳統對話模式（Chat）適合快速發問與單次解答；而 **Claude Cowork** 則專為**多步驟長任務、檔案處理與自動化工作流**而設計。
 
 - **與 Chat 共用同一首頁 (Chat and Cowork share one home)**：不必進入完全不同的系統，在對話框左下角就能隨時切換「Chat」與「Cowork」。
-- **雲端隔離運算 (Sessions in the Cloud)**：任務預設在 Anthropic 雲端伺服器的安全隔離沙盒中執行。即使闔上筆電或關閉瀏覽器，雲端任務依然會持續運行。
-- **支援本機資源連動 (Local File & Desktop Integration)**：配合 Claude Desktop App，Claude 可直接讀寫電腦本地資料夾的檔案、操作內建瀏覽器，甚至進行電腦螢幕操作（Computer Use）。
-- **跨裝置無縫接續 (Work from Anywhere)**：在辦公室電腦啟動任務，出門時在手機 App 檢視進度與給予回饋，回到家再在另一台裝置下載成品。
+- **雲端隔離運算 (Sessions in the Cloud)**：任務預設在 Anthropic 雲端伺服器的安全隔離沙盒中執行。即使闔上筆電或關閉瀏覽器，雲端任務依然會持續運行。（實戰參閱：[範例 1](./Examples/01_Daily_News_Brief/README.md)、[範例 2](./Examples/02_Financial_Report/README.md)）
+- **支援本機資源連動 (Local File & Desktop Integration)**：配合 Claude Desktop App，Claude 可直接讀寫電腦本地資料夾的檔案、操作內建瀏覽器，甚至進行電腦螢幕操作（Computer Use）。（實戰參閱：[範例 4](./Examples/04_Local_Folder_Organize/README.md)）
+- **跨裝置無縫接續 (Work from Anywhere)**：在辦公室電腦啟動任務，出門時在手機 App 檢視進度與給予回饋，回到家再在另一台裝置下載成品。（實戰參閱：[範例 5](./Examples/05_Folder_Instructions_Project/README.md)）
 
 ---
 
@@ -49,26 +49,32 @@
 1. **Manually approve (Manual)**（手動核准，前身為 Ask before acting）：Claude 執行每一步動作（存取本機、連網、調用工具）前皆會暫停，由您確認按 Allow（允許）或 Deny（拒絕）。
 2. **Automatically approve (Auto)**（自動安全審查）：Claude 連續自主執行，但會在背後即時審查動作安全性（防範 Prompt Injection 提示詞注入與 Data Exfiltration 資料外洩）。若發現風險會自動攔阻或暫停請示您。（*注意：此安全審查會消耗較多 usage 配額*）。
 3. **Skip all approvals (Skip)**（跳過所有核准，前身為 Act without asking）：完全不暫停也不進行額外審查，全速推進（僅適用於 100% 信任的內部安全環境）。
+👉 **實戰操作體驗**：請參閱 [範例 4：本機資料夾整理與三大核准模式演練](./Examples/04_Local_Folder_Organize/README.md)。
 
 ### 3. 📁 本機資料夾讀寫 (Direct Local File Access)
 - 透過 **Claude Desktop App (macOS / Windows)**，您可以指定工作資料夾。
 - Claude 能直接在您的硬碟中讀取、分類、重命名檔案，並直接寫入產出成果（如：整理 Downloads 資料夾、批量將發票產出報銷總表）。
+👉 **實戰操作體驗**：請參閱 [範例 4：本機資料夾批次自動整理](./Examples/04_Local_Folder_Organize/README.md)（內附 `sample_files/raw_downloads/` 偽發票與雜亂檔案）。
 
 ### 4. 🌐 內建瀏覽器與網路操作 (Built-in Browser & Chrome)
 - 處理需要查閱外部網站的任務時，Claude 能自動開啟網頁、閱讀內容、點擊按鈕與填寫表單。
 - 桌面版具備免安裝的**內建瀏覽器 (Built-in browser)**，亦可選擇直接連動您的 **Chrome 瀏覽器 (Claude in Chrome)**。
+👉 **實戰操作體驗**：請參閱 [範例 1：每日產業情報與競品自動彙整](./Examples/01_Daily_News_Brief/README.md)。
 
 ### 5. 🕒 雲端排程任務 (Scheduled Tasks)
 - 支援在任務中直接輸入 `/schedule`，或從左側側邊欄點選「Scheduled」管理排程。
 - 支援「每小時 / 每日 / 每週 / 工作日」自動執行。
 - **純雲端任務無須開機**：使用網路搜尋、雲端檔案或 Connectors 的排程任務，即使電腦休眠或關機也會準時在雲端執行並交付成果。
+👉 **實戰操作體驗**：請參閱 [範例 1：雲端定時晨報排程](./Examples/01_Daily_News_Brief/README.md)。
 
 ### 6. 📝 原地反白微調草稿 (Edit Drafts in Place)
 - 當 Claude 產出長篇 Markdown 報告或草稿時，學員可以直接在畫面上**反白選取欲修改的段落**，點擊「Edit with Claude」輸入微調指令，Claude 即會原地更新該段文字，無需在對話串中費力描述。
+👉 **實戰操作體驗**：請參閱 [範例 3：客戶客訴回信草稿原地微調](./Examples/03_Customer_Feedback/README.md) 與 [範例 5：新聞稿草案原地微調](./Examples/05_Folder_Instructions_Project/README.md)。
 
 ### 7. 🎯 全域與資料夾指令 (Global & Folder Instructions)
 - **Global instructions**：在 `Settings > Cowork` 設定常駐指令（如您的工作職稱、公司產品線、偏好語氣與交付格式），自動套用於每次 Cowork 任務。
 - **Folder instructions**：在桌面版為指定資料夾設定專屬指令，Claude 在處理專案期間還能自主維護與更新該資料夾的進度筆記。
+👉 **實戰操作體驗**：請參閱 [範例 5：資料夾指令規範與專案日誌自主維護](./Examples/05_Folder_Instructions_Project/README.md)（內附 `folder-instructions.md` 與 `PROJECT_LOG.md`）。
 
 ---
 
@@ -90,15 +96,17 @@
 
 ---
 
-## 🎓 五、3 大職場自動化實戰範例 (含學員練習檔)
+## 🎓 五、5 大職場自動化實戰範例 (含學員練習檔與偽檔案)
 
-為幫助學員無痛上手 Cowork，本單元提供 3 個真實職場場景的實戰範例，每個範例皆附有可直接下載測試的原始範例檔案 (`sample_files/`)：
+為幫助學員無痛上手 Cowork，本單元提供 5 個真實職場場景的實戰範例，每個範例皆附有可直接測試的原始練習檔與偽檔案 (`sample_files/`)：
 
-| # | 實戰範例名稱 | 職場應用場景 | Cowork 核心能力 | 學員練習檔 (`sample_files/`) |
+| # | 實戰範例名稱 | 職場應用場景 | 對應 Cowork 核心能力 | 學員練習檔 / 偽檔案 (`sample_files/`) |
 | :---: | :--- | :--- | :--- | :--- |
-| **1** | [**每日產業情報與競品自動彙整**](./Examples/01_Daily_News_Brief/README.md) | 創投、行銷與企劃團隊每日監測產業新聞與趨勢。 | • 內建瀏覽器與 Web 檢索<br/>• Scheduled 雲端定時排程 | • `industry_keywords.txt`<br/>• `daily_news_template.md` |
-| **2** | [**跨來源財務與營運數據對比**](./Examples/02_Financial_Report/README.md) | 財務與風控團隊自動交叉比對多份 CSV 財務與預算。 | • 背景運算與多檔案交叉分析<br/>• 產出含公式之 Excel 活頁簿 | • `q3_financial_raw.csv`<br/>• `crm_sales_target.csv` |
-| **3** | [**客戶客訴與意見自動分類處置**](./Examples/03_Customer_Feedback/README.md) | 客服、PM 與營運團隊處理批量客訴，分類評級並草擬回信。 | • 多檔案批量處理與比對<br/>• 原地劃記微調 (Edit in Place) | • `customer_support_logs.csv`<br/>• `sop_escalation_rules.md` |
+| **1** | [**每日產業情報與競品自動彙整**](./Examples/01_Daily_News_Brief/README.md) | 創投、行銷與企劃團隊每日監測產業新聞與趨勢。 | • 🌐 內建瀏覽器與 Web 檢索<br/>• 🕒 雲端排程任務 (`/schedule`)<br/>• ☁️ 雲端隔離運算 (關機照常執行) | • `industry_keywords.txt`<br/>• `daily_news_template.md` |
+| **2** | [**跨來源財務與營運數據對比**](./Examples/02_Financial_Report/README.md) | 財務與風控團隊自動交叉比對多份 CSV 財務與預算。 | • 🤖 背景 Code Execution 運算<br/>• 📊 多檔案交叉對比分析 | • `q3_financial_raw.csv`<br/>• `crm_sales_target.csv` |
+| **3** | [**客戶客訴與意見自動分類處置**](./Examples/03_Customer_Feedback/README.md) | 客服、PM 與營運團隊處理批量客訴，分類評級並草擬回信。 | • 📋 SOP 規章自動遵循比對<br/>• 📝 原地反白微調草稿 (Edit Drafts in Place) | • `customer_support_logs.csv`<br/>• `sop_escalation_rules.md` |
+| **4** | [**本機資料夾批次整理與報銷產出**](./Examples/04_Local_Folder_Organize/README.md) | 行政特助、財務助理整理混亂下載資料夾、歸檔單據。 | • 📁 本機資料夾直接讀寫 (Direct Local File)<br/>• 💻 本機資源連動 (Desktop Integration)<br/>• 🛡️ 三大安全核准模式 (Manual/Auto/Skip) | • `raw_downloads/` (含 Google 發票、計程車收據、NDA 合約、行銷投影片等偽檔案)<br/>• `expenses_report_template.csv` |
+| **5** | [**資料夾指令與專案進度自主維護**](./Examples/05_Folder_Instructions_Project/README.md) | 專案經理 (PM)、品牌行銷團隊執行新產品上線發布。 | • 🎯 資料夾專屬指令 (Folder Instructions)<br/>• 📱 跨裝置無縫接續 (Work from Anywhere)<br/>• 📝 自主維護更新專案日誌與里程碑 | • `folder-instructions.md`<br/>• `product_launch_brief.md`<br/>• `PROJECT_LOG.md` |
 
 ---
 
