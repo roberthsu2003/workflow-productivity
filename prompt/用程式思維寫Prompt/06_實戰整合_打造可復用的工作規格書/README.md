@@ -83,12 +83,26 @@
 
 ### 範例 1：大型校園創新專案提案規格書
 
+> 📄 **搭配練習檔**：[`sample_files/campus_book_project_brief.md`](./sample_files/campus_book_project_brief.md)（校園二手書專案痛點與 5 萬元硬性預算限制）
+
+#### 🗣️ 用自然語言，5 步在 Artifacts 組裝出終極規格書
+
+| 對話輪次 | 你的自然語言口語指令 | 注入的規格元素 | 右側 Artifacts 側邊欄的即時變化 |
+|:---:|:---|:---:|:---|
+| **Round 1** | *「請參考 campus_book_project_brief.md，我想為校園二手書借閱平台寫一份專題提案書。請在右側 Artifacts 為我建立 ROSES 規格。」* | **R + O（進入點）** | 側邊欄生成 `campus_project_spec.md` 基礎骨架 (v1)。 |
+| **Round 2** | *「步驟改成 5 段管線：先梳理學生痛點、比較 2 種營運模式、排定 4 個月甘特圖與預算、依標準自檢、最後排查政策停止條件。」* | **Steps Pipeline（管線化）** | 側邊欄步驟區塊進化為 5 階段嚴密流程 (v2)。 |
+| **Round 3** | *「加入決策邏輯：預算僅 5 萬嚴禁開發原生 App，一律改用 LINE 官方帳號+表單；法規風險考量，第一期僅限現場面交或點數。」* | **Decision Logic（分支決策）** | 側邊欄在 Scope 加入 If-Else 分流與成本防呆 (v3)。 |
+| **Round 4** | *「加入自我檢查標準：自檢預算加總是否 ≤ 50,000 元、是否有具體里程碑、是否含個資防護，未達標最多修正 2 次。」* | **Verification Loop（驗證迴圈）** | 側邊欄新增 Rubric 清單與修正次數限制 (v4)。 |
+| **Round 5** | *「加入停止條件：若校方場地政策未知，停止斷言必能落成，改為輸出待與學務處確認的 3 個問題；要求輸出摘要、甘特圖與自檢報告。」* | **Exit Criteria & Format（安全煞車與產出）** | 側邊欄升級為**終極可驗證規格書 (v5)**！ |
+
+#### 🎯 側邊欄最終組裝出的完整 Prompt（可直接複製）
+
 ```markdown
 ## R – 角色設定
 你是一位資深校園專案企劃顧問。
 
 ## O – 任務目標
-協助學生團隊將初步構想，發展為一份具備可行性且可供校方評審審閱的完整專題提案書。
+參考 campus_book_project_brief.md，協助學生團隊將構想發展為一份具備可行性且可供校方審閱的完整專案提案書。
 
 ## S – 執行步驟
 1. 梳理學生痛點與現有二手書交易之缺失。
@@ -125,12 +139,26 @@
 
 ### 範例 2：RESTful API 技術規格與文件生成
 
+> 📄 **搭配練習檔**：[`sample_files/database_order_schema.sql`](./sample_files/database_order_schema.sql)（電商訂單系統 PostgreSQL Schema）
+
+#### 🗣️ 用自然語言，5 步在 Artifacts 組裝出終極規格書
+
+| 對話輪次 | 你的自然語言口語指令 | 注入的規格元素 | 右側 Artifacts 側邊欄的即時變化 |
+|:---:|:---|:---:|:---|
+| **Round 1** | *「請對照 database_order_schema.sql，我想為訂單查詢設計 GET /api/v1/orders 的規格書。請在右側產生 ROSES 規格。」* | **R + O（進入點）** | 側邊欄生成 `api_spec_prompt.md` 基礎骨架 (v1)。 |
+| **Round 2** | *「步驟要包含：定義 Request Headers（含 JWT）、Query 參數、HTTP 200 JSON Schema、常見錯誤碼（400/401/403/429）及自檢修正。」* | **Steps Pipeline（管線化）** | 側邊欄補足完整後端 API 設計審查管線 (v2)。 |
+| **Round 3** | *「加入邊界規則：若 limit 參數超過 100 必須自動截斷或報錯 400，防止資料庫被打爆；回應中的手機與信用卡必須脫敏遮罩。」* | **Decision Logic（保護與遮罩）** | 側邊欄注入資安與效能保護條件 (v3)。 |
+| **Round 4** | *「加入自檢 Rubric：檢查 JSON 語法是否合法、是否涵蓋 401 與 429 錯誤碼、遮罩是否落實，最多自檢修正 2 次。」* | **Verification Loop（驗證迴圈）** | 側邊欄新增工程級 Rubric 清單 (v4)。 |
+| **Round 5** | *「若 Schema 有未定義欄位停止臆測；輸出標準 OpenAPI Markdown 格式並附上自檢合格報告。」* | **Exit Criteria & Format（安全中斷與格式）** | 側邊欄升級為**終極可驗證規格書 (v5)**！ |
+
+#### 🎯 側邊欄最終組裝出的完整 Prompt（可直接複製）
+
 ```markdown
 ## R – 角色設定
 你是一位後端架構師兼 API 文件技術專家。
 
 ## O – 任務目標
-為電商訂單系統設計「查詢會員訂單列表」的 RESTful API 規格文件。
+對照 database_order_schema.sql，為電商訂單系統設計「查詢會員訂單列表」的 RESTful API 規格文件。
 
 ## S – 執行步驟
 1. 定義 HTTP 請求標頭（Headers，需含 JWT Authorization）。
@@ -148,7 +176,7 @@
   - 參數支援：`page`（預設 1）、`limit`（預設 20，最大 100）、`status`（PENDING, PAID, SHIPPED, CANCELLED）。
 - 決策與安全規則：
   - 分頁上限限制：若 `limit > 100`，規則必須設定為「自動截斷為 100」或「回傳 HTTP 400 錯誤」，不可無上限查詢。
-  - 隱私遮罩：回應中手機與信用卡號必須加上遮罩（例如 `0912****78`）。
+  - 隱私遮罩：回應中手機與信用卡號必須加上遮罩（例如 `0912****78`、末四碼 `credit_card_last4`）。
 - 自我檢驗標準（Rubric，修正上限 2 次）：
   - [ ] JSON 範例是否為合法 JSON 格式（無多餘逗號、雙引號包覆）？
   - [ ] 是否完整涵蓋 401（未授權）與 429（Rate Limit）說明？
