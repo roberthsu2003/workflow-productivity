@@ -30,7 +30,7 @@
 | **操作入口** | 輸入框預設為「Chat」 | 輸入框左下角切換為「Cowork」（Chrome 側邊欄打開即為 Cowork） |
 | **執行環境** | 前台對話視窗，依賴即時連線 | 雲端隔離沙盒（Sessions in the cloud），支援背景持續運行 |
 | **本地檔案存取** | 需手動上傳檔案（單次對話暫存） | 配合 Desktop App 可直接讀寫本機整份資料夾，免手動上傳下載 |
-| **審批安全機制** | 無需審批（單次產出） | 支援 3 種審批模式：**Manual（手動）/ Auto（自動審查）/ Skip（跳過）** |
+| **安全核准機制** | 無需核准（單次產出） | 支援 3 種核准模式：**Manual（手動核准）/ Auto（自動審查）/ Skip（跳過核准）** |
 | **瀏覽器互動** | 純文字搜尋（Web Search） | 支援內建瀏覽器（Built-in browser），可開啟網頁、點擊、輸入表單 |
 | **自動化排程** | 不支援定時執行 | 支援 `/schedule` 雲端自動定時重複執行（定時週報、每日簡報） |
 | **成果精細度** | 純文字、Markdown、程式碼 | 專業交付級產出（含 VLOOKUP 公式之 Excel、PowerPoint 簡報、豐富 Artifacts） |
@@ -44,11 +44,11 @@
 - 給定目標後，Claude 會自主制定計畫、將任務拆解為子任務（Sub-agents），並視情況**並行處理**多條工作流程，大幅縮短執行時間。
 - 具備記憶延續性（Shared Memory with Chat），能自動調用您過往在 Chat 中的偏好與對話記憶。
 
-### 2. 🛡️ 三大審批安全模式 (Approval Modes)
-在任務執行前或過程中，您可隨時調整安全審批模式：
-1. **Manually approve (Manual)**（手動批准，前身為 Ask before acting）：Claude 執行每一步動作（存取本機、連網、調用工具）前皆會暫停，由您確認按 Allow 或 Deny。
+### 2. 🛡️ 三大安全核准模式 (Approval Modes)
+在任務執行前或過程中，您可隨時調整安全核准模式：
+1. **Manually approve (Manual)**（手動核准，前身為 Ask before acting）：Claude 執行每一步動作（存取本機、連網、調用工具）前皆會暫停，由您確認按 Allow（允許）或 Deny（拒絕）。
 2. **Automatically approve (Auto)**（自動安全審查）：Claude 連續自主執行，但會在背後即時審查動作安全性（防範 Prompt Injection 提示詞注入與 Data Exfiltration 資料外洩）。若發現風險會自動攔阻或暫停請示您。（*注意：此安全審查會消耗較多 usage 配額*）。
-3. **Skip all approvals (Skip)**（跳過所有審批，前身為 Act without asking）：完全不暫停也不進行額外審查，全速推進（僅適用於 100% 信任的內部安全環境）。
+3. **Skip all approvals (Skip)**（跳過所有核准，前身為 Act without asking）：完全不暫停也不進行額外審查，全速推進（僅適用於 100% 信任的內部安全環境）。
 
 ### 3. 📁 本機資料夾讀寫 (Direct Local File Access)
 - 透過 **Claude Desktop App (macOS / Windows)**，您可以指定工作資料夾。
@@ -111,8 +111,8 @@
 3. **選擇工作空間或關聯知識庫**：
    - **桌面端**：可選擇指定電腦上的本機資料夾（享有直接讀寫權限）。
    - **網頁/行動端**：可關聯已有的 **Projects** 知識庫或掛載雲端 Connectors（Google Drive / Slack）。
-4. **設定安全審批模式 (Approval Mode)**：
-   - 根據任務重要程度選擇 **Manual**（敏感資料推薦）、**Auto**（日常流暢推進）或 **Skip**。
+4. **設定安全核准模式 (Approval Mode)**：
+   - 根據任務重要程度選擇 **Manual**（敏感資料推薦手動核准）、**Auto**（日常流暢推進）或 **Skip**。
 5. **輸入目標提示詞 (Task Prompt)**：
    - 清楚告知目標（Objective）、來源資料、格式要求與交付型態。
 6. **啟動運算或排程**：
@@ -129,7 +129,7 @@
 > 2. **本機連線 vs 雲端關機提醒**：
 >    - 若排程任務**只使用網路搜尋、Google Drive、Slack 等雲端工具**，關閉電腦依然能在雲端準時完成。
 >    - 若排程任務**需要存取您筆電內的本機資料夾**，請確保執行當下筆電處於開機且 Claude Desktop 連線狀態。
-> 3. **重要任務請善用 Manual 審批**：
+> 3. **重要任務請善用 Manual 核准模式**：
 >    涉及寄送郵件、覆寫重要財務報表或外部 API 調用時，建議保持「Manually approve」模式，先審閱 Claude 的每一步執行計畫。
 
 ---
