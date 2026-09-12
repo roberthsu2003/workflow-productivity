@@ -95,7 +95,7 @@
 為幫助學員無痛上手 Cowork，本單元提供 3 個真實職場場景的實戰範例，每個範例皆附有可直接下載測試的原始範例檔案 (`sample_files/`)：
 
 | # | 實戰範例名稱 | 職場應用場景 | Cowork 核心能力 | 學員練習檔 (`sample_files/`) |
-| :--- :---: | :--- | :--- | :--- | :--- |
+| :---: | :--- | :--- | :--- | :--- |
 | **1** | [**每日產業情報與競品自動彙整**](./Examples/01_Daily_News_Brief/README.md) | 創投、行銷與企劃團隊每日監測產業新聞與趨勢。 | • 內建瀏覽器與 Web 檢索<br/>• Scheduled 雲端定時排程 | • `industry_keywords.txt`<br/>• `daily_news_template.md` |
 | **2** | [**跨來源財務與營運數據對比**](./Examples/02_Financial_Report/README.md) | 財務與風控團隊自動交叉比對多份 CSV 財務與預算。 | • 背景運算與多檔案交叉分析<br/>• 產出含公式之 Excel 活頁簿 | • `q3_financial_raw.csv`<br/>• `crm_sales_target.csv` |
 | **3** | [**客戶客訴與意見自動分類處置**](./Examples/03_Customer_Feedback/README.md) | 客服、PM 與營運團隊處理批量客訴，分類評級並草擬回信。 | • 多檔案批量處理與比對<br/>• 原地劃記微調 (Edit in Place) | • `customer_support_logs.csv`<br/>• `sop_escalation_rules.md` |
