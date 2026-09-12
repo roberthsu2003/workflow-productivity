@@ -25,26 +25,23 @@
 【輸入：兩份不同業務系統導出的分散數據】
 1. q3_financial_raw.csv (實際財務流水：營收、費用、現金餘額、Net Burn)
 2. crm_sales_target.csv (銷售目標：預估營收、費用預算上限、毛利目標)
-
-                ⬇️ 透過 Cowork 背景 Code Execution 交叉比對 ⬇️
-
-【產出：高階管理層財務摘要、超支警報與營收對比圖表】
-┌────────────────────────────────────────────────────────────────────────┐
-│ 📊 Q3 財務績效與營運目標對比總表                                        │
-├─────────┬──────────┬──────────┬──────────┬──────────┬─────────────────┤
-│ 部門    │ 目標營收 │ 實際營收 │ 達成率   │ 費用超支 │ 風險狀態        │
-├─────────┼──────────┼──────────┼──────────┼──────────┼─────────────────┤
-│ SaaS訂閱│ $375,000 │ $405,000 │ 108.0%   │ +$15,000 │ 🟢 表現優異     │
-│ 硬體設備│ $150,000 │ $113,000 │  75.3%   │ +$32,000 │ 🔴 嚴重虧損預警 │
-├─────────┴──────────┴──────────┴──────────┴──────────┴─────────────────┤
-│ 💡 關鍵營運指標 (KPIs)：                                                │
-│   • 全公司 Q3 總營收：$518,000 USD (整體目標達成率 98.7%)               │
-│   • 硬體部門累計淨虧損：-$84,000 USD (9月單月燒錢暴增至 $45,000)       │
-│   • 期末現金餘額：$1,680,000 USD                                       │
-│   • 現金跑道 (Cash Runway)：預估剩餘 20.0 個月 (需立即整頓硬體供應鏈)   │
-│ 📈 已自動產出並嵌入：q3_revenue_vs_target_chart.png                     │
-└────────────────────────────────────────────────────────────────────────┘
 ```
+
+⬇️ **透過 Cowork 背景 Code Execution 交叉比對產出** ⬇️
+
+#### 【產出：高階管理層財務摘要、超支警報與營收對比圖表】
+
+| 部門 | 目標營收 (USD) | 實際營收 (USD) | 達成率 | 費用超支狀況 | 風險狀態 |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **SaaS 訂閱** | $375,000 | $405,000 | **108.0%** | +$15,000 | 🟢 表現優異（超額達成） |
+| **硬體設備** | $150,000 | $113,000 | **75.3%** | +$32,000 | 🔴 嚴重虧損預警（連續擴大） |
+
+> **💡 關鍵財務營運指標 (KPIs)**：
+> - **全公司 Q3 總營收**：$518,000 USD（整體目標達成率 98.7%）
+> - **硬體部門累計淨虧損**：-$84,000 USD（9 月單月燒錢暴增至 $45,000）
+> - **期末現金餘額**：$1,680,000 USD
+> - **現金跑道 (Cash Runway)**：預估剩餘 **20.0 個月**（需立即整頓硬體供應鏈止血）
+> - 📈 **自動產出圖表**：`q3_revenue_vs_target_chart.png`（已自動繪製並嵌入報告中）
 
 ---
 
@@ -67,24 +64,24 @@ flowchart TD
 
 ## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
 
-```
-┌────────────────────────────────────────────────────────┐
-│ 🤝 Cowork: 正在執行跨檔案財務對帳與分析                  │
-├────────────────────────────────────────────────────────┤
-│ ▹ 📄 Reading q3_financial_raw.csv (Actuals)            │
-│ ▹ 📄 Reading crm_sales_target.csv (Budgets)            │
-│ ▹ 💻 Writing Python script to merge datasets on ['月份','部門']│
-│ ▹ ⚡ Executing Code in sandbox:                         │
-│   ```python                                            │
-│   import pandas as pd                                  │
-│   df = pd.merge(actuals, targets, on=['月份', '部門']) │
-│   df['達成率'] = df['實際營收_USD'] / df['預估目標營收_USD']│
-│   # Calculating Cash Runway = Cash / Avg Monthly Burn  │
-│   ```                                                  │
-│ ▹ 📈 Generating Chart: q3_revenue_vs_target_chart.png...│
-│ ▹ ⚠️ Risk Alert Triggered: Hardware unit net loss -$84K│
-│ ▹ ✨ Output: Q3 財務營運對比報告 (含圖表與3大改善處方) │
-└────────────────────────────────────────────────────────┘
+```console
+🤝 [Claude Cowork] Target: 跨檔案財務對帳與分析
+────────────────────────────────────────────────────────
+➜ 📄 Reading q3_financial_raw.csv (Actuals)
+➜ 📄 Reading crm_sales_target.csv (Budgets)
+➜ 💻 Writing Python script to merge datasets on ['月份', '部門']
+➜ ⚡ Executing Code in sandbox:
+  ```python
+  import pandas as pd
+  df = pd.merge(actuals, targets, on=['月份', '部門'])
+  df['達成率'] = df['實際營收_USD'] / df['預估目標營收_USD']
+  # Cash Runway = Cash / Avg Monthly Net Burn
+  ```
+✔ 📈 Generating Chart: q3_revenue_vs_target_chart.png... Done.
+⚠️ Risk Alert Triggered: Hardware unit net loss -$84K
+✨ Output: Q3 財務營運對比報告 (含圖表與 3 大改善處方)
+────────────────────────────────────────────────────────
+Status: Task completed successfully.
 ```
 
 ---
@@ -146,4 +143,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 2 客訴分類與原地微調](../02_Customer_Feedback/README.md) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 4 每日情報監測與定時排程 →](../04_Daily_News_Brief/README.md)
+[← 上一篇：範例 2 客訴分類與原地微調](../02_Customer_Feedback/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 4 每日情報監測與定時排程 →](../04_Daily_News_Brief/)

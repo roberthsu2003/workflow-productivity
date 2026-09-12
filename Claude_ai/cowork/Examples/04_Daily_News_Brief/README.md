@@ -26,24 +26,19 @@
 【輸入：監測關鍵字 industry_keywords.txt + 格式樣板 daily_news_template.md】
 - 監測範圍：智慧醫療、AI 醫療影像、FDA 醫材認證、VC 早期融資、ESG 轉型
 - 剔除規則：公關炒作稿、無實際產品落地的股票宣傳
-
-                ⬇️ 透過 Cowork 內建瀏覽器檢索 + 雲端排程 ⬇️
-
-【產出：每天早上 08:30 雲端自動產出之高階情報簡報】
-┌────────────────────────────────────────────────────────────────────────┐
-│ 📰 每日產業情報與競品趨勢簡報 (Daily Industry Brief)                   │
-├───┬───────────────────────────┬──────────────┬────────┬────────────────┤
-│ # │ 新聞標題                  │ 涉及企業     │ 影響力 │ 來源連結       │
-├───┼───────────────────────────┼──────────────┼────────┼────────────────┤
-│ 1 │ 美國 FDA 核准首款生成式    │ MedTech AI   │ 🔴 高  │ [閱讀原文](...)│
-│   │ 放射科影像輔助診斷系統    │ (Series A)   │        │                │
-│ 2 │ 專注永續農業之台灣新創     │ GreenAgri    │ 🟡 中  │ [閱讀原文](...)│
-│   │ 完成 300 萬美元 Pre-A 融資│ 綠能科技     │        │                │
-├───┴───────────────────────────┴──────────────┴────────┴────────────────┤
-│ 💡 戰略亮點剖析：醫療 AI 領域正從「判讀篩檢」轉向「臨床工作流整合」... │
-│ 📌 建議下一步行動：請 BD 團隊於週五前連繫 MedTech 亞太區業務代表...    │
-└────────────────────────────────────────────────────────────────────────┘
 ```
+
+⬇️ **透過 Cowork 內建瀏覽器檢索 + 雲端排程產出** ⬇️
+
+#### 【產出：每天早上 08:30 雲端自動產出之高階情報簡報】
+
+| # | 新聞標題 | 涉及企業/領域 | 影響力評級 | 核心重點摘要 | 來源連結 |
+|:---:|:---|:---|:---:|:---|:---:|
+| **1** | 美國 FDA 核准首款生成式放射科影像輔助診斷系統 | MedTech AI (Series A) | 🔴 高 | 獲得 510(k) 許可，為首個將胸部 X 光異常篩檢時間縮短 60% 的臨床演算法。 | [閱讀原文](https://example.com/news1) |
+| **2** | 專注永續農業之台灣新創完成 300 萬美元 Pre-A 融資 | GreenAgri (綠能科技) | 🟡 中 | 由知名永續基金領投，資金將用於擴建智慧感測溫室與海外市場拓展。 | [閱讀原文](https://example.com/news2) |
+
+> **💡 戰略亮點剖析**：醫療 AI 領域正從「單點影像判讀」加速轉向「臨床工作流無縫整合」；法規通過速度比去年同期顯著加快。  
+> **📌 建議下一步行動**：請 BD 團隊於週五前連繫 MedTech 亞太區業務代表，評估代理或院內合作可行性。
 
 ---
 
@@ -67,20 +62,20 @@ flowchart TD
 
 ## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
 
-```
-┌────────────────────────────────────────────────────────┐
-│ 🤝 Cowork: 正在執行每日產業情報自動檢索                  │
-├────────────────────────────────────────────────────────┤
-│ ▹ 📄 Loaded industry_keywords.txt (3 focus areas)      │
-│ ▹ 🌐 Browsing Web: "智慧醫療 FDA 認證 2026" (Found 12) │
-│ ▹ 🌐 Browsing Web: "TechCrunch AI Biotech Early Stage" │
-│ ▹ 🧹 Filtering out 4 press release spams...            │
-│ ▹ 🔍 Visiting original report: MedTech AI regulatory...│
-│ ▹ 📊 Evaluating severity: FDA approval -> 🔴 High      │
-│ ▹ 📝 Injecting insights into daily_news_template.md... │
-│ ▹ ✨ Generated: daily_news_20260912.md                 │
-│ ▹ 🕒 Next scheduled run: 明天早上 08:30 (雲端自跑)      │
-└────────────────────────────────────────────────────────┘
+```console
+🤝 [Claude Cowork] Target: 每日產業情報自動檢索與排程
+────────────────────────────────────────────────────────
+➜ 📄 Loaded industry_keywords.txt (3 focus areas)
+➜ 🌐 Browsing Web: "智慧醫療 FDA 認證 2026" (Found 12 sources)
+➜ 🌐 Browsing Web: "TechCrunch AI Biotech Early Stage"
+➜ 🧹 Filtering out 4 press release clickbaits... Done.
+➜ 🔍 Visiting original report: MedTech AI regulatory path...
+➜ 📊 Evaluating impact: FDA approval -> 🔴 High Impact
+➜ 📝 Injecting insights into daily_news_template.md...
+✨ Generated: daily_news_20260912.md
+🕒 Next scheduled run: 明天早上 08:30 (雲端自動執行)
+────────────────────────────────────────────────────────
+Status: Task completed successfully.
 ```
 
 ---
@@ -147,4 +142,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 3 跨來源財務對帳與自動繪圖](../03_Financial_Report/README.md) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 5 資料夾指令與專案日誌維護 →](../05_Folder_Instructions_Project/README.md)
+[← 上一篇：範例 3 跨來源財務對帳與自動繪圖](../03_Financial_Report/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 5 資料夾指令與專案日誌維護 →](../05_Folder_Instructions_Project/)

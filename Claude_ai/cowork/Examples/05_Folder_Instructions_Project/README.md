@@ -65,22 +65,22 @@ flowchart TD
 
 ## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
 
-```
-┌────────────────────────────────────────────────────────┐
-│ 🤝 Cowork: 正在執行 SmartFlow AI 發布專案                │
-├────────────────────────────────────────────────────────┤
-│ ▹ 🎯 Applied folder-instructions.md:                   │
-│   • Tone: Professional, B2B Agile (No clickbait)       │
-│   • Structure: Must include Objective, Owner, Risks    │
-│   • Auto-Log: Enabled                                  │
-│ ▹ 📄 Reading product_launch_brief.md...                │
-│ ▹ ✍️ Writing press_release_draft.md (4 sections)...     │
-│ ▹ 📝 Auto-Maintaining PROJECT_LOG.md:                  │
-│   • Appended timestamp: 2026-09-12 10:15               │
-│   • Marked [x] 任務一：新聞稿草案撰寫                  │
-│   • Updated Overall Progress: 0% -> 33%                │
-│ ▹ ✨ Completed! Files synced to Cloud & Mobile.         │
-└────────────────────────────────────────────────────────┘
+```console
+🤝 [Claude Cowork] Target: SmartFlow AI 產品發布專案
+────────────────────────────────────────────────────────
+➜ 🎯 Applied folder-instructions.md:
+  • Tone: Professional, B2B Agile (No clickbait)
+  • Structure: Must include Objective, Owner, Risks
+  • Auto-Log: Enabled
+➜ 📄 Reading product_launch_brief.md...
+➜ ✍️ Writing press_release_draft.md (4 sections)...
+➜ 📝 Auto-Maintaining PROJECT_LOG.md:
+  • Appended timestamp: 2026-09-12 10:15
+  • Marked [x] 任務一：新聞稿草案撰寫
+  • Updated Overall Progress: 0% -> 33%
+✨ Completed! Files synced to Cloud & Mobile.
+────────────────────────────────────────────────────────
+Status: Task completed successfully.
 ```
 
 ---
@@ -150,4 +150,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 4 每日情報監測與定時排程](../04_Daily_News_Brief/README.md) ｜ [返回 Cowork 主頁](../../README.md) ｜ 🏠 [返回專案總首頁](../../../README.md)
+[← 上一篇：範例 4 每日情報監測與定時排程](../04_Daily_News_Brief/) ｜ [返回 Cowork 主頁](../../README.md) ｜ 🏠 [返回專案總首頁](../../../README.md)

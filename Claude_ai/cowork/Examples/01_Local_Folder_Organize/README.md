@@ -83,25 +83,25 @@ flowchart TD
 
 當您送出指令後，Claude Desktop 會展開生動的 Agent 執行進度串流：
 
-```
-┌────────────────────────────────────────────────────────┐
-│ 🤝 Cowork: 正在處理本地資料夾 sample_files/              │
-├────────────────────────────────────────────────────────┤
-│ ▹ 🔍 Scanning raw_downloads/ (Found 4 files)...       │
-│ ▹ 📄 Reading INV_2026_08_GoogleWorkspace.txt (Invoice) │
-│ ▹ 📄 Reading taxi_receipt_20260905.txt (Receipt)       │
-│ ▹ 📄 Reading contract_partner_NDA_v1.txt (Legal)       │
-│ ▹ 📄 Reading Q3_marketing_proposal_draft.txt (Plan)    │
-│                                                        │
-│ [Manual Approval Required] ──────────────────────────  │
-│ ⚠️ Claude wants to create directories:                 │
-│   • 01_財務單據/  • 02_法務合約/  • 03_專案企劃/         │
-│   [ Deny ]  [ Allow ] <--- 點擊 Allow 繼續             │
-│                                                        │
-│ ▹ 🚚 Moving and renaming 4 files... Done.              │
-│ ▹ 📊 Parsing amounts and generating summary CSV...     │
-│ ▹ ✨ Created: expenses_summary_202609.csv (Total: $1,340)│
-└────────────────────────────────────────────────────────┘
+```console
+🤝 [Claude Cowork] Workspace: ./sample_files/
+────────────────────────────────────────────────────────
+➜ 🔍 Scanning raw_downloads/ (Found 4 files)...
+➜ 📄 Reading INV_2026_08_GoogleWorkspace.txt (Invoice)
+➜ 📄 Reading taxi_receipt_20260905.txt (Receipt)
+➜ 📄 Reading contract_partner_NDA_v1.txt (Legal)
+➜ 📄 Reading Q3_marketing_proposal_draft.txt (Plan)
+
+⚠️ [Manual Approval Required]
+Claude wants to create directories:
+  • 01_財務單據/  • 02_法務合約/  • 03_專案企劃/
+Actions: [ Deny ]  [ Allow ]  <--- 點擊 Allow 繼續
+
+✔ 🚚 Moving and renaming 4 files... Done.
+✔ 📊 Parsing amounts and generating summary CSV...
+✨ Created: expenses_summary_202609.csv (Total: $1,340)
+────────────────────────────────────────────────────────
+Status: Task completed successfully.
 ```
 
 ---
@@ -166,4 +166,4 @@ flowchart TD
 
 ---
 
-← [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 2 客訴分類與原地微調 →](../02_Customer_Feedback/README.md)
+← [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 2 客訴分類與原地微調 →](../02_Customer_Feedback/)

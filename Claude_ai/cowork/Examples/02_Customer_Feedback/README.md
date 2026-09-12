@@ -29,23 +29,17 @@ TICK-002 (一般)  | 請問密碼重設信箱一直沒收到該怎麼辦？
 TICK-003 (VIP)   | 希望能增加自動匯出 PDF 報表的功能，團隊很需要。
 TICK-004 (一般)  | 後台頁面載入速度有點慢，大概要等5秒。
 TICK-005 (企業)  | 數據庫同步失敗，發票開立錯誤！要求主管出面說明！
-
-                ⬇️ 依照 sop_escalation_rules.md 自動化處置 ⬇️
-
-【產出：智慧分級看板、應急處置回信與產品改善建議】
-┌─────────────────────────────────────────────────────────────┐
-│ 🔴 Level 1 (特急/15分鐘SLA)                                 │
-│   • TICK-001：VIP 金流中斷 ➔ 已生成專屬高階技術主管道歉信草稿│
-│   • TICK-005：企業發票開立錯誤 ➔ 已生成法務/財務覆核安撫信草稿│
-├─────────────────────────────────────────────────────────────┤
-│ 🟡 Level 2 (中度/2小時SLA)                                  │
-│   • TICK-002：密碼重設異常 ➔ 派發帳號維運小組標準處置流程   │
-│   • TICK-004：頁面速度延遲 ➔ 併入 CDN 監控工單              │
-├─────────────────────────────────────────────────────────────┤
-│ 🟢 Level 3 (需求/24小時SLA)                                 │
-│   • TICK-003：PDF 匯出建議 ➔ 自動收錄進 PM 產品需求池 (PRD) │
-└─────────────────────────────────────────────────────────────┘
 ```
+
+⬇️ **依照 `sop_escalation_rules.md` 自動化處置產出** ⬇️
+
+#### 【產出：智慧分級看板、應急處置回信與產品改善建議】
+
+| 風險等級 | 判定單號與客訴概要 | 處置動作與 SLA 承諾 |
+|:---|:---|:---|
+| **🔴 Level 1（特急處置）** | • **TICK-001** (VIP客戶)：金流中斷損失 50 萬<br>• **TICK-005** (企業客戶)：發票開立錯誤 | **15 分鐘 SLA**：已由 Claude 自動生成 2 封高階技術/財務主管道歉信草稿，承諾優先修復與專屬補償方案。 |
+| **🟡 Level 2（一般異常）** | • **TICK-002** (一般用戶)：密碼重設信箱未收到<br>• **TICK-004** (一般用戶)：頁面載入速度延遲 5 秒 | **2 小時 SLA**：自動派發至維運小組工單池，排定修復。 |
+| **🟢 Level 3（需求收集）** | • **TICK-003** (VIP客戶)：許願自動匯出 PDF 報表功能 | **24 小時 SLA**：自動收錄至產品經理 (PM) 改善需求池 (PRD)。 |
 
 ---
 
@@ -69,23 +63,23 @@ flowchart TD
 
 ## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
 
-```
-┌────────────────────────────────────────────────────────┐
-│ 🤝 Cowork: 正在依據 SOP 處置客戶意見回饋                │
-├────────────────────────────────────────────────────────┤
-│ ▹ 📄 Reading sop_escalation_rules.md (Severity Matrix) │
-│ ▹ 📊 Parsing 5 customer tickets from CSV...           │
-│ ▹ 🔍 Evaluating TICK-001: Payment failure -> 🔴 Level 1│
-│ ▹ 🔍 Evaluating TICK-002: Password reset  -> 🟡 Level 2│
-│ ▹ 🔍 Evaluating TICK-003: PDF export req  -> 🟢 Level 3│
-│ ▹ 🔍 Evaluating TICK-004: Latency 5s      -> 🟡 Level 2│
-│ ▹ 🔍 Evaluating TICK-005: Invoice error   -> 🔴 Level 1│
-│                                                        │
-│ ▹ ✍️ Generating High-EQ apology for TICK-001...        │
-│ ▹ ✍️ Generating High-EQ apology for TICK-005...        │
-│ ▹ 📋 Generating PM Product Improvement Backlog...      │
-│ ▹ ✨ Output: 客訴處置矩陣與應急回信草稿 (已交付)        │
-└────────────────────────────────────────────────────────┘
+```console
+🤝 [Claude Cowork] Target: 客訴與意見自動分類處置
+────────────────────────────────────────────────────────
+➜ 📄 Reading sop_escalation_rules.md (Severity Matrix)
+➜ 📊 Parsing 5 customer tickets from CSV...
+➜ 🔍 Evaluating TICK-001: Payment failure  -> 🔴 Level 1
+➜ 🔍 Evaluating TICK-002: Password reset   -> 🟡 Level 2
+➜ 🔍 Evaluating TICK-003: PDF export req   -> 🟢 Level 3
+➜ 🔍 Evaluating TICK-004: Latency 5s       -> 🟡 Level 2
+➜ 🔍 Evaluating TICK-005: Invoice error    -> 🔴 Level 1
+
+✔ ✍️ Generating High-EQ apology for TICK-001... Done.
+✔ ✍️ Generating High-EQ apology for TICK-005... Done.
+✔ 📋 Generating PM Product Improvement Backlog... Done.
+✨ Output: 客訴處置矩陣與應急回信草稿 (已交付至對話視窗)
+────────────────────────────────────────────────────────
+Status: Task completed successfully.
 ```
 
 ---
@@ -148,4 +142,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 1 本機資料夾整理與報銷總表](../01_Local_Folder_Organize/README.md) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 3 跨來源財務對帳與自動繪圖 →](../03_Financial_Report/README.md)
+[← 上一篇：範例 1 本機資料夾整理與報銷總表](../01_Local_Folder_Organize/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 3 跨來源財務對帳與自動繪圖 →](../03_Financial_Report/)
