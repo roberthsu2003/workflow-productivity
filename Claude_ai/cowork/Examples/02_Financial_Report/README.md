@@ -43,7 +43,7 @@
 
 ## 🚀 學員操作 3 步驟
 
-1. **開啟 Cowork**：登入 [claude.ai](https://claude.ai) 點選切換至 **Cowork** 工作空間。
+1. **開啟 Cowork**：登入 [claude.ai](https://claude.ai) 或開啟 Claude 桌面/行動版，在訊息輸入框左下角切換為 **Cowork** 模式（Chrome 側邊欄開啟即為 Cowork）。
 2. **上傳檔案與貼上 Prompt**：將 `q3_financial_raw.csv` 與 `crm_sales_target.csv` 拖入對話框，貼上上述 RTCCF Prompt。
 3. **觀看自動化執行**：Cowork 會在背景自動寫 Python 程式碼、自動運算與自動畫圖，並輸出高品質的對比報告！
 

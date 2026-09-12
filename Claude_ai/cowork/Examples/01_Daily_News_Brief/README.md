@@ -43,7 +43,7 @@
 
 ## 🚀 學員操作 3 步驟
 
-1. **開啟 Cowork**：登入 [claude.ai](https://claude.ai) 點選切換至 **Cowork** 工作空間。
+1. **開啟 Cowork**：登入 [claude.ai](https://claude.ai) 或開啟 Claude 桌面/行動版，在訊息輸入框左下角切換為 **Cowork** 模式（Chrome 側邊欄開啟即為 Cowork）。
 2. **上傳檔案與貼上 Prompt**：將 `industry_keywords.txt` 與 `daily_news_template.md` 拖入對話框，貼上上述 RTCCF Prompt。
 3. **啟動或設定定時排程**：
    - 點選執行：觀看 Cowork 自主搜尋網路並填入 Markdown 晨報。
