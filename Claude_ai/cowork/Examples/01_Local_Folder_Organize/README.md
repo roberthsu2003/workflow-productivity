@@ -19,16 +19,29 @@
 
 ---
 
+## 📦 快速開始：下載練習素材壓縮檔 (Quick Download)
+
+> [!TIP]
+> 💡 **免手動建立！已為您打包完整測試素材壓縮檔**：  
+> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files/raw_downloads.zip`](./sample_files/raw_downloads.zip)  
+> - **直接下載**：學員可直接下載此 `raw_downloads.zip`，解壓縮後即可獲得包含文字檔、偽發票圖片（PNG）與合約企劃等完整測試檔案。
+> - **一鍵還原環境**：在練習完分類與搬移後，若想重新演練或切換 Manual / Auto 模式，只需再次解壓縮 `raw_downloads.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
+
+---
+
 ## 🔄 執行前後視覺化對比 (Before vs. After)
 
 ```
 【整理前：雜亂無章的暫存區】
 sample_files/
+├── raw_downloads.zip                 ⭐【練習素材壓縮包：可直接下載解壓/一鍵重置】
 ├── expenses_report_template.csv
 └── raw_downloads/
-    ├── INV_2026_08_GoogleWorkspace.txt   (雲端發票)
-    ├── taxi_receipt_20260905.txt         (計程車收據)
-    ├── contract_partner_NDA_v1.txt       (保密合約)
+    ├── INV_2026_08_GoogleWorkspace.txt   (雲端發票文字檔)
+    ├── INV_2026_08_GoogleWorkspace.png   (台灣三聯式電子發票證明聯偽圖片)
+    ├── taxi_receipt_20260905.txt         (計程車收據文字檔)
+    ├── taxi_receipt_20260905.png         (台灣大車隊乘車證明收據偽圖片)
+    ├── contract_partner_NDA_v1.txt       (保密合約草案)
     └── Q3_marketing_proposal_draft.txt   (行銷企劃稿)
 
                 ⬇️ 透過 Claude Cowork 一鍵自主執行 ⬇️
@@ -37,7 +50,9 @@ sample_files/
 sample_files/
 ├── 01_財務單據/
 │   ├── 財務_20260831_GoogleWorkspace發票.txt
-│   └── 財務_20260905_大都會計程車乘車證明.txt
+│   ├── 財務_20260831_GoogleWorkspace發票.png
+│   ├── 財務_20260905_大車隊計程車乘車證明.txt
+│   └── 財務_20260905_大車隊計程車乘車證明.png
 ├── 02_法務合約/
 │   └── 合約_20260901_合作夥伴保密協議.txt
 ├── 03_專案企劃/
@@ -142,15 +157,17 @@ Status: Task completed successfully.
 
 ---
 
-## 🚀 學員實戰動手做 3 步驟
+## 🚀 學員實戰動手做 4 步驟
 
+0. **下載／確認練習素材**：
+   - 確保 `sample_files/` 目錄中具備測試檔案。若您是從遠端下載或需要初始資料，可直接下載解壓縮 [`sample_files/raw_downloads.zip`](./sample_files/raw_downloads.zip) 至 `raw_downloads/` 資料夾。
 1. **開啟 Claude Desktop App**：
    - 點擊底部訊息框左下角，由「Chat」切換至 **「Cowork」**。
 2. **掛載練習目錄**：
    - 點擊工作目錄選擇按鈕，指定本機的 `Claude_ai/cowork/Examples/01_Local_Folder_Organize/sample_files/`。
 3. **選擇核准模式並啟動**：
    - **體驗一（手動安全審查）**：選擇 **Manual** 模式，貼上上方 Prompt 送出。當介面彈出建立目錄和搬移檔案的請示時，點擊 **「Allow」**，親自體驗「人機協同」的安全掌控感！
-   - **體驗二（極速自動化）**：復原檔案後改選 **Auto** 模式，再次執行，體驗 15 秒內全自動整理乾淨的極速快感！
+   - **體驗二（極速自動化）**：利用 `raw_downloads.zip` 再次解壓縮一鍵還原檔案後，改選 **Auto** 模式再次執行，體驗 15 秒內全自動整理乾淨的極速快感！
 
 ---
 
