@@ -45,12 +45,46 @@ ITRI_Creator/
 ## 🚀 安裝與使用方式
 
 ### 💡 方式 A：使用內建 `/skill-creator` 技能自動建立
+
 1. 將本資料夾內的 `references/` 與 `templates/` 所有檔案上傳至 Claude 對話中。
-2. 輸入指令：
-   ```text
-   我想建立一個名為「工研院綠能專案規格評核專家」的自訂 Skill。
-   請參考我上傳的 references 法規規章與 templates 標準樣板，使用 /skill-creator 幫我建立包含 references 與 templates 的第二階自訂技能。
-   ```
+2. 您可直接使用**自然語言口語指令**：
+
+```markdown
+我想建立一個名為「工研院綠能專案規格評核專家」的自訂 Skill。
+請參考我上傳的 references/ 法規規章與 templates/ 標準樣板，
+使用 /skill-creator 幫我建立包含 references 與 templates 的第二階自訂技能。
+```
+
+<details>
+<summary><b>點擊展開：進階 RTCCF 結構化提示詞</b></summary>
+<br>
+
+```markdown
+## Role
+你是一名精通 Claude Skills 架構的 **AI 助理架構師**。
+
+## Task
+請調用 `/skill-creator` 技能，為我建立一個名為 **工研院綠能專案規格評核專家**（`itri-green-energy-spec-evaluator`）的自訂 Skill：
+1. 參考「第二階：創作者 (Creator)」架構，建立主定義檔 `SKILL.md`。
+2. 整合上傳的 `references/` 專業法規標準庫與 `templates/` 標準 Markdown 報告範本。
+3. 設定雙模式智慧路由（模式 A：專案技術摘要與效益評估；模式 B：設備規格合規差異評核）。
+
+## Context
+- 適用單位：**工業技術研究院 綠能與環境研究所**
+- 法規參照檔：`references/itri-rd-evaluation-framework.md`、`references/green-energy-safety-standards.md`
+- 輸出樣板：`templates/tech-summary-report-template.md`、`templates/compliance-audit-checklist-template.md`
+
+## Constraint
+- 必須嚴格遵循工研院評審準則，嚴禁捏造實測數據，缺漏項目標註為「待補件 (TBD)」。
+- 輸出格式必須完全對齊 `templates/` 範本結構。
+- 使用**繁體中文**輸出。
+
+## Format
+使用 `/skill-creator` 自動打包產出包含 `SKILL.md`、`references/` 與 `templates/` 之標準 Skill 結構。
+```
+
+</details>
+
 3. 下載產出的 ZIP 壓縮包，前往 Claude 網頁左下角頭像 ➔ **Settings** ➔ **Skills** ➔ **Add Custom Skill** 上傳即可。
 
 ### ✍️ 方式 B：手動打包上傳
@@ -62,14 +96,47 @@ ITRI_Creator/
 
 ### 📝 測試案例 1：模式 A 實測（風力發電研發技術摘要）
 
-**輸入測試文字：**
-```text
+**自然語言測試輸入（直接複製測試）：**
+
+```markdown
 請幫我將這段大型離岸風電研發筆記整理成工研院標準技術摘要：
 專案名稱：大型離岸風電 15MW 智慧運維與全風場數位分身技術開發。
 目前在示範場域已完成連續 1,200 小時實測，轉子直徑 230 米，額定功率 15MW。
 透過我們開發的 10kHz 傳動鏈震動監測演算法，把非計畫性停機減少了 38%，機組可用率拉到 97.5%。
 預估每年可發電 6,200 萬度電（62 GWh），換算減碳量約 3 萬多噸。目前已經申請 2 件台灣和美國抗颱偏航發明專利。
 ```
+
+<details>
+<summary><b>點擊展開：進階 RTCCF 結構化提示詞</b></summary>
+<br>
+
+```markdown
+## Role
+你是一名工研院綠能所的**資深能源專案審查委員暨技術評審專家**。
+
+## Task
+請依據以下風力發電研發工作筆記，自動對照 `references/itri-rd-evaluation-framework.md` 規章判定 **TRL 技術成熟度**，並套用 `templates/tech-summary-report-template.md` 產出**工研院標準專案技術摘要與研發效益評估報告**：
+- 研發專案筆記：
+  「專案名稱：大型離岸風電 15MW 智慧運維與全風場數位分身技術開發。
+  目前在示範場域已完成連續 1,200 小時實測，轉子直徑 230 米，額定功率 15MW。
+  透過我們開發的 10kHz 傳動鏈震動監測演算法，把非計畫性停機減少了 38%，機組可用率拉到 97.5%。
+  預估每年可發電 6,200 萬度電（62 GWh），換算減碳量約 3 萬多噸。目前已經申請 2 件台灣和美國抗颱偏航發明專利。」
+
+## Context
+- 知識參照庫：`references/itri-rd-evaluation-framework.md`
+- 輸出樣板：`templates/tech-summary-report-template.md`
+- 電力排碳係數基準：0.495 kg CO2e/度
+
+## Constraint
+- 年減碳量必須**精確透過公式計算**（$62,000,000 \times 0.495 = 30,690$ 公噸 $\text{CO}_2\text{e}$），嚴禁臆測。
+- 依據示範場域運轉數據，正確判定 TRL 等級為 **TRL 7~8**。
+- 使用**繁體中文**輸出。
+
+## Format
+完全遵循 `templates/tech-summary-report-template.md` 格式，輸出包含**專案基本資訊**、**技術成熟度 TRL 判定**、**核心技術創新亮點**、**量化效益矩陣**與**智財專利成果**。
+```
+
+</details>
 
 **預期效果：**
 - 自動判斷切入 **模式 A**。
@@ -80,14 +147,46 @@ ITRI_Creator/
 
 ### 📝 測試案例 2：模式 B 實測（儲能貨櫃建置規格合規差異審查）
 
-**輸入測試文字：**
-```text
+**自然語言測試輸入（直接複製測試）：**
+
+```markdown
 某系統廠商送來示範園區 5MW/10MWh 儲能貨櫃規格書，請幫我審核合規性：
 1. 電芯規格：磷酸鐵鋰 (LFP)，通過 UL 1973 測試。
 2. 延燒防護：廠商說明文件提到電芯密集排列，未附 UL 9540A 機櫃級延燒測試報告，僅表示「電芯本身安全不會延燒」。
 3. 防爆洩壓：貨櫃頂部設有通風百葉窗，未配置符合 NFPA 68 的機械式防爆洩壓板。
 4. BMS 安全：BMS 軟體具備三段過充警報，但無獨立的硬體級高壓斷路斷電機構。
 ```
+
+<details>
+<summary><b>點擊展開：進階 RTCCF 結構化提示詞</b></summary>
+<br>
+
+```markdown
+## Role
+你是一名工研院綠能所的**儲能系統安規審查長暨合規稽核工程師**。
+
+## Task
+請審查外部系統廠商提送之 **5MW/10MWh 儲能貨櫃規格書**，自動對照 `references/green-energy-safety-standards.md` 安全法規庫，並套用 `templates/compliance-audit-checklist-template.md` 產出**設備規格合規評核與差異清單報告**：
+- 廠商送審規格重點：
+  1. 電芯規格：磷酸鐵鋰 (LFP)，通過 UL 1973 測試。
+  2. 延燒防護：廠商說明文件提到電芯密集排列，未附 UL 9540A 機櫃級延燒測試報告，僅宣稱「電芯本身安全不會延燒」。
+  3. 防爆洩壓：貨櫃頂部設有通風百葉窗，未配置符合 NFPA 68 的機械式防爆洩壓板。
+  4. BMS 安全：BMS 軟體具備三段過充警報，但無獨立的硬體級高壓斷路斷電機構。
+
+## Context
+- 安全規章庫：`references/green-energy-safety-standards.md`（CNS 62933-5-2、UL 9540A、NFPA 68、IEC 62619）
+- 查核範本：`templates/compliance-audit-checklist-template.md`
+
+## Constraint
+- 針對未附 UL 9540A、缺少 NFPA 68 洩壓板、無硬體斷電機制等重大缺失，一律判定為 **🔴 不合格 (Reject / Major Red Flag)**。
+- 逐項給予具法規依據之整改退件建議。
+- 使用**繁體中文**輸出。
+
+## Format
+完全遵循 `templates/compliance-audit-checklist-template.md` 格式，輸出包含**送審案場基本資訊**、**法規逐項核對矩陣表**、**重大風險漏洞（Red Flags）摘要**與**總體審查判定結論**。
+```
+
+</details>
 
 **預期效果：**
 - 自動判斷切入 **模式 B**。
