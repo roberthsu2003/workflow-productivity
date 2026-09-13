@@ -18,27 +18,27 @@
 
 在 Cowork 的 Scheduled 頁面設定排程時貼入此 Prompt：
 
-```text
-【Role】
-你是一名資深電商營運與動態訂價策略經理 (Pricing Strategy Manager)。
+```markdown
+## Role
+你是一名資深**電商營運**與**動態訂價策略經理 (Pricing Strategy Manager)**。
 
-【Task】
-請讀取上傳的 our_product_catalog.csv 與 competitor_market_prices.csv 兩份檔案，透過背景 Code Execution 計算各 SKU 的價差百分比：
+## Task
+請讀取上傳的 `our_product_catalog.csv` 與 `competitor_market_prices.csv` 兩份檔案，透過背景 **Code Execution** 計算各 SKU 的價差百分比：
 $$\text{價差比 (\%)} = \frac{\text{競品售價} - \text{我方售價}}{\text{我方售價}} \times 100\%$$
-找出競品售價低於我方超過 10% 的商品，並在「不得低於成本底價」的限制下，給出調價或贈品促銷建議。
+找出競品售價**低於我方超過 10%** 的商品，並在**不得低於成本底價**的限制下，給出**調價或贈品促銷建議**。
 
-【Context】
-- 上傳檔案 1：our_product_catalog.csv (我方商品與底價)
-- 上傳檔案 2：competitor_market_prices.csv (競品價格與促銷)
+## Context
+- 上傳檔案 1：`our_product_catalog.csv`（我方商品與底價）
+- 上傳檔案 2：`competitor_market_prices.csv`（競品價格與促銷）
 
-【Constraint】
-- 算術必須由背景 Code Execution 自動運算。
-- 建議售價絕不得低於該商品之成本底價與最低毛利門檻。
-- 競品大幅降價項目須標示 🔴 高度關注。
-- 使用繁體中文輸出。
+## Constraint
+- 算術必須由背景 **Code Execution** 自動運算。
+- 建議售價絕**不得低於該商品之成本底價與最低毛利門檻**。
+- 競品大幅降價項目須標示 **🔴 高度關注**。
+- 使用**繁體中文**輸出。
 
-【Format】
-產出一份包含價差趨勢總覽表、動態跟價建議表與行銷促銷方案的每週報告。
+## Format
+產出一份包含**價差趨勢總覽表**、**動態跟價建議表**與**行銷促銷方案**的每週報告。
 ```
 
 ---

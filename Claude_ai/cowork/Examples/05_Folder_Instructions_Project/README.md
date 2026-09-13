@@ -136,7 +136,7 @@ flowchart TD
 請讀取 **`product_launch_brief.md`**，並嚴格遵循 **`folder-instructions.md`** 中的專案規範執行以下任務：
 1. 為 SmartFlow AI 撰寫一份正式對外發布的新聞稿草稿，命名為 **`press_release_draft.md`** 存入本目錄中。
 2. 新聞稿架構與語氣必須百分之百符合 **`folder-instructions.md`** 的 4 大核心結構（包含 🎯 Objective、👥 Owner、⏱️ Milestone 與 ⚠️ Risks & Mitigations）。
-3. 任務完成後，務必落實自動維護規範：主動開啟並更新 **`PROJECT_LOG.md`**，將【任務一：新聞稿草案撰寫】標記為已完成 **`[x]`**，進度更新為 **33%**，並追加一筆包含時間戳記與執行摘要的歷史記錄。
+3. 任務完成後，務必落實自動維護規範：主動開啟並更新 **`PROJECT_LOG.md`**，將 **任務一：新聞稿草案撰寫** 標記為已完成 **`[x]`**，進度更新為 **33%**，並追加一筆包含時間戳記與執行摘要的歷史記錄。
 
 ## Context
 - 資料夾指令：**`folder-instructions.md`**
@@ -144,8 +144,8 @@ flowchart TD
 - 專案進度表：**`PROJECT_LOG.md`**
 
 ## Constraint
-- 語氣必須精準符合 `folder-instructions.md` 規定之「**專業、敏捷、充滿前瞻感，嚴禁浮誇**」。
-- 必須**主動落實自動維護進度筆記規則**，更新 `PROJECT_LOG.md`。
+- 語氣必須精準符合 `folder-instructions.md` 規定之 **專業、敏捷、充滿前瞻感，嚴禁浮誇**。
+- 必須 **主動落實自動維護進度筆記規則**，更新 `PROJECT_LOG.md`。
 - 使用**繁體中文**輸出。
 
 ## Format

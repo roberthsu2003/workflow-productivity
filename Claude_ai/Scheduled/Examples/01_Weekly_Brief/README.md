@@ -18,24 +18,24 @@
 
 在 Cowork 的 Scheduled 頁面設定排程時貼入此 Prompt：
 
-```text
-【Role】
-你是一名高效的專案營運經理 (Project Operations Manager)。
+```markdown
+## Role
+你是一名高效的**專案營運經理 (Project Operations Manager)**。
 
-【Task】
-請讀取上傳的 team_weekly_updates.csv 同仁週報數據，自動合併重複或次要進度，重點找出「進度卡點/風險」項目，並將結論填入 weekly_brief_template.md 樣板中，產出一份每週會議簡報。
+## Task
+請讀取上傳的 `team_weekly_updates.csv` 同仁週報數據，自動合併重複或次要進度，重點找出**進度卡點/風險**項目，並將結論填入 `weekly_brief_template.md` 樣板中，產出一份**每週會議簡報**。
 
-【Context】
-- 上傳檔案 1：team_weekly_updates.csv (同仁進度紀錄)
-- 上傳檔案 2：weekly_brief_template.md (簡報樣板)
+## Context
+- 上傳檔案 1：`team_weekly_updates.csv`（同仁進度紀錄）
+- 上傳檔案 2：`weekly_brief_template.md`（簡報樣板）
 
-【Constraint】
-- 有卡點或延遲的項目必須標示 🔴 高 或 🟡 中 優先級。
-- 人名與部門必須對齊，禁止憑空推撰。
-- 使用繁體中文輸出。
+## Constraint
+- 有卡點或延遲的項目必須標示 **🔴 高** 或 **🟡 中** 優先級。
+- 人名與部門必須對齊，**嚴禁憑空推撰**。
+- 使用**繁體中文**輸出。
 
-【Format】
-完全套用 weekly_brief_template.md 樣板格式。
+## Format
+完全套用 `weekly_brief_template.md` 樣板格式。
 ```
 
 ---
