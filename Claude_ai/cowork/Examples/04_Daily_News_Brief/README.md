@@ -75,26 +75,6 @@ flowchart TD
 
 ---
 
-## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
-
-```console
-🤝 [Claude Cowork] Target: 每日產業情報自動檢索與排程
-────────────────────────────────────────────────────────
-➜ 📄 Loaded industry_keywords.txt (3 focus areas)
-➜ 🌐 Browsing Web: "智慧醫療 FDA 認證 2026" (Found 12 sources)
-➜ 🌐 Browsing Web: "TechCrunch AI Biotech Early Stage"
-➜ 🧹 Filtering out 4 press release clickbaits... Done.
-➜ 🔍 Visiting original report: MedTech AI regulatory path...
-➜ 📊 Evaluating impact: FDA approval -> 🔴 High Impact
-➜ 📝 Injecting insights into daily_news_template.md...
-✨ Generated: daily_news_20260912.md
-🕒 Next scheduled run: 明天早上 08:30 (雲端自動執行)
-────────────────────────────────────────────────────────
-Status: Task completed successfully.
-```
-
----
-
 ## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
 > [!NOTE]

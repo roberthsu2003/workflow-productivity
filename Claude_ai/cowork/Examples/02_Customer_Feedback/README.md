@@ -72,29 +72,6 @@ flowchart TD
 
 ---
 
-## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
-
-```console
-🤝 [Claude Cowork] Target: 客訴與意見自動分類處置
-────────────────────────────────────────────────────────
-➜ 📄 Reading sop_escalation_rules.md (Severity Matrix)
-➜ 📊 Parsing 5 customer tickets from CSV...
-➜ 🔍 Evaluating TICK-001: Payment failure  -> 🔴 Level 1
-➜ 🔍 Evaluating TICK-002: Password reset   -> 🟡 Level 2
-➜ 🔍 Evaluating TICK-003: PDF export req   -> 🟢 Level 3
-➜ 🔍 Evaluating TICK-004: Latency 5s       -> 🟡 Level 2
-➜ 🔍 Evaluating TICK-005: Invoice error    -> 🔴 Level 1
-
-✔ ✍️ Generating High-EQ apology for TICK-001... Done.
-✔ ✍️ Generating High-EQ apology for TICK-005... Done.
-✔ 📋 Generating PM Product Improvement Backlog... Done.
-✨ Output: 客訴處置矩陣與應急回信草稿 (已交付至對話視窗)
-────────────────────────────────────────────────────────
-Status: Task completed successfully.
-```
-
----
-
 ## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
 > [!NOTE]

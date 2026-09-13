@@ -76,28 +76,6 @@ flowchart TD
 
 ---
 
-## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
-
-```console
-🤝 [Claude Cowork] Target: SmartFlow AI 產品發布專案
-────────────────────────────────────────────────────────
-➜ 🎯 Applied folder-instructions.md:
-  • Tone: Professional, B2B Agile (No clickbait)
-  • Structure: Must include Objective, Owner, Risks
-  • Auto-Log: Enabled
-➜ 📄 Reading product_launch_brief.md...
-➜ ✍️ Writing press_release_draft.md (4 sections)...
-➜ 📝 Auto-Maintaining PROJECT_LOG.md:
-  • Appended timestamp: 2026-09-12 10:15
-  • Marked [x] 任務一：新聞稿草案撰寫
-  • Updated Overall Progress: 0% -> 33%
-✨ Completed! Files synced to Cloud & Mobile.
-────────────────────────────────────────────────────────
-Status: Task completed successfully.
-```
-
----
-
 ## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
 > [!NOTE]

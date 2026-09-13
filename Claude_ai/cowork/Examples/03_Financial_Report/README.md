@@ -76,30 +76,6 @@ flowchart TD
 
 ---
 
-## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
-
-```console
-🤝 [Claude Cowork] Target: 跨檔案財務對帳與分析
-────────────────────────────────────────────────────────
-➜ 📄 Reading q3_financial_raw.csv (Actuals)
-➜ 📄 Reading crm_sales_target.csv (Budgets)
-➜ 💻 Writing Python script to merge datasets on ['月份', '部門']
-➜ ⚡ Executing Code in sandbox:
-  ```python
-  import pandas as pd
-  df = pd.merge(actuals, targets, on=['月份', '部門'])
-  df['達成率'] = df['實際營收_USD'] / df['預估目標營收_USD']
-  # Cash Runway = Cash / Avg Monthly Net Burn
-  ```
-✔ 📈 Generating Chart: q3_revenue_vs_target_chart.png... Done.
-⚠️ Risk Alert Triggered: Hardware unit net loss -$84K
-✨ Output: Q3 財務營運對比報告 (含圖表與 3 大改善處方)
-────────────────────────────────────────────────────────
-Status: Task completed successfully.
-```
-
----
-
 ## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
 > [!NOTE]

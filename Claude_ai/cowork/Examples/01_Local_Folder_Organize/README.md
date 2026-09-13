@@ -91,34 +91,6 @@ flowchart TD
 | :--- | :--- | :--- | :---: |
 | **Manually approve<br>(Manual 手動核准)** | Claude 準備建立資料夾、移動檔案或寫入 CSV 前，畫面會**彈出確認卡片**（顯示即將執行的路徑），需手動按「Allow」才繼續。 | 首次操作、重要系統磁碟、敏感合約檔案 | ⭐️⭐️⭐️⭐️⭐️<br>(新手必練) |
 | **Automatically approve<br>(Auto 自動審查)** | Claude 連續自主作業，背後安全模型即時檢查有無 Prompt Injection 攻擊或資料外洩風險，無異常即順暢推進。 | 日常行政、檔案批次清洗、高效率作業 | ⭐️⭐️⭐️⭐️<br>(日常首選) |
-| **Skip all approvals<br>(Skip 跳過核准)** | 完全不審查、不暫停，以最高極速直接完成所有磁碟讀寫。 | 100% 信任的測試沙盒目錄 | ⭐️⭐️<br>(謹慎使用) |
-
----
-
-## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
-
-```console
-🤝 [Claude Cowork] Workspace: ./sample_files/
-────────────────────────────────────────────────────────
-➜ 🔍 Scanning raw_downloads/ (Found 6 files)...
-➜ 📄 Reading INV_2026_08_GoogleWorkspace.txt (Invoice)
-➜ 🖼️ Reading INV_2026_08_GoogleWorkspace.png (Receipt Image)
-➜ 📄 Reading taxi_receipt_20260905.txt (Receipt)
-➜ 🖼️ Reading taxi_receipt_20260905.png (Taxi Image)
-➜ 📄 Reading contract_partner_NDA_v1.txt (Legal)
-➜ 📄 Reading Q3_marketing_proposal_draft.txt (Plan)
-
-⚠️ [Manual Approval Required]
-Claude wants to create directories:
-  • 01_財務單據/  • 02_法務合約/  • 03_專案企劃/
-Actions: [ Deny ]  [ Allow ]  <--- 點擊 Allow 繼續
-
-✔ 🚚 Moving and renaming 6 files... Done.
-✔ 📊 Parsing amounts and generating summary CSV...
-✨ Created: expenses_summary_202609.csv (Total: $3,740)
-────────────────────────────────────────────────────────
-Status: Task completed successfully.
-```
 
 ---
 
