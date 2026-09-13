@@ -94,7 +94,7 @@ flowchart TD
 
 若您平常有其他自訂專案自治任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
-```text
+```markdown
 我即將使用 Claude Cowork 執行專案自治中樞與自動維護進度任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
@@ -127,7 +127,7 @@ flowchart TD
 
 在 **Cowork 模式** 下開啟此資料夾（或上傳本範例練習檔案），輸入以下極簡 Prompt——請特別留意：**我們完全不需要在 Prompt 裡重複說明品牌語氣與排版規定，因為資料夾指令已全權代勞！**
 
-```text
+```markdown
 【Role】
 你是一名資深科技產品行銷經理 (PMM) 與公關策略總監。
 

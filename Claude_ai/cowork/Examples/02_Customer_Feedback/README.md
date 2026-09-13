@@ -90,7 +90,7 @@ flowchart TD
 
 若您平常有其他自訂客訴分析任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
-```text
+```markdown
 我即將使用 Claude Cowork 執行緊急客訴情緒診斷與分流處置任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
@@ -122,7 +122,7 @@ flowchart TD
 
 請在 **Cowork 模式** 下，上傳本範例資料夾下的 `customer_support_logs.csv` 與 `sop_escalation_rules.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
-```text
+```markdown
 【Role】
 你是一名資深客戶成功總監（Head of Customer Success）兼危機公關協調官。
 

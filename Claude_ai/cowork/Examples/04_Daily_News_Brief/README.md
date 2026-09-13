@@ -93,7 +93,7 @@ flowchart TD
 
 若您平常有其他自訂新聞追蹤任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
-```text
+```markdown
 我即將使用 Claude Cowork 執行全自動產業情報聯網監測任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
@@ -126,7 +126,7 @@ flowchart TD
 
 請在 **Cowork 模式** 下，上傳本資料夾中的 `industry_keywords.txt` 與 `daily_news_template.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
-```text
+```markdown
 【Role】
 你是一名專職的科技產業情報分析師與創投競品研究員（Market Intelligence Analyst）。
 

@@ -112,7 +112,7 @@ flowchart TD
 
 若您平常有其他自訂任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
-```text
+```markdown
 我即將使用 Claude Cowork 執行本機檔案整理任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
@@ -144,7 +144,7 @@ flowchart TD
 
 請在 **Claude Desktop App** 中，切換至 **Cowork** 模式，工作目錄選取本資料夾中的 `sample_files/`，並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
-```text
+```markdown
 【Role】
 你是一名高效能企業行政管理專員與財務特助。
 
