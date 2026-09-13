@@ -178,8 +178,9 @@ Status: Task completed successfully.
 >    Web 網頁端因瀏覽器安全沙盒限制，無法直接穿透讀寫硬碟檔案。**直接讀寫本機磁碟**是 Claude Desktop App 獨有的殺手級功能。
 > 2. **發票數字容易漏看？**  
 >    在 Prompt 中加入 `精確提取含稅金額與統編` 的條件（Constraint），Cowork 會仔細分析文字檔中的每一行關鍵字，準確率達 100%。
-> 3. **隨時可復原**：  
->    如果分類不滿意，只要在對話中輸入：「*請幫我將檔案名稱與位置復原回原本的 raw_downloads/ 目錄*」，Claude 就會自主將檔案全部搬回原位！
+> 3. **隨時可復原與一鍵重置**：  
+>    - 方式 A（指令還原）：在對話中輸入「*請幫我將檔案名稱與位置復原回原本的 raw_downloads/ 目錄*」，Claude 就會自主將檔案全部搬回原位。  
+>    - 方式 B（秒速重置）：直接將目錄內的 [`sample_files/raw_downloads.zip`](./sample_files/raw_downloads.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 

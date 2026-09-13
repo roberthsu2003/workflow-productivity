@@ -43,7 +43,7 @@
 ### 1. 📁 本機資料夾讀寫 (Direct Local File Access)
 - 透過 **Claude Desktop App (macOS / Windows)**，您可以指定工作資料夾。
 - Claude 能直接在您的硬碟中讀取、分類、重命名檔案，並直接寫入產出成果（如：整理 Downloads 資料夾、批量將發票產出報銷總表）。
-👉 **實戰操作體驗**：請參閱 [範例 1：本機資料夾批次自動整理與報銷總表](./Examples/01_Local_Folder_Organize/)（內附 [`sample_files/`](./Examples/01_Local_Folder_Organize/sample_files/) 偽發票與雜亂檔案）。
+👉 **實戰操作體驗**：請參閱 [範例 1：本機資料夾批次自動整理與報銷總表](./Examples/01_Local_Folder_Organize/)（內附 [`sample_files/raw_downloads.zip`](./Examples/01_Local_Folder_Organize/sample_files/raw_downloads.zip) 完整測試素材壓縮包，可直接下載解壓實戰）。
 
 ### 2. 🛡️ 三大安全核准模式 (Approval Modes)
 在任務執行前或過程中，您可隨時調整安全核准模式：
