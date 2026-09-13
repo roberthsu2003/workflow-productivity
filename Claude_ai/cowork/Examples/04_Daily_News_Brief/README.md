@@ -64,10 +64,12 @@ flowchart TD
     Search --> Filter["🧹 智能過濾雜訊：剔除純公關稿與重複洗版新聞"]
     Filter --> ReadDetail["🔍 點擊造訪原文網頁，提取核心事實、數據與影響力"]
     ReadDetail --> Rate{"⚖️ 評定影響力層級"}
-    Rate -- 重大融資 / 法規核准 --> High["🔴 高影響力"]
-    Rate -- 產品更新 / 策略合作 --> Med["🟡 中影響力"]
-    Rate -- 一般市場動態 --> Std["🟢 標準影響力"]
-    High & Med & Std --> Fill["📝 套入 daily_news_template.md 樣板格式"]
+    Rate -->|重大融資 / 法規核准| High["🔴 高影響力"]
+    Rate -->|產品更新 / 策略合作| Med["🟡 中影響力"]
+    Rate -->|一般市場動態| Std["🟢 標準影響力"]
+    High --> Fill["📝 套入 daily_news_template.md 樣板格式"]
+    Med --> Fill
+    Std --> Fill
     Fill --> Save["☁️ 儲存成果於雲端 Session，推播通知學員手機"]
 ```
 

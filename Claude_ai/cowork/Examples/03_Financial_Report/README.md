@@ -62,13 +62,14 @@
 
 ```mermaid
 flowchart TD
-    Start["📥 載入 q3_financial_raw.csv & crm_sales_target.csv"] --> Plan["📝 規劃比對架構：SaaS vs 硬體部門"]
+    Start["📥 載入 q3_financial_raw.csv 與 crm_sales_target.csv"] --> Plan["📝 規劃比對架構：SaaS vs 硬體部門"]
     Plan --> GenCode["🐍 背景自主撰寫 Python Pandas 運算腳本"]
     GenCode --> Sandbox["⚡ 雲端沙盒執行代碼 (Code Execution)"]
     Sandbox --> CalcResult["🔢 計算達成率、超支差距、Net Burn 與 Cash Runway"]
     Sandbox --> Plot["📊 調用 Matplotlib 繪製雙部門營收/費用對比圖表"]
-    CalcResult & Plot --> CrossCheck{"🔍 數據自檢比對"}
-    CrossCheck -- 發現硬體部門連續 3 個月虧損擴大 --> Alert["🔴 觸發高階風控警報"]
+    CalcResult --> CrossCheck{"🔍 數據自檢比對"}
+    Plot --> CrossCheck
+    CrossCheck -->|發現硬體部門連續 3 個月虧損擴大| Alert["🔴 觸發高階風控警報"]
     Alert --> Report["📄 整合撰寫 Q3 財務經營分析報告"]
     Report --> Deliver["✅ 交付 Markdown 報告與嵌入圖表"]
 ```

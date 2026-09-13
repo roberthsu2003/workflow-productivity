@@ -68,7 +68,7 @@ flowchart TD
     GenPR["✍️ 撰寫符合規範之正式新聞稿 press_release_draft.md"]
     ReadBrief --> GenPR
     GenPR --> CheckRule{"📜 檢查自動維護進度日誌規則"}
-    CheckRule -- 觸發自動維護規範 --> OpenLog["📖 自主開啟 PROJECT_LOG.md"]
+    CheckRule -->|觸發自動維護規範| OpenLog["📖 自主開啟 PROJECT_LOG.md"]
     OpenLog --> UpdateLog["✏️ 寫入時間戳記、將任務一勾選為 [x]、計算進度百分比"]
     UpdateLog --> MobileSync["📱 透過雲端將成果與日誌同步至手機 Claude App"]
     MobileSync --> Finish["✅ 交付執行完成報告"]

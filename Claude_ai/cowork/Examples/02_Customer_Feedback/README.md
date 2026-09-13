@@ -60,11 +60,12 @@ flowchart TD
     Start["📥 讀取客訴記錄 customer_support_logs.csv"] --> SOP["📜 載入升級規章 sop_escalation_rules.md"]
     SOP --> Loop["🔄 逐筆進行文字語義與情緒診斷"]
     Loop --> Classify{"⚖️ 判定風險等級"}
-    Classify -- 涉及金流中斷 / 企業發票 / VIP 重大損失 --> L1["🔴 Level 1 (特急處置)"]
-    Classify -- 密碼異常 / 效能延遲 --> L2["🟡 Level 2 (一般異常)"]
-    Classify -- 介面建議 / 新功能許願 --> L3["🟢 Level 3 (需求收集)"]
+    Classify -->|涉及金流中斷 / 企業發票 / VIP 重大損失| L1["🔴 Level 1 (特急處置)"]
+    Classify -->|密碼異常 / 效能延遲| L2["🟡 Level 2 (一般異常)"]
+    Classify -->|介面建議 / 新功能許願| L3["🟢 Level 3 (需求收集)"]
     L1 --> Draft["✍️ 自動為 Level 1 個別起草專屬安撫致歉信"]
-    L2 & L3 --> Summary["📊 彙整客服升級追蹤矩陣與工程改善清單"]
+    L2 --> Summary["📊 彙整客服升級追蹤矩陣與工程改善清單"]
+    L3 --> Summary
     Draft --> InPlace["📝 支援學員反白段落 (Edit Drafts in Place) 原地局部微調"]
     InPlace --> Deliver["✅ 交付完整處置報告"]
 ```
