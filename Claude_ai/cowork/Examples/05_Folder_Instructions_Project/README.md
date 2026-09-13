@@ -100,7 +100,8 @@ flowchart TD
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
 
 【重要要求】：
-請將轉換後的提示詞內容，儲存為一個名為「project_launch_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
+1. 請使用標準 Markdown 語法排版，各段落使用「## Role」、「## Task」、「## Context」、「## Constraint」、「## Format」等二級標題，核心關鍵字使用「**重點粗體**」標註。
+2. 請將轉換後的提示詞內容，儲存為一個名為「project_launch_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
 
 ──────────────────────────────────────────────────────────
 【我的原始口語需求】：
@@ -128,27 +129,27 @@ flowchart TD
 在 **Cowork 模式** 下開啟此資料夾（或上傳本範例練習檔案），輸入以下極簡 Prompt——請特別留意：**我們完全不需要在 Prompt 裡重複說明品牌語氣與排版規定，因為資料夾指令已全權代勞！**
 
 ```markdown
-【Role】
-你是一名資深科技產品行銷經理 (PMM) 與公關策略總監。
+## Role
+你是一名**資深科技產品行銷經理 (PMM)** 與**公關策略總監**。
 
-【Task】
-請讀取 product_launch_brief.md，並嚴格遵循 folder-instructions.md 中的專案規範執行以下任務：
-1. 為 SmartFlow AI 撰寫一份正式對外發布的新聞稿草稿，命名為 press_release_draft.md 存入本目錄中。
-2. 新聞稿架構與語氣必須百分之百符合 folder-instructions.md 的 4 大核心結構（包含 🎯 Objective、👥 Owner、⏱️ Milestone 與 ⚠️ Risks & Mitigations）。
-3. 任務完成後，務必落實自動維護規範：主動開啟並更新 PROJECT_LOG.md，將【任務一：新聞稿草案撰寫】標記為已完成 [x]，更新進度百分比，並追加一筆包含時間戳記與執行摘要的歷史記錄。
+## Task
+請讀取 **`product_launch_brief.md`**，並嚴格遵循 **`folder-instructions.md`** 中的專案規範執行以下任務：
+1. 為 SmartFlow AI 撰寫一份正式對外發布的新聞稿草稿，命名為 **`press_release_draft.md`** 存入本目錄中。
+2. 新聞稿架構與語氣必須百分之百符合 **`folder-instructions.md`** 的 4 大核心結構（包含 🎯 Objective、👥 Owner、⏱️ Milestone 與 ⚠️ Risks & Mitigations）。
+3. 任務完成後，務必落實自動維護規範：主動開啟並更新 **`PROJECT_LOG.md`**，將【任務一：新聞稿草案撰寫】標記為已完成 **`[x]`**，進度更新為 **33%**，並追加一筆包含時間戳記與執行摘要的歷史記錄。
 
-【Context】
-- 資料夾指令：folder-instructions.md
-- 專案需求書：product_launch_brief.md
-- 專案進度表：PROJECT_LOG.md
+## Context
+- 資料夾指令：**`folder-instructions.md`**
+- 專案需求書：**`product_launch_brief.md`**
+- 專案進度表：**`PROJECT_LOG.md`**
 
-【Constraint】
-- 語氣必須精準符合 folder-instructions.md 規定之「專業、敏捷、充滿前瞻感，嚴禁浮誇」。
-- 必須主動落實自動維護進度筆記規則，更新 PROJECT_LOG.md。
-- 使用繁體中文輸出。
+## Constraint
+- 語氣必須精準符合 `folder-instructions.md` 規定之「**專業、敏捷、充滿前瞻感，嚴禁浮誇**」。
+- 必須**主動落實自動維護進度筆記規則**，更新 `PROJECT_LOG.md`。
+- 使用**繁體中文**輸出。
 
-【Format】
-完成後，產出 press_release_draft.md 草稿，並展示更新後的 PROJECT_LOG.md 內容。
+## Format
+完成後，產出 **`press_release_draft.md`** 草稿，並展示更新後的 **`PROJECT_LOG.md`** 內容。
 ```
 
 ---
