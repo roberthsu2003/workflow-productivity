@@ -75,9 +75,35 @@ sample_files/
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
+## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
-請在 **Claude Desktop App** 中，切換至 **Cowork** 模式，工作目錄選取本資料夾中的 `sample_files/`，並輸入以下 Prompt：
+> [!NOTE]
+> 💡 **真實職場視角：同仁通常不懂 RTCCF，該怎麼辦？**  
+> 在真實工作場景中，一般使用者不可能去背誦或手寫複雜的 RTCCF（Role / Task / Context / Constraint / Format）框架，大家平常只會用最直接的口語下指令：  
+> *「幫我把 raw_downloads 資料夾裡的東西分類排好，裡面發票跟收據幫我抓出金額做個報銷表。」*  
+> 
+> **面對這個情況，您有兩種最舒服的做法：**
+> 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+
+<details>
+<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」？</b></summary>
+
+若您平常有其他自訂任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
+
+```text
+我即將使用 Claude Cowork 執行本機任務。請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」：
+
+「需求：我下載資料夾 raw_downloads 很亂，裡面有發票、收據、合約和企劃稿。請幫我建立分類資料夾歸檔，檔名加上日期，然後把所有發票收據的日期、廠商、統編跟含稅金額整理到 expenses_summary_202609.csv 報銷表裡。」
+```
+Claude 即會秒速為您產出如同下方般條理分明、限制條件完備的頂級 Prompt！
+</details>
+
+---
+
+## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+
+請在 **Claude Desktop App** 中，切換至 **Cowork** 模式，工作目錄選取本資料夾中的 `sample_files/`，並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```text
 【Role】
