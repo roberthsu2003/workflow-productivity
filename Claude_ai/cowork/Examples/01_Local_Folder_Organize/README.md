@@ -63,25 +63,6 @@ sample_files/
 
 ---
 
-## 🧠 Cowork 代理執行管線 (Agent Execution Pipeline)
-
-```mermaid
-flowchart TD
-    Start["📂 選擇本地工作資料夾 (sample_files)"] --> Scan["🔍 讀取 raw_downloads/ 內所有檔案內容"]
-    Scan --> Analyze["🧠 辨識檔案語義 (財務 / 法務 / 企劃)"]
-    Analyze --> Approval{"🛡️ 安全核准模式檢查"}
-    Approval -- Manual 模式 --> PromptUser["跳出 Allow / Deny 請示使用者"]
-    Approval -- Auto / Skip 模式 --> AutoPass["即時安全審查無虞，自動放行"]
-    PromptUser --> Mkdir["📁 自動建立 3 個分類子目錄"]
-    AutoPass --> Mkdir
-    Mkdir --> Move["🚚 規範命名 (類別_日期_名稱) 並移動檔案"]
-    Move --> Extract["🧾 提取發票日期、廠商、統編與含稅金額"]
-    Extract --> CSV["📊 自動寫入並產出 expenses_summary_202609.csv"]
-    CSV --> Finish["✅ 交付執行完成報告與總額統計"]
-```
-
----
-
 ## 🛡️ 三大安全核准模式 (Approval Modes) 深度演練
 
 在 Claude Cowork 中，涉及到**實體磁碟讀寫**時，右上方可隨時切換安全層級：
