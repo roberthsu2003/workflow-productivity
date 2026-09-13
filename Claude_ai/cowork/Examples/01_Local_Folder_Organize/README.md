@@ -23,9 +23,9 @@
 
 > [!TIP]
 > 💡 **免手動建立！已為您打包完整測試素材壓縮檔**：  
-> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files/raw_downloads.zip`](./sample_files/raw_downloads.zip)  
-> - **直接下載**：學員可直接下載此 `raw_downloads.zip`，解壓縮後即可獲得包含文字檔、偽發票圖片（PNG）與合約企劃等完整測試檔案。
-> - **一鍵還原環境**：在練習完分類與搬移後，若想重新演練或切換 Manual / Auto 模式，只需再次解壓縮 `raw_downloads.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
+> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files.zip`](./sample_files.zip)  
+> - **直接下載**：學員可直接下載此 `sample_files.zip`，解壓縮後即可獲得包含 `sample_files/` 完整測試目錄（內含發票文字檔、偽發票收據圖片 PNG、合約與企劃稿）。
+> - **一鍵還原環境**：在練習完分類與搬移後，若想重新演練或切換 Manual / Auto 模式，只需再次解壓縮 `sample_files.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
 
 ---
 
@@ -33,16 +33,17 @@
 
 ```
 【整理前：雜亂無章的暫存區】
-sample_files/
-├── raw_downloads.zip                 ⭐【練習素材壓縮包：可直接下載解壓/一鍵重置】
-├── expenses_report_template.csv
-└── raw_downloads/
-    ├── INV_2026_08_GoogleWorkspace.txt   (雲端發票文字檔)
-    ├── INV_2026_08_GoogleWorkspace.png   (台灣三聯式電子發票證明聯偽圖片)
-    ├── taxi_receipt_20260905.txt         (計程車收據文字檔)
-    ├── taxi_receipt_20260905.png         (台灣大車隊乘車證明收據偽圖片)
-    ├── contract_partner_NDA_v1.txt       (保密合約草案)
-    └── Q3_marketing_proposal_draft.txt   (行銷企劃稿)
+01_Local_Folder_Organize/
+├── sample_files.zip                  ⭐【練習素材壓縮包：整包下載解壓/一鍵重置】
+└── sample_files/
+    ├── expenses_report_template.csv
+    └── raw_downloads/
+        ├── INV_2026_08_GoogleWorkspace.txt   (雲端發票文字檔)
+        ├── INV_2026_08_GoogleWorkspace.png   (台灣三聯式電子發票證明聯偽圖片)
+        ├── taxi_receipt_20260905.txt         (計程車收據文字檔)
+        ├── taxi_receipt_20260905.png         (台灣大車隊乘車證明收據偽圖片)
+        ├── contract_partner_NDA_v1.txt       (保密合約草案)
+        └── Q3_marketing_proposal_draft.txt   (行銷企劃稿)
 
                 ⬇️ 透過 Claude Cowork 一鍵自主執行 ⬇️
 
@@ -140,14 +141,14 @@ Claude 即會秒速為您產出如同下方般條理分明、限制條件完備�
 ## 🚀 學員實戰動手做 4 步驟
 
 0. **下載／確認練習素材**：
-   - 確保 `sample_files/` 目錄中具備測試檔案。若您是從遠端下載或需要初始資料，可直接下載解壓縮 [`sample_files/raw_downloads.zip`](./sample_files/raw_downloads.zip) 至 `raw_downloads/` 資料夾。
+   - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
 1. **開啟 Claude Desktop App**：
    - 點擊底部訊息框左下角，由「Chat」切換至 **「Cowork」**。
 2. **掛載練習目錄**：
    - 點擊工作目錄選擇按鈕，指定本機的 `Claude_ai/cowork/Examples/01_Local_Folder_Organize/sample_files/`。
 3. **選擇核准模式並啟動**：
    - **體驗一（手動安全審查）**：選擇 **Manual** 模式，貼上上方 Prompt 送出。當介面彈出建立目錄和搬移檔案的請示時，點擊 **「Allow」**，親自體驗「人機協同」的安全掌控感！
-   - **體驗二（極速自動化）**：利用 `raw_downloads.zip` 再次解壓縮一鍵還原檔案後，改選 **Auto** 模式再次執行，體驗 15 秒內全自動整理乾淨的極速快感！
+   - **體驗二（極速自動化）**：利用 `sample_files.zip` 再次解壓縮一鍵還原檔案後，改選 **Auto** 模式再次執行，體驗 15 秒內全自動整理乾淨的極速快感！
 
 ---
 
@@ -160,7 +161,7 @@ Claude 即會秒速為您產出如同下方般條理分明、限制條件完備�
 >    在 Prompt 中加入 `精確提取含稅金額與統編` 的條件（Constraint），Cowork 會仔細分析文字檔中的每一行關鍵字，準確率達 100%。
 > 3. **隨時可復原與一鍵重置**：  
 >    - 方式 A（指令還原）：在對話中輸入「*請幫我將檔案名稱與位置復原回原本的 raw_downloads/ 目錄*」，Claude 就會自主將檔案全部搬回原位。  
->    - 方式 B（秒速重置）：直接將目錄內的 [`sample_files/raw_downloads.zip`](./sample_files/raw_downloads.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
+>    - 方式 B（秒速重置）：直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 
