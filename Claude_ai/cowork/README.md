@@ -2,10 +2,10 @@
 
 > 🔵 **方案需求**：**Pro / Max / Team / Enterprise 付費方案**（全平台支援：Desktop / Web / Mobile / Chrome 側邊欄）。  
 > 官方參考：
-> - [開始使用 Claude Cowork-Get started with Claude Cowork](https://support.claude.com/zh-TW/articles/13345190-%E9%96%8B%E5%A7%8B%E4%BD%BF%E7%94%A8-claude-cowork)
-> - [在網頁、桌面和行動裝置上使用 Claude Cowork-Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/zh-TW/articles/15520349-%E5%9C%A8%E7%B6%B2%E9%A0%81-%E6%A1%8C%E9%9D%A2%E5%92%8C%E8%A1%8C%E5%8B%95%E8%A3%9D%E7%BD%AE%E4%B8%8A%E4%BD%BF%E7%94%A8-claude-cowork)
-> - [在 Claude Cowork 中排程循環工作-Schedule recurring tasks in Claude Cowork](https://support.claude.com/zh-TW/articles/13854387-%E5%9C%A8-claude-cowork-%E4%B8%AD%E6%8E%92%E7%A8%8B%E5%BE%AA%E7%92%B0%E5%B7%A5%E4%BD%9C)
-> - [Claude Cowork 架構概述-Claude Cowork architecture overview](https://support.claude.com/zh-TW/articles/14479288-claude-cowork-%E6%9E%B6%E6%A7%8B%E6%A6%82%E8%BF%B0)
+> - [開始使用 Claude Cowork - Get started with Claude Cowork](https://support.claude.com/zh-TW/articles/13345190-%E9%96%8B%E5%A7%8B%E4%BD%BF%E7%94%A8-claude-cowork)
+> - [在網頁、桌面和行動裝置上使用 Claude Cowork - Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/zh-TW/articles/15520349-%E5%9C%A8%E7%B6%B2%E9%A0%81-%E6%A1%8C%E9%9D%A2%E5%92%8C%E8%A1%8C%E5%8B%95%E8%A3%9D%E7%BD%AE%E4%B8%8A%E4%BD%BF%E7%94%A8-claude-cowork)
+> - [在 Claude Cowork 中排程循環工作 - Schedule recurring tasks in Claude Cowork](https://support.claude.com/zh-TW/articles/13854387-%E5%9C%A8-claude-cowork-%E4%B8%AD%E6%8E%92%E7%A8%8B%E5%BE%AA%E7%92%B0%E5%B7%A5%E4%BD%9C)
+> - [Claude Cowork 架構概述 - Claude Cowork architecture overview](https://support.claude.com/zh-TW/articles/14479288-claude-cowork-%E6%9E%B6%E6%A7%8B%E6%A6%82%E8%BF%B0)
 
 **Claude Cowork** 是 Anthropic 將 **Claude Code** 強大的自主代理（Agentic）架構引入「非程式碼知識工作」的全新模式。它打破了傳統「一問一答」的對話限制，**完全無需終端機（Terminal）**，能為職場工作者自主拆解目標、調用工具、存取檔案與排程運行，獨立完成複雜的多步驟長任務。
 
