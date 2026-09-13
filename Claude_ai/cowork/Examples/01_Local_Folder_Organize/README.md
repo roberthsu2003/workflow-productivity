@@ -75,33 +75,6 @@ sample_files/
 
 ---
 
-## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
-
-當您送出指令後，Claude Desktop 會展開生動的 Agent 執行進度串流：
-
-```console
-🤝 [Claude Cowork] Workspace: ./sample_files/
-────────────────────────────────────────────────────────
-➜ 🔍 Scanning raw_downloads/ (Found 4 files)...
-➜ 📄 Reading INV_2026_08_GoogleWorkspace.txt (Invoice)
-➜ 📄 Reading taxi_receipt_20260905.txt (Receipt)
-➜ 📄 Reading contract_partner_NDA_v1.txt (Legal)
-➜ 📄 Reading Q3_marketing_proposal_draft.txt (Plan)
-
-⚠️ [Manual Approval Required]
-Claude wants to create directories:
-  • 01_財務單據/  • 02_法務合約/  • 03_專案企劃/
-Actions: [ Deny ]  [ Allow ]  <--- 點擊 Allow 繼續
-
-✔ 🚚 Moving and renaming 4 files... Done.
-✔ 📊 Parsing amounts and generating summary CSV...
-✨ Created: expenses_summary_202609.csv (Total: $1,340)
-────────────────────────────────────────────────────────
-Status: Task completed successfully.
-```
-
----
-
 ## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
 
 請在 **Claude Desktop App** 中，切換至 **Cowork** 模式，工作目錄選取本資料夾中的 `sample_files/`，並輸入以下 Prompt：
