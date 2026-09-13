@@ -20,12 +20,25 @@
 
 ---
 
+## 📦 快速開始：下載練習素材壓縮檔 (Quick Download)
+
+> [!TIP]
+> 💡 **免手動建立！已為您打包完整測試素材壓縮檔**：  
+> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files.zip`](./sample_files.zip)  
+> - **直接下載**：學員可直接下載此 `sample_files.zip`，解壓縮後即可獲得包含 `sample_files/` 完整測試目錄（內含監測指標清單 `industry_keywords.txt` 與標準簡報樣板 `daily_news_template.md`）。
+> - **一鍵還原環境**：在練習完情報檢索與排程設定後，若想重新演練或測試不同關鍵字，只需再次解壓縮 `sample_files.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
+
+---
+
 ## 🔄 執行前後視覺化對比 (Before vs. After)
 
 ```
-【輸入：監測關鍵字 industry_keywords.txt + 格式樣板 daily_news_template.md】
-- 監測範圍：智慧醫療、AI 醫療影像、FDA 醫材認證、VC 早期融資、ESG 轉型
-- 剔除規則：公關炒作稿、無實際產品落地的股票宣傳
+【執行前：監測關鍵字與晨報格式樣板】
+04_Daily_News_Brief/
+├── sample_files.zip                  ⭐【練習素材壓縮包：整包下載解壓/一鍵重置】
+└── sample_files/
+    ├── industry_keywords.txt         (監測重點關鍵字、追蹤指標與媒體清單)
+    └── daily_news_template.md        (每日產業情報與競品趨勢簡報標準格式)
 ```
 
 ⬇️ **透過 Cowork 內建瀏覽器檢索 + 雲端排程產出** ⬇️
@@ -80,9 +93,56 @@ Status: Task completed successfully.
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
+## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
-請在 **Cowork 模式** 下，上傳本資料夾中的 `industry_keywords.txt` 與 `daily_news_template.md`，並輸入以下 Prompt：
+> [!NOTE]
+> 💡 **真實職場視角：同仁通常不懂 RTCCF，該怎麼辦？**  
+> 在真實工作場景中，團隊同仁通常只會用口語交代搜尋任務：  
+> *「幫我每天盯一下生醫跟 AI 融資的新聞，挑重要的大事整理成晨報，記得附上原文連結，別抓到業配新聞！」*  
+> 
+> **面對這個情況，您有兩種最舒服的做法：**
+> 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+
+<details>
+<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
+
+<br>
+
+若您平常有其他自訂新聞追蹤任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
+
+```text
+我即將使用 Claude Cowork 執行全自動產業情報聯網監測任務。
+
+請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
+
+【重要要求】：
+請將轉換後的提示詞內容，儲存為一個名為「news_brief_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
+
+──────────────────────────────────────────────────────────
+【我的原始口語需求】：
+「我要每天自動監測智慧醫療、AI醫療影像和創投融資動態。
+請幫我依照 industry_keywords.txt 裡面的領域關鍵字連網搜尋最新24小時新聞，
+過濾公關廢話，挑3則重大突破新聞填入 daily_news_template.md 樣板，
+產出附帶真實來源網址與戰略行動建議的每日晨報。」
+──────────────────────────────────────────────────────────
+```
+
+<br>
+
+> 💡 **核心密技：為什麼要特別指定「儲存為 Markdown 檔 (Artifact)」？**  
+> - **啟動右側 Artifact 畫布**：在 Claude 介面中，只有產出為獨立的 Markdown Artifact 文件，畫面右側才會展開專屬的預覽面板。  
+> - **實現原地人機協作 (In-place Edit)**：您可以直接在右側畫布上**反白選取任何一段提示詞或產出的新聞晨報重點**，點擊浮現的「Edit with Claude」輸入修改意見，Claude 就會原地修訂該段落，達成流暢的雙向人機協同調校！
+
+<br>
+
+</details>
+
+---
+
+## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+
+請在 **Cowork 模式** 下，上傳本資料夾中的 `industry_keywords.txt` 與 `daily_news_template.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```text
 【Role】
@@ -109,23 +169,23 @@ Status: Task completed successfully.
 
 ---
 
-## 🚀 學員實戰動手做：設定「定時排程 (Scheduled Tasks)」
+## 🚀 學員實戰動手做 4 步驟
 
-本範例最大的魅力在於**讓任務自動定時重複執行**：
-
-### 步驟 1：初次測試執行
-- 上傳檔案並貼上上述 Prompt，點擊執行，親眼觀察 Claude 如何調用內建瀏覽器連網、打開網站並填入 Markdown 樣板。
-
-### 步驟 2：啟用雲端定時排程 (`/schedule`)
-1. 在 Cowork 對話框中直接輸入指令：
-   > `/schedule`
-2. 或點選介面右上角的 **「Schedule this task」** 按鈕。
-3. 設定執行頻率：選擇 **「Every weekday (每工作日)」**，時間設定為 **「08:00 AM」**。
-4. 點擊確認排程！
-
-### 步驟 3：體驗「關機也能跑」的爽快感
-- 闔上你的筆電、關掉所有瀏覽器分頁。
-- 第二天早上 08:05，打開手機上的 Claude App，你將在 **Scheduled Tasks** 中看到新鮮出爐的晨報，已經靜靜地躺在工作空間等候你查閱！
+0. **下載／確認練習素材**：
+   - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
+1. **開啟 Claude 介面切換至 Cowork**：
+   - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
+2. **載入練習資料並送出 Prompt**：
+   - 將 `industry_keywords.txt` 與 `daily_news_template.md` 拖曳上傳（或指定工作目錄），貼上上述 RTCCF Prompt 送出。
+   - 親眼觀察 Claude 如何調用內建瀏覽器自主連網檢索最新報導並套入 Markdown 樣板。
+3. **啟用雲端定時排程 (`/schedule`)**：
+   - 在 Cowork 對話框中直接輸入指令：
+     > `/schedule`
+   - 或點選介面右上角的 **「Schedule this task」** 按鈕。
+   - 設定執行頻率：選擇 **「Every weekday (每工作日)」**，時間設定為 **「08:00 AM」**，確認建立排程！
+4. **🔥 殺手級功能實戰：體驗「關機也能跑」的爽快感**：
+   - 闔上你的筆電、關掉所有瀏覽器分頁。
+   - 第二天早上 08:05，打開手機上的 Claude App，你將在 **Scheduled Tasks** 中看到新鮮出爐的晨報，已經靜靜地躺在雲端工作空間等候你查閱！
 
 ---
 
@@ -137,9 +197,9 @@ Status: Task completed successfully.
 >    - **本機檔案任務（如範例 1）**：若任務需要直接讀寫你筆電硬碟裡的實體資料夾，執行當下該台電腦的 Claude Desktop 必須維持連線。
 > 2. **如何防止新聞幻覺？**  
 >    在 Prompt 中加入 `每則新聞必須附上可點擊之真實來源 URL`，會強制 Agent 點擊進入目標網站驗證連結合法性，根絕假新聞。
-> 3. **隨時查看排程狀態**：  
->    點擊左側側邊欄的 **「Scheduled」**，即可隨時暫停、編輯或刪除排程任務。
+> 3. **隨時可復原與一鍵重置**：  
+>    - 若在練習檢索或調整樣板後想重新演練，直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 
-[← 上一篇：範例 3 跨來源財務對帳與自動繪圖](../03_Financial_Report/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 5 資料夾指令與專案日誌維護 →](../05_Folder_Instructions_Project/)
+[← 上一篇：範例 3 跨來源財務對帳與自動繪圖](../03_Financial_Report/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 5 資料夾指令與專案日誌 →](../05_Folder_Instructions_Project/)

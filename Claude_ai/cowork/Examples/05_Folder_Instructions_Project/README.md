@@ -20,14 +20,26 @@
 
 ---
 
+## 📦 快速開始：下載練習素材壓縮檔 (Quick Download)
+
+> [!TIP]
+> 💡 **免手動建立！已為您打包完整測試素材壓縮檔**：  
+> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files.zip`](./sample_files.zip)  
+> - **直接下載**：學員可直接下載此 `sample_files.zip`，解壓縮後即可獲得包含 `sample_files/` 完整測試目錄（內含資料夾指令 `folder-instructions.md`、專案需求書 `product_launch_brief.md` 與初始日誌 `PROJECT_LOG.md`）。
+> - **一鍵還原環境**：在練習完公關稿撰寫與日誌自動打勾後，若想重新演練或測試不同指令，只需再次解壓縮 `sample_files.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
+
+---
+
 ## 🔄 執行前後視覺化對比 (Before vs. After)
 
 ```
 【執行前：只有規範與初始需求】
-sample_files/
-├── folder-instructions.md     (定義品牌語氣、四章節排版、自動更新日誌規則)
-├── product_launch_brief.md    (新產品上線需求書)
-└── PROJECT_LOG.md             (初始狀態：進度 0%，里程碑皆為 [ ])
+05_Folder_Instructions_Project/
+├── sample_files.zip                  ⭐【練習素材壓縮包：整包下載解壓/一鍵重置】
+└── sample_files/
+    ├── folder-instructions.md        (定義品牌語氣、四章節排版、自動更新日誌規則)
+    ├── product_launch_brief.md       (新產品上線需求書)
+    └── PROJECT_LOG.md                (初始狀態：進度 0%，里程碑皆為 [ ])
 
                 ⬇️ 透過 Claude Cowork 自主理解並執行 ⬇️
 
@@ -35,8 +47,8 @@ sample_files/
 sample_files/
 ├── folder-instructions.md
 ├── product_launch_brief.md
-├── press_release_draft.md     ⭐【新生成！完全符合 4 大章節與專業語氣】
-└── PROJECT_LOG.md             ⭐【自動更新！進度提升至 33%，自動勾選已完成】
+├── press_release_draft.md            ⭐【新生成！完全符合 4 大章節與專業語氣】
+└── PROJECT_LOG.md                    ⭐【自動更新！進度提升至 33%，自動勾選已完成】
     ├── 紀錄歷史：新增 2026-09-12 執行紀錄與產生 press_release_draft.md
     └── 里程碑狀態：
         - [x] 任務一：新聞稿草案撰寫 (由 Claude 自主打勾完成！)
@@ -53,7 +65,8 @@ flowchart TD
     Start["📂 開啟專案資料夾 (sample_files)"] --> AutoLoad["🧠 自動讀取 folder-instructions.md 專案規範"]
     AutoLoad --> Adopt["🎯 吸收品牌調性 (敏捷/專業) 與排版規範 (Objective/Owner/Milestone/Risks)"]
     Adopt --> ReadBrief["📄 讀取產品需求書 product_launch_brief.md"]
-    ReadBrief --> GenPR["✍️ 撰寫符合規範之正式新聞稿 press_release_draft.md"]
+    GenPR["✍️ 撰寫符合規範之正式新聞稿 press_release_draft.md"]
+    ReadBrief --> GenPR
     GenPR --> CheckRule{"📜 檢查自動維護進度日誌規則"}
     CheckRule -- 觸發自動維護規範 --> OpenLog["📖 自主開啟 PROJECT_LOG.md"]
     OpenLog --> UpdateLog["✏️ 寫入時間戳記、將任務一勾選為 [x]、計算進度百分比"]
@@ -85,7 +98,54 @@ Status: Task completed successfully.
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
+## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
+
+> [!NOTE]
+> 💡 **真實職場視角：同仁通常不懂 RTCCF，該怎麼辦？**  
+> 在真實工作場景中，專案經理或行銷人員通常只會隨口交代：  
+> *「幫我照著資料夾裡的規定，把產品新聞稿寫好存起來，寫完記得去把進度表打勾，補上今天的進度紀錄。」*  
+> 
+> **面對這個情況，您有兩種最舒服的做法：**
+> 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+
+<details>
+<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
+
+<br>
+
+若您平常有其他自訂專案自治任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
+
+```text
+我即將使用 Claude Cowork 執行專案自治中樞與自動維護進度任務。
+
+請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
+
+【重要要求】：
+請將轉換後的提示詞內容，儲存為一個名為「project_launch_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
+
+──────────────────────────────────────────────────────────
+【我的原始口語需求】：
+「請幫我照著 folder-instructions.md 的規矩，
+讀取 product_launch_brief.md 寫一份 SmartFlow AI 的正式對外發布新聞稿 press_release_draft.md。
+寫完後要自己去把 PROJECT_LOG.md 打開，把任務一打勾，
+進度更新成 33%，並追加一筆今天的執行時間與成果摘要紀錄。」
+──────────────────────────────────────────────────────────
+```
+
+<br>
+
+> 💡 **核心密技：為什麼要特別指定「儲存為 Markdown 檔 (Artifact)」？**  
+> - **啟動右側 Artifact 畫布**：在 Claude 介面中，只有產出為獨立的 Markdown Artifact 文件，畫面右側才會展開專屬的預覽面板。  
+> - **實現原地人機協作 (In-place Edit)**：您可以直接在右側畫布上**反白選取任何一段提示詞或產出的新聞稿段落**，點擊浮現的「Edit with Claude」輸入修改意見，Claude 就會原地修訂該段落，達成流暢的雙向人機協同調校！
+
+<br>
+
+</details>
+
+---
+
+## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
 
 在 **Cowork 模式** 下開啟此資料夾（或上傳本範例練習檔案），輸入以下極簡 Prompt——請特別留意：**我們完全不需要在 Prompt 裡重複說明品牌語氣與排版規定，因為資料夾指令已全權代勞！**
 
@@ -115,39 +175,35 @@ Status: Task completed successfully.
 
 ---
 
-## 🚀 終極代理實戰動手做 3 步驟
+## 🚀 學員實戰動手做 4 步驟
 
-### 步驟 1：親眼見證「自主維護日誌」的震撼
-- 貼上 Prompt 送出後，觀察進度串流。
-- 任務結束後，親自點開 [`sample_files/PROJECT_LOG.md`](./sample_files/PROJECT_LOG.md)：
-  你會發現 Claude **完全不需要你第二次指令提醒**，就自動在表格末尾追加了剛剛執行的紀錄，並將任務一打上了漂亮的 `[x]`！這就是自主代理人（Agentic Workflow）的強大魅力！
-
-### 步驟 2：體驗「原地反白微調 (Edit Drafts in Place)」
-- 點開產出的 `press_release_draft.md`：
-  1. 反白選取「⚠️ 潛在風險與防禦對策 (Risks & Mitigations)」段落；
-  2. 點擊浮現的 **「Edit with Claude」** 按鈕；
-  3. 輸入指令：*「補充一條防禦措施：若公有雲服務延遲超過 200ms，系統自動降級至邊緣快取節點」*；
-  4. 觀察 Claude 原地完成文字重構，其餘段落絲毫不受影響！
-
-### 步驟 3：體驗「跨裝置無縫接續 (Work from Anywhere)」
-1. 在辦公室電腦啟動任務後，闔上筆電；
-2. 走出門搭車時，打開手機上的 **Claude App**；
-3. 點進同一個 Cowork Session，你會看到剛剛在電腦上產出的草案與日誌已經完整呈現在手機畫面上；
-4. 在手機直接語音輸入：「*請接著幫我準備任務二的社群推廣文案大綱*」；
-5. 回到家打開另一台電腦的瀏覽器，任務已自動推進，專案日誌也同步累積！
+0. **下載／確認練習素材**：
+   - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
+1. **開啟 Claude 介面切換至 Cowork**：
+   - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
+2. **載入練習資料並送出 Prompt**：
+   - 指定本機目錄或上傳練習檔案，貼上上述 RTCCF Prompt 送出。
+3. **親眼見證「自主維護日誌」的震撼**：
+   - 任務結束後，親自點開 [`sample_files/PROJECT_LOG.md`](./sample_files/PROJECT_LOG.md)：
+   - 你會發現 Claude **完全不需要你第二次指令提醒**，就自動在表格末尾追加了剛剛執行的紀錄，並將任務一打上了漂亮的 `[x]`！這就是自主代理人（Agentic Workflow）的強大魅力！
+4. **🔥 殺手級功能實戰：體驗「跨裝置無縫接續 (Work from Anywhere)」**：
+   - **在電腦啟動**：在辦公室電腦啟動任務後，闔上筆電。
+   - **在手機檢視**：走出門搭車時，打開手機上的 **Claude App**，點進同一個 Cowork Session，你會看到剛剛在電腦上產出的草案與日誌已經完整呈現在手機畫面上。
+   - **直接追加任務**：在手機直接語音輸入：「*請接著幫我準備任務二的社群推廣文案大綱*」。
+   - **在另一台設備收成**：回到家打開另一台電腦的瀏覽器，任務已自動推進，專案日誌也同步累積！
 
 ---
 
 ## 💡 避坑指南與核心收穫 (Tips & Takeaways)
 
 > [!TIP]
-> 1. **什麼是 Folder Instructions 的最佳實踐？**  
->    將不常變動的「團隊協作規範、品牌調性、禁止使用的敏感字、日誌更新格式」寫在 `folder-instructions.md` 中。這相當於為該專案建立了長期的 **System Prompt**。
-> 2. **日誌是長效記憶庫**：  
->    隨著專案時間拉長（2 週至 1 個月），每次開啟新任務時，Claude 只要先看一眼 `PROJECT_LOG.md`，就能立即掌握過去所有同仁或自己的執行背景，杜絕上下文丟失。
-> 3. **與 Cursor / Git 協同工作**：  
->    這些由 Cowork 產出的 Markdown 檔案與日誌，皆為乾淨的標準文字檔，可以直接納入 Git 進行版本控制或在任何 Markdown 編輯器中無縫使用。
+> 1. **資料夾專屬指令的優先級**：  
+>    `folder-instructions.md` 相當於該專案的 System Prompt，會自動約束該目錄下的每一次 Cowork 任務。若團隊更換規範，只需修改該檔案一次，所有成員與後續任務皆自動生效。
+> 2. **日誌維護的原子性**：  
+>    在指令中要求「先完成實體產出，再更新日誌紀錄」，能確保專案進度表與真實成果嚴格保持同步，杜絕虛報進度。
+> 3. **隨時可復原與一鍵重置**：  
+>    - 若在練習多次更新日誌後想重新演練或重設進度為 0%，直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 
-[← 上一篇：範例 4 每日情報監測與定時排程](../04_Daily_News_Brief/) ｜ [返回 Cowork 主頁](../../README.md) ｜ 🏠 [返回專案總首頁](../../../README.md)
+[← 上一篇：範例 4 產業情報監測與定時晨報](../04_Daily_News_Brief/) ｜ [返回 Cowork 主頁](../../README.md)

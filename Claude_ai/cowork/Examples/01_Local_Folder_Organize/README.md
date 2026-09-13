@@ -64,6 +64,25 @@ sample_files/
 
 ---
 
+## 🧠 Cowork 代理執行管線 (Agent Execution Pipeline)
+
+```mermaid
+flowchart TD
+    Start["📂 選擇本地工作資料夾 (sample_files)"] --> Scan["🔍 讀取 raw_downloads/ 內所有檔案內容"]
+    Scan --> Analyze["🧠 辨識檔案語義 (財務 / 法務 / 企劃)"]
+    Analyze --> Approval{"🛡️ 安全核准模式檢查"}
+    Approval -- Manual 模式 --> PromptUser["跳出 Allow / Deny 請示使用者"]
+    Approval -- Auto / Skip 模式 --> AutoPass["即時安全審查無虞，自動放行"]
+    PromptUser --> Mkdir["📁 自動建立 3 個分類子目錄"]
+    AutoPass --> Mkdir
+    Mkdir --> Move["🚚 規範命名 (類別_日期_名稱) 並移動檔案"]
+    Move --> Extract["🧾 提取發票日期、廠商、統編與含稅金額"]
+    Extract --> CSV["📊 自動寫入並產出 expenses_summary_202609.csv"]
+    CSV --> Finish["✅ 交付執行完成報告與總額統計"]
+```
+
+---
+
 ## 🛡️ 三大安全核准模式 (Approval Modes) 深度演練
 
 在 Claude Cowork 中，涉及到**實體磁碟讀寫**時，右上方可隨時切換安全層級：
@@ -73,6 +92,33 @@ sample_files/
 | **Manually approve<br>(Manual 手動核准)** | Claude 準備建立資料夾、移動檔案或寫入 CSV 前，畫面會**彈出確認卡片**（顯示即將執行的路徑），需手動按「Allow」才繼續。 | 首次操作、重要系統磁碟、敏感合約檔案 | ⭐️⭐️⭐️⭐️⭐️<br>(新手必練) |
 | **Automatically approve<br>(Auto 自動審查)** | Claude 連續自主作業，背後安全模型即時檢查有無 Prompt Injection 攻擊或資料外洩風險，無異常即順暢推進。 | 日常行政、檔案批次清洗、高效率作業 | ⭐️⭐️⭐️⭐️<br>(日常首選) |
 | **Skip all approvals<br>(Skip 跳過核准)** | 完全不審查、不暫停，以最高極速直接完成所有磁碟讀寫。 | 100% 信任的測試沙盒目錄 | ⭐️⭐️<br>(謹慎使用) |
+
+---
+
+## 🖥️ Cowork 擬真執行面板預覽 (What You Will See)
+
+```console
+🤝 [Claude Cowork] Workspace: ./sample_files/
+────────────────────────────────────────────────────────
+➜ 🔍 Scanning raw_downloads/ (Found 6 files)...
+➜ 📄 Reading INV_2026_08_GoogleWorkspace.txt (Invoice)
+➜ 🖼️ Reading INV_2026_08_GoogleWorkspace.png (Receipt Image)
+➜ 📄 Reading taxi_receipt_20260905.txt (Receipt)
+➜ 🖼️ Reading taxi_receipt_20260905.png (Taxi Image)
+➜ 📄 Reading contract_partner_NDA_v1.txt (Legal)
+➜ 📄 Reading Q3_marketing_proposal_draft.txt (Plan)
+
+⚠️ [Manual Approval Required]
+Claude wants to create directories:
+  • 01_財務單據/  • 02_法務合約/  • 03_專案企劃/
+Actions: [ Deny ]  [ Allow ]  <--- 點擊 Allow 繼續
+
+✔ 🚚 Moving and renaming 6 files... Done.
+✔ 📊 Parsing amounts and generating summary CSV...
+✨ Created: expenses_summary_202609.csv (Total: $3,740)
+────────────────────────────────────────────────────────
+Status: Task completed successfully.
+```
 
 ---
 

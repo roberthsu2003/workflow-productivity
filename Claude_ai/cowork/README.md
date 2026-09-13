@@ -54,21 +54,21 @@
 
 ### 3. 📝 原地反白微調草稿 (Edit Drafts in Place)
 - 當 Claude 產出長篇 Markdown 報告或草稿時，學員可以直接在畫面上**反白選取欲修改的段落**，點擊「Edit with Claude」輸入微調指令，Claude 即會原地更新該段文字，無需在對話串中費力描述。
-👉 **實戰操作體驗**：請參閱 [範例 2：客訴回信草稿原地微調](./Examples/02_Customer_Feedback/) 與 [範例 5：新聞稿草案原地微調](./Examples/05_Folder_Instructions_Project/)。
+👉 **實戰操作體驗**：請參閱 [範例 2：客訴回信草稿原地微調](./Examples/02_Customer_Feedback/)（內附 [`sample_files.zip`](./Examples/02_Customer_Feedback/sample_files.zip) 練習素材包）。
 
 ### 4. 🤖 背景程式碼運算與跨表對帳 (Code Execution & Analytics)
 - 處理多份分散的 CSV/Excel 財務與銷售數據時，Claude 會在背景自動編寫 Python 程式碼，執行跨表合併、達成率精算與 Matplotlib 圖表繪製，根除數字幻覺。
-👉 **實戰操作體驗**：請參閱 [範例 3：跨來源財務對帳與自動繪圖](./Examples/03_Financial_Report/)。
+👉 **實戰操作體驗**：請參閱 [範例 3：跨來源財務對帳與自動繪圖](./Examples/03_Financial_Report/)（內附 [`sample_files.zip`](./Examples/03_Financial_Report/sample_files.zip) 練習素材包）。
 
 ### 5. 🌐 內建瀏覽器與雲端排程 (Built-in Browser & Scheduled Tasks)
 - 處理需要查閱外部網站的任務時，Claude 能自動開啟網頁、閱讀內容、過濾公關廢話。
 - 支援輸入 `/schedule` 設定每日/每週定時重複執行。**純雲端任務無須開機**，即使電腦休眠或關機也會準時在雲端執行並交付成果至手機。
-👉 **實戰操作體驗**：請參閱 [範例 4：全自動產業情報監測與定時晨報](./Examples/04_Daily_News_Brief/)。
+👉 **實戰操作體驗**：請參閱 [範例 4：全自動產業情報監測與定時晨報](./Examples/04_Daily_News_Brief/)（內附 [`sample_files.zip`](./Examples/04_Daily_News_Brief/sample_files.zip) 練習素材包）。
 
 ### 6. 🎯 資料夾專屬指令與自主日誌維護 (Folder Instructions & Project Log)
 - **Folder instructions**：在工作資料夾中放置 `folder-instructions.md`，為該專案設定永久品牌語氣與交付規範。
 - Claude 還能自主維護與更新該資料夾的進度日誌（`PROJECT_LOG.md`），打勾完成里程碑並推播至跨裝置手機。
-👉 **實戰操作體驗**：請參閱 [範例 5：資料夾指令規範與專案日誌自主維護](./Examples/05_Folder_Instructions_Project/)。
+👉 **實戰操作體驗**：請參閱 [範例 5：資料夾指令規範與專案日誌自主維護](./Examples/05_Folder_Instructions_Project/)（內附 [`sample_files.zip`](./Examples/05_Folder_Instructions_Project/sample_files.zip) 練習素材包）。
 
 ---
 
@@ -92,7 +92,7 @@
 
 ## 🎓 五、5 大職場自動化實戰範例（由淺入深學習階梯）
 
-為幫助學員從「基礎震撼」一路進階到「自主代理」，本單元設計了 5 個由淺入深的職場實戰範例，全部附有可直接演練的練習偽資料資料夾 (`sample_files/`)：
+為幫助學員從「基礎震撼」一路進階到「自主代理」，本單元設計了 5 個由淺入深的職場實戰範例，全部附有打包好的練習壓縮檔 (`sample_files.zip`) 與未整理資料夾 (`sample_files/`)：
 
 ```mermaid
 flowchart LR
@@ -104,11 +104,11 @@ flowchart LR
 
 | 難度等級 | 實戰範例資料夾（點選進入） | 職場痛點劇場與核心亮點 | 對應 Cowork 核心能力 | 下載學員練習檔 / 偽檔案 |
 | :---: | :--- | :--- | :--- | :--- |
-| **Level 1**<br>入門震撼 | [**範例 1：本機資料夾批次自動整理與報銷總表產出**](./Examples/01_Local_Folder_Organize/) | **「救救混亂下載區！」**<br>下載資料夾堆滿雜亂發票與簡報，一鍵自動建目錄分類歸檔，自動辨識單據金額匯出 Excel 總表。 | • 📁 本機資料夾直接讀寫<br/>• 🛡️ 三大安全核准模式 (Manual/Auto/Skip)<br/>• 💻 本機沙盒批次操作 | 📂 [**前往 `sample_files/` 下載**](./Examples/01_Local_Folder_Organize/sample_files/)<br/>• `raw_downloads/` (發票、收據、合約)<br/>• `expenses_report_template.csv` |
-| **Level 2**<br>實戰應用 | [**範例 2：客訴情緒診斷、SOP 自動分流與原地微調回信**](./Examples/02_Customer_Feedback/) | **「客訴火燒屁股！」**<br>大促銷後湧入大量負評，自動依內部 SOP 分流評級（Level 1~3），秒生道歉信，並體驗原地反白微調！ | • 📋 SOP 規章自動遵循比對<br/>• 📝 原地反白微調 (Edit Drafts in Place)<br/>• ⚡ 批量文本情緒分析 | 📂 [**前往 `sample_files/` 下載**](./Examples/02_Customer_Feedback/sample_files/)<br/>• `customer_support_logs.csv`<br/>• `sop_escalation_rules.md` |
-| **Level 3**<br>進階分析 | [**範例 3：跨來源財務對帳、自動程式運算與營運圖表產出**](./Examples/03_Financial_Report/) | **「月底對帳抓抓樂！」**<br>多個部門 CSV 數字對不起來，Cowork 在背景寫 Python 程式碼自動計算達成率、抓出超支虧損警訊並自動畫圖。 | • 🤖 背景 Code Execution 運算<br/>• 📊 多檔案交叉對比分析<br/>• 📈 自動資料視覺化繪圖 | 📂 [**前往 `sample_files/` 下載**](./Examples/03_Financial_Report/sample_files/)<br/>• `q3_financial_raw.csv`<br/>• `crm_sales_target.csv` |
-| **Level 4**<br>情報排程 | [**範例 4：全自動產業情報監測、內建瀏覽器檢索與雲端定時晨報**](./Examples/04_Daily_News_Brief/) | **「週一早會免受苦！」**<br>主管要看競品動態，用內建瀏覽器聯網抓取最新新聞，設定 `/schedule` 雲端排程，筆電關機睡覺，早上手機準時收信！ | • 🌐 內建瀏覽器與 Web 檢索<br/>• 🕒 雲端排程任務 (`/schedule`)<br/>• ☁️ 雲端隔離運算 (關機照跑) | 📂 [**前往 `sample_files/` 下載**](./Examples/04_Daily_News_Brief/sample_files/)<br/>• `industry_keywords.txt`<br/>• `daily_news_template.md` |
-| **Level 5**<br>頂級代理 | [**範例 5：資料夾指令規範、專案日誌自主維護與跨裝置無縫接續**](./Examples/05_Folder_Instructions_Project/) | **「自帶靈魂的專案資料夾！」**<br>新產品發布專案，設定資料夾常駐規則，Claude 每次工作自動更新進度日誌，出門用手機無縫審批。 | • 🎯 資料夾專屬指令 (Folder Instructions)<br/>• 📱 跨裝置無縫接續 (Work from Anywhere)<br/>• 📝 專案進度日誌自主追蹤維護 | 📂 [**前往 `sample_files/` 下載**](./Examples/05_Folder_Instructions_Project/sample_files/)<br/>• `folder-instructions.md`<br/>• `product_launch_brief.md`<br/>• `PROJECT_LOG.md` |
+| **Level 1**<br>入門震撼 | [**範例 1：本機資料夾批次自動整理與報銷總表產出**](./Examples/01_Local_Folder_Organize/) | **「救救混亂下載區！」**<br>下載資料夾堆滿雜亂發票與簡報，一鍵自動建目錄分類歸檔，自動辨識單據金額匯出 Excel 總表。 | • 📁 本機資料夾直接讀寫<br/>• 🛡️ 三大安全核准模式 (Manual/Auto/Skip)<br/>• 💻 本機沙盒批次操作 | 📦 [**直接下載 `sample_files.zip`**](./Examples/01_Local_Folder_Organize/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/01_Local_Folder_Organize/sample_files/) |
+| **Level 2**<br>實戰應用 | [**範例 2：客訴情緒診斷、SOP 自動分流與原地微調回信**](./Examples/02_Customer_Feedback/) | **「客訴火燒屁股！」**<br>大促銷後湧入大量負評，自動依內部 SOP 分流評級（Level 1~3），秒生道歉信，並體驗原地反白微調！ | • 📋 SOP 規章自動遵循比對<br/>• 📝 原地反白微調 (Edit Drafts in Place)<br/>• ⚡ 批量文本情緒分析 | 📦 [**直接下載 `sample_files.zip`**](./Examples/02_Customer_Feedback/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/02_Customer_Feedback/sample_files/) |
+| **Level 3**<br>進階分析 | [**範例 3：跨來源財務對帳、自動程式運算與營運圖表產出**](./Examples/03_Financial_Report/) | **「月底對帳抓抓樂！」**<br>多個部門 CSV 數字對不起來，Cowork 在背景寫 Python 程式碼自動計算達成率、抓出超支虧損警訊並自動畫圖。 | • 🤖 背景 Code Execution 運算<br/>• 📊 多檔案交叉對比分析<br/>• 📈 自動資料視覺化繪圖 | 📦 [**直接下載 `sample_files.zip`**](./Examples/03_Financial_Report/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/03_Financial_Report/sample_files/) |
+| **Level 4**<br>情報排程 | [**範例 4：全自動產業情報監測、內建瀏覽器檢索與雲端定時晨報**](./Examples/04_Daily_News_Brief/) | **「週一早會免受苦！」**<br>主管要看競品動態，用內建瀏覽器聯網抓取最新新聞，設定 `/schedule` 雲端排程，筆電關機睡覺，早上手機準時收信！ | • 🌐 內建瀏覽器與 Web 檢索<br/>• 🕒 雲端排程任務 (`/schedule`)<br/>• ☁️ 雲端隔離運算 (關機照跑) | 📦 [**直接下載 `sample_files.zip`**](./Examples/04_Daily_News_Brief/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/04_Daily_News_Brief/sample_files/) |
+| **Level 5**<br>頂級代理 | [**範例 5：資料夾指令規範、專案日誌自主維護與跨裝置無縫接續**](./Examples/05_Folder_Instructions_Project/) | **「自帶靈魂的專案資料夾！」**<br>新產品發布專案，設定資料夾常駐規則，Claude 每次工作自動更新進度日誌，出門用手機無縫審批。 | • 🎯 資料夾專屬指令 (Folder Instructions)<br/>• 📱 跨裝置無縫接續 (Work from Anywhere)<br/>• 📝 專案進度日誌自主追蹤維護 | 📦 [**直接下載 `sample_files.zip`**](./Examples/05_Folder_Instructions_Project/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/05_Folder_Instructions_Project/sample_files/) |
 
 ---
 

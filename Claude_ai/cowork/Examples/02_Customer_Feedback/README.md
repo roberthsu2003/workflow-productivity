@@ -20,15 +20,25 @@
 
 ---
 
+## 📦 快速開始：下載練習素材壓縮檔 (Quick Download)
+
+> [!TIP]
+> 💡 **免手動建立！已為您打包完整測試素材壓縮檔**：  
+> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files.zip`](./sample_files.zip)  
+> - **直接下載**：學員可直接下載此 `sample_files.zip`，解壓縮後即可獲得包含 `sample_files/` 完整測試目錄（內含客訴日誌 `customer_support_logs.csv` 與升級規章 `sop_escalation_rules.md`）。
+> - **一鍵還原環境**：在練習完分類處置與原地微調後，若想重新演練或測試不同提示詞，只需再次解壓縮 `sample_files.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
+
+---
+
 ## 🔄 執行前後視覺化對比 (Before vs. After)
 
 ```
-【輸入：未分類的混亂客訴紀錄 customer_support_logs.csv】
-TICK-001 (VIP)   | 金流串接突然失效，導致今日損失50萬訂單！請立刻處理！
-TICK-002 (一般)  | 請問密碼重設信箱一直沒收到該怎麼辦？
-TICK-003 (VIP)   | 希望能增加自動匯出 PDF 報表的功能，團隊很需要。
-TICK-004 (一般)  | 後台頁面載入速度有點慢，大概要等5秒。
-TICK-005 (企業)  | 數據庫同步失敗，發票開立錯誤！要求主管出面說明！
+【執行前：未分類的混亂客訴紀錄與升級手冊】
+02_Customer_Feedback/
+├── sample_files.zip                  ⭐【練習素材壓縮包：整包下載解壓/一鍵重置】
+└── sample_files/
+    ├── customer_support_logs.csv     (未分類的 5 筆客訴紀錄：金流、密碼、PDF許願、延遲、發票錯誤)
+    └── sop_escalation_rules.md       (內部 SOP 評級手冊：定義 Level 1 ~ Level 3 標準與 SLA)
 ```
 
 ⬇️ **依照 `sop_escalation_rules.md` 自動化處置產出** ⬇️
@@ -84,9 +94,55 @@ Status: Task completed successfully.
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
+## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
-請在 **Cowork 模式** 下，上傳本範例資料夾下的 `customer_support_logs.csv` 與 `sop_escalation_rules.md`，並輸入以下 Prompt：
+> [!NOTE]
+> 💡 **真實職場視角：同仁通常不懂 RTCCF，該怎麼辦？**  
+> 在真實工作場景中，客服人員或主管通常只會用最急迫的日常大白話交代：  
+> *「後台湧進好幾筆客訴，有 VIP 說金流壞掉損失幾十萬、也有人發票開錯。快幫我對照 SOP 規章分級，嚴重的挑出來寫道歉信，並幫工程團隊整理系統改善清單！」*  
+> 
+> **面對這個情況，您有兩種最舒服的做法：**
+> 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+
+<details>
+<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
+
+<br>
+
+若您平常有其他自訂客訴分析任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
+
+```text
+我即將使用 Claude Cowork 執行緊急客訴情緒診斷與分流處置任務。
+
+請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
+
+【重要要求】：
+請將轉換後的提示詞內容，儲存為一個名為「complaint_analysis_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
+
+──────────────────────────────────────────────────────────
+【我的原始口語需求】：
+「雙11後台收到好幾筆客訴，有 VIP 客戶金流失敗扣款賠錢的，也有問密碼跟發票開錯的。
+請幫我對照 sop_escalation_rules.md 規章分出嚴重等級，
+針對最緊急嚴重的個案各擬一封誠懇道歉信，並幫工程團隊列出產品改善建議清單。」
+──────────────────────────────────────────────────────────
+```
+
+<br>
+
+> 💡 **核心密技：為什麼要特別指定「儲存為 Markdown 檔 (Artifact)」？**  
+> - **啟動右側 Artifact 畫布**：在 Claude 介面中，只有產出為獨立的 Markdown Artifact 文件，畫面右側才會展開專屬的預覽面板。  
+> - **實現原地人機協作 (In-place Edit)**：您可以直接在右側畫布上**反白選取任何一段提示詞或產出的回信草稿**，點擊浮現的「Edit with Claude」輸入修改意見，Claude 就會原地修訂該段落，達成流暢的雙向人機協同調校！
+
+<br>
+
+</details>
+
+---
+
+## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+
+請在 **Cowork 模式** 下，上傳本範例資料夾下的 `customer_support_logs.csv` 與 `sop_escalation_rules.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```text
 【Role】
@@ -117,16 +173,24 @@ Status: Task completed successfully.
 
 ---
 
-## 🚀 殺手級功能實戰：原地反白微調草稿 (Edit Drafts in Place)
+## 🚀 學員實戰動手做 4 步驟
 
-當 Claude 產出回信草稿後，**千萬不要在對話框裡重打整段！**  
-請依照以下步驟體驗 Cowork 獨家的原地微調功能：
-
-1. **滑鼠反白選取**：在 Claude 產出的 `TICK-001` 回信草稿中，用滑鼠直接**反白選取「承諾賠償措施」的該段文字**。
-2. **點擊「Edit with Claude」**：選取段落上方會浮現一個帶有星芒圖示的微調按鈕，點擊它。
-3. **輸入局部修改指令**：
-   > *「請將補償方案改為：『加贈 1 個月尊榮 VIP 服務，並提供新台幣 3,000 元雲端折抵金，且指派專屬工程師 1 對 1 協助排查』，口吻維持誠懇。」*
-4. **見證原地替換**：觀察 Claude 直接在畫面的該段文字中完成更新，其餘上百字的上下文完全保留不動！
+0. **下載／確認練習素材**：
+   - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
+1. **開啟 Claude 介面切換至 Cowork**：
+   - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
+2. **載入練習資料**：
+   - 桌面端：工作目錄指定本機的 `Claude_ai/cowork/Examples/02_Customer_Feedback/sample_files/`。
+   - 網頁端：將 `customer_support_logs.csv` 與 `sop_escalation_rules.md` 拖曳上傳至對話框。
+3. **送出 Prompt 執行智能分級**：
+   - 貼上上述 RTCCF Prompt 送出，觀察 Claude 如何自主對照 SOP 規章完成分流與高情商道歉信起草。
+4. **🔥 殺手級功能實戰：原地反白微調草稿 (Edit Drafts in Place)**：
+   - 當 Claude 產出回信草稿後，**千萬不要在對話框裡重打整段！**
+   - **滑鼠反白選取**：在 `TICK-001` 回信草稿中，用滑鼠直接**反白選取「承諾賠償措施」的該段文字**。
+   - **點擊「Edit with Claude」**：選取段落上方會浮現一個帶有星芒圖示的微調按鈕，點擊它。
+   - **輸入局部修改指令**：
+     > *「請將補償方案改為：『加贈 1 個月尊榮 VIP 服務，並提供新台幣 3,000 元雲端折抵金，且指派專屬工程師 1 對 1 協助排查』，口吻維持誠懇。」*
+   - **見證原地替換**：觀察 Claude 直接在畫面的該段文字中完成更新，其餘上百字的上下文完全保留不動！
 
 ---
 
@@ -137,8 +201,8 @@ Status: Task completed successfully.
 >    在 Prompt 中強調「同理客戶損失」與「給出具體時效承諾」，Claude 能根據 VIP 客戶損失 50 萬的痛點，量身打造極具誠意的高階信件。
 > 2. **SOP 規章具有法律與風控效力**：  
 >    將內部規章抽離為獨立的 `sop_escalation_rules.md`，未來公司規則調整時，只需更新該 Markdown 檔案，無需修改 Prompt 內容。
-> 3. **與 PM 敏捷對接**：  
->    每次大促銷後的客訴分析，產出的「產品改善清單」可直接複製進 Jira 或 Notion 作為下個 Sprint 的優先開發卡片。
+> 3. **隨時可復原與一鍵重置**：  
+>    - 若在練習原地微調時改動了原始檔案或希望重新演練，直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 

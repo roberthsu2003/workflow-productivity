@@ -19,12 +19,25 @@
 
 ---
 
+## 📦 快速開始：下載練習素材壓縮檔 (Quick Download)
+
+> [!TIP]
+> 💡 **免手動建立！已為您打包完整測試素材壓縮檔**：  
+> 本範例已在目錄中預先準備好打包好的壓縮檔：[`sample_files.zip`](./sample_files.zip)  
+> - **直接下載**：學員可直接下載此 `sample_files.zip`，解壓縮後即可獲得包含 `sample_files/` 完整測試目錄（內含實際流水帳 `q3_financial_raw.csv` 與業績目標表 `crm_sales_target.csv`）。
+> - **一鍵還原環境**：在練習完數據對帳與圖表繪製後，若想重新演練或測試不同提示詞，只需再次解壓縮 `sample_files.zip` 覆蓋，即可秒速重置至最乾淨的初始狀態！
+
+---
+
 ## 🔄 執行前後視覺化對比 (Before vs. After)
 
 ```
-【輸入：兩份不同業務系統導出的分散數據】
-1. q3_financial_raw.csv (實際財務流水：營收、費用、現金餘額、Net Burn)
-2. crm_sales_target.csv (銷售目標：預估營收、費用預算上限、毛利目標)
+【執行前：兩份不同業務系統導出的分散數據】
+03_Financial_Report/
+├── sample_files.zip                  ⭐【練習素材壓縮包：整包下載解壓/一鍵重置】
+└── sample_files/
+    ├── q3_financial_raw.csv          (實際財務流水：各月營收、費用、現金餘額、Net Burn)
+    └── crm_sales_target.csv          (業務銷售目標：各月預估營收、預算上限、毛利目標)
 ```
 
 ⬇️ **透過 Cowork 背景 Code Execution 交叉比對產出** ⬇️
@@ -86,9 +99,56 @@ Status: Task completed successfully.
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
+## 🪄 （選用進階）自然語言 ➔ RTCCF 結構化轉換術 (Optional)
 
-請在 **Cowork 模式** 下，上傳本資料夾中的 `q3_financial_raw.csv` 與 `crm_sales_target.csv`，並輸入以下 Prompt：
+> [!NOTE]
+> 💡 **真實職場視角：同仁通常不懂 RTCCF，該怎麼辦？**  
+> 在真實工作場景中，主管交代財務分析時通常也是口語指令：  
+> *「把這兩張表對一下，看看 SaaS 跟硬體部門誰沒達標、超支多少，算一下我們的現金還能燒多久，畫張圖給老闆看！」*  
+> 
+> **面對這個情況，您有兩種最舒服的做法：**
+> 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+
+<details>
+<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
+
+<br>
+
+若您平常有其他自訂財務對帳任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
+
+```text
+我即將使用 Claude Cowork 執行跨表格財務對帳與營運分析任務。
+
+請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
+
+【重要要求】：
+請將轉換後的提示詞內容，儲存為一個名為「financial_analysis_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
+
+──────────────────────────────────────────────────────────
+【我的原始口語需求】：
+「把會計系統導出的實際支出 q3_financial_raw.csv，跟業務部 CRM 的業績目標 crm_sales_target.csv 拉出來對一下，
+算清楚 SaaS 和硬體部門各月達成率與費用超支。
+用 Python 算我們的現金還能燒幾個月（Cash Runway），
+畫一張營收長條對比圖，最後針對硬體部門持續虧損給 3 個止血改善建議。」
+──────────────────────────────────────────────────────────
+```
+
+<br>
+
+> 💡 **核心密技：為什麼要特別指定「儲存為 Markdown 檔 (Artifact)」？**  
+> - **啟動右側 Artifact 畫布**：在 Claude 介面中，只有產出為獨立的 Markdown Artifact 文件，畫面右側才會展開專屬的預覽面板。  
+> - **實現原地人機協作 (In-place Edit)**：您可以直接在右側畫布上**反白選取任何一段提示詞或財務報告分析章節**，點擊浮現的「Edit with Claude」輸入修改意見，Claude 就會原地修訂該段落，達成流暢的雙向人機協同調校！
+
+<br>
+
+</details>
+
+---
+
+## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+
+請在 **Cowork 模式** 下，上傳本資料夾中的 `q3_financial_raw.csv` 與 `crm_sales_target.csv`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```text
 【Role】
@@ -120,14 +180,20 @@ Status: Task completed successfully.
 
 ---
 
-## 🚀 學員實戰動手做 3 步驟
+## 🚀 學員實戰動手做 4 步驟
 
-1. **切換為 Cowork 模式**：
+0. **下載／確認練習素材**：
+   - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
+1. **開啟 Claude 介面切換至 Cowork**：
    - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
-2. **上傳檔案並送出 Prompt**：
-   - 將 `q3_financial_raw.csv` 與 `crm_sales_target.csv` 拖曳至對話框，貼上上述 RTCCF Prompt 送出。
-3. **展開程式碼查看運算細節**：
-   - 在執行過程中，點擊 Claude 畫面上的「View code」或「Analysis」，您會看見 Claude 自動寫出並執行的 Pandas 與 Matplotlib 程式碼，體驗**零數學幻覺**的強大威力！
+2. **載入練習資料**：
+   - 桌面端：工作目錄指定本機的 `Claude_ai/cowork/Examples/03_Financial_Report/sample_files/`。
+   - 網頁端：將 `q3_financial_raw.csv` 與 `crm_sales_target.csv` 拖曳上傳至對話框。
+3. **送出 Prompt 啟動程式運算**：
+   - 貼上上述 RTCCF Prompt 送出，觀察 Claude 如何自主編寫 Python 程式碼進行數據交叉比對與圖表繪製。
+4. **🔥 殺手級功能實戰：展開程式碼查看運算細節 (View Code)**：
+   - 在執行過程中或成果交付後，點擊 Claude 畫面上的「View code」或「Analysis」。
+   - 您會親眼看見 Claude 自動寫出的 Pandas 合併計算與 Matplotlib 繪圖程式碼，體驗**零數學幻覺、完全可驗證審計**的強大威力！
 
 ---
 
@@ -138,9 +204,9 @@ Status: Task completed successfully.
 >    在純文字 Chat 模式下，LLM 遇到多位數除法或複合公式容易產生幻覺。在 Cowork 中，指定「透過背景撰寫 Python 程式碼」，Claude 會將計算交給真實的 Python 解譯器，保證 100% 精準。
 > 2. **跨檔案鍵值合併 (Key Merge)**：  
 >    只要在 Prompt 中指明共同欄位（如「月份」與「部門」），Cowork 會自動完成類似 SQL `JOIN` 或 Excel `VLOOKUP` 的操作，免去手動整理欄位的苦工。
-> 3. **圖表下載與簡報再利用**：  
->    產出的圖表可以直接右鍵下載儲存為 PNG，直接貼進 Google Slides 或 PowerPoint 簡報中。
+> 3. **隨時可復原與一鍵重置**：  
+>    - 若在練習數據分析或微調報告時改動了原始檔案，直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 
-[← 上一篇：範例 2 客訴分類與原地微調](../02_Customer_Feedback/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 4 每日情報監測與定時排程 →](../04_Daily_News_Brief/)
+[← 上一篇：範例 2 客訴情緒診斷與原地微調](../02_Customer_Feedback/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 4 產業情報監測與定時晨報 →](../04_Daily_News_Brief/)
