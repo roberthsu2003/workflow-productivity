@@ -88,16 +88,36 @@ sample_files/
 > 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
 
 <details>
-<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」？</b></summary>
+<summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
+
+<br>
 
 若您平常有其他自訂任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
 ```text
-我即將使用 Claude Cowork 執行本機任務。請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」：
+我即將使用 Claude Cowork 執行本機檔案整理任務。
 
-「需求：我下載資料夾 raw_downloads 很亂，裡面有發票、收據、合約和企劃稿。請幫我建立分類資料夾歸檔，檔名加上日期，然後把所有發票收據的日期、廠商、統編跟含稅金額整理到 expenses_summary_202609.csv 報銷表裡。」
+請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
+
+【重要要求】：
+請將轉換後的提示詞內容，儲存為一個名為「organize_prompt.md」的 Markdown 檔案（以 Artifact 模式產出），方便我在右側視窗直接預覽與人機協作微調。
+
+──────────────────────────────────────────────────────────
+【我的原始口語需求】：
+「我下載資料夾 raw_downloads 很亂，裡面有發票、收據、合約和企劃稿。
+請幫我建立分類資料夾歸檔，檔名加上日期，
+然後把所有發票收據的日期、廠商、統編跟含稅金額整理到 expenses_summary_202609.csv 報銷表裡。」
+──────────────────────────────────────────────────────────
 ```
-Claude 即會秒速為您產出如同下方般條理分明、限制條件完備的頂級 Prompt！
+
+<br>
+
+> 💡 **核心密技：為什麼要特別指定「儲存為 Markdown 檔 (Artifact)」？**  
+> - **啟動右側 Artifact 畫布**：在 Claude 介面中，只有產出為獨立的 Markdown Artifact 文件，畫面右側才會展開專屬的預覽面板。  
+> - **實現原地人機協作 (In-place Edit)**：您可以直接在右側畫布上**反白選取任何一段提示詞**，點擊浮現的「Edit with Claude」輸入修改意見，Claude 就會原地修訂該段落，達成流暢的 Prompt 雙向協同調校！
+
+<br>
+
 </details>
 
 ---
