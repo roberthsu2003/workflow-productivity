@@ -65,10 +65,10 @@
 - 支援輸入 `/schedule` 設定每日/每週定時重複執行。**純雲端任務無須開機**，即使電腦休眠或關機也會準時在雲端執行並交付成果至手機。
 👉 **實戰操作體驗**：請參閱 [範例 4：全自動產業情報監測與定時晨報](./Examples/04_Daily_News_Brief/)（內附 [`sample_files.zip`](./Examples/04_Daily_News_Brief/sample_files.zip) 練習素材包）。
 
-### 6. 🎯 資料夾專屬指令與自主日誌維護 (Folder Instructions & Project Log)
-- **Folder instructions**：在工作資料夾中放置 `folder-instructions.md`，為該專案設定永久品牌語氣與交付規範。
-- Claude 還能自主維護與更新該資料夾的進度日誌（`PROJECT_LOG.md`），打勾完成里程碑並推播至跨裝置手機。
-👉 **實戰操作體驗**：請參閱 [範例 5：資料夾指令規範與專案日誌自主維護](./Examples/05_Folder_Instructions_Project/)（內附 [`sample_files.zip`](./Examples/05_Folder_Instructions_Project/sample_files.zip) 練習素材包）。
+### 6. 🎯 資料夾專屬指令 vs 雲端專案規範 (Folder Instructions & Project Mode)
+- **雙軌工作空間**：Cowork 支援連結本機資料夾（`folder-instructions.md` 直連硬碟）或雲端專案（`Project Instructions` 全雲端協同）。
+- Claude 還能自主維護與更新該專案的進度日誌（`PROJECT_LOG.md`），自動打勾完成里程碑並推播至跨裝置手機。
+👉 **實戰操作體驗**：請參閱 [範例 5：資料夾指令 vs 雲端專案規範、日誌自主維護與跨裝置自治中樞](./Examples/05_Folder_Instructions_Project/)（內附 [`sample_files.zip`](./Examples/05_Folder_Instructions_Project/sample_files.zip) 練習素材包）。
 
 ---
 
@@ -108,7 +108,7 @@ flowchart LR
 | **Level 2**<br>實戰應用 | [**範例 2：客訴情緒診斷、SOP 自動分流與原地微調回信**](./Examples/02_Customer_Feedback/) | **「客訴火燒屁股！」**<br>大促銷後湧入大量負評，自動依內部 SOP 分流評級（Level 1~3），秒生道歉信，並體驗原地反白微調！ | • 📋 SOP 規章自動遵循比對<br/>• 📝 原地反白微調 (Edit Drafts in Place)<br/>• ⚡ 批量文本情緒分析 | 📦 [**直接下載 `sample_files.zip`**](./Examples/02_Customer_Feedback/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/02_Customer_Feedback/sample_files/) |
 | **Level 3**<br>進階分析 | [**範例 3：跨來源財務對帳、自動程式運算與營運圖表產出**](./Examples/03_Financial_Report/) | **「月底對帳抓抓樂！」**<br>多個部門 CSV 數字對不起來，Cowork 在背景寫 Python 程式碼自動計算達成率、抓出超支虧損警訊並自動畫圖。 | • 🤖 背景 Code Execution 運算<br/>• 📊 多檔案交叉對比分析<br/>• 📈 自動資料視覺化繪圖 | 📦 [**直接下載 `sample_files.zip`**](./Examples/03_Financial_Report/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/03_Financial_Report/sample_files/) |
 | **Level 4**<br>情報排程 | [**範例 4：全自動產業情報監測、內建瀏覽器檢索與雲端定時晨報**](./Examples/04_Daily_News_Brief/) | **「週一早會免受苦！」**<br>主管要看競品動態，用內建瀏覽器聯網抓取最新新聞，設定 `/schedule` 雲端排程，筆電關機睡覺，早上手機準時收信！ | • 🌐 內建瀏覽器與 Web 檢索<br/>• 🕒 雲端排程任務 (`/schedule`)<br/>• ☁️ 雲端隔離運算 (關機照跑) | 📦 [**直接下載 `sample_files.zip`**](./Examples/04_Daily_News_Brief/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/04_Daily_News_Brief/sample_files/) |
-| **Level 5**<br>頂級代理 | [**範例 5：資料夾指令規範、專案日誌自主維護與跨裝置無縫接續**](./Examples/05_Folder_Instructions_Project/) | **「自帶靈魂的專案資料夾！」**<br>新產品發布專案，設定資料夾常駐規則，Claude 每次工作自動更新進度日誌，出門用手機無縫審批。 | • 🎯 資料夾專屬指令 (Folder Instructions)<br/>• 📱 跨裝置無縫接續 (Work from Anywhere)<br/>• 📝 專案進度日誌自主追蹤維護 | 📦 [**直接下載 `sample_files.zip`**](./Examples/05_Folder_Instructions_Project/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/05_Folder_Instructions_Project/sample_files/) |
+| **Level 5**<br>頂級代理 | [**範例 5：資料夾指令 vs 雲端專案規範、日誌自主維護與跨裝置自治中樞**](./Examples/05_Folder_Instructions_Project/) | **「自帶靈魂的工作空間！」**<br>新產品發布專案，支援本機資料夾與雲端專案雙軌設定，Claude 每次工作自動更新進度日誌，出門用手機無縫審批。 | • 📁 資料夾指令 (Folder Instructions)<br/>• 🗂️ 雲端專案規範 (Project Instructions)<br/>• 📝 專案進度日誌自主追蹤維護 | 📦 [**直接下載 `sample_files.zip`**](./Examples/05_Folder_Instructions_Project/sample_files.zip)<br/>📂 [瀏覽 `sample_files/`](./Examples/05_Folder_Instructions_Project/sample_files/) |
 
 ---
 
