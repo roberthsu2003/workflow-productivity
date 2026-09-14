@@ -13,16 +13,16 @@
 
 ## 🔍 Cowork 核心解密：連結「專案 (Project)」與「資料夾 (Folder)」有何不同？
 
-在 Claude Cowork 輸入框左下角點擊工作空間時，會看到下拉選單提供 **`+ Add folder`（連結資料夾）** 與 **`+ New project / Search projects`（連結專案）** 兩種選擇（如下圖選單）：
+在 Claude Cowork 輸入框下方點擊 **`Project or folder`**（右側預設狀態顯示為 **`Auto`** 自動偵測）時，會展開工作空間下拉選單，提供 **`+ Add folder`（連結資料夾）** 與 **`+ New project / Search projects`（建立或搜尋專案）** 等選擇（如下圖選單）：
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│ 🔍 Search projects                                  ⚙️ │
+│ 🔍 Search projects                                  🎛️ │
 ├────────────────────────────────────────────────────────┤
-│ 📁 sample_files (/Users/.../Downloads/sample_files)  ✓ │
-│ 🗂️ 矽光子與邊緣 AI 晶片 (Silicon Photonics & Edge AI)  │
-│ 📁 課程規劃                                            │
-│ 📁 工研院產業學院                                      │
+│ 🗃️ 矽光子與邊緣 AI 晶片 (Silicon Photonics & Edge AI)  │
+│ 📁 課程規劃 (/Users/.../課程規劃)                      │
+│ 📁 工研院產業學院 (/Users/.../工研院產業學院)          │
+│ 📁 workflow-productivity (/Users/.../workflow-...)     │
 ├────────────────────────────────────────────────────────┤
 │ ➕ New project                                         │
 │ 📁 Add folder                                          │
@@ -36,10 +36,10 @@
 | 比較維度 | 📁 連結資料夾 (Folder Mode) | 🗂️ 連結專案 (Project Mode) |
 |:---|:---|:---|
 | **底層本質** | 使用者電腦上的**實體硬碟目錄**（Local Filesystem） | Claude 伺服器上的**雲端隔離知識庫**（Cloud Project） |
-| **建立與入口** | 點擊 `+ Add folder`，瀏覽選取電腦資料夾 | 點擊 `+ New project`，或從 Projects 專區建立 |
-| **長效規範如何設定** | 在資料夾根目錄放置 **`folder-instructions.md`**（或 `CLAUDE.md`） | 在專案設定中的 **`Project Instructions`（自訂專案指示）** |
-| **參考資料庫 (Context)**| 直接讀取該資料夾內的所有實體檔案 | 上傳至 **`Project Knowledge`（專案知識庫）**（支援 RAG 檢索） |
-| **產出結果與回寫** | **直接寫入實體硬碟**（可新增檔案、原地修改與覆寫） | 輸出在雲端對話中、或生成 **Artifacts** 畫布供預覽與微調 |
+| **建立與入口** | 點擊 `Project or folder` ➜ 選取 **`+ Add folder`** 瀏覽電腦目錄 | 點擊 `Project or folder` ➜ 選取 **`+ New project`**（亦支援在視窗中按 `+ Use a folder` 融合本機目錄） |
+| **長效規範如何設定** | 在資料夾根目錄放置 **`folder-instructions.md`**（或 `CLAUDE.md`） | 在專案建立時填入 **`What are you trying to achieve?`**，或在專案設定中的 **`Project Instructions`** |
+| **參考資料庫 (Context)**| 直接讀取該資料夾內的所有實體檔案 | 上傳至 **`Project Knowledge`（專案知識庫）**（支援 RAG 檢索，或透過 `+ Use a folder` 直連本地檔案） |
+| **產出結果與回寫** | **直接寫入實體硬碟**（可新增檔案、原地修改與覆寫） | 輸出在雲端對話中、或生成 **Artifacts** 畫布供預覽（若綁定 folder 亦可回寫硬碟） |
 | **硬體連線依賴** | 依賴 Claude Desktop 應用程式維持電腦連網連線 | **100% 雲端運行**，電腦完全關機休眠也能在手機 App 隨時操作 |
 | **團隊協同能力** | 僅限這台電腦單機使用（除非資料夾為 Dropbox/iCloud） | 支援 Team / Enterprise **多人共享專案、共同沉澱知識** |
 | **最佳適用情境** | 習慣在本地 VS Code/Finder 管理大量實體程式碼或文件 | 跨設備隨時辦公（手機/平板/公司電腦）、重視團隊知識共用 |
@@ -146,8 +146,9 @@ flowchart TD
 
 1. **下載解壓**：下載並解壓縮 [`sample_files.zip`](./sample_files.zip) 取得測試資料夾 `sample_files/`。
 2. **切換 Cowork 並連結資料夾**：
-   - 登入 Claude Desktop 桌面版，在輸入框切換為 **Cowork**。
-   - 點擊工作空間選擇器，點擊 **`+ Add folder`**，選取解壓縮後的 `sample_files` 資料夾。
+   - 登入 Claude Desktop 桌面版，在輸入框上方或切換為 **Cowork** 模式。
+   - 點擊輸入框下方的 **`Project or folder`**（預設顯示為 `Auto`）。
+   - 在彈出選單底部點擊 **`+ Add folder`**，選取解壓縮後的 `sample_files` 資料夾。
 3. **送出 Prompt**：
    - 貼上上述 RTCCF Prompt 送出。
 4. **驗證成果**：
@@ -159,17 +160,22 @@ flowchart TD
 
 ### 🅱️ 軌道 B：雲端專案模式（Project Mode・全雲端跨裝置協同 ⭐）
 
-1. **建立 Claude 專案**：
-   - 點擊左側導覽列的 **`Projects`**（或在 Cowork 下拉選單點擊 **`+ New project`**）。
-   - 專案名稱輸入：`SmartFlow AI 上線發布專案`。
-2. **配置專案規範與知識庫**：
-   - **設定 Instructions (自訂指示)**：點擊專案右側的「Set project instructions」，將 `sample_files/folder-instructions.md` 的文字內容直接貼入並儲存。
-   - **上傳 Knowledge (專案知識庫)**：點擊「Add content」，將 `product_launch_brief.md` 與 `PROJECT_LOG.md` 拖曳上傳至專案知識庫中。
-3. **在 Cowork 中選擇此專案並執行**：
-   - 在 Cowork 輸入框左下角工作空間下拉選單中，點選剛才建立的 **`SmartFlow AI 上線發布專案`**。
+1. **開啟建立專案視窗**：
+   - 在 Cowork 模式輸入框下方點擊 **`Project or folder`**。
+   - 在選單最底部點選 **`+ New project`**，此時會彈出 **「Create a project」** 視窗。
+2. **填寫專案設定（精準對應介面欄位）**：
+   - **What are you working on?**：填入專案名稱，例如：`SmartFlow AI 上線發布專案`。
+   - **What are you trying to achieve?**：填入專案目標與指令規範（可直接將 `sample_files/folder-instructions.md` 內容貼於此處作為長效規範）。
+   - 💡 **二合一彈性功能（`+ Use a folder`）**：
+     - 若希望此專案**兼具本機硬碟直連讀寫能力**，可點擊視窗下方的 **`+ Use a folder`** 並選取 `sample_files` 資料夾！
+     - 若希望維持**純雲端模式（不綁定本機路徑）**，則不點擊該按鈕，直接點擊右下角 **`Create project`** 建立。
+3. **配置專案知識庫 (Knowledge)（純雲端專案適用）**：
+   - 若為未掛載本地資料夾的純雲端專案，進入專案後點擊知識庫的「Add content」，將 `product_launch_brief.md` 與 `PROJECT_LOG.md` 拖曳上傳至專案知識庫中。
+4. **在 Cowork 中選取專案並執行**：
+   - 在 Cowork 輸入框下方的 **`Project or folder`** 下拉選單中，點選剛才建立的 **`SmartFlow AI 上線發布專案`**。
    - 貼上上述 RTCCF Prompt 送出。
-4. **體驗跨裝置隨時收成**：
-   - Claude 會依據專案 Instructions 自動產出新聞稿，並在畫面右側展開 **Artifact**，產出自動打勾 `[x]` 的更新版 `PROJECT_LOG.md`。
+5. **體驗跨裝置隨時收成**：
+   - Claude 會依據專案目標與規範自動產出新聞稿，並在畫面右側展開 **Artifact**，產出自動打勾 `[x]` 的更新版 `PROJECT_LOG.md`。
    - **手機隨時接續**：此時拿出您的手機打開 Claude App，進入該專案與對話，新聞稿與最新日誌完全同步在雲端，隨時都能在通勤路上接續指派後續任務！
 
 ---
