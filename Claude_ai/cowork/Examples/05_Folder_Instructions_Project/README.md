@@ -4,45 +4,103 @@
 > 💻 **適用平台**：Claude 全平台（Desktop / Web / Mobile / Chrome 側邊欄）  
 > 💼 **適用角色**：專案總監 (PMO)、產品行銷主管 (PMM)、品牌公關總監、創業團隊負責人。  
 > 🎯 **核心體驗**：
-> - 🏢 **雙軌工作空間（專案 vs 資料夾）**：搞懂 Cowork 連結「**雲端專案 (Project)**」與「**本機資料夾 (Folder)**」的底層架構，自由切換團隊雲端協同或本機硬碟直連。
-> - 🎯 **永久規範約束 (Persistent Instructions)**：透過 `folder-instructions.md` 或 `Project Instructions`，賦予 AI 永久品牌語氣與交付規章，無需在每次對話重複贅述。
-> - 📝 **專案進度日誌自主維護 (Self-Maintaining Project Log)**：**極具自主性的 Agent 特徵！** 每次任務完成後，Claude 會自主開啟並更新 `PROJECT_LOG.md`，自動打勾完成里程碑、記錄時間戳記與摘要。
-> - 📱 **跨裝置無縫接續 (Work from Anywhere)**：在辦公室電腦啟動專案，出門在手機 App 檢視進度與給予回饋，回家打開筆電一鍵收成。
+> - 🏢 **五大模組分工體系**：解密 Claude 專案右側面板（**Instructions**、**Memory**、**Context**、**Folder**、**Scheduled**）的底層定位。
+> - ⚡ **快取機制 (Prompt Caching) vs. 本機直連 (Folder)**：搞懂為什麼雲端 Context 會被快取（靜態唯讀），而本機 Folder 則是動態讀寫、自動原地回寫。
+> - 📝 **專案進度日誌自主維護 (Self-Maintaining Project Log)**：**極具自主性的 Agent 特徵！** 任務完成後，Claude 自主開啟並更新硬碟上的 `PROJECT_LOG.md`，自動打勾完成里程碑、記錄時間戳記，**完全零手動**！
+> - 🌟 **專案 + 資料夾二合一終極形態 (Project with Folder)**：結合雲端專案的統一規範與本機硬碟的自動化檔案閉環，打造真正的 AI 工作中樞。
 
 ---
 
-## 🔍 Cowork 核心解密：連結「專案 (Project)」與「資料夾 (Folder)」有何不同？
+## 🔍 Cowork 核心解密：解剖專案右側面板的 5 大支柱
 
-在 Claude Cowork 輸入框下方點擊 **`Project or folder`**（右側預設狀態顯示為 **`Auto`** 自動偵測）時，會展開工作空間下拉選單，提供 **`+ Add folder`（連結資料夾）** 與 **`+ New project / Search projects`（建立或搜尋專案）** 等選擇（如下圖選單）：
+在 Claude Desktop 或 Web 介面中進入專案時，右側面板清楚劃分了 5 個核心模組（如下圖所示）：
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│ 🔍 Search projects                                  🎛️ │
+│ How can I help you today?                              │
+│ [＋ Chat] [Cowork]                       Sonnet 5 High │
+│                                                        │
+│ SmartFlow AI 上線發布專案  Auto                        │
+└────────────────────────────────────────────────────────┘
+    │
+    ▼ 右側專案管理面板 (Project Panel)
+┌────────────────────────────────────────────────────────┐
+│ Instructions                                         ➕│
+│ 定義長效角色語氣、產出規章與排版規範 (所有對話自動繼承)   │
 ├────────────────────────────────────────────────────────┤
-│ 🗃️ 矽光子與邊緣 AI 晶片 (Silicon Photonics & Edge AI)  │
-│ 📁 課程規劃 (/Users/.../課程規劃)                      │
-│ 📁 工研院產業學院 (/Users/.../工研院產業學院)          │
-│ 📁 workflow-productivity (/Users/.../workflow-...)     │
+│ Memory                                       🔒Only you│
+│ Claude 隨對話次數自主記住的偏好與重要背景              │
 ├────────────────────────────────────────────────────────┤
-│ ➕ New project                                         │
-│ 📁 Add folder                                          │
+│ Context                                              ➕│
+│ 雲端靜態參考資料庫（產品白皮書、法規手冊 PDF，享快取折扣）│
+├────────────────────────────────────────────────────────┤
+│ Folder                                                 │
+│ 📁 sample_files                                        │
+│ On this computer（本地實體硬碟直連，即時動態讀寫回寫） │
+├────────────────────────────────────────────────────────┤
+│ Scheduled                                            ➕│
+│ 定時自動排程任務（例如每天早上自動巡檢進度並發晨報）     │
 └────────────────────────────────────────────────────────┘
 ```
 
-這兩者在儲存位置、規範設定、檔案讀寫與使用情境上有本質上的不同：
+---
 
-### 📊 專案 (Project) vs. 資料夾 (Folder) 完整規格對照表
+## 🧠 深度剖析：快取機制 (Prompt Caching) 與 Folder 的本質差異
 
-| 比較維度 | 📁 連結資料夾 (Folder Mode) | 🗂️ 連結專案 (Project Mode) |
+許多學員在實作時常會產生三大靈魂疑問：
+1. **只有 Context 會被 Cached，還是 Folder 的內容也會被 Cached？**
+2. **更新後的 `PROJECT_LOG.md` 會自動加入還是要手動？**
+3. **如果要手動，那為什麼還要有 Folder？**
+
+### 1. 只有 Context 會被快取，Folder 是本機動態讀寫
+
+| 比較維度 | 📄 Context（雲端靜態知識庫） | 📁 Folder（On this computer 本機目錄） |
 |:---|:---|:---|
-| **底層本質** | 使用者電腦上的**實體硬碟目錄**（Local Filesystem） | Claude 伺服器上的**雲端隔離知識庫**（Cloud Project） |
-| **建立與入口** | 點擊 `Project or folder` ➜ 選取 **`+ Add folder`** 瀏覽電腦目錄 | 點擊 `Project or folder` ➜ 選取 **`+ New project`**（亦支援在視窗中按 `+ Use a folder` 融合本機目錄） |
-| **長效規範如何設定** | 在資料夾根目錄放置 **`folder-instructions.md`**（或 `CLAUDE.md`） | 在專案建立時填入 **`What are you trying to achieve?`**，或在專案設定中的 **`Project Instructions`** |
-| **參考資料庫 (Context)**| 直接讀取該資料夾內的所有實體檔案 | 上傳至 **`Project Knowledge`（專案知識庫）**（支援 RAG 檢索，或透過 `+ Use a folder` 直連本地檔案） |
-| **產出結果與回寫** | **直接寫入實體硬碟**（可新增檔案、原地修改與覆寫） | 輸出在雲端對話中、或生成 **Artifacts** 畫布供預覽（若綁定 folder 亦可回寫硬碟） |
-| **硬體連線依賴** | 依賴 Claude Desktop 應用程式維持電腦連網連線 | **100% 雲端運行**，電腦完全關機休眠也能在手機 App 隨時操作 |
-| **團隊協同能力** | 僅限這台電腦單機使用（除非資料夾為 Dropbox/iCloud） | 支援 Team / Enterprise **多人共享專案、共同沉澱知識** |
-| **最佳適用情境** | 習慣在本地 VS Code/Finder 管理大量實體程式碼或文件 | 跨設備隨時辦公（手機/平板/公司電腦）、重視團隊知識共用 |
+| **本質與儲存** | 上傳至 Anthropic 雲端伺服器的檔案複本 | **您電腦實體硬碟上的真實目錄**（Local Filesystem） |
+| **快取機制** | **100% 深度快取 (Prompt Caching)**<br>靜態常駐於前置 System Context，享受 90% 費用折扣與極速回應。 | **動態載入 (Agent Tool Execution)**<br>Claude 不會把整部硬碟預先載入快取，而是需要時才呼叫本地工具即時讀取與寫入。 |
+| **可否被 AI 寫入** | ❌ **唯讀 (Read-only)**：Claude 無法透過對話直接修改雲端 Context 裡的檔案。 | ✅ **雙向讀寫 (Read & Write)**：Claude 可直接新增檔案、原地覆寫修改硬碟檔案。 |
+| **檔案變更即時性** | 本地檔案修改後，雲端 Context **不會自動同步**。 | **即時反映**！本地檔案一變更，Claude 下次讀取就是最新版。 |
+
+### 2. 更新後的 `PROJECT_LOG.md` 會自動生效，絕不需手動加入！
+
+- 當 Claude Cowork 執行完任務後，是直接呼叫本機檔案工具，**原地修改了您硬碟上的 `sample_files/PROJECT_LOG.md`**。
+- 下一次任務啟動時，Claude 直接去資料夾讀取實體檔案，**讀到的就已經是最新打勾 `[x]`、最新時間戳記的內容**。
+- ⚠️ **重要避坑警告**：**千萬不要把 `PROJECT_LOG.md` 手動上傳到右側的 Context 裡！**  
+  Context 是靜態快取的，若手動放進 Context，雲端就會鎖定 0% 的舊版，導致本機硬碟已是 33%，而雲端 Context 還是 0% 的嚴重認知衝突！
+
+### 3. 為什麼要有 Folder？它解決了哪些痛點？
+
+如果沒有 Folder（純網頁版或純雲端專案），你的工作流程充滿人工折磨：
+- ❌ **手動上傳**：每次有新檔案都要手動傳上 Context。
+- ❌ **手動複製貼上**：Claude 產出新聞稿或日誌後，只能顯示在畫面上，你得手動複製存回硬碟。
+- ❌ **手動維護版本**：日誌更新了，你必須到雲端手動刪除舊檔、重新上傳新版。
+
+**有了 Folder，就是為了徹底實現「零手動」的自動化閉環：**
+
+```mermaid
+flowchart LR
+    A["💻 電腦硬碟 (Folder)"] -->|1. Cowork 自動即時讀取| B["🧠 Claude 大腦 (依 Instructions 規範)"]
+    B -->|2. 撰寫新聞稿 & 自主更新日誌| C["⚡ 成果生成"]
+    C -->|3. 直接原地覆寫與新增| A
+```
+
+- **讀取零手動**：Claude 自動遍歷本機資料夾。
+- **寫入零手動**：成果（`press_release_draft.md`）與進度日誌（`PROJECT_LOG.md`）**直接生成於您的硬碟中**。
+- **接續零手動**：下一個任務自動讀取硬碟最新日誌，無縫持續推進！
+
+---
+
+## 📊 專案 (Project) vs. 資料夾 (Folder) 完整規格對照表
+
+| 比較維度 | 📁 連結資料夾 (Folder Mode) | 🗂️ 專案融合資料夾 (Project + Folder ⭐) | ☁️ 純雲端專案 (Cloud-Only Project) |
+|:---|:---|:---|:---|
+| **底層架構** | 純本機硬碟目錄直連 | **雲端專案規範 + 本機硬碟讀寫（最佳實踐）** | 100% 雲端隔離沙盒 |
+| **入口路徑** | `Project or folder` ➜ `+ Add folder` | `+ New project` ➜ 點選 **`+ Use a folder`** | `+ New project`（不選 folder） |
+| **長效規範設定** | 目錄下的 `folder-instructions.md` | 右側面板的 **`Instructions`** | 右側面板的 **`Instructions`** |
+| **動態作業區** | 本機資料夾（直接讀寫） | **右側 Folder 區塊（直接讀寫實體硬碟）** | 雲端對話框與 Artifact 畫布 |
+| **靜態參考資料** | 放在同目錄下的參考檔 | **右側 Context 區塊（享 Prompt Caching）** | 右側 Context 區塊（享 Prompt Caching）|
+| **日誌回寫方式** | 原地覆寫本機 `PROJECT_LOG.md` | **原地覆寫本機 `PROJECT_LOG.md`（零手動！）** | 輸出為 Artifact 畫布（需手動存檔）|
+| **適用情境** | 本地單機快速任務、程式碼開發 | **企業正式專案、團隊長效標準作業流程** | 外出手機 App 應急、無本機電腦環境 |
 
 ---
 
@@ -50,9 +108,8 @@
 
 > *「每次為了新產品上線發布打開 AI，你都得把同一段話打一次：『我們是 B2B 科技品牌、調性要敏捷專業不可浮誇、章節要有 Owner 和風險評估……』」*  
 > *更崩潰的是，一個多星期的專案跑下來，產生了十幾份檔案，你根本記不清哪一份是最新版、哪一項任務已經完成，還得花額外時間手動維護 Excel 專案進度表。*  
-> *下班搭車時，主管突然傳訊追問進度，你只能乾等回家開筆電……*
 
-**現在，讓 Claude Cowork 透過「資料夾指令」或「專案規範」，將工作空間升級為「具備長效記憶與自主維護能力的智慧中樞」！**
+**現在，讓 Claude 透過「專案指示」與「本機資料夾連線」，將工作空間升級為「具備長效記憶與自主維護能力的智慧中樞」！**
 
 ---
 
@@ -78,7 +135,7 @@ sample_files/
 ├── product_launch_brief.md       (新產品上線需求書)
 └── PROJECT_LOG.md                (初始狀態：進度 0%，里程碑皆為 [ ])
 
-            ⬇️ 透過 Claude Cowork 自主理解並執行（資料夾或專案模式） ⬇️
+            ⬇️ 透過 Claude Cowork 自主理解並執行 ⬇️
 
 【執行後：產出符合規範之公關草案，並自主更新專案日誌】
 ├── press_release_draft.md        ⭐【新生成！完全符合 4 大章節與專業語氣】
@@ -96,22 +153,22 @@ sample_files/
 
 ```mermaid
 flowchart TD
-    Start["🎯 選擇工作空間 (資料夾 sample_files 或 雲端專案)"] --> AutoLoad["🧠 自動載入規範 (folder-instructions.md 或 Project Instructions)"]
+    Start["🎯 選擇工作空間 (Project 綁定 sample_files 資料夾)"] --> AutoLoad["🧠 自動載入規範 (Instructions 或 folder-instructions.md)"]
     AutoLoad --> Adopt["🎯 吸收品牌調性 (敏捷/專業) 與排版規範 (Objective/Owner/Milestone/Risks)"]
     Adopt --> ReadBrief["📄 讀取產品需求書 product_launch_brief.md"]
     GenPR["✍️ 撰寫符合規範之正式新聞稿 press_release_draft.md"]
     ReadBrief --> GenPR
     GenPR --> CheckRule{"📜 檢查自動維護進度日誌規則"}
-    CheckRule -->|觸發自動維護規範| OpenLog["📖 自主開啟 PROJECT_LOG.md"]
-    OpenLog --> UpdateLog["✏️ 寫入時間戳記、將任務一勾選為 [x]、計算進度百分比"]
-    UpdateLog --> Deliver["🚀 交付成果（資料夾回寫實體檔案 / 專案產出 Artifact）"]
+    CheckRule -->|觸發自動維護規範| OpenLog["📖 自主開啟硬碟上的 PROJECT_LOG.md"]
+    OpenLog --> UpdateLog["✏️ 原地覆寫時間戳記、將任務一勾選為 [x]、計算進度百分比"]
+    UpdateLog --> Deliver["🚀 交付成果（硬碟自動多出新聞稿，日誌自動更新完成）"]
 ```
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 通用於資料夾與專案）
+## 🤖 Cowork 實戰 Prompt（RTCCF 結構）
 
-在 Cowork 模式下連結資料夾或專案後，輸入以下極簡 Prompt——請特別留意：**我們完全不需要在 Prompt 裡重複說明品牌語氣與排版規定，因為資料夾指令／專案指示已全權代勞！**
+在 Cowork 模式下連結資料夾或專案後，輸入以下極簡 Prompt——**我們完全不需要在 Prompt 裡重複說明品牌語氣與排版規定，因為規範已全權代勞！**
 
 ```markdown
 ## Role
@@ -138,58 +195,71 @@ flowchart TD
 
 ---
 
-## 🚀 學員實戰動手做：雙軌選擇演練
+## 🚀 學員實戰動手做：三種玩法實作演練
 
-學員可依個人使用偏好，選擇 **軌道 A（本機資料夾模式）** 或 **軌道 B（雲端專案模式）** 進行實作演練：
+學員可依使用情境選擇最合適的模式進行演練，**強烈推薦「玩法 ②（專案融合資料夾）」作為正式工作模式**：
 
-### 🅰️ 軌道 A：本機資料夾模式（Folder Mode・本機硬碟直連回寫）
+### 🌟 玩法 ②：專案融合資料夾模式（Project + Folder・終極最佳實踐 ⭐）
 
-1. **下載解壓**：下載並解壓縮 [`sample_files.zip`](./sample_files.zip) 取得測試資料夾 `sample_files/`。
-2. **切換 Cowork 並連結資料夾**：
-   - 登入 Claude Desktop 桌面版，在輸入框上方或切換為 **Cowork** 模式。
-   - 點擊輸入框下方的 **`Project or folder`**（預設顯示為 `Auto`）。
-   - 在彈出選單底部點擊 **`+ Add folder`**，選取解壓縮後的 `sample_files` 資料夾。
-3. **送出 Prompt**：
-   - 貼上上述 RTCCF Prompt 送出。
-4. **驗證成果**：
-   - 執行完成後，打開您電腦上的 `sample_files/` 資料夾，您會親眼看到：
-     - 自動多了一份實體檔案 **`press_release_draft.md`**！
-     - 原本的 **`PROJECT_LOG.md`** 被 Claude **原地修改**，任務一自動打勾 `[x]`，並補上了時間戳記與成果紀錄！
+這正是兼具「雲端專案規範 (Instructions)」與「本地硬碟自動回寫 (Folder)」的最高境界：
+
+1. **開啟建立專案視窗**：
+   - 在輸入框下方點擊 **`Project or folder`**（預設顯示 `Auto`）。
+   - 在彈出面板最下方點擊 **`+ New project`**，彈出 **「Create a project」** 視窗。
+2. **填寫專案設定（精準對應介面欄位）**：
+   - **What are you working on?**：填入 `SmartFlow AI 上線發布專案`。
+   - **What are you trying to achieve?**：填入專案目標與指令規範（可直接將 `sample_files/folder-instructions.md` 內容貼入）。
+   - ⭐ **關鍵步驟（`+ Use a folder`）**：
+     - 點擊對話框下方的 **`+ Use a folder`** 按鈕。
+     - 選取解壓縮後的 **`sample_files`** 資料夾。
+     - 點擊 **`Create project`**。
+3. **確認專案右側面板狀態**：
+   - 進入專案後，右側會出現：
+     - **Instructions**：已載入您的品牌與排版規章。
+     - **Folder**：顯示 `📁 sample_files` 與 `On this computer` 狀態。
+     - **Context**：保持空白即可（**千萬不要把 `PROJECT_LOG.md` 傳上來！**）。
+4. **送出 Prompt 執行**：
+   - 切換至 **Cowork** 模式，貼上上述 RTCCF Prompt 送出。
+5. **見證硬碟自動化奇蹟**：
+   - 打開電腦上的 `sample_files/` 資料夾，實體檔案 **`press_release_draft.md`** 已自動誕生！
+   - 打開 **`PROJECT_LOG.md`**，任務一已經被 Claude 自動打勾 `[x]`，進度升為 33%！**整個過程完全不需要任何手動上傳或下載！**
 
 ---
 
-### 🅱️ 軌道 B：雲端專案模式（Project Mode・全雲端跨裝置協同 ⭐）
+### 🅰️ 玩法 ①：純本機資料夾模式（Folder Mode Only・單機輕量首選）
 
-1. **開啟建立專案視窗**：
-   - 在 Cowork 模式輸入框下方點擊 **`Project or folder`**。
-   - 在選單最底部點選 **`+ New project`**，此時會彈出 **「Create a project」** 視窗。
-2. **填寫專案設定（精準對應介面欄位）**：
-   - **What are you working on?**：填入專案名稱，例如：`SmartFlow AI 上線發布專案`。
-   - **What are you trying to achieve?**：填入專案目標與指令規範（可直接將 `sample_files/folder-instructions.md` 內容貼於此處作為長效規範）。
-   - 💡 **二合一彈性功能（`+ Use a folder`）**：
-     - 若希望此專案**兼具本機硬碟直連讀寫能力**，可點擊視窗下方的 **`+ Use a folder`** 並選取 `sample_files` 資料夾！
-     - 若希望維持**純雲端模式（不綁定本機路徑）**，則不點擊該按鈕，直接點擊右下角 **`Create project`** 建立。
-3. **配置專案知識庫 (Knowledge)（純雲端專案適用）**：
-   - 若為未掛載本地資料夾的純雲端專案，進入專案後點擊知識庫的「Add content」，將 `product_launch_brief.md` 與 `PROJECT_LOG.md` 拖曳上傳至專案知識庫中。
-4. **在 Cowork 中選取專案並執行**：
-   - 在 Cowork 輸入框下方的 **`Project or folder`** 下拉選單中，點選剛才建立的 **`SmartFlow AI 上線發布專案`**。
+如果您只是想在本地快速處理一組檔案，不想在雲端建立專案：
+
+1. **切換 Cowork 並連結資料夾**：
+   - 在輸入框切換為 **Cowork** 模式。
+   - 點擊輸入框下方的 **`Project or folder`**（顯示 `Auto`）。
+   - 在選單最底部點擊 **`+ Add folder`**，選取解壓縮後的 `sample_files` 資料夾。
+2. **送出 Prompt**：
    - 貼上上述 RTCCF Prompt 送出。
-5. **體驗跨裝置隨時收成**：
-   - Claude 會依據專案目標與規範自動產出新聞稿，並在畫面右側展開 **Artifact**，產出自動打勾 `[x]` 的更新版 `PROJECT_LOG.md`。
-   - **手機隨時接續**：此時拿出您的手機打開 Claude App，進入該專案與對話，新聞稿與最新日誌完全同步在雲端，隨時都能在通勤路上接續指派後續任務！
+   - Claude 會直接自動讀取資料夾根目錄的 `folder-instructions.md` 作為規範，並自動修改實體硬碟中的檔案。
+
+---
+
+### ☁️ 玩法 ③：純雲端專案模式（Cloud-Only Project・無電腦手機應急）
+
+當您身處戶外、手邊只有手機或 iPad，電腦沒有開機時：
+
+1. 建立專案時**不點選 `+ Use a folder`**，直接建立純雲端專案。
+2. 規範填入 **Instructions**；靜態參考檔案上傳至右側 **Context**。
+3. 此時 Claude 產出的公關稿與打勾日誌將會以 **Artifact** 畫布呈現，供您在手機螢幕上即時預覽與檢閱進度。
 
 ---
 
 ## 💡 避坑指南與核心收穫 (Tips & Takeaways)
 
-> [!TIP]
-> 1. **該選「資料夾」還是「專案」？**  
->    - **選資料夾**：需要直接在電腦 Finder/檔案總管中產生或編輯實體檔案（如程式碼專案、本地試算表、本機報告）。
->    - **選專案**：需要跨裝置（辦公室電腦、手機 App、家用筆電）隨時接續進度，或是團隊多人需要共享同一套品牌規範與知識庫時。
-> 2. **日誌自主維護的震撼價值**：  
->    讓 AI 自動在產出成果後主動更新進度日誌（Self-reflection & Self-logging），是現代自主代理（Agentic AI）與傳統聊天機器人最大的差別。透過規範的引導，專案進度再也不需要人肉催繳與手動填寫。
-> 3. **隨時可復原與一鍵重置**：  
->    - 若在練習多次更新日誌後想重新演練或重設進度為 0%，直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
+> [!IMPORTANT]
+> 1. **「Context」與「Folder」該放什麼？**  
+>    - **放 Context**：永遠不變的**靜態參考聖經**（如產品規格書 PDF、品牌規章），享受 100% Prompt Caching 快取折扣。
+>    - **放 Folder**：需要**動態編輯、產出或打勾維護的實體檔案**（如需求書、草稿、`PROJECT_LOG.md`）。
+> 2. **絕對不要把動態日誌上傳到 Context！**  
+>    Context 是唯讀靜態的，一旦上傳就會被快取鎖定。動態日誌留在 Folder 才能享受本機原地讀寫、零手動同步的威力！
+> 3. **隨時一鍵還原練習環境**：  
+>    若演練多次後想重設進度為 0%，只需再次解壓縮目錄內的 [`sample_files.zip`](./sample_files.zip) 覆蓋，即可秒速還原初始狀態！
 
 ---
 
