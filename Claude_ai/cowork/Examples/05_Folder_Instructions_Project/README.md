@@ -207,17 +207,19 @@ flowchart TD
    - 在輸入框下方點擊 **`Project or folder`**（預設顯示 `Auto`）。
    - 在彈出面板最下方點擊 **`+ New project`**，彈出 **「Create a project」** 視窗。
 2. **填寫專案設定（精準對應介面欄位）**：
-   - **What are you working on?**：填入 `SmartFlow AI 上線發布專案`。
-   - **What are you trying to achieve?**：填入專案目標與指令規範（可直接將 `sample_files/folder-instructions.md` 內容貼入）。
+   - **What are you working on?**：填入專案名稱，例如：`SmartFlow AI 上線發布專案`。
+   - **What are you trying to achieve?**：**這是「專案描述 / 宗旨目標 (Project Description)」**，會顯示在專案標題下方。用簡明的一兩句話描述即可（例如：`推進 SmartFlow AI 上線發布，包含正式新聞稿撰寫、進度日誌自主維護與後續行銷規劃。`）。
    - ⭐ **關鍵步驟（`+ Use a folder`）**：
      - 點擊對話框下方的 **`+ Use a folder`** 按鈕。
      - 選取解壓縮後的 **`sample_files`** 資料夾。
      - 點擊 **`Create project`**。
-3. **確認專案右側面板狀態**：
+3. **確認專案右側面板與長效規範設定**：
    - 進入專案後，右側會出現：
-     - **Instructions**：已載入您的品牌與排版規章。
-     - **Folder**：顯示 `📁 sample_files` 與 `On this computer` 狀態。
-     - **Context**：保持空白即可（**千萬不要把 `PROJECT_LOG.md` 傳上來！**）。
+     - **Folder**：顯示 `📁 sample_files` 與 `On this computer`（硬碟連線成功！）。
+     - **Context**：保持空白即可（**切勿上傳 `PROJECT_LOG.md`！**）。
+     - **Instructions**：
+       - 💡 **免手動填寫！** 因為已綁定 `Folder`，Claude Cowork 在執行時會**自動讀取資料夾內的 `folder-instructions.md`** 作為約束！
+       - （亦可點擊右側 `Instructions (+)` 貼入規範備用，兩者皆通）。
 4. **送出 Prompt 執行**：
    - 切換至 **Cowork** 模式，貼上上述 RTCCF Prompt 送出。
 5. **見證硬碟自動化奇蹟**：
