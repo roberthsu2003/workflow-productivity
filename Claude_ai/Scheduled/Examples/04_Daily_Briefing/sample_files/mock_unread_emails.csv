@@ -1,0 +1,5 @@
+id,sender,sender_email,subject,received_time,snippet,priority_flag
+EM-101,Sarah Lin (TechCorp),sarah.lin@techcorp.io,"【緊急】今天下午會議前請先確認 API 驗證憑證","2026-09-14 07:45","我們資訊安全團隊發現測試環境的 OAuth 憑證將於今日中午到期，若未更新下午 14:00 會議將無法進行連線實測，請務必在上午協助展期更新！",URGENT
+EM-102,AWS Notification,no-reply@amazon.com,"Monthly Billing Summary - Invoice Available","2026-09-14 06:15","Your AWS monthly invoice for August 2026 is now available for download. Total amount: USD $324.50. No immediate action required if auto-pay is on.",LOW
+EM-103,Mark Huang (行銷部),mark.h@company.com,"下午 14:30 預算初審會議資料預覽與出席確認","2026-09-14 08:10","附上今日下午 14:30 預算會議簡報初稿，因時間緊迫，請確認是否能準時實體出席會議室 A。",MEDIUM
+EM-104,HR Department,hr@company.com,"【全體公告】年度健檢預約系統即日起開放","2026-09-14 08:30","同仁好，2026 年度員工健康檢查預約將於本週五截止，請尚未填寫意願的同仁儘早至員工入口網登記。",NORMAL

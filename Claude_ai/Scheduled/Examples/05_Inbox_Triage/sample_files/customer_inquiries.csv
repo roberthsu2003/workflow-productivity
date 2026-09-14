@@ -1,0 +1,5 @@
+ticket_id,sender_name,sender_company,subject,received_time,content_body
+TICK-501,David Chen,MegaRetail Corp,"【緊急】API 金鑰報錯 403 無法正常同步訂單","2026-09-14 07:12","您好，我們在 06:50 批量同步訂單時系統突然回傳 HTTP 403 Forbidden，目前有 800+ 筆電商訂單卡在排程無法出貨，請工程團隊務必火速支援排查！"
+TICK-502,Jessica Wu,Global Trade Ltd,"詢問企業版 (Enterprise) 年約報價與 SLA 條款","2026-09-14 07:35","您好，我們評估下季導入貴司的工作流程自動化系統，預計使用者約 50 人。想索取企業方案費用明細與 SLA 服務支援承諾書，謝謝。"
+TICK-503,Michael Lin,個人用戶,"忘記帳號登入密碼且收不到驗證信","2026-09-14 07:50","我在登入時點選忘記密碼，但等了 20 分鐘信箱都沒有收到重設連結，垃圾郵件也沒有，請幫忙確認帳號狀態。"
+TICK-504,Anna Wang,Sunrise Media,"產品功能優化建議：希望排程介面支援搜尋與標籤分類","2026-09-14 08:05","團隊非常喜歡 Scheduled 功能！如果未來能在列表加上標籤篩選與資料夾分類就更完美了，提供給產品團隊參考。"

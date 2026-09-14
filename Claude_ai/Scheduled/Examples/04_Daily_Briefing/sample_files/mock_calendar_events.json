@@ -1,0 +1,38 @@
+[
+  {
+    "id": "evt-001",
+    "title": "每日團隊晨會 (Daily Standup)",
+    "start_time": "2026-09-14 09:30",
+    "end_time": "2026-09-14 10:00",
+    "location": "Google Meet",
+    "attendees": ["Alex (Lead)", "Bob (Backend)", "Carol (Design)", "David (Frontend)"],
+    "notes": "盤點 Sprint 3 剩餘驗收項目，需準備本週進度彙整。"
+  },
+  {
+    "id": "evt-002",
+    "title": "重點客戶 TechCorp 系統驗收對齊會議",
+    "start_time": "2026-09-14 14:00",
+    "end_time": "2026-09-14 15:00",
+    "location": "Zoom Room 802",
+    "attendees": ["TechCorp 採購負責人 Sarah", "我方業務主管 Emily", "你 (專案代表)"],
+    "notes": "對方針對上週 API 延遲有疑問，需攜帶效能調優報告進行答辯。"
+  },
+  {
+    "id": "evt-003",
+    "title": "內部跨部門行銷活動預算初審",
+    "start_time": "2026-09-14 14:30",
+    "end_time": "2026-09-14 15:30",
+    "location": "會議室 A",
+    "attendees": ["行銷協理 Mark", "財務專員 Kelly"],
+    "notes": "【注意時間衝突！】審查 Q4 社群推廣與實體工作坊預算分攤。"
+  },
+  {
+    "id": "evt-004",
+    "title": "一對一導師輔導 (1-on-1 with New Intern)",
+    "start_time": "2026-09-14 16:30",
+    "end_time": "2026-09-14 17:00",
+    "location": "辦公室 3 樓咖啡區",
+    "attendees": ["實習生 Leo"],
+    "notes": "檢視本週環境建置與新手任務完成度。"
+  }
+]

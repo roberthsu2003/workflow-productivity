@@ -1,0 +1,23 @@
+[
+  {
+    "meeting_id": "MTG-8801",
+    "meeting_title": "Apex Logistics 智慧倉儲系統方案提案與 Q&A",
+    "scheduled_time": "2026-09-14 14:00 - 15:00",
+    "format": "線上視訊 (Microsoft Teams)",
+    "client_company": "Apex Logistics (大中華區物流龍頭)",
+    "client_stakeholders": [
+      {
+        "name": "張建國 (David Chang)",
+        "role": "資訊科技副總裁 (VP of IT)",
+        "focus_concern": "系統穩定度、資料在私有雲/地端混合部署的安全性、API 併發吞吐量。"
+      },
+      {
+        "name": "李雅婷 (Linda Li)",
+        "role": "供應鏈營運總監 (Operations Director)",
+        "focus_concern": "現行員工學習曲線、上線導入所需時程、是否能無縫介接現有 WMS 系統。"
+      }
+    ],
+    "our_team": ["你 (解決方案顧問)", "業務總監 Jason", "資深架構師 Kevin"],
+    "meeting_goal": "消除客戶對系統整合風險的疑慮，爭取進入下階段 POC (概念驗證) 簽約。"
+  }
+]
