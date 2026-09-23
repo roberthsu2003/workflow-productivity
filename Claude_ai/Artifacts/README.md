@@ -1,7 +1,41 @@
-# Claude Artifacts（成品畫布：討論方式的內容生成）
+# Claude Artifacts（成品畫布與獨立創作中心）
 
-> 專為職場人士與各領域學員設計，學習如何將 Claude 對話中的長篇文字、圖表與程式碼，轉化為右側獨立、可即時預覽、支援版本演進並可一鍵開會展示的「數位成品」。  
+> 專為職場人士、各領域學員與專業工作者設計。從右側獨立即時預覽的「數位成品畫布」，全面升級為 Anthropic 2026 最新「One Claude」架構下的 **Web-Native 雲端創作與資產管理中心（Artifacts Hub）**。  
 > 🔗 **全域概念對照**：本單元聚焦於討論方式的內容生成（**Claude 稱為 Artifacts**，**ChatGPT 稱為 Canvas 畫布**，詳見 [ChatGPT Canvas 篇](../../chatGPT/03_Canvas/README.md)）。實戰應用請參考 [常見的 AI 應用：現代職場三大實戰範例庫](../../常見的AI應用/實戰範例/README.md)。
+
+---
+
+## 🚀 2026 最新版本震撼升級：走向「One Claude」獨立創作中心
+
+Anthropic 在最新版本中完成了劃時代的整合——**Claude Design 正式全面回歸並常駐於 Artifacts**，並且推出了專屬的 **Artifacts 獨立管理大廳（Artifacts Hub / Workspace）** 與三大全新原生創作模板：
+
+```text
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  Artifacts                                                                   │
+│  [All]  [Yours]  [Shared with you]                         [🔍] [🔲] [All types ▾]
+├──────────────────────────────────────────────────────────────────────────────┤
+│  📢 Claude Design lives here now                                             │
+│     New Slides and Design projects are created as artifacts.                 │
+│     [Visit the standalone homepage ↗]                                        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Make something new                                                          │
+│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐                      │
+│  │   📄 Docs    │   │  📑 Slides   │   │  📱 Design   │                      │
+│  │    [Beta]    │   │    [Beta]    │   │    [Beta]    │                      │
+│  └──────────────┘   └──────────────┘   └──────────────┘                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 🌟 新版三大關鍵突破：
+1. **獨立數位資產中樞（Artifacts Hub）**：
+   - 不再只是聊天的附屬側欄！左側選單設有獨立入口（`claude.ai/artifacts`），提供 `All`（全部）、`Yours`（我的成品）、`Shared with you`（團隊共享）分類標籤。
+   - 支援即時關鍵字搜尋、卡片網格（Grid）與清單列表（List）視圖切換，以及類型篩選器（`All types`）。
+2. **「Make something new」三大原生 Web-Native 模板（Beta）**：
+   - 📄 **Docs (Beta)**：原生協同文件。支援劃詞編輯與即時雙向討論，可無縫匯出至 **Microsoft Word (.docx)**、**Google Docs** 或 **PDF**。
+   - 📑 **Slides (Beta)**：原生簡報生成。直接產生整套完整投影片組（Deck）、支援單頁視覺排版、線上全螢幕演說放映（Presentation Mode），可匯出至 **PowerPoint (.pptx)** 或 **PDF**。
+   - 📱 **Design (Beta)**：Claude Design 深度整合進案，以自然語言快速打造高保真互動 UI 原型、Dashboard 與設計視覺組件。
+3. **Web-Native 雲端連結持續協作**：
+   - 產出的文件、簡報與原型不再是單次對話吐出的靜態死檔案，而是具備獨立分享連結、支援版本演進、多人即時協作的動態雲端資產。
 
 ---
 
@@ -50,49 +84,63 @@ graph LR
         C3 --> X1["❌ 成果被洗版淹沒<br/>開會難以即時演示"]
     end
 
-    subgraph Artifacts 畫布空間
-        A1["💬 左側對話區<br/>（討論邏輯與傳達意見）"]
-        A2["🖥️ 右側獨立畫布<br/>（HTML / 圖表 / 文件成品）"]
+    subgraph Artifacts 畫布空間與獨立中樞
+        A1["💬 左側對話區<br/>（討論邏輯與意見）"]
+        A2["🖥️ 右側獨立畫布<br/>（Docs/Slides/HTML 成品）"]
+        A3["🗂️ 獨立 Hub 空間<br/>（集中管理歷史資產）"]
         A1 -->|即時疊代| A2
         A2 --> V["🔄 歷史版本切換<br/>（V1 / V2 防改壞）"]
-        A2 --> P["🌐 一鍵發布連結<br/>（開會免登入即開即用）"]
+        A2 --> P["🌐 一鍵發布連結<br/>（免登入即開即用）"]
+        A2 --> A3
     end
 ```
 
-| 比較維度 | 一般對話 (Chats) | Claude Artifacts |
+| 比較維度 | 一般對話 (Chats) | Claude Artifacts (2026 最新版) |
 | :--- | :--- | :--- |
-| **成果呈現方式** | 散落在對話流中的純文字或程式碼區塊 | **右側獨立側欄畫布，支援 HTML/React/SVG 即時渲染** |
-| **修改與反饋** | 每次修改都在對話中重新噴出大篇幅文字 | **在同一畫面就地更新，不干擾左側討論對話** |
+| **成果呈現方式** | 散落在對話流中的純文字或程式碼區塊 | **獨立側欄畫布 ＋ 獨立 Hub 空間，支援 Docs/Slides/Design/HTML 即時渲染** |
+| **修改與反饋** | 每次修改都在對話中重新噴出大篇幅文字 | **在同一畫面就地更新或劃詞編輯，不干擾對話討論** |
 | **版本管理機制** | 需手動往上尋找歷史訊息，容易改壞 | **內建 Version History（版本紀錄），可一秒切換回溯** |
-| **開會展示便利性** | 需複製代碼、自行存檔或截圖放進 PPT | **一鍵 Publish 產出專屬網址，與會者免帳號直接操作** |
-| **互動體驗** | 靜態純文字，無法點擊測試 | **可點擊按鈕、展開下拉選單、操作篩選器與動態圖表** |
+| **開會展示便利性** | 需複製代碼、自行存檔或截圖放進 PPT | **一鍵 Presentation Mode 全螢幕播放，或 Publish 產出專屬免登入網址** |
+| **多格式整合匯出** | 需手動另存代碼檔或複製純文字 | **原生支援一鍵下載 Microsoft Word (.docx)、PowerPoint (.pptx) 與 PDF** |
+| **資產集中管理** | 關閉對話後需在聊天列表逐一翻找 | **專屬 Artifacts Hub，支援 All / Yours / Shared 分類與即時搜尋** |
 
 ---
 
 ## 🟢 方案需求與規格建議
 
-- **Free 帳號**：**完全免費可用！** 支援 HTML、React、SVG、Mermaid 與 Markdown 格式即時渲染，可一鍵生成公開分享網址（Publish）。
-- **Pro / Max 帳號**：享有更高的訊息運算上限，支援單一對話中連續產出多個複雜 Artifacts，並支援進階的 AI-powered 應用原型。
-- **Team / Enterprise 帳號**：支援組織內部成員專屬共用，分享網址可限定僅供內部團隊人員存取。
+- **Free 帳號**：**完全免費可用！** 支援經典 HTML、React、SVG、Mermaid 與 Markdown 格式即時渲染，可一鍵生成公開分享網址（Publish），亦可瀏覽他人分享之成品。
+- **Pro / Max 帳號**：享有更高的訊息運算上限，**即刻享有全新的 Docs (Beta)、Slides (Beta)、Design (Beta) 原生創作模板**，並支援進階的 AI-powered 應用原型與 Office 原生轉出。
+- **Team / Enterprise 帳號**：支援組織內部成員專屬共用與權限管理，分享網址可限定僅供內部團隊人員存取（Enterprise 需由管理員開啟 Beta 模板權限）。
+
+> [!IMPORTANT]
+> **必要前置設定**：  
+> 若要順暢使用 Docs / Slides / Design 以及各種複雜代碼運算，請確認帳號已開啟代碼執行功能：  
+> 前往 **`Settings` ➔ `Capabilities` ➔ 開啟「Code execution and file creation」**。
 
 ---
 
-## 🧠 Artifacts 六大核心支援格式架構
+## 🧠 Artifacts 新世代「3 大原生模板 ＋ 6 大技術格式」架構
 
 ```text
-🖥️ Claude Artifacts 成果物體系
-├── 1. 結構化文件與報告 (Markdown)
-│   └── 企劃書、會議紀錄、合約審查表、操作手冊
-├── 2. 單頁互動網頁 (HTML + CSS + JavaScript)
-│   └── 內部規則查詢小工具、抽籤器、單字卡、計算機
-├── 3. 程式碼與演算法模組 (Python, Go, SQL 等)
-│   └── 乾淨代碼檔案、PEP 8 規範函數、單元測試
-├── 4. 商業動態視覺化圖表 (React / Recharts)
-│   └── 雙軸走勢圖、柱狀圖、營運分析即時戰情室
-├── 5. 流程圖與架構思維導圖 (Mermaid)
-│   └── 業務 SOP、系統架構圖、植物生理機制循環圖
-└── 6. 可縮放向量圖像 (SVG)
-    └── 企業標誌、班徽、扁平化插圖、工程示意圖
+🖥️ Claude Artifacts 完整成果物體系
+├── 🌟 三大原生 Web-Native 模板 (Beta)
+│   ├── 📄 Claude Docs：雲端原生協同企劃、報告、合約（支援 Word/PDF 匯出）
+│   ├── 📑 Claude Slides：整套投影片 Deck、線上放映演示（支援 PPTX/PDF 匯出）
+│   └── 📱 Claude Design：自然語言驅動的高保真 UI/UX 原型、儀表板與視覺素材
+│
+└── 🛠️ 六大經典技術渲染格式
+    ├── 1. 結構化文件與報告 (Markdown)
+    │   └── 企劃書、會議紀錄、合約審查表、操作手冊
+    ├── 2. 單頁互動網頁 (HTML + CSS + JavaScript)
+    │   └── 內部規則查詢小工具、抽籤器、單字卡、計算機
+    ├── 3. 程式碼與演算法模組 (Python, Go, SQL 等)
+    │   └── 乾淨代碼檔案、PEP 8 規範函數、單元測試
+    ├── 4. 商業動態視覺化圖表 (React / Recharts)
+    │   └── 雙軸走勢圖、柱狀圖、營運分析即時戰情室
+    ├── 5. 流程圖與架構思維導圖 (Mermaid)
+    │   └── 業務 SOP、系統架構圖、業務流向循環圖
+    └── 6. 可縮放向量圖像 (SVG)
+        └── 企業標誌、班徽、扁平化插圖、工程示意圖
 ```
 
 ---
@@ -101,6 +149,8 @@ graph LR
 
 在正式實作前，建議先閱讀以下深度技術專章，掌握進階應用的運作心智：
 
+* 🚀 **[05. Artifacts 獨立工作中心與三大原生創作模板（Docs / Slides / Design）全攻略](./Guide/05_Artifacts_Hub_and_Templates.md) （2026 最新重點）**  
+  *深入解析 Hub 導航中心資產管理、Docs 劃詞協同編修、Slides 原生投影片生成與 Office/PDF 匯出實務。*
 * ⚡ **[01. AI 驅動成品 (Claude in Claude) 與費用安全指南](./Guide/01_AI_Powered_Artifacts.md)**  
   *解析如何在不申請 API Key 的情況下讓小工具內建 AI 大腦，以及同事大量使用時費用算誰的防護機制。*
 * 📑 **[02. 持久化資料儲存 (localStorage) 原理與語法實務](./Guide/02_Persistent_Storage.md)**  
@@ -174,6 +224,7 @@ graph LR
 3. **開會應用**：
    - **大螢幕投影**：開會時只要在瀏覽器貼上網址，直接全螢幕向長官演示搜尋功能。
    - **群組同步操作**：將連結貼到會議群組（LINE / Teams / Slack），主管與同仁用手機點開**免登入**即可親自體驗！
+   - **收納入庫**：發布或儲存後，該作品會同步出現在你的 **Artifacts Hub** 中，便於日後隨時查閱。
 
 ---
 

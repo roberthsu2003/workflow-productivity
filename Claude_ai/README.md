@@ -44,9 +44,9 @@
 > 學會 **RTCCF 框架**（Role/Task/Context/Constraint/Format）撰寫高品質 Prompt，並透過自然指令產出 Markdown / Word / Excel / PowerPoint / PDF。  
 > 內含五個產出範例（.md / .docx / .xlsx / .pptx / .pdf），全部 Free 可用。
 
-### 🟢 Artifacts（成品畫布）— **Free**
+### 🟢 Artifacts（成品畫布與獨立創作中心）— **Free / Pro / Team**
 > **📂 [進入主題筆記：Artifacts](./Artifacts/README.md)**  
-> 在側欄即時顯示可互動的 HTML、React、SVG、Mermaid 內容，適合做小工具原型、查詢頁、資訊圖。最容易讓學生產生成就感的章節。
+> 2026 最新升級：從對話右側即時預覽畫布，全面邁向 **Artifacts 獨立管理中心（Hub）**！除經典 HTML/React/SVG/Mermaid 外，更全面整合 **Claude Design** 並推出 **Docs**（協同文件）、**Slides**（原生簡報）與 **Design**（視覺原型）三大全新 Beta 模板，支援一鍵線上放映與原生轉出 Word/PPT/PDF。
 
 ### 🟢 討論方式的內容生成（人機協作實戰）— **Free（核心工作流）**
 > **📂 [進入主題筆記：討論方式的內容生成](./討論方式的內容生成/README.md)**  
