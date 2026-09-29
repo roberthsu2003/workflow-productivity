@@ -1,14 +1,14 @@
 # 步驟 4：生成 FR-MR09 會議記錄表 Word 發布檔提示詞（Python 自動化排版）
 
 > 🛠️ **執行方式**：  
-> 當人類 SQE 完成「步驟 3」審批並回覆「`確認無誤，繼續生成 Word 表單`」後，將本指令交付給具備代碼執行能力之 AI（如 ChatGPT Advanced Data Analysis、Claude Artifacts 或本機 Python 環境），即可一鍵產出 100% 吻合製造業驗收標準的 Word 表單！
+> 當人類 SQE 完成「步驟 3」審核並回覆「`確認無誤，繼續生成 Word 表單`」後，將本指令交付給具備程式碼執行能力之 AI（如 ChatGPT Advanced Data Analysis、Claude Artifacts 或本機 Python 環境），即可一鍵產出 100% 吻合製造業驗收標準的 Word 表單！
 
 ---
 
 ## 📋 交付給 AI 之發布生成提示詞
 
 ```markdown
-請根據人類剛剛審批通過之「MRB 品質決策核對卡片」資料，使用 Python `python-docx` 套件，自動生成一份高水準、符合製造業標準之《FR-MR09 會議記錄表.docx》檔案。
+請根據剛剛人工審核通過之「MRB 品質決策核對卡片」資料，使用 Python `python-docx` 套件，自動生成一份高水準、符合製造業標準之《FR-MR09 會議記錄表.docx》檔案。
 
 【版面與排版嚴格規範】：
 1. 頁面邊界：標準邊界（上下左右各 2.54 cm / 1 吋）。
@@ -31,7 +31,7 @@
 
 ---
 
-## 🐍 核心自動產檔 Python 腳本（免安裝環境直接可跑）
+## 🐍 核心自動產檔 Python 程式碼（免安裝環境直接可執行）
 
 ```python
 import os
