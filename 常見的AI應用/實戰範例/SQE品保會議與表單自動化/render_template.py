@@ -1,92 +1,167 @@
 import os
 import json
-import docx
+from docxtpl import DocxTemplate
 
-def render_docx_from_template(template_file, output_file, context_data):
+def render_mrb_docx(template_file, output_file, context_data):
     """
-    讀取包含佔位符的 Word 範本檔案，並以提供的數據進行無損替換
-    - 完整保留範本原始字體名稱、字型大小、字元顏色與粗體樣式
-    - 同時支援常規段落（doc.paragraphs）與表格儲存格段落（table.rows.cells.paragraphs）
+    使用 docxtpl 讀取含 Jinja2 佔位符的 Word 樣版檔案，並注入結構化數據
+    - 支援 {{ 變數 }} 替換（如 year, subject, chair 等）
+    - 支援 {%tr for t in topics %} 表格行迴圈
+    - 支援 {%tr for d in todos %} 待辦事項迴圈
+    - 完整保留樣版之頁首、邊距、字型樣式、色票與會簽表格
     """
     if not os.path.exists(template_file):
-        raise FileNotFoundError(f"找不到範本檔案：{template_file}，請確認是否位於專案資料夾中！")
+        raise FileNotFoundError(f"找不到樣版檔案：{template_file}，請確認是否位於專案資料夾中！")
 
-    doc = docx.Document(template_file)
-
-    def replace_in_paragraphs(paragraphs):
-        for p in paragraphs:
-            for key, val in context_data.items():
-                if key in p.text:
-                    # 1. 優先在個別 run 中替換（完美保持局部樣式）
-                    for r in p.runs:
-                        if key in r.text:
-                            r.text = r.text.replace(key, str(val))
-                    
-                    # 2. 若 placeholder 被 Word 拆分成多個 runs，執行全域替換並保留第一個 run 的字型樣式
-                    if key in p.text:
-                        f_name = p.runs[0].font.name if p.runs else None
-                        f_size = p.runs[0].font.size if p.runs else None
-                        f_color = p.runs[0].font.color.rgb if (p.runs and p.runs[0].font.color) else None
-                        f_bold = p.runs[0].font.bold if p.runs else None
-                        
-                        p.text = p.text.replace(key, str(val))
-                        
-                        if p.runs and f_name:
-                            p.runs[0].font.name = f_name
-                            p.runs[0].font.size = f_size
-                            if f_color:
-                                p.runs[0].font.color.rgb = f_color
-                            p.runs[0].font.bold = f_bold
-
-    # 替換本文段落
-    replace_in_paragraphs(doc.paragraphs)
-
-    # 替換所有表格儲存格內的文字
-    for table in doc.tables:
-        for row in table.rows:
-            for cell in row.cells:
-                replace_in_paragraphs(cell.paragraphs)
-
+    doc = DocxTemplate(template_file)
+    doc.render(context_data)
     doc.save(output_file)
-    print(f"🎉 產檔完成！輸出檔案：{output_file}（已 100% 完全對齊官方範本）")
+    print(f"🎉 產檔完成！輸出檔案：{output_file}（已 100% 完全對齊官方樣版）")
 
 
 if __name__ == "__main__":
-    template_path = os.path.join(os.path.dirname(__file__), "FR-MR09_會議記錄表_Template.docx")
-    output_path = os.path.join(os.path.dirname(__file__), "FR-MR09_會議記錄表_已完成.docx")
+    current_dir = os.path.dirname(__file__)
+    template_path = os.path.join(current_dir, "FR-MR09_v01_會議記錄表_樣版.docx")
+        
+    output_path = os.path.join(current_dir, "FR-MR09_會議記錄表_已完成.docx")
 
-    # 注入由 AI 萃取之結構化 JSON 變數
+    # 由 AI 根據逐字稿萃取出的標準結構化 JSON 數據
     context = {
-        "{{MEETING_DATE}}": "2026年08月13日",
-        "{{MEETING_SUBJECT}}": "藍機右殼 / 黏結凸輪 / 下齒板異常審查 (M260802)",
-        "{{MEETING_TIME}}": "15:30 ~ 16:06",
-        "{{MEETING_LOCATION}}": "泛源會議室",
-        "{{CHAIR}}": "謝華賢 (技術長)",
-        "{{RECORDER}}": "楊子賢 (資材處SQE)",
-        "{{TOPIC_1_TITLE}}": "藍機右殼 L93XXAR1 外觀泛黃問題討論",
-        "{{TOPIC_1_CONTENT}}": "【現況描述】部分庫存零件存在外觀顏色差異與長期存放狀況。其中約 3pcs 貼面板結構外觀泛黃；部分零件外觀白色斑點符合客戶既有同意接收標準。確認不能使用之 13pcs 藍機右殼先行管制。\n【品質與營運影響】不良品扣除後將直接影響原承諾之成套配套物料，若後續維修備品需求增加，恐引發庫存缺料風險。\n【MRB 處置結論】已確認泛黃之 13pcs 即刻實施隔離管制，全數納入保留倉；其餘合規庫存加速出貨，並持續監控庫存存放狀況。",
-        "{{TOPIC_2_TITLE}}": "黏結凸輪 92XX079 角度公差放寬之組裝功能風險",
-        "{{TOPIC_2_CONTENT}}": "【主要問題與風險】原公差為 19° ±0.5°，加工廠商申請放寬至 ±1°。品保評估目前在 ±0.5° 下組裝已有調整困難，若放寬將直接改變開關啟動行程、大幅增加組裝工時，甚至造成售後更換困難。\n【驗證方案與對照條件】暫不直接放寬公差！技術長核定先以 19.5°~20° 角度製作 5pcs 試作件進行對照驗證，比較組裝時間、調整次數、啟動行程與不良率。\n【MRB 處置結論】小批量對照組裝若無顯著差異再評估放寬；若仍影響功能則維持原規格並責令供應商（承化）自費改善；改善未果即啟動備援供應商（竹翔）開模。",
-        "{{TOPIC_3_TITLE}}": "黏結下齒板(加工) 93XXAO2 需 80pcs 試作及全製程驗證",
-        "{{TOPIC_3_CONTENT}}": "【現況與製程轉移】前期 3pcs 樣品已於鑫將驗證初步合格。原熱處理廠（國泰）有黑痕缺陷，現將熱處理製程轉由鑫將執行。\n【關鍵品質要求】熱處理對齒板尺寸形狀影響甚鉅，不可單看熱處理外觀，必須完整走過「加工 ➔ 熱處理 ➔ 噴砂 ➔ 電鍍 ➔ 最終尺寸與功能檢驗」全製程。\n【MRB 處置結論】核定 80pcs 試作案繼續執行。3pcs 僅為初步驗證，待 80pcs 全製程驗證確認穩定合格後，方能正式作為量產製程依據。",
-        "{{ACTION_1_TASK}}": "確認長期庫存零件是否有變色、老化或其他品質風險",
-        "{{ACTION_1_OWNER}}": "品保處／倉庫",
-        "{{ACTION_1_DUE}}": "2026 年底前",
-        "{{ACTION_2_TASK}}": "完成 80pcs 下齒板試作，並完整走完全製程",
-        "{{ACTION_2_OWNER}}": "資材處／供應商／二廠加工組",
-        "{{ACTION_2_DUE}}": "依專案排程",
-        "{{ACTION_3_TASK}}": "完成 80pcs 熱處理、噴砂後之尺寸及外觀檢驗報告",
-        "{{ACTION_3_OWNER}}": "品保處",
-        "{{ACTION_3_DUE}}": "80pcs 完成後",
-        "{{ACTION_4_TASK}}": "針對凸輪 19.5°-20° 角度條件進行 5pcs 小批量對照組裝",
-        "{{ACTION_4_OWNER}}": "承化／資材處／品保處",
-        "{{ACTION_4_DUE}}": "儘速安排",
-        "{{ACTION_5_TASK}}": "量測角度變化對開關啟動行程之實際影響數據",
-        "{{ACTION_5_OWNER}}": "生產處／品保處／研發處",
-        "{{ACTION_5_DUE}}": "小批量試驗後",
-        "{{ACTION_6_TASK}}": "若承化改善仍無法達標，啟動第二供應商（竹翔）開模方案",
-        "{{ACTION_6_OWNER}}": "資材處／研發處",
-        "{{ACTION_6_DUE}}": "第一階段評估後"
+        "year": "2026",
+        "month": "08",
+        "day": "13",
+        "subject": "藍機右殼 黏結凸輪 黏結下齒板會議討論",
+        "meeting_no": "M260802",
+        "start_h": "15",
+        "start_m": "30",
+        "end_h": "16",
+        "end_m": "06",
+        "chair": "謝華賢",
+        "location": "泛源會議室",
+        "recorder": "楊子賢",
+        "topics": [
+            {
+                "no": 1,
+                "title": "藍機右殼L93XXAR1 外觀泛黃問題討論",
+                "sections": [
+                    {
+                        "heading": "現況",
+                        "intro": "",
+                        "bullets": [
+                            "目前部分藍機右殼存在顏色差異、外觀差異及長期庫存問題。",
+                            "部分右殼已有貼面板結構，目前約有 3pcs貼面板零件有外觀／顏色差異。",
+                            "部分右殼外觀上有白色斑點，過去已有使用案例，確認客戶曾同意使用，因此白色斑點原則上可依既有接受條件處理。",
+                            "部分庫存已存放較長時間，若持續存放，可能產生變色、老化或外觀劣化。",
+                            "目前已先將確認不能使用的 13pcs藍機右殼暫停使用／先不出貨。"
+                        ]
+                    },
+                    {
+                        "heading": "主要問題",
+                        "intro": "",
+                        "bullets": [
+                            "庫存數量若扣除不良品，會影響原先對客戶承諾的配套數量。",
+                            "若維修零件未來需求增加，可能發生庫存不足。"
+                        ]
+                    },
+                    {
+                        "heading": "會議結論",
+                        "intro": "",
+                        "bullets": [
+                            "已確認泛黃的 13pcs先行管制，納入保留倉。"
+                        ]
+                    }
+                ]
+            },
+            {
+                "no": 2,
+                "title": "黏結凸輪92XX079角度公差及組裝功能問題",
+                "sections": [
+                    {
+                        "heading": "主要問題",
+                        "intro": "",
+                        "bullets": [
+                            "目前討論的關鍵尺寸為零件角度，原規範約為：19° ±0.5°。",
+                            "目前若放寬至 ±1°，可能造成實際尺寸／位置差異放大。",
+                            "角度變化會直接影響開關啟動行程及組裝調整時間。"
+                        ]
+                    },
+                    {
+                        "heading": "品質風險",
+                        "intro": "",
+                        "bullets": [
+                            "組裝困難",
+                            "開關啟動行程改變",
+                            "調整時間增加",
+                            "累積公差增加",
+                            "維修零件組裝困難",
+                            "客戶端後續更換零件可能受到影響"
+                        ]
+                    },
+                    {
+                        "heading": "目前判斷",
+                        "intro": "",
+                        "bullets": [
+                            "品保處建議:目前製程在 ±0.5°條件下已存在調整困難，因此不能直接假設放寬至 ±1°即可解決問題。",
+                            "技術長建議角度可以用19.5°-20°測試組裝功能是否可行。",
+                            "必須透過實際組裝測試確認角度變化對製程時間及功能的影響。",
+                            "目前建議以實際組裝的時間及功能結果作為判定依據，而非只看量測數據。"
+                        ]
+                    },
+                    {
+                        "heading": "驗證方法",
+                        "intro": "建議採取對照試驗：以 19.5°-20° 5pcs 進行組裝時間與功能驗證。",
+                        "bullets": [
+                            "比較項目：組裝時間、調整次數、啟動行程、功能結果、不良率、操作難易度。"
+                        ]
+                    },
+                    {
+                        "heading": "會議結論",
+                        "intro": "",
+                        "bullets": [
+                            "暫不直接放寬角度公差，先進行 5pcs 小批量對照試驗。",
+                            "若放寬後明顯增加組裝困難，維持原規格並要求供應商（承化）自費改善；若仍無法改善則啟動竹翔開模備案。"
+                        ]
+                    }
+                ]
+            },
+            {
+                "no": 3,
+                "title": "黏結下齒板(加工)_93XXAO2需80pcs試作及熱處理／噴砂製程驗證",
+                "sections": [
+                    {
+                        "heading": "現況",
+                        "intro": "",
+                        "bullets": [
+                            "目前已有 3pcs樣品在鑫將完成試作驗證OK。原熱處理廠（國泰）有黑痕問題，轉由鑫將執行。",
+                            "後續規劃進行 80pcs試作，作為正式製程導入前的驗證批。",
+                            "80pcs 要完整走過：加工 → 熱處理 → 噴砂 → 後續加工 → 電鍍 → 檢驗 → 製程確認。"
+                        ]
+                    },
+                    {
+                        "heading": "重要品質要求",
+                        "intro": "",
+                        "bullets": [
+                            "熱處理後可能影響零件尺寸及形狀，不能只驗證熱處理後外觀，必須完成全製程後確認尺寸與功能。"
+                        ]
+                    },
+                    {
+                        "heading": "會議結論",
+                        "intro": "",
+                        "bullets": [
+                            "80pcs試作案繼續執行，需完整走完製程並檢驗合格後方能作為量產依據。"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "todos": [
+            {"task": "確認長期庫存零件是否有變色、老化或其他品質風險", "owner": "品保處／倉庫", "due": "2026年底前"},
+            {"task": "完成80pcs試作，並走完完整製程", "owner": "資材處／供應商／泛源二廠加工組", "due": "依專案排程"},
+            {"task": "完成80pcs熱處理、噴砂、加工後之尺寸及外觀檢驗", "owner": "品保處", "due": "80件完成後"},
+            {"task": "針對19.5°-20°等不同角度條件進行小批量對照試驗", "owner": "承化／資材處／品保", "due": "儘速安排"},
+            {"task": "確認角度對開關啟動行程之實際影響", "owner": "生產處／品保處／研發處", "due": "小批量試驗完成後"},
+            {"task": "若承化改善仍無法達標，評估第二供應商／模具方案", "owner": "資材處／研發處", "due": "第一階段測試失敗後"}
+        ]
     }
 
-    render_docx_from_template(template_path, output_path, context)
+    render_mrb_docx(template_path, output_path, context)

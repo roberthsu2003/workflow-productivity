@@ -1,7 +1,7 @@
-# 實戰範例：SQE 品保會議記錄與表單自動化（辦公室 docx 原生保留 ➔ 專案工作流轉 Markdown ➔ Template Placeholder 100% 格式對齊）
+# 實戰範例：SQE 品保會議記錄與表單自動化（辦公室 docx 原生保留 ➔ 專案工作流轉 Markdown ➔ 官方樣版 docxtpl 100% 格式對齊）
 
 > 🟢 **採用代理平台**：Google Antigravity / Claude Projects / ChatGPT 工作區  
-> 🛠️ **完整工作流閉環**：**辦公室原生 docx ➔ 手動在專案中轉為 Markdown ➔ 專案資料夾架構 ➔ 自訂 Template Placeholders 範本 ➔ JSON 數據人機核對 ➔ 100% 完全對齊產出正式 docx**  
+> 🛠️ **完整工作流閉環**：**辦公室原生 docx ➔ 手動在專案中轉為 Markdown ➔ 專案資料夾架構 ➔ 官方 Jinja2 樣版 (`docxtpl`) ➔ JSON 數據人機核對 ➔ 100% 完全對齊產出正式 docx**  
 
 ---
 
@@ -12,8 +12,8 @@
 因此，本教學特別採用**「以專案為基礎（Project-Based）」**的實務工作流：
 1. **保留辦公室原生 `.docx` 文件**：直接將現場會議錄音轉出的 [`20260813_MRB會議逐字稿_原始檔.docx`](./20260813_MRB會議逐字稿_原始檔.docx) 作為專案真實起點。
 2. **教學生在專案中手動將 `.docx` 轉換為 `.md`**：掃除 Word 二進位封裝的隱藏 XML 雜訊、大幅節省 50%~70% 的 Token，為後續 AI 深度分析建立乾淨的高品質上下文。
-3. **自訂 Template Placeholder 的 Word 範本**：預先在官方表單 [`FR-MR09_會議記錄表_Template.docx`](./FR-MR09_會議記錄表_Template.docx) 中埋設佔位符，實現「版面歸範本，數據歸 AI」。
-4. **輸出 100% 完全對齊的正式 `.docx`**：透過自動化填充腳本，將資料無損回填至 Word 範本，徹底解決學生「手動整理與手動打 Word 超花時間、AI 產 Word 又容易跑版」的痛點！
+3. **自訂官方 Word 樣版（Jinja2 / `docxtpl` 語法）**：採用業界最成熟之 [`FR-MR09_v01_會議記錄表_樣版.docx`](./FR-MR09_v01_會議記錄表_樣版.docx)，支援變數替換（`{{ subject }}`）與表格行迴圈（`{%tr for t in topics %}`），實現「版面歸樣版，數據歸 AI」。
+4. **輸出 100% 完全對齊的正式 `.docx`**：透過自動化填充腳本 [`render_template.py`](./render_template.py)，將資料無損回填至 Word 樣版，徹底解決學生「手動整理與手動打 Word 超花時間、AI 產 Word 又容易跑版」的痛點！
 
 ---
 
@@ -27,19 +27,19 @@ flowchart TD
     end
 
     subgraph Phase2 ["階段二：專案資料夾工作檯 (Project Workspace)"]
-        CleanMD --> ProjectFolder["<b>專案資料夾 SQE品保會議與表單自動化/</b><br/>集中管理素材、提示詞鏈、官方範本<br/>Single Source of Truth"]
-        TplDocx["<b>自訂官方 Word 範本</b><br/>FR-MR09_會議記錄表_Template.docx<br/>(內含 {{PLACEHOLDER}} 佔位符)"] --> ProjectFolder
+        CleanMD --> ProjectFolder["<b>專案資料夾 SQE品保會議與表單自動化/</b><br/>集中管理素材、提示詞鏈、官方樣版<br/>Single Source of Truth"]
+        TplDocx["<b>官方標準 Word 樣版</b><br/>FR-MR09_v01_會議記錄表_樣版.docx<br/>(含 Jinja2 {{ 變數 }} 與 {%tr 迴圈 %})"] --> ProjectFolder
     end
 
     subgraph Phase3 ["階段三：AI 結構化提煉與人機審核"]
-        ProjectFolder -->|執行 6-2 RTCCF 提示詞| AI_JSON["<b>AI 萃取結構化 JSON</b><br/>(鍵值完全對應 Template 佔位符)"]
+        ProjectFolder -->|執行 6-2 RTCCF 提示詞| AI_JSON["<b>AI 萃取結構化 JSON</b><br/>(階層對應 topics/sections/todos)"]
         AI_JSON --> HumanCheck{"<b>人機協同核對閘門 (6-3)</b><br/>工程師花 30 秒核對：<br/>料號、公差數據、處置判定"}
     end
 
-    subgraph Phase4 ["階段四：範本無損填充與正式發布"]
-        HumanCheck -->|確認無誤| RenderScript["<b>render_template.py (6-4)</b><br/>Python 一鍵替換佔位符"]
+    subgraph Phase4 ["階段四：樣版無損填充與正式發布"]
+        HumanCheck -->|確認無誤| RenderScript["<b>render_template.py (6-4)</b><br/>docxtpl 一鍵渲染產檔"]
         TplDocx -.提供官方排版樣式.-> RenderScript
-        RenderScript --> FinalDocx["<b>FR-MR09_會議記錄表_已完成.docx</b><br/>🏆 100% 完全對齊原生官方格式<br/>字體、邊界、11處室會簽欄零跑版！"]
+        RenderScript --> FinalDocx["<b>FR-MR09_會議記錄表_已完成.docx</b><br/>🏆 100% 完全對齊原生官方格式<br/>字體、邊距、11處室會簽欄零跑版！"]
     end
 ```
 
@@ -51,10 +51,10 @@ flowchart TD
 
 | 學員原始痛點（節錄自學員需求檔） | 職場實務困難點 | 本專案工作流之工程解法 |
 | :--- | :--- | :--- |
-| **【最花時間的環節是】**<br/>「整理資料及重點還有輸入 word 檔及輸入 excel 檔」 | 錄音動輒幾十分鐘（8,600+ 字未斷句口語），手動邊聽邊敲進 Word 表格耗費 3~4 小時。 | **轉 Markdown 萃取 ＋ Template Placeholder 自動填充**：AI 1 秒整理重點，Python 1 秒注入範本，免去手動敲 Word 苦工。 |
+| **【最花時間的環節是】**<br/>「整理資料及重點還有輸入 word 檔及輸入 excel 檔」 | 錄音動輒幾十分鐘（8,600+ 字未斷句口語），手動邊聽邊敲進 Word 表格耗費 3~4 小時。 | **轉 Markdown 萃取 ＋ docxtpl 自動填充**：AI 1 秒整理重點，Python 1 秒注入樣版，免去手動敲 Word 苦工。 |
 | **【一定要人來判斷的是】**<br/>「最終輸入內容檢查」 | 品質公差差 0.5 度或料號記錯會導致產線停線，絕對不能讓 AI 盲目發布。 | **變數鍵值核對閘門**：AI 僅產出純淨 JSON，工程師核對關鍵料號與公差數字無誤後才放行產檔。 |
 | **【初學者寫 Prompt 的困難】**<br/>「我現在要寫一個 prompt，必須符合 RTCCF，我不會寫，請提供樣板給我」 | 初學者常陷入「貪多嚼不爛」，試圖用一個超大 Prompt 同時產出訪廠報告、MRB 會議紀錄與週報 Excel，導致格式全面混亂。 | **模組化提示詞鏈（Prompt Chaining）**：以最考驗排版嚴謹度的 MRB 會議表單為核心，提供標準 RTCCF 樣板。 |
-| **【辦公室格式對齊】**<br/>公司有正式表單規範（FR-MR09、11 處室會簽欄、Logo、色票） | 若叫 AI 用程式碼從空白頁手刻 Word 表格，欄寬、字型、跨頁與簽核格線每次都跑版。 | **自訂 Template Placeholder 的 docx 範本**：版面歸 Word 範本，數據歸 AI，輸出 100% 完全對齊！ |
+| **【辦公室格式對齊】**<br/>公司有正式表單規範（FR-MR09、11 處室會簽欄、Logo、色票） | 若叫 AI 用程式碼從空白頁手刻 Word 表格，欄寬、字型、跨頁與簽核格線每次都跑版。 | **採用官方樣版 `FR-MR09_v01_會議記錄表_樣版.docx`**：版面歸 Word 樣版，數據歸 AI，輸出 100% 完全對齊！ |
 
 ---
 
@@ -81,41 +81,41 @@ AI 在專案內自主執行讀取並存檔，學生立刻獲得乾淨、標準�
 
 ---
 
-### 亮點二：自訂 Template Placeholder 的 docx，確保輸出 100% 完全對齊
+### 亮點二：自訂官方 Word 樣版（`docxtpl`），確保輸出 100% 完全對齊
 
 #### 1. 傳統 AI 產 Word 的致命痛點
-讓 AI 憑空寫 Python 程式碼手刻 Word 表格，表格欄寬經常忽寬忽窄、文字超出邊界、公司的 Logo、特定色票（品保深藍 `#1A365D`）與 11 處室會簽表格全部破碎消失。
+讓 AI 憑空寫 Python 程式碼手刻 Word 表格，表格欄寬經常忽寬忽窄、文字超出邊界、公司的 11 處室會簽表格全部破碎消失。
 
-#### 2. Template Placeholder 的解方：「版面歸範本，數據歸 AI」
-對照學員原生的官方發布檔案 [`FR-MR09 v01 會議記錄表--最後輸出格式.doc`](./學員原始素材/MRB會議記錄表/FR-MR09%20v01%20會議記錄表--20260813藍機右殼%20黏結凸輪%20黏結下齒板-最後輸出格式.doc)，我們在 Word 中製作一份官方範本 [`FR-MR09_會議記錄表_Template.docx`](./FR-MR09_會議記錄表_Template.docx)，並在需要填寫的地方打上清晰的佔位符：
+#### 2. 官方樣版解方：`FR-MR09_v01_會議記錄表_樣版.docx`
+本專案採用製造業標準表單 [`FR-MR09_v01_會議記錄表_樣版.docx`](./FR-MR09_v01_會議記錄表_樣版.docx)，其內建了強大的 Jinja2 語法標籤：
 
 ```text
 【表頭基本資訊區】
-會議日期：{{MEETING_DATE}}        會議主旨：{{MEETING_SUBJECT}}
-開會時間：{{MEETING_TIME}}        開會地點：{{MEETING_LOCATION}}
-會 主 持：{{CHAIR}}               記    錄：{{RECORDER}}
+會議主旨: {{ subject }}    {{ meeting_no }}
+時間: {{ start_h }} 時 {{ start_m }} 分至 {{ end_h }} 時 {{ end_m }} 分
+主持人: {{ chair }}        地點: {{ location }}        記錄: {{ recorder }}
 
 【11 處室會簽欄（鎖定官方網格欄寬，原汁原味）】
 [總經理] [技術長] [品保處] [資材處] [生產處] [製造課] [生管課] [業務課] [行銷處] [標準課] [倉管課]
 
-【異常議題區塊】
-議題 1：{{TOPIC_1_TITLE}}
-{{TOPIC_1_CONTENT}}
+【議題動態表格迴圈】
+{%tr for t in topics %}
+{{ t.no }}. | 議題：{{ t.title }}
+            {%p for s in t.sections %}
+            {{ t.no }}.{{ loop.index }} {{ s.heading }}:
+            {%p for b in s.bullets %}{{ b }}{%p endfor %}
+            {%p endfor %}
+{%tr endfor %}
 
-議題 2：{{TOPIC_2_TITLE}}
-{{TOPIC_2_CONTENT}}
-
-議題 3：{{TOPIC_3_TITLE}}
-{{TOPIC_3_CONTENT}}
-
-【待辦追蹤事項表（Action Items 表格）】
-1 | {{ACTION_1_TASK}} | {{ACTION_1_OWNER}} | {{ACTION_1_DUE}}
-...
+【待辦追蹤事項表（todos 動態行迴圈）】
+{%tr for d in todos %}
+{{ d.task }} | {{ d.owner }} | {{ d.due }}
+{%tr endfor %}
 ```
 
-* **徹底零跑版**：範本中的頁首頁尾、字體樣式（微軟正黑體）、色票底色、11 處室會簽框全部在 Word 檔中原生固定。
-* **AI 任務純粹化**：AI 僅需專注於「語意解析與防捏造」，產出標準的 JSON 鍵值對。
-* **零技術門檻維護**：未來公司若修改表單設計，只需用 Word 開啟範本調整存檔，程式碼與 AI 提示詞完全不需重寫！
+* **徹底零跑版**：樣版中的頁首頁尾、字體樣式（新細明體/微軟正黑體）、色票底色、11 處室會簽框全部在 Word 檔中原生固定。
+* **動態列表彈性極高**：無論有 1 個議題還是 10 個議題，`{%tr for %}` 自動擴展表格行數，格式絕不崩壞！
+* **零代碼維護**：未來公司若調整表單外觀，只需用 Word 開啟樣版修改存檔，程式碼與 AI 提示詞完全不需重寫！
 
 ---
 
@@ -130,18 +130,19 @@ SQE品保會議與表單自動化/
 ├── 6-0_辦公室docx轉Markdown提示詞與操作指南.md   # 【步驟 0】教學生手動在專案中將 docx 轉為 Markdown
 ├── MRB會議逐字稿素材.md                         # 【專案中介素材】由原生 docx 轉出之乾淨 Markdown 逐字稿
 ├── 6-1_白話自然語言發想提示詞.md                 # 【步驟 1】引導 AI 規劃專案資料夾與範本佔位符清單
-├── 6-2_AI產出之RTCCF審查與結構化提示詞.md        # 【步驟 2】AI 萃取符合 Template 變數之 JSON 數據
-├── 6-3_人機審核與決策核對卡片.md                # 【步驟 3】佔位符變數對照表與 SQE 工程審核核對
-├── 6-4_生成MRB會議記錄表Word發布檔提示詞.md     # 【步驟 4】Python 讀取範本替換變數產檔指引
-├── render_template.py                         # 【自動化產檔腳本】讀取範本無損替換佔位符工具
-├── FR-MR09_會議記錄表_Template.docx            # 【官方範本】含 {{PLACEHOLDER}} 佔位符之標準 Word 範本
+├── 6-2_AI產出之RTCCF審查與結構化提示詞.md        # 【步驟 2】AI 萃取符合樣版階層之 JSON 數據
+├── 6-3_人機審核與決策核對卡片.md                # 【步驟 3】樣版變數對照表與 SQE 工程審核檢核
+├── 6-4_生成MRB會議記錄表Word發布檔提示詞.md     # 【步驟 4】Python 讀取樣版替換變數產檔指引
+├── render_template.py                         # 【自動化產檔腳本】使用 docxtpl 渲染樣版工具
+├── FR-MR09_v01_會議記錄表_樣版.docx            # 【官方樣版】含 docxtpl Jinja2 佔位符之標準 Word 樣版
 ├── FR-MR09_會議記錄表_已完成.docx               # 【辦公室正式輸出】100% 格式完全對齊之正式發布公文檔
 └── 學員原始素材/                              # 【學員原生真實檔案歸檔備查】
+    ├── FR-MR09_v01_會議記錄表_樣版.docx        # 原始樣版檔案備份
     ├── SQE工作流需求說明20260909.docx           # 學員原始需求與 RTCCF 困境說明
-    ├── 20260914我的工作流說明.docx              # 學員原始痛點（最花時間在整理資料與輸入 Word）
+    ├── 20260914我的工作流說明.docx              # 學員原始痛點說明
     └── MRB會議記錄表/
         ├── 20260813 MRB會議紀錄...逐字稿-參考資料.docx  # 學員原生錄音逐字稿 raw 檔
-        └── FR-MR09 v01 會議記錄表...最後輸出格式.doc   # 學員原生官方手刻 Word 完成品（基準標竿）
+        └── FR-MR09 v01 會議記錄表...最後輸出格式.doc   # 學員原生官方手刻 Word 完成品
 ```
 
 ---
@@ -155,12 +156,12 @@ SQE品保會議與表單自動化/
 
 ### 步驟 1：白話發想與佔位符設計（專案架構規劃）
 * 參考文檔：[`6-1_白話自然語言發想提示詞.md`](./6-1_白話自然語言發想提示詞.md)
-* 透過白話提示詞，要求 AI 根據官方表單格式規劃預埋佔位符清單（`{{MEETING_DATE}}`、`{{TOPIC_1_CONTENT}}` 等）。
+* 透過白話提示詞，要求 AI 根據官方表單格式規劃預埋佔位符清單（`{{ subject }}`、`{{ chair }}`、`{%tr for %}` 等）。
 
 ### 步驟 2：RTCCF 深度提煉（輸出標準 JSON 鍵值對）
 * 參考文檔：[`6-2_AI產出之RTCCF審查與結構化提示詞.md`](./6-2_AI產出之RTCCF審查與結構化提示詞.md)
 * 將提示詞連同 [`MRB會議逐字稿素材.md`](./MRB會議逐字稿素材.md) 交付給 AI。
-* AI 扮演資深 SQE 主任稽核員，去除口語贅詞、嚴禁捏造數據，產出能精準對接 Word 範本的 JSON 數據。
+* AI 扮演資深 SQE 主任稽核員，去除口語贅詞、嚴禁捏造數據，產出能精準對接 Word 樣版的 JSON 數據結構（`topics`、`sections`、`todos`）。
 
 ### 步驟 3：人機協同核對檢查（落實學員「最終輸入內容檢查」）
 * 參考文檔：[`6-3_人機審核與決策核對卡片.md`](./6-3_人機審核與決策核對卡片.md)
@@ -170,23 +171,24 @@ SQE品保會議與表單自動化/
   3. **黏結下齒板（`93XXAO2`）**：試作數量是否為 `80pcs` 且需完整走完全製程？
 * 確認數據與決策 100% 屬實後，核准產檔。
 
-### 步驟 4：自動讀取範本並替換變數（100% 格式完美對齊）
+### 步驟 4：自動讀取樣版並渲染數據（100% 格式完美對齊）
 * 參考文檔：[`6-4_生成MRB會議記錄表Word發布檔提示詞.md`](./6-4_生成MRB會議記錄表Word發布檔提示詞.md)
 * 執行專案腳本 [`render_template.py`](./render_template.py)：
   ```bash
   python render_template.py
   ```
-* 腳本載入 [`FR-MR09_會議記錄表_Template.docx`](./FR-MR09_會議記錄表_Template.docx)，無損替換所有佔位符，1 秒輸出 [`FR-MR09_會議記錄表_已完成.docx`](./FR-MR09_會議記錄表_已完成.docx)！
+* 腳本使用 `docxtpl` 載入 [`FR-MR09_v01_會議記錄表_樣版.docx`](./FR-MR09_v01_會議記錄表_樣版.docx)，無損渲染所有變數與表格迴圈，1 秒輸出 [`FR-MR09_會議記錄表_已完成.docx`](./FR-MR09_會議記錄表_已完成.docx)！
 
 ---
 
 ## 🏆 效益成果對照表
 
-| 評估面向 | 學員傳統做法（手動輸入） | 讓 AI 從空白手刻 Word | 本專案工作流（Docx ➔ MD ➔ Template） |
+| 評估面向 | 學員傳統做法（手動輸入） | 讓 AI 從空白手刻 Word | 本專案工作流（Docx ➔ MD ➔ 官方樣版） |
 | :--- | :--- | :--- | :--- |
 | **作業耗時** | 手工打字整理約 **3 ~ 4 小時** | 寫代碼除錯約 **1 ~ 2 小時** | **全程不到 1 分鐘（秒級自動產檔）** |
-| **排版穩定度** | 需手動反覆微調欄寬與對齊 | ❌ 嚴重跑版、會簽欄破碎 | ✅ **100% 繼承官方範本，像素級完全對齊** |
-| **維護成本** | 每次開會都重新手打一次 | ❌ 表單稍有更動代碼全毀 | ✅ **直接在 Word 修改範本，代碼零改動** |
+| **排版穩定度** | 需手動反覆微調欄寬與對齊 | ❌ 嚴重跑版、會簽欄破碎 | ✅ **100% 繼承官方樣版，像素級完全對齊** |
+| **動態擴充性** | 表格行數變更需手動增刪 | ❌ 程式碼硬寫死行數與高度 | ✅ **`{%tr for %}` 動態增列，幾個議題都不怕** |
+| **維護成本** | 每次開會都重新手打一次 | ❌ 表單稍有更動代碼全毀 | ✅ **直接在 Word 修改樣版，代碼零改動** |
 | **Token 消耗** | N/A | ❌ 丟原生 docx 消耗大量 Token | ✅ **先轉 Markdown，乾淨精準且省 Token** |
 | **品質合規性** | 容易有人工筆誤漏字 | ❌ AI 容易產生數據幻覺 | ✅ **JSON 變數核對閘門，確保零幻覺** |
 | **職場適用性** | 傳統耗時低效 | 脫離辦公室真實生態 | ✅ **完全相容辦公室原生 docx 輸入與輸出** |
