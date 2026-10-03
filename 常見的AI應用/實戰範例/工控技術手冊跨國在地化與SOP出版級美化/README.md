@@ -5,6 +5,20 @@
 
 ---
 
+## 📥 專案檔案下載快速導覽（實作素材 vs 完成成果）
+
+> 💡 **學習建議**：想要親自動手實作的學員，請下載 **「實作必備原始素材」** 英文技術手冊 PDF 至專案中；想直接檢視最終雙軌出版成果，請下載 **「完成成果發布檔」**。
+>
+> * 📦 **【實作起點】練習必備原始素材（請下載此檔案開始實作）**：  
+>   👉 [**`素材_QUINT_POWER軟體英文技術手冊.pdf`**](./素材_QUINT_POWER軟體英文技術手冊.pdf) *(36 頁原廠英文工控軟體技術操作手冊原始素材，請下載此檔開始進行在地化翻譯與雙軌 SOP 提煉)*
+>
+> * 🏆 **【對照標準答案】最終完成發布檔**：  
+>   1. 👉 [**`APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.pdf`**](./APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.pdf) *(6 大章節出版級繁體中文完整手冊，高解析度向量 PDF)*  
+>   2. 👉 [**`APEX_POWER現場調試與故障排除SOP口袋書_已完成.pdf`**](./APEX_POWER現場調試與故障排除SOP口袋書_已完成.pdf) *(2 頁配電盤現場除錯與接線 SOP 口袋書發布檔)*
+>   *（亦可參閱對應之 Markdown 原始檔案：[`完整操作手冊.md`](./APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.md) ｜ [`現場SOP口袋書.md`](./APEX_POWER現場調試與故障排除SOP口袋書_已完成.md)）*
+
+---
+
 ## 學習重點與核心心法 (Learning Objectives)
 
 ### 1. 台灣工控在地術語精準對齊（Avoid Machine Translation Clichés）
@@ -49,18 +63,23 @@ flowchart TD
 
 ---
 
-## 目錄結構與檔案清單 (Directory Structure)
+## 📁 範例交付成品與素材清單 (Directory Structure)
 
-| 檔案名稱 | 說明 |
-| :--- | :--- |
-| [10-1_白話自然語言發想提示詞.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/10-1_白話自然語言發想提示詞.md) | 從企業痛點出發，引導 AI 釐清跨國手冊翻譯、雙軌 SOP 提煉與去識別化策略之口語 Prompt。 |
-| [10-2_AI產出之RTCCF手冊在地化與術語對齊提示詞.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/10-2_AI產出之RTCCF手冊在地化與術語對齊提示詞.md) | 包含完整台灣工控在地術語對照表、6 大章節結構與電氣安全標註之嚴謹 RTCCF 框架 Prompt。 |
-| [10-3_生成出版級美化PDF發布檔提示詞.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/10-3_生成出版級美化PDF發布檔提示詞.md) | 工業出版級 CSS 列印樣式規範與無外部套件依賴之 Python + Headless Chrome 自動化轉換腳本。 |
-| [APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.md) | 包含 6 大章節、電氣特性對比矩陣與事件日誌分析之完整繁體中文操作手冊（Markdown 源檔）。 |
-| [APEX_POWER現場調試與故障排除SOP口袋書_已完成.md](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/APEX_POWER現場調試與故障排除SOP口袋書_已完成.md) | 專為配電盤前線工程師設計之 2 頁精準調試與燈號除錯口袋書（Markdown 源檔）。 |
-| [APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.pdf](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.pdf) | 運用出版級 CSS 樣式與 Headless Chrome 產出之高解析度向量發布檔（約 2.5 MB）。 |
-| [APEX_POWER現場調試與故障排除SOP口袋書_已完成.pdf](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/APEX_POWER現場調試與故障排除SOP口袋書_已完成.pdf) | 適合隨身攜帶或張貼於控制箱門板之高質感 SOP 口袋書發布檔（約 1.7 MB）。 |
-| [素材_QUINT_POWER軟體英文技術手冊.pdf](file:///Users/roberthsu2003/Documents/GitHub/workflow-productivity/常見的AI應用/實戰範例/工控技術手冊跨國在地化與SOP出版級美化/素材_QUINT_POWER軟體英文技術手冊.pdf) | 原始英文工控軟體技術操作手冊素材（1.6 MB，36 頁）。 |
+| 檔案名稱 | 檔案類型 | 角色與說明 |
+| :--- | :---: | :--- |
+| 📦 [**素材_QUINT_POWER軟體英文技術手冊.pdf**](./素材_QUINT_POWER軟體英文技術手冊.pdf) | 📁 **實作原始素材** | **【實作起點】** 原始原廠英文工控軟體技術操作手冊素材（36 頁，1.6 MB，請下載此檔開始實作） |
+| 📕 [**APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.pdf**](./APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.pdf) | 🏆 **最終完成成果** | **【對照標準答案】** 6 大章節出版級繁體中文高解析度向量發布檔（約 2.5 MB） |
+| 📘 [**APEX_POWER現場調試與故障排除SOP口袋書_已完成.pdf**](./APEX_POWER現場調試與故障排除SOP口袋書_已完成.pdf) | 🏆 **最終完成成果** | **【對照標準答案】** 專為配電盤前線工程師設計之 2 頁精準調試與燈號除錯口袋書發布檔（約 1.7 MB） |
+| 📄 [**APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.md**](./APEX_POWER電源配置軟體_繁體中文操作手冊_已完成.md) | 📄 **Markdown 源檔** | 包含 6 大章節、電氣特性對比矩陣與事件日誌分析之繁體中文完整手冊源檔 |
+| 📄 [**APEX_POWER現場調試與故障排除SOP口袋書_已完成.md**](./APEX_POWER現場調試與故障排除SOP口袋書_已完成.md) | 📄 **Markdown 源檔** | 適合列印過膠貼於機台控制箱門板之 2 頁 SOP 口袋書源檔 |
+| 💬 [**10-1_白話自然語言發想提示詞.md**](./10-1_白話自然語言發想提示詞.md) | 💬 **人機協商** | 從企業痛點出發，引導 AI 釐清跨國手冊翻譯、雙軌 SOP 提煉與去識別化策略之口語 Prompt |
+| 🎯 [**10-2_AI產出之RTCCF手冊在地化與術語對齊提示詞.md**](./10-2_AI產出之RTCCF手冊在地化與術語對齊提示詞.md) | 🎯 **五要素 Prompt** | 包含完整台灣工控在地術語對照表、6 大章節結構與電氣安全標註之嚴謹 RTCCF 框架 Prompt |
+| ⚙️ [**10-3_生成出版級美化PDF發布檔提示詞.md**](./10-3_生成出版級美化PDF發布檔提示詞.md) | ⚙️ **核心教學** | 工業出版級 CSS 列印樣式規範與無外部套件依賴之 Python + Headless Chrome 自動化轉換腳本 |
 
 > [!NOTE]
 > 本範例素材已將真實品牌與型號進行去識別化處理，改以虛擬之**「德菱電氣（Aegis Contact）」**與**「APEX POWER 第四代工業電源」**呈現，保障企業隱私與技術合規。
+
+---
+
+[← 返回實戰範例導覽總表](../README.md)
+
