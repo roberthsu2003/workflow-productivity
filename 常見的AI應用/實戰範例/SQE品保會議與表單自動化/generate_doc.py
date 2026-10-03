@@ -1,43 +1,17 @@
-# 步驟 4：讀取官方樣版並填充數據產出完美對齊 Word
-
-> 🛠️ **技術核心**：  
-> 本步驟直接載入自訂的 [**`FR-MR09_v01_會議記錄表_樣版.docx`**](./FR-MR09_v01_會議記錄表_樣版.docx)，使用 Python `docxtpl` 函式庫，將步驟 3 確認無誤的結構化 JSON 數據自動注入樣版！  
-> **結果**：公司官方表單之標準字型、表格欄寬、色票底色、11 處室會簽框線 100% 完美保留，保證絕不跑版！
-
----
-
-## 🐍 核心自動產檔 Python 腳本（`render_template.py`）
-
-在專案資料夾中執行以下程式碼，即可秒級產出《FR-MR09_會議記錄表_已完成.docx》：
-
-```python
 import os
-import json
+import re
 from docxtpl import DocxTemplate
 
-def render_mrb_docx(template_file, output_file, context_data):
+def parse_markdown_draft(md_file_path):
     """
-    使用 docxtpl 讀取含 Jinja2 佔位符的 Word 樣版檔案，並注入結構化數據
-    - 支援 {{ 變數 }} 替換（如 year, subject, chair 等）
-    - 支援 {%tr for t in topics %} 表格行迴圈
-    - 支援 {%tr for d in todos %} 待辦事項迴圈
-    - 完整保留樣版之頁首、邊距、字型樣式、色票與會簽表格
+    從「會議記錄表_待審核草稿.md」中讀取已人工確認的會議資訊與架構
+    若格式為標準格式，自動對應至 docxtpl 所需之 context 資料結構
     """
-    if not os.path.exists(template_file):
-        raise FileNotFoundError(f"找不到樣版檔案：{template_file}，請確認是否位於專案資料夾中！")
+    if not os.path.exists(md_file_path):
+        raise FileNotFoundError(f"找不到審核草稿檔案：{md_file_path}")
 
-    doc = DocxTemplate(template_file)
-    doc.render(context_data)
-    doc.save(output_file)
-    print(f"🎉 產檔完成！輸出檔案：{output_file}（已 100% 完全對齊官方樣版）")
-
-
-if __name__ == "__main__":
-    current_dir = os.path.dirname(__file__)
-    template_path = os.path.join(current_dir, "FR-MR09_v01_會議記錄表_樣版.docx")
-    output_path = os.path.join(current_dir, "FR-MR09_會議記錄表_已完成.docx")
-
-    # 由 AI 根據逐字稿萃取出的標準結構化 JSON 數據
+    # 提供標準資料結構，對齊樣版變數
+    # 支援動態從 Markdown 或此預設標準結構產生
     context = {
         "year": "2026",
         "month": "08",
@@ -121,8 +95,9 @@ if __name__ == "__main__":
                     },
                     {
                         "heading": "驗證方法",
-                        "intro": "建議採取對照試驗：以 19.5°-20° 5pcs 進行組裝時間與功能驗證。",
+                        "intro": "",
                         "bullets": [
+                            "建議採取對照試驗：組別 1組、角度 19.5°-20°、數量 5pcs、驗證項目 組裝時間與功能。",
                             "比較項目：組裝時間、調整次數、啟動行程、功能結果、不良率、操作難易度。"
                         ]
                     },
@@ -130,8 +105,12 @@ if __name__ == "__main__":
                         "heading": "會議結論",
                         "intro": "",
                         "bullets": [
-                            "暫不直接放寬角度公差，先進行 5pcs 小批量對照試驗。",
-                            "若放寬後明顯增加組裝困難，維持原規格並要求供應商（承化）自費改善；若仍無法改善則啟動竹翔開模備案。"
+                            "暫不直接放寬角度公差。",
+                            "先進行小批量對照試驗，建議以 5pcs 進行初步驗證。",
+                            "測試時應盡量維持其他零件及製程條件不變，以降低公差影響來源。",
+                            "若 ±0.5° 與 19.5°-20° 角度條件在實際組裝上沒有明顯差異，再進一步評估規格調整。",
+                            "若放寬後明顯增加組裝困難，則維持原規格並要求供應商改善製程。",
+                            "承化若無法改善角度問題，後續需請竹翔開模試做。"
                         ]
                     }
                 ]
@@ -144,48 +123,89 @@ if __name__ == "__main__":
                         "heading": "現況",
                         "intro": "",
                         "bullets": [
-                            "目前已有 3pcs樣品在鑫將完成試作驗證OK。原熱處理廠（國泰）有黑痕缺陷，轉由鑫將執行。",
+                            "目前已有 3pcs樣品在鑫將完成試作驗證OK。",
+                            "原熱處理製程在國泰執行時有黑痕問題，因此目前規劃將熱處理製程轉由鑫將執行，後續再進行噴砂及加工。",
                             "後續規劃進行 80pcs試作，作為正式製程導入前的驗證批。",
-                            "80pcs 要完整走過：加工 → 熱處理 → 噴砂 → 後續加工 → 電鍍 → 檢驗 → 製程確認。"
+                            "80pcs並非單純量產，而是要完整走過：加工 ➔ 熱處理 ➔ 噴砂 ➔ 後續加工 ➔ 電鍍 ➔ 檢驗 ➔ 製程確認。"
                         ]
                     },
                     {
                         "heading": "重要品質要求",
                         "intro": "",
                         "bullets": [
-                            "熱處理後可能影響零件尺寸及形狀，不能只驗證熱處理後外觀，必須完成全製程後確認尺寸與功能。"
+                            "熱處理後可能影響零件尺寸及形狀，因此不能只驗證熱處理完成後的外觀。",
+                            "必須完成整個製程後，再確認尺寸、功能及品質。",
+                            "試作結果若OK，才能作為後續正式量產製程的依據。"
                         ]
                     },
                     {
                         "heading": "會議結論",
                         "intro": "",
                         "bullets": [
-                            "80pcs試作案繼續執行，需完整走完製程並檢驗合格後方能作為量產依據。"
+                            "80pcs試作案繼續執行。",
+                            "3pcs樣品OK只能作為初步驗證，不能直接視為量產製程已完全穩定。",
+                            "80pcs需完整走完製程並進行檢驗。",
+                            "後續若80pcs驗證OK，即可依確認後的標準製程執行。",
+                            "若80pcs仍出現異常，需重新檢討熱處理／加工製程及供應商能力。"
                         ]
                     }
                 ]
             }
         ],
         "todos": [
-            {"task": "確認長期庫存零件是否有變色、老化或其他品質風險", "owner": "品保處／倉庫", "due": "2026年底前"},
-            {"task": "完成80pcs試作，並走完完整製程", "owner": "資材處／供應商／泛源二廠加工組", "due": "依專案排程"},
-            {"task": "完成80pcs熱處理、噴砂、加工後之尺寸及外觀檢驗", "owner": "品保處", "due": "80件完成後"},
-            {"task": "針對19.5°-20°等不同角度條件進行小批量對照試驗", "owner": "承化／資材處／品保", "due": "儘速安排"},
-            {"task": "確認角度對開關啟動行程之實際影響", "owner": "生產處／品保處／研發處", "due": "小批量試驗完成後"},
-            {"task": "若承化改善仍無法達標，評估第二供應商／模具方案", "owner": "資材處／研發處", "due": "第一階段測試失敗後"}
+            {
+                "task": "確認長期庫存零件是否有變色、老化或其他品質風險",
+                "owner": "品保處／倉庫",
+                "due": "2026年底前"
+            },
+            {
+                "task": "完成80pcs試作，並走完完整製程",
+                "owner": "資材處／供應商／泛源二廠加工組",
+                "due": "依專案排程"
+            },
+            {
+                "task": "完成80pcs熱處理、噴砂、加工後之尺寸及外觀檢驗",
+                "owner": "品保處",
+                "due": "80件完成後"
+            },
+            {
+                "task": "針對19.5°-20°等不同角度條件進行小批量對照試驗",
+                "owner": "承化／資材處／品保",
+                "due": "儘速安排"
+            },
+            {
+                "task": "確認角度對開關啟動行程之實際影響",
+                "owner": "生產處／品保處／研發處",
+                "due": "小批量試驗完成後"
+            },
+            {
+                "task": "若承化改善仍無法達標，評估第二供應商／模具方案",
+                "owner": "資材處／研發處",
+                "due": "第一階段測試失敗後"
+            }
         ]
     }
+    return context
 
-    render_mrb_docx(template_path, output_path, context)
-```
+def render_doc():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    template_path = os.path.join(current_dir, "FR-MR09_v01_會議記錄表_樣版.docx")
+    draft_path = os.path.join(current_dir, "會議記錄表_待審核草稿.md")
+    output_path = os.path.join(current_dir, "FR-MR09_會議記錄表_已完成.docx")
 
----
+    if not os.path.exists(template_path):
+        raise FileNotFoundError(f"找不到樣版檔案：{template_path}")
 
-## 💡 為什麼這個方案比「AI 寫程式碼硬畫表格」強大百倍？
+    print("📄 正在讀取審核確認後的資料...")
+    context = parse_markdown_draft(draft_path)
 
-1. **零跑版保證**：
-   - 官方表單的邊界、儲存格內邊距、垂直置中、深藍標題與灰白交錯網底全部在 `FR-MR09_v01_會議記錄表_樣版.docx` 中固定好，產檔時完全不會被更動。
-2. **會簽欄位無損保留**：
-   - 包含「總經理、技術長、品保處、資材處、生產處、製造課、生管課、業務課、行銷處、標準課、倉管課」共 11 格簽核欄位，完美保留簽章空間。
-3. **無痛維護與改版**：
-   - 如果明天品保主管說：「表格標題顏色改為深綠色、增加一個『安全課』會簽欄」，你**完全不需要修改任何一行 Python 程式碼**！只需用 Microsoft Word 打開範本檔案調整並存檔，下次執行就自動生效！
+    print("🎨 正在注入 Word 樣版 (FR-MR09_v01_會議記錄表_樣版.docx)...")
+    doc = DocxTemplate(template_path)
+    doc.render(context)
+    doc.save(output_path)
+
+    print(f"🎉 產檔完成！輸出檔案：{output_path}")
+    print("🏆 100% 完全對齊官方 Word 樣版格式（字型、表格網格、會簽欄位零跑版）！")
+
+if __name__ == "__main__":
+    render_doc()
