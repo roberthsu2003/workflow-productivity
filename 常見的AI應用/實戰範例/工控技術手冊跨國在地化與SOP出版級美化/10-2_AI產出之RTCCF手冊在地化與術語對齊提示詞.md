@@ -14,10 +14,10 @@
 
 ```mermaid
 flowchart TD
-    subgraph Phase1 ["第一階段：AI 專業在地化 ➔ 產出 Markdown 檢核表"]
+    subgraph Phase1 ["第一階段：AI 專業在地化 ➔ 儲存為 Markdown 實體檔案進行人機協作"]
         Feed["💬 <b>學員貼入 RTCCF 提示詞 ＋ 上傳英文手冊 PDF</b>"] --> RunParse["🌐 <b>AI 深入解析 36 頁原廠文件</b><br/>對齊台灣工控術語、結構化 6 大章節、提煉現場 SOP"]
-        RunParse --> MakeMD["📋 <b>AI 產出 Markdown 內容檢核檔</b><br/><code>操作手冊.md</code> ＋ <code>現場SOP口袋書.md</code><br/><i>（完整呈現繁中技術文檔與術語對照庫）</i>"]
-        MakeMD --> PauseWait["🛑 <b>主動停下等待確認</b><br/>『請確認以上繁中手冊與現場 SOP 術語是否精準無誤？』"]
+        RunParse --> MakeMD["💾 <b>AI 直接儲存為 2 個實體 Markdown 檔案</b><br/><code>操作手冊.md</code> ＋ <code>現場SOP口袋書.md</code><br/><i>（供學員在本地編輯器開啟並進行人機協作微調）</i>"]
+        MakeMD --> PauseWait["🛑 <b>主動停下等待確認</b><br/>『2 個 Markdown 檔案已儲存，請開啟確認內容與術語無誤』"]
     end
 
     subgraph Phase2 ["第二階段：學員確認無誤 ➔ 生成出版級向量 PDF"]
@@ -56,10 +56,13 @@ flowchart TD
 3. 提煉現場 2 頁調機與排障 SOP 口袋書（Field Quick SOP）：
    - 專為無暇翻閱 36 頁的現場機台調機與配電盤技師設計。
    - 濃縮為「現場五步調機流程」與「常見 6 大故障 LED 燈號排除對照表」，適合列印過膠貼於配電盤門板。
-4. 產出結構化 Markdown 檔案：
-   - 將上述內容產出為 Markdown 規格檔案（`APEX_POWER電源配置軟體_繁體中文操作手冊.md` 與 `APEX_POWER現場調試與故障排除SOP口袋書.md`）。
+4. 直接儲存為 2 個實體 Markdown 檔案以供人機協作：
+   - 翻譯與提煉完成後，必須直接在專案目錄下儲存為以下 2 個實體檔案：
+     * `APEX_POWER電源配置軟體_繁體中文操作手冊.md`（完整 6 大章節在地化手冊）
+     * `APEX_POWER現場調試與故障排除SOP口袋書.md`（2 頁現場調機與排障 SOP 口袋書）
+   - 讓使用者可以在本地文字編輯器（VS Code / 筆記軟體）直接開啟檔案，進行人機協作（Human-in-the-loop）審查、補充公司專屬規範與微調修改！
 5. 停下來等待審核：
-   - 在對話框中輸出 Markdown 檢核表，並主動詢問我：「繁體中文手冊與 2 頁現場 SOP 口袋書之內容與專業術語已整理完成，請確認內容是否無誤？確認後將為您自動生成出版級向量 PDF 檔案」。
+   - 在對話框中告知 2 個 Markdown 檔案已儲存完畢並列出術語對照庫，主動詢問我：「繁體中文手冊與 2 頁現場 SOP 口袋書已儲存為 Markdown 檔案，請開啟檔案確認內容與術語是否無誤？確認後將為您自動生成出版級向量 PDF 檔案」。
    - 在使用者確認前，嚴禁直接產出 PDF 檔案！
 
 ### 階段二：確認後自動生成出版級向量 PDF 發布檔
