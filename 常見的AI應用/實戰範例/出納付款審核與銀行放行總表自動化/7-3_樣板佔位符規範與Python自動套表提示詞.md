@@ -1,4 +1,4 @@
-# 7-3 樣板佔位符規範與 Python 自動套表提示詞
+# 7-3 樣板佔位符規範與 AI 自動套表核心流程
 
 > 🏆 **本單元核心靈魂**：**Template Placeholder（樣板佔位符）與動態資料列擴展（Dynamic Row Expansion）**  
 > 告別「業餘寫死儲存格座標（Hardcoded Coordinates）」的脆弱腳本，邁向能隨意適應 5 筆、50 筆甚至 100 筆傳票的企業級高強韌度自動套表！
@@ -7,14 +7,14 @@
 
 ## 💡 為什麼專業的自動化必須具備「Template Placeholder」觀念？
 
-在企業實務中，出納或行政人員常常需要將 ERP 資料填入公司固定的銀行樣板。許多人初學 Python 或讓 AI 寫腳本時，最常犯的致命錯誤就是**寫死座標（例如 `ws.cell(row=4, column=1) = ...`）**：
+在企業實務中，出納或行政人員常常需要將 ERP 資料填入公司固定的銀行樣板。許多人初學自動化時，最常犯的致命錯誤就是**寫死座標（例如第 4 列到第 8 列放資料）**：
 * ❌ **致命盲點 1：資料筆數變動即崩潰**  
-  若樣板原本在第 4 列到第 8 列預留 5 行空白，第 9 列是「合計」，第 11 列是「簽核欄」。如果本次批次有 20 筆傳票，寫死座標的程式會**直接把「合計列」與「老闆簽名欄」硬生生覆蓋抹消**！
+  若樣板原本預留 5 行空白，第 9 列是「合計」，第 11 列是「簽核欄」。如果本次批次有 20 筆傳票，寫死座標的做法會**直接把「合計列」與「老闆簽名欄」硬生生覆蓋抹消**！
 * ❌ **致命盲點 2：財務調整樣式即報銷**  
-  如果財務主管哪天在表頭上方插入一列「公司統一編號」，所有 hardcoded 的 row index 全部偏移一列，整個程式徹底故障！
+  如果財務主管哪天在表頭上方插入一列「公司統一編號」，所有寫死行號的規則全部偏移一列，整個流程徹底故障！
 * ✅ **Template Placeholder 解法（樣板驅動文件生成）**：
-  1. **職責分離**：樣板視覺（字型、色彩、Logo、簽核欄位）100% 由業務人員在 Excel 裡維護；程式只認**佔位符（Placeholder）**。
-  2. **動態行擴展（Dynamic Row Insertion）**：在資料區設定一行「樣式錨點（Anchor Row）」，Python 依實際筆數動態呼叫 `insert_rows` 將下方內容優雅下推，自動繼承字型與邊框，並動態改寫合計 SUM 算式！
+  1. **職責分離**：樣板視覺（字型、色彩、Logo、簽核欄位）100% 由業務人員在 Excel 裡維護；AI 只認**佔位符（Placeholder）**。
+  2. **動態行擴展（Dynamic Row Insertion）**：在資料區設定一行「樣式錨點（Anchor Row）」，AI 依實際筆數動態向下推移，自動繼承字型與邊框，並動態改寫合計 SUM 算式！
 
 ---
 
@@ -22,178 +22,64 @@
 
 | 佔位符層次 | 標記欄位 | 說明與作用 |
 | :--- | :--- | :--- |
-| **純量佔位符**<br/>*(Scalar Placeholder)* | `{{FORM_ID}}`<br/>`{{NOTE}}` | 位於表頭或備註。Python 透過全表字串搜尋替換，不論儲存格搬到何處皆能自動命中。 |
-| **動態樣板行錨點**<br/>*(Row Template Anchor)* | `{{SEQ}}`<br/>`{{VOUCHER_NO}}`<br/>`{{PAY_DATE}}`<br/>`{{SUMMARY}}`<br/>`{{INCOME}}`<br/>`{{UNPAID}}`<br/>`{{FEE}}`<br/>`{{TOTAL_PAYABLE}}` | 位於明細列起點（如 Row 4）。該行已預先設定好**微軟正黑體、薄灰邊框、置中/靠右、千分位格式（`#,##0`）**。Python 提取其格式作為樣板，動態複製並擴展至 N 筆資料。 |
-| **動態公式錨點**<br/>*(Dynamic Formula)* | `=SUM(E4:E4)` | 合計列的 SUM 公式。程式根據動態推移後的起始與結束列，自動改寫為 `=SUM(E{start}:E{end})`。 |
+| **純量佔位符**<br/>*(Scalar Placeholder)* | `{{FORM_ID}}`<br/>`{{NOTE}}` | 位於表頭或備註。全表字串搜尋替換，不論儲存格搬到何處皆能自動命中。 |
+| **動態樣板行錨點**<br/>*(Row Template Anchor)* | `{{SEQ}}`<br/>`{{VOUCHER_NO}}`<br/>`{{PAY_DATE}}`<br/>`{{SUMMARY}}`<br/>`{{INCOME}}`<br/>`{{UNPAID}}`<br/>`{{FEE}}`<br/>`{{TOTAL_PAYABLE}}` | 位於明細列起點（如 Row 4）。該行已預先設定好**微軟正黑體、薄灰邊框、置中/靠右、千分位格式（`#,##0`）**。AI 會提取其格式作為樣板，動態複製並擴展至 N 筆資料。 |
+| **動態公式錨點**<br/>*(Dynamic Formula)* | `=SUM(E4:E4)` | 合計列的 SUM 公式。AI 根據動態推移後的起始與結束列，自動改寫為 `=SUM(E{start}:E{end})`。 |
 
 ---
 
-## 💬 一鍵執行 Python 套表提示詞（傳送給 AI 執行）
+## 📋 自然語言套表提示詞（獨立執行版，傳送給 AI 執行）
 
-```markdown
-請擔任 Python 資料處理專家，針對《素材_應付明細_台幣.xlsx》與《樣板_臺企銀單筆付款放行總表.xlsx》，撰寫並執行 openpyxl 自動套表腳本，生成最終發布檔《出納付款放行總表_已完成.xlsx》：
+學生在 AI 對話視窗（ChatGPT Plus / Claude / Gemini Advanced）中，**同時上傳《素材_應付明細_台幣.xlsx》與《樣板_臺企銀單筆付款放行總表.xlsx》**，並直接貼上以下這段指令：
 
-【業務與資料邏輯】
-1. 指定付款到期日：篩選「2026/09/30」（或由參數指定）。
-2. GroupBy 分組：依「傳票號碼 + 帳款對象」進行分組，計算發票張數與本幣應付金額加總。
-3. 摘要規則：格式化為「應付 [帳款對象]（N筆發票）」。
+```text
+你是一位精通微軟 Excel 自動化與資料處理的專家。
 
-【Template Placeholder 套表規範（關鍵核心）】
-1. 替換純量佔位符：
-   - 將樣板內的 `{{FORM_ID}}` 替換為 `FIN115-175`。
-   - 將 `{{NOTE}}` 替換為 `本期手續費由公司負擔；單筆大額款項請主管覆核放行。`
-2. 定位樣式錨點列：
-   - 尋找包含 `{{SEQ}}` 之列（即資料樣板列），提取該列 1~10 欄之字型（Font）、邊框（Border）、對齊（Alignment）與數字格式（Number Format）。
-3. 動態行擴展（Dynamic Row Expansion）：
-   - 若分組後傳票有 N 筆（N > 1），使用 `ws.insert_rows(tmpl_row + 1, amount=N - 1)` 動態下推下方內容。
-   - 逐列寫入序號、傳票號碼、支付日、摘要、本期未付金額、手續費（0）、本期應付公式（`=F{row}+G{row}`）。
-   - 將預先提取的樣板格式逐格套用至新插入之儲存格，設定列高為 32。
-4. 動態合計公式與簽核欄保護：
-   - 自動更新合計列（Summary Row）之 SUM 算式為 `=SUM(F{start}:F{end})`，確保完全覆蓋所有資料列。
-   - 確保底部的「核准 / 覆核 / 審核 / 經辦」簽章區域完整保留且自然下推。
+我上傳了兩份檔案：
+1. ERP 原始資料：「素材_應付明細_台幣.xlsx」
+2. 已設好佔位符的放行表樣板：「樣板_臺企銀單筆付款放行總表.xlsx」
 
-請直接執行 Python 腳本並輸出完成檔案！
+請幫我完成出納放行總表的自動套表：
+1. 篩選付款到期日為「2026/09/30」的款項，並依「傳票號碼＋帳款對象」合併歸戶（摘要格式為：應付 [帳款對象]（N筆發票））。
+2. 將歸戶後的傳票資料填入樣板的資料佔位符（Row 4 的樣式錨點），有幾筆傳票就動態插入幾列，千萬不能覆蓋或破壞底部的合計公式與「核准/覆核/審核/經辦」主管簽章格線。
+3. 表頭表單代號填入 FIN115-175，備註填入「本期手續費由公司負擔；單筆大額款項請主管覆核放行。」
+4. 合計列請維持 SUM 自動加總公式，並完整傳承原本的字型、邊框與千分位格式。
+5. 請直接執行並產出一份排版完全零跑版的 Excel 檔案「出納付款放行總表_已完成.xlsx」供我下載！
 ```
 
 ---
 
-## 🐍 核心 Python 自動套表引擎源碼
+## 🗺️ AI 後台自動套表運作架構圖（不用懂代碼，秒懂原理！）
 
-以下即為完整的生產級 Python 處理腳本，已模組化封裝：
+學生**完全不需要學習或閱讀任何一行 Python 程式碼**！AI 在背景之所以能產出排版零跑版的檔案，核心運作原理如下圖所示：
 
-```python
-import copy
-from collections import defaultdict
-import openpyxl
-from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+```mermaid
+flowchart TD
+    subgraph S1 ["步驟 ①：素材結構化（轉為 JSON 架構）"]
+        Raw["📄 <b>ERP 原始發票明細</b><br/>素材_應付明細_台幣.xlsx<br/><i>（共 270 筆雜亂紀錄）</i>"] --> AI_Json["🤖 <b>AI 智慧解析與歸戶</b><br/>篩選 2026/09/30、依傳票合併歸戶"]
+        AI_Json --> JsonBox["📦 <b>乾淨結構化 JSON 數據</b><br/><code>{<br/>&nbsp;&nbsp;form_id: 'FIN115-175',<br/>&nbsp;&nbsp;records: [5筆傳票資料],<br/>&nbsp;&nbsp;summary: 4040257<br/>}</code>"]
+    end
 
+    subgraph S2 ["步驟 ②：AI 自動生成套表程式並注入樣版"]
+        JsonBox --> MergeEngine
+        Tmpl["📐 <b>標準佔位符樣版</b><br/>樣板_臺企銀單筆付款放行總表.xlsx<br/><i>（內建 {{FORM_ID}} 與樣式錨點）</i>"] --> MergeEngine
+        MergeEngine["⚙️ <b>AI 自動產生的套表程式</b><br/><i>（AI 在後台自動寫 code 並執行，學生無需接觸）</i><br/>① 提取樣式錨點之邊框與字型<br/>② 依筆數動態向下插入列<br/>③ 更新合計 SUM 算式並保護簽章欄"]
+    end
 
-def generate_payment_release_sheet(
-    data_path: str,
-    template_path: str,
-    output_path: str,
-    target_date: str = '2026/09/30',
-    form_id: str = 'FIN115-175',
-    note: str = None,
-):
-  # 1. 讀取 ERP 原始資料並依 (傳票號碼, 廠商代號) 進行 GroupBy
-  wb_data = openpyxl.load_workbook(data_path, data_only=True)
-  ws_data = wb_data.active
-  rows = list(ws_data.iter_rows(values_only=True))
-  header = rows[0]
+    subgraph S3 ["步驟 ③：交付成果"]
+        MergeEngine --> FinalResult["🏆 <b>排版 100% 零跑版之正式放行總表</b><br/><b>出納付款放行總表_已完成.xlsx</b><br/><i>（提供學生直接點擊下載！）</i>"]
+    end
 
-  col_due_date = header.index('付款到期日')
-  col_voucher = header.index('傳票號碼')
-  col_vendor = header.index('帳款對象')
-  col_amt = header.index('本幣應付金額')
-
-  matched_rows = [r for r in rows[1:] if r[col_due_date] == target_date]
-  if not matched_rows:
-    raise ValueError(f'找不到指定到期日 {target_date} 的付款資料！')
-
-  grouped = defaultdict(list)
-  for r in matched_rows:
-    voucher = r[col_voucher]
-    vendor = r[col_vendor]
-    grouped[(voucher, vendor)].append(r)
-
-  records = []
-  for (voucher, vendor), items in grouped.items():
-    records.append({
-        'voucher': voucher,
-        'vendor': vendor,
-        'inv_count': len(items),
-        'amount': sum(float(it[col_amt] or 0) for it in items),
-    })
-
-  # 2. 載入帶有 Template Placeholder 的樣板
-  wb_tmpl = openpyxl.load_workbook(template_path)
-  ws = wb_tmpl.active
-
-  # 替換純量佔位符並尋找動態資料列錨點 {{SEQ}}
-  tmpl_row_idx = None
-  for r in range(1, ws.max_row + 1):
-    for c in range(1, ws.max_column + 1):
-      val = ws.cell(r, c).value
-      if isinstance(val, str):
-        if '{{FORM_ID}}' in val:
-          ws.cell(r, c).value = val.replace('{{FORM_ID}}', form_id)
-        if '{{NOTE}}' in val:
-          default_note = '本期手續費由公司負擔；請主管覆核放行。'
-          ws.cell(r, c).value = val.replace('{{NOTE}}', note or default_note)
-        if '{{SEQ}}' in val:
-          tmpl_row_idx = r
-
-  if tmpl_row_idx is None:
-    raise ValueError('樣板中找不到 {{SEQ}} 錨點列！')
-
-  # 3. 提取樣板錨點列之單元格樣式
-  cell_styles = []
-  for c in range(1, 11):
-    src = ws.cell(tmpl_row_idx, c)
-    cell_styles.append({
-        'font': copy.copy(src.font),
-        'border': copy.copy(src.border),
-        'alignment': copy.copy(src.alignment),
-        'number_format': src.number_format,
-    })
-
-  n_records = len(records)
-
-  # 4. 動態向下擴展列數（保護簽核欄）
-  if n_records > 1:
-    ws.insert_rows(tmpl_row_idx + 1, amount=n_records - 1)
-
-  # 5. 填入明細資料並套用樣式
-  for i, rec in enumerate(records):
-    cur_row = tmpl_row_idx + i
-    ws.row_dimensions[cur_row].height = 32
-
-    row_vals = [
-        i + 1,  # 序號
-        rec['voucher'],  # 傳票編號
-        target_date,  # 支付日
-        f"應付 {rec['vendor']}（{rec['inv_count']}筆發票）",  # 摘要
-        None,  # 本期收入
-        rec['amount'],  # 本期未付
-        0,  # 手續費
-        f'=F{cur_row}+G{cur_row}',  # 應付合計公式
-        None,  # 結餘
-        None,  # 銀行交易序號
-    ]
-
-    for c in range(1, 11):
-      cell = ws.cell(cur_row, c)
-      cell.value = row_vals[c - 1]
-      st = cell_styles[c - 1]
-      if st['font']:
-        cell.font = copy.copy(st['font'])
-      if st['border']:
-        cell.border = copy.copy(st['border'])
-      if st['alignment']:
-        cell.alignment = copy.copy(st['alignment'])
-      if st['number_format']:
-        cell.number_format = st['number_format']
-
-  # 6. 動態改寫合計列 SUM 公式
-  summary_row = tmpl_row_idx + n_records
-  start_row = tmpl_row_idx
-  end_row = tmpl_row_idx + n_records - 1
-
-  ws.cell(summary_row, 5).value = f'=SUM(E{start_row}:E{end_row})'
-  ws.cell(summary_row, 6).value = f'=SUM(F{start_row}:F{end_row})'
-  ws.cell(summary_row, 7).value = f'=SUM(G{start_row}:G{end_row})'
-  ws.cell(summary_row, 8).value = f'=SUM(H{start_row}:H{end_row})'
-
-  wb_tmpl.save(output_path)
-  print(f'✅ 成功產出：{output_path}（共 {n_records} 筆傳票放行）')
-
-
-if __name__ == '__main__':
-  generate_payment_release_sheet(
-      data_path='素材_應付明細_台幣.xlsx',
-      template_path='樣板_臺企銀單筆付款放行總表.xlsx',
-      output_path='出納付款放行總表_已完成.xlsx',
-      target_date='2026/09/30',
-  )
+    style JsonBox fill:#e1f5fe,stroke:#0288d1,stroke-width:2px
+    style MergeEngine fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    style FinalResult fill:#e8f5e9,stroke:#388e3c,stroke-width:2px
 ```
+
+### 💡 核心三步驟白話圖解：
+
+1. **第一步：素材轉為 JSON 架構（數據乾淨化）**  
+   AI 讀取上傳的 270 筆 ERP 明細後，先在後台將其整理為電腦最容易精準處理的 **JSON 結構化資料**（包含表單代號、歸戶後的 5 筆傳票與總金額），徹底擺脫原始雜亂數據。
+2. **第二步：JSON 傳送給「AI 產生的程式 ＋ 樣版」**  
+   AI 在背景自動撰寫一段資料套表程式，將剛剛整理好的「JSON 數據」注入「樣板檔」。程式只認佔位符，並自動透過**動態向下擴展**把資料填入，保證合計公式與主管簽章欄永遠順暢推移、絕不變形覆蓋！
+3. **第三步：直接產出最終結果供下載**  
+   套表完成後，AI 直接交付 [**`出納付款放行總表_已完成.xlsx`**](./出納付款放行總表_已完成.xlsx) 實體檔案供學生下載，完成整個企業級自動化閉環！
