@@ -48,9 +48,15 @@
 > **📂 [進入主題筆記：Artifacts](./Artifacts/README.md)**  
 > 2026 最新升級：從對話右側即時預覽畫布，全面邁向 **Artifacts 獨立管理中心（Hub）**！除經典 HTML/React/SVG/Mermaid 外，更全面整合 **Claude Design** 並推出 **Docs**（協同文件）、**Slides**（原生簡報）與 **Design**（視覺原型）三大全新 Beta 模板，支援一鍵線上放映與原生轉出 Word/PPT/PDF。
 
-### 🟢 討論方式的內容生成（人機協作實戰）— **Free（核心工作流）**
+### 🟢 討論方式的內容生成（人機協作 Human in the Loop 實戰）— **Free（核心工作流）**
 > **📂 [進入主題筆記：討論方式的內容生成](./討論方式的內容生成/README.md)**  
-> **不需要進入 Artifacts 也可以使用！** 揭密人機協作最關鍵心法：**在任何介面（Chats、Artifacts、Projects），只要「先產生 Markdown」，就可以透過討論方式展開高效率的人機協作**！反覆打磨確認定稿後，再一鍵轉出 Word/Excel/PPT/PDF，極致省 Token 且精準交付。
+> **告別單向盲猜與洗版噩夢！** 揭密人機協作 (Human-in-the-Loop) 最關鍵心法：**「中間打磨純文字（Markdown），最後定稿出成品（Word / Excel / PPT / PDF）」**！無論在 Chats、Artifacts 還是 Projects，都能透過標題座標法指哪改哪、極致省 Token 且精準交付。  
+> 內含四大實戰實例與真實檔案下載區（含真實生成之 .docx / .xlsx / .pptx / .pdf）：
+> - 📄 [01. Word 商業企劃書與 SOP 矩陣](./討論方式的內容生成/Examples/01_Docx_Product_Launch_Plan/README.md)：解決直出 Word 格式死板問題，打磨時程與突發 SOP 後一鍵編譯排版級 DOCX。
+> - 📊 [02. Excel 動態損益與跨表預算模型](./討論方式的內容生成/Examples/02_Xlsx_Financial_Budget_Model/README.md)：解決公式錯誤痛點，校對 Markdown 欄位後一鍵編譯 4 工作表、自帶連鎖公式 (=SUM) 的真實 XLSX。
+> - 📽️ [03. PowerPoint 商業融資簡報分鏡](./討論方式的內容生成/Examples/03_Pptx_Pitch_Deck_Master/README.md)：解決滿版小字問題，打磨 One Message per Slide 與演講備忘稿，一鍵產出 16:9 暗黑科技風 PPTX。
+> - 📜 [04. PDF 永續查驗報告暨高階簽核公文](./討論方式的內容生成/Examples/04_Pdf_ESG_Audit_Report/README.md)：解決跑版缺字痛點，對齊 ISO 14064-1 條文與數據，一鍵編譯雙色防偽、帶用印簽章的正式 PDF。  
+> 深度閱讀：[01. HITL 核心心法](./討論方式的內容生成/Guide/01_HITL_Human_In_The_Loop_Core.md) · [02. 標題座標法工藝](./討論方式的內容生成/Guide/02_Coordinate_Method_and_Artifacts.md) · [03. 四大格式導出工程學](./討論方式的內容生成/Guide/03_Multi_Format_Export_Engineering.md)
 
 ### 🟢 Projects（雲端知識沙盒）— **Free（限 5 個）／Pro（無限制）**
 > **📂 [進入主題筆記：Projects](./Projects/README.md)**  
