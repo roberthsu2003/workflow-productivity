@@ -13,9 +13,9 @@
 
 ```mermaid
 flowchart TD
-    subgraph Phase1 ["🎨 階段一：AI 生成標準母片樣板"]
-        DesignReq["📋 <b>品牌視覺規範指令</b><br/>16:9 比例、深海藍/香檳金色票<br/>Header/Footer/Logo、3 頁標準版型佔位"]
-        AIGenTemplate["🤖 <b>AI 自動建構母片</b><br/>在背景產生標準簡報模板"]
+    subgraph Phase1 ["🎨 階段一：依據 3 張參考截圖，AI 逆向生成母片樣板"]
+        DesignReq["🖼️ <b>3 張參考設計截圖 ＋ 品牌指令</b><br/>725043_0.jpg ~ 725045_0.jpg<br/>16:9 比例、深海藍/香檳金色票、Header/Footer"]
+        AIGenTemplate["🤖 <b>AI 視覺逆向與母片建構</b><br/>在背景產生標準簡報模板"]
         TemplateFile["📐 <b>標準簡報母片樣板</b><br/><code>樣板_星嵐大飯店月報母片.pptx</code>"]
         DesignReq --> AIGenTemplate --> TemplateFile
     end
@@ -47,15 +47,15 @@ flowchart TD
 
 ## 💬 學生實戰指令：讓 AI 自動生成母片並注入數據
 
-學生只需在 ChatGPT Plus / Claude / Google Antigravity 對話框中，上傳兩份 Excel 素材，並發送以下提示詞，AI 便會在背後自動調用工具完成母片建構與數據合成：
+學生只需在 ChatGPT Plus / Claude / Google Antigravity 對話框中，**同時上傳 3 張參考截圖（725043_0.jpg ~ 725045_0.jpg）與兩份 Excel 素材**，並發送以下提示詞，AI 便會在背後自動調用工具完成母片建構與數據合成：
 
 ```markdown
-我是星嵐大飯店總經理室的營運幕僚。我目前手邊只有兩份原始 Excel 數據，公司尚未提供統一的 PPT 母片樣板。
+我是星嵐大飯店總經理室的營運幕僚。我目前手邊只有 3 張參考設計截圖（725043_0.jpg、725044_0.jpg、725045_0.jpg）與兩份原始 Excel 數據，公司尚未提供統一的 PPT 母片樣板。
 
 請幫我執行完整的自動化月報流程：
 
-【步驟一：請幫我建立標準 16:9 品牌母片樣板】
-1. 建立符合 16:9 比例的 PPT 樣板，套用星嵐大飯店品牌色系：
+【步驟一：請依據 3 張參考截圖建立標準 16:9 品牌母片樣板】
+1. 深度分析 3 張參考截圖的排版與色調，套用星嵐大飯店品牌色系：
    - 主色深海藍：#0B2545
    - 強調色香檳金：#C5A880
    - 次級藍：#134074
@@ -64,7 +64,7 @@ flowchart TD
 2. 建立全域統一的頁首（Header）橫幅與頁尾（Footer）：
    - Header 左側標註「STARSHORE HOTEL 星嵐大飯店」，右側標註「More Than A Stay」
    - Footer 標註「STARSHORE HOTEL 星嵐大飯店 | 美好，從星嵐開始」
-3. 建立 3 頁專用版型佔位（雙欄卡片版型、雙軸趨勢版型、表格與決策洞察版型）。
+3. 依照 3 張圖片分別建立專屬版型佔位（雙欄卡片版型、雙軸趨勢版型、表格與決策洞察版型）。
 👉 先行生成簡報母片檔案《樣板_星嵐大飯店月報母片.pptx》。
 
 【步驟二：讀取 Excel 數據並結構化提取】
