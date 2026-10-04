@@ -84,42 +84,35 @@
 
 ---
 
-## ⚡ 核心人機協商閉環（白話指令 ➔ AI 產出 RTCCF ➔ 交給 AI 一鍵完成母片與正式 PPT）
+## ⚡ 核心人機協商閉環（8-1 白話指令直接產母片 ➔ 8-2 結合母片執行 RTCCF 自動化出檔）
 
 ```mermaid
 flowchart TD
-    subgraph InputPhase ["📂 原始素材（學生手邊現有的資料）"]
-        ExcelData["📊 <b>Excel 數據流水帳（2 份）</b><br/>① 1,163筆黑卡訂房流水帳.xlsx<br/>② 2026各月目標與ADR.xlsx"]
-        DesignReq["🖼️ <b>視覺參考截圖（3 張）</b><br/>725043_0.jpg ~ 725045_0.jpg<br/>深海藍/香檳金配色、16:9比例與版型"]
+    subgraph Step1Phase ["🎨 步驟 1：依截圖直接生成母片（8-1 白話提示詞）"]
+        ImgReq["🖼️ <b>3 張視覺參考截圖</b><br/>725043_0.jpg ~ 725045_0.jpg<br/>（深海藍色調、3 大看板版面）"]
+        Prompt1["💬 <b>8-1 白話自然語言指令</b><br/>學生以最純粹口吻請 AI 逆向提煉設計"]
+        MasterFile["📐 <b>生成母片成果</b><br/><code>樣板_星嵐大飯店月報母片.pptx</code><br/><i>（16:9 品牌版型、三大頁面佔位符）</i>"]
+        ImgReq --> Prompt1 --> MasterFile
     end
 
-    subgraph PromptEngineering ["💬 提示詞工程閉環（學生免寫程式與複雜框架）"]
-        direction TB
-        Step1["<b>步驟 1：學生輸入白話發想指令</b><br/>上傳 5 份素材，請 AI 擔任提示詞工程專家<br/>👉 參見：<code>8-1_白話自然語言發想提示詞.md</code>"]
-        Step2["<b>步驟 2：AI 產出標準 RTCCF 提示詞</b><br/>自動提煉五要素框架（母片建立＋數據洞察＋PPT注入）<br/>👉 參見：<code>8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md</code>"]
-        Step1 -->|AI 自動架構| Step2
+    subgraph Step2Phase ["🤖 步驟 2：母片注入數據自動出檔（8-2 RTCCF 提示詞）"]
+        ExcelData["📊 <b>2 份 Excel 營運數據</b><br/>① 1,163筆流水帳<br/>② 每月預算與ADR"]
+        Prompt2["📋 <b>8-2 標準 RTCCF 提示詞</b><br/>包含角色、任務、數據清洗、洞察與格式"]
+        AIExec["⚡ <b>AI 自動執行閉環</b><br/>① 樞紐統計、YoY、ADR 達成率<br/>② 提煉 4 點商業決策洞察（Key Takeaways）<br/>③ 依據母片注入數據與原生可編輯圖表"]
+        FinalPPT["🏆 <b>最終正式發布簡報</b><br/><code>星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx</code><br/><i>（16:9 高階商業看板、零跑版）</i>"]
+        
+        MasterFile --> Prompt2
+        ExcelData --> Prompt2
+        Prompt2 --> AIExec --> FinalPPT
     end
 
-    subgraph AIExecution ["🤖 交給 AI 直接執行（一鍵自動化）"]
-        direction TB
-        GenMaster["<b>① 逆向建立母片</b><br/>依 3 張圖產生 16:9 母片樣板<br/><code>樣板_星嵐大飯店月報母片.pptx</code>"]
-        ParseData["<b>② 數據清洗與商業洞察</b><br/>樞紐統計、YoY、ADR 達成率<br/>提煉 4 點高階決策洞察（Key Takeaways）"]
-        MergePPT["<b>③ 依母片注入數據產出正式簡報</b><br/>自動排版原生可編輯圖表與卡片<br/><code>星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx</code>"]
-        GenMaster --> MergePPT
-        ParseData --> MergePPT
-    end
-
-    InputPhase --> Step1
-    Step2 -->|複製給 AI 執行| AIExecution
-
-    style InputPhase fill:#f8fafc,stroke:#94a3b8,stroke-width:1px
-    style PromptEngineering fill:#eff6ff,stroke:#3b82f6,stroke-width:2px
-    style AIExecution fill:#f0fdf4,stroke:#22c55e,stroke-width:2px
-    style Step1 fill:#e0e7ff,stroke:#4338ca,stroke-width:1px
-    style Step2 fill:#fef3c7,stroke:#d97706,stroke-width:1px
-    style GenMaster fill:#e0f2fe,stroke:#0284c7,stroke-width:1px
-    style ParseData fill:#fef9c3,stroke:#ca8a04,stroke-width:1px
-    style MergePPT fill:#dcfce7,stroke:#15803d,stroke-width:2px
+    style Step1Phase fill:#eff6ff,stroke:#3b82f6,stroke-width:2px
+    style Step2Phase fill:#f0fdf4,stroke:#22c55e,stroke-width:2px
+    style Prompt1 fill:#e0e7ff,stroke:#4338ca,stroke-width:1px
+    style MasterFile fill:#dbeafe,stroke:#1d4ed8,stroke-width:2px
+    style Prompt2 fill:#fef3c7,stroke:#d97706,stroke-width:1px
+    style AIExec fill:#e0f2fe,stroke:#0284c7,stroke-width:1px
+    style FinalPPT fill:#dcfce7,stroke:#15803d,stroke-width:2px
 ```
 
 ### 1. 步驟 0：原始素材準備
@@ -128,16 +121,13 @@ flowchart TD
 * 參考看板圖：[`725043_0.jpg`](./素材/725043_0.jpg)、[`725044_0.jpg`](./素材/725044_0.jpg)、[`725045_0.jpg`](./素材/725045_0.jpg)
 * 素材懶人包：[`素材.zip`](./素材.zip)（一鍵打包下載全部 5 個素材檔案）
 
-### 2. 步驟 1：白話自然語言發想（指揮 AI 產出 RTCCF 提示詞）
+### 2. 步驟 1：白話自然語言提示詞（以截圖直接生成母片）
 * 文件連結：[**`8-1_白話自然語言發想提示詞.md`**](./8-1_白話自然語言發想提示詞.md)
-* 核心亮點：學生完全不需要手刻複雜框架！直接以日常白話口吻，上傳 3 張參考截圖與 2 份 Excel 數據，請 AI 擔任提示詞工程專家，自動提煉出專業的 RTCCF 五要素提示詞。
+* 核心亮點：學生手邊沒有現成的 PPT 母片！直接上傳 3 張參考截圖，以最自然的口話請 AI 逆向提取配色與版型，**直接生成 16:9 品牌母片樣板檔（`樣板_星嵐大飯店月報母片.pptx`）**！
 
-### 3. 步驟 2：AI 產出之標準 RTCCF 提示詞（複製直接交給 AI 執行）
+### 3. 步驟 2：標準 RTCCF 提示詞（母片在手，數據注入一鍵出檔）
 * 文件連結：[**`8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md`**](./8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md)
-* 核心亮點：由 AI 架構的高階五要素提示詞，**學生只要複製這段 RTCCF 提示詞交給 AI**，AI 便會一鍵自動完成三件事：
-  1. 依 3 張圖片逆向生成 16:9 品牌母片樣板（`樣板_星嵐大飯店月報母片.pptx`）。
-  2. 多維度清洗 Excel 數據、計算 YoY 與達成率，並提煉 4 點商業決策洞察（Key Takeaways）。
-  3. 依據母片注入數據與原生圖表，直接產出正式商業簡報（`星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx`）！
+* 核心亮點：**手邊有了 8-1 產出的母片與 2 份 Excel 數據**，學生只要複製由 AI 架構好的 RTCCF 提示詞交給 AI，AI 便會自動完成多維樞紐統計、提煉 4 點商業決策洞察（Key Takeaways），並將數據直接注入母片，產出正式發布檔（`星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx`）！
 
 ---
 
@@ -151,13 +141,14 @@ flowchart TD
 | 🖼️ [**725043_0.jpg**](./素材/725043_0.jpg) | 🖼️ **視覺參考** | 看板 1：福福卡與波波卡 1-8月 各館訂房房晚數前三名截圖 |
 | 🖼️ [**725044_0.jpg**](./素材/725044_0.jpg) | 🖼️ **視覺參考** | 看板 2：2026年 1-8月 訂房成效分析 By Book Day 雙軸圖截圖 |
 | 🖼️ [**725045_0.jpg**](./素材/725045_0.jpg) | 🖼️ **視覺參考** | 看板 3：2026 目標 ADR 達成率與 2025 ADR 差異分析截圖 |
-| 📐 [**樣板_星嵐大飯店月報母片.pptx**](./樣板_星嵐大飯店月報母片.pptx) | 📐 **AI 執行產物** | **【AI 執行交付】** AI 依據 3 張圖片自動生成之標準 16:9 母片樣板檔（含 Header、Footer 與版型佔位） |
-| 📊 [**星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx**](./星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx) | 🏆 **最終完成成果** | **【AI 執行交付】** AI 依據母片樣板自動注入數據與洞察後合成之正式 16:9 商業簡報 |
-| 💬 [**8-1_白話自然語言發想提示詞.md**](./8-1_白話自然語言發想提示詞.md) | 💬 **人機協商** | 學生以最自然口吻上傳 5 份素材，請 AI 擔任提示詞工程專家提煉 RTCCF 框架之指令 |
-| 📋 [**8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md**](./8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md) | 📋 **核心實戰** | AI 產出之標準 RTCCF 提示詞，複製交給 AI 即可一鍵自動化完成母片生成、數據清洗與正式 PPT 產檔 |
+| 📐 [**樣板_星嵐大飯店月報母片.pptx**](./樣板_星嵐大飯店月報母片.pptx) | 📐 **步驟 1 交付產物** | **【8-1 執行產出】** AI 依據 3 張截圖與白話指令自動生成之標準 16:9 母片樣板檔 |
+| 📊 [**星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx**](./星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx) | 🏆 **步驟 2 完成成果** | **【8-2 執行產出】** AI 依據母片樣板自動注入 Excel 數據與洞察後合成之正式 16:9 商業簡報 |
+| 💬 [**8-1_白話自然語言發想提示詞.md**](./8-1_白話自然語言發想提示詞.md) | 💬 **步驟 1 提示詞** | 學生以自然語言指令 ＋ 3 張參考截圖，直接讓 AI 逆向生成 16:9 簡報母片樣板 |
+| 📋 [**8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md**](./8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md) | 📋 **步驟 2 提示詞** | 結合 8-1 生成之母片與 2 份 Excel，交給 AI 執行數據清洗、商業洞察提煉與自動注入出檔 |
 
 ---
 
 [← 返回實戰範例導覽總表](../README.md)
+
 
 
