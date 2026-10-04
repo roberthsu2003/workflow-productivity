@@ -50,7 +50,7 @@
 
 ### 🟢 討論方式的內容生成（人機協作 Human in the Loop 實戰）— **Free（核心工作流）**
 > **📂 [進入主題筆記：討論方式的內容生成](./討論方式的內容生成/README.md)**  
-> **告別單向盲猜與洗版噩夢！** 揭密人機協作 (Human-in-the-Loop) 最關鍵心法：**「中間打磨純文字（Markdown），最後定稿出成品（Word / Excel / PPT / PDF）」**！無論在 Chats、Artifacts 還是 Projects，都能透過標題座標法指哪改哪、極致省 Token 且精準交付。  
+> **告別單向盲猜與洗版噩夢！** 揭密人機協作 (Human-in-the-Loop) 最關鍵鐵律：**「只有儲存成為 Markdown（.md）格式的檔案，才可以人機協作！」** 二進位檔案（Word/Excel/PPT/PDF）為不可協作的單向編譯產物；所有推敲、局部修訂與版本回溯皆必須在 `.md` 檔案上完成，定稿後再一鍵導出成品，極致省 Token 且精準交付。  
 > 內含四大實戰實例與真實檔案下載區（含真實生成之 .docx / .xlsx / .pptx / .pdf）：
 > - 📄 [01. Word 商業企劃書與 SOP 矩陣](./討論方式的內容生成/Examples/01_Docx_Product_Launch_Plan/README.md)：解決直出 Word 格式死板問題，打磨時程與突發 SOP 後一鍵編譯排版級 DOCX。
 > - 📊 [02. Excel 動態損益與跨表預算模型](./討論方式的內容生成/Examples/02_Xlsx_Financial_Budget_Model/README.md)：解決公式錯誤痛點，校對 Markdown 欄位後一鍵編譯 4 工作表、自帶連鎖公式 (=SUM) 的真實 XLSX。
