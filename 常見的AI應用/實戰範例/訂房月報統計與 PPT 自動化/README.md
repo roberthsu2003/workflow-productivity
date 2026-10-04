@@ -95,22 +95,24 @@ flowchart TD
         ImgReq --> Prompt1 --> MasterFile
     end
 
-    subgraph Step2Phase ["🤖 步驟 2：母片注入數據自動出檔（8-2 RTCCF 提示詞）"]
+    subgraph Step2Phase ["🤖 步驟 2：自然語言發想 RTCCF 規格 ➔ 由 Markdown 驅動自動出檔（8-2）"]
         ExcelData["📊 <b>2 份 Excel 營運數據</b><br/>① 1,163筆流水帳<br/>② 每月預算與ADR"]
-        Prompt2["📋 <b>8-2 標準 RTCCF 提示詞</b><br/>包含角色、任務、數據清洗、洞察與格式"]
-        AIExec["⚡ <b>AI 自動執行閉環</b><br/>① 樞紐統計、YoY、ADR 達成率<br/>② 提煉 4 點商業決策洞察（Key Takeaways）<br/>③ 依據母片注入數據與原生可編輯圖表"]
+        PromptNL["🗣️ <b>8-2 白話發想指令</b><br/>使用者以自然語言說明需求<br/>請 AI 產出標準 RTCCF 規格"]
+        RTCCFFile["📋 <b>RTCCF Markdown 規格檔</b><br/><code>RTCCF_星嵐大飯店營運指標與商業洞察提示詞.md</code>"]
+        AIExec["⚡ <b>AI 由 Markdown 驅動執行</b><br/>① 樞紐統計、YoY、ADR 達成率<br/>② 提煉 4 點商業決策洞察（Key Takeaways）<br/>③ 依據母片注入數據與原生可編輯圖表"]
         FinalPPT["🏆 <b>最終正式發布簡報</b><br/><code>星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx</code><br/><i>（16:9 高階商業看板、零跑版）</i>"]
         
-        MasterFile --> Prompt2
-        ExcelData --> Prompt2
-        Prompt2 --> AIExec --> FinalPPT
+        ExcelData --> PromptNL
+        MasterFile --> PromptNL
+        PromptNL --> RTCCFFile --> AIExec --> FinalPPT
     end
 
     style Step1Phase fill:#eff6ff,stroke:#3b82f6,stroke-width:2px
     style Step2Phase fill:#f0fdf4,stroke:#22c55e,stroke-width:2px
     style Prompt1 fill:#e0e7ff,stroke:#4338ca,stroke-width:1px
     style MasterFile fill:#dbeafe,stroke:#1d4ed8,stroke-width:2px
-    style Prompt2 fill:#fef3c7,stroke:#d97706,stroke-width:1px
+    style PromptNL fill:#fef3c7,stroke:#d97706,stroke-width:1px
+    style RTCCFFile fill:#fef9c3,stroke:#ca8a04,stroke-width:1.5px
     style AIExec fill:#e0f2fe,stroke:#0284c7,stroke-width:1px
     style FinalPPT fill:#dcfce7,stroke:#15803d,stroke-width:2px
 ```
@@ -125,9 +127,9 @@ flowchart TD
 * 文件連結：[**`8-1_白話自然語言發想提示詞.md`**](./8-1_白話自然語言發想提示詞.md)
 * 核心亮點：學生手邊沒有現成的 PPT 母片！直接上傳 3 張參考截圖，以最自然的口話請 AI 逆向提取配色與版型，**直接生成 16:9 品牌母片樣板檔（`樣板_星嵐大飯店月報母片.pptx`）**！
 
-### 3. 步驟 2：標準 RTCCF 提示詞（母片在手，數據注入一鍵出檔）
+### 3. 步驟 2：自然語言發想 RTCCF 規格，再由 Markdown 驅動自動生成 PPTX
 * 文件連結：[**`8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md`**](./8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md)
-* 核心亮點：**手邊有了 8-1 產出的母片與 2 份 Excel 數據**，學生只要複製由 AI 架構好的 RTCCF 提示詞交給 AI，AI 便會自動完成多維樞紐統計、提煉 4 點商業決策洞察（Key Takeaways），並將數據直接注入母片，產出正式發布檔（`星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx`）！
+* 核心亮點：**手邊有了 8-1 產出的母片與 2 份 Excel 數據**，學生使用**自然語言**請 AI 在 Canvas 畫布中架構標準的 **RTCCF Markdown 規格檔**（[`RTCCF_星嵐大飯店營運指標與商業洞察提示詞.md`](./RTCCF_星嵐大飯店營運指標與商業洞察提示詞.md)），接著直接指示 AI「**依此 Markdown 規格執行**」，AI 便會自動完成多維樞紐統計、提煉 4 點商業決策洞察（Key Takeaways），並將數據直接注入母片，產出正式發布檔（`星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx`）！
 
 ---
 
@@ -144,7 +146,8 @@ flowchart TD
 | 📐 [**樣板_星嵐大飯店月報母片.pptx**](./樣板_星嵐大飯店月報母片.pptx) | 📐 **步驟 1 交付產物** | **【8-1 執行產出】** AI 依據 3 張截圖與白話指令自動生成之標準 16:9 母片樣板檔 |
 | 📊 [**星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx**](./星嵐大飯店_2026年1-8月黑卡訂房成效月報_已完成.pptx) | 🏆 **步驟 2 完成成果** | **【8-2 執行產出】** AI 依據母片樣板自動注入 Excel 數據與洞察後合成之正式 16:9 商業簡報 |
 | 💬 [**8-1_白話自然語言發想提示詞.md**](./8-1_白話自然語言發想提示詞.md) | 💬 **步驟 1 提示詞** | 學生以自然語言指令 ＋ 3 張參考截圖，直接讓 AI 逆向生成 16:9 簡報母片樣板 |
-| 📋 [**8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md**](./8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md) | 📋 **步驟 2 提示詞** | 結合 8-1 生成之母片與 2 份 Excel，交給 AI 執行數據清洗、商業洞察提煉與自動注入出檔 |
+| 📋 [**8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md**](./8-2_AI產出之RTCCF營運指標與商業洞察提示詞.md) | 📋 **步驟 2 提示詞** | 自然語言發想 RTCCF 規格，再由 Markdown 驅動自動生成 PPTX 之教學流程 |
+| 📝 [**RTCCF_星嵐大飯店營運指標與商業洞察提示詞.md**](./RTCCF_星嵐大飯店營運指標與商業洞察提示詞.md) | 📝 **AI 產出之規格檔** | AI 依據自然語言發想指令在 Canvas 畫布中自動架構之標準 RTCCF Markdown 檔案 |
 
 ---
 
