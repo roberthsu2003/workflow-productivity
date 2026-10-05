@@ -36,7 +36,7 @@
   從「單純生成」到「自主代理」：了解 ChatGPT 與 Claude.ai 作為多功能 AI Agent 的五大架構與核心能力邊界
 
 - [prompt工程指南](./prompt/README.md)   
-  輸入格式、系統提示詞、ROSES 框架與 4 要素，學會正確下指令讓 AI 產出更好
+  輸入格式、系統提示詞、RTCCF 框架與 4 要素，學會正確下指令讓 AI 產出更好
 
 - [Context Window（上下文視窗）與 Token 機制](./Context_Window/README.md)  
   Session 內容持續疊加的真相：Input / Output / Cached Token 解析，與 Word/Excel/PPT/PDF 轉 Markdown/CSV 之「中間純文字、最後出成品」極致省 Token 工作流
