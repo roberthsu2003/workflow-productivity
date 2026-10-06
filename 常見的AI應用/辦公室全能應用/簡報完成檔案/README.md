@@ -1,4 +1,4 @@
 # 簡報完成檔案
 
-- NotebookLM簡報產出範例,下載`notebooklm.pptx`
-- ptt模板簡報產出範例,下載`ptt簡報模版.pptx`
+- AI 商業簡報產出範例，下載 [**商業科技簡報範例.pptx**](./商業科技簡報範例.pptx)
+- PPT 模板簡報產出範例，下載 [**ptt簡報模版.pptx**](./ptt簡報模版.pptx)
