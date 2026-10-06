@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>傳統辦公 vs. 生成式 AI 協作賦能 - Bento Box 資訊圖表</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background: #0B0F19;
+      color: #E2E8F0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: #94A3B8;
+      font-size: 1rem;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .bento-card {
+      background: #111827;
+      border: 1px solid #1F2937;
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bento-card:hover {
+      transform: translateY(-2px);
+      border-color: #374151;
+    }
+    .bento-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: transparent;
+    }
+    .card-1 {
+      grid-column: span 7;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+    }
+    .card-1::before {
+      background: linear-gradient(90deg, #10B981, #06B6D4);
+    }
+    .card-2 {
+      grid-column: span 5;
+    }
+    .card-2::before {
+      background: linear-gradient(90deg, #F59E0B, #EF4444);
+    }
+    .card-3 {
+      grid-column: span 5;
+    }
+    .card-3::before {
+      background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+    }
+    .card-4 {
+      grid-column: span 7;
+    }
+    .card-4::before {
+      background: linear-gradient(90deg, #10B981, #34D399);
+    }
+    .card-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94A3B8;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .metric-hero {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .metric-value {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #10B981;
+      line-height: 1;
+    }
+    .metric-desc {
+      font-size: 1.1rem;
+      color: #F1F5F9;
+      font-weight: 600;
+    }
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .flow-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 10px;
+      border-left: 4px solid #F59E0B;
+    }
+    .flow-item.highlight {
+      border-left-color: #10B981;
+      background: rgba(16, 185, 129, 0.1);
+    }
+    .format-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pill {
+      padding: 8px 14px;
+      background: #1E293B;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #CBD5E1;
+      border: 1px solid #334155;
+    }
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .trust-box {
+      background: rgba(15, 23, 42, 0.6);
+      padding: 14px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #1E293B;
+    }
+    .trust-box h4 {
+      color: #10B981;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .trust-box p {
+      font-size: 0.75rem;
+      color: #94A3B8;
+    }
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">BENTO BOX GRID SYSTEM</div>
+      <h1>傳統辦公 vs. 生成式 AI 協作賦能</h1>
+      <p class="subtitle">四步人機協商閉環 ｜ 跨主流四大平台（Claude / ChatGPT / Gemini / Antigravity）</p>
+    </header>
+
+    <div class="bento-grid">
+      <!-- 模組 1：量化成效 -->
+      <div class="bento-card card-1">
+        <div class="card-title">⚡ 核心量化成效指標</div>
+        <div class="metric-hero">
+          <div class="metric-value">70%</div>
+          <div class="metric-desc">行政例行文書工時省下<br><span style="font-size:0.85rem; color:#94A3B8; font-weight:400;">每週平均省下 12~16 小時例行登打</span></div>
+        </div>
+        <p style="color:#94A3B8; font-size:0.9rem; line-height:1.5;">透過自然語言直覺溝通與 RTCCF 自動轉化，非技術同仁無痛上手，行政效率倍速飆升。</p>
+      </div>
+
+      <!-- 模組 2：工作流對照 -->
+      <div class="bento-card card-2">
+        <div class="card-title">🔄 流程縮減對照</div>
+        <div class="flow-steps">
+          <div class="flow-item">
+            <span style="font-size:0.85rem; color:#94A3B8;">傳統模式</span>
+            <span style="font-weight:700; color:#EF4444;">5 步驟 (耗時 4H)</span>
+          </div>
+          <div class="flow-item highlight">
+            <span style="font-size:0.85rem; color:#10B981;">AI 協作閉環</span>
+            <span style="font-weight:700; color:#10B981;">2 步驟 (僅 15 分鐘)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 模組 3：格式覆蓋 -->
+      <div class="bento-card card-3">
+        <div class="card-title">📦 五大商務交付格式</div>
+        <p style="font-size:0.85rem; color:#94A3B8;">全部支援一鍵匯出與本地代碼生成：</p>
+        <div class="format-pills">
+          <div class="pill">📄 Word (.docx)</div>
+          <div class="pill">📊 Excel (.xlsx)</div>
+          <div class="pill">📑 PPT (.pptx)</div>
+          <div class="pill">📕 PDF (.pdf)</div>
+          <div class="pill">🎨 資訊圖表</div>
+        </div>
+      </div>
+
+      <!-- 模組 4：資安防線 -->
+      <div class="bento-card card-4">
+        <div class="card-title">🛡️ 企業資安三大信任防線</div>
+        <div class="trust-badges">
+          <div class="trust-box">
+            <h4>查核檢驗</h4>
+            <p>100% 官方規章對照<br>嚴禁無依據臆測</p>
+          </div>
+          <div class="trust-box">
+            <h4>分流脫敏</h4>
+            <p>上傳前身分去識別化<br>個資機密零洩漏</p>
+          </div>
+          <div class="trust-box">
+            <h4>人工負責</h4>
+            <p>審核卡片覆核簽章<br>人類負最終責任</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      星雲數位科技 營運賦能小組 ｜ 版權所有 © 2026
+    </footer>
+  </div>
+</body>
+</html>

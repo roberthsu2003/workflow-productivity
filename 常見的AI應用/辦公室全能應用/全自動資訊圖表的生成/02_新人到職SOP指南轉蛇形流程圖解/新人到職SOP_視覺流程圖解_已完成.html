@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新進同仁到職七天 SOP - 蛇形流程資訊圖表 (S-Curve)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: #94A3B8;
+      font-size: 1rem;
+    }
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+    }
+    .step-card {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .step-card:hover {
+      transform: translateX(4px);
+      border-color: #38BDF8;
+      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.1);
+    }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0284C7, #0369A1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      flex-shrink: 0;
+    }
+    .step-content {
+      flex: 1;
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #F1F5F9;
+    }
+    .step-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(148, 163, 184, 0.15);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: #94A3B8;
+      line-height: 1.5;
+    }
+    .arrow-down {
+      display: flex;
+      justify-content: center;
+      color: #38BDF8;
+      font-size: 1.4rem;
+      margin: -10px 0;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #64748B;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">S-CURVE VISUAL ROADMAP</div>
+      <h1>新進同仁到職七天 SOP 視覺指南</h1>
+      <p class="subtitle">教學風格 (Explanatory) ｜ 6 大關鍵階段 ｜ 人資 ＆ 導師雙軌帶領</p>
+    </header>
+
+    <div class="roadmap">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-header">
+            <div class="step-title">報到登記與身分核對（Day 1 上午）</div>
+            <div class="step-tag">主責：人資處 (HR)</div>
+          </div>
+          <div class="step-desc">填寫入職履歷、查驗身分證件與薪資轉帳帳戶，完成勞健保投保加保手續。</div>
+        </div>
+      </div>
+
+      <div class="arrow-down">↓</div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-header">
+            <div class="step-title">IT 設備領取與帳號開通（Day 1 下午）</div>
+            <div class="step-tag">主責：資訊科技處</div>
+          </div>
+          <div class="step-desc">領取筆記型電腦、開通公司信箱、Slack、Google Workspace 及雙因子安全驗證 (2FA)。</div>
+        </div>
+      </div>
+
+      <div class="arrow-down">↓</div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-header">
+            <div class="step-title">部門導師介紹與環境熟悉（Day 2）</div>
+            <div class="step-tag">主責：部門主管 / 導師</div>
+          </div>
+          <div class="step-desc">指派 1 對 1 資深導師（Buddy），認識團隊同仁、認識辦公環境與茶水間設施。</div>
+        </div>
+      </div>
+
+      <div class="arrow-down">↓</div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-header">
+            <div class="step-title">企業內部規章研讀與資安測驗（Day 3~4）</div>
+            <div class="step-tag">主責：人資處 / 資安組</div>
+          </div>
+          <div class="step-desc">閱讀差旅加班規章與員工守則，線上完成資安防護與個資脫敏基礎測驗。</div>
+        </div>
+      </div>
+
+      <div class="arrow-down">↓</div>
+
+      <!-- Step 5 -->
+      <div class="step-card">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <div class="step-header">
+            <div class="step-title">首週工作任務交辦與試辦（Day 5）</div>
+            <div class="step-tag">主責：部門導師</div>
+          </div>
+          <div class="step-desc">參與部門週會，領取第一項小型試辦業務，由導師協助檢核成果與實作指引。</div>
+        </div>
+      </div>
+
+      <div class="arrow-down">↓</div>
+
+      <!-- Step 6 -->
+      <div class="step-card">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <div class="step-header">
+            <div class="step-title">第七天雙向訪談與適應檢視（Day 7）</div>
+            <div class="step-tag">主責：主管 ＆ HR</div>
+          </div>
+          <div class="step-desc">與直屬主管進行 30 分鐘關懷訪談，填寫到職一週回饋表，順利融入星雲大家庭！</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      星雲數位科技股份有限公司 人力資源處 ｜ 版權所有 © 2026
+    </footer>
+  </div>
+</body>
+</html>
