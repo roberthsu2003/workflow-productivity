@@ -1,8 +1,9 @@
-# ChatGPT 桌面版安裝 Playwright MCP 與情資自動搜集指南
+# Playwright MCP 安裝與情資自動搜集指南（ChatGPT 桌面版 ＆ Antigravity）
 
 > 💡 **核心價值**：在進行「39 家上市櫃同業競爭情資與動能矩陣」分析時，資料搜集通常有兩種路徑：
 > 1. **一般方法（基礎版）**：利用 ChatGPT / Claude / Gemini 內建的網路搜尋（Web Search），由 AI 自動搜尋公開財經新聞與概括資料。
-> 2. **Playwright MCP 方法（專業進階版）**：在 ChatGPT 桌面版中掛載 **Playwright MCP 伺服器**，賦予 AI 直接操控真實瀏覽器的能力，能深入執行 JavaScript 動態渲染網頁（如公開資訊觀測站 MOPS、券商專業資料庫），精準截取表格與最新財報數據，徹底杜絕數據通靈！
+> 2. **Playwright MCP 方法（專業進階版）**：在 **ChatGPT 桌面版** 或 **Antigravity IDE** 中掛載 **Playwright MCP 伺服器**，賦予 AI 直接操控真實瀏覽器的能力，能深入執行 JavaScript 動態渲染網頁（如公開資訊觀測站 MOPS、券商專業資料庫），精準截取表格與最新財報數據，徹底杜絕數據通靈！
+
 
 ---
 
@@ -102,3 +103,116 @@ Playwright MCP 是由微軟（Microsoft）官方維護的 MCP 伺服器套件，
 3. **Q：一般 Web Search 與 Playwright MCP 該如何選擇？**
    * **初學者 / 快速發想**：先使用一般 Web Search（步驟 9-1 與 9-2），零安裝即可體驗 AI 自動搜集資料的威力。
    * **企業級專案 / 需精準數據**：使用 Playwright MCP，讓 AI 如同真人分析師般即時閱覽網頁與財報，取得 100% 準確之商業情資！
+
+---
+
+## 🤖 手動安裝 Playwright MCP 到 Antigravity
+
+如果你是使用 **Antigravity IDE** 或 **Antigravity CLI**，可以透過編輯 JSON 設定檔的方式將 Playwright MCP 掛載進來：
+
+### 1. 前置需求
+
+- **Node.js 18+**（已在終端機驗證 `node --version`、`npx --version` 可正常執行）
+- **Antigravity IDE / CLI** 已安裝並可正常運行
+
+### 2. 設定檔位置
+
+* **全域共用（建議優先修改這個）**：
+  ```bash
+  ~/.gemini/config/mcp_config.json
+  ```
+* **IDE 專用（會自動同步，可一併檢查）**：
+  ```bash
+  ~/.gemini/antigravity/mcp_config.json
+  ~/.gemini/antigravity-ide/mcp_config.json
+  ```
+* **工作區專用（只對單一專案有效）**：
+  ```bash
+  <你的專案目錄>/.agents/mcp_config.json
+  ```
+
+> 💡 **IDE 快速開啟捷徑**：  
+> 在 Antigravity Agent 側邊欄右上角點擊 `...` ➔ `MCP Servers` ➔ `Manage MCP Servers` ➔ `View raw config` 即可直接編輯設定檔。
+
+### 3. 配置內容
+
+將 `mcp_config.json` 內容更新為：
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+```
+
+若原本已有其他 MCP Server，請保留既有設定並在 `mcpServers` 物件中新增 `playwright` 欄位：
+
+```json
+{
+  "mcpServers": {
+    "existing-server": {
+      "...": "..."
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+```
+
+### 4. 常用進階參數
+
+若需要指定瀏覽器核心或視窗顯示模式，可調整 `args` 陣列：
+
+```json
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser",
+        "chrome"
+      ]
+    }
+  }
+}
+```
+
+**常用選項對照表**：
+
+| 需求 | 參數 | 說明 |
+| :--- | :--- | :--- |
+| **使用 Chrome 瀏覽器** | `--browser chrome` | 指定使用系統已安裝的 Google Chrome |
+| **使用 Edge / Firefox / WebKit** | `--browser msedge` / `firefox` / `webkit` | 切換至其他瀏覽器核心 |
+| **顯示真實瀏覽器視窗** | `--headless=false` | 啟動有頭模式，方便親眼觀看 AI 爬取畫面 |
+| **啟用視覺截圖能力** | `--caps vision` | 賦予模型對頁面畫面進行視覺多模態理解 |
+
+### 5. 驗證設定與套件
+
+開啟終端機執行以下指令，確認 JSON 語法無誤且套件可正常運作：
+
+```bash
+# 驗證 JSON 格式
+python3 -c "import json; print(json.load(open('$HOME/.gemini/config/mcp_config.json')))"
+
+# 驗證 Playwright MCP CLI 是否正常
+npx -y @playwright/mcp@latest --help
+```
+*終端機有印出 `Usage: Playwright MCP [options]` 即代表可正常啟動！*
+
+### 6. 啟用與確認連線
+
+1. 儲存設定檔。
+2. 重新啟動 Antigravity IDE。
+3. 進入 `MCP Servers` 面板，確認 **`playwright`** 狀態顯示為已連線（綠燈），即可開始調用！
+
