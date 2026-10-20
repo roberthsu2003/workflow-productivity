@@ -43,7 +43,7 @@
    我們公司是一間企業級 AI 軟體公司，現在要編制 2026 年度的「全通路營運預算與動態損益模型 (P&L)」。
    我們有三種訂閱版本（Pro 年費 4,800、Team 年費 28,000、Enterprise 平均 180,000）以及顧問和 API 收入；支出包含研發薪酬、雲端算力（COGS）、行銷發表會、廣告、業務佣金與管理費用。
    最後需要產出一份正式的 Excel 檔案（.xlsx）給董事會審查。
-   請先不要直接產出 Excel，請扮演資深財務長顧問，幫我整理出 RTCCF (Role, Task, Context, Constraint, Format) 提示詞，並在 Format 中要求先在 Markdown 表格中逐項確認 4 個工作表的欄位與連鎖公式邏輯。
+   請先不要直接產出 Excel，請扮演資深財務長顧問，幫我整理出 RTCCF (Role, Task, Context, Constraint, Format) 提示詞，並在 Format 中要求建立試算表規格書的markdown檔。
    ```
 
 ### 第二步：純文字多輪打磨（校對動態公式）
