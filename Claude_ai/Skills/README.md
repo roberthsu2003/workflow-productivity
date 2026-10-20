@@ -155,7 +155,7 @@
 
 <div id="vc-playwright"></div>
 
-### 1. 🌐 [創投案源搜尋與 Playwright MCP 自動化實戰](./VC_Playwright/README.md)
+### 1. 🌐 [創投案源搜尋與 Playwright MCP 自動化實戰](./VC_Playwright/README.md) - 重要範例(結合Playwright MCP)
 * **適用階段**：第一階～第四階（跨 MCP 工具串接）
 * **核心涵蓋**：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
 * **實戰技術**：Playwright MCP 動態網頁抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
