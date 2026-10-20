@@ -14,21 +14,41 @@
 
 ---
 
-## 📁 創投 Level 2 Skill 實體目錄結構
+## 📁 建立自訂 Level 2 Skill 的實體目錄結構與必備內容
+
+在 Claude 體系中，「第二階：創作者 (Creator)」Skill 的標準規範是由 **`SKILL.md` 核心指引**、**`references/` 專業知識庫** 與 **`templates/` 輸出樣板庫** 三位一體所組成。
+
+當您要為 Claude 建立（或打包上傳）一個客製化的創投 Skill 時，您的 Skill 資料夾（例如命名為 `vc-creator-investment-analyst/`）內部必須包含以下標準架構與內容：
 
 ```text
-VC_Creator/
-├── README.md                              # 本教學說明文件
-├── SKILL.md                               # 主 Skill 檔 (定義 SOP 與引用規則)
-├── references/                            # 📚 創投專業參考知識庫
-│   ├── vc-evaluation-framework.md        # 1. SaaS 財務指標與 TAM/SAM/SOM 評估規章
-│   ├── term-sheet-glossary.md            # 2. Term Sheet 條款與風險評級 (Red Flags) 檢核指南
-│   └── pitch-deck-checklist.md           # 3. 國際 Top VC (Sequoia/YC) 簡報 10 大要素標準
-└── templates/                             # 📄 標準 Markdown 輸出樣板
-    ├── investment-memo-template.md        # 1. IC 委員會標準投資備忘錄範本
-    ├── term-sheet-summary-template.md     # 2. Term Sheet 條款與風險檢核報告範本
-    └── deck-review-report-template.md     # 3. Pitch Deck 簡報評估與創辦人提問單範本
+vc-creator-investment-analyst/             # 📦 Skill 主資料夾（亦即上傳至 Claude 的 Skill 名稱）
+├── SKILL.md                               # 🧠 核心主檔（必備：定義 YAML 元數據、工作路由與 RTCCF SOP）
+├── references/                            # 📚 專業知識規章庫（提供 Claude 查閱比對的標準規範）
+│   ├── vc-evaluation-framework.md        #   • SaaS 財務關鍵指標（LTV/CAC, NDR）與 TAM/SAM/SOM 評估標準
+│   ├── term-sheet-glossary.md            #   • Term Sheet 核心條款與紅黃綠燈風險評級 (Red Flags) 檢核指南
+│   └── pitch-deck-checklist.md           #   • 頂級創投 (Sequoia / YC) 簡報 10 大關鍵頁要素審查清單
+└── templates/                             # 📄 標準輸出樣板庫（規範 Claude 產出結構一致的 Markdown 報告）
+    ├── investment-memo-template.md        #   • 投資委員會 (IC) 標準投資備忘錄範本
+    ├── term-sheet-summary-template.md     #   • Term Sheet 條款比對與三色燈號風險報告範本
+    └── deck-review-report-template.md     #   • Pitch Deck 審查評分表與創辦人關鍵提問單範本
 ```
+
+### 🔍 Skill 實體目錄 3 大核心元件解析（建立 Skill 時包含什麼內容？）
+
+1. **`SKILL.md`（必備核心檔案）**：
+   - **YAML Frontmatter 元數據**：必須包含 `name`（技能唯一識別碼）與 `description`（描述觸發情境，讓 Claude 知道何時自動啟用本技能）。
+   - **大腦執行指令（RTCCF 架構）**：明確規範 Claude 的 Role（角色）、Task（任務）、Context（上下文）、Constraint（限制）與 Format（格式）。
+   - **路由與指引邏輯**：告訴 Claude 在什麼情況下該「讀取 `references/` 哪份規章」、完成後「套用 `templates/` 哪份樣板輸出」。
+
+2. **`references/`（參考知識庫目錄）**：
+   - **作用**：存放創投專業領域的專屬規則、指標公式、法務字典或檢核標準。
+   - **價值**：避免 Claude 憑空臆測或產生幻覺，讓分析產出具備一致且嚴謹的業界標準。
+
+3. **`templates/`（樣板庫目錄）**：
+   - **作用**：存放機構要求標準格式的 Markdown 範本（包含固定標題、表格欄位、必填項目等）。
+   - **價值**：強制約束輸出結果的排版與章節結構，產出的文件可直接提交給投資委員會 (IC) 或合夥人審閱，不需要再手動調整排版。
+
+> 💡 **教學專案說明**：本專案資料夾下的 `README.md` 僅作為課程教學與說明文件；實際上傳或安裝至 Claude 時，Skill 內部只需包含 `SKILL.md`、`references/` 與 `templates/` 即可完整運行。
 
 ---
 
