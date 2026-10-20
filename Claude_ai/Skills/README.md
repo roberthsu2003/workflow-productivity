@@ -169,7 +169,7 @@
 
 <div id="vc-financial-analyzer"></div>
 
-### 3. 📊 [創投財報數據分析與 Code Execution 自動化實戰(第三階／第四階)](./VC_Financial_Analyzer/)重要範例
+### 3. 📊 [創投財報數據分析與 Code Execution 自動化實戰(第三階／第四階)](./VC_Financial_Analyzer/)-重要範例
 * **適用階段**：第三階／第四階 —— 整合者與自動化專家 (Code Execution)
 * **核心涵蓋**：Excel 報表上傳自動掃描、互動式分析建議選單、100% 精準 Python 數據運算、動態渲染財務趨勢與 Runway 圖表、標準 IC 財務盡調報告產出。
 * **實戰技術**：結合 **Code Execution (Code Interpreter)** 零數據幻覺運算 + `references/` 創投指標警訊庫 + `templates/` 標準盡調簡報樣板。
