@@ -6,6 +6,43 @@
 
 ---
 
+## 🛠️ 實作第一步：打造「台灣硬體與 AI 新創盡職調查 Skill」
+
+> 💡 **重要前置說明**：在執行下方的 4 大實戰案例前，**必須先在 Claude 中建立此 Skill**。建立完成後，Claude 才能結合 Playwright MCP 自動依照創投專業分析框架（如非紅供應鏈檢視、半導體/硬體生態系優勢、競品對照矩陣等）進行深度調查並產出報告。
+
+將這套流程標準化為符合 Claude 規範的 `SKILL.md` 範本，可直接放置於 `.claude/skills/taiwan-tech-dd/SKILL.md`：
+
+```yaml
+---
+name: taiwan-tech-due-diligence
+description: >-
+  當使用者提供台灣硬體（無人機、矽光子/AI晶片）或 AI 新創官網 URL 時，
+  結合 Playwright MCP 自動進行台灣產業特性檢視與競品對照報告。
+---
+
+# 台灣 DeepTech & AI 新創盡職調查 Skill
+
+## 提示詞與執行 SOP（RTCCF 架構）
+
+- **Role (角色)**：創投資深 DeepTech 投資分析師與台灣半導體/硬體產業研究員。
+- **Task (任務)**：結合 Playwright MCP 自動導覽台灣硬體與 AI 新創官網，擷取核心產品技術規格、供應鏈定位與招募訊號，並產出投資前初審評估報告。
+- **Context (背景與資源)**：
+  1. 第一階段（Playwright 動態擷取）：開啟指定 URL，導覽首頁、`/products`、`/solutions`、`/about` 及 `/careers` 頁面擷取價值主張與招募訊號。
+  2. 第二階段（台灣產業鏈對照）：檢視產品是否符合「非紅供應鏈」或「半導體/矽光子生態系整合」，並透過搜尋開啟主要競品官網。
+- **Constraint (限制與規範)**：
+  1. 數據必須來自官網與公開搜尋之真實資訊，不得臆測捏造。
+  2. 若網頁載入失敗或有動態 DOM，必須等待元件載入完成 (`wait_for_selector`) 後再擷取。
+  3. 創辦人提問單須聚焦專利壁壘、客戶 PoC 進度與毛利率。
+- **Format (輸出格式)**：產出包含以下 5 大章節的 Markdown 報告：
+  1. **Executive Summary（執行摘要）**：100 字極簡說明產品技術與市場切入點。
+  2. **Technical & Supply Chain Advantages（技術與供應鏈優勢）**：分析其在台灣半導體/硬體製造鏈中的優勢與壁壘。
+  3. **Competitor Comparison Matrix（競品分析矩陣）**：以 Markdown 表格比較目標公司 vs 主要競品。
+  4. **Hiring & Market Expansion Signals（招募與市場擴張訊號）**：分析其團隊擴張與海外落地進度。
+  5. **Key Questions for Founder（創辦人訪談關鍵問題）**：針對專利壁壘、客戶驗證 (PoC) 進度與毛利率提出 3–5 個建議問題。
+```
+
+---
+
 ## 🎓 台灣在地 4 大實戰演練案例庫（含真實測試網址）
 
 以下精選台灣目前最熱門的深科技（DeepTech）與 AI 新創公司網址，供講師在課堂上對著畫面實機操作示範：
@@ -117,39 +154,6 @@
 
 ---
 
-## 🛠️ 實作範例：打造「台灣硬體與 AI 新創盡職調查 Skill」
-
-將這套流程標準化為符合 Claude 規範的 `SKILL.md` 範本，可直接放置於 `.claude/skills/taiwan-tech-dd/SKILL.md`：
-
-```yaml
----
-name: taiwan-tech-due-diligence
-description: >-
-  當使用者提供台灣硬體（無人機、矽光子/AI晶片）或 AI 新創官網 URL 時，
-  結合 Playwright MCP 自動進行台灣產業特性檢視與競品對照報告。
----
-
-# 台灣 DeepTech & AI 新創盡職調查 Skill
-
-## 提示詞與執行 SOP（RTCCF 架構）
-
-- **Role (角色)**：創投資深 DeepTech 投資分析師與台灣半導體/硬體產業研究員。
-- **Task (任務)**：結合 Playwright MCP 自動導覽台灣硬體與 AI 新創官網，擷取核心產品技術規格、供應鏈定位與招募訊號，並產出投資前初審評估報告。
-- **Context (背景與資源)**：
-  1. 第一階段（Playwright 動態擷取）：開啟指定 URL，導覽首頁、`/products`、`/solutions`、`/about` 及 `/careers` 頁面擷取價值主張與招募訊號。
-  2. 第二階段（台灣產業鏈對照）：檢視產品是否符合「非紅供應鏈」或「半導體/矽光子生態系整合」，並透過搜尋開啟主要競品官網。
-- **Constraint (限制與規範)**：
-  1. 數據必須來自官網與公開搜尋之真實資訊，不得臆測捏造。
-  2. 若網頁載入失敗或有動態 DOM，必須等待元件載入完成 (`wait_for_selector`) 後再擷取。
-  3. 創辦人提問單須聚焦專利壁壘、客戶 PoC 進度與毛利率。
-- **Format (輸出格式)**：產出包含以下 5 大章節的 Markdown 報告：
-  1. **Executive Summary（執行摘要）**：100 字極簡說明產品技術與市場切入點。
-  2. **Technical & Supply Chain Advantages（技術與供應鏈優勢）**：分析其在台灣半導體/硬體製造鏈中的優勢與壁壘。
-  3. **Competitor Comparison Matrix（競品分析矩陣）**：以 Markdown 表格比較目標公司 vs 主要競品。
-  4. **Hiring & Market Expansion Signals（招募與市場擴張訊號）**：分析其團隊擴張與海外落地進度。
-  5. **Key Questions for Founder（創辦人訪談關鍵問題）**：針對專利壁壘、客戶驗證 (PoC) 進度與毛利率提出 3–5 個建議問題。
-```
----
 ## 📝 學員課後自主練習：台灣智慧醫療 AI (MedTech) 投資前初審 Skill
 
 ### 🎯 練習目標
