@@ -8,7 +8,9 @@
 
 ## 🛠️ 實作第一步：打造「台灣硬體與 AI 新創盡職調查 Skill」
 
-> 💡 **重要前置說明**：在執行下方的 4 大實戰案例前，**必須先在 Claude 中建立此 Skill**。建立完成後，Claude 才能結合 Playwright MCP 自動依照創投專業分析框架（如非紅供應鏈檢視、半導體/硬體生態系優勢、競品對照矩陣等）進行深度調查並產出報告。
+> 💡 **重要前置說明**：在執行下方的 4 大實戰案例前，**必須具備兩項前置條件**：
+> 1. **安裝並啟用 Playwright MCP**：需在 Claude Desktop 的 `claude_desktop_config.json` 中配置 Playwright MCP（詳細安裝請參閱 [本地 MCP 設定教學](../../Local_MCP/README.md)），Claude 才能調用瀏覽器執行自動化網頁爬取。
+> 2. **建立此專屬 Skill**：在 Claude 中建立好此 Skill 後，Claude 才能結合 Playwright MCP 自動依照創投專業分析框架（如非紅供應鏈檢視、半導體/硬體生態系優勢、競品對照矩陣等）進行深度調查並產出報告。
 
 將這套流程標準化為符合 Claude 規範的 `SKILL.md` 範本，可直接放置於 `.claude/skills/taiwan-tech-dd/SKILL.md`：
 

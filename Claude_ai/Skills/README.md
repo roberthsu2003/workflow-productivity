@@ -156,7 +156,9 @@
 <div id="vc-playwright"></div>
 
 ### 1. 🌐 [創投案源搜尋與 Playwright MCP 自動化實戰](./VC_Playwright/README.md) - 重要範例(結合Playwright MCP)
+> ⚠️ **前置必備**：本實戰範例**必須先在 Claude Desktop 中安裝並啟用 Playwright MCP**（可參考 [本地 MCP 設定教學](../Local_MCP/README.md)）。若未安裝 Playwright MCP，Claude 將無法啟動瀏覽器自動造訪新創官網與擷取即時資料。
 * **適用階段**：第一階～第四階（跨 MCP 工具串接）
+* **必要環境**：需安裝並啟用 **Playwright MCP**（`@playwright/mcp`）
 * **核心涵蓋**：Deal Sourcing 標的偵測、Due Diligence 盡職調查、Market Mapping 競品分析、Portfolio 營運健康追蹤。
 * **實戰技術**：Playwright MCP 動態網頁抓取 + VC 分析 SOP 產出 Markdown 投資報告、多 MCP 整合 (FileSystem / Slack / Notion)。
 
