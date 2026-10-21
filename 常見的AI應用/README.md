@@ -32,6 +32,10 @@
 
 ---
 
+### 📐 Office 辦公室應用進階對齊（Advanced Alignment & Precision Templates）
+- **[Office 辦公室應用進階的對齊（Docx 證書與 Xlsx 報價單套印）](./office辦公室應用進階的對齊/README.md)**  
+  解決排版跑版、公式覆蓋與資料錯位：透過「佔位符範本＋結構化資料＋嚴謹約束 Prompt」，實踐 Word 段落/表格儲存格折行對齊，以及 Excel 數值型別、合併儲存格與原生公式連動對齊，提供完整範本、測試資料與示範成果檔案一鍵下載。
+
 ### 🎙️ 會議應用與語音摘要（Meeting Minutes & Audio）
 - **[mp3 ➔ 會議紀錄與摘要](./會議紀錄與摘要/README.md)**  
   音訊轉逐字稿、清洗雜訊、提取討論提案、決議事項與行動清單（To-Do List）的標準化工作流。
