@@ -17,22 +17,7 @@
 
 ## 🗺️ Excel 漸進實戰能力地圖（前導思維 + 五大階梯）
 
-```mermaid
-flowchart TD
-    L0["前導核心：【AI 時代 Excel 資料架構與審核心法】\n從「學操作軟體」到「資料架構師」\n（展示層與資料層分離、四不二要、活檔案vs死檔案、規格書Prompt、品管QA）"]
-    --> L1["階梯 1：【基礎建表與運算】\n告別排版地雷與公式語法\n（基礎記帳、請款單、零合併儲存格、千分位純數值）"] 
-    --> L2["階梯 2：【資料防呆與自動警示】\n告別手動檢查與眼花抓漏\n（下拉選單 Data Validation、條件格式化、超支紅字）"]
-    --> L3["階梯 3：【髒資料清洗與轉化】\n告別無止境複製貼上與文字整理\n（非結構文字、LINE留言、符號混雜清洗、日期標準化）"]
-    --> L4["階梯 4：【跨表關聯與多維統計】\n告別 VLOOKUP 破圖與公式恐懼\n（XLOOKUP 跨表動態對帳、SUMIF / COUNTIF 多條件統計）"]
-    --> L5["階梯 5：【商業儀表板與視覺化】\n告別醜陋圖表，直上主管級商務看板\n（4大 KPI 卡片、雙軸視覺化、高階經營決策報告）"]
-
-    style L0 fill:#EDE7F6,stroke:#512DA8,stroke-dasharray: 5 5
-    style L1 fill:#E8F5E9,stroke:#4CAF50
-    style L2 fill:#FFFDE7,stroke:#FBC02D
-    style L3 fill:#FFF3E0,stroke:#FF9800
-    style L4 fill:#E3F2FD,stroke:#2196F3
-    style L5 fill:#F3E5F5,stroke:#9C27B0
-```
+![Excel 漸進實戰能力地圖](./images/Excel漸進實戰能力地圖.svg)
 
 ---
 

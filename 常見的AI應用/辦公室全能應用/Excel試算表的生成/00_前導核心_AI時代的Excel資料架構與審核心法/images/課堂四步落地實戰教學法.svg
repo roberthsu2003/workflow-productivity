@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+    <linearGradient id="step1Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#EF4444"/><stop offset="100%" stop-color="#DC2626"/></linearGradient>
+    <linearGradient id="step2Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#D97706"/></linearGradient>
+    <linearGradient id="step3Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#2563EB"/></linearGradient>
+    <linearGradient id="step4Grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; }
+    .badge-text { font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .node-title { font-size: 13px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .node-desc { font-size: 10.5px; fill: #475569; text-anchor: middle; }
+  </style>
+
+  <rect width="960" height="180" rx="14" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
+
+  <!-- 階段 1 -->
+  <g transform="translate(28, 18)">
+    <rect width="195" height="144" rx="10" fill="#FFFFFF" stroke="#FECACA" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#step1Grad)" />
+    <text x="48" y="24" class="font-sans badge-text">第一階段</text>
+    <text x="97" y="58" class="font-sans node-title">反面教材震撼體驗</text>
+    <text x="97" y="80" class="font-sans node-desc">直覺問 AI 產出死報表</text>
+    <text x="97" y="98" class="font-sans node-desc">親眼目睹合併儲存格</text>
+    <text x="97" y="120" class="font-sans node-desc" fill="#DC2626" font-weight="700">感受無法分析的痛苦 😭</text>
+  </g>
+  <line x1="229" y1="90" x2="251" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- 階段 2 -->
+  <g transform="translate(257, 18)">
+    <rect width="195" height="144" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#step2Grad)" />
+    <text x="48" y="24" class="font-sans badge-text">第二階段</text>
+    <text x="97" y="58" class="font-sans node-title">白板紙上架構設計</text>
+    <text x="97" y="80" class="font-sans node-desc">先不碰電腦！理清邏輯</text>
+    <text x="97" y="98" class="font-sans node-desc">拆分三張表與欄位型態</text>
+    <text x="97" y="120" class="font-sans node-desc" fill="#D97706" font-weight="700">建立資料庫架構思維 🧠</text>
+  </g>
+  <line x1="458" y1="90" x2="480" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- 階段 3 -->
+  <g transform="translate(486, 18)">
+    <rect width="195" height="144" rx="10" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#step3Grad)" />
+    <text x="48" y="24" class="font-sans badge-text">第三階段</text>
+    <text x="97" y="58" class="font-sans node-title">撰寫結構規格 Prompt</text>
+    <text x="97" y="80" class="font-sans node-desc">套用黃金四大維度規格</text>
+    <text x="97" y="98" class="font-sans node-desc">指定 XLOOKUP 與防呆</text>
+    <text x="97" y="120" class="font-sans node-desc" fill="#2563EB" font-weight="700">下達命令生成活 xlsx ⚡</text>
+  </g>
+  <line x1="687" y1="90" x2="709" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- 階段 4 -->
+  <g transform="translate(715, 18)">
+    <rect width="217" height="144" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#step4Grad)" />
+    <text x="48" y="24" class="font-sans badge-text">第四階段</text>
+    <text x="108" y="58" class="font-sans node-title">打開 Excel 驗收拉樞紐</text>
+    <text x="108" y="80" class="font-sans node-desc">點公式編輯列除錯品管</text>
+    <text x="108" y="98" class="font-sans node-desc">10 秒拖拉樞紐分析表</text>
+    <text x="108" y="120" class="font-sans node-desc" fill="#059669" font-weight="700">成就感爆棚，完美收官 🚀</text>
+  </g>
+</svg>

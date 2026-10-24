@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 740" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-8%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06" />
+    </filter>
+    
+    <!-- Level Gradients -->
+    <linearGradient id="gradL0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#4F46E5"/></linearGradient>
+    <linearGradient id="gradL1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+    <linearGradient id="gradL2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#D97706"/></linearGradient>
+    <linearGradient id="gradL3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FB923C"/><stop offset="100%" stop-color="#EA580C"/></linearGradient>
+    <linearGradient id="gradL4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0EA5E9"/><stop offset="100%" stop-color="#0284C7"/></linearGradient>
+    <linearGradient id="gradL5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#7C3AED"/></linearGradient>
+    
+    <marker id="arrDown" viewBox="0 0 10 10" refX="5" refY="6" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1.5 0 L 5 8 L 8.5 0 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .font-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-weight: 800; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; }
+    .badge-text { font-size: 11px; font-weight: 800; fill: #FFFFFF; }
+    .card-title { font-size: 14px; font-weight: 700; fill: #0F172A; }
+    .card-subtitle { font-size: 12px; font-weight: 600; fill: #475569; }
+    .card-desc { font-size: 11.5px; fill: #64748B; }
+    .tag-badge { font-size: 10.5px; font-weight: 600; }
+  </style>
+
+  <!-- Container Box -->
+  <rect width="960" height="740" rx="16" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.5" />
+
+  <!-- Header -->
+  <g transform="translate(32, 28)">
+    <rect x="0" y="0" width="176" height="24" rx="12" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+    <text x="88" y="16" class="font-sans" font-size="11" font-weight="700" fill="#4338CA" text-anchor="middle">EXCEL ROADMAP</text>
+    <text x="0" y="52" class="font-title" font-size="20" fill="#0F172A">🗺️ Excel 漸進實戰能力地圖（前導思維 + 五大階梯）</text>
+    <text x="0" y="74" class="font-sans" font-size="12" fill="#64748B">從「手動排版公式痛點」到「口語引導 AI 擔任專屬試算表架構師」，層層遞進建立不可替代能力</text>
+  </g>
+
+  <!-- L0 前導核心 (Card 0) -->
+  <g transform="translate(32, 116)">
+    <rect width="896" height="84" rx="12" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="5 4" filter="url(#shadow)" />
+    <rect x="18" y="14" width="76" height="26" rx="6" fill="url(#gradL0)" />
+    <text x="56" y="31" class="font-sans badge-text" text-anchor="middle">前導核心</text>
+    
+    <text x="108" y="32" class="font-sans card-title">【AI 時代 Excel 資料架構與審核心法】</text>
+    <text x="390" y="32" class="font-sans card-subtitle">從「學操作軟體」到「資料架構師」</text>
+    <rect x="730" y="16" width="148" height="22" rx="11" fill="#EDE9FE" />
+    <text x="804" y="31" class="font-sans tag-badge" fill="#6D28D9" text-anchor="middle">核心哲學與審核防線</text>
+
+    <text x="108" y="58" class="font-sans card-desc">💡 核心技能：展示層與資料層分離 · 四不二要黃金法則 · 活檔案 vs 死檔案辨識 · 表格規格書 Prompt · QA 驗收除錯</text>
+  </g>
+
+  <!-- Connector L0 -> L1 -->
+  <line x1="480" y1="200" x2="480" y2="216" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrDown)" />
+
+  <!-- L1 階梯一 (Card 1) -->
+  <g transform="translate(32, 218)">
+    <rect width="896" height="78" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="6" height="78" rx="3" fill="#10B981" />
+    <rect x="18" y="14" width="68" height="24" rx="6" fill="url(#gradL1)" />
+    <text x="52" y="30" class="font-sans badge-text" text-anchor="middle">階梯 1</text>
+    
+    <text x="100" y="31" class="font-sans card-title">【基礎建表與運算】</text>
+    <text x="250" y="31" class="font-sans card-subtitle">告別排版地雷與公式語法</text>
+    <rect x="740" y="14" width="138" height="22" rx="11" fill="#DCFCE7" />
+    <text x="809" y="29" class="font-sans tag-badge" fill="#15803D" text-anchor="middle">標準資料庫結構</text>
+
+    <text x="100" y="56" class="font-sans card-desc">🎯 實戰成果：零合併儲存格請款單、純整數千分位格式化、動態相乘相加公式（部門差旅與費用報銷表）</text>
+  </g>
+
+  <!-- Connector L1 -> L2 -->
+  <line x1="480" y1="296" x2="480" y2="310" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrDown)" />
+
+  <!-- L2 階梯二 (Card 2) -->
+  <g transform="translate(32, 312)">
+    <rect width="896" height="78" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="6" height="78" rx="3" fill="#F59E0B" />
+    <rect x="18" y="14" width="68" height="24" rx="6" fill="url(#gradL2)" />
+    <text x="52" y="30" class="font-sans badge-text" text-anchor="middle">階梯 2</text>
+    
+    <text x="100" y="31" class="font-sans card-title">【資料防呆與自動警示】</text>
+    <text x="280" y="31" class="font-sans card-subtitle">告別手動檢查與眼花抓漏</text>
+    <rect x="740" y="14" width="138" height="22" rx="11" fill="#FEF3C7" />
+    <text x="809" y="29" class="font-sans tag-badge" fill="#B45309" text-anchor="middle">資料驗證與條件格式</text>
+
+    <text x="100" y="56" class="font-sans card-desc">🎯 實戰成果：動態下拉選單 Data Validation、狀態超支紅字/延遲黃底警示（專案里程碑與預算進度管控表）</text>
+  </g>
+
+  <!-- Connector L2 -> L3 -->
+  <line x1="480" y1="390" x2="480" y2="404" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrDown)" />
+
+  <!-- L3 階梯三 (Card 3) -->
+  <g transform="translate(32, 406)">
+    <rect width="896" height="78" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="6" height="78" rx="3" fill="#EA580C" />
+    <rect x="18" y="14" width="68" height="24" rx="6" fill="url(#gradL3)" />
+    <text x="52" y="30" class="font-sans badge-text" text-anchor="middle">階梯 3</text>
+    
+    <text x="100" y="31" class="font-sans card-title">【髒資料清洗與轉化】</text>
+    <text x="265" y="31" class="font-sans card-subtitle">告別無止境複製貼上與文字整理</text>
+    <rect x="740" y="14" width="138" height="22" rx="11" fill="#FFEDD5" />
+    <text x="809" y="29" class="font-sans tag-badge" fill="#C2410C" text-anchor="middle">非結構文字結構化</text>
+
+    <text x="100" y="56" class="font-sans card-desc">🎯 實戰成果：非結構文字/LINE留言/雜訊符號剝除、標準化日期與金額萃取（非結構化文字清洗與標準表）</text>
+  </g>
+
+  <!-- Connector L3 -> L4 -->
+  <line x1="480" y1="484" x2="480" y2="498" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrDown)" />
+
+  <!-- L4 階梯四 (Card 4) -->
+  <g transform="translate(32, 500)">
+    <rect width="896" height="78" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="6" height="78" rx="3" fill="#0284C7" />
+    <rect x="18" y="14" width="68" height="24" rx="6" fill="url(#gradL4)" />
+    <text x="52" y="30" class="font-sans badge-text" text-anchor="middle">階梯 4</text>
+    
+    <text x="100" y="31" class="font-sans card-title">【跨表關聯與多維統計】</text>
+    <text x="280" y="31" class="font-sans card-subtitle">告別 VLOOKUP 破圖與公式恐懼</text>
+    <rect x="740" y="14" width="138" height="22" rx="11" fill="#E0F2FE" />
+    <text x="809" y="29" class="font-sans tag-badge" fill="#0369A1" text-anchor="middle">XLOOKUP 與樞紐分析</text>
+
+    <text x="100" y="56" class="font-sans card-desc">🎯 實戰成果：XLOOKUP 跨表動態關聯、SUMIFS/COUNTIFS 多條件動態統計（跨表關聯與多維銷售統計分析表）</text>
+  </g>
+
+  <!-- Connector L4 -> L5 -->
+  <line x1="480" y1="578" x2="480" y2="592" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrDown)" />
+
+  <!-- L5 階梯五 (Card 5) -->
+  <g transform="translate(32, 594)">
+    <rect width="896" height="78" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="6" height="78" rx="3" fill="#7C3AED" />
+    <rect x="18" y="14" width="68" height="24" rx="6" fill="url(#gradL5)" />
+    <text x="52" y="30" class="font-sans badge-text" text-anchor="middle">階梯 5</text>
+    
+    <text x="100" y="31" class="font-sans card-title">【商業儀表板與視覺化】</text>
+    <text x="280" y="31" class="font-sans card-subtitle">告別醜陋圖表，直上主管級商務看板</text>
+    <rect x="740" y="14" width="138" height="22" rx="11" fill="#F3E8FF" />
+    <text x="809" y="29" class="font-sans tag-badge" fill="#7E22CE" text-anchor="middle">C-Level 決策看板</text>
+
+    <text x="100" y="56" class="font-sans card-desc">🎯 實戰成果：4大核心 KPI 卡片、雙軸整合圖表、直上 C-Level 經營決策視覺看板（高階商業經營決策儀表板）</text>
+  </g>
+</svg>

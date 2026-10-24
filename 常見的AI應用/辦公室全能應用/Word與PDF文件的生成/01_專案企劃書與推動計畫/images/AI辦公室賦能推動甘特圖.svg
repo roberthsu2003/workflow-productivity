@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <filter id="shadow" x="-3%" y="-6%" width="106%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.06" />
+    </filter>
+    
+    <!-- Phase Gradients -->
+    <linearGradient id="barP1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#1D4ED8"/></linearGradient>
+    <linearGradient id="barP2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#D97706"/></linearGradient>
+    <linearGradient id="barP3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; }
+    .phase-badge { font-size: 11px; font-weight: 800; fill: #FFFFFF; }
+    .task-label { font-size: 12px; font-weight: 700; fill: #1E293B; }
+    .task-meta { font-size: 10px; fill: #64748B; }
+    .month-header { font-size: 12px; font-weight: 700; fill: #334155; text-anchor: middle; }
+    .bar-text { font-size: 10.5px; font-weight: 700; fill: #FFFFFF; }
+  </style>
+
+  <rect width="960" height="440" rx="16" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.5" />
+
+  <!-- Title & Subtitle -->
+  <g transform="translate(32, 22)">
+    <rect x="0" y="0" width="140" height="22" rx="11" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+    <text x="70" y="15" class="font-sans" font-size="10.5" font-weight="700" fill="#4338CA" text-anchor="middle">GANTT TIMELINE</text>
+    <text x="0" y="46" class="font-sans" font-size="18" font-weight="800" fill="#0F172A">📅 2026 年度 AI 辦公室賦能推動甘特圖（12 週實施程期）</text>
+  </g>
+
+  <!-- Timeline Grid Header (from x=360 to x=920, total width = 560px) -->
+  <!-- 4月中~底 (4/15~4/30: 16d) -> ~118px, 5月 (5/1~5/31: 31d) -> ~228px, 6月 (6/1~6/30: 30d) -> ~214px -->
+  <g transform="translate(360, 68)">
+    <!-- April -->
+    <rect x="0" y="0" width="118" height="26" rx="4" fill="#E2E8F0" />
+    <text x="59" y="17" class="font-sans month-header">4 月（環境風控）</text>
+    
+    <!-- May -->
+    <rect x="122" y="0" width="224" height="26" rx="4" fill="#E2E8F0" />
+    <text x="234" y="17" class="font-sans month-header">5 月（種子工作坊）</text>
+    
+    <!-- June -->
+    <rect x="350" y="0" width="210" height="26" rx="4" fill="#E2E8F0" />
+    <text x="455" y="17" class="font-sans month-header">6 月（全員演練與驗收）</text>
+
+    <!-- Grid Guidelines -->
+    <line x1="0" y1="30" x2="0" y2="340" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3" />
+    <line x1="120" y1="30" x2="120" y2="340" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3" />
+    <line x1="348" y1="30" x2="348" y2="340" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3" />
+    <line x1="560" y1="30" x2="560" y2="340" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="3 3" />
+  </g>
+
+  <!-- SECTION 1: 環境與風控 -->
+  <g transform="translate(32, 108)">
+    <rect x="0" y="0" width="310" height="78" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1" />
+    <rect x="10" y="10" width="136" height="22" rx="5" fill="url(#barP1)" />
+    <text x="78" y="25" class="font-sans phase-badge" text-anchor="middle">第一階段：環境與風控</text>
+    <text x="10" y="48" class="font-sans task-label">1. 合規工具盤點與資安守則</text>
+    <text x="10" y="68" class="font-sans task-label">2. Markdown 規範與審核機制</text>
+
+    <!-- Bars on timeline (relative to x=360): 4/15 is day 0 (x=360) -->
+    <!-- Task 1: 4/15~4/28 (14d) -> width ~104px -->
+    <rect x="328" y="32" width="104" height="22" rx="6" fill="url(#barP1)" filter="url(#shadow)" />
+    <text x="380" y="47" class="font-sans bar-text" text-anchor="middle">04/15 - 04/28 (14d)</text>
+
+    <!-- Task 2: 4/22~5/01 (10d) -> start offset day 7 (~52px), width ~74px -->
+    <rect x="380" y="56" width="74" height="22" rx="6" fill="#60A5FA" filter="url(#shadow)" />
+    <text x="417" y="71" class="font-sans bar-text" text-anchor="middle">04/22 - 05/01 (10d)</text>
+  </g>
+
+  <!-- SECTION 2: 種子培訓與驗證 -->
+  <g transform="translate(32, 202)">
+    <rect x="0" y="0" width="310" height="78" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1" />
+    <rect x="10" y="10" width="148" height="22" rx="5" fill="url(#barP2)" />
+    <text x="84" y="25" class="font-sans phase-badge" text-anchor="middle">第二階段：種子培育與培訓</text>
+    <text x="10" y="48" class="font-sans task-label">3. 各部門種子工作坊 (2梯次)</text>
+    <text x="10" y="68" class="font-sans task-label">4. 人機協作實戰驗證 (雙軌工作流)</text>
+
+    <!-- Task 3: 5/05~5/16 (12d) -> May starts at day 16 (x=360+118=478). 5/05 is offset 37px -> x=360+155=515 -->
+    <rect x="475" y="32" width="88" height="22" rx="6" fill="url(#barP2)" filter="url(#shadow)" />
+    <text x="519" y="47" class="font-sans bar-text" text-anchor="middle">05/05 - 05/16 (12d)</text>
+
+    <!-- Task 4: 5/15~5/29 (15d) -> start 5/15 -> offset ~110px from May start -> x=360+228=588 -->
+    <rect x="548" y="56" width="110" height="22" rx="6" fill="#FBBF24" filter="url(#shadow)" />
+    <text x="603" y="71" class="font-sans bar-text" text-anchor="middle" fill="#78350F">05/15 - 05/29 (15d)</text>
+  </g>
+
+  <!-- SECTION 3: 全面推廣與結案 -->
+  <g transform="translate(32, 296)">
+    <rect x="0" y="0" width="310" height="78" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+    <rect x="10" y="10" width="148" height="22" rx="5" fill="url(#barP3)" />
+    <text x="84" y="25" class="font-sans phase-badge" text-anchor="middle">第三階段：全面推廣與結案</text>
+    <text x="10" y="48" class="font-sans task-label">5. 全員辦公室實戰演練與上線</text>
+    <text x="10" y="68" class="font-sans task-label">6. 效益評估與成果報告驗收</text>
+
+    <!-- Task 5: 6/01~6/20 (20d) -> June starts at x=360+348=708. 6/01 is at x=708, width 140px -->
+    <rect x="708" y="32" width="140" height="22" rx="6" fill="url(#barP3)" filter="url(#shadow)" />
+    <text x="778" y="47" class="font-sans bar-text" text-anchor="middle">06/01 - 06/20 (20d)</text>
+
+    <!-- Task 6: 6/20~6/30 (10d) -> starts at x=708+140=848, width 70px -->
+    <rect x="848" y="56" width="70" height="22" rx="6" fill="#34D399" filter="url(#shadow)" />
+    <text x="883" y="71" class="font-sans bar-text" text-anchor="middle" fill="#064E3B">06/20~ (10d)</text>
+  </g>
+
+  <!-- Bottom Legend / Note -->
+  <g transform="translate(32, 396)">
+    <circle cx="10" cy="10" r="5" fill="#3B82F6" />
+    <text x="24" y="14" class="font-sans task-meta">第一階段：工具審核與雙閘門合規守則</text>
+    
+    <circle cx="280" cy="10" r="5" fill="#F59E0B" />
+    <text x="294" y="14" class="font-sans task-meta">第二階段：16 位部門種子培育與四件套工作流驗證</text>
+    
+    <circle cx="610" cy="10" r="5" fill="#10B981" />
+    <text x="624" y="14" class="font-sans task-meta">第三階段：全員落地、工時節省 40% 與成果報告提報</text>
+  </g>
+</svg>

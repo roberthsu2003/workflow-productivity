@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-8%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06" />
+    </filter>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0369A1"/></linearGradient>
+    <linearGradient id="viewGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#6D28D9"/></linearGradient>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284C7" />
+    </marker>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; }
+    .layer-title { font-size: 13.5px; font-weight: 800; fill: #FFFFFF; }
+    .card-title { font-size: 13px; font-weight: 700; fill: #0F172A; }
+    .card-desc { font-size: 11px; fill: #475569; }
+    .tag-rule { font-size: 10px; font-weight: 700; }
+  </style>
+
+  <rect width="960" height="340" rx="16" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.5" />
+
+  <!-- LEFT: DATA LAYER (電腦讀的) -->
+  <g transform="translate(28, 24)">
+    <rect width="450" height="292" rx="14" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1.2" filter="url(#shadow)" />
+    
+    <!-- Header -->
+    <rect x="16" y="14" width="220" height="28" rx="7" fill="url(#dataGrad)" />
+    <text x="126" y="33" class="font-sans layer-title" text-anchor="middle">📁 資料層（電腦與公式讀的）</text>
+
+    <!-- Card 1: Raw Data -->
+    <g transform="translate(16, 54)">
+      <rect width="418" height="104" rx="8" fill="#FFFFFF" stroke="#7DD3FC" stroke-width="1" />
+      <rect x="12" y="10" width="112" height="22" rx="5" fill="#E0F2FE" />
+      <text x="68" y="25" class="font-sans tag-rule" fill="#0369A1" text-anchor="middle">1️⃣ 資料源表 Raw Data</text>
+      <text x="134" y="26" class="font-sans card-title">記錄日常交易流水帳</text>
+      
+      <text x="14" y="52" class="font-sans card-desc">• 只記錄客觀事實，長相樸素，結構嚴謹，一維表頭</text>
+      <text x="14" y="70" class="font-sans card-desc">• 每列代表單一獨立事件，欄位格式純淨（千分位數值）</text>
+      <text x="14" y="88" class="font-sans card-desc" fill="#DC2626" font-weight="700">⚠️ 鐵律：嚴禁合併儲存格、嚴禁數值後填文字單位</text>
+    </g>
+
+    <!-- Card 2: Lookup Tables -->
+    <g transform="translate(16, 170)">
+      <rect width="418" height="104" rx="8" fill="#FFFFFF" stroke="#7DD3FC" stroke-width="1" />
+      <rect x="12" y="10" width="126" height="22" rx="5" fill="#E0F2FE" />
+      <text x="75" y="25" class="font-sans tag-rule" fill="#0369A1" text-anchor="middle">2️⃣ 參照主檔 Master Table</text>
+      <text x="148" y="26" class="font-sans card-title">存放標準業務規格與主鍵</text>
+      
+      <text x="14" y="52" class="font-sans card-desc">• 存放固定不變或低頻變動之規格主檔（產品單價、客戶清單）</text>
+      <text x="14" y="70" class="font-sans card-desc">• 具備唯一不重複識別碼（ID / 編號），供流水帳跨表查詢</text>
+      <text x="14" y="88" class="font-sans card-desc" fill="#0369A1" font-weight="700">💡 透過 XLOOKUP 依 ID 精準帶回品名與單價</text>
+    </g>
+  </g>
+
+  <!-- CONNECTOR MIDDLE -->
+  <g transform="translate(478, 140)">
+    <line x1="12" y1="30" x2="60" y2="30" stroke="#0284C7" stroke-width="3" stroke-dasharray="4 3" marker-end="url(#arrBlue)" />
+    <rect x="0" y="44" width="76" height="38" rx="6" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1" />
+    <text x="38" y="59" class="font-sans" font-size="9" font-weight="800" fill="#0369A1" text-anchor="middle">跨表公式</text>
+    <text x="38" y="72" class="font-sans" font-size="8.5" fill="#475569" text-anchor="middle">XLOOKUP</text>
+  </g>
+
+  <!-- RIGHT: VIEW LAYER (人類看的) -->
+  <g transform="translate(554, 24)">
+    <rect width="378" height="292" rx="14" fill="#FAF5FF" stroke="#E9D5FF" stroke-width="1.2" filter="url(#shadow)" />
+    
+    <!-- Header -->
+    <rect x="16" y="14" width="220" height="28" rx="7" fill="url(#viewGrad)" />
+    <text x="126" y="33" class="font-sans layer-title" text-anchor="middle">📊 展示層（人類視覺讀的）</text>
+
+    <!-- Card 3: Report & Dashboard -->
+    <g transform="translate(16, 54)">
+      <rect width="346" height="220" rx="8" fill="#FFFFFF" stroke="#D8B4FE" stroke-width="1" />
+      <rect x="12" y="10" width="138" height="22" rx="5" fill="#F3E8FF" />
+      <text x="81" y="25" class="font-sans tag-rule" fill="#7E22CE" text-anchor="middle">3️⃣ 報表與儀表板 Report</text>
+      
+      <text x="14" y="56" class="font-sans card-title">專門提供主管決策與視覺化</text>
+      
+      <text x="14" y="86" class="font-sans card-desc">• 整合樞紐分析表、KPI 指標卡片、動態趨勢圖表</text>
+      <text x="14" y="108" class="font-sans card-desc">• 數據全部來自資料層動態提煉，嚴禁手打死數字</text>
+      <text x="14" y="130" class="font-sans card-desc">• 唯一允許合併儲存格、配色設計與自訂邊框的分頁</text>
+      <text x="14" y="152" class="font-sans card-desc">• 動態連動：當資料層新增一列，展示層立即同步刷新</text>
+
+      <rect x="14" y="174" width="318" height="30" rx="6" fill="#F3E8FF" />
+      <text x="173" y="193" class="font-sans" font-size="10.5" font-weight="700" fill="#6B21A8" text-anchor="middle">✨ 效益：底層純淨，高階視覺呈現無比自由</text>
+    </g>
+  </g>
+</svg>

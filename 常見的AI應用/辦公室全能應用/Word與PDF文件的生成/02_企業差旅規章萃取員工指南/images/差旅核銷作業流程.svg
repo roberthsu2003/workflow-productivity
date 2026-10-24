@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 180" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+    <linearGradient id="stepGrad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0EA5E9"/></linearGradient>
+    <linearGradient id="stepGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#6366F1"/></linearGradient>
+    <linearGradient id="stepGrad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D97706"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient>
+    <linearGradient id="stepGrad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10B981"/></linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; }
+    .badge-text { font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .node-title { font-size: 13px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .node-desc { font-size: 10px; fill: #475569; text-anchor: middle; }
+    .node-alert { font-size: 9.5px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <rect width="960" height="180" rx="14" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
+
+  <!-- 步驟 1 -->
+  <g transform="translate(28, 18)">
+    <rect width="195" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#stepGrad1)" />
+    <text x="48" y="24" class="font-sans badge-text">步驟 01</text>
+    <text x="97" y="58" class="font-sans node-title">事前出差申請</text>
+    <text x="97" y="80" class="font-sans node-desc">出發前 3 日於系統填報</text>
+    <text x="97" y="98" class="font-sans node-desc">完成行程與預算核准</text>
+    <text x="97" y="120" class="font-sans node-alert" fill="#0284C7">取得核准差旅單號</text>
+  </g>
+  <line x1="229" y1="90" x2="251" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- 步驟 2 -->
+  <g transform="translate(257, 18)">
+    <rect width="195" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#stepGrad2)" />
+    <text x="48" y="24" class="font-sans badge-text">步驟 02</text>
+    <text x="97" y="58" class="font-sans node-title">執行出差任務</text>
+    <text x="97" y="80" class="font-sans node-desc">妥善保存單據與票根</text>
+    <text x="97" y="98" class="font-sans node-desc">抬頭統一、登打統編</text>
+    <text x="97" y="120" class="font-sans node-alert" fill="#4F46E5">統編：88996655</text>
+  </g>
+  <line x1="458" y1="90" x2="480" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- 步驟 3 -->
+  <g transform="translate(486, 18)">
+    <rect width="195" height="144" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#stepGrad3)" />
+    <text x="48" y="24" class="font-sans badge-text">步驟 03</text>
+    <text x="97" y="58" class="font-sans node-title">系統登打單據</text>
+    <text x="97" y="80" class="font-sans node-desc">返工後 10 工作天內</text>
+    <text x="97" y="98" class="font-sans node-desc">ERP 線上檢附單據影像</text>
+    <text x="97" y="120" class="font-sans node-alert" fill="#D97706">⚠️ 逾期 10 天財務退回</text>
+  </g>
+  <line x1="687" y1="90" x2="709" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- 步驟 4 -->
+  <g transform="translate(715, 18)">
+    <rect width="217" height="144" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="10" y="10" width="76" height="20" rx="5" fill="url(#stepGrad4)" />
+    <text x="48" y="24" class="font-sans badge-text">步驟 04</text>
+    <text x="108" y="58" class="font-sans node-title">主管與財務覆核</text>
+    <text x="108" y="80" class="font-sans node-desc">雙重線上簽核放行</text>
+    <text x="108" y="98" class="font-sans node-desc">每月 20 日結算付款</text>
+    <text x="108" y="120" class="font-sans node-alert" fill="#059669">入帳至個人薪資帳戶 ✨</text>
+  </g>
+</svg>
