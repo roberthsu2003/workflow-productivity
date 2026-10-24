@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 175" width="100%" height="100%">
+  <defs>
+    <!-- Light Mode 背景漸層 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+
+    <!-- 卡片淡陰影 -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+
+    <!-- 步驟膠囊漸層 -->
+    <linearGradient id="step1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0EA5E9"/></linearGradient>
+    <linearGradient id="step2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#6366F1"/></linearGradient>
+    <linearGradient id="step3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D97706"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient>
+    <linearGradient id="step4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E11D48"/><stop offset="100%" stop-color="#F43F5E"/></linearGradient>
+    <linearGradient id="step5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10B981"/></linearGradient>
+
+    <!-- 箭頭標記 -->
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .node-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 12px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .node-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 10px; fill: #475569; text-anchor: middle; }
+    .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .alert-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 9.5px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <!-- 畫布底框 -->
+  <rect width="1020" height="175" rx="14" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
+
+  <!-- ==================== 01. 上傳規章與口語 ==================== -->
+  <g transform="translate(18, 16)">
+    <rect width="168" height="142" rx="10" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="14" y="10" width="46" height="18" rx="9" fill="url(#step1)" />
+    <text x="37" y="23" class="badge-text">01 素材</text>
+    <text x="84" y="48" class="node-title">上傳規章 PDF</text>
+    <text x="84" y="70" class="node-desc">差旅加班規範 3 頁規章</text>
+    <text x="84" y="88" class="node-desc">口述員工重點關注項目</text>
+    <rect x="12" y="104" width="144" height="26" rx="6" fill="#F0F9FF" />
+    <text x="84" y="121" class="alert-text" fill="#0369A1">📕 規章素材 Grounding</text>
+  </g>
+
+  <!-- 箭頭 1 -> 2 -->
+  <line x1="192" y1="87" x2="216" y2="87" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- ==================== 02. RTCCF 萃取工作流 ==================== -->
+  <g transform="translate(222, 16)">
+    <rect width="176" height="142" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="14" y="10" width="58" height="18" rx="9" fill="url(#step2)" />
+    <text x="43" y="23" class="badge-text">02 工作流</text>
+    <text x="88" y="48" class="node-title">RTCCF 萃取工作流</text>
+    <text x="88" y="70" class="node-desc">AI 轉化人資法規專家任務</text>
+    <text x="88" y="88" class="node-desc">鎖定條文範疇與限制條件</text>
+    <rect x="10" y="104" width="156" height="26" rx="6" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1" />
+    <text x="88" y="121" class="alert-text" fill="#DC2626">⚠️ 守則一：存為 工作流.md</text>
+  </g>
+
+  <!-- 箭頭 2 -> 3 -->
+  <line x1="404" y1="87" x2="428" y2="87" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- ==================== 03. 法規審核規格書 ==================== -->
+  <g transform="translate(434, 16)">
+    <rect width="176" height="142" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="14" y="10" width="58" height="18" rx="9" fill="url(#step3)" />
+    <text x="43" y="23" class="badge-text">03 規格書</text>
+    <text x="88" y="48" class="node-title">法規審核規格書</text>
+    <text x="88" y="70" class="node-desc">對照每項報銷金額上限</text>
+    <text x="88" y="88" class="node-desc">標註 PDF 原文條款與頁碼</text>
+    <rect x="10" y="104" width="156" height="26" rx="6" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1" />
+    <text x="88" y="121" class="alert-text" fill="#B45309">⚠️ 守則二：存為 規格書.md</text>
+  </g>
+
+  <!-- 箭頭 3 -> 4 -->
+  <line x1="616" y1="87" x2="640" y2="87" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- ==================== 04. 人類終審決策 ==================== -->
+  <g transform="translate(646, 16)">
+    <rect width="168" height="142" rx="10" fill="#FFFFFF" stroke="#FECDD3" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="14" y="10" width="54" height="18" rx="9" fill="url(#step4)" />
+    <text x="41" y="23" class="badge-text">04 終審</text>
+    <text x="84" y="48" class="node-title">人類終審放行</text>
+    <text x="84" y="70" class="node-desc">人眼確認條例無誤</text>
+    <text x="84" y="88" class="node-desc">確保零幻覺、合規無風險</text>
+    <rect x="10" y="104" width="148" height="26" rx="6" fill="#FEF2F2" />
+    <text x="84" y="121" class="alert-text" fill="#E11D48">🛡️ 回覆「審核通過」才產出</text>
+  </g>
+
+  <!-- 箭頭 4 -> 5 -->
+  <line x1="820" y1="87" x2="844" y2="87" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- ==================== 05. 員工指南交付 ==================== -->
+  <g transform="translate(850, 16)">
+    <rect width="152" height="142" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="14" y="10" width="54" height="18" rx="9" fill="url(#step5)" />
+    <text x="41" y="23" class="badge-text">05 交付</text>
+    <text x="76" y="48" class="node-title">正式指南匯出</text>
+    <text x="76" y="70" class="node-desc">白話權益表格化呈現</text>
+    <text x="76" y="88" class="node-desc">全體同仁快速查閱</text>
+    <rect x="10" y="104" width="132" height="26" rx="6" fill="#ECFDF5" stroke="#34D399" stroke-width="1" />
+    <text x="76" y="121" class="alert-text" fill="#065F46">📘 .docx / 📕 .pdf</text>
+  </g>
+</svg>
