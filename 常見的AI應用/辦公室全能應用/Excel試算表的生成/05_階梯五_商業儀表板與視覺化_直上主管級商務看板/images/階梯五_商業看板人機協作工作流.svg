@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 175" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
+    </filter>
+    <linearGradient id="stepGrad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0EA5E9"/></linearGradient><linearGradient id="stepGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#6366F1"/></linearGradient><linearGradient id="stepGrad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D97706"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient><linearGradient id="stepGrad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E11D48"/><stop offset="100%" stop-color="#F43F5E"/></linearGradient><linearGradient id="stepGrad5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10B981"/></linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .node-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 11.5px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
+    .node-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 9.5px; fill: #475569; text-anchor: middle; }
+    .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .alert-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 9px; font-weight: 700; text-anchor: middle; }
+  </style>
+
+  <rect width="1020" height="175" rx="14" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
+  
+    <!-- 步驟 01 -->
+    <g transform="translate(28, 16)">
+      <rect width="172" height="142" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+      <rect x="10" y="10" width="48" height="20" rx="5" fill="url(#stepGrad1)" />
+      <text x="34" y="24" class="badge-text">01</text>
+      <rect x="64" y="10" width="98" height="20" rx="5" fill="#F1F5F9" />
+      <text x="113" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">零門檻輸入</text>
+      
+      <text x="86" y="58" class="node-title">口述看板需求</text>
+      <text x="86" y="74" class="node-title"></text>
+      <text x="86" y="96" class="node-desc">指定匯報層級與 KPI</text>
+      <text x="86" y="110" class="node-desc">要求商業麥肯錫配色</text>
+      
+    </g>
+    <line x1="203" y1="87" x2="221" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+    <!-- 步驟 02 -->
+    <g transform="translate(226, 16)">
+      <rect width="172" height="142" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+      <rect x="10" y="10" width="48" height="20" rx="5" fill="url(#stepGrad2)" />
+      <text x="34" y="24" class="badge-text">02</text>
+      <rect x="64" y="10" width="98" height="20" rx="5" fill="#F1F5F9" />
+      <text x="113" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">強制存為 .md</text>
+      
+      <text x="86" y="58" class="node-title">轉化 RTCCF 工作流</text>
+      <text x="86" y="74" class="node-title"></text>
+      <text x="86" y="96" class="node-desc">設定高階商業顧問</text>
+      <text x="86" y="110" class="node-desc">規劃三層式看板架構</text>
+      <text x="86" y="126" class="alert-text" fill="#E11D48">⚠️ 存為 工作流.md</text>
+    </g>
+    <line x1="401" y1="87" x2="419" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+    <!-- 步驟 03 -->
+    <g transform="translate(424, 16)">
+      <rect width="172" height="142" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+      <rect x="10" y="10" width="48" height="20" rx="5" fill="url(#stepGrad3)" />
+      <text x="34" y="24" class="badge-text">03</text>
+      <rect x="64" y="10" width="98" height="20" rx="5" fill="#F1F5F9" />
+      <text x="113" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">AI 輸出規格書</text>
+      
+      <text x="86" y="58" class="node-title">產出儀表板規格書</text>
+      <text x="86" y="74" class="node-title"></text>
+      <text x="86" y="96" class="node-desc">4 大 KPI 卡片佈局預檢</text>
+      <text x="86" y="110" class="node-desc">自動生成高階洞察摘要</text>
+      <text x="86" y="126" class="alert-text" fill="#E11D48">⚠️ 存為 規格書.md</text>
+    </g>
+    <line x1="599" y1="87" x2="617" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+    <!-- 步驟 04 -->
+    <g transform="translate(622, 16)">
+      <rect width="172" height="142" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+      <rect x="10" y="10" width="48" height="20" rx="5" fill="url(#stepGrad4)" />
+      <text x="34" y="24" class="badge-text">04</text>
+      <rect x="64" y="10" width="98" height="20" rx="5" fill="#F1F5F9" />
+      <text x="113" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">人類終審放行</text>
+      
+      <text x="86" y="58" class="node-title">放行閘門查核</text>
+      <text x="86" y="74" class="node-title"></text>
+      <text x="86" y="96" class="node-desc">核對指標數值與觀點</text>
+      <text x="86" y="110" class="node-desc">發送：確認無誤，可以生成</text>
+      
+    </g>
+    <line x1="797" y1="87" x2="815" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+    <!-- 步驟 05 -->
+    <g transform="translate(820, 16)">
+      <rect width="172" height="142" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
+      <rect x="10" y="10" width="48" height="20" rx="5" fill="url(#stepGrad5)" />
+      <text x="34" y="24" class="badge-text">05</text>
+      <rect x="64" y="10" width="98" height="20" rx="5" fill="#F1F5F9" />
+      <text x="113" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">落地高階看板</text>
+      
+      <text x="86" y="58" class="node-title">產出 Executive 看板</text>
+      <text x="86" y="74" class="node-title"></text>
+      <text x="86" y="96" class="node-desc">頂部卡片 + 視覺圖表</text>
+      <text x="86" y="110" class="node-desc">直上董事會主管報告</text>
+      
+    </g>
+    
+
+</svg>

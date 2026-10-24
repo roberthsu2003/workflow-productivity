@@ -8,22 +8,10 @@
 
 ---
 
-## 🧭 人機協作標準工作流（Human-in-the-Loop 四步閉環）
+## ⚡ 人機協作標準工作流（Human-in-the-Loop 四步閉環）
 
-```mermaid
-flowchart LR
-    A["① 自然語言需求 / 上傳 Source\n(只要懂一點概念，用白話口述)"] 
-    --> B["② AI 轉化為 RTCCF 工程規格\n(⚠️ 強制儲存為 .md 檔\n鎖定格式、防呆與公式)"]
-    --> C["③ 輸出【數據與邏輯審核卡片】\n(人類預檢：公式/格式/數值/異常)"]
-    --> D{"④ 人類核准決策\n(回覆：審核通過)"}
-    --> E["⑤ 正式生成標準活頁簿\n➔ 匯出實體 .xlsx 檔案"]
-    
-    style A fill:#E1F5FE,stroke:#0288D1
-    style B fill:#FFF3E0,stroke:#F57C00
-    style C fill:#FFF9C4,stroke:#FBC02D
-    style D fill:#E8F5E9,stroke:#388E3C
-    style E fill:#EDE7F6,stroke:#512DA8
-```
+![Excel人機協作全景圖](./images/Excel人機協作全景圖.svg)
+
 
 ---
 

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 389" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 14.5px; font-weight: 700; fill: #FFFFFF; }
+    .meta-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+    .meta-val { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 600; fill: #0F172A; }
+    .sec-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12.5px; font-weight: 800; fill: #B45309; }
+    .item-num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .item-bold { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 700; fill: #1E293B; }
+    .item-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 11.5px; fill: #475569; }
+    .alert-head { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 800; fill: #92400E; }
+    .alert-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 11.5px; fill: #78350F; }
+  </style>
+
+  <g transform="translate(10, 10)">
+    <rect width="740" height="369" rx="12" fill="url(#cardBg)" stroke="#CBD5E1" stroke-width="1.2" filter="url(#boxShadow)" />
+
+    <!-- 頂部 Header -->
+    <rect width="740" height="46" rx="12" fill="url(#headerGrad)" />
+    <rect y="32" width="740" height="14" fill="url(#headerGrad)" />
+    
+    <circle cx="24" cy="23" r="5" fill="#FFFFFF" fill-opacity="0.6" />
+    <circle cx="38" cy="23" r="5" fill="#FFFFFF" fill-opacity="0.9" />
+    <text x="56" y="28" class="title">🗺️ 簡報濃縮邏輯地圖審核規格書 (Roadmap Review Card)</text>
+    <rect x="620" y="13" width="100" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.2" />
+    <text x="670" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">待初審確認</text>
+
+    <!-- 中間元數據區 (Meta Info) -->
+    <g transform="translate(24, 62)">
+      <rect width="692" height="66" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="25" class="meta-label">原始來源：<tspan class="meta-val">20 頁「企業智慧辦公室賦能推動」線性簡報大綱</tspan></text><text x="16" y="48" class="meta-label">濃縮目標：<tspan class="meta-val">單頁 Bento Box 便當盒網格懶人包（30 秒自明吸收）</tspan></text><text x="440" y="48" class="meta-label">視覺動線：<tspan class="meta-val">Z 型掃描佈局</tspan></text>
+    </g>
+
+    <!-- 項目清單區塊 -->
+    <g transform="translate(24, 142)">
+      <text x="4" y="14" class="sec-title">📋【核心架構與項目預覽】：</text>
+      
+      <!-- 項目 1 -->
+      <g transform="translate(0, 26)">
+        <rect width="20" height="18" rx="4" fill="#D97706" />
+        <text x="10" y="13" class="item-num">1</text>
+        <text x="28" y="14" class="item-bold">板塊 1（核心量化）：<tspan class="item-desc">大數據量化成效：行政文書提速 40%、零授權軟體採購成本</tspan></text>
+      </g>
+      <!-- 項目 2 -->
+      <g transform="translate(0, 52)">
+        <rect width="20" height="18" rx="4" fill="#D97706" />
+        <text x="10" y="13" class="item-num">2</text>
+        <text x="28" y="14" class="item-bold">板塊 2（推動路徑）：<tspan class="item-desc">落地三階路徑：4月資安檢測 ➔ 5月中旬培訓 ➔ 6月全面推廣</tspan></text>
+      </g>
+      <!-- 項目 3 -->
+      <g transform="translate(0, 78)">
+        <rect width="20" height="18" rx="4" fill="#D97706" />
+        <text x="10" y="13" class="item-num">3</text>
+        <text x="28" y="14" class="item-bold">板塊 3（工具矩陣）：<tspan class="item-desc">四合一辦公全能工具：Word、Excel、PPT、視覺圖表全覆蓋</tspan></text>
+      </g>
+      <!-- 項目 4 -->
+      <g transform="translate(0, 104)">
+        <rect width="20" height="18" rx="4" fill="#D97706" />
+        <text x="10" y="13" class="item-num">4</text>
+        <text x="28" y="14" class="item-bold">板塊 4（資安防線）：<tspan class="item-desc">三大合規守則：事實查核 Grounding、分流脫敏、責任確認</tspan></text>
+      </g>
+    </g>
+
+    <!-- 底部待確認卡片 (Human-in-the-Loop Gate) -->
+    <g transform="translate(24, 266)">
+      <rect width="692" height="74" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.2" />
+      <text x="16" y="22" class="alert-head">⚠️ 待確認事項（放行閘門）：</text>
+      <text x="16" y="42" class="alert-body">• 上述 4 大精華板塊是否完整涵蓋原簡報核心要旨與量化數據？</text><text x="16" y="61" class="alert-body">• 若確認無誤，請回覆【<tspan font-weight="800" fill="#92400E">審核通過，請產出視覺規格</tspan>】，AI 將為您生成單頁視覺圖表規格與代碼。</text>
+    </g>
+  </g>
+</svg>

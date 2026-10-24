@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 493" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338CA" />
+      <stop offset="100%" stop-color="#312E81" />
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 14.5px; font-weight: 700; fill: #FFFFFF; }
+    .meta-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+    .meta-val { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 600; fill: #0F172A; }
+    .sec-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12.5px; font-weight: 800; fill: #312E81; }
+    .item-num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .item-bold { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 700; fill: #1E293B; }
+    .item-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 11.5px; fill: #475569; }
+    .alert-head { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 800; fill: #92400E; }
+    .alert-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 11.5px; fill: #78350F; }
+  </style>
+
+  <g transform="translate(10, 10)">
+    <rect width="740" height="473" rx="12" fill="url(#cardBg)" stroke="#CBD5E1" stroke-width="1.2" filter="url(#boxShadow)" />
+
+    <!-- 頂部 Header -->
+    <rect width="740" height="46" rx="12" fill="url(#headerGrad)" />
+    <rect y="32" width="740" height="14" fill="url(#headerGrad)" />
+    
+    <circle cx="24" cy="23" r="5" fill="#FFFFFF" fill-opacity="0.6" />
+    <circle cx="38" cy="23" r="5" fill="#FFFFFF" fill-opacity="0.9" />
+    <text x="56" y="28" class="title">📊 科技商務提案簡報架構審核規格書 (Deck Review Card)</text>
+    <rect x="620" y="13" width="100" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.2" />
+    <text x="670" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">待初審確認</text>
+
+    <!-- 中間元數據區 (Meta Info) -->
+    <g transform="translate(24, 62)">
+      <rect width="692" height="66" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="25" class="meta-label">提案主題：<tspan class="meta-val">2026 企業導入生成式 AI 辦公室應用效益與推動方案</tspan></text><text x="16" y="48" class="meta-label">報告規格：<tspan class="meta-val">8 頁高管決策型簡報（預計 10 分鐘報告時間）</tspan></text><text x="440" y="48" class="meta-label">商務色票：<tspan class="meta-val">科技沉穩海軍藍 + 冰峰藍 + 活力青綠</tspan></text>
+    </g>
+
+    <!-- 項目清單區塊 -->
+    <g transform="translate(24, 142)">
+      <text x="4" y="14" class="sec-title">📋【核心架構與項目預覽】：</text>
+      
+      <!-- 項目 1 -->
+      <g transform="translate(0, 26)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">1</text>
+        <text x="28" y="14" class="item-bold">P1 封面主軸：<tspan class="item-desc">企業轉型新動能：標題、主講人、匯報日期與核心引言</tspan></text>
+      </g>
+      <!-- 項目 2 -->
+      <g transform="translate(0, 52)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">2</text>
+        <text x="28" y="14" class="item-bold">P2 痛點剖析：<tspan class="item-desc">跨部門行政文書三大時間黑洞（公文撰寫、格式調整、反覆修改）</tspan></text>
+      </g>
+      <!-- 項目 3 -->
+      <g transform="translate(0, 78)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">3</text>
+        <text x="28" y="14" class="item-bold">P3 解決方案：<tspan class="item-desc">主流 AI Agent 工具協同賦能全景（Word/Excel/PPT/圖表）</tspan></text>
+      </g>
+      <!-- 項目 4 -->
+      <g transform="translate(0, 104)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">4</text>
+        <text x="28" y="14" class="item-bold">P4 效益實證：<tspan class="item-desc">行政例行事務提速 40% 與真實業務場景效益演示</tspan></text>
+      </g>
+      <!-- 項目 5 -->
+      <g transform="translate(0, 130)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">5</text>
+        <text x="28" y="14" class="item-bold">P5 資安防線：<tspan class="item-desc">三大合規防線：內部資料不外洩、機敏資料分流脫敏、責任共擔</tspan></text>
+      </g>
+      <!-- 項目 6 -->
+      <g transform="translate(0, 156)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">6</text>
+        <text x="28" y="14" class="item-bold">P6 投資回報：<tspan class="item-desc">ROI 效益試算：零軟體採購授權成本與人員工時價值釋放</tspan></text>
+      </g>
+      <!-- 項目 7 -->
+      <g transform="translate(0, 182)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">7</text>
+        <text x="28" y="14" class="item-bold">P7 實施路徑：<tspan class="item-desc">三階段全員培訓時程表（資安檢測 ➔ 種子培訓 ➔ 全面推展）</tspan></text>
+      </g>
+      <!-- 項目 8 -->
+      <g transform="translate(0, 208)">
+        <rect width="20" height="18" rx="4" fill="#4338CA" />
+        <text x="10" y="13" class="item-num">8</text>
+        <text x="28" y="14" class="item-bold">P8 結論行動：<tspan class="item-desc">高階決策裁示請求與專案推動委員會啟動指引</tspan></text>
+      </g>
+    </g>
+
+    <!-- 底部待確認卡片 (Human-in-the-Loop Gate) -->
+    <g transform="translate(24, 370)">
+      <rect width="692" height="74" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.2" />
+      <text x="16" y="22" class="alert-head">⚠️ 待確認事項（放行閘門）：</text>
+      <text x="16" y="42" class="alert-body">• 上述 8 頁骨架邏輯與報告節奏是否符合向高階主管匯報的需求？</text><text x="16" y="61" class="alert-body">• 若確認無誤，請回覆【<tspan font-weight="800" fill="#92400E">審核通過，請產出完整投影片</tspan>】，AI 將為您輸出每頁完整標題與 3 點大綱。</text>
+    </g>
+  </g>
+</svg>
