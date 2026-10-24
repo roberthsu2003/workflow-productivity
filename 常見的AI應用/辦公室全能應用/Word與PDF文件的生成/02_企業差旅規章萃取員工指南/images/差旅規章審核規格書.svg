@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="100%" height="100%">
+  <defs>
+    <!-- 背景白灰漸層 -->
+    <linearGradient id="cardBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+
+    <!-- 頂部 Header 漸層 -->
+    <linearGradient id="headerGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488" />
+      <stop offset="50%" stop-color="#0F766E" />
+      <stop offset="100%" stop-color="#115E59" />
+    </linearGradient>
+
+    <!-- 柔和陰影 -->
+    <filter id="boxShadow2" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.07" />
+    </filter>
+  </defs>
+
+  <style>
+    .title2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 15px; font-weight: 700; fill: #FFFFFF; }
+    .meta-label2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 700; fill: #475569; }
+    .meta-val2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 600; fill: #0F172A; }
+    .sec-title2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12.5px; font-weight: 800; fill: #0F766E; }
+    .item-num2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .item-bold2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 700; fill: #1E293B; }
+    .item-desc2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 11.5px; fill: #475569; }
+    .alert-head2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 12px; font-weight: 800; fill: #92400E; }
+    .alert-body2 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 11.5px; fill: #78350F; }
+  </style>
+
+  <!-- 卡片主體外框 -->
+  <g transform="translate(10, 10)">
+    <rect width="740" height="460" rx="12" fill="url(#cardBg2)" stroke="#CBD5E1" stroke-width="1.2" filter="url(#boxShadow2)" />
+
+    <!-- 頂部 Header -->
+    <rect width="740" height="46" rx="12" fill="url(#headerGrad2)" />
+    <rect y="32" width="740" height="14" fill="url(#headerGrad2)" />
+    
+    <circle cx="24" cy="23" r="5" fill="#2DD4BF" />
+    <circle cx="38" cy="23" r="5" fill="#5EEAD4" />
+    <text x="56" y="28" class="title2">⚖️ 差旅報銷與加班法規審核卡片 (Grounding Review Card)</text>
+    <rect x="610" y="13" width="110" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.2" />
+    <text x="665" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">100% 事實查核</text>
+
+    <!-- 中間元數據區 (Meta Info) -->
+    <g transform="translate(24, 62)">
+      <rect width="692" height="66" rx="8" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="25" class="meta-label2">來源規章：<tspan class="meta-val2">HR-SOP-2026-003 企業內部規章_差旅與加班管理規範.pdf</tspan></text>
+      <text x="16" y="48" class="meta-label2">比對機制：<tspan class="meta-val2">100% 事實 Grounding，附帶 PDF 頁碼與章節錨點定位</tspan></text>
+      <text x="510" y="48" class="meta-label2">預估產物：<tspan class="meta-val2">員工實用指南 (Word/PDF)</tspan></text>
+    </g>
+
+    <!-- 條款萃取清單區塊 -->
+    <g transform="translate(24, 142)">
+      <text x="4" y="14" class="sec-title2">📋【核心法規條款查核結果】：</text>
+
+      <!-- 項目 1 -->
+      <g transform="translate(0, 26)">
+        <rect width="20" height="18" rx="4" fill="#0D9488" />
+        <text x="10" y="13" class="item-num2">1</text>
+        <text x="28" y="14" class="item-bold2">交通工具（PDF 第 1 頁，§3.1）：<tspan class="item-desc2">單程逾 80 公里或跨縣市得搭高鐵標準車廂；計程車限緊急公務或帶重樣品</tspan></text>
+      </g>
+
+      <!-- 項目 2 -->
+      <g transform="translate(0, 53)">
+        <rect width="20" height="18" rx="4" fill="#0D9488" />
+        <text x="10" y="13" class="item-num2">2</text>
+        <text x="28" y="14" class="item-bold2">住宿津貼（PDF 第 2 頁，§3.3）：<tspan class="item-desc2">六都出差每晚最高 NT$ 2,800 元；非六都每晚最高 NT$ 2,200 元（檢據實銷）</tspan></text>
+      </g>
+
+      <!-- 項目 3 -->
+      <g transform="translate(0, 80)">
+        <rect width="20" height="18" rx="4" fill="#0D9488" />
+        <text x="10" y="13" class="item-num2">3</text>
+        <text x="28" y="14" class="item-bold2">膳雜津貼（PDF 第 2 頁，§3.4）：<tspan class="item-desc2">全日出差每人每日定額津貼 NT$ 400 元（免附單據免收據）</tspan></text>
+      </g>
+
+      <!-- 項目 4 -->
+      <g transform="translate(0, 107)">
+        <rect width="20" height="18" rx="4" fill="#0D9488" />
+        <text x="10" y="13" class="item-num2">4</text>
+        <text x="28" y="14" class="item-bold2">報銷時效（PDF 第 2 頁，§4.2）：<tspan class="item-desc2">出差結束後 10 個工作天內須於系統送審單據，逾期退件不予受理</tspan></text>
+      </g>
+
+      <!-- 項目 5 -->
+      <g transform="translate(0, 134)">
+        <rect width="20" height="18" rx="4" fill="#0D9488" />
+        <text x="10" y="13" class="item-num2">5</text>
+        <text x="28" y="14" class="item-bold2">加班換休（PDF 第 3 頁，§5.1~5.3）：<tspan class="item-desc2">平日加班前 2 小時 1.33 倍、第 3 小時起 1.66 倍；或 1:1 換休（效期 6 個月）</tspan></text>
+      </g>
+    </g>
+
+    <!-- 底部待確認卡片 (Human-in-the-Loop Gate) -->
+    <g transform="translate(24, 362)">
+      <rect width="692" height="74" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.2" />
+      <text x="16" y="22" class="alert-head2">⚠️ 待確認事項（放行閘門）：</text>
+      <text x="16" y="42" class="alert-body2">• 上述條款與金額上限是否符合目前人資執行標準？</text>
+      <text x="16" y="61" class="alert-body2">• 若確認無誤，請回覆【<tspan font-weight="800" fill="#92400E">審核通過，可以生成</tspan>】，AI 將為您正式產出完整員工指南全文。</text>
+    </g>
+  </g>
+</svg>
