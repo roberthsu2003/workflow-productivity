@@ -56,10 +56,10 @@
     <circle cx="60" cy="23" r="6" fill="#10B981" />
     
     <text x="84" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Noto Sans TC', sans-serif" font-size="15" font-weight="700" fill="#0F172A">
-      AI Agent 辦公室全能應用：人機協作全景架構圖 (Human-in-the-Loop Architecture)
+      AI Agent 辦公室全能應用：雙階段 Markdown 審核閉環全景架構
     </text>
-    <text x="760" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#64748B">
-      零門檻口語 ➔ 存為 .md ➔ 審核卡片 ➔ 五大商務交付
+    <text x="680" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11.5" fill="#64748B">
+      口語 ➔ 存為工作流.md (初審) ➔ AI產出規格書.md (終審) ➔ 產出最終產品
     </text>
   </g>
 
@@ -70,9 +70,7 @@
 
   <!-- ==================== 模組 1: 零門檻多元輸入 ==================== -->
   <g transform="translate(40, 88)">
-    <!-- 卡片外框 -->
     <rect width="245" height="280" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <!-- 頂部漸層標籤 -->
     <rect width="245" height="42" rx="14" fill="url(#step1Grad)" />
     <rect y="28" width="245" height="14" fill="url(#step1Grad)" />
     <text x="16" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">
@@ -80,20 +78,20 @@
     </text>
 
     <!-- 內容項目 1: 自然語言 -->
-    <g transform="translate(14, 56)">
+    <g transform="translate(14, 54)">
       <rect width="217" height="66" rx="8" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1" />
       <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#0369A1">
-        💬 日常口語自然語言
+        💬 日常口語白話交辦
       </text>
       <text x="12" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569">
-        非技術主管/行政人員直接交辦
+        非技術主管/行政零門檻提出需求
       </text>
     </g>
 
     <!-- 內容項目 2: 7大多元企業實體素材 -->
-    <g transform="translate(14, 134)">
-      <rect width="217" height="122" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
-      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#0284C7">
+    <g transform="translate(14, 130)">
+      <rect width="217" height="126" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#0284C7">
         📦 7 種多模態實體素材
       </text>
       <text x="12" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#334155">
@@ -111,108 +109,105 @@
     </g>
   </g>
 
-  <!-- ==================== 模組 2: AI Agent 結構化轉換 ==================== -->
+  <!-- ==================== 模組 2: Stage 1 產生 RTCCF 工作流 ==================== -->
   <g transform="translate(325, 88)">
-    <!-- 卡片外框 -->
     <rect width="230" height="280" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <!-- 頂部漸層標籤 -->
     <rect width="230" height="42" rx="14" fill="url(#step2Grad)" />
     <rect y="28" width="230" height="14" fill="url(#step2Grad)" />
     <text x="16" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">
-      02. AI 規格化 (RTCCF Engine)
+      02. RTCCF 工作流 (Stage 1)
     </text>
 
-    <!-- 核心轉換 -->
-    <g transform="translate(14, 56)">
-      <rect width="202" height="66" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
-      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#4338CA">
-        ⚙️ AI Agent 自動架構化
+    <!-- 守則一卡片：儲存為工作流.md -->
+    <g transform="translate(14, 54)">
+      <rect width="202" height="114" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.2" />
+      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#DC2626">
+        ⚠️ 守則一：存為 工作流.md
       </text>
-      <text x="12" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569">
-        轉化為標準 RTCCF 任務結構
+      <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#991B1B">
+        AI 自動轉為 RTCCF 交辦事項
+      </text>
+      <text x="10" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
+        ✓ 具備角色/目標/情境/約束/格式
+      </text>
+      <text x="10" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
+        ✓ 沉澱為可複用企業交辦工作流
+      </text>
+      <text x="10" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">
+        必須儲存為 .md 檔案進行維護
       </text>
     </g>
 
-    <!-- 強制儲存為 .md 亮點卡片 (Light Attention Box) -->
-    <g transform="translate(14, 134)">
-      <rect width="202" height="122" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.2" />
-      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#DC2626">
-        ⚠️ 核心守則：存為 .md
+    <!-- 使用者初審確認 -->
+    <g transform="translate(14, 178)">
+      <rect width="202" height="78" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#4338CA">
+        👤 使用者審核與確認
       </text>
-      <text x="12" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#991B1B">
-        儲存為 Markdown 檔案
+      <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
+        • 人機協作微調交辦步驟
       </text>
-      <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
-        ✓ 原生語意結構無損傳遞
-      </text>
-      <text x="12" y="87" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
-        ✓ 跨平台零格式污染與幻覺
-      </text>
-      <text x="12" y="108" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">
-        建立企業可沉澱的 Prompt 資產
+      <text x="10" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#1E40AF">
+        ➔ 確認後傳給 AI 執行！
       </text>
     </g>
   </g>
 
-  <!-- ==================== 模組 3: 審核卡片與人類核准 ==================== -->
+  <!-- ==================== 模組 3: Stage 2 審核規格書 ==================== -->
   <g transform="translate(595, 88)">
-    <!-- 卡片外框 -->
     <rect width="230" height="280" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <!-- 頂部漸層標籤 -->
     <rect width="230" height="42" rx="14" fill="url(#step3Grad)" />
     <rect y="28" width="230" height="14" fill="url(#step3Grad)" />
     <text x="16" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">
-      03. 審核卡片 (Review Card)
+      03. 審核規格書 (Stage 2)
     </text>
 
-    <!-- 審核卡片檢驗 -->
-    <g transform="translate(14, 56)">
-      <rect width="202" height="92" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1" />
-      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#B45309">
-        📋 格式專屬預檢清單
+    <!-- 守則二卡片：儲存為規格書.md -->
+    <g transform="translate(14, 54)">
+      <rect width="202" height="114" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.2" />
+      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#B45309">
+        ⚠️ 守則二：存為 規格書.md
       </text>
-      <text x="12" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
-        • Word/PDF: 章節/字數/合規警示
+      <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#78350F">
+        AI 產生審核用規格書/卡片
       </text>
-      <text x="12" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
-        • Excel: 欄位/筆數/總金額/異常
+      <text x="10" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
+        • 章節字數預檢 / 數據金額平帳
       </text>
-      <text x="12" y="83" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
-        • PPT/圖表: 頁數/配搭/動線架構
+      <text x="10" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
+        • 簡報頁數動線 / 風控異常警示
+      </text>
+      <text x="10" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#D97706">
+        亦必須存為 .md 做為驗收基準
       </text>
     </g>
 
-    <!-- 人類放行閘門 (Human Gate) -->
-    <g transform="translate(14, 160)">
-      <rect width="202" height="96" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" />
-      <text x="12" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="800" fill="#92400E">
-        🛡️ 人類核准決策 (Gate)
+    <!-- 人類終審決策放行 -->
+    <g transform="translate(14, 178)">
+      <rect width="202" height="78" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" />
+      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#92400E">
+        🛡️ 人類終審放行決策
       </text>
-      <text x="12" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#78350F">
-        人眼 5~10 秒極速檢視
+      <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#78350F">
+        人眼確認規格完全無誤後
       </text>
-      <text x="12" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#B45309">
-        回覆「審核通過」才正式生成！
-      </text>
-      <text x="12" y="87" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#92400E">
-        (未通過則下指令針對細部微調)
+      <text x="10" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#B45309">
+        回覆「審核通過」才正式產出！
       </text>
     </g>
   </g>
 
-  <!-- ==================== 模組 4: 實體交付與進階對齊 ==================== -->
+  <!-- ==================== 模組 4: 實體最終產品 ==================== -->
   <g transform="translate(865, 88)">
-    <!-- 卡片外框 -->
     <rect width="235" height="280" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <!-- 頂部漸層標籤 -->
     <rect width="235" height="42" rx="14" fill="url(#step4Grad)" />
     <rect y="28" width="235" height="14" fill="url(#step4Grad)" />
     <text x="16" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">
-      04. 實體交付 (Deliverables)
+      04. 最終商務產品 (Deliverables)
     </text>
 
     <!-- 交付項目 1: Word & PDF -->
-    <g transform="translate(12, 52)">
+    <g transform="translate(12, 50)">
       <rect width="211" height="34" rx="6" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1" />
       <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#0369A1">
         📄 Word (.docx) &amp; 📕 PDF (.pdf)
@@ -220,7 +215,7 @@
     </g>
 
     <!-- 交付項目 2: Excel -->
-    <g transform="translate(12, 92)">
+    <g transform="translate(12, 90)">
       <rect width="211" height="34" rx="6" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1" />
       <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#15803D">
         📊 Excel 試算表 (.xlsx 商業表)
@@ -228,7 +223,7 @@
     </g>
 
     <!-- 交付項目 3: PPT -->
-    <g transform="translate(12, 132)">
+    <g transform="translate(12, 130)">
       <rect width="211" height="34" rx="6" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1" />
       <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#C2410C">
         📑 PowerPoint 簡報 (.pptx)
@@ -236,7 +231,7 @@
     </g>
 
     <!-- 交付項目 4: 資訊圖表 -->
-    <g transform="translate(12, 172)">
+    <g transform="translate(12, 170)">
       <rect width="211" height="34" rx="6" fill="#FDF2F8" stroke="#FBCFE8" stroke-width="1" />
       <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#BE185D">
         🎨 資訊圖表 (Bento Box/蛇形SOP)
@@ -244,8 +239,8 @@
     </g>
 
     <!-- 交付項目 5: 進階對齊模組 -->
-    <g transform="translate(12, 212)">
-      <rect width="211" height="50" rx="6" fill="#ECFDF5" stroke="#34D399" stroke-width="1.2" />
+    <g transform="translate(12, 210)">
+      <rect width="211" height="52" rx="6" fill="#ECFDF5" stroke="#34D399" stroke-width="1.2" />
       <text x="10" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="800" fill="#065F46">
         🎯 進階對齊：既有範本防護
       </text>
