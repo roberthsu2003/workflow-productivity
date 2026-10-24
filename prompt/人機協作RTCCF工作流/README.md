@@ -15,23 +15,7 @@
 
 ## 🧭 人機協作標準演進工作流
 
-```mermaid
-flowchart TD
-    A["① 學生日常口語\n(提出第 1 個交辦任務)"] --> B["② AI Agent 轉化為標準 RTCCF 規格\n⚠️ 強制儲存為 RTCCF工作流.md"]
-    B --> C["③ 人機協作：追加後續任務\n(擴充 Task 2、Task 3 任務佇列)"]
-    C --> D["④ 設立【人類介入中斷點】\n(完成階段任務即暫停，等人類指示「繼續」)"]
-    D --> E["⑤ 注入程式邏輯：If-Else 分支\n(情境判斷、缺漏分流、特批處理)"]
-    E --> F["⑥ 注入自檢迴圈：Validation Loop\n(對照檢核指標自檢 ＋ 最多重試 2 次安全煞車)"]
-    F --> G["⑦ 定稿正式規格書\n(可永久複用、團隊共用、交由 Agent 自動執行)"]
-
-    style A fill:#E1F5FE,stroke:#0288D1
-    style B fill:#FFF3E0,stroke:#F57C00
-    style C fill:#EDE7F6,stroke:#512DA8
-    style D fill:#FFF9C4,stroke:#FBC02D
-    style E fill:#E8EAF6,stroke:#3F51B5
-    style F fill:#E8F5E9,stroke:#388E3C
-    style G fill:#FCE4EC,stroke:#C2185B
-```
+![人機協作標準演進工作流](./images/人機協作演進工作流.svg)
 
 ---
 

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 135" width="100%" height="100%">
+  <defs>
+    <!-- 漸層定義 -->
+    <linearGradient id="bgCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+
+    <!-- 卡片漸層 -->
+    <linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F0F9FF"/></linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFF7ED"/></linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FAF5FF"/></linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FEF2F2"/></linearGradient>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EFF6FF"/></linearGradient>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F0FDF4"/></linearGradient>
+    <linearGradient id="g7" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FDF2F8"/></linearGradient>
+
+    <!-- 微陰影 -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#0F172A" flood-opacity="0.06" />
+    </filter>
+
+    <!-- 箭頭標記 -->
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .step-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-size: 11.5px; font-weight: 700; fill: #1E293B; text-anchor: middle; }
+    .step-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-size: 9.5px; font-weight: 400; fill: #64748B; text-anchor: middle; }
+    .step-badge { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+  </style>
+
+  <!-- 外框背景 -->
+  <rect x="0" y="0" width="1000" height="135" rx="14" fill="url(#bgCanvas)" stroke="#E2E8F0" stroke-width="1.2" />
+
+  <!-- 1. 口語起手 -->
+  <g transform="translate(14, 15)">
+    <rect width="118" height="105" rx="10" fill="url(#g1)" stroke="#38BDF8" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="39" y="8" width="40" height="18" rx="9" fill="#0284C7" />
+    <text x="59" y="21" class="step-badge">動 1</text>
+    <text x="59" y="44" class="step-title">日常口語交辦</text>
+    <text x="59" y="66" class="step-desc">零門檻白話起步</text>
+    <text x="59" y="82" class="step-desc">交代第 1 個任務</text>
+  </g>
+
+  <!-- 箭頭 1 -> 2 -->
+  <line x1="135" y1="67" x2="153" y2="67" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- 2. AI 轉 RTCCF 存為 .md -->
+  <g transform="translate(155, 15)">
+    <rect width="118" height="105" rx="10" fill="url(#g2)" stroke="#FB923C" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="39" y="8" width="40" height="18" rx="9" fill="#EA580C" />
+    <text x="59" y="21" class="step-badge">動 2</text>
+    <text x="59" y="44" class="step-title">AI 轉化規格</text>
+    <text x="59" y="66" class="step-desc">生成 RTCCF 架構</text>
+    <text x="59" y="82" class="step-desc" font-weight="700" fill="#C2410C">⚠️ 強制存為 .md</text>
+  </g>
+
+  <!-- 箭頭 2 -> 3 -->
+  <line x1="276" y1="67" x2="294" y2="67" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- 3. 追加任務佇列 -->
+  <g transform="translate(296, 15)">
+    <rect width="118" height="105" rx="10" fill="url(#g3)" stroke="#C084FC" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="39" y="8" width="40" height="18" rx="9" fill="#9333EA" />
+    <text x="59" y="21" class="step-badge">動 3</text>
+    <text x="59" y="44" class="step-title">協作疊加任務</text>
+    <text x="59" y="66" class="step-desc">對話追加 Task 2</text>
+    <text x="59" y="82" class="step-desc">建立循序工作管線</text>
+  </g>
+
+  <!-- 箭頭 3 -> 4 -->
+  <line x1="417" y1="67" x2="435" y2="67" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- 4. 設立中斷點 -->
+  <g transform="translate(437, 15)">
+    <rect width="118" height="105" rx="10" fill="url(#g4)" stroke="#F87171" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="39" y="8" width="40" height="18" rx="9" fill="#DC2626" />
+    <text x="59" y="21" class="step-badge">動 4</text>
+    <text x="59" y="44" class="step-title">人類放行中斷點</text>
+    <text x="59" y="66" class="step-desc">完成任務立即暫停</text>
+    <text x="59" y="82" class="step-desc" font-weight="700" fill="#B91C1C">⏸️ 說繼續才繼續</text>
+  </g>
+
+  <!-- 箭頭 4 -> 5 -->
+  <line x1="558" y1="67" x2="576" y2="67" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- 5. 條件分支 If-Else -->
+  <g transform="translate(578, 15)">
+    <rect width="118" height="105" rx="10" fill="url(#g5)" stroke="#60A5FA" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="39" y="8" width="40" height="18" rx="9" fill="#2563EB" />
+    <text x="59" y="21" class="step-badge">動 5</text>
+    <text x="59" y="44" class="step-title">If-Else 條件分支</text>
+    <text x="59" y="66" class="step-desc">四象限決策樹判定</text>
+    <text x="59" y="82" class="step-desc">常規/特批/退件/缺失</text>
+  </g>
+
+  <!-- 箭頭 5 -> 6 -->
+  <line x1="699" y1="67" x2="717" y2="67" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- 6. 自檢迴圈與安全煞車 -->
+  <g transform="translate(719, 15)">
+    <rect width="118" height="105" rx="10" fill="url(#g6)" stroke="#4ADE80" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="39" y="8" width="40" height="18" rx="9" fill="#16A34A" />
+    <text x="59" y="21" class="step-badge">動 6</text>
+    <text x="59" y="44" class="step-title">Validation 自檢</text>
+    <text x="59" y="66" class="step-desc">筆數金額平帳驗算</text>
+    <text x="59" y="82" class="step-desc" font-weight="700" fill="#15803D">🛑 重試上限 2 次</text>
+  </g>
+
+  <!-- 箭頭 6 -> 7 -->
+  <line x1="840" y1="67" x2="858" y2="67" stroke="#94A3B8" stroke-width="1.8" marker-end="url(#arr)" />
+
+  <!-- 7. 定稿規格書 -->
+  <g transform="translate(860, 15)">
+    <rect width="124" height="105" rx="10" fill="url(#g7)" stroke="#F472B6" stroke-width="1.2" filter="url(#cardShadow)" />
+    <rect x="42" y="8" width="40" height="18" rx="9" fill="#DB2777" />
+    <text x="62" y="21" class="step-badge">動 7</text>
+    <text x="62" y="44" class="step-title">定稿工作規格書</text>
+    <text x="62" y="66" class="step-desc">成熟可複用資產</text>
+    <text x="62" y="82" class="step-desc" font-weight="700" fill="#9D174D">🏆 交付 Agent 執行</text>
+  </g>
+
+</svg>
