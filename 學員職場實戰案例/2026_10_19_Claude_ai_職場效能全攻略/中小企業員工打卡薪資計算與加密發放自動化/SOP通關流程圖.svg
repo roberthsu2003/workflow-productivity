@@ -69,7 +69,7 @@
     <!-- 圓形序號徽章 -->
     <circle cx="50" cy="50" r="23" fill="url(#badge1)" />
     <text x="50" y="56" class="badge-num" text-anchor="middle">01</text>
-    <!-- 標題與內文（x 從 90 開始，最大寬度 580，距右標籤 685 有 95px 安全距離） -->
+    <!-- 標題與內文 -->
     <text x="90" y="41" class="card-title">【關卡 1】建立基礎工作流 ➔ 依規格執行出勤計薪</text>
     <text x="90" y="69" class="card-desc">自然語言發想產出首版規格書，檢核後再指示 AI 讀表執行工時統計與 2026 計薪</text>
     <!-- 右側膠囊標籤 (x=685, 寬 115) -->
@@ -84,9 +84,9 @@
     <circle cx="50" cy="50" r="23" fill="url(#badge2)" />
     <text x="50" y="56" class="badge-num" text-anchor="middle">02</text>
     <text x="90" y="41" class="card-title">【關卡 2】財務薪資傳票分錄與會計借貸平衡</text>
-    <text x="90" y="69" class="card-desc">自然語言切傳票並驗收 100% 借貸平衡，將會計規則追加擴充寫回工作流（變長了）</text>
+    <text x="90" y="69" class="card-desc">自然語言切傳票並驗收 100% 借貸平衡，將會計規則追加擴充寫回 RTCCF_v1.md</text>
     <rect x="685" y="33" width="115" height="34" rx="17" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.2" />
-    <text x="742" y="55" class="pill-text" fill="#6d28d9" text-anchor="middle">RTCCF_v2.md</text>
+    <text x="742" y="55" class="pill-text" fill="#6d28d9" text-anchor="middle">更新 RTCCF_v1</text>
   </g>
 
   <!-- ================= 關卡 3 ================= -->
@@ -96,9 +96,9 @@
     <circle cx="50" cy="50" r="23" fill="url(#badge3)" />
     <text x="50" y="56" class="badge-num" text-anchor="middle">03</text>
     <text x="90" y="41" class="card-title">【關卡 3】批次產出個人身分證 AES-256 加密薪資單</text>
-    <text x="90" y="69" class="card-desc">自然語言執行 Python 批次腳本並驗收密碼防窺，將資安加密規格追加擴充寫回</text>
+    <text x="90" y="69" class="card-desc">自然語言執行批次腳本並驗收防窺，將資安加密規格追加擴充寫回 RTCCF_v1.md</text>
     <rect x="685" y="33" width="115" height="34" rx="17" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1.2" />
-    <text x="742" y="55" class="pill-text" fill="#be185d" text-anchor="middle">RTCCF_v3.md</text>
+    <text x="742" y="55" class="pill-text" fill="#be185d" text-anchor="middle">更新 RTCCF_v1</text>
   </g>
 
   <!-- ================= 關卡 4 ================= -->
@@ -108,8 +108,8 @@
     <circle cx="50" cy="50" r="23" fill="url(#badge4)" />
     <text x="50" y="56" class="badge-num" text-anchor="middle">04</text>
     <text x="90" y="41" class="card-title">【關卡 4】年度所得扣繳統計與曆年制特休折現工資</text>
-    <text x="90" y="69" class="card-desc">自然語言結算所得與特休，最終整合四大模組，收斂為生產級全自動作業 SOP</text>
+    <text x="90" y="69" class="card-desc">自然語言結算所得與特休，最終整合四大模組，收斂為生產級 RTCCF_v1.md</text>
     <rect x="685" y="33" width="115" height="34" rx="17" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.2" />
-    <text x="742" y="55" class="pill-text" fill="#047857" text-anchor="middle">RTCCF_v4.md</text>
+    <text x="742" y="55" class="pill-text" fill="#047857" text-anchor="middle">終極 RTCCF_v1</text>
   </g>
 </svg>
