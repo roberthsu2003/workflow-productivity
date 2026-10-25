@@ -1,7 +1,7 @@
 # RTCCF 提示詞：星嵐大飯店營運指標與商業洞察（AI 生成 Markdown 規格檔）
 
 > 💡 **文件定位**：本文件是由使用者輸入「白話自然語言發想提示詞」後，由 AI 在 Canvas 畫布中自動架構生成之標準 **RTCCF Markdown 規格檔**。  
-> 遵循 [`AI 提示詞工程指南`](../../prompt/AI提示詞工程指南/README.md) 之五要素（Role + Task + Context + Constraints + Format）原則設計。  
+> 遵循 [`AI 提示詞工程指南`](../../../prompt/AI提示詞工程指南/README.md) 之五要素（Role + Task + Context + Constraints + Format）原則設計。  
 > 後續步驟將直接由本 Markdown 規格驅動 AI 執行多維樞紐核算、提煉商業決策洞察，並自動將數據與圖表注入母片產出正式 PPTX！
 
 ---

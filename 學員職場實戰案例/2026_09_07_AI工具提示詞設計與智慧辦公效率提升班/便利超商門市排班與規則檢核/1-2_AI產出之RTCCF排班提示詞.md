@@ -1,6 +1,6 @@
 # 實戰範例 01：門市人力排班與法規檢核提示詞
 
-> 💡 **教學規範**：本提示詞完全遵循 [`AI 提示詞工程指南`](../../prompt/AI提示詞工程指南/README.md) 之 **Role + Task + Context + Constraints + Format**（五要素提示詞框架）規範設計。  
+> 💡 **教學規範**：本提示詞完全遵循 [`AI 提示詞工程指南`](../../../prompt/AI提示詞工程指南/README.md) 之 **Role + Task + Context + Constraints + Format**（五要素提示詞框架）規範設計。  
 > 🛠️ **建議執行模式**：**ChatGPT Work 模式**（因指定產出為 `.md` 檔案，系統將自動啟動 **Canvas 雙欄互動畫布**，方便即時反白圈選微調）。
 
 ---

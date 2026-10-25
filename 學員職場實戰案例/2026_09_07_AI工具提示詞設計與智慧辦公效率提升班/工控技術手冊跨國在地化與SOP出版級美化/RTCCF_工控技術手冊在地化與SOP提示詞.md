@@ -1,7 +1,7 @@
 # RTCCF 提示詞：英文技術手冊繁體中文在地化與原版面 PDF 重製
 
 > 💡 **文件定位**：本文件為經過實戰驗證可穩定執行之標準 **RTCCF 提示詞規格檔**。
-> 遵循 [`AI 提示詞工程指南`](../../prompt/AI提示詞工程指南/README.md) 之五要素（Role + Task + Context + Constraints + Format）原則設計。
+> 遵循 [`AI 提示詞工程指南`](../../../prompt/AI提示詞工程指南/README.md) 之五要素（Role + Task + Context + Constraints + Format）原則設計。
 >
 > 🛠️ **使用方式**：
 > 1. 複製下方提示詞到新對話視窗（ChatGPT Agent / Claude.ai / Google Antigravity）。

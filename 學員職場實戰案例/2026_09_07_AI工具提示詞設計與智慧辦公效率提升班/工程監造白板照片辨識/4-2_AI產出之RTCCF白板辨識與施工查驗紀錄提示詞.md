@@ -1,6 +1,6 @@
 # 實戰範例：工程監造白板照片辨識與施工查驗紀錄提示詞
 
-> 💡 **教學規範**：本提示詞完全遵循 [`AI 提示詞工程指南`](../../prompt/AI提示詞工程指南/README.md) 之 **Role + Task + Context + Constraints + Format**（五要素提示詞框架）規範設計。  
+> 💡 **教學規範**：本提示詞完全遵循 [`AI 提示詞工程指南`](../../../prompt/AI提示詞工程指南/README.md) 之 **Role + Task + Context + Constraints + Format**（五要素提示詞框架）規範設計。  
 > ⚡ **精簡核心特色**：去除假大空理論，直奔多模態白板文字精準辨識、多圖交叉比對、同次查驗合併與嚴格驗收級版型規範！  
 > 🛠️ **建議執行模式**：**多模態 AI 對話模式（ChatGPT Plus/Team/Pro、Claude 3.5 Sonnet、Gemini 1.5 Pro）**。
 
