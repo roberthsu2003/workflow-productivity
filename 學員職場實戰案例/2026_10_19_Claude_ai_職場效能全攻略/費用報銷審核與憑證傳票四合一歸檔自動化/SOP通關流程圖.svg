@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 670" width="100%" height="100%">
+  <defs>
+    <!-- 亮色風格漸層定義 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+
+    <!-- 序號徽章漸層 -->
+    <linearGradient id="badge1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <linearGradient id="badge2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+
+    <linearGradient id="badge3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <linearGradient id="badge4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- 亮色精緻卡片投影 -->
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <style>
+    .main-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 800; font-size: 22px; fill: #0f172a; }
+    .sub-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 500; font-size: 13px; fill: #64748b; }
+    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 700; font-size: 16px; fill: #0f172a; }
+    .card-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 400; font-size: 12.5px; fill: #475569; }
+    .badge-num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 800; font-size: 15px; fill: #ffffff; }
+    .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 700; font-size: 12px; }
+  </style>
+
+  <!-- 主背景底板 -->
+  <rect x="0" y="0" width="920" height="670" rx="20" fill="url(#bgGrad)" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- 頂部標題區 -->
+  <text x="460" y="46" class="main-title" text-anchor="middle" letter-spacing="0.8">🧭 費用報銷與憑證傳票四合一歸檔：漸進式通關地圖</text>
+  <text x="460" y="72" class="sub-title" text-anchor="middle">自然語言發想 ➔ 首版封裝規格 ➔ 簽核軌跡萃取 ➔ 單據勾稽 ➔ 動態目錄書籤 ➔ 四合一自動合併</text>
+
+  <!-- 連接導引箭頭線 -->
+  <g stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="5 4" fill="none">
+    <path d="M 460, 200 L 460, 225" />
+    <path d="M 460, 335 L 460, 360" />
+    <path d="M 460, 470 L 460, 495" />
+  </g>
+  <polygon points="455,225 465,225 460,233" fill="#64748b" />
+  <polygon points="455,360 465,360 460,368" fill="#64748b" />
+  <polygon points="455,495 465,495 460,503" fill="#64748b" />
+
+  <!-- 關卡 1 卡片 -->
+  <g transform="translate(60, 95)" filter="url(#softShadow)">
+    <rect width="800" height="105" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5" />
+    <circle cx="50" cy="52" r="24" fill="url(#badge1)" />
+    <text x="50" y="58" class="badge-num" text-anchor="middle">01</text>
+    
+    <text x="95" y="40" class="card-title">關卡 1：建立基礎封裝工作流 ➔ 請款數據萃取與簽核歷程繪製</text>
+    <text x="95" y="65" class="card-desc">發送白話指令要求 AI 產出純規格書 RTCCF_v1.md（不跑合併）➔ 叫 AI 依據工作流解析 Excel 簽核歷程（@trail）並動態繪製軌跡頁</text>
+    <text x="95" y="88" class="card-desc" fill="#0284c7">✦ 成果驗收：單據編號與申請資訊完全對齊、退回與核准時間戳記完整保留不可篡改</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#e0f2fe" />
+    <text x="728" y="41" class="pill-text" fill="#0284c7" text-anchor="middle">首版工作流</text>
+  </g>
+
+  <!-- 關卡 2 卡片 -->
+  <g transform="translate(60, 230)" filter="url(#softShadow)">
+    <rect width="800" height="105" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.5" />
+    <circle cx="50" cy="52" r="24" fill="url(#badge2)" />
+    <text x="50" y="58" class="badge-num" text-anchor="middle">02</text>
+    
+    <text x="95" y="40" class="card-title">關卡 2：會計傳票與請款單據關聯勾稽 ➔ 更新寫回工作流</text>
+    <text x="95" y="65" class="card-desc">比對已付款傳票 PDF 與原申請請款單 ➔ 勾稽金額、受款人、會計科目與傳票號碼一致性 ➔ 阻斷未付款或金額不符之單據</text>
+    <text x="95" y="88" class="card-desc" fill="#7c3aed">✦ 成果驗收：傳票科目金額 100% 勾稽吻合、單據一對一關聯無脫鉤，將勾稽規則寫回 RTCCF_v1.md</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#ede9fe" />
+    <text x="728" y="41" class="pill-text" fill="#7c3aed" text-anchor="middle">工作流變長</text>
+  </g>
+
+  <!-- 關卡 3 卡片 -->
+  <g transform="translate(60, 365)" filter="url(#softShadow)">
+    <rect width="800" height="105" rx="14" fill="#ffffff" stroke="#fde68a" stroke-width="1.5" />
+    <circle cx="50" cy="52" r="24" fill="url(#badge3)" />
+    <text x="50" y="58" class="badge-num" text-anchor="middle">03</text>
+    
+    <text x="95" y="40" class="card-title">關卡 3：動態目錄頁生成與 PDF 階層書籤注入 ➔ 更新寫回工作流</text>
+    <text x="95" y="65" class="card-desc">依據發票頁數不固定之特性，自適應動態計算總頁數 ➔ 生成第一頁 Table of Contents ➔ 自動注入 PDF 階層書籤（Bookmarks）</text>
+    <text x="95" y="88" class="card-desc" fill="#b45309">✦ 成果驗收：目錄頁碼精準跳轉、閱讀器左側展開完整書籤樹、繁體中文無亂碼，追加寫回 RTCCF_v1.md</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#fef3c7" />
+    <text x="728" y="41" class="pill-text" fill="#b45309" text-anchor="middle">工作流再擴充</text>
+  </g>
+
+  <!-- 關卡 4 卡片 -->
+  <g transform="translate(60, 500)" filter="url(#softShadow)">
+    <rect width="800" height="120" rx="14" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5" />
+    <circle cx="50" cy="60" r="24" fill="url(#badge4)" />
+    <text x="50" y="66" class="badge-num" text-anchor="middle">04</text>
+    
+    <text x="95" y="38" class="card-title">關卡 4：四合一 PDF 批次封裝合併與頁尾標註 ➔ 終極完稿 RTCCF_v1.md</text>
+    <text x="95" y="62" class="card-desc">按順序封裝（1.傳票 ➔ 2.請款單 ➔ 3.簽核歷程 ➔ 4.發票附件）➔ 頁尾自動注入「單號 第 x / y 頁」➔ 終極生產級 RTCCF_v1.md</text>
+    <text x="95" y="85" class="card-desc" fill="#059669">✦ 最終交付：高規格電子查帳本 PDF、自動化腳本 packet.py，並可選修封裝為 expense-reimbursement-packet Skill！</text>
+    <text x="95" y="105" class="card-desc" font-weight="600" fill="#0f172a">📌 核心資產：保存終極 RTCCF_v1.md，每月數百張報銷單一鍵批次全自動歸檔！</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#d1fae5" />
+    <text x="728" y="41" class="pill-text" fill="#059669" text-anchor="middle">終極工作流</text>
+  </g>
+</svg>

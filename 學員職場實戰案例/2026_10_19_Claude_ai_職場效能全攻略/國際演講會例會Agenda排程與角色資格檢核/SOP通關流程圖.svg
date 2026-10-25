@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 670" width="100%" height="100%">
+  <defs>
+    <!-- 亮色風格漸層定義 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+
+    <!-- 序號徽章漸層 -->
+    <linearGradient id="badge1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <linearGradient id="badge2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+
+    <linearGradient id="badge3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <linearGradient id="badge4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- 亮色精緻卡片投影 -->
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <style>
+    .main-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 800; font-size: 22px; fill: #0f172a; }
+    .sub-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 500; font-size: 13px; fill: #64748b; }
+    .card-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 700; font-size: 16px; fill: #0f172a; }
+    .card-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 400; font-size: 12.5px; fill: #475569; }
+    .badge-num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 800; font-size: 15px; fill: #ffffff; }
+    .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 700; font-size: 12px; }
+  </style>
+
+  <!-- 主背景底板 -->
+  <rect x="0" y="0" width="920" height="670" rx="20" fill="url(#bgGrad)" stroke="#e2e8f0" stroke-width="1.5" />
+
+  <!-- 頂部標題區 -->
+  <text x="460" y="46" class="main-title" text-anchor="middle" letter-spacing="0.8">🧭 Toastmasters 例會 Agenda 排程：漸進式通關地圖</text>
+  <text x="460" y="72" class="sub-title" text-anchor="middle">自然語言發想 ➔ 產出首版規格書 ➔ 請假講者轉譯 ➔ 資格防衝突 ➔ 時間推算 ➔ 終極 Agenda</text>
+
+  <!-- 連接導引箭頭線 -->
+  <g stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="5 4" fill="none">
+    <path d="M 460, 200 L 460, 225" />
+    <path d="M 460, 335 L 460, 360" />
+    <path d="M 460, 470 L 460, 495" />
+  </g>
+  <polygon points="455,225 465,225 460,233" fill="#64748b" />
+  <polygon points="455,360 465,360 460,368" fill="#64748b" />
+  <polygon points="455,495 465,495 460,503" fill="#64748b" />
+
+  <!-- 關卡 1 卡片 -->
+  <g transform="translate(60, 95)" filter="url(#softShadow)">
+    <rect width="800" height="105" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5" />
+    <circle cx="50" cy="52" r="24" fill="url(#badge1)" />
+    <text x="50" y="58" class="badge-num" text-anchor="middle">01</text>
+    
+    <text x="95" y="40" class="card-title">關卡 1：建立基礎工作流 ➔ 排除請假與講者專案轉譯</text>
+    <text x="95" y="65" class="card-desc">發送白話指令要求 AI 產出純規格書 RTCCF_v1.md（不跑排程）➔ 叫 AI 依據工作流過濾 Absent 並轉譯 Pathways 代碼（如 PM 4-2）</text>
+    <text x="95" y="88" class="card-desc" fill="#0284c7">✦ 成果驗收：嚴禁指派請假會員、講者路徑與演講專案完全吻合、演講時間字串化避免日期誤判</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#e0f2fe" />
+    <text x="728" y="41" class="pill-text" fill="#0284c7" text-anchor="middle">首版工作流</text>
+  </g>
+
+  <!-- 關卡 2 卡片 -->
+  <g transform="translate(60, 230)" filter="url(#softShadow)">
+    <rect width="800" height="105" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.5" />
+    <circle cx="50" cy="52" r="24" fill="url(#badge2)" />
+    <text x="50" y="58" class="badge-num" text-anchor="middle">02</text>
+    
+    <text x="95" y="40" class="card-title">關卡 2：評審資歷檢核與近 5 場防重複輪替 ➔ 更新寫回工作流</text>
+    <text x="95" y="65" class="card-desc">審查 IE / GE 必須已完成 Level 1 門檻 ➔ 比對前 5 場歷史紀錄，同一角色防重複，優先推派「最久未擔任」之合格會員</text>
+    <text x="95" y="88" class="card-desc" fill="#7c3aed">✦ 成果驗收：IE/GE 無資歷不足狀況、過往 5 場未有連任紀錄、完成後將規則追加寫回 RTCCF_v1.md</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#ede9fe" />
+    <text x="728" y="41" class="pill-text" fill="#7c3aed" text-anchor="middle">工作流變長</text>
+  </g>
+
+  <!-- 關卡 3 卡片 -->
+  <g transform="translate(60, 365)" filter="url(#softShadow)">
+    <rect width="800" height="105" rx="14" fill="#ffffff" stroke="#fde68a" stroke-width="1.5" />
+    <circle cx="50" cy="52" r="24" fill="url(#badge3)" />
+    <text x="50" y="58" class="badge-num" text-anchor="middle">03</text>
+    
+    <text x="95" y="40" class="card-title">關卡 3：動態時間軸推算與單人單役防衝突 ➔ 更新寫回工作流</text>
+    <text x="95" y="65" class="card-desc">以 19:10 為基準，每個節目以時間上限加 1 分鐘緩衝依序遞推 ➔ 超過 21:15 觸發超時警示 ➔ 檢驗全員單人單役零衝突</text>
+    <text x="95" y="88" class="card-desc" fill="#b45309">✦ 成果驗收：精確至分鐘起訖時間、無一人分飾兩角衝突、超時機制精確生效，追加寫回 RTCCF_v1.md</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#fef3c7" />
+    <text x="728" y="41" class="pill-text" fill="#b45309" text-anchor="middle">工作流再擴充</text>
+  </g>
+
+  <!-- 關卡 4 卡片 -->
+  <g transform="translate(60, 500)" filter="url(#softShadow)">
+    <rect width="800" height="120" rx="14" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5" />
+    <circle cx="50" cy="60" r="24" fill="url(#badge4)" />
+    <text x="50" y="66" class="badge-num" text-anchor="middle">04</text>
+    
+    <text x="95" y="38" class="card-title">關卡 4：正式 Agenda 產出與合規稽核報告 ➔ 終極完稿 RTCCF_v1.md</text>
+    <text x="95" y="62" class="card-desc">產出可直接印製之三欄位 Agenda 節目總表 ➔ 輸出 8 大規則稽核對照查驗清單 ➔ 收斂完稿為終極生產級 RTCCF_v1.md</text>
+    <text x="95" y="85" class="card-desc" fill="#059669">✦ 最終交付：零衝突正式例會 Agenda 表格、合規稽核清單，並可選修封裝為 toastmasters-agenda-automation Skill！</text>
+    <text x="95" y="105" class="card-desc" font-weight="600" fill="#0f172a">📌 核心資產：保留終極 RTCCF_v1.md，未來每兩週例會直接上傳名冊即可 30 秒全自動排程！</text>
+
+    <rect x="680" y="24" width="96" height="26" rx="6" fill="#d1fae5" />
+    <text x="728" y="41" class="pill-text" fill="#059669" text-anchor="middle">終極工作流</text>
+  </g>
+</svg>
