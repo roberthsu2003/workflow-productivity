@@ -18,6 +18,12 @@
 
 ---
 
+### 📐 Office 辦公室應用進階對齊（Advanced Alignment & Precision Templates）
+- **[Office 辦公室應用進階的對齊（Docx 證書與 Xlsx 報價單套印）](./office辦公室應用進階的對齊/README.md)**  
+  解決排版跑版、公式覆蓋與資料錯位：從既有正式 Word 證書與 Excel 報價單出發，經 AI 逆向提煉為鎖定排版、相容 Python xltpl 動態迴圈與保護動態公式的「佔位符樣版」，再搭配結構化資料庫實現精準對齊批次套印，提供完整原始檔、樣版、測試資料與示範成果一鍵下載。
+
+---
+
 ### 🎨 AI 圖像與資訊圖表生成（Image & Infographic Generation）
 - **[AI 圖像與資訊圖表生成導覽手冊](./AI圖像與資訊圖表生成/README.md)**  
   突破單純插圖局限，結合視覺動線規格書與程式碼渲染技術，產出高質感商業圖表、流程圖解與視覺卡片。
@@ -28,9 +34,6 @@
 
 ---
 
-### 📐 Office 辦公室應用進階對齊（Advanced Alignment & Precision Templates）
-- **[Office 辦公室應用進階的對齊（Docx 證書與 Xlsx 報價單套印）](./office辦公室應用進階的對齊/README.md)**  
-  解決排版跑版、公式覆蓋與資料錯位：從既有正式 Word 證書與 Excel 報價單出發，經 AI 逆向提煉為鎖定排版、相容 Python xltpl 動態迴圈與保護動態公式的「佔位符樣版」，再搭配結構化資料庫實現精準對齊批次套印，提供完整原始檔、樣版、測試資料與示範成果一鍵下載。
 
 ### 🎙️ 會議應用與語音摘要（Meeting Minutes & Audio）
 - **[mp3 ➔ 會議紀錄與摘要](./會議紀錄與摘要/README.md)**  
