@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 760" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 760" width="100%" height="100%">
   <defs>
     <!-- 漸層定義 -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -51,37 +51,36 @@
   <style>
     .title-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 800; fill: #ffffff; }
     .step-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 700; font-size: 19px; fill: #ffffff; }
-    .step-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 500; font-size: 14px; fill: #cbd5e1; }
+    .step-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 500; font-size: 13.5px; fill: #cbd5e1; }
     .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 800; font-size: 16px; fill: #ffffff; }
     .card { rx: 18px; filter: url(#cardShadow); }
-    .pulse-dot { animation: pulse 2s infinite; }
   </style>
 
   <!-- 主背景底板 -->
-  <rect x="0" y="0" width="840" height="760" rx="28" fill="url(#bgGrad)" stroke="#312e81" stroke-width="2" />
+  <rect x="0" y="0" width="880" height="760" rx="28" fill="url(#bgGrad)" stroke="#312e81" stroke-width="2" />
 
   <!-- 頂部標題裝飾線與光暈 -->
-  <circle cx="420" cy="40" r="140" fill="#6366f1" opacity="0.12" filter="url(#glow)" />
-  <text x="420" y="48" class="title-text" font-size="24" text-anchor="middle" letter-spacing="1.5">🧭 5 分鐘通關地圖（SOP 流程總覽）</text>
-  <text x="420" y="74" class="step-desc" font-size="13" text-anchor="middle" fill="#94a3b8">中小企業員工打卡薪資計算與加密發放自動化作業鏈</text>
+  <circle cx="440" cy="40" r="140" fill="#6366f1" opacity="0.12" filter="url(#glow)" />
+  <text x="440" y="48" class="title-text" font-size="24" text-anchor="middle" letter-spacing="1.5">🧭 5 分鐘通關地圖（SOP 流程總覽）</text>
+  <text x="440" y="74" class="step-desc" font-size="13" text-anchor="middle" fill="#94a3b8">中小企業員工打卡薪資計算與加密發放自動化作業鏈</text>
 
   <!-- 連接導引箭頭線 -->
-  <path d="M 420, 185 L 420, 215" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
-  <polygon points="414,215 426,215 420,225" fill="#c084fc" />
+  <path d="M 440, 185 L 440, 215" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
+  <polygon points="434,215 446,215 440,225" fill="#c084fc" />
 
-  <path d="M 420, 315 L 420, 345" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
-  <polygon points="414,345 426,345 420,355" fill="#c084fc" />
+  <path d="M 440, 315 L 440, 345" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
+  <polygon points="434,345 446,345 440,355" fill="#c084fc" />
 
-  <path d="M 420, 445 L 420, 475" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
-  <polygon points="414,475 426,475 420,485" fill="#c084fc" />
+  <path d="M 440, 445 L 440, 475" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
+  <polygon points="434,475 446,475 440,485" fill="#c084fc" />
 
-  <path d="M 420, 575 L 420, 605" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
-  <polygon points="414,605 426,605 420,615" fill="#c084fc" />
+  <path d="M 440, 575 L 440, 605" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 4" />
+  <polygon points="434,605 446,605 440,615" fill="#c084fc" />
 
   <!-- ================= 關卡 1 ================= -->
   <g transform="translate(70, 95)">
-    <!-- 卡片本體 -->
-    <rect width="700" height="90" class="card" fill="#1e293b" stroke="#3b82f6" stroke-width="1.8" />
+    <!-- 卡片本體 (寬度 740) -->
+    <rect width="740" height="90" class="card" fill="#1e293b" stroke="#3b82f6" stroke-width="1.8" />
     <!-- 左側標記條 -->
     <rect x="0" y="0" width="10" height="90" rx="5" fill="url(#cardGrad1)" />
     <!-- 圓形序號徽章 -->
@@ -90,56 +89,56 @@
     <!-- 圖標與標題 -->
     <text x="100" y="38" class="step-title">【關卡 1】準備出勤與薪資素材</text>
     <text x="100" y="65" class="step-desc">盤點員工名冊、手機打卡工時明細 ➔ 讀取 <tspan fill="#60a5fa" font-weight="700">1_素材_無紙化流程_素材總表.xlsx</tspan></text>
-    <!-- 右側標籤狀態 -->
-    <rect x="580" y="30" width="95" height="30" rx="15" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1" />
-    <text x="627" y="50" class="step-desc" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">素材就位</text>
+    <!-- 右側標籤狀態 (移至 x=625，寬 95) -->
+    <rect x="625" y="30" width="95" height="30" rx="15" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1" />
+    <text x="672" y="50" class="step-desc" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">素材就位</text>
   </g>
 
   <!-- ================= 關卡 2 ================= -->
   <g transform="translate(70, 225)">
-    <rect width="700" height="90" class="card" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.8" />
+    <rect width="740" height="90" class="card" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.8" />
     <rect x="0" y="0" width="10" height="90" rx="5" fill="url(#cardGrad2)" />
     <circle cx="56" cy="45" r="24" fill="url(#cardGrad2)" />
     <text x="56" y="51" class="badge-text" text-anchor="middle">02</text>
-    <text x="100" y="38" class="step-title">【關卡 2】Claude 智慧審核計薪邏輯</text>
-    <text x="100" y="65" class="step-desc">精確套用 <tspan fill="#c084fc" font-weight="700">2026 最新法定費率</tspan>（勞保 12.5% / 健保 5.17% / 勞退 6% / 加班倍率階梯 1.34/1.67）</text>
-    <rect x="580" y="30" width="95" height="30" rx="15" fill="#3b0764" stroke="#8b5cf6" stroke-width="1" />
-    <text x="627" y="50" class="step-desc" font-size="12" font-weight="700" fill="#d8b4fe" text-anchor="middle">法規核算</text>
+    <text x="100" y="38" class="step-title">【關卡 2】AI Agent 智慧審核計薪邏輯</text>
+    <text x="100" y="65" class="step-desc">套用 <tspan fill="#c084fc" font-weight="700">2026 最新法定費率</tspan>（勞保 12.5% / 健保 5.17% / 平日加班 1.34/1.67 倍率）</text>
+    <rect x="625" y="30" width="95" height="30" rx="15" fill="#3b0764" stroke="#8b5cf6" stroke-width="1" />
+    <text x="672" y="50" class="step-desc" font-size="12" font-weight="700" fill="#d8b4fe" text-anchor="middle">法規核算</text>
   </g>
 
   <!-- ================= 關卡 3 ================= -->
   <g transform="translate(70, 355)">
-    <rect width="700" height="90" class="card" fill="#1e293b" stroke="#ec4899" stroke-width="1.8" />
+    <rect width="740" height="90" class="card" fill="#1e293b" stroke="#ec4899" stroke-width="1.8" />
     <rect x="0" y="0" width="10" height="90" rx="5" fill="url(#cardGrad3)" />
     <circle cx="56" cy="45" r="24" fill="url(#cardGrad3)" />
     <text x="56" y="51" class="badge-text" text-anchor="middle">03</text>
     <text x="100" y="38" class="step-title">【關卡 3】生成財務薪資傳票</text>
     <text x="100" y="65" class="step-desc">自動完成借貸平帳（薪資支出 vs 代扣款/實發）➔ 輸出 <tspan fill="#f472b6" font-weight="700">流程1_薪資傳票_歸檔範例.pdf</tspan></text>
-    <rect x="580" y="30" width="95" height="30" rx="15" fill="#500724" stroke="#ec4899" stroke-width="1" />
-    <text x="627" y="50" class="step-desc" font-size="12" font-weight="700" fill="#fbcfe8" text-anchor="middle">借貸平衡</text>
+    <rect x="625" y="30" width="95" height="30" rx="15" fill="#500724" stroke="#ec4899" stroke-width="1" />
+    <text x="672" y="50" class="step-desc" font-size="12" font-weight="700" fill="#fbcfe8" text-anchor="middle">借貸平衡</text>
   </g>
 
   <!-- ================= 關卡 4 ================= -->
   <g transform="translate(70, 485)">
-    <rect width="700" height="90" class="card" fill="#1e293b" stroke="#10b981" stroke-width="1.8" />
+    <rect width="740" height="90" class="card" fill="#1e293b" stroke="#10b981" stroke-width="1.8" />
     <rect x="0" y="0" width="10" height="90" rx="5" fill="url(#cardGrad4)" />
     <circle cx="56" cy="45" r="24" fill="url(#cardGrad4)" />
     <text x="56" y="51" class="badge-text" text-anchor="middle">04</text>
     <text x="100" y="38" class="step-title">【關卡 4】批次產出加密個人薪資單</text>
-    <text x="100" y="65" class="step-desc">啟用 <tspan fill="#34d399" font-weight="700">AES-256 高強度加密</tspan>，自動設定每位同仁身分證字號為密碼，保護隱私零外洩</text>
-    <rect x="580" y="30" width="95" height="30" rx="15" fill="#064e3b" stroke="#10b981" stroke-width="1" />
-    <text x="627" y="50" class="step-desc" font-size="12" font-weight="700" fill="#a7f3d0" text-anchor="middle">安全防窺</text>
+    <text x="100" y="65" class="step-desc">啟用 <tspan fill="#34d399" font-weight="700">AES-256 高強度加密</tspan>，以員工身分證字號為密碼，保護機敏隱私零外洩</text>
+    <rect x="625" y="30" width="95" height="30" rx="15" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="672" y="50" class="step-desc" font-size="12" font-weight="700" fill="#a7f3d0" text-anchor="middle">安全防窺</text>
   </g>
 
   <!-- ================= 關卡 5 ================= -->
   <g transform="translate(70, 615)">
-    <rect width="700" height="90" class="card" fill="#1e293b" stroke="#f59e0b" stroke-width="1.8" />
+    <rect width="740" height="90" class="card" fill="#1e293b" stroke="#f59e0b" stroke-width="1.8" />
     <rect x="0" y="0" width="10" height="90" rx="5" fill="url(#cardGrad5)" />
     <circle cx="56" cy="45" r="24" fill="url(#cardGrad5)" />
     <text x="56" y="51" class="badge-text" text-anchor="middle">05</text>
     <text x="100" y="38" class="step-title">【關卡 5】年度薪資與特休統計</text>
-    <text x="100" y="65" class="step-desc">彙整全年所得、特休未休天數折算工資 ➔ 產出 <tspan fill="#fbbf24" font-weight="700">流程1_年度薪資所得統計.xlsx</tspan> 支援報稅</text>
-    <rect x="580" y="30" width="95" height="30" rx="15" fill="#451a03" stroke="#f59e0b" stroke-width="1" />
-    <text x="627" y="50" class="step-desc" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">年度結算</text>
+    <text x="100" y="65" class="step-desc">彙整全年所得、特休未休折算工資 ➔ 產出 <tspan fill="#fbbf24" font-weight="700">流程1_年度薪資所得統計.xlsx</tspan></text>
+    <rect x="625" y="30" width="95" height="30" rx="15" fill="#451a03" stroke="#f59e0b" stroke-width="1" />
+    <text x="672" y="50" class="step-desc" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">年度結算</text>
   </g>
 </svg>
