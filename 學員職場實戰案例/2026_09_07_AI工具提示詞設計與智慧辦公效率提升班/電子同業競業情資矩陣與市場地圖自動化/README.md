@@ -1,7 +1,8 @@
 # 實戰範例：被動元件同業月營收查詢與兩階段戰情報告自動化
 
 > 🟢 **採用代理平台**：ChatGPT Agent / Claude.ai / Google Antigravity  
-> 🛠️ **建議執行模式**：**兩階段人機防線**（**Playwright MCP 官方真實查證 ➔ Markdown 審閱關卡 ➔ Python openpyxl 四工作表活頁簿渲染**）
+> 🛠️ **建議執行模式**：**兩階段人機防線**（**Playwright MCP 官方真實查證 ➔ Markdown 審閱關卡 ➔ Python openpyxl 四工作表活頁簿渲染**）  
+> 💡 **非本科新手導讀**：非產業研究背景？請先閱讀 👉 [**`業務背景與工作流入門解析.md`**](./業務背景與工作流入門解析.md)，快速了解每月 10 號營收大戰、公開資訊觀測站真實查證與「四工作表 Excel 發布架構」！
 
 ---
 
