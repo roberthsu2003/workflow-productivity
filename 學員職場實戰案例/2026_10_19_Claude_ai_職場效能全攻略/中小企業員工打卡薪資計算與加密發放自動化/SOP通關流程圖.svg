@@ -75,10 +75,10 @@
     <rect x="0" y="0" width="10" height="95" rx="5" fill="url(#cardGrad1)" />
     <circle cx="56" cy="47" r="24" fill="url(#cardGrad1)" />
     <text x="56" y="53" class="badge-text" text-anchor="middle">01</text>
-    <text x="96" y="38" class="step-title">【關卡 1】產出首版 RTCCF.md 規格書 ➔ 依工作流開始計薪</text>
-    <text x="96" y="65" class="step-desc">自然語言發想 ➔ 產出純規格書 <tspan fill="#60a5fa" font-weight="700">RTCCF.md</tspan> ➔ 指示 AI 依規格執行打卡統計與 2026 計薪</text>
+    <text x="96" y="38" class="step-title">【關卡 1】產出工作流 RTCCF_v1.md ➔ 依工作流開始計薪</text>
+    <text x="96" y="65" class="step-desc">自然語言發想 ➔ 產出首版規格書 <tspan fill="#60a5fa" font-weight="700">RTCCF_v1.md</tspan> ➔ 指示 AI 依規格執行打卡統計與 2026 計薪</text>
     <rect x="625" y="32" width="105" height="32" rx="16" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1" />
-    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">產出首版工作流</text>
+    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#93c5fd" text-anchor="middle">RTCCF_v1.md</text>
   </g>
 
   <!-- ================= 關卡 2 ================= -->
@@ -87,10 +87,10 @@
     <rect x="0" y="0" width="10" height="95" rx="5" fill="url(#cardGrad2)" />
     <circle cx="56" cy="47" r="24" fill="url(#cardGrad2)" />
     <text x="56" y="53" class="badge-text" text-anchor="middle">02</text>
-    <text x="96" y="38" class="step-title">【關卡 2】財務薪資傳票與會計借貸平衡（工作流開始變長）</text>
-    <text x="96" y="65" class="step-desc">自然語言執行傳票分錄 ➔ 驗收 100% 借貸平衡 ➔ <tspan fill="#c084fc" font-weight="700">追加寫回 RTCCF.md（工作流變長）</tspan></text>
+    <text x="96" y="38" class="step-title">【關卡 2】財務薪資傳票與會計借貸平衡（工作流版本升級）</text>
+    <text x="96" y="65" class="step-desc">自然語言執行傳票分錄 ➔ 驗收 100% 借貸平衡 ➔ <tspan fill="#c084fc" font-weight="700">追加升級為 RTCCF_v2.md（工作流變長）</tspan></text>
     <rect x="625" y="32" width="105" height="32" rx="16" fill="#3b0764" stroke="#8b5cf6" stroke-width="1" />
-    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#d8b4fe" text-anchor="middle">工作流擴充 +1</text>
+    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#d8b4fe" text-anchor="middle">RTCCF_v2.md</text>
   </g>
 
   <!-- ================= 關卡 3 ================= -->
@@ -100,9 +100,9 @@
     <circle cx="56" cy="47" r="24" fill="url(#cardGrad3)" />
     <text x="56" y="53" class="badge-text" text-anchor="middle">03</text>
     <text x="96" y="38" class="step-title">【關卡 3】批次產出個人身分證 AES-256 加密 PDF 薪資單</text>
-    <text x="96" y="65" class="step-desc">自然語言執行批次加密腳本 ➔ 驗收身分證解鎖防窺 ➔ <tspan fill="#f472b6" font-weight="700">追加寫回 RTCCF.md（工作流再變長）</tspan></text>
+    <text x="96" y="65" class="step-desc">自然語言執行批次加密腳本 ➔ 驗收身分證解鎖防窺 ➔ <tspan fill="#f472b6" font-weight="700">追加升級為 RTCCF_v3.md（工作流再變長）</tspan></text>
     <rect x="625" y="32" width="105" height="32" rx="16" fill="#500724" stroke="#ec4899" stroke-width="1" />
-    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#fbcfe8" text-anchor="middle">工作流擴充 +2</text>
+    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#fbcfe8" text-anchor="middle">RTCCF_v3.md</text>
   </g>
 
   <!-- ================= 關卡 4 ================= -->
@@ -111,9 +111,9 @@
     <rect x="0" y="0" width="10" height="95" rx="5" fill="url(#cardGrad4)" />
     <circle cx="56" cy="47" r="24" fill="url(#cardGrad4)" />
     <text x="56" y="53" class="badge-text" text-anchor="middle">04</text>
-    <text x="96" y="38" class="step-title">【關卡 4】年度所得與特休結算 ➔ 收斂為終極生產級工作流</text>
-    <text x="96" y="65" class="step-desc">自然語言折算特休與所得分流 ➔ 最終收斂為 <tspan fill="#34d399" font-weight="700">終極生產級 RTCCF.md</tspan>（四大模組齊備）</text>
+    <text x="96" y="38" class="step-title">【關卡 4】年度所得與特休結算 ➔ 終極生產級 RTCCF_v4.md</text>
+    <text x="96" y="65" class="step-desc">自然語言折算特休與所得分流 ➔ 最終收斂為 <tspan fill="#34d399" font-weight="700">RTCCF_v4.md 終極生產級</tspan>（四大模組齊備）</text>
     <rect x="625" y="32" width="105" height="32" rx="16" fill="#064e3b" stroke="#10b981" stroke-width="1" />
-    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#a7f3d0" text-anchor="middle">終極工作流</text>
+    <text x="677" y="53" class="step-desc" font-size="12" font-weight="700" fill="#a7f3d0" text-anchor="middle">RTCCF_v4.md</text>
   </g>
 </svg>
