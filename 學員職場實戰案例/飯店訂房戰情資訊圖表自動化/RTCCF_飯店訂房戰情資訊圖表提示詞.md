@@ -1,7 +1,7 @@
 # RTCCF 提示詞：飯店訂房營運戰情資訊圖表自動化（可儲存與人機協作規格檔）
 
 > 💡 **文件定位**：本文件是由使用者輸入「白話自然語言發想指令」後，由 AI 自動轉化產出之標準 **RTCCF 規格檔**。  
-> 遵循 [`AI 提示詞工程指南`](../../../prompt/AI提示詞工程指南/README.md) 之五要素（Role + Task + Context + Constraints + Format）原則設計。  
+> 遵循 [`AI 提示詞工程指南`](../../prompt/AI提示詞工程指南/README.md) 之五要素（Role + Task + Context + Constraints + Format）原則設計。  
 > 
 > 🛠️ **人機協作操作指引**：
 > 1. **儲存與檢視**：使用者可將本檔案直接保存於本地（例如 VS Code / 筆記軟體）。
