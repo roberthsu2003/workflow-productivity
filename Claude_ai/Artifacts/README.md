@@ -1,7 +1,7 @@
 # Claude Artifacts（成品畫布與獨立創作中心）
 
 > 專為職場人士、各領域學員與專業工作者設計。從右側獨立即時預覽的「數位成品畫布」，全面升級為 Anthropic 2026 最新「One Claude」架構下的 **Web-Native 雲端創作與資產管理中心（Artifacts Hub）**。  
-> 🔗 **全域概念對照**：本單元聚焦於討論方式的內容生成（**Claude 稱為 Artifacts**，**ChatGPT 稱為 Canvas 畫布**，詳見 [ChatGPT Canvas 篇](../../chatGPT/03_Canvas/README.md)）。實戰應用請參考 [常見的 AI 應用：現代職場三大實戰範例庫](../../常見的AI應用/實戰範例/README.md)。
+> 🔗 **全域概念對照**：本單元聚焦於討論方式的內容生成（**Claude 稱為 Artifacts**，**ChatGPT 稱為 Canvas 畫布**，詳見 [ChatGPT Canvas 篇](../../chatGPT/03_Canvas/README.md)）。實戰應用請參考 [學員職場實戰案例庫](../../學員職場實戰案例/README.md)。
 
 ---
 
