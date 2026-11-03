@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 670" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 530" width="100%" height="100%">
   <defs>
     <!-- 亮色風格漸層定義 -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -19,11 +19,6 @@
     </linearGradient>
 
     <linearGradient id="badge3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ec4899" />
-      <stop offset="100%" stop-color="#be185d" />
-    </linearGradient>
-
-    <linearGradient id="badge4" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981" />
       <stop offset="100%" stop-color="#047857" />
     </linearGradient>
@@ -44,21 +39,19 @@
   </style>
 
   <!-- 主背景底板（清新亮色） -->
-  <rect x="0" y="0" width="920" height="670" rx="20" fill="url(#bgGrad)" stroke="#e2e8f0" stroke-width="1.5" />
+  <rect x="0" y="0" width="920" height="530" rx="20" fill="url(#bgGrad)" stroke="#e2e8f0" stroke-width="1.5" />
 
   <!-- 頂部標題區 -->
-  <text x="460" y="46" class="main-title" text-anchor="middle" letter-spacing="0.8">🧭 漸進式優化通關地圖：工作流演進全景</text>
-  <text x="460" y="72" class="sub-title" text-anchor="middle">自然語言發想 ➔ 產出首版規格書 ➔ 依規格算薪 ➔ 逐關推進 ➔ 工作流愈長愈強大</text>
+  <text x="460" y="46" class="main-title" text-anchor="middle" letter-spacing="0.8">🧭 每月薪資自動化通關地圖：工作流演進全景</text>
+  <text x="460" y="72" class="sub-title" text-anchor="middle">自然語言發想 ➔ 產出首版規格書 ➔ 依規格算薪 ➔ 逐關擴充 ➔ 終極大成完稿</text>
 
   <!-- 連接導引箭頭線 -->
   <g stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="5 4" fill="none">
     <path d="M 460, 200 L 460, 225" />
     <path d="M 460, 335 L 460, 360" />
-    <path d="M 460, 470 L 460, 495" />
   </g>
   <polygon points="455,225 465,225 460,233" fill="#64748b" />
   <polygon points="455,360 465,360 460,368" fill="#64748b" />
-  <polygon points="455,495 465,495 460,503" fill="#64748b" />
 
   <!-- ================= 關卡 1 ================= -->
   <g transform="translate(50, 100)">
@@ -71,7 +64,7 @@
     <text x="50" y="56" class="badge-num" text-anchor="middle">01</text>
     <!-- 標題與內文 -->
     <text x="90" y="41" class="card-title">【關卡 1】建立基礎工作流 ➔ 依規格執行出勤計薪</text>
-    <text x="90" y="69" class="card-desc">自然語言發想產出首版規格書，檢核後再指示 AI 讀表執行工時統計與 2026 計薪</text>
+    <text x="90" y="69" class="card-desc">自然語言發想產出首版規格書，對照知識庫參數，指示 AI 讀表執行工時統計與 2026 計薪</text>
     <!-- 右側膠囊標籤 (x=685, 寬 115) -->
     <rect x="685" y="33" width="115" height="34" rx="17" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2" />
     <text x="742" y="55" class="pill-text" fill="#1d4ed8" text-anchor="middle">RTCCF_v1.md</text>
@@ -84,7 +77,7 @@
     <circle cx="50" cy="50" r="23" fill="url(#badge2)" />
     <text x="50" y="56" class="badge-num" text-anchor="middle">02</text>
     <text x="90" y="41" class="card-title">【關卡 2】財務薪資傳票分錄與會計借貸平衡</text>
-    <text x="90" y="69" class="card-desc">自然語言切傳票並驗收 100% 借貸平衡，將會計規則追加擴充寫回 RTCCF_v1.md</text>
+    <text x="90" y="69" class="card-desc">依知識庫科目切出傳票分錄，驗收 100% 借貸平衡，將會計規則追加擴充寫回 RTCCF_v1.md</text>
     <rect x="685" y="33" width="115" height="34" rx="17" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.2" />
     <text x="742" y="55" class="pill-text" fill="#6d28d9" text-anchor="middle">更新 RTCCF_v1</text>
   </g>
@@ -92,23 +85,11 @@
   <!-- ================= 關卡 3 ================= -->
   <g transform="translate(50, 370)">
     <rect width="820" height="100" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softShadow)" />
-    <rect x="0" y="0" width="6" height="100" rx="3" fill="#ec4899" />
+    <rect x="0" y="0" width="6" height="100" rx="3" fill="#10b981" />
     <circle cx="50" cy="50" r="23" fill="url(#badge3)" />
     <text x="50" y="56" class="badge-num" text-anchor="middle">03</text>
-    <text x="90" y="41" class="card-title">【關卡 3】批次產出個人身分證 AES-256 加密薪資單</text>
-    <text x="90" y="69" class="card-desc">自然語言執行批次腳本並驗收防窺，將資安加密規格追加擴充寫回 RTCCF_v1.md</text>
-    <rect x="685" y="33" width="115" height="34" rx="17" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1.2" />
-    <text x="742" y="55" class="pill-text" fill="#be185d" text-anchor="middle">更新 RTCCF_v1</text>
-  </g>
-
-  <!-- ================= 關卡 4 ================= -->
-  <g transform="translate(50, 505)">
-    <rect width="820" height="100" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softShadow)" />
-    <rect x="0" y="0" width="6" height="100" rx="3" fill="#10b981" />
-    <circle cx="50" cy="50" r="23" fill="url(#badge4)" />
-    <text x="50" y="56" class="badge-num" text-anchor="middle">04</text>
-    <text x="90" y="41" class="card-title">【關卡 4】年度所得扣繳統計與曆年制特休折現工資</text>
-    <text x="90" y="69" class="card-desc">自然語言結算所得與特休，最終整合四大模組，收斂為生產級 RTCCF_v1.md</text>
+    <text x="90" y="41" class="card-title">【關卡 3】批次產出個人身分證 AES-256 加密薪資單 ➔ 終極大成</text>
+    <text x="90" y="69" class="card-desc">批次生成防窺 PDF 薪資單，收斂三大核心模組為終極生產級 RTCCF_v1.md 與選修 Skill</text>
     <rect x="685" y="33" width="115" height="34" rx="17" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.2" />
     <text x="742" y="55" class="pill-text" fill="#047857" text-anchor="middle">終極 RTCCF_v1</text>
   </g>
