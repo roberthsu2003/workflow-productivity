@@ -28,7 +28,12 @@ from reportlab.pdfgen import canvas
 
 FONT_CANDIDATES = [
     r"C:\Windows\Fonts\msjh.ttc",
+    r"C:\Windows\Fonts\msjh.ttf",
+    "/System/Library/Fonts/STHeiti Light.ttc",
+    "/System/Library/Fonts/STHeiti Medium.ttc",
     "/System/Library/Fonts/PingFang.ttc",
+    "/System/Library/Fonts/Supplemental/Arial Unicode.ttf",
+    "/Library/Fonts/Arial Unicode.ttf",
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
     "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
 ]
