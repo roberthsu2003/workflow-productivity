@@ -1,7 +1,7 @@
-# 關卡 3：批次產出個人身分證 AES-256 加密 PDF 薪資單
+# 關卡 3：批次產出個人身分證加密 PDF 薪資單
 
 > 🎯 **本關核心邏輯**：  
-> 1. 先用白話自然語言叫 AI 執行關卡 3 任務 ➔ 批次產出每位員工個人的身分證 AES-256 加密 PDF 薪資單。  
+> 1. 先用白話自然語言叫 AI 執行關卡 3 任務 ➔ 批次產出每位員工個人的身分證密碼保護 PDF 薪資單。  
 > 2. 成果驗收密碼防窺無誤後 ➔ **指示 AI 將資安加密與批次產出規則更新寫回 `RTCCF_v1.md`（三大模組大成，終極收斂！）**  
 > 3. **全流程跨月份終極驗證** ➔ 換上 11 月份偽資料，一鍵測試整套自動化鏈路跨月通用性！
 
@@ -122,46 +122,6 @@
   經過三個關卡的漸進式推進與不斷擴充，這份 `RTCCF_v1.md` 已經完整包含月度發薪三大模組的所有精確規則與防呆限制（亦收錄於 [**`1-2_AI產出之RTCCF審查與結構化提示詞.md`**](./1-2_AI產出之RTCCF審查與結構化提示詞.md)）。  
   > 📌 **【重要資產提醒】**：**請務必永久妥善保留這份 `RTCCF_v1.md` 檔案！**  
   > 這是整套自動化計薪鏈路收斂出的最高結晶，未來每個月人資發薪，只要直接餵入這份 `RTCCF_v1.md` 與當月 Excel，AI 代理人就能全自動高精確度完成計薪、傳票與加密發放！
-
----
-
-## ⭐ 選修進階（Optional）：將 RTCCF_v1 工作流封裝為「AI Agent Skill」
-
-當您的 `RTCCF_v1.md` 工作流程驗證穩定後，如果希望將它沉澱為公司內部的**標準技能擴充套件（Agent Skill）**，供所有團隊成員在 Claude / AI Agent 平台上隨調隨用，可以進一步將它升級為標準 Skill 結構！
-
-### 📚 Claude / Agent Skill 的標準架構規範
-
-標準的 Agent Skill 採用**「漸進式揭露（Progressive Disclosure）」**架構，平常只載入簡短描述，需要時才喚醒完整指令，且如果**程式碼是固定的，必須獨立抽離存入 `scripts/` 資料夾**：
-
-```text
-skills/taiwan-payroll-automation/
-├── SKILL.md            # 必要：包含 YAML frontmatter (name, description) 的完整 SOP
-└── scripts/            # 選用：固定不變的自動化執行程式碼
-    └── generate_encrypted_payslips.py  # 身分證 AES-256 批次產出加密 PDF 腳本
-```
-
----
-
-### 🛠️ 升級封裝指令（發送給 AI Agent）
-
-如果您想請 AI 直接幫您建立這個 Skill，可以在對話視窗發送以下指令：
-
-```text
-這套 RTCCF_v1.md 工作流程已經非常穩定！
-
-【選修任務：將工作流封裝為標準 AI Agent Skill】
-請依據 Claude / Agent Skill 的官方目錄規範，幫我把這個工作流打包封裝：
-
-1. 建立資料夾：skills/taiwan-payroll-automation/
-2. 建立【SKILL.md】：
-   - 開頭包含合規的 YAML frontmatter（包含 name: taiwan-payroll-automation 與詳細觸發時機的 description）。
-   - 主體收納我們剛才收斂完成的 RTCCF_v1.md 三大模組完整規則。
-3. 建立【scripts/】資料夾：
-   - 將固定不變的「批次產出身分證 AES-256 加密 PDF 薪資單」Python 程式碼，獨立存為 scripts/generate_encrypted_payslips.py。
-   - 在 SKILL.md 中加入相對路徑連結引用該腳本。
-
-請產出並儲存完整的 Skill 目錄與檔案結構！
-```
 
 ---
 
