@@ -153,7 +153,7 @@ SonicCloud 9 耳機如果完全沒電了，使用 USB-C 充滿電需要多久時
 
 #### Gemini Gem：欄位對照（「新增 Gem」畫面）
 
-在 [Gemini](https://gemini.google.com/) 建立 Gem 並上傳 [信用卡權益說明.txt](./知識庫原始檔/信用卡權益說明.txt)（或於「相關資訊」貼入／附加同一內容）後，將下方內容分別貼入對應欄位。本 Prompt 採用本倉庫 [AI 提示詞工程指南](../prompt/AI提示詞工程指南/README.md) 的 **ROSES 框架**。
+在 [Gemini](https://gemini.google.com/) 建立 Gem 並上傳 [信用卡權益說明.txt](./知識庫原始檔/信用卡權益說明.txt)（或於「相關資訊」貼入／附加同一內容）後，將下方內容分別貼入對應欄位。本 Prompt 採用本倉庫 [AI 提示詞工程指南](../../prompt/AI提示詞工程指南/README.md) 的 **ROSES 框架**。
 
 | 欄位 | 對應內容 |
 |------|----------|
@@ -265,7 +265,7 @@ SonicCloud 9 耳機如果完全沒電了，使用 USB-C 充滿電需要多久時
 
 #### ChatGPT Projects：客服／諮詢 Prompt（RAG：健保就醫指南）
 
-建立 Project 並上傳 [健保就醫指南.pdf](./知識庫原始檔/健保就醫指南.pdf) 後，將下方全文貼入 **Instructions**（或自訂 GPT 的**指令**）。本 Prompt 採用本倉庫 [AI 提示詞工程指南](../prompt/AI提示詞工程指南/README.md) 的 **ROSES 框架**（角色、目標、步驟、Example／output format、範圍與風格）。
+建立 Project 並上傳 [健保就醫指南.pdf](./知識庫原始檔/健保就醫指南.pdf) 後，將下方全文貼入 **Instructions**（或自訂 GPT 的**指令**）。本 Prompt 採用本倉庫 [AI 提示詞工程指南](../../prompt/AI提示詞工程指南/README.md) 的 **ROSES 框架**（角色、目標、步驟、Example／output format、範圍與風格）。
 
 <details>
 <summary>點擊展開：客服 Prompt 全文（ROSES；請全選複製）</summary>
@@ -396,7 +396,7 @@ SonicCloud 9 耳機如果完全沒電了，使用 USB-C 充滿電需要多久時
 
 #### Claude Projects：使用手冊客服／諮詢 Prompt（RAG：雙 PDF）
 
-前往 [claude.ai/projects](https://claude.ai/projects) 建立專案，將兩份 PDF 置於專案 **Files**，並將下方 **ROSES** 貼入 **Instructions**。畫面欄位與 [儲存與重複使用 AI 提示詞](../儲存與重複使用AI提示詞/README.md#claude-build) 之 Claude Projects 建立流程相同。ROSES 定義見 [AI 提示詞工程指南](../prompt/AI提示詞工程指南/README.md)。
+前往 [claude.ai/projects](https://claude.ai/projects) 建立專案，將兩份 PDF 置於專案 **Files**，並將下方 **ROSES** 貼入 **Instructions**。畫面欄位與 [儲存與重複使用 AI 提示詞](../儲存與重複使用AI提示詞/README.md#claude-build) 之 Claude Projects 建立流程相同。ROSES 定義見 [AI 提示詞工程指南](../../prompt/AI提示詞工程指南/README.md)。
 
 ##### Claude Projects 欄位對照（快速複製）
 

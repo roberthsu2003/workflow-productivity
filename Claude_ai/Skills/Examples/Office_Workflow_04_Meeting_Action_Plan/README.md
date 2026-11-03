@@ -71,4 +71,4 @@ Claude 將會自動啟用該 Skill，並依據 `templates/action-plan-template.x
 
 ---
 
-← [返回 Skills 主頁](../README.md)
+← [返回 Skills 主頁](../../README.md)

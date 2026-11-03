@@ -99,6 +99,6 @@ flowchart TD
 
 ## 🔗 相關延伸閱讀
 
-* 📖 **[Claude 官方 Skills 指令包](../Claude_ai/Skills/README.md)**：包含 PPTX、DOCX、XLSX、PDF 的即用實戰指令。
+* 📖 **[Claude 官方 Skills 指令包](../../Claude_ai/Skills/README.md)**：包含 PPTX、DOCX、XLSX、PDF 的即用實戰指令。
 * 🔌 **[連結應用程式](../連結應用程式/README.md)**：Google Workspace、Canva 整合指南。
 * 📝 **[儲存與重複使用 AI 提示詞](../儲存與重複使用AI提示詞/README.md)**：自訂提示詞與 AI 助手。

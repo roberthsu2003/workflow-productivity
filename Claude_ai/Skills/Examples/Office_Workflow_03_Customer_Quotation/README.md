@@ -96,4 +96,4 @@ Claude 將會自動啟用該 Skill，並依據 `templates/quotation-template.xls
 
 ---
 
-← [返回 Skills 主頁](../README.md)
+← [返回 Skills 主頁](../../README.md)

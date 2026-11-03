@@ -142,5 +142,5 @@ flowchart TD
 - ➡️ [進階必讀：Context Window（上下文視窗）與 Token 疊加機制](../Context_Window/README.md)
 - ➡️ [進入 Prompt 核心心法：如何指揮你的 AI Agent](../prompt/README.md)
 - ➡️ [探索 Claude.ai 實戰專案與技能庫](../Claude_ai/README.md)
-- ➡️ [探索 ChatGPT 資料分析與進階工具](../chatGPT_codex/README.md)
+- ➡️ [探索 ChatGPT 資料分析與進階工具](../chatGPT/README.md)
 
