@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 840" width="1000" height="840">
+  <defs>
+    <!-- 陰影濾鏡 -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <filter id="glow-green" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow-red" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#ef4444" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- 漸層定義 -->
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="grad-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+    <linearGradient id="grad-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fee2e2"/>
+      <stop offset="100%" stop-color="#fecaca"/>
+    </linearGradient>
+    <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+    <linearGradient id="grad-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- 箭頭標記 -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- 背景底色 -->
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16"/>
+
+  <!-- 主標題與副標題 -->
+  <text x="500" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Microsoft JhengHei', sans-serif" font-size="22" font-weight="700" fill="#0f172a" text-anchor="middle">
+    AI 工作流總架構師：從零散素材到漸進式工作流評估閉環
+  </text>
+  <text x="500" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Microsoft JhengHei', sans-serif" font-size="13" fill="#64748b" text-anchor="middle">
+    AI Workflow Feasibility &amp; Blueprint Architecture Flow
+  </text>
+
+  <!-- ==================== 步驟 1：學員準備素材 ==================== -->
+  <g transform="translate(300, 95)" filter="url(#shadow)">
+    <rect width="400" height="84" rx="12" fill="#ffffff" stroke="#bfdbfe" stroke-width="2"/>
+    <rect width="400" height="6" rx="3" fill="#3b82f6"/>
+    <text x="200" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="16" font-weight="700" fill="#1e3a8a" text-anchor="middle">
+      📂 步驟一：學員準備手邊現有素材
+    </text>
+    <text x="200" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#475569" text-anchor="middle">
+      1. 原始業務檔案（未加工之 Excel / Word / PDF / 白板照片）
+    </text>
+    <text x="200" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#475569" text-anchor="middle">
+      2. 業務需求說明檔（口述痛點、期望成果與已知規則）
+    </text>
+  </g>
+
+  <!-- 箭頭 1 -> 2 -->
+  <line x1="500" y1="180" x2="500" y2="210" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- ==================== 步驟 2：啟動 AI 總架構師 ==================== -->
+  <g transform="translate(260, 215)" filter="url(#shadow)">
+    <rect width="480" height="90" rx="12" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+    <rect width="480" height="6" rx="3" fill="#6366f1"/>
+    <text x="240" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="16" font-weight="700" fill="#312e81" text-anchor="middle">
+      🤖 步驟二：啟動 AI 工作流總架構師審查
+    </text>
+    <text x="240" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#4338ca" text-anchor="middle">
+      打開對話框，上傳所有檔案並複製【01_AI工作流架構師評估提示詞】
+    </text>
+    <text x="240" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+      AI 全面盤點診斷：資料完整性、Token解耦架構、關卡可行性評估
+    </text>
+  </g>
+
+  <!-- 箭頭 2 -> 分流決策點 -->
+  <line x1="500" y1="306" x2="500" y2="340" stroke="#6366f1" stroke-width="2.5" marker-end="url(#arrow-indigo)"/>
+
+  <!-- 決策判定徽章 -->
+  <g transform="translate(420, 342)">
+    <rect width="160" height="34" rx="17" fill="#4338ca" filter="url(#shadow)"/>
+    <text x="80" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">
+      審查資料齊全度？
+    </text>
+  </g>
+
+  <!-- 分流路徑：左（紅/黃燈）與 右（綠燈） -->
+  <!-- 左轉折線 -->
+  <path d="M 420 359 L 240 359 L 240 405" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arrow-red)"/>
+  <text x="320" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" font-weight="700" fill="#dc2626" text-anchor="middle">
+    🔴 缺漏 / 🟡 缺少對照表
+  </text>
+
+  <!-- 右轉折線 -->
+  <path d="M 580 359 L 760 359 L 760 405" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <text x="675" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" font-weight="700" fill="#059669" text-anchor="middle">
+    🟢 資料齊全度 100%
+  </text>
+
+  <!-- ==================== 支線 A：缺漏阻斷（紅/黃燈） ==================== -->
+  <g transform="translate(50, 410)" filter="url(#shadow)">
+    <rect width="380" height="150" rx="12" fill="url(#grad-red)" stroke="#f87171" stroke-width="2"/>
+    <text x="190" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="15" font-weight="700" fill="#991b1b" text-anchor="middle">
+      🚨 阻斷警示：資料不足，不可貿然開工
+    </text>
+    <text x="25" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#7f1d1d">
+      • AI 亮紅/黃燈，避免瞎猜或產生嚴重隨機幻覺
+    </text>
+    <text x="25" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#7f1d1d">
+      • 精確列出【缺漏待補齊清單】（缺對照表、缺規範）
+    </text>
+    <text x="25" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="12" fill="#7f1d1d">
+      • 說明缺漏會導致哪一關卡住，並指導索取方式
+    </text>
+    <rect x="25" y="112" width="330" height="26" rx="6" fill="#fee2e2" stroke="#ef4444" stroke-width="1"/>
+    <text x="190" y="129" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" font-weight="700" fill="#b91c1c" text-anchor="middle">
+      👉 學員備齊缺漏素材後，重新上傳評估！
+    </text>
+  </g>
+
+  <!-- 回調箭頭（支線 A 繞回步驟 1） -->
+  <path d="M 50 485 L 20 485 L 20 137 L 295 137" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrow-red)"/>
+  <text x="150" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" font-weight="700" fill="#dc2626" transform="rotate(-90, 150, 270)" text-anchor="middle">
+    補齊缺漏檔案後重新啟動
+  </text>
+
+  <!-- ==================== 支線 B：綠燈通過（合格產出） ==================== -->
+  <g transform="translate(560, 410)" filter="url(#shadow)">
+    <rect width="400" height="280" rx="12" fill="#ffffff" stroke="#34d399" stroke-width="2"/>
+    <rect width="400" height="34" rx="12" fill="url(#grad-emerald)"/>
+    <text x="200" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">
+      🎉 綠燈通過！產出《工作流可行性規劃報告.md》
+    </text>
+
+    <!-- 報告五大維度卡片內容 -->
+    <g transform="translate(20, 50)">
+      <circle cx="10" cy="10" r="10" fill="#d1fae5"/>
+      <text x="10" y="14" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">1</text>
+      <text x="30" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="13" font-weight="700" fill="#0f172a">收斂專案名稱</text>
+      <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" fill="#64748b">定義精準之企業級自動化主題與商業價值</text>
+    </g>
+
+    <g transform="translate(20, 95)">
+      <circle cx="10" cy="10" r="10" fill="#d1fae5"/>
+      <text x="10" y="14" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">2</text>
+      <text x="30" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="13" font-weight="700" fill="#0f172a">資料解耦架構（極致省 Token）</text>
+      <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" fill="#64748b">固定資料表（知識庫常駐） vs 動態輸入（每期上傳）</text>
+    </g>
+
+    <g transform="translate(20, 140)">
+      <circle cx="10" cy="10" r="10" fill="#d1fae5"/>
+      <text x="10" y="14" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">3</text>
+      <text x="30" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="13" font-weight="700" fill="#0f172a">建議關卡數（單關閉環或多關漸進）</text>
+      <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" fill="#64748b">單純業務 1 關即可搞定！複雜多表才切 2~5 關，拒絕硬拆</text>
+    </g>
+
+    <g transform="translate(20, 185)">
+      <circle cx="10" cy="10" r="10" fill="#d1fae5"/>
+      <text x="10" y="14" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">4</text>
+      <text x="30" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="13" font-weight="700" fill="#0f172a">各關卡建議 Prompt 與交付物規格</text>
+      <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" fill="#64748b">口語化提示詞、輸入素材與 3~4 項驗收 Checklist</text>
+    </g>
+
+    <g transform="translate(20, 230)">
+      <circle cx="10" cy="10" r="10" fill="#d1fae5"/>
+      <text x="10" y="14" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">5</text>
+      <text x="30" y="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="13" font-weight="700" fill="#0f172a">工作流規格書演進路徑（RTCCF）</text>
+      <text x="30" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11" fill="#64748b">引導首版規格書產出，並隨關卡逐步寫回收斂</text>
+    </g>
+  </g>
+
+  <!-- 箭頭：從報告連向終點 -->
+  <path d="M 760 690 L 760 740 L 505 740 L 505 765" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+
+  <!-- ==================== 步驟 3：終點 ==================== -->
+  <g transform="translate(250, 770)" filter="url(#shadow)">
+    <rect width="500" height="54" rx="27" fill="url(#grad-blue)"/>
+    <text x="250" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">
+      🚀 成果：學員依照報告藍圖，步步建構專屬自動化工作流！
+    </text>
+  </g>
+</svg>
+
