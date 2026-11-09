@@ -5,12 +5,16 @@
   2. 將傳票、請款單、簽核歷程、憑證附件依序合併成單一 PDF
   3. 自動加上目錄頁、PDF 書籤、每頁頁尾（單據編號與頁碼）
 
-用法（範例）：
-  python packet.py --doc-id EXP-202610-001 --title "費用報銷歸檔資料" ^
-      --trail 無紙化流程_素材總表.xlsx ^
-      --section "會計傳票=voucher.pdf" --section "已簽核請款單=claim.pdf" ^
-      --section "簽核歷程=@trail" --section "發票／憑證附件=receipt.pdf" ^
-      --out EXP-202610-001_歸檔.pdf
+用法（課堂實作範例）：
+  python 4_程式_packet.py --doc-id EXP-202610-001 --title "費用報銷歸檔資料" ^
+      --trail "使用者提供/費用報銷申請明細_202610_上課工作流專用.xlsx" ^
+      --section "會計傳票=使用者提供/單據附件/EXP-202610-001/02_會計傳票_VCH-202610-0088.pdf" ^
+      --section "已簽核請款單=使用者提供/單據附件/EXP-202610-001/01_費用報銷請款單_EXP-202610-001.pdf" ^
+      --section "簽核歷程=@trail" ^
+      --section "發票／憑證附件=使用者提供/單據附件/EXP-202610-001/03_電子發票證明聯_AB-12345678.pdf" ^
+      --out EXP-202610-001_四合一歸檔.pdf
+
+  （macOS / Linux 請將結尾換行符號 ^ 換為 \）
 
   "@trail" 代表由 Excel 簽核歷程自動產生該頁。
 字型：預設使用 Windows 微軟正黑體；其他系統請用 --font 指定 .ttc/.ttf 路徑。
