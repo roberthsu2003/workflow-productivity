@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 210" width="100%" height="100%">
+  <defs>
+    <!-- 畫布背景漸層 -->
+    <linearGradient id="bgCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+
+    <!-- 卡片卡底漸層 -->
+    <linearGradient id="cardBg1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F0F9FF"/></linearGradient>
+    <linearGradient id="cardBg2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFF7ED"/></linearGradient>
+    <linearGradient id="cardBg3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FAF5FF"/></linearGradient>
+    <linearGradient id="cardBg4" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F0FDF4"/></linearGradient>
+
+    <!-- 標籤按鈕漸層 -->
+    <linearGradient id="badge1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#38BDF8"/><stop offset="100%" stop-color="#0284C7"/></linearGradient>
+    <linearGradient id="badge2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FB923C"/><stop offset="100%" stop-color="#EA580C"/></linearGradient>
+    <linearGradient id="badge3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#A855F7"/><stop offset="100%" stop-color="#7E22CE"/></linearGradient>
+    <linearGradient id="badge4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#34D399"/><stop offset="100%" stop-color="#059669"/></linearGradient>
+
+    <!-- 柔和陰影 -->
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06" />
+    </filter>
+
+    <!-- 流程箭頭標記 -->
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
+    </marker>
+  </defs>
+
+  <style>
+    .font-base { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; }
+    .badge-text { font-size: 11px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; letter-spacing: 0.5px; }
+    .card-title { font-size: 15px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .card-tag { font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .card-desc { font-size: 11px; font-weight: 500; fill: #475569; text-anchor: middle; }
+  </style>
+
+  <!-- 外層整體容器邊框 -->
+  <rect width="1000" height="210" rx="14" fill="url(#bgCanvas)" stroke="#E2E8F0" stroke-width="1.2" />
+
+  <!-- ================= 階段一 ================= -->
+  <g transform="translate(22, 22)">
+    <rect width="215" height="166" rx="12" fill="url(#cardBg1)" stroke="#BAE6FD" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- 階段膠囊標籤 -->
+    <rect x="42" y="14" width="131" height="22" rx="11" fill="url(#badge1)" />
+    <text x="107.5" y="29.5" class="font-base badge-text">階段一 · 定義問題</text>
+    <!-- 卡片標題 -->
+    <text x="107.5" y="62" class="font-base card-title">User Story 提案卡</text>
+    <text x="107.5" y="82" class="font-base card-tag" fill="#0284C7">輕量填寫 · 門檻極低</text>
+    <!-- 分隔線 -->
+    <line x1="30" y1="96" x2="185" y2="96" stroke="#E0F2FE" stroke-width="1.2" stroke-dasharray="3 3" />
+    <!-- 說明重點 -->
+    <text x="107.5" y="118" class="font-base card-desc">明確定義角色／想要／價值</text>
+    <text x="107.5" y="137" class="font-base card-desc">釐清原始輸入與目標成果</text>
+    <text x="107.5" y="154" class="font-base card-desc" fill="#0369A1" font-weight="600">內附 18 款職場範本即插即用</text>
+  </g>
+
+  <!-- 箭頭 1 -> 2 -->
+  <line x1="243" y1="105" x2="263" y2="105" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- ================= 階段二 ================= -->
+  <g transform="translate(269, 22)">
+    <rect width="215" height="166" rx="12" fill="url(#cardBg2)" stroke="#FED7AA" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- 階段膠囊標籤 -->
+    <rect x="42" y="14" width="131" height="22" rx="11" fill="url(#badge2)" />
+    <text x="107.5" y="29.5" class="font-base badge-text">階段二 · 深度訪談</text>
+    <!-- 卡片標題 -->
+    <text x="107.5" y="62" class="font-base card-title">AI 產品顧問訪談</text>
+    <text x="107.5" y="82" class="font-base card-tag" fill="#EA580C">一次 1~2 題 · 循序深挖</text>
+    <!-- 分隔線 -->
+    <line x1="30" y1="96" x2="185" y2="96" stroke="#FFEDD5" stroke-width="1.2" stroke-dasharray="3 3" />
+    <!-- 說明重點 -->
+    <text x="107.5" y="118" class="font-base card-desc">專業架構師一問一答引導</text>
+    <text x="107.5" y="137" class="font-base card-desc">深挖欄位型別與計算公式</text>
+    <text x="107.5" y="154" class="font-base card-desc" fill="#C2410C" font-weight="600">補齊勾稽邊界與驗收標準</text>
+  </g>
+
+  <!-- 箭頭 2 -> 3 -->
+  <line x1="490" y1="105" x2="510" y2="105" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- ================= 階段三 ================= -->
+  <g transform="translate(516, 22)">
+    <rect width="215" height="166" rx="12" fill="url(#cardBg3)" stroke="#DDD6FE" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- 階段膠囊標籤 -->
+    <rect x="42" y="14" width="131" height="22" rx="11" fill="url(#badge3)" />
+    <text x="107.5" y="29.5" class="font-base badge-text">階段三 · 工業級規格</text>
+    <!-- 卡片標題 -->
+    <text x="107.5" y="62" class="font-base card-title">標準 PRD.md 規格書</text>
+    <text x="107.5" y="82" class="font-base card-tag" fill="#7E22CE">人類秒懂 · 執行零幻覺</text>
+    <!-- 分隔線 -->
+    <line x1="30" y1="96" x2="185" y2="96" stroke="#F3E8FF" stroke-width="1.2" stroke-dasharray="3 3" />
+    <!-- 說明重點 -->
+    <text x="107.5" y="118" class="font-base card-desc">對話結晶自動收斂成文檔</text>
+    <text x="107.5" y="137" class="font-base card-desc">結構化 I/O 與防呆邏輯</text>
+    <text x="107.5" y="154" class="font-base card-desc" fill="#6B21A8" font-weight="600">Given-When-Then 驗收準則</text>
+  </g>
+
+  <!-- 箭頭 3 -> 4 -->
+  <line x1="737" y1="105" x2="757" y2="105" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+
+  <!-- ================= 階段四 ================= -->
+  <g transform="translate(763, 22)">
+    <rect width="215" height="166" rx="12" fill="url(#cardBg4)" stroke="#A7F3D0" stroke-width="1.5" filter="url(#shadow)" />
+    <!-- 階段膠囊標籤 -->
+    <rect x="42" y="14" width="131" height="22" rx="11" fill="url(#badge4)" />
+    <text x="107.5" y="29.5" class="font-base badge-text">階段四 · 自動化落地</text>
+    <!-- 卡片標題 -->
+    <text x="107.5" y="62" class="font-base card-title">漸進式 RTCCF 工作流</text>
+    <text x="107.5" y="82" class="font-base card-tag" fill="#059669">逐關推進 · 換批驗證</text>
+    <!-- 分隔線 -->
+    <line x1="30" y1="96" x2="185" y2="96" stroke="#DCFCE7" stroke-width="1.2" stroke-dasharray="3 3" />
+    <!-- 說明重點 -->
+    <text x="107.5" y="118" class="font-base card-desc">四道實戰關卡逐步升級</text>
+    <text x="107.5" y="137" class="font-base card-desc">第二批新資料一鍵通用</text>
+    <text x="107.5" y="154" class="font-base card-desc" fill="#047857" font-weight="600">沉澱為企業高可靠自動化資產</text>
+  </g>
+</svg>
