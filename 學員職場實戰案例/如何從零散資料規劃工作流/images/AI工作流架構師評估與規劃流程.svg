@@ -52,7 +52,7 @@
   <rect x="0" y="0" width="1000" height="880" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
 
   <!-- 頂部主標題與副標題 -->
-  <text x="500" y="44" class="main-title">AI 工作流總架構師：從零散素材到漸進式工作流評估閉環</text>
+  <text x="500" y="44" class="main-title">AI工作流架構師：從零散素材到漸進式工作流評估閉環</text>
   <text x="500" y="68" class="sub-title">AI Workflow Feasibility Assessment &amp; Blueprint Architecture Flow</text>
 
   <!-- ==================== 步驟 1：學員準備素材 ==================== -->
@@ -71,7 +71,7 @@
   <!-- 箭頭 1 -> 2 -->
   <line x1="500" y1="190" x2="500" y2="222" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
 
-  <!-- ==================== 步驟 2：啟動 AI 總架構師 ==================== -->
+  <!-- ==================== 步驟 2：啟動 AI工作流架構師 ==================== -->
   <g transform="translate(240, 226)">
     <!-- 向量陰影底層 -->
     <rect x="2" y="3" width="520" height="96" rx="12" fill="#E2E8F0"/>
@@ -79,9 +79,9 @@
     <rect x="0" y="0" width="520" height="96" rx="12" fill="#FFFFFF" stroke="#A5B4FC" stroke-width="2"/>
     <rect x="0" y="0" width="520" height="6" rx="3" fill="#4F46E5"/>
 
-    <text x="260" y="33" class="card-title" fill="#312E81">🤖 步驟二：啟動 AI 工作流總架構師審查</text>
+    <text x="260" y="33" class="card-title" fill="#312E81">🤖 步驟二：啟動 AI工作流架構師審查</text>
     <text x="260" y="58" class="card-body" fill="#4338CA" text-anchor="middle">開啟對話框，上傳檔案並複製【01_AI工作流架構師評估提示詞】</text>
-    <text x="260" y="78" class="card-desc" text-anchor="middle">AI 全面盤點：資料齊全度、動態/靜態解耦、單關閉環或多關漸進</text>
+    <text x="260" y="78" class="card-desc" text-anchor="middle">AI 全面盤點：資料齊全度、動態/靜態分離拆解、單關閉環或多關漸進</text>
   </g>
 
   <!-- 箭頭 2 -> 決策徽章 -->
@@ -156,11 +156,11 @@
       <text x="34" y="35" class="list-desc">擺脫模糊口語，定義具備可量化效益之正式專案標題</text>
     </g>
 
-    <!-- 2. 資料解耦架構 -->
+    <!-- 2. 資料分離拆解架構 -->
     <g transform="translate(24, 98)">
       <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
       <text x="12" y="16" class="num-pill">2</text>
-      <text x="34" y="17" class="list-title">資料解耦架構（極致節省 Token）</text>
+      <text x="34" y="17" class="list-title">資料分離拆解架構（極致節省 Token）</text>
       <text x="34" y="35" class="list-desc">明確分離「固定資料表（知識庫常駐）」與「動態輸入（每期上傳）」</text>
     </g>
 
