@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 880" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 820" width="100%" height="100%">
   <defs>
-    <!-- 箭頭標記（純向量，色彩飽滿，銳利無毛邊） -->
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <!-- 向量箭頭標記 -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
     </marker>
-    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4F46E5"/>
     </marker>
-    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#DC2626"/>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0D9488"/>
     </marker>
-    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#475569"/>
     </marker>
 
-    <!-- 漸層定義 -->
-    <linearGradient id="grad-green-header" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#059669"/>
-      <stop offset="100%" stop-color="#10B981"/>
+    <!-- 標題漸層 -->
+    <linearGradient id="grad-route-a" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#6366F1"/>
     </linearGradient>
-    <linearGradient id="grad-red-header" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#DC2626"/>
-      <stop offset="100%" stop-color="#EF4444"/>
+    <linearGradient id="grad-route-b" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
     </linearGradient>
     <linearGradient id="grad-bottom-cta" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1E40AF"/>
+      <stop offset="0%" stop-color="#1E3A8A"/>
       <stop offset="50%" stop-color="#2563EB"/>
-      <stop offset="100%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#0D9488"/>
     </linearGradient>
   </defs>
 
@@ -38,176 +38,186 @@
     }
     .main-title { font-size: 24px; font-weight: 800; fill: #0F172A; text-anchor: middle; letter-spacing: 0.5px; }
     .sub-title { font-size: 13.5px; font-weight: 500; fill: #64748B; text-anchor: middle; }
-    .card-title { font-size: 16px; font-weight: 700; text-anchor: middle; }
-    .card-body { font-size: 13.5px; font-weight: 500; fill: #334155; }
-    .card-desc { font-size: 12.5px; font-weight: 400; fill: #64748B; }
-    .badge-text { font-size: 13px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
-    .branch-tag { font-size: 13px; font-weight: 700; text-anchor: middle; }
-    .list-title { font-size: 14.5px; font-weight: 700; fill: #0F172A; }
-    .list-desc { font-size: 12.5px; font-weight: 400; fill: #475569; }
-    .num-pill { font-size: 12px; font-weight: 800; fill: #047857; text-anchor: middle; }
+    .sec-badge { font-size: 13px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .card-title { font-size: 16px; font-weight: 800; text-anchor: middle; }
+    .mini-title { font-size: 13.5px; font-weight: 700; fill: #1E3A8A; text-anchor: middle; }
+    .mini-desc { font-size: 11.5px; font-weight: 400; fill: #475569; text-anchor: middle; }
+    .step-title { font-size: 14px; font-weight: 700; fill: #0F172A; }
+    .step-desc { font-size: 12.5px; font-weight: 400; fill: #475569; }
+    .pill-txt { font-size: 12px; font-weight: 700; fill: #1E293B; text-anchor: middle; }
   </style>
 
-  <!-- 外框畫布底色（清晰高對比純向量） -->
-  <rect x="0" y="0" width="1000" height="880" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- 畫布背景 -->
+  <rect x="0" y="0" width="1040" height="820" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
 
-  <!-- 頂部主標題與副標題 -->
-  <text x="500" y="44" class="main-title">AI工作流架構師：從零散素材到漸進式工作流評估閉環</text>
-  <text x="500" y="68" class="sub-title">AI Workflow Feasibility Assessment &amp; Blueprint Architecture Flow</text>
+  <!-- 主標題區 -->
+  <text x="520" y="42" class="main-title">成為「AI工作流架構師」：從零散資料到標準工作流三部曲</text>
+  <text x="520" y="66" class="sub-title">4 Core Inputs ➔ Dual-Route Architect Engines (Route A &amp; Route B) ➔ RTCCF_v1.md &amp; Production Deliverables</text>
 
-  <!-- ==================== 步驟 1：學員準備素材 ==================== -->
-  <g transform="translate(260, 95)">
-    <!-- 向量陰影底層（無模糊濾鏡，絕不降解析度光柵化） -->
-    <rect x="2" y="3" width="480" height="92" rx="12" fill="#E2E8F0"/>
-    <!-- 卡片主體 -->
-    <rect x="0" y="0" width="480" height="92" rx="12" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
-    <rect x="0" y="0" width="480" height="6" rx="3" fill="#2563EB"/>
-    
-    <text x="240" y="33" class="card-title" fill="#1E40AF">📂 步驟一：學員準備手邊現有零散素材</text>
-    <text x="240" y="58" class="card-body" text-anchor="middle">1. 業務原始檔：Excel / Word / PDF 規程 / 報表白板圖</text>
-    <text x="240" y="78" class="card-desc" text-anchor="middle">2. 口述說明：痛點困擾、業務流程規則與預期最終成果</text>
-  </g>
+  <!-- ==================== 第一部曲：四大標準原料 ==================== -->
+  <g transform="translate(40, 88)">
+    <rect x="2" y="3" width="960" height="156" rx="14" fill="#DBEAFE"/>
+    <rect x="0" y="0" width="960" height="156" rx="14" fill="#FFFFFF" stroke="#60A5FA" stroke-width="2"/>
+    <rect x="0" y="0" width="960" height="36" rx="14" fill="#2563EB"/>
+    <rect x="0" y="20" width="960" height="16" fill="#2563EB"/>
+    <text x="480" y="24" class="sec-badge">📦 第一部曲：盤點手邊「四大原料」（放入提示詞 [Context] 4 個標準欄位）</text>
 
-  <!-- 箭頭 1 -> 2 -->
-  <line x1="500" y1="190" x2="500" y2="222" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
-
-  <!-- ==================== 步驟 2：啟動 AI工作流架構師 ==================== -->
-  <g transform="translate(240, 226)">
-    <!-- 向量陰影底層 -->
-    <rect x="2" y="3" width="520" height="96" rx="12" fill="#E2E8F0"/>
-    <!-- 卡片主體 -->
-    <rect x="0" y="0" width="520" height="96" rx="12" fill="#FFFFFF" stroke="#A5B4FC" stroke-width="2"/>
-    <rect x="0" y="0" width="520" height="6" rx="3" fill="#4F46E5"/>
-
-    <text x="260" y="33" class="card-title" fill="#312E81">🤖 步驟二：啟動 AI工作流架構師審查</text>
-    <text x="260" y="58" class="card-body" fill="#4338CA" text-anchor="middle">開啟對話框，上傳檔案並複製【01_AI工作流架構師評估提示詞】</text>
-    <text x="260" y="78" class="card-desc" text-anchor="middle">AI 全面盤點：資料齊全度、動態/靜態分離拆解、單關閉環或多關漸進</text>
-  </g>
-
-  <!-- 箭頭 2 -> 決策徽章 -->
-  <line x1="500" y1="325" x2="500" y2="355" stroke="#4F46E5" stroke-width="2.5" marker-end="url(#arrow-indigo)"/>
-
-  <!-- 決策判定核心徽章 -->
-  <g transform="translate(400, 358)">
-    <rect x="1" y="2" width="200" height="38" rx="19" fill="#1E1B4B"/>
-    <rect x="0" y="0" width="200" height="38" rx="19" fill="#4338CA"/>
-    <text x="100" y="24" class="badge-text">🔍 審查資料齊全度？</text>
-  </g>
-
-  <!-- ==================== 分流折線與路徑標籤 ==================== -->
-  <!-- 左分流（紅/黃燈） -->
-  <path d="M 400 377 L 240 377 L 240 422" fill="none" stroke="#DC2626" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow-red)"/>
-  <rect x="250" y="360" width="135" height="24" rx="12" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.2"/>
-  <text x="317" y="376" class="branch-tag" fill="#B91C1C">🔴 缺漏 / 🟡 缺對照表</text>
-
-  <!-- 右分流（綠燈合格） -->
-  <path d="M 600 377 L 760 377 L 760 422" fill="none" stroke="#059669" stroke-width="2.5" marker-end="url(#arrow-green)"/>
-  <rect x="615" y="360" width="135" height="24" rx="12" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1.2"/>
-  <text x="682" y="376" class="branch-tag" fill="#047857">🟢 核心素材 100% 齊全</text>
-
-  <!-- ==================== 支線 A：缺漏阻斷警示卡片 ==================== -->
-  <g transform="translate(50, 426)">
-    <!-- 向量陰影底層 -->
-    <rect x="2" y="3" width="380" height="230" rx="14" fill="#FEE2E2"/>
-    <!-- 卡片主體 -->
-    <rect x="0" y="0" width="380" height="230" rx="14" fill="#FFF5F5" stroke="#F87171" stroke-width="2"/>
-    <rect x="0" y="0" width="380" height="36" rx="14" fill="url(#grad-red-header)"/>
-    <text x="190" y="24" class="badge-text">🚨 阻斷警示：資料不足，嚴禁硬做！</text>
-
-    <text x="24" y="64" class="card-body" font-weight="700" fill="#991B1B">⚠️ AI 亮紅/黃燈，避免隨機幻覺或空轉：</text>
-    <text x="24" y="88" class="card-desc" fill="#7F1D1D">• 輸出【缺漏清單】：明確指認缺什麼對照表或標準</text>
-    <text x="24" y="110" class="card-desc" fill="#7F1D1D">• 阻斷影響分析：詳細說明缺少該表會卡在哪個關卡</text>
-    <text x="24" y="132" class="card-desc" fill="#7F1D1D">• 補齊指導：建議向誰索取、範本規格或替代欄位</text>
-
-    <!-- 底部操作提示 -->
-    <rect x="20" y="152" width="340" height="60" rx="10" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5"/>
-    <text x="190" y="176" class="card-body" font-weight="700" fill="#B91C1C" text-anchor="middle">👉 學員備齊缺漏素材後，重新上傳評估</text>
-    <text x="190" y="198" class="card-desc" fill="#991B1B" text-anchor="middle">（形成自主把關閉環，不在缺陷基礎上蓋危樓）</text>
-  </g>
-
-  <!-- 支線 A 繞回步驟 1 的回調虛線箭頭 -->
-  <path d="M 50 541 L 20 541 L 20 141 L 254 141" fill="none" stroke="#DC2626" stroke-width="2.2" stroke-dasharray="5,4" marker-end="url(#arrow-red)"/>
-  <rect x="6" y="270" width="28" height="140" rx="6" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1"/>
-  <text x="20" y="288" font-size="12" font-weight="700" fill="#B91C1C" text-anchor="middle">
-    <tspan x="20" dy="0">補</tspan>
-    <tspan x="20" dy="16">齊</tspan>
-    <tspan x="20" dy="16">資</tspan>
-    <tspan x="20" dy="16">料</tspan>
-    <tspan x="20" dy="16">重</tspan>
-    <tspan x="20" dy="16">新</tspan>
-    <tspan x="20" dy="16">評</tspan>
-    <tspan x="20" dy="16">估</tspan>
-  </text>
-
-  <!-- ==================== 支線 B：合格產出規劃報告 ==================== -->
-  <g transform="translate(480, 426)">
-    <!-- 向量陰影底層 -->
-    <rect x="2" y="3" width="470" height="340" rx="14" fill="#D1FAE5"/>
-    <!-- 卡片主體 -->
-    <rect x="0" y="0" width="470" height="340" rx="14" fill="#FFFFFF" stroke="#34D399" stroke-width="2"/>
-    <rect x="0" y="0" width="470" height="38" rx="14" fill="url(#grad-green-header)"/>
-    <text x="235" y="25" class="badge-text">🎉 審查通過！產出《工作流可行性規劃報告.md》</text>
-
-    <!-- 1. 專案名稱 -->
-    <g transform="translate(24, 52)">
-      <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-      <text x="12" y="16" class="num-pill">1</text>
-      <text x="34" y="17" class="list-title">收斂專案主題與商業價值</text>
-      <text x="34" y="35" class="list-desc">擺脫模糊口語，定義具備可量化效益之正式專案標題</text>
+    <!-- 4 個原料子卡片 -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="218" height="90" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="109" y="26" class="mini-title">1️⃣ 工作流程說明</text>
+      <text x="109" y="50" class="mini-desc">業務痛點、現況作業步驟</text>
+      <text x="109" y="70" class="mini-desc">或隨手寫的需求說明檔</text>
     </g>
 
-    <!-- 2. 資料分離拆解架構 -->
-    <g transform="translate(24, 98)">
-      <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-      <text x="12" y="16" class="num-pill">2</text>
-      <text x="34" y="17" class="list-title">資料分離拆解架構（極致節省 Token）</text>
-      <text x="34" y="35" class="list-desc">明確分離「固定資料表（知識庫常駐）」與「動態輸入（每期上傳）」</text>
+    <g transform="translate(254, 50)">
+      <rect x="0" y="0" width="218" height="90" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="109" y="26" class="mini-title">2️⃣ 工作流參考檔案</text>
+      <text x="109" y="50" class="mini-desc">規章手冊、代碼對照表、公式</text>
+      <text x="109" y="70" class="mini-desc">（固定不變 ➔ 省 Token 來源）</text>
     </g>
 
-    <!-- 3. 關卡規劃 -->
-    <g transform="translate(24, 144)">
-      <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-      <text x="12" y="16" class="num-pill">3</text>
-      <text x="34" y="17" class="list-title">關卡規劃：單關閉環或多關漸進</text>
-      <text x="34" y="35" class="list-desc">單純任務 1 關搞定！複雜多表才切 2~5 關，嚴禁無意義過度包裝</text>
+    <g transform="translate(488, 50)">
+      <rect x="0" y="0" width="218" height="90" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="109" y="26" class="mini-title">3️⃣ 未來將提供的輸入檔</text>
+      <text x="109" y="50" class="mini-desc">每週／每月變動的動態資料</text>
+      <text x="109" y="70" class="mini-desc">（Excel 流水帳、白板照等）</text>
     </g>
 
-    <!-- 4. 各關 Prompt 與交付物 -->
-    <g transform="translate(24, 190)">
-      <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-      <text x="12" y="16" class="num-pill">4</text>
-      <text x="34" y="17" class="list-title">各關建議 Prompt 與真實交付物規格</text>
-      <text x="34" y="35" class="list-desc">含口語提示詞，並定義實體格式（XLSX / DOCX / PDF / TXT / PPTX）</text>
-    </g>
-
-    <!-- 5. 驗收標準 Checklist -->
-    <g transform="translate(24, 236)">
-      <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-      <text x="12" y="16" class="num-pill">5</text>
-      <text x="34" y="17" class="list-title">各關卡客觀驗收標準（Checklist）</text>
-      <text x="34" y="35" class="list-desc">3~5 項具體驗收條件，確保 AI 產出可比對、零隨機誤差</text>
-    </g>
-
-    <!-- 6. 工作流規格書演進 -->
-    <g transform="translate(24, 282)">
-      <rect x="0" y="0" width="24" height="24" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.5"/>
-      <text x="12" y="16" class="num-pill">6</text>
-      <text x="34" y="17" class="list-title">工作流規格書演進路徑（RTCCF 閉環）</text>
-      <text x="34" y="35" class="list-desc">依規劃報告建立規格書，並隨執行逐步調優收斂，達成全面自動化</text>
+    <g transform="translate(722, 50)">
+      <rect x="0" y="0" width="218" height="90" rx="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="109" y="26" class="mini-title">4️⃣ 預期輸出的檔案</text>
+      <text x="109" y="50" class="mini-desc">主管簽核成品或期望樣版</text>
+      <text x="109" y="70" class="mini-desc">（XLSX / DOCX / PPTX / PDF）</text>
     </g>
   </g>
 
-  <!-- 箭頭：從報告連向終點 -->
-  <path d="M 715 768 L 715 798 L 505 798 L 505 812" fill="none" stroke="#059669" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+  <!-- 分流連線 1 -> 雙路線 -->
+  <path d="M 520 244 L 520 264 L 270 264 L 270 286" fill="none" stroke="#4F46E5" stroke-width="2.5" marker-end="url(#arrow-indigo)"/>
+  <path d="M 520 244 L 520 264 L 770 264 L 770 286" fill="none" stroke="#0D9488" stroke-width="2.5" marker-end="url(#arrow-teal)"/>
 
-  <!-- ==================== 步驟 3：終點里程碑 ==================== -->
-  <g transform="translate(200, 814)">
-    <!-- 向量陰影底層 -->
-    <rect x="2" y="3" width="600" height="50" rx="25" fill="#BFDBFE"/>
-    <!-- 藥丸膠囊外觀 -->
-    <rect x="0" y="0" width="600" height="50" rx="25" fill="url(#grad-bottom-cta)" stroke="#60A5FA" stroke-width="1.5"/>
-    <text x="300" y="31" font-size="15.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5px">
-      🚀 學員依循報告藍圖，步步建構專屬高產能企業級工作流！
+  <!-- 中央選路徽章 -->
+  <g transform="translate(390, 250)">
+    <rect x="0" y="0" width="260" height="28" rx="14" fill="#1E293B"/>
+    <text x="130" y="19" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">🔀 第二部曲：挑選適合的架構師引擎</text>
+  </g>
+
+  <!-- ==================== 路線 A 卡片 ==================== -->
+  <g transform="translate(40, 290)">
+    <rect x="2" y="3" width="460" height="330" rx="14" fill="#E0E7FF"/>
+    <rect x="0" y="0" width="460" height="330" rx="14" fill="#FFFFFF" stroke="#818CF8" stroke-width="2"/>
+    <rect x="0" y="0" width="460" height="42" rx="14" fill="url(#grad-route-a)"/>
+    <rect x="0" y="24" width="460" height="18" fill="url(#grad-route-a)"/>
+    <text x="230" y="27" class="sec-badge">🔍 路線 A：體檢評估報告式（01_路線A 提示詞）</text>
+
+    <!-- 適用情境標籤 -->
+    <rect x="20" y="54" width="420" height="34" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+    <text x="230" y="75" font-size="12.5" font-weight="700" fill="#3730A3" text-anchor="middle">適用：複雜多表勾稽、不確定資料是否齊全、需先做可行性把關</text>
+
+    <!-- 步驟清單 -->
+    <g transform="translate(24, 106)">
+      <circle cx="12" cy="12" r="12" fill="#E0E7FF"/>
+      <text x="12" y="16" font-size="12" font-weight="800" fill="#4338CA" text-anchor="middle">1</text>
+      <text x="34" y="16" class="step-title">紅黃綠燈診斷 ＋ 成品審查</text>
+      <text x="34" y="36" class="step-desc">揪出缺漏欄位與參考表，未提供成品時主動提醒並規劃替代版型</text>
+    </g>
+
+    <g transform="translate(24, 164)">
+      <circle cx="12" cy="12" r="12" fill="#E0E7FF"/>
+      <text x="12" y="16" font-size="12" font-weight="800" fill="#4338CA" text-anchor="middle">2</text>
+      <text x="34" y="16" class="step-title">強制分離拆解固定規則 ＋ 動態同步更新</text>
+      <text x="34" y="36" class="step-desc">直接提煉固定 `.md` 檔存檔；補齊紅黃燈後自動更新報告並通知清單</text>
+    </g>
+
+    <g transform="translate(24, 222)">
+      <circle cx="12" cy="12" r="12" fill="#E0E7FF"/>
+      <text x="12" y="16" font-size="12" font-weight="800" fill="#4338CA" text-anchor="middle">3</text>
+      <text x="34" y="16" class="step-title">產出《可行性評估與關卡規劃報告.md》</text>
+      <text x="34" y="36" class="step-desc">嚴禁在此階段產出 RTCCF_v1；只擬定 Prompt 1-A 供學員關卡 1 啟動</text>
+    </g>
+
+    <rect x="20" y="280" width="420" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="230" y="301" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">📦 產出：評估規劃報告.md ＋ 固定知識庫 .md ➔ 依藍圖進入關卡 1</text>
+  </g>
+
+  <!-- ==================== 路線 B 卡片 ==================== -->
+  <g transform="translate(540, 290)">
+    <rect x="2" y="3" width="460" height="330" rx="14" fill="#CCFBF1"/>
+    <rect x="0" y="0" width="460" height="330" rx="14" fill="#FFFFFF" stroke="#2DD4BF" stroke-width="2"/>
+    <rect x="0" y="0" width="460" height="42" rx="14" fill="url(#grad-route-b)"/>
+    <rect x="0" y="24" width="460" height="18" fill="url(#grad-route-b)"/>
+    <text x="230" y="27" class="sec-badge">💬 路線 B：一問一答漸進式（03_路線B 提示詞）</text>
+
+    <!-- 適用情境標籤 -->
+    <rect x="20" y="54" width="420" height="34" rx="8" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+    <text x="230" y="75" font-size="12.5" font-weight="700" fill="#115E59" text-anchor="middle">適用：想直接產出規格書、由 AI 主導節奏邊聊邊補齊規則</text>
+
+    <!-- 步驟清單 -->
+    <g transform="translate(24, 106)">
+      <circle cx="12" cy="12" r="12" fill="#CCFBF1"/>
+      <text x="12" y="16" font-size="12" font-weight="800" fill="#0F766E" text-anchor="middle">1</text>
+      <text x="34" y="16" class="step-title">建議工作流名稱／說明 ＋ 首版 RTCCF_v1.md</text>
+      <text x="34" y="36" class="step-desc">踩煞車不先算數據！立即產出專案命名、簡介與首版規格書檔案</text>
+    </g>
+
+    <g transform="translate(24, 164)">
+      <circle cx="12" cy="12" r="12" fill="#CCFBF1"/>
+      <text x="12" y="16" font-size="12" font-weight="800" fill="#0F766E" text-anchor="middle">2</text>
+      <text x="34" y="16" class="step-title">一問一答互動引導 ➔ 自動漸進更新</text>
+      <text x="34" y="36" class="step-desc">每次只問 1 題（附選項），回答後 AI 自動把確認規則寫回 RTCCF_v1.md</text>
+    </g>
+
+    <g transform="translate(24, 222)">
+      <circle cx="12" cy="12" r="12" fill="#CCFBF1"/>
+      <text x="12" y="16" font-size="12" font-weight="800" fill="#0F766E" text-anchor="middle">3</text>
+      <text x="34" y="16" class="step-title">先問再拆：徵詢同意後再產出固定資料 .md</text>
+      <text x="34" y="36" class="step-desc">若發現固定規章或對照表，先詢問學員同意再拆解為知識庫獨立檔</text>
+    </g>
+
+    <rect x="20" y="280" width="420" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
+    <text x="230" y="301" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">📦 產出：建議名稱與說明 ＋ 漸進收斂版 RTCCF_v1.md（＋選配固定檔）</text>
+  </g>
+
+  <!-- 匯流連線：雙路線 -> 第三部曲 -->
+  <path d="M 270 620 L 270 644 L 520 644 L 520 662" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-slate)"/>
+  <path d="M 770 620 L 770 644 L 520 644" fill="none" stroke="#475569" stroke-width="2.5"/>
+
+  <!-- ==================== 第三部曲：正式執行與 7 大範例落地 ==================== -->
+  <g transform="translate(40, 666)">
+    <rect x="2" y="3" width="960" height="132" rx="14" fill="#CBD5E1"/>
+    <rect x="0" y="0" width="960" height="132" rx="14" fill="#FFFFFF" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="0" y="0" width="960" height="36" rx="14" fill="url(#grad-bottom-cta)"/>
+    <rect x="0" y="20" width="960" height="16" fill="url(#grad-bottom-cta)"/>
+    <text x="480" y="24" class="sec-badge">🚀 第三部曲：正式執行工作流 ＆ 04_實戰操作範例庫（7 大格式演練）</text>
+
+    <text x="480" y="60" font-size="13.5" font-weight="700" fill="#0F172A" text-anchor="middle">
+      最終統一收斂為【RTCCF_v1.md ＋ 固定知識庫 .md】，後續只需上傳當期動態輸入檔即可穩定產出實體交付物：
     </text>
+
+    <!-- 6 大實體產出格式藥丸 -->
+    <g transform="translate(36, 78)">
+      <rect x="0" y="0" width="136" height="36" rx="18" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.5"/>
+      <text x="68" y="22" class="pill-txt">📊 Excel (.xlsx)</text>
+    </g>
+    <g transform="translate(186, 78)">
+      <rect x="0" y="0" width="136" height="36" rx="18" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"/>
+      <text x="68" y="22" class="pill-txt">📝 Word (.docx)</text>
+    </g>
+    <g transform="translate(336, 78)">
+      <rect x="0" y="0" width="136" height="36" rx="18" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1.5"/>
+      <text x="68" y="22" class="pill-txt">📽️ 簡報 (.pptx)</text>
+    </g>
+    <g transform="translate(486, 78)">
+      <rect x="0" y="0" width="136" height="36" rx="18" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1.5"/>
+      <text x="68" y="22" class="pill-txt">📑 歸檔 (.pdf)</text>
+    </g>
+    <g transform="translate(636, 78)">
+      <rect x="0" y="0" width="136" height="36" rx="18" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+      <text x="68" y="22" class="pill-txt">🔴 申報 (.txt)</text>
+    </g>
+    <g transform="translate(786, 78)">
+      <rect x="0" y="0" width="136" height="36" rx="18" fill="#FDF2F8" stroke="#F9A8D4" stroke-width="1.5"/>
+      <text x="68" y="22" class="pill-txt">🎨 圖文 (.png)</text>
+    </g>
   </g>
 </svg>
