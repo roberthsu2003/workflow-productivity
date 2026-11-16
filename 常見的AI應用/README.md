@@ -25,8 +25,6 @@
 ---
 
 ### 📐 Office 辦公室應用進階對齊（DOCX / XLSX / PPTX / PDF 四大格式）
-- **[Office 辦公室應用進階對齊總覽（兩階段樣版套印標準流程）](./office辦公室應用進階的對齊/README.md)**  
-  解決版面跑版、公式覆蓋與資料錯位問題：從既有正式檔提煉 `{{佔位符}}` 樣版，再搭配結構化資料執行像素級精準對齊批次套印。
 - **[Word (.docx) 進階對齊（結業證明書實戰）](./office辦公室應用進階的對齊/docx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/docx/docx_Word進階對齊實作包.zip)  
   鎖定置中／靠左／靠右段落對齊、固定表格欄寬、長文字自動折行不爆頁。
 - **[Excel (.xlsx) 進階對齊（xltpl 商業報價單實戰）](./office辦公室應用進階的對齊/xlsx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/xlsx/xlsx_Excel進階對齊實作包.zip)  
