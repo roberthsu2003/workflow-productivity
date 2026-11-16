@@ -17,8 +17,8 @@
 
 ### 🔹 範例一：公開金融表格爬取（台灣銀行牌告匯率）
 ```text
-請使用本機 Playwright（或幫我寫一支 uv run --with playwright 的 Python 腳本）開啟台灣銀行牌告匯率網頁（https://rate.bot.com.tw）：
-1. 查詢今日美金 (USD)、日圓 (JPY) 與歐元 (EUR) 對新台幣的「現鈔買入」與「現鈔賣出」匯率。
+請使用本機 Playwright 開啟台灣銀行牌告匯率網頁（https://rate.bot.com.tw）：
+1. 查詢今日美金 (USD)、日圓 (JPY) 與歐元 (EUR) 對新台幣的「現鈔買入」與「現鈔賣出』匯率。
 2. 將結果整理成 Markdown 表格輸出。
 ```
 
@@ -47,12 +47,12 @@
 
 ### 🔹 範例四：登入型網站操作（人機協作半自動登入）
 
-> ⚠️ **關鍵設定提示**：必須使用**有頭模式（`headless=False`）**，瀏覽器視窗才會顯示在螢幕上讓您手動輸入帳密與驗證碼。
+> ⚠️ **關鍵設定提示**：必須保持預設的**有頭模式（不可加上 `--headless`）**，瀏覽器視窗才會顯示在螢幕上讓您手動輸入帳密與驗證碼。
 
 ```text
-請使用本機 Playwright（務必開啟有頭模式 headless=False）前往 momo 購物網登入頁（https://www.momoshop.com.tw/member/Login.jsp）：
-1. 開啟頁面後暫停等待，提示我手動完成登入（若是 Python 腳本請用 input() 暫停等待我按 Enter）。
-2. 當我完成登入並確認繼續後，前往「會員中心 -> 訂單查詢」。
+請使用本機 Playwright 前往 momo 購物網登入頁（https://www.momoshop.com.tw/member/Login.jsp）：
+1. 開啟頁面後停在登入畫面，提示我手動進行登入。
+2. 當我在對話框回覆「我已完成登入」後，前往「會員中心 -> 訂單查詢」。
 3. 收集最近 3 筆訂單的「訂單編號」、「訂購日期」與「訂單金額」，整理成 Markdown 表格輸出。
 ```
 
