@@ -29,8 +29,8 @@
   鎖定置中／靠左／靠右段落對齊、固定表格欄寬、長文字自動折行不爆頁。
 - **[Excel (.xlsx) 進階對齊（xltpl 商業報價單實戰）](./office辦公室應用進階的對齊/xlsx/README.md)**  
   支援 `{% for %}` 動態品項列增減、數值型別寫入、保護原生 `=SUM()` 公式與合併儲存格。
-- **[PowerPoint (.pptx) 進階對齊（16:9 簡報母片佔位符實戰）](./office辦公室應用進階的對齊/pptx/README.md)**  
-  Run 層級精準替換佔位符、強制 `word_wrap` 與長文字自動縮字防溢出。
+- **[PowerPoint (.pptx) 進階對齊（兩大實戰主軸：固定佔位符 vs. 企業母片動態生成）](./office辦公室應用進階的對齊/pptx/README.md)**  
+  **主軸一**：Run 層級精準替換 `{{佔位符}}`、強制 `word_wrap` 與長文字縮字防溢出（例行固定報告）；**主軸二**：讀取公司 `.pptx` 母片（Slide Master）版型目錄，依大綱動態分頁生成簡報（[母片大綱動態生成](./office辦公室應用進階的對齊/pptx/母片大綱動態生成/README.md)）。
 - **[PDF (.pdf) 進階對齊（A4 向量報銷單實戰）](./office辦公室應用進階的對齊/pdf/README.md)**  
   繁中 `TTFont` 防豆腐字、千分位右對齊、跨頁自動重複表頭（`repeatRows=1`）與簽核防撕裂。
 
