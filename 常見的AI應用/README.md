@@ -25,13 +25,13 @@
 ---
 
 ### 📐 Office 辦公室應用進階對齊（DOCX / XLSX / PPTX / PDF 四大格式）
-- **[Word (.docx) 進階對齊（結業證明書實戰）](./office辦公室應用進階的對齊/docx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/docx/docx_Word進階對齊實作包.zip)  
+- **[Word (.docx) 進階對齊（結業證明書實戰）](./office辦公室應用進階的對齊/docx/README.md)**  
   鎖定置中／靠左／靠右段落對齊、固定表格欄寬、長文字自動折行不爆頁。
-- **[Excel (.xlsx) 進階對齊（xltpl 商業報價單實戰）](./office辦公室應用進階的對齊/xlsx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/xlsx/xlsx_Excel進階對齊實作包.zip)  
+- **[Excel (.xlsx) 進階對齊（xltpl 商業報價單實戰）](./office辦公室應用進階的對齊/xlsx/README.md)**  
   支援 `{% for %}` 動態品項列增減、數值型別寫入、保護原生 `=SUM()` 公式與合併儲存格。
-- **[PowerPoint (.pptx) 進階對齊（16:9 簡報母片佔位符實戰）](./office辦公室應用進階的對齊/pptx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/pptx/pptx_PowerPoint進階對齊實作包.zip)  
+- **[PowerPoint (.pptx) 進階對齊（16:9 簡報母片佔位符實戰）](./office辦公室應用進階的對齊/pptx/README.md)**  
   Run 層級精準替換佔位符、強制 `word_wrap` 與長文字自動縮字防溢出。
-- **[PDF (.pdf) 進階對齊（A4 向量報銷單實戰）](./office辦公室應用進階的對齊/pdf/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/pdf/pdf_PDF進階對齊實作包.zip)  
+- **[PDF (.pdf) 進階對齊（A4 向量報銷單實戰）](./office辦公室應用進階的對齊/pdf/README.md)**  
   繁中 `TTFont` 防豆腐字、千分位右對齊、跨頁自動重複表頭（`repeatRows=1`）與簽核防撕裂。
 
 ---
