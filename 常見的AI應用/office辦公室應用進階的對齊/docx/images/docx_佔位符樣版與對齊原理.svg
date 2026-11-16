@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4F46E5"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <linearGradient id="grad-engine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="grad-out" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+    }
+    .main-title { font-size: 23px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .sub-title { font-size: 13.5px; font-weight: 500; fill: #64748B; text-anchor: middle; }
+    .box-header { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .body-bold { font-size: 13.5px; font-weight: 700; fill: #0F172A; }
+    .body-txt { font-size: 12.5px; font-weight: 400; fill: #334155; }
+    .code-pill { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; font-weight: 700; }
+  </style>
+
+  <!-- 畫布底色 -->
+  <rect x="0" y="0" width="1000" height="600" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- 標題區 -->
+  <text x="500" y="40" class="main-title">Word (.docx) 佔位符樣版原理與 Python 核心套件架構</text>
+  <text x="500" y="64" class="sub-title">「排版與資料徹底分離」：底層 XML 鎖定既有格式，僅替換 {{佔位符}} 動態內容</text>
+
+  <!-- ==================== 上半部：為什麼要用佔位符樣版？ ==================== -->
+  <!-- 左側：傳統痛點 -->
+  <g transform="translate(40, 86)">
+    <rect x="2" y="3" width="445" height="122" rx="12" fill="#FEE2E2"/>
+    <rect x="0" y="0" width="445" height="122" rx="12" fill="#FFF5F5" stroke="#FCA5A5" stroke-width="1.8"/>
+    <rect x="0" y="0" width="445" height="32" rx="12" fill="#DC2626"/>
+    <rect x="0" y="18" width="445" height="14" fill="#DC2626"/>
+    <text x="222" y="22" class="box-header">❌ 傳統做法：叫 AI 從零重寫 Word 文件</text>
+
+    <text x="20" y="56" class="body-txt" fill="#7F1D1D">• 每次生成都重排一次，字型、行距、邊距與配色容易走樣</text>
+    <text x="20" y="79" class="body-txt" fill="#7F1D1D">• 學員名字或課名太長時，底線變形或把印章推擠到第二頁</text>
+    <text x="20" y="102" class="body-txt" fill="#7F1D1D">• 段落「置中 / 靠左 / 靠右」設定常在覆寫時不慎遺失</text>
+  </g>
+
+  <!-- 右側：進階對齊正解 -->
+  <g transform="translate(515, 86)">
+    <rect x="2" y="3" width="445" height="122" rx="12" fill="#D1FAE5"/>
+    <rect x="0" y="0" width="445" height="122" rx="12" fill="#F0FDF4" stroke="#6EE7B7" stroke-width="1.8"/>
+    <rect x="0" y="0" width="445" height="32" rx="12" fill="#059669"/>
+    <rect x="0" y="18" width="445" height="14" fill="#059669"/>
+    <text x="222" y="22" class="box-header">✅ 進階對齊：既有成品 ➔ 轉 {{佔位符}} 樣版套印</text>
+
+    <text x="20" y="56" class="body-txt" fill="#064E3B">• 100% 鎖定原檔 XML 結構：字型、框線、頁邊距完全不動</text>
+    <text x="20" y="79" class="body-txt" fill="#064E3B">• 只把變動處挖空改成 {{學員姓名}}、{{課程名稱}} 等變數</text>
+    <text x="20" y="102" class="body-txt" fill="#064E3B">• 遇長文字於鎖定寬度之儲存格內自動折行，版面永不爆頁</text>
+  </g>
+
+  <!-- ==================== 下半部：運作流程與 Python 套件架構 ==================== -->
+  <!-- 左：輸入原料（樣版 + 資料） -->
+  <g transform="translate(40, 236)">
+    <!-- 樣版卡片 -->
+    <rect x="2" y="3" width="265" height="160" rx="12" fill="#DBEAFE"/>
+    <rect x="0" y="0" width="265" height="160" rx="12" fill="#FFFFFF" stroke="#60A5FA" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="32" rx="12" fill="#2563EB"/>
+    <rect x="0" y="18" width="265" height="14" fill="#2563EB"/>
+    <text x="132" y="22" class="box-header">1️⃣ 佔位字符樣版 (.docx)</text>
+
+    <text x="16" y="56" class="body-bold" fill="#1E3A8A">結業證明書_佔位符範本.docx</text>
+    <rect x="16" y="68" width="233" height="76" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+    <text x="28" y="88" class="code-pill" fill="#1D4ED8">標題：{{課程名稱}} (置中鎖定)</text>
+    <text x="28" y="109" class="code-pill" fill="#1D4ED8">姓名：{{學員姓名}} (Run級樣式)</text>
+    <text x="28" y="130" class="code-pill" fill="#1D4ED8">日期：{{發證日期}} (靠右鎖定)</text>
+
+    <!-- 加號圓標 -->
+    <circle cx="132" cy="178" r="14" fill="#2563EB"/>
+    <text x="132" y="183" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">+</text>
+
+    <!-- 資料卡片 -->
+    <rect x="2" y="199" width="265" height="132" rx="12" fill="#FEF3C7"/>
+    <rect x="0" y="196" width="265" height="132" rx="12" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+    <rect x="0" y="196" width="265" height="32" rx="12" fill="#D97706"/>
+    <rect x="0" y="214" width="265" height="14" fill="#D97706"/>
+    <text x="132" y="218" class="box-header">2️⃣ 結構化資料 (.txt / .md)</text>
+
+    <text x="16" y="250" class="body-bold" fill="#92400E">student_data.txt</text>
+    <text x="16" y="274" class="body-txt">• 學員 1：標準長度測試</text>
+    <text x="16" y="294" class="body-txt">• 學員 2：32 字長課名折行測試</text>
+    <text x="16" y="314" class="body-txt">• 學員 3：短期日期區間測試</text>
+  </g>
+
+  <!-- 箭頭：輸入 -> 中央 Python 引擎 -->
+  <line x1="312" y1="316" x2="352" y2="380" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="312" y1="498" x2="352" y2="430" stroke="#4F46E5" stroke-width="2.5" marker-end="url(#arrow-indigo)"/>
+
+  <!-- 中：Python 核心套件引擎 -->
+  <g transform="translate(360, 236)">
+    <rect x="2" y="3" width="320" height="328" rx="14" fill="#E0E7FF"/>
+    <rect x="0" y="0" width="320" height="328" rx="14" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.2"/>
+    <rect x="0" y="0" width="320" height="38" rx="14" fill="url(#grad-engine)"/>
+    <rect x="0" y="22" width="320" height="16" fill="url(#grad-engine)"/>
+    <text x="160" y="25" class="box-header">⚙️ 必備 Python 核心套件引擎</text>
+
+    <!-- 套件 1: docxtpl -->
+    <g transform="translate(16, 52)">
+      <rect x="0" y="0" width="288" height="86" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"/>
+      <text x="14" y="24" class="code-pill" fill="#3730A3">1. docxtpl（核心樣版引擎 ★必裝）</text>
+      <text x="14" y="45" class="body-txt">• 在 Word 內直接支援 {{變數}} 佔位符</text>
+      <text x="14" y="64" class="body-txt">• 支援表格列迴圈 {% tr for %} 與保留原樣式</text>
+      <text x="14" y="80" font-size="11" fill="#4F46E5" font-weight="700">pip install docxtpl</text>
+    </g>
+
+    <!-- 套件 2: python-docx -->
+    <g transform="translate(16, 150)">
+      <rect x="0" y="0" width="288" height="82" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="14" y="24" class="code-pill" fill="#0F172A">2. python-docx（底層 XML 引擎）</text>
+      <text x="14" y="45" class="body-txt">• docxtpl 之底層核心（自動連帶安裝）</text>
+      <text x="14" y="64" class="body-txt">• 用於精細檢查 Paragraph / Run 與表格寬度</text>
+    </g>
+
+    <!-- 套件 3: Jinja2 & 選用工具 -->
+    <g transform="translate(16, 244)">
+      <rect x="0" y="0" width="288" height="70" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="14" y="23" class="code-pill" fill="#0F172A">3. Jinja2（語法解析）＋ docx2pdf（選用）</text>
+      <text x="14" y="43" class="body-txt">• Jinja2 解析 {{變數}} 與條件判斷邏輯</text>
+      <text x="14" y="60" class="body-txt">• 若需一鍵轉防竄改 PDF 可搭配 docx2pdf</text>
+    </g>
+  </g>
+
+  <!-- 箭頭：Python 引擎 -> 輸出成品 -->
+  <line x1="686" y1="400" x2="722" y2="400" stroke="#059669" stroke-width="3" marker-end="url(#arrow-green)"/>
+
+  <!-- 右：精準對齊交付成果 -->
+  <g transform="translate(730, 236)">
+    <rect x="2" y="3" width="230" height="328" rx="14" fill="#D1FAE5"/>
+    <rect x="0" y="0" width="230" height="328" rx="14" fill="#FFFFFF" stroke="#10B981" stroke-width="2.2"/>
+    <rect x="0" y="0" width="230" height="38" rx="14" fill="url(#grad-out)"/>
+    <rect x="0" y="22" width="230" height="16" fill="url(#grad-out)"/>
+    <text x="115" y="25" class="box-header">✨ 精準對齊批次成品</text>
+
+    <g transform="translate(16, 56)">
+      <rect x="0" y="0" width="198" height="58" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1"/>
+      <text x="12" y="22" class="body-bold" fill="#065F46">✅ 段落對齊不跑位</text>
+      <text x="12" y="42" class="body-txt">標題置中、單位靠左、日期靠右</text>
+    </g>
+
+    <g transform="translate(16, 128)">
+      <rect x="0" y="0" width="198" height="58" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1"/>
+      <text x="12" y="22" class="body-bold" fill="#065F46">✅ 長文字自動折行</text>
+      <text x="12" y="42" class="body-txt">左欄寬度鎖定、單頁不爆版</text>
+    </g>
+
+    <g transform="translate(16, 200)">
+      <rect x="0" y="0" width="198" height="58" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1"/>
+      <text x="12" y="22" class="body-bold" fill="#065F46">✅ 零殘留佔位符</text>
+      <text x="12" y="42" class="body-txt">保證無遺留 {{...}} 標籤</text>
+    </g>
+
+    <text x="115" y="294" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">一次產出 3 份以上正式 .docx</text>
+    <text x="115" y="312" font-size="11.5" fill="#475569" text-anchor="middle">（可由 AI 執行或本機一鍵生成）</text>
+  </g>
+</svg>
