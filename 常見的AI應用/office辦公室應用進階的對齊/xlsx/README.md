@@ -89,4 +89,4 @@ writer.save("報價單_示範成果_客戶1_星河創意.xlsx")
 
 ---
 
-[← 返回 Office 進階對齊總覽](../README.md)
+[← 返回現代職場 AI 應用全指南](../../README.md)
