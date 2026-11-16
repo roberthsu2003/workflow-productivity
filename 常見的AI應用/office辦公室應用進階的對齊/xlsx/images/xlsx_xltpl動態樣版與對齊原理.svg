@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-indigo" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4F46E5"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <linearGradient id="grad-engine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="grad-out" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+    }
+    .main-title { font-size: 23px; font-weight: 800; fill: #0F172A; text-anchor: middle; }
+    .sub-title { font-size: 13.5px; font-weight: 500; fill: #64748B; text-anchor: middle; }
+    .box-header { font-size: 14px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .body-bold { font-size: 13.5px; font-weight: 700; fill: #0F172A; }
+    .body-txt { font-size: 12.5px; font-weight: 400; fill: #334155; }
+    .code-pill { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; font-weight: 700; }
+  </style>
+
+  <rect x="0" y="0" width="1000" height="600" rx="16" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+
+  <text x="500" y="40" class="main-title">Excel (.xlsx) xltpl 動態樣版原理與 Python 核心套件架構</text>
+  <text x="500" y="64" class="sub-title">「動態增減列數 ＋ 原生公式自動推移」：徹底保護 =SUM() 公式、數值型別與合併儲存格</text>
+
+  <!-- 上半部對比 -->
+  <g transform="translate(40, 86)">
+    <rect x="2" y="3" width="445" height="122" rx="12" fill="#FEE2E2"/>
+    <rect x="0" y="0" width="445" height="122" rx="12" fill="#FFF5F5" stroke="#FCA5A5" stroke-width="1.8"/>
+    <rect x="0" y="0" width="445" height="32" rx="12" fill="#DC2626"/>
+    <rect x="0" y="18" width="445" height="14" fill="#DC2626"/>
+    <text x="222" y="22" class="box-header">❌ 傳統做法：硬算列號手寫 openpyxl</text>
+
+    <text x="20" y="56" class="body-txt" fill="#7F1D1D">• 品項數量一變多，下方「合計公式」與「備註欄」位置全撞爛</text>
+    <text x="20" y="79" class="body-txt" fill="#7F1D1D">• 常把數字存成文字字串，導致 =SUM() 失效變成 0（綠三角警告）</text>
+    <text x="20" y="102" class="body-txt" fill="#7F1D1D">• AI 常偷懶直接寫死計算結果，破壞原始動態公式連動能力</text>
+  </g>
+
+  <g transform="translate(515, 86)">
+    <rect x="2" y="3" width="445" height="122" rx="12" fill="#D1FAE5"/>
+    <rect x="0" y="0" width="445" height="122" rx="12" fill="#F0FDF4" stroke="#6EE7B7" stroke-width="1.8"/>
+    <rect x="0" y="0" width="445" height="32" rx="12" fill="#059669"/>
+    <rect x="0" y="18" width="445" height="14" fill="#059669"/>
+    <text x="222" y="22" class="box-header">✅ 進階對齊：xltpl 動態迴圈樣版套印</text>
+
+    <text x="20" y="56" class="body-txt" fill="#064E3B">• 用 {% for it in items %} 自動依資料筆數展開新列、繼承樣式</text>
+    <text x="20" y="79" class="body-txt" fill="#064E3B">• 下方 =SUM() 公式與跨欄合併備註格自動向下順延且不破裂</text>
+    <text x="20" y="102" class="body-txt" fill="#064E3B">• 單價／數量嚴格以數值型別寫入，保留千分位 #,##0 格式</text>
+  </g>
+
+  <!-- 下半部：運作流程 -->
+  <g transform="translate(40, 236)">
+    <rect x="2" y="3" width="265" height="160" rx="12" fill="#DBEAFE"/>
+    <rect x="0" y="0" width="265" height="160" rx="12" fill="#FFFFFF" stroke="#60A5FA" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="32" rx="12" fill="#2563EB"/>
+    <rect x="0" y="18" width="265" height="14" fill="#2563EB"/>
+    <text x="132" y="22" class="box-header">1️⃣ xltpl 動態樣版 (.xlsx)</text>
+
+    <text x="16" y="56" class="body-bold" fill="#1E3A8A">報價單_xltpl樣版.xlsx</text>
+    <rect x="16" y="68" width="233" height="76" rx="8" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+    <text x="26" y="88" class="code-pill" fill="#1D4ED8">{% for it in items %}</text>
+    <text x="26" y="109" class="code-pill" fill="#1D4ED8">{{ it.name }} | =D13*F13</text>
+    <text x="26" y="130" class="code-pill" fill="#1D4ED8">{% endfor %} ➔ =SUM(...)</text>
+
+    <circle cx="132" cy="178" r="14" fill="#2563EB"/>
+    <text x="132" y="183" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">+</text>
+
+    <rect x="2" y="199" width="265" height="132" rx="12" fill="#FEF3C7"/>
+    <rect x="0" y="196" width="265" height="132" rx="12" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+    <rect x="0" y="196" width="265" height="32" rx="12" fill="#D97706"/>
+    <rect x="0" y="214" width="265" height="14" fill="#D97706"/>
+    <text x="132" y="218" class="box-header">2️⃣ 客戶品項資料 (.md)</text>
+
+    <text x="16" y="250" class="body-bold" fill="#92400E">quotation_data.md</text>
+    <text x="16" y="274" class="body-txt">• 客戶 1：標準 3 項服務</text>
+    <text x="16" y="294" class="body-txt">• 客戶 2：5 項＋長備註測試</text>
+    <text x="16" y="314" class="body-txt">• 客戶 3：4 項混合計價單位</text>
+  </g>
+
+  <line x1="312" y1="316" x2="352" y2="380" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="312" y1="498" x2="352" y2="430" stroke="#4F46E5" stroke-width="2.5" marker-end="url(#arrow-indigo)"/>
+
+  <g transform="translate(360, 236)">
+    <rect x="2" y="3" width="320" height="328" rx="14" fill="#E0E7FF"/>
+    <rect x="0" y="0" width="320" height="328" rx="14" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.2"/>
+    <rect x="0" y="0" width="320" height="38" rx="14" fill="url(#grad-engine)"/>
+    <rect x="0" y="22" width="320" height="16" fill="url(#grad-engine)"/>
+    <text x="160" y="25" class="box-header">⚙️ 必備 Python 核心套件引擎</text>
+
+    <g transform="translate(16, 52)">
+      <rect x="0" y="0" width="288" height="86" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"/>
+      <text x="14" y="24" class="code-pill" fill="#3730A3">1. xltpl（動態 Excel 引擎 ★必裝）</text>
+      <text x="14" y="45" class="body-txt">• 支援 {% for %} 動態增減品項列</text>
+      <text x="14" y="64" class="body-txt">• 自動重算相對公式位址並推擠備註格</text>
+      <text x="14" y="80" font-size="11" fill="#4F46E5" font-weight="700">pip install xltpl</text>
+    </g>
+
+    <g transform="translate(16, 150)">
+      <rect x="0" y="0" width="288" height="82" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="14" y="24" class="code-pill" fill="#0F172A">2. openpyxl（底層 .xlsx 引擎）</text>
+      <text x="14" y="45" class="body-txt">• 讀取／驗證儲存格公式與數值型別</text>
+      <text x="14" y="64" class="body-txt">• 控制千分位 #,##0、框線與自動換行</text>
+    </g>
+
+    <g transform="translate(16, 244)">
+      <rect x="0" y="0" width="288" height="70" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="14" y="23" class="code-pill" fill="#0F172A">3. Jinja2（語法解析）＋ pandas（選用）</text>
+      <text x="14" y="43" class="body-txt">• Jinja2 解析迴圈與 {{變數}} 標籤</text>
+      <text x="14" y="60" class="body-txt">• 若有大量 CSV/明細彙整可搭配 pandas</text>
+    </g>
+  </g>
+
+  <line x1="686" y1="400" x2="722" y2="400" stroke="#059669" stroke-width="3" marker-end="url(#arrow-green)"/>
+
+  <g transform="translate(730, 236)">
+    <rect x="2" y="3" width="230" height="328" rx="14" fill="#D1FAE5"/>
+    <rect x="0" y="0" width="230" height="328" rx="14" fill="#FFFFFF" stroke="#10B981" stroke-width="2.2"/>
+    <rect x="0" y="0" width="230" height="38" rx="14" fill="url(#grad-out)"/>
+    <rect x="0" y="22" width="230" height="16" fill="url(#grad-out)"/>
+    <text x="115" y="25" class="box-header">✨ 精準對齊批次成品</text>
+
+    <g transform="translate(16, 56)">
+      <rect x="0" y="0" width="198" height="58" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1"/>
+      <text x="12" y="22" class="body-bold" fill="#065F46">✅ 動態列自動展開</text>
+      <text x="12" y="42" class="body-txt">3 / 4 / 5 列皆自動繼承樣式</text>
+    </g>
+
+    <g transform="translate(16, 128)">
+      <rect x="0" y="0" width="198" height="58" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1"/>
+      <text x="12" y="22" class="body-bold" fill="#065F46">✅ 原生公式 100% 存活</text>
+      <text x="12" y="42" class="body-txt">點開仍為 =SUM() 動態計算</text>
+    </g>
+
+    <g transform="translate(16, 200)">
+      <rect x="0" y="0" width="198" height="58" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1"/>
+      <text x="12" y="22" class="body-bold" fill="#065F46">✅ 合併格長備註折行</text>
+      <text x="12" y="42" class="body-txt">自動順延下推且不跑版</text>
+    </g>
+
+    <text x="115" y="294" font-size="12" font-weight="700" fill="#047857" text-anchor="middle">一次產出多份正式 .xlsx</text>
+    <text x="115" y="312" font-size="11.5" fill="#475569" text-anchor="middle">（客戶改單價仍會自動重算）</text>
+  </g>
+</svg>

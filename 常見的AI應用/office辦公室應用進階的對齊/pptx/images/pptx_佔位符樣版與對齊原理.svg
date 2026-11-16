@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 580" width="1040" height="580" font-family="'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eff6ff"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1040" height="580" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Header -->
+  <rect x="24" y="20" width="992" height="64" rx="12" fill="url(#navyGrad)" filter="url(#shadow)"/>
+  <text x="520" y="48" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="700">PowerPoint (.pptx) 佔位符樣版與防溢出對齊原理</text>
+  <text x="520" y="72" text-anchor="middle" fill="#dbeafe" font-size="13">不重畫版面、只換 Run 文字：鎖定 16:9 座標框 + 自動折行 + 長文字動態縮字</text>
+
+  <!-- Step 1: Left Card (Template) -->
+  <g transform="translate(28, 108)" filter="url(#shadow)">
+    <rect width="300" height="350" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect width="300" height="40" rx="12" fill="#e0e7ff"/>
+    <rect y="28" width="300" height="12" fill="#e0e7ff"/>
+    <text x="150" y="26" text-anchor="middle" fill="#1e3a8a" font-size="15" font-weight="700">① 設計師預留佔位符樣版</text>
+
+    <!-- Mini 16:9 Slide preview -->
+    <rect x="18" y="54" width="264" height="148" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2"/>
+    <rect x="18" y="54" width="264" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="30" y="72" fill="#fde047" font-size="11" font-weight="700">{{專案名稱}}</text>
+
+    <!-- KPI Cards -->
+    <rect x="26" y="90" width="76" height="42" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-dasharray="3,2"/>
+    <text x="64" y="106" text-anchor="middle" fill="#64748b" font-size="9">{{KPI1_標題}}</text>
+    <text x="64" y="123" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">{{KPI1_數字}}</text>
+
+    <rect x="112" y="90" width="76" height="42" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-dasharray="3,2"/>
+    <text x="150" y="106" text-anchor="middle" fill="#64748b" font-size="9">{{KPI2_標題}}</text>
+    <text x="150" y="123" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">{{KPI2_數字}}</text>
+
+    <rect x="198" y="90" width="76" height="42" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-dasharray="3,2"/>
+    <text x="236" y="106" text-anchor="middle" fill="#64748b" font-size="9">{{KPI3_標題}}</text>
+    <text x="236" y="123" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">{{KPI3_數字}}</text>
+
+    <!-- Bottom Content Boxes -->
+    <rect x="26" y="140" width="120" height="52" rx="4" fill="#ffffff" stroke="#64748b" stroke-dasharray="3,2"/>
+    <text x="34" y="158" fill="#0f172a" font-size="10" font-weight="700">📌 重點摘要</text>
+    <text x="34" y="176" fill="#2563eb" font-size="10">{{重點摘要}}</text>
+
+    <rect x="154" y="140" width="120" height="52" rx="4" fill="#ffffff" stroke="#64748b" stroke-dasharray="3,2"/>
+    <text x="162" y="158" fill="#0f172a" font-size="10" font-weight="700">🚀 下週待辦</text>
+    <text x="162" y="176" fill="#2563eb" font-size="10">{{下週待辦}}</text>
+
+    <!-- Notes -->
+    <text x="20" y="226" fill="#0f172a" font-size="12.5" font-weight="700">樣版設計 3 大原則：</text>
+    <text x="20" y="248" fill="#334155" font-size="12">• 先固定 16:9 版面、色塊與卡片邊界</text>
+    <text x="20" y="268" fill="#334155" font-size="12">• 在文字框內設定好字型、大小與置中</text>
+    <text x="20" y="288" fill="#334155" font-size="12">• 用 {{欄位}} 標記，避免與內文混用</text>
+
+    <rect x="18" y="304" width="264" height="34" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="150" y="325" text-anchor="middle" fill="#92400e" font-size="11.5" font-weight="700">⚠ 勿直接覆寫 shape.text，會洗掉格式！</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="334" y1="283" x2="366" y2="283" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- Step 2: Center Card (Python Engine) -->
+  <g transform="translate(372, 108)" filter="url(#shadow)">
+    <rect width="300" height="350" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="300" height="40" rx="12" fill="#dbeafe"/>
+    <rect y="28" width="300" height="12" fill="#dbeafe"/>
+    <text x="150" y="26" text-anchor="middle" fill="#1e40af" font-size="15" font-weight="700">② Python 對齊引擎 (python-pptx)</text>
+
+    <!-- Rule 1 -->
+    <rect x="16" y="54" width="268" height="74" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="28" y="75" fill="#1d4ed8" font-size="13" font-weight="700">1. Run 層級精準替換</text>
+    <text x="28" y="95" fill="#334155" font-size="11.5">遍歷 paragraph.runs 替換 {{key}}</text>
+    <text x="28" y="113" fill="#475569" font-size="11">保留粗體、色彩、PP_ALIGN 對齊設定</text>
+
+    <!-- Rule 2 -->
+    <rect x="16" y="138" width="268" height="74" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="28" y="159" fill="#1d4ed8" font-size="13" font-weight="700">2. 強制邊界折行 (word_wrap)</text>
+    <text x="28" y="179" fill="#334155" font-size="11.5">鎖定 tf.word_wrap = True</text>
+    <text x="28" y="197" fill="#475569" font-size="11">依卡片寬度自動斷行，絕不橫向衝出邊框</text>
+
+    <!-- Rule 3 -->
+    <rect x="16" y="222" width="268" height="82" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="28" y="243" fill="#1d4ed8" font-size="13" font-weight="700">3. 長文字防溢出動態縮字</text>
+    <text x="28" y="263" fill="#334155" font-size="11.5">偵測字數門檻（例如 &gt; 130 字或 &gt; 20 字標題）</text>
+    <text x="28" y="281" fill="#475569" font-size="11">自動微調 Pt(13) → Pt(10.5) 與行距</text>
+
+    <!-- Package badge -->
+    <rect x="16" y="314" width="268" height="24" rx="6" fill="#eff6ff"/>
+    <text x="150" y="330" text-anchor="middle" fill="#1e3a8a" font-size="11" font-weight="700">核心套件：python-pptx ＋ lxml（底層 XML）</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="678" y1="283" x2="710" y2="283" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Step 3: Right Card (Output) -->
+  <g transform="translate(716, 108)" filter="url(#shadow)">
+    <rect width="296" height="350" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="1.5"/>
+    <rect width="296" height="40" rx="12" fill="#d1fae5"/>
+    <rect y="28" width="296" height="12" fill="#d1fae5"/>
+    <text x="148" y="26" text-anchor="middle" fill="#065f46" font-size="15" font-weight="700">③ 完美對齊的成品簡報</text>
+
+    <!-- Mini output slide -->
+    <rect x="18" y="54" width="260" height="148" rx="6" fill="#ffffff" stroke="#10b981" stroke-width="1.2"/>
+    <rect x="18" y="54" width="260" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="28" y="72" fill="#ffffff" font-size="9.5" font-weight="700">跨部門 ERP 升級暨電子簽核整合專案</text>
+
+    <!-- KPI Cards filled -->
+    <rect x="26" y="90" width="74" height="42" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="63" y="105" text-anchor="middle" fill="#475569" font-size="8.5">表單電子化</text>
+    <text x="63" y="123" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">86.0%</text>
+
+    <rect x="111" y="90" width="74" height="42" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="148" y="105" text-anchor="middle" fill="#475569" font-size="8.5">簽核平均天數</text>
+    <text x="148" y="123" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">1.2 天</text>
+
+    <rect x="196" y="90" width="74" height="42" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+    <text x="233" y="105" text-anchor="middle" fill="#475569" font-size="8.5">耗材節省</text>
+    <text x="233" y="123" text-anchor="middle" fill="#1d4ed8" font-size="12" font-weight="700">68%</text>
+
+    <!-- Bottom Content filled & wrapped -->
+    <rect x="26" y="140" width="118" height="52" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="32" y="154" fill="#0f172a" font-size="8.5" font-weight="700">📌 重點摘要 (自動縮字)</text>
+    <text x="32" y="167" fill="#334155" font-size="7.5">1. 完成三大表單整併...</text>
+    <text x="32" y="178" fill="#334155" font-size="7.5">2. 導入 AI 輔助初審...</text>
+
+    <rect x="152" y="140" width="118" height="52" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="158" y="154" fill="#0f172a" font-size="8.5" font-weight="700">🚀 下週待辦 (不爆框)</text>
+    <text x="158" y="167" fill="#334155" font-size="7.5">1. 匯率自動換算測試...</text>
+    <text x="158" y="178" fill="#334155" font-size="7.5">2. 廠區權限移轉...</text>
+
+    <text x="20" y="226" fill="#065f46" font-size="12.5" font-weight="700">驗收 3 大關鍵指標：</text>
+    <text x="20" y="248" fill="#334155" font-size="12">✅ 16:9 卡片與標題對齊不跑位</text>
+    <text x="20" y="268" fill="#334155" font-size="12">✅ KPI 數字維持置中與大字體強調</text>
+    <text x="20" y="288" fill="#334155" font-size="12">✅ 長文本自動縮字折行，零溢出</text>
+
+    <rect x="18" y="304" width="260" height="34" rx="6" fill="#ecfdf5" stroke="#10b981"/>
+    <text x="148" y="325" text-anchor="middle" fill="#065f46" font-size="11.5" font-weight="700">✨ 100 份週報 1 秒批次產出</text>
+  </g>
+
+  <!-- Bottom Package & Pitfall Bar -->
+  <g transform="translate(28, 476)" filter="url(#shadow)">
+    <rect width="984" height="82" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="24" y="28" fill="#0f172a" font-size="14" font-weight="700">🧰 課堂必備 Python 套件一覽</text>
+    <text x="24" y="50" fill="#334155" font-size="12.5">
+      <tspan font-weight="700" fill="#1d4ed8">1. python-pptx</tspan>（讀取/修改投影片、Shape 座標、Paragraph 與 Run 樣式）　
+      <tspan font-weight="700" fill="#1d4ed8">2. lxml</tspan>（隨 python-pptx 自動安裝，處理底層 XML 屬性）　
+      <tspan font-weight="700" fill="#059669">3. Pillow / matplotlib</tspan>（選配：插入動態圖表或裁切圖片）
+    </text>
+    <text x="24" y="70" fill="#64748b" font-size="11.5">安裝指令：uv run --with python-pptx python render_pptx.py（或 pip install python-pptx）</text>
+  </g>
+</svg>
