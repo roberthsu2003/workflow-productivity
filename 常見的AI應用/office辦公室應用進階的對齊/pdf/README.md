@@ -17,6 +17,8 @@
 | 測試資料 | [expense_data.md](./expense_data.md) | 含「標準單頁（4 筆）」與「跨頁長清單（18 筆）」兩組資料 |
 | 示範成果 1 | [報銷核銷單_示範成果_1_標準單頁.pdf](./報銷核銷單_示範成果_1_標準單頁.pdf) | 標準單頁輸出（NT$ 7,230，數字右對齊、簽核框完整） |
 | 示範成果 2 | [報銷核銷單_示範成果_2_跨頁長清單(自動重複表頭).pdf](./報銷核銷單_示範成果_2_跨頁長清單(自動重複表頭).pdf) | 18 筆跨 2 頁，第 2 頁自動重複深藍表頭、頁尾 `第 X 頁 / 共 2 頁` |
+| 頁頭圖片 | [images/company_header_logo.png](./images/company_header_logo.png) | 企業頁頭 Logo＋公司名稱 PNG（已透過 `NumberedCanvas` 繪製於每頁頁首） |
+| 頁尾圖片 | [images/company_footer_banner.png](./images/company_footer_banner.png) | 企業頁尾聯絡資訊與機密條 PNG（已透過 `NumberedCanvas` 繪製於每頁頁尾） |
 
 ---
 

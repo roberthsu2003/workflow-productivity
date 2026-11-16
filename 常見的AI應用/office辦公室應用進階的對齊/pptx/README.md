@@ -17,6 +17,8 @@
 | 測試資料 | [presentation_data.md](./presentation_data.md) | 含「標準版」與「長文字壓力測試」兩組結構化資料 |
 | 示範成果 1 | [簡報_示範成果_1_智慧客服專案.pptx](./簡報_示範成果_1_智慧客服專案.pptx) | 標準資料套用結果（KPI 置中、字型色彩完全保留） |
 | 示範成果 2 | [簡報_示範成果_2_ERP升級(長文字防溢出測試).pptx](./簡報_示範成果_2_ERP升級(長文字防溢出測試).pptx) | 長標題與長條列自動縮字折行，不爆出卡片框 |
+| 頁頭圖片 | [images/company_header_logo.png](./images/company_header_logo.png) | 企業頁頭 Logo＋公司名稱 PNG（已嵌入封面與內頁右上角） |
+| 頁尾圖片 | [images/company_footer_banner.png](./images/company_footer_banner.png) | 企業頁尾聯絡資訊與機密條 PNG（已嵌入封面與內頁左下角） |
 
 ---
 
