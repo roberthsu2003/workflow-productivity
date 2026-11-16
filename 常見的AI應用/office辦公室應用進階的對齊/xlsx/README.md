@@ -33,7 +33,10 @@
 > 3. **型別對齊關鍵字 `數值型別（Number）` ＋ `千分位 #,##0`**：套印階段務必強制數量與單價寫入為數值而非文字，否則公式會回傳錯誤或變成 `0`。
 > 4. **合併格防跑版關鍵字 `保留合併儲存格與自動換行`**：鎖定底部備註欄的跨欄合併與 `wrap_text` 折行設定，讓列數增加後備註欄自動往下順延且不破版。
 
-上傳 [`報價單.xlsx`](./報價單.xlsx) 給 AI，發送以下提示詞即可產出 [`報價單_xltpl樣版.xlsx`](./報價單_xltpl樣版.xlsx)：
+上傳 [`報價單.xlsx`](./報價單.xlsx) 給 AI，請試著先依照上方 4 個關鍵字自己撰寫提示詞；若需要參考範例再點擊展開：
+
+<details>
+<summary>📋 點此展開「階段 0 參考 Prompt」（建議先自己試寫看看）</summary>
 
 ```markdown
 請讀取我上傳的原始商業試算表《報價單.xlsx》，將其轉換為符合 Python xltpl / Jinja2 語法規範的「動態擴展佔位符樣版」。
@@ -51,11 +54,16 @@
 4. 請產出樣版檔，命名為《報價單_xltpl樣版.xlsx》。
 ```
 
+</details>
+
 ---
 
 ### 🎯 階段 1：批次套印與進階對齊
 
-上傳 [`報價單_xltpl樣版.xlsx`](./報價單_xltpl樣版.xlsx) 與 [`quotation_data.md`](./quotation_data.md)，發送以下提示詞：
+上傳 [`報價單_xltpl樣版.xlsx`](./報價單_xltpl樣版.xlsx) 與 [`quotation_data.md`](./quotation_data.md)，請先自己練習下指令要求 AI 套印並保護公式，有需要再展開參考 Prompt：
+
+<details>
+<summary>📋 點此展開「階段 1 參考 Prompt」（建議先自己試寫看看）</summary>
 
 ```markdown
 請以我提供的《報價單_xltpl樣版.xlsx》為結構範本，並讀取 quotation_data.md 內的客戶資料，為每位客戶各產生一份 .xlsx 商業報價單。
@@ -66,6 +74,8 @@
 3. 公式與樣式保留：嚴禁覆蓋任何計算公式為死值；保留千分位格式（`#,##0`）與合約備註欄位的跨欄合併與自動折行。
 4. 交付檢核：產出 3 份可供下載的 .xlsx 檔案，且含稅總計需與 quotation_data.md 內的預期金額精確相符。
 ```
+
+</details>
 
 #### 💻 Python xltpl 本機執行參考（10 行極致簡潔）
 ```python

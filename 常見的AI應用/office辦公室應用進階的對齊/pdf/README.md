@@ -33,7 +33,11 @@
 > 3. **「跨頁重複表頭（`repeatRows=1`）+ `KeepTogether`」**：確保超過 1 頁時第 2 頁頂端自動補上表頭，且底部簽核區絕不被頁尾切斷。
 > 4. **「雙遍掃描頁碼（`NumberedCanvas`）」**：普通寫法只能印出「第 1 頁」，必須使用兩階段 Canvas 才能準確印出 `第 1 頁 / 共 2 頁`。
 
-📋 **Prompt 0（複製使用）**：
+請先試著依照上方 4 個關鍵字自己撰寫提示詞；若需要參考範例再點擊展開：
+
+<details>
+<summary>📋 點此展開「階段 0 參考 Prompt」（建議先自己試寫看看）</summary>
+
 ```text
 請閱讀這份 `報銷核銷單_原始範例.pdf`，幫我歸納出一份給 Python ReportLab 使用的排版規格書 `pdf_layout_spec.md`：
 1. 量測並固定 A4 頁面邊界，確保所有表格欄寬總和嚴格等於可用內容寬度（174mm）。
@@ -42,11 +46,17 @@
 4. 定義頁尾水平分隔線與靠右對齊的「第 X 頁 / 共 Y 頁」規格。
 ```
 
+</details>
+
 ---
 
 ### 階段 1：依據規格書與資料檔，產出跨頁不跑版的向量 PDF
 
-📋 **Prompt 1（複製使用）**：
+請先自己練習向 AI 下達 `reportlab` 排版與防斷頁要求，有需要再展開參考 Prompt：
+
+<details>
+<summary>📋 點此展開「階段 1 參考 Prompt」（建議先自己試寫看看）</summary>
+
 ```text
 請嚴格依照 `pdf_layout_spec.md` 的排版規格，讀取 `expense_data.md` 中的 Case 1 與 Case 2 資料，幫我寫一支使用 `reportlab` 的 Python 腳本，分別產出兩份 A4 向量 PDF：
 1. 註冊繁體中文字型（macOS 使用 `/System/Library/Fonts/Supplemental/Arial Unicode.ttf`），確保所有中文與標點清晰顯示。
@@ -54,6 +64,8 @@
 3. 底部三欄簽核區塊必須使用 `KeepTogether` 包裝，防止跨頁時被切開。
 4. 實作雙遍掃描的 `NumberedCanvas`，在每頁右下角精準對齊顯示「第 X 頁 / 共 Y 頁」。
 ```
+
+</details>
 
 #### 💻 核心 Python 實作範例（`reportlab` 跨頁防斷裂精華）
 ```python
