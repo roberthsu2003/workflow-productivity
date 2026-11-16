@@ -24,9 +24,15 @@
 
 ---
 
-### 📐 Office 辦公室應用進階對齊（Advanced Alignment & Precision Templates）
-- **[Office 辦公室應用進階的對齊（Docx 證書與 Xlsx 報價單套印）](./office辦公室應用進階的對齊/README.md)**  
-  解決排版跑版、公式覆蓋與資料錯位：從既有正式 Word 證書與 Excel 報價單出發，經 AI 逆向提煉為鎖定排版、相容 Python xltpl 動態迴圈與保護動態公式的「佔位符樣版」，再搭配結構化資料庫實現精準對齊批次套印，提供完整原始檔、樣版、測試資料與示範成果一鍵下載。
+### 📐 Office 辦公室應用進階對齊（DOCX / XLSX / PPTX / PDF 四大格式）
+- **[Office 辦公室應用進階對齊總覽（兩階段樣版套印標準流程）](./office辦公室應用進階的對齊/README.md)**  
+  解決版面跑版、公式覆蓋與資料錯位問題：從既有正式檔提煉 `{{佔位符}}` 樣版，再搭配結構化資料執行像素級精準對齊批次套印。
+- **[Word (.docx) 進階對齊（結業證明書實戰）](./office辦公室應用進階的對齊/docx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/docx/docx_Word進階對齊實作包.zip)  
+  鎖定置中／靠左／靠右段落對齊、固定表格欄寬、長文字自動折行不爆頁。
+- **[Excel (.xlsx) 進階對齊（xltpl 商業報價單實戰）](./office辦公室應用進階的對齊/xlsx/README.md)** ｜ [📥 一鍵下載包](./office辦公室應用進階的對齊/xlsx/xlsx_Excel進階對齊實作包.zip)  
+  支援 `{% for %}` 動態品項列增減、數值型別寫入、保護原生 `=SUM()` 公式與合併儲存格。
+- **[PowerPoint (.pptx) 進階對齊](./office辦公室應用進階的對齊/pptx/README.md)** ＆ **[PDF (.pdf) 進階對齊](./office辦公室應用進階的對齊/pdf/README.md)** *(建置中)*  
+  分別聚焦 16:9 簡報母片佔位符注入防溢出，以及向量文件跨頁重複表頭、頁碼與階層書籤對齊。
 
 ---
 
