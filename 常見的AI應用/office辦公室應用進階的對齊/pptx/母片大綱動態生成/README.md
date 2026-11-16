@@ -10,12 +10,12 @@
 
 | 檔案類型 | 檔案名稱 | 說明 |
 | :--- | :--- | :--- |
-| 公司母片範本 | [企業母片範本.pptx](./企業母片範本.pptx) | 16:9 企業母片，內建 5 種標準 Layout（封面、單欄、章節頁、雙欄、雙欄對比） |
+| 公司母片範本 | [企業母片範本.pptx](./企業母片範本.pptx) | 16:9 企業母片，內建頁首 Logo 與頁尾橫幅圖片，以及 8 種標準 Layout（封面、單欄、章節、雙欄、對比、結尾致謝、左重點右說明、左圖右文） |
 | 簡報大綱範例 | [sample_outline.md](./sample_outline.md) | 提案簡報大綱（純 Markdown 文字，無須管排版座標） |
 | 步驟 1 腳本 | [inspect_master.py](./inspect_master.py) | **母片體檢工具**：掃描公司 `.pptx` 母片，輸出所有 Layout 與原生 `placeholder.idx` |
 | AI 規劃規格 | [slide_plan.json](./slide_plan.json) | AI 閱讀大綱與母片目錄後，產出的分頁與版型配對 JSON |
-| 步驟 3 腳本 | [build_from_outline.py](./build_from_outline.py) | **動態生成引擎**：依 JSON 動態 `add_slide`，填入內容、防溢出並清除未用空框 |
-| 示範成果 | [簡報_母片動態生成示範.pptx](./簡報_母片動態生成示範.pptx) | 執行 `build_from_outline.py` 產出的 6 頁完整企業簡報 |
+| 步驟 3 腳本 | [build_from_outline.py](./build_from_outline.py) | **動態生成引擎**：依 JSON 動態 `add_slide`，填入文字/圖片、防溢出並清除未用空框 |
+| 示範成果 | [簡報_母片動態生成示範.pptx](./簡報_母片動態生成示範.pptx) | 執行 `build_from_outline.py` 產出的 8 頁完整企業簡報 |
 
 ---
 

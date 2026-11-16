@@ -14,8 +14,15 @@ def clear_existing_slides(prs: Presentation) -> None:
         prs.slides._sldIdLst.remove(sld_id)
 
 
-def fill_placeholder(ph, content, max_chars: int = 160, shrink_pt: float = 13.0) -> None:
-    """填入文字或條列清單至母片佔位符，開啟 word_wrap 並在過長時自動縮字防溢出。"""
+def fill_placeholder(ph, content, base_dir: Path, max_chars: int = 160, shrink_pt: float = 13.0) -> None:
+    """填入文字、條列清單或圖片至母片佔位符，開啟 word_wrap 並在過長時自動縮字防溢出。"""
+    if isinstance(content, dict) and "image" in content:
+        img_path = Path(content["image"])
+        if not img_path.is_absolute():
+            img_path = (base_dir / img_path).resolve()
+        ph.insert_picture(str(img_path))
+        return
+
     tf = ph.text_frame
     tf.word_wrap = True
     tf.clear()
@@ -59,7 +66,7 @@ def build_presentation(master_path: Path, plan_path: Path, output_path: Path) ->
         for idx_str, content in slide_spec["placeholders"].items():
             ph_idx = int(idx_str)
             if ph_idx in {p.placeholder_format.idx for p in slide.placeholders}:
-                fill_placeholder(slide.placeholders[ph_idx], content)
+                fill_placeholder(slide.placeholders[ph_idx], content, plan_path.parent)
                 used.add(ph_idx)
 
         remove_unused_placeholders(slide, used)
