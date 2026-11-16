@@ -46,6 +46,12 @@
 
 ---
 
+### 🕷️ 本機網頁爬蟲與動態資料蒐集（Desktop AI × Playwright）
+- **[本機 Playwright 網頁爬蟲實戰指南（Claude Desktop / ChatGPT 桌面版 / Antigravity）](./網頁爬蟲_Playwright本機實戰/README.md)**  
+  必須使用**本機桌面版 AI** 搭配 **Playwright** 真實瀏覽器，才能突破雲端網路白名單與動態 JS 渲染限制！涵蓋通用 Python 爬蟲範本與人機協作 2FA 手動登入技巧。
+- **產業實戰範例**：[🛒 電商比價與登入操作](./網頁爬蟲_Playwright本機實戰/examples/ecommerce.md) ｜ [💼 創投動態官網調研與截圖](./網頁爬蟲_Playwright本機實戰/examples/venture_capital.md) ｜ [🌿 綠能與台電即時資訊爬取](./網頁爬蟲_Playwright本機實戰/examples/green_energy.md)
+
+---
 
 ### 🎙️ 會議應用與語音摘要（Meeting Minutes & Audio）
 - **[mp3 ➔ 會議紀錄與摘要](./會議紀錄與摘要/README.md)**  
