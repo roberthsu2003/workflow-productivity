@@ -2,7 +2,7 @@
 
 > 🔵 **適用方案**：Pro / Max / Team / Enterprise (Scheduled Beta)  
 > 💼 **適用角色**：專案經理 (PM)、部門主管、團隊 Leader、行政幕僚。  
-> 🎯 **核心體驗**：設定「每週五 17:00 雲端定時排程」，Cowork 會自動讀取上傳至專案的同仁週報 CSV，彙整焦點、找出卡點風險，並在電腦休眠狀態下自動完成 Markdown 週會簡報！
+> 🎯 **核心體驗**：設定「每週五 17:00 雲端定時排程」，Claude 會自動讀取上傳至專案的同仁週報 CSV，彙整焦點、找出卡點風險，並在電腦休眠狀態下自動完成 Markdown 週會簡報！
 
 ---
 
@@ -14,9 +14,9 @@
 
 ---
 
-## 🤖 Cowork Scheduled 排程 Prompt (RTCCF)
+## 🤖 排程 Prompt (RTCCF)
 
-在 Cowork 的 Scheduled 頁面設定排程時貼入此 Prompt：
+在對話中建立排程時貼入此 Prompt（開頭加上「請幫我設定排程：」及執行頻率即可）：
 
 ```markdown
 ## Role
@@ -40,10 +40,10 @@
 
 ---
 
-## 🚀 排程設定 3 步驟 (Cowork Scheduled)
+## 🚀 排程設定 3 步驟 
 
-1. **開啟 Scheduled 頁面**：登入 [claude.ai](https://claude.ai)，從左側選單進入 **Scheduled**。
-2. **建立新排程**：點選 **New task** ➔ 輸入任務名稱 `每週五團隊簡報排程` ➔ 選擇頻率為 **「Weekly (每週五 17:00)」**。
+1. **開新對話**：登入 [claude.ai](https://claude.ai) 開一個新對話（或從左側 **Scheduled** 頁面的 **New task** 手動建立）。
+2. **說明排程**：告訴 Claude 任務名稱 `每週五團隊簡報排程` 與頻率 **「Weekly (每週五 17:00)」**。
 3. **上傳練習檔與貼上 Prompt**：將 `team_weekly_updates.csv` 與 `weekly_brief_template.md` 附加至任務中，貼上上述 RTCCF Prompt 即可完成雲端自動化排程！
 
 ---

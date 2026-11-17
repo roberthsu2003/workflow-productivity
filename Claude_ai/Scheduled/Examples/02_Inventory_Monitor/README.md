@@ -2,7 +2,7 @@
 
 > 🔵 **適用方案**：Pro / Max / Team / Enterprise (Scheduled Beta)  
 > 💼 **適用角色**：資材主管、倉管經理、供應鏈營運專員、採購人員。  
-> 🎯 **核心體驗**：設定「每日 09:00 雲端定時排程」，Cowork 會自動透過 Code Execution 讀取每日庫存 CSV、計算安全庫存天數 (DOI)，並在斷貨風險發生前自動發出紅黃燈補貨警訊！
+> 🎯 **核心體驗**：設定「每日 09:00 雲端定時排程」，Claude 會自動透過 Code Execution 讀取每日庫存 CSV、計算安全庫存天數 (DOI)，並在斷貨風險發生前自動發出紅黃燈補貨警訊！
 
 ---
 
@@ -14,9 +14,9 @@
 
 ---
 
-## 🤖 Cowork Scheduled 排程 Prompt (RTCCF)
+## 🤖 排程 Prompt (RTCCF)
 
-在 Cowork 的 Scheduled 頁面設定排程時貼入此 Prompt：
+在對話中建立排程時貼入此 Prompt（開頭加上「請幫我設定排程：」及執行頻率即可）：
 
 ```markdown
 ## Role
@@ -40,10 +40,10 @@
 
 ---
 
-## 🚀 排程設定 3 步骤 (Cowork Scheduled)
+## 🚀 排程設定 3 步骤 
 
-1. **開啟 Scheduled 頁面**：登入 [claude.ai](https://claude.ai)，從左側選單進入 **Scheduled**。
-2. **建立新排程**：點選 **New task** ➔ 輸入任務名稱 `每日庫存巡檢與採購預警` ➔ 選擇頻率為 **「Daily (每日 09:00)」**。
+1. **開新對話**：登入 [claude.ai](https://claude.ai) 開一個新對話（或從左側 **Scheduled** 頁面的 **New task** 手動建立）。
+2. **說明排程**：告訴 Claude 任務名稱 `每日庫存巡檢與採購預警` 與頻率 **「Daily (每日 09:00)」**。
 3. **上傳練習檔與貼上 Prompt**：將 `daily_inventory_status.csv` 與 `reorder_threshold_rules.md` 附加至任務中，貼上上述 RTCCF Prompt 即可開啟定時自動巡檢！
 
 ---

@@ -208,7 +208,7 @@
 
 ---
 
-### 📅 第二天（DAY 2）：進階情報擷取 (Playwright MCP)、Excel 數據分析、高階 Skill 整合與 Cowork / Scheduled 排程自動化（共 7 小時）
+### 📅 第二天（DAY 2）：進階情報擷取 (Playwright MCP)、Excel 數據分析、高階 Skill 整合與 代理任務 / Scheduled 排程自動化（共 7 小時）
 
 #### 🔹 上午模組（3.5 小時）：Playwright 本地爬蟲 (Local MCP) 與產業情報自動化蒐集 Skill
 
@@ -264,7 +264,7 @@
 
 ---
 
-#### 🔹 下午模組（3.5 小時）：Excel 數據分析、高階 Skill 整合者 (Code Execution)、Cowork 與 Scheduled 排程交付 + 綜合成果演練
+#### 🔹 下午模組（3.5 小時）：Excel 數據分析、高階 Skill 整合者 (Code Execution)、代理任務與 Scheduled 排程交付 + 綜合成果演練
 
 ##### 📖 參考教材與延伸連結
 - [**Projects 雲端知識沙盒 (進階持續)**](../../Claude_ai/Projects/README.md)：將每日蒐集到的產業新聞、研討會與 Excel 歷史資料持續累積在同一個 Project 中，讓 Skill 執行時能參照過往紀錄比對趨勢與異常。
@@ -320,26 +320,26 @@
 
   </details>
 
-- [**Claude Cowork 協作工作空間**](../../Claude_ai/cowork/README.md)：Anthropic 全新 AI 獨立工作空間，支援自主多步驟任務執行、整合 Connectors 與 Skills，適合無程式背景者進行進階自動化。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**，且排程任務於**雲端遠端執行**，無法呼叫本機檔案與應用程式。
+- [**代理任務（多步驟自主任務）**](../../Claude_ai/Agent_Tasks/README.md)：已併入一般對話，直接說出目標，Claude 會自主拆解步驟、整合 Connectors 與 Skills 完成多步驟任務，適合無程式背景者進行進階自動化。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**；任務預設於**雲端執行**，若需存取本機檔案、內建瀏覽器或 Computer Use，Claude Desktop 必須保持開啟。
   <details>
-  <summary>💡 <b>點擊展開：學員實作驗證（Claude Cowork 獨立工作空間）</b></summary>
+  <summary>💡 <b>點擊展開：學員實作驗證（代理任務）</b></summary>
   <br>
 
-  > 💡 **實作背景**：驗證學員在 Claude Cowork 空間中發起自主任務的能力。
+  > 💡 **實作背景**：驗證學員在一般對話中交辦多步驟自主任務的能力。
 
   ---
 
-  **📝 實作驗證任務：在 Cowork 建立自主工作流程**
+  **📝 實作驗證任務：交辦一個多步驟自主任務**
 
-  1. 從左側選單切換至 **Cowork** 工作空間，建立一個新的 Cowork 任務 Session。
+  1. 開一個新對話（不需要切換任何模式）。
   2. 輸入 Prompt：「`請幫我執行週報彙整任務：讀取目前關聯的 Google Drive 與 Gmail，整理出本週 3 大重點進度與待辦事項。`」
-  3. 觀察 Claude 在 Cowork 視窗中自主拆解步驟、調用工具並交付成果。
+  3. 觀察 Claude 自主拆解步驟、調用工具並交付成果。
 
   ---
 
   **✅ 實作驗證清單（Checklist）**
 
-  - [ ] **Cowork 空間開啟**：成功進入 Cowork 視窗發起任務。
+  - [ ] **任務啟動**：Claude 判斷為多步驟任務並開始執行。
   - [ ] **多步驟自主執行**：Claude 能連續呼叫工具並完成複雜流程。
 
   </details>
@@ -372,7 +372,7 @@
 ##### 🛠️ 課程內容與實作綱要
 - **Excel / 數據報表分析與視覺化**：運用 Code Execution 讓 Claude 自動進行表格計算、趨勢洞察與統計圖表生成。
 - **高階 Skill 整合者實作**：將知識庫規範、樣板檔與自動化邏輯打包封裝為高階 Skill。
-- **Cowork 與 Scheduled 排程交付**：設定多步驟自主工作流程與雲端排程定時推送。
+- **代理任務與 Scheduled 排程交付**：設定多步驟自主工作流程與雲端排程定時推送。
 - **綜合端到端實務演練與成果驗收**：學員綜合運用兩天所學，完成「情報爬取 ➔ 數據分析 ➔ 報告/簡報生成 ➔ 定時交付」的完整工作流。
 
 

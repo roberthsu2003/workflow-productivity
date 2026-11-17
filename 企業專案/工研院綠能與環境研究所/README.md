@@ -18,7 +18,7 @@
 1. **自動化工作流**：獨立設計 Claude Skill，自動完成日常綠能情報、技術文獻與數據分析。
 2. **團隊知識庫**：建立與維護 Projects 知識庫，將綠能專案規範與研究成果轉化為專屬 AI 助理。
 3. **數據與圖表交付**：運用 Code Execution 與 PPTX Skill，快速解析能源數據並產出高質感技術簡報。
-4. **自主排程與協作**：掌握 Cowork 與 Scheduled 排程架構，實現定期法規監控與專案管考自動化。
+4. **自主排程與協作**：掌握代理任務與 Scheduled 排程架構，實現定期法規監控與專案管考自動化。
 
 ### 💡 預期效益
 - ⏱️ **效率大幅提升**：每日國際綠能新知、政策法規與能源監測數據判讀時間縮短，聚焦高價值研發與決策。
@@ -33,7 +33,7 @@
 Day 1 (3.5h)：Claude 核心思維、Prompt 工程、Context Window 與 Projects 專案知識庫
 Day 2 (3.5h)：Connectors 雲端整合、Anthropic PPTX 簡報生成與 Artifacts 互動內容
 Day 3 (3.5h)：Claude in Chrome 網頁操作、Playwright 本地爬蟲與自訂 Skills（模仿者/創作者）
-Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Cowork 協作與 Scheduled 排程
+Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、代理任務與 Scheduled 排程
 ```
 
 ---
@@ -120,18 +120,18 @@ Day 4 (3.5h)：進階整合者 Skill（Code Execution 能源數據分析）、Co
 
 ---
 
-### 🔹 Day 4（3.5 小時）：Excel 數據分析（整合者 Skill）、Cowork 協作與排程自動化
+### 🔹 Day 4（3.5 小時）：Excel 數據分析（整合者 Skill）、代理任務與排程自動化
 
 #### 📖 參考教材與延伸連結
 - [**Claude Skills 建立指南（第三階：整合者）**](../../Claude_ai/Skills/README.md)：運用 Code Execution 讓 Skill 自動執行 Python 程式碼，進行數據運算、清洗與圖表繪製。
 - [**資料分析與報告撰寫實作**](../../Claude_ai/Skills/VC_Financial_Analyzer/README.md)：以實際數據檔案示範自動化分析與報告生成。
-- [**Claude Cowork 協作工作空間**](../../Claude_ai/cowork/README.md)：Anthropic AI 獨立工作空間，支援多步驟自主任務執行與跨工具整合。
+- [**代理任務（多步驟自主任務）**](../../Claude_ai/Agent_Tasks/README.md)：已併入一般對話，支援多步驟自主任務執行與跨工具整合。
 - [**Scheduled 排程任務**](../../Claude_ai/Scheduled/README.md)：設定固定時間自動觸發監控與報告工作流。
 
 #### 🛠️ 課程內容與實作綱要
 - **能源數據與碳排分析（Code Execution）**：免手動寫 code，讓 Claude 自動執行 Python 解析 Excel 歷史用電、再生能源發電量、碳盤查係數與異常能耗警示。
 - **整合型 Skill 設計**：整合 Projects 知識庫、分析規範與樣板檔，一鍵輸出圖文並茂的「節能與減碳評估週報」。
-- **Cowork 協作工作空間實作**：在獨立工作空間中指派多步驟綜合任務（跨 Google Drive + 數據檔案 + 報告產出）。
+- **代理任務實作**：在對話中指派多步驟綜合任務（跨 Google Drive + 數據檔案 + 報告產出）。
 - **Scheduled 雲端定時排程**：建立每日/每週定時任務，自動更新國際綠能法規與內部進度追蹤。
 
 <details>

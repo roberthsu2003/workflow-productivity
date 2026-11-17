@@ -15,7 +15,7 @@
 > *「下班前 30 分鐘，財務部突然發信催收：『同仁請在今天 18:00 前提交 8-9 月所有差旅收據與軟體發票，否則本期不予報銷！』」*  
 > *你急忙打開電腦的「下載」資料夾，映入眼簾的是幾百個未命名的 PDF、文字檔、發票截圖、NDA 草案和行銷簡報，混雜在一起。你只能一個個點開看、手動算金額、複製貼上到 Excel……天已經黑了。*
 
-**現在，把這個任務交給 Claude Cowork，只要 20 秒，一鍵見證奇蹟！**
+**現在，把這個任務交給 Claude，只要 20 秒，一鍵見證奇蹟！**
 
 ---
 
@@ -45,7 +45,7 @@
         ├── contract_partner_NDA_v1.txt       (保密合約草案)
         └── Q3_marketing_proposal_draft.txt   (行銷企劃稿)
 
-                ⬇️ 透過 Claude Cowork 一鍵自主執行 ⬇️
+                ⬇️ 透過 Claude 一鍵自主執行 ⬇️
 
 【整理後：井然有序的歸檔目錄與報銷總表】
 sample_files/
@@ -64,7 +64,7 @@ sample_files/
 
 ---
 
-## 🧠 Cowork 代理執行管線 (Agent Execution Pipeline)
+## 🧠 代理任務執行管線 (Agent Execution Pipeline)
 
 ```mermaid
 flowchart TD
@@ -85,7 +85,7 @@ flowchart TD
 
 ## 🛡️ 三大安全核准模式 (Approval Modes) 深度演練
 
-在 Claude Cowork 中，涉及到**實體磁碟讀寫**時，右上方可隨時切換安全層級：
+在 Claude Desktop 中執行任務、涉及到**實體磁碟讀寫**時，可隨時切換核准模式：
 
 | 核准模式 | 介面行為特徵 | 適合場景 | 推薦指數 |
 | :--- | :--- | :--- | :---: |
@@ -103,7 +103,7 @@ flowchart TD
 > 
 > **面對這個情況，您有兩種最舒服的做法：**
 > 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
-> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼到新對話中執行！
 
 <details>
 <summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
@@ -113,7 +113,7 @@ flowchart TD
 若您平常有其他自訂任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
 ```markdown
-我即將使用 Claude Cowork 執行本機檔案整理任務。
+我即將請 Claude 執行本機檔案整理任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
 
@@ -141,9 +141,9 @@ flowchart TD
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+## 🤖 代理任務實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
 
-請在 **Claude Desktop App** 中，切換至 **Cowork** 模式，工作目錄選取本資料夾中的 `sample_files/`，並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
+請在 **Claude Desktop App** 開一個新對話，工作資料夾選取本資料夾中的 `sample_files/`，並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```markdown
 ## Role
@@ -182,9 +182,9 @@ flowchart TD
 0. **下載／確認練習素材**：
    - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
 1. **開啟 Claude Desktop App**：
-   - 點擊底部訊息框左下角，由「Chat」切換至 **「Cowork」**。
+   - 開一個新對話（不需要切換任何模式）。
 2. **掛載練習目錄**：
-   - 點擊工作目錄選擇按鈕，指定本機的 `Claude_ai/cowork/Examples/01_Local_Folder_Organize/sample_files/`。
+   - 點擊工作目錄選擇按鈕，指定本機的 `Claude_ai/Agent_Tasks/Examples/01_Local_Folder_Organize/sample_files/`。
 3. **選擇核准模式並啟動**：
    - **體驗一（手動安全審查）**：選擇 **Manual** 模式，貼上上方 Prompt 送出。當介面彈出建立目錄和搬移檔案的請示時，點擊 **「Allow」**，親自體驗「人機協同」的安全掌控感！
    - **體驗二（極速自動化）**：利用 `sample_files.zip` 再次解壓縮一鍵還原檔案後，改選 **Auto** 模式再次執行，體驗 15 秒內全自動整理乾淨的極速快感！
@@ -197,11 +197,11 @@ flowchart TD
 > 1. **為什麼要用 Desktop App？**  
 >    Web 網頁端因瀏覽器安全沙盒限制，無法直接穿透讀寫硬碟檔案。**直接讀寫本機磁碟**是 Claude Desktop App 獨有的殺手級功能。
 > 2. **發票數字容易漏看？**  
->    在 Prompt 中加入 `精確提取含稅金額與統編` 的條件（Constraint），Cowork 會仔細分析文字檔中的每一行關鍵字，準確率達 100%。
+>    在 Prompt 中加入 `精確提取含稅金額與統編` 的條件（Constraint），Claude 會仔細分析文字檔中的每一行關鍵字，準確率達 100%。
 > 3. **隨時可復原與一鍵重置**：  
 >    - 方式 A（指令還原）：在對話中輸入「*請幫我將檔案名稱與位置復原回原本的 raw_downloads/ 目錄*」，Claude 就會自主將檔案全部搬回原位。  
 >    - 方式 B（秒速重置）：直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 
-← [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 2 客訴分類與原地微調 →](../02_Customer_Feedback/)
+← [返回代理任務主頁](../../README.md) ｜ [下一篇：範例 2 客訴分類與原地微調 →](../02_Customer_Feedback/)

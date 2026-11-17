@@ -51,7 +51,7 @@
 
 ---
 
-> **💡 小提醒**：部分功能（如 Computer use）在開啟後，可能還需要您在對話中切換到特定的模式（如 Cowork 模式）才能真正觸發。
+> **💡 小提醒**：**Computer use** 需要在 **Claude Desktop** 的 **Settings ➔ Capabilities**（或 **Settings ➔ System ➔ This computer**）開啟，且僅限 Pro / Max / Ultra 方案，詳見 [Computer Use 單元](../Computer_Use/README.md)。**內建瀏覽器**的預設選擇可在 Settings 的 **Preferred browser** 調整，詳見 [內建瀏覽器單元](../Built_in_Browser/README.md)。
 
 ---
 

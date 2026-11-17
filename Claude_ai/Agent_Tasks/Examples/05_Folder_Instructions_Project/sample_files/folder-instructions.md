@@ -1,6 +1,6 @@
 # 資料夾專屬指令 (Folder Instructions)
 
-> 本規範由 Claude Cowork 載入當前資料夾時自動套用。
+> 本規範由 Claude 載入當前資料夾時自動套用。
 
 ## 1. 專案背景與品牌語氣
 - 本專案為「**SmartFlow AI 工作流程加速器**」新產品上線發布專案。

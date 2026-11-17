@@ -16,7 +16,7 @@
 > *客服人員手忙腳亂，如果把急需工程搶修的 VIP 金流客訴漏掉，公司將面臨巨額賠償與公關災難！*  
 > *主管大喊：『快把所有客訴按 SOP 分級，把最嚴重的 Level 1 挑出來，立刻擬好高階安撫信！』*
 
-**現在，讓 Claude Cowork 扮演你的資深客訴處理官，30 秒撲滅火災！**
+**現在，讓 Claude 扮演你的資深客訴處理官，30 秒撲滅火災！**
 
 ---
 
@@ -53,7 +53,7 @@
 
 ---
 
-## 🧠 Cowork 代理執行管線 (Agent Execution Pipeline)
+## 🧠 代理任務執行管線 (Agent Execution Pipeline)
 
 ```mermaid
 flowchart TD
@@ -81,7 +81,7 @@ flowchart TD
 > 
 > **面對這個情況，您有兩種最舒服的做法：**
 > 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
-> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼到新對話中執行！
 
 <details>
 <summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
@@ -91,7 +91,7 @@ flowchart TD
 若您平常有其他自訂客訴分析任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
 ```markdown
-我即將使用 Claude Cowork 執行緊急客訴情緒診斷與分流處置任務。
+我即將請 Claude 執行緊急客訴情緒診斷與分流處置任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
 
@@ -119,9 +119,9 @@ flowchart TD
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+## 🤖 代理任務實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
 
-請在 **Cowork 模式** 下，上傳本範例資料夾下的 `customer_support_logs.csv` 與 `sop_escalation_rules.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
+請開一個新對話，上傳本範例資料夾下的 `customer_support_logs.csv` 與 `sop_escalation_rules.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```markdown
 ## Role
@@ -156,10 +156,10 @@ flowchart TD
 
 0. **下載／確認練習素材**：
    - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
-1. **開啟 Claude 介面切換至 Cowork**：
-   - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
+1. **開啟 Claude 並開新對話**：
+   - 登入 [claude.ai](https://claude.ai) 或開啟 Claude Desktop，直接開一個新對話即可（不需要切換模式，Claude 會自動判斷要不要執行多步驟任務）。
 2. **載入練習資料**：
-   - 桌面端：工作目錄指定本機的 `Claude_ai/cowork/Examples/02_Customer_Feedback/sample_files/`。
+   - 桌面端：工作目錄指定本機的 `Claude_ai/Agent_Tasks/Examples/02_Customer_Feedback/sample_files/`。
    - 網頁端：將 `customer_support_logs.csv` 與 `sop_escalation_rules.md` 拖曳上傳至對話框。
 3. **送出 Prompt 執行智能分級**：
    - 貼上上述 RTCCF Prompt 送出，觀察 Claude 如何自主對照 SOP 規章完成分流與高情商道歉信起草。
@@ -185,4 +185,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 1 本機資料夾整理與報銷總表](../01_Local_Folder_Organize/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 3 跨來源財務對帳與自動繪圖 →](../03_Financial_Report/)
+[← 上一篇：範例 1 本機資料夾整理與報銷總表](../01_Local_Folder_Organize/) ｜ [返回代理任務主頁](../../README.md) ｜ [下一篇：範例 3 跨來源財務對帳與自動繪圖 →](../03_Financial_Report/)

@@ -1,173 +1,188 @@
-# Artifacts 獨立工作中心與三大原生創作模板（Docs / Slides / Design）
+# Artifacts 中心與七大範本全攻略
 
-> 深入解析 Anthropic 2026 最新「One Claude」整合架構：從獨立導航中心管理個人與團隊成品資產，以及如何運用 Docs、Slides、Design 三大原生模板實現高效率的雲端協同與多格式匯出。
+> 2026/9/16 改版後，Artifacts 從「對話旁邊的預覽視窗」變成獨立的成品中心：所有作品集中在左側欄的 **Artifacts** 分頁，並提供 Docs、Slides、Design、Data、Sheets、Whiteboards、Motion 七種範本。
+>
+> 📖 官方來源：[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) · [Claude Pricing](https://claude.com/pricing)
 
 ---
 
-## 🌟 為什麼這是 Artifacts 的里程碑大升級？
+## 🗂️ Artifacts 分頁：所有作品的家
 
-過去的 Claude Artifacts 主要定位為**「對話側欄的程式碼與內容渲染畫布」**——只有當你在對話中要求 Claude 產出較長的文章或代碼時，右側才會被動彈出視窗。
+- **位置**：左側欄 **Artifacts**，或直接開啟 `claude.ai/artifacts`
+- **自動收納**：不論是從對話中產生，還是從範本開始，做好的作品都會自動存到這裡
+- **找得到**：可以搜尋標題、依類型篩選，也能看到別人分享給你的作品
+- **跨裝置**：網頁版、Desktop 可建立、編輯、分享；**iOS / Android App 可檢視與編輯**（分享設定要到網頁版或 Desktop 調整）；Claude Code 也可以發布 Artifact
 
-最新升級將 Artifacts 昇華為**全功能的 Web-Native 雲端數位資產與創作工作中心（Artifacts Hub / Workspace）**：
-1. **Claude Design 正式回歸並常駐**：不再是分立的獨立站點，所有設計專案與簡報原生整合在 Artifacts 體系內。
-2. **獨立的導航入口與數位資產庫**：隨時在左側選單進入 Artifacts 首頁，集中管理所有歷史產出、按類型篩選、切換網格與清單檢視。
-3. **「Make something new」三大原生創作模板（Beta）**：無需透過空白對話手動撰寫複雜提示詞，直接點擊 **Docs**、**Slides** 或 **Design** 即可快速啟動標準化任務！
+### 三種開始方式
+
+| 方式 | 怎麼做 |
+| :--- | :--- |
+| 直接說 | 在任何對話中說「幫我做一份簡報／文件／小工具」 |
+| 輸入框選 Output | 訊息框點 **Output** ➔ 選範本 ➔ 輸入需求 |
+| 從 Artifacts 分頁 | 左側欄 **Artifacts** ➔ 選範本 |
+
+---
+
+## 🧱 七大範本＋自由形式總覽
+
+| 範本 | 做什麼 | 匯出 | 方案 |
+| :--- | :--- | :--- | :---: |
+| 📄 **Docs** | 和 Claude、團隊即時共同撰寫的文件 | Word、PDF、Markdown、Google Docs | 🟢 Free |
+| 📑 **Slides** | 從筆記或對話內容產生簡報，內建播放 | PowerPoint、PDF、Google Slides | 🟢 Free |
+| 🎨 **Design** | 視覺稿、原型、一頁式文宣、Landing page，可套用設計系統 | .zip、PDF、PowerPoint、HTML | 🟢 Free |
+| 📊 **Data** | 從連接的資料源做儀表板、數據故事；每張圖都標示查詢方式與更新時間 | — | 🔵 Pro |
+| 🧮 **Sheets**（Beta） | 有跨工作表公式的試算表，你和 Claude 編輯同一份表格 | — | 🔵 Pro |
+| 🧠 **Whiteboards**（Beta） | 和 Claude、團隊一起腦力激盪的白板 | — | 🔵 Pro |
+| 🎬 **Motion**（Beta） | 動畫說明、動態圖表、操作導覽 | MP4 | 🟣 Team / Enterprise |
+| 🧩 **自由形式** | 程式碼、流程圖、單頁網站、圖片、小工具 | 檢視程式碼、複製、下載 | 🟢 Free |
+
+> ⚠️ **Team / Enterprise 預設值**：Docs、Slides、Design 預設開啟。Sheets、Whiteboards、Motion 在 Team 預設開啟，在 Enterprise **預設關閉**，需要管理員開啟。
+
+---
+
+## 📄 Docs：協作文件
+
+**特色**
+1. **三種修改方式**：叫 Claude 改、自己直接打字、**反白文字 ➔ Edit with Claude** 只改那一段
+2. **多人協作**：分享給同事後可以一起編輯或留言
+3. **匯出**：Word、PDF、Markdown、Google Docs
+
+**Prompt 範例：產品發表企劃與新聞稿**
+
+```markdown
+## Role
+你是一位資深科技公關總監。
+
+## Task
+請用 Docs 範本建立「新一代企業 AI 協作平台發表企劃與新聞稿」。
+
+## Context
+- 產品：NexusWork AI 2026
+- 亮點：跨部門知識庫、會議語音即時決策紀錄、機密資料自動去識別化
+- 目標媒體：科技媒體、財經媒體
+
+## Format
+包含：發表會時程表、新聞稿主標／副標、執行摘要表格、媒體 FAQ、公關聯絡窗口
+```
+
+**練習**：反白「新聞稿」段落 ➔ Edit with Claude ➔「改成 300 字以內的英文版」。
+
+---
+
+## 📑 Slides：簡報
+
+**特色**
+1. **自動拆頁排版**：給大綱或長篇報告，Claude 自動拆成每頁一個重點並選擇合適版型
+2. **線上播放**：按 **Present** 全螢幕播放，不用下載
+3. **匯出**：PowerPoint（可在 Office 中繼續修改）、PDF、可編輯的 Google Slides
+
+**Prompt 範例：季度成果匯報（QBR）**
+
+```markdown
+## Role
+你是一位管理顧問與商務簡報設計師。
+
+## Task
+請用 Slides 範本做一份 6 頁的「2026 Q3 智慧製造轉型專案成果匯報」。
+
+## Content
+1. 封面（專案名稱、報告人、日期）
+2. 執行摘要：3 大 KPI 用大字呈現
+3. 痛點 vs 解決方案（左右對照）
+4. 導入效益：良率提升 14.8%、巡檢工時減少 40%（用圖表）
+5. 挑戰與風險因應表
+6. Q4 里程碑時程（Timeline）
+
+## Style
+深藍＋金色配色、每頁少字、附講者備忘稿
+```
+
+---
+
+## 🎨 Design：視覺設計與原型
+
+**特色**
+1. **自然語言做設計**：描述需求就能產生 UI 原型、儀表板版面、一頁式文宣、Landing page
+2. **多版本比較**：可要求一次產生多種風格並排比較
+3. **設計系統**（部分方案限定）：可以套用公司的品牌色、字型、元件規範，讓每次產出風格一致
+4. **匯出**：.zip、PDF、PowerPoint、單一 HTML，或傳送到其他工具繼續編輯
+
+**Prompt 範例：手機 App 首頁原型**
+
+```text
+請用 Design 範本設計一個「智慧手錶健康監測 App」的手機首頁原型：
+顯示今日步數、心率、睡眠分數三張卡片，下方是一週趨勢圖，
+支援深色模式，並給我淺色和深色兩個版本比較。
+```
+
+---
+
+## 📊 Data：資料儀表板　`🔵 Pro`
+
+適合從**連接的資料源**或**上傳的 CSV** 做儀表板與數據故事。每張圖表會標示資料查詢方式與更新時間，方便確認數字來源。
+
+```text
+請用 Data 範本，讀取我上傳的銷售 CSV，做一個業績儀表板：
+4 張 KPI 卡片、月趨勢折線圖、區域比較長條圖，可依區域與產品篩選，
+最下方用 3 句話寫出本月重點觀察。
+```
+
+---
+
+## 🧮 Sheets：試算表　`🔵 Pro（Beta）`
+
+和 Claude 編輯**同一份表格**，公式可以跨工作表運作。適合預算表、報價單、排班表。
+
+```text
+請用 Sheets 範本做「年度部門預算表」：
+工作表「明細」列出 12 個月 × 6 個費用科目；工作表「總表」用公式引用明細，
+算出每季小計、全年總計與預算使用率，超過 90% 的科目標示紅色。
+```
+
+---
+
+## 🧠 Whiteboards：白板　`🔵 Pro（Beta）`
+
+```text
+請開一個 Whiteboard，主題是「明年度客戶滿意度提升計畫」，
+分成「產品、服務、溝通、流程」四區，每區先放 3 張便利貼點子，
+之後團隊補充完再幫我們歸納成優先順序。
+```
+
+---
+
+## 🎬 Motion：動畫影片　`🟣 Team / Enterprise（Beta）`
+
+```text
+請用 Motion 範本，把「新人報到流程」做成 60 秒動畫說明影片：
+分成 5 個步驟，每步驟配一句旁白文字與圖示，最後匯出 MP4。
+```
+
+---
+
+## ⚙️ 必要設定
+
+**Settings ➔ Capabilities** ➔ 開啟 **「Create and edit files」**（舊名稱：Code execution and file creation）。
+Team / Enterprise 由管理員在 **Organization settings ➔ Capabilities** 開啟。
+
+---
+
+## 💡 怎麼選？
 
 ```mermaid
 graph TD
-    subgraph 過去的模式：對話附屬畫布
-        O1["💬 空白對話"] --> O2["下達長篇指令"] --> O3["右側被動彈出側欄畫布"]
-    end
-
-    subgraph 2026 最新模式：Web-Native 創作與資產中心
-        H["🗂️ Artifacts 獨立中心 (Hub)"]
-        H --> T1["📄 Claude Docs (Beta)<br/>（協同文件 / 企劃 / 報告）"]
-        H --> T2["📑 Claude Slides (Beta)<br/>（簡報 Deck / 線上演練）"]
-        H --> T3["📱 Claude Design (Beta)<br/>（UI/UX 原型 / 視覺版型）"]
-        H --> T4["💻 經典 Artifacts<br/>（HTML/React/SVG/Mermaid）"]
-        
-        T1 --> E1["📤 雙向匯出：Word / Google Docs / PDF"]
-        T2 --> E2["📤 雙向匯出：PowerPoint (.pptx) / PDF"]
-        T3 --> E3["🌐 一鍵發布 Publish / 嵌入網頁"]
-    end
+    Q["我要做什麼？"] --> D1{"要給人讀的文字？"}
+    D1 -->|是| Docs["📄 Docs"]
+    D1 -->|否| D2{"要上台報告？"}
+    D2 -->|是| Slides["📑 Slides"]
+    D2 -->|否| D3{"要好看的畫面／原型？"}
+    D3 -->|是| Design["🎨 Design"]
+    D3 -->|否| D4{"要計算或分析數字？"}
+    D4 -->|公式計算| Sheets["🧮 Sheets（Pro）"]
+    D4 -->|圖表分析| Data["📊 Data（Pro）"]
+    D4 -->|否| Free["🧩 自由形式小工具"]
 ```
 
 ---
 
-## 🗂️ Artifacts 獨立工作中心（Hub）介面全解
-
-在 Claude 介面點選 **Artifacts**，即可進入專屬資產管理大廳：
-
-```text
-┌──────────────────────────────────────────────────────────────────────────────┐
-│  Artifacts                                                                   │
-│  [All]  [Yours]  [Shared with you]                         [🔍] [🔲] [All types ▾]
-├──────────────────────────────────────────────────────────────────────────────┤
-│  📢 Claude Design lives here now                                             │
-│     New Slides and Design projects are created as artifacts.                 │
-│     [Visit the standalone homepage ↗]                                        │
-├──────────────────────────────────────────────────────────────────────────────┤
-│  Make something new                                                          │
-│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐                      │
-│  │   📄 Docs    │   │  📑 Slides   │   │  📱 Design   │                      │
-│  │    [Beta]    │   │    [Beta]    │   │    [Beta]    │                      │
-│  └──────────────┘   └──────────────┘   └──────────────┘                      │
-├──────────────────────────────────────────────────────────────────────────────┤
-│  我的數位資產庫 (Recent Artifacts) ...                                       │
-└──────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 1. 三大分類標籤（Filter Tabs）
-- **All（全部）**：匯總所有你擁有編輯權限或瀏覽過的成品。
-- **Yours（我建立的）**：專屬個人帳號產出的所有數位作品，便於檢索個人重要企劃或專案。
-- **Shared with you（與我共享的）**：在團隊（Team / Enterprise）內部由同事或外部合作夥伴透過連結分享給你的成品庫。
-
-### 2. 強大檢索與檢視工具
-- **搜尋框（Search）**：支援成品標題與關鍵字即時模糊比對，數秒內找回數月前做好的報表。
-- **檢視模式切換（View Toggle）**：
-  - **卡片網格視圖（Grid View）**：以縮圖視覺預覽為導向，最適合挑選簡報、UI 原型與圖表。
-  - **清單列表視圖（List View）**：以建立時間、修改時間與檔案類型為導向，最適合快速批次整理公務文件。
-- **類型過濾器（`All types` 下拉選單）**：
-  - 一鍵篩選：`Docs`、`Slides`、`Design`、`Code`、`Interactive Web Apps` 等。
-
----
-
-## 📄 專題一：Claude Docs (Beta) 深度實務
-
-### 什麼是 Claude Docs？
-Claude Docs 是專為知識工作者設計的「Web-native 雲端原生協同文件」。它徹底改變了過去生成純文字必須手動複製進 Word 的繁瑣步驟。
-
-### 核心特性
-1. **所見即所得與劃詞編修**：在右側畫布上，你可以像使用 Notion 或 Google Docs 一樣，直接選取特定段落，要求 Claude「換成更委婉的語氣」、「擴寫這段市場數據」，或是自行手動打字微調。
-2. **多方即時協作**：團隊成員可透過分享連結同時進入同一個 Doc，留下評論（Comments）或共同進行校對。
-3. **無損格式匯出**：確認完畢後，點擊匯出即可下載為 **Microsoft Word (.docx)**、**Google Docs** 或 **PDF**，格式排版、標題層次完全保留。
-
-### 🎯 實戰 Prompt 範例：跨國產品發佈會新聞稿與執行企劃
-
-```markdown
-## Role
-你是一位資深科技公關總監（PR Director）與文案專家。
-
-## Task
-請在 Claude Docs 中建立一份完整專業的「新一代企業 AI 協同平台發布企劃與新聞稿」。
-
-## Context
-- 產品名稱：NexusWork AI 2026
-- 主要亮點：整合跨部門知識沙盒、零延遲語音即時決策記錄、端到端機密資料去識別化。
-- 目標媒體：數位時代、TechCrunch、彭博商業周刊。
-
-## Format
-- 使用 Claude Docs 結構排版：包含發表會時間表、新聞稿主標/副標、公關聯繫資訊、Executive Summary 表格與 FAQ 模組。
-```
-
----
-
-## 📑 專題二：Claude Slides (Beta) 深度實務
-
-### 什麼是 Claude Slides？
-以往讓 AI 做 PPT，大多只是吐出大綱文字，或需靠第三方外部外掛轉檔。Claude Slides 讓 Claude 具備了**原生簡報引擎**！
-
-### 核心特性
-1. **完整 Deck 自動佈局**：輸入大綱或長篇報告，Claude 會自動將內容拆解成具備合適版面（單欄、對比雙欄、四宮格矩陣、重點數據大字）的完整簡報組。
-2. **線上放映模式（Presentation Mode）**：開會時無需下載，直接在瀏覽器點擊全螢幕播放按鈕，透過方向鍵即可切換翻頁，甚至能現場針對長官提問，在簡報旁邊叫 Claude「把第 3 頁的柱狀圖加上 2026 預測值」。
-3. **原生 PPTX 匯出**：支援一鍵下載為標準 **Microsoft PowerPoint (.pptx)** 或 **PDF**，下載後的文字與版塊均為向量物件，能在本機 Office 中二次換皮換色。
-
-### 🎯 實戰 Prompt 範例：高階管理層季度業務回顧（QBR Deck）
-
-```markdown
-## Role
-你是一位頂級管理顧問與商務簡報設計師。
-
-## Task
-請使用 Claude Slides 產生一份共 6 頁的「2026 Q3 智慧製造轉型專案階段成果匯報」。
-
-## Content Outline
-- Slide 1：封面（專案名稱、報告人、日期）。
-- Slide 2：專案執行摘要（Executive Summary，以 3 大 KPI 亮點大字呈現）。
-- Slide 3：痛點分析與原先產線瓶頸對照（左邊痛點、右邊解決方案）。
-- Slide 4：導入效益指標（良率提升 14.8%、巡檢工時減少 40% 的數據儀表）。
-- Slide 5：目前面臨挑戰與風險因應對策表。
-- Slide 6：Q4 關鍵里程碑時程規劃（Timeline）。
-
-## Style
-- 現代俐落風格、高階商務深藍搭亮金配色、每頁維持簡報少字精確原則。
-```
-
----
-
-## 📱 專題三：Claude Design (Beta) 深度實務
-
-### 什麼是 Claude Design？
-Anthropic 於 2026 年春季推出獨立測試的視覺設計工具，現已全面整合入 Artifacts。它能精準理解設計語言（包含間距、排版字級、配色系統與組件狀態），產出極具視覺質感的動態 UI 原型與設計資產。
-
-### 核心特性
-1. **自然語言驅動的設計原稿**：輸入「請幫我設計一個支援深色模式的智慧手錶健康監測 App 主畫面」，Claude 能生成高質感的互動元件、自訂圖示與精確排版。
-2. **免切換環境**：設計出的成果直接以 Artifact 形式留存於個人的資產庫中，能隨時返回重複精修。
-3. **無縫銜接開發**：設計成品同時提供 Design 預覽視圖與底層 Clean Code，工程師可直接複製代碼快速部署。
-
----
-
-## 🔒 方案權限與環境配置一覽
-
-| 功能項目 | 🟢 Free 方案 | 🔵 Pro / Max 方案 | 🏢 Team / Enterprise 方案 |
-| :--- | :---: | :---: | :---: |
-| **經典 Artifacts**（HTML/React/SVG/Mermaid） | ✓ 完全免費 | ✓ 高用量上限 | ✓ 組織共用 |
-| **Artifacts 獨立管理中心 (Hub)** | ✓ 基礎檢視 | ✓ 完整資產管理 | ✓ 組織權限過濾與搜尋 |
-| **Docs 模板 (Beta)** | 預計後續釋出 | ✓ **即刻可用** | ✓（企業管理者後台開啟） |
-| **Slides 模板 (Beta)** | 預計後續釋出 | ✓ **即刻可用** | ✓（企業管理者後台開啟） |
-| **Design 模板 (Beta)** | 預計後續釋出 | ✓ **即刻可用** | ✓（企業管理者後台開啟） |
-| **Office/PPT/PDF 原生匯出** | 支援純程式碼生成 | ✓ **一鍵原生轉出** | ✓ 組織檔案相容 |
-
-> [!IMPORTANT]
-> **必要前置設定**：  
-> 若要順暢使用 Docs / Slides / Design 以及各種複雜的代碼運算，請確認帳號已開啟代碼執行功能：  
-> 前往 **`Settings` ➔ `Capabilities` ➔ 開啟「Code execution and file creation」**。
-
----
-
-## 💡 總結：新舊工作流的完美融合
-
-有了 Artifacts Hub 與三大原生模板後，你的日常工作流程將更具彈性：
-- 想要快速產出報告或簡報？直接進入 **Artifacts Hub** 點選 **Docs** 或 **Slides**。
-- 想要討論複雜演算法或內部行政網頁？在 **對話中要求產出 HTML / React / Markdown**。
-- 不論哪種方式產出的成品，都會整整齊齊收納在 **Artifacts Hub** 的個人數位資產庫中，再也不怕重要成果被對話洗版淹沒！
+← [返回 Artifacts 主手冊](../README.md)

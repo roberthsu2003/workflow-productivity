@@ -2,7 +2,7 @@
 
 > 🔵 **適用方案**：Pro / Max / Team / Enterprise (Scheduled Beta)  
 > 💼 **適用角色**：電子商務營運經理、訂價策略分析師、產品行銷 (PMM)、採購。  
-> 🎯 **核心體驗**：設定「每週一 08:00 雲端定時排程」，Cowork 會自動透過 Code Execution 比對我方商品售價與競品市場價格，計算價差比 (Price Variance %)，並在保障成本底價前提下自動建議跟價或促銷策略！
+> 🎯 **核心體驗**：設定「每週一 08:00 雲端定時排程」，Claude 會自動透過 Code Execution 比對我方商品售價與競品市場價格，計算價差比 (Price Variance %)，並在保障成本底價前提下自動建議跟價或促銷策略！
 
 ---
 
@@ -14,9 +14,9 @@
 
 ---
 
-## 🤖 Cowork Scheduled 排程 Prompt (RTCCF)
+## 🤖 排程 Prompt (RTCCF)
 
-在 Cowork 的 Scheduled 頁面設定排程時貼入此 Prompt：
+在對話中建立排程時貼入此 Prompt（開頭加上「請幫我設定排程：」及執行頻率即可）：
 
 ```markdown
 ## Role
@@ -43,10 +43,10 @@ $$\text{價差比 (\%)} = \frac{\text{競品售價} - \text{我方售價}}{\text
 
 ---
 
-## 🚀 排程設定 3 步驟 (Cowork Scheduled)
+## 🚀 排程設定 3 步驟 
 
-1. **開啟 Scheduled 頁面**：登入 [claude.ai](https://claude.ai)，從左側選單進入 **Scheduled**。
-2. **建立新排程**：點選 **New task** ➔ 輸入任務名稱 `每週一競品價格巡檢與跟價建議` ➔ 選擇頻率為 **「Weekly (每週一 08:00)」**。
+1. **開新對話**：登入 [claude.ai](https://claude.ai) 開一個新對話（或從左側 **Scheduled** 頁面的 **New task** 手動建立）。
+2. **說明排程**：告訴 Claude 任務名稱 `每週一競品價格巡檢與跟價建議` 與頻率 **「Weekly (每週一 08:00)」**。
 3. **上傳練習檔與貼上 Prompt**：將 `our_product_catalog.csv` 與 `competitor_market_prices.csv` 附加至任務中，貼上上述 RTCCF Prompt 即可完成定時跟價排程！
 
 ---

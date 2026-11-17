@@ -1,7 +1,7 @@
 # ⏱️ Scheduled（排程任務）：讓 Claude 定時自動幫你工作
 
-> 🔵 **方案需求**：**Pro / Max / Team / Enterprise 付費方案**皆可使用；目前 Claude Cowork 與 Scheduled 功能支援 Claude 網頁版、電腦桌面版（Claude Desktop）及行動版 App。  
-> 🔗 **官方支援文件**：[Schedule recurring tasks in Claude Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork)
+> 🔵 **方案需求**：**Pro / Max / Ultra / Team / Enterprise 付費方案**皆可使用；支援 Claude 網頁版、電腦桌面版（Claude Desktop）及行動版 App。  
+> 🔗 **官方支援文件**：[Schedule recurring tasks](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork)
 
 **Scheduled（排程任務）**讓你把日常的重複性工作「**設定一次、定期自動執行**」。不再需要每次手動開新對話或重複輸入指令，Claude 會依照你指定的頻率自動在背景運作，並在指定時間交付完整的報告、分析摘要或行動清單。
 
@@ -41,21 +41,27 @@
 
 ## 🚀 建立排程任務的手把手教學
 
-建立排程任務有兩種方式，建議初學者先使用 **「方式二：手動設定」** 完整熟悉所有欄位。
+### ⭐ 方式一（最新、最推薦）：在任何對話中直接說
 
-### 方式一：與 Claude 對話建立 (`Create with Claude`)
+2026 改版後，**不需要切換模式或找按鈕**，在任何一個對話中說出「要做什麼」和「多久做一次」就好：
 
-1. 點選左側選單 **Scheduled** ➔ 點選右上角 **New task ˇ** ➔ 選擇 **Create with Claude**。
-2. 系統會自動開起一個對話視窗，預載提示問你想建立什麼排程。
-3. 你可以用自然語言描述需求，例如：「*請幫我設定一個每週五下午 5 點自動整理專案進度並產出 Markdown 週報的任務*」。
-4. Claude 會以**多選題**或追問方式與你確認執行細節（頻率、檔案來源、輸出格式）。
-5. 確認無誤後，Claude 會整理出排程摘要，點擊確認框上的 **「Schedule」** 即完成建立！
+1. 開一個新對話（或在剛完成任務的對話中繼續）。
+2. 用自然語言描述，例如：
+
+   ```text
+   請幫我設定一個排程：每週五下午 5 點，讀取「週報」專案裡的同仁週報 CSV，
+   整理本週重點、卡點與下週計畫，產出一份 Markdown 週會簡報。
+   ```
+
+3. Claude 會追問細節（頻率、檔案來源、輸出格式），請逐一回答。
+4. Claude 會列出建議的**任務名稱、排程時間與指令**，確認無誤後點 **「Schedule」** 即完成。
+5. 建好的任務會出現在左側欄的 **Scheduled** 頁面，可以在那裡管理。
 
 ---
 
-### 方式二：手動表單設定 (`Set up manually` - 推薦)
+### 方式二：手動表單設定 (`Set up manually`)
 
-點選右上角 **New task ˇ** ➔ 選擇 **Set up manually**，會彈出完整的排程設定視窗：
+若你的介面在 **Scheduled** 頁面右上角有 **New task ˇ** 按鈕，可選擇 **Set up manually** 開啟完整的排程設定視窗，逐欄填寫：
 
 ![Create scheduled task 彈出視窗](./assets/scheduled_create_modal.png)
 
@@ -132,8 +138,9 @@
 ## ❓ 常見問題與排錯指南 (FAQ)
 
 ### Q1：為什麼我的左側側欄沒有出現「Scheduled」按鈕？
-1. **方案限制**：Scheduled 屬於 Claude Cowork 的進階功能，僅提供給 **Pro / Max / Team / Enterprise 付費方案**。免費版 (Free plan) 暫無此功能。
-2. **分階段開放 (Gradual Rollout)**：目前 Cowork 仍處於 Beta 階段，會依據帳號權限逐步推播。若未看見請確保桌面版已更新至最新版，或嘗試登入網頁版確認。
+1. **方案限制**：排程任務僅提供給 **Pro / Max / Ultra / Team / Enterprise 付費方案**。免費版 (Free plan) 暫無此功能。
+2. **Team / Enterprise**：需要管理員在組織設定中開啟相關功能。
+3. **先建一個排程**：直接在對話中說「請每天早上 8 點幫我…」建立第一個排程，之後就能在 Scheduled 頁面管理。
 
 ### Q2：如果我開啟了「Require this computer」，但執行時間到了我的電腦正好休眠怎麼辦？
 - 當 `Require this computer` 開啟時，任務**僅會在電腦喚醒 (Awake) 狀態下執行**。
@@ -141,7 +148,9 @@
 
 ### Q3：如何讓排程讀取我準備好的「偽檔案」？
 - **方法 A (純雲端推薦)**：在 Claude 網頁版建立一個 Project（專案），將範例中的 `sample_files/` 檔案上傳到該 Project。在建立排程表單的 `Work in a project or folder` 選擇該 Project 即可。
-- **方法 B (本機資料夾)**：開啟 Claude Desktop，勾選 `Require this computer`，在 `Work in a project or folder` 選擇電腦本地存放 `sample_files/` 的資料夾。
+- **方法 B (本機資料夾)**：開啟 Claude Desktop，在 `Work in a project or folder` 選擇電腦本地存放 `sample_files/` 的資料夾（選擇資料夾後會自動開啟 `Require this computer`）。
+
+> 💡 **雲端優先**：Pro / Max / Ultra（以及開啟雲端執行的 Team / Enterprise）帳號，在電腦上建立的排程會**自動移到雲端**執行。只有指定本機資料夾的任務才需要電腦開著。
 
 ---
 

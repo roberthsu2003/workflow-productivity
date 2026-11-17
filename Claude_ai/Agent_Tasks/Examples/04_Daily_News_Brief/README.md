@@ -18,7 +18,7 @@
 > *為了這句話，你每天 07:30 就得爬起來，一邊喝咖啡一邊焦慮地翻閱 TechCrunch、科技報橘、數位時代、工商時報……*  
 > *更痛苦的是，還要手動把文字、連結複製貼上整理成 Markdown 晨報，稍微慢一點就趕不上主管會前閱讀的時間。*
 
-**現在，讓 Claude Cowork 成為你的 24 小時無休駐點情報員，設定一次排程，每天早晨自動送上精美晨報！**
+**現在，讓 Claude 成為你的 24 小時無休駐點情報員，設定一次排程，每天早晨自動送上精美晨報！**
 
 ---
 
@@ -43,7 +43,7 @@
     └── daily_news_template.md        (每日產業情報與競品趨勢簡報標準格式)
 ```
 
-⬇️ **透過 Cowork 內建瀏覽器檢索 + 雲端排程產出** ⬇️
+⬇️ **透過 Claude 內建瀏覽器檢索 + 雲端排程產出** ⬇️
 
 #### 【產出：每天早上 08:30 雲端自動產出之高階情報簡報】
 
@@ -57,7 +57,7 @@
 
 ---
 
-## 🧠 Cowork 代理執行管線 (Agent Execution Pipeline)
+## 🧠 代理任務執行管線 (Agent Execution Pipeline)
 
 ```mermaid
 flowchart TD
@@ -86,7 +86,7 @@ flowchart TD
 > 
 > **面對這個情況，您有兩種最舒服的做法：**
 > 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
-> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼到新對話中執行！
 
 <details>
 <summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
@@ -96,7 +96,7 @@ flowchart TD
 若您平常有其他自訂新聞追蹤任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
 ```markdown
-我即將使用 Claude Cowork 執行全自動產業情報聯網監測任務。
+我即將請 Claude 執行全自動產業情報聯網監測任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
 
@@ -125,9 +125,9 @@ flowchart TD
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+## 🤖 代理任務實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
 
-請在 **Cowork 模式** 下，上傳本資料夾中的 `industry_keywords.txt` 與 `daily_news_template.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
+請開一個新對話，上傳本資料夾中的 `industry_keywords.txt` 與 `daily_news_template.md`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```markdown
 ## Role
@@ -158,13 +158,13 @@ flowchart TD
 
 0. **下載／確認練習素材**：
    - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
-1. **開啟 Claude 介面切換至 Cowork**：
-   - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
+1. **開啟 Claude 並開新對話**：
+   - 登入 [claude.ai](https://claude.ai) 或開啟 Claude Desktop，直接開一個新對話即可（不需要切換模式，Claude 會自動判斷要不要執行多步驟任務）。
 2. **載入練習資料並送出 Prompt**：
    - 將 `industry_keywords.txt` 與 `daily_news_template.md` 拖曳上傳（或指定工作目錄），貼上上述 RTCCF Prompt 送出。
    - 親眼觀察 Claude 如何調用內建瀏覽器自主連網檢索最新報導並套入 Markdown 樣板。
 3. **在對話中直接下達指令建立定時排程 (Scheduled Tasks)**：
-   本範例**無須離開對話或手動填寫繁複設定**！在剛才產出晨報的同一個 Cowork 對話框中，直接用自然語言交代 Claude 即可：
+   本範例**無須離開對話或手動填寫繁複設定**！在剛才產出晨報的同一個對話中，直接用自然語言交代 Claude 即可：
 
    #### 💬 建立排程推薦指令（二選一或都建立）：
 
@@ -203,7 +203,7 @@ flowchart TD
 
 > [!TIP]
 > 1. **為什麼沒看到「Schedule this task」按鈕或 `/schedule`？**  
->    - **無需找按鈕，一句話搞定**：在 Cowork 模式下，直接在對話框輸入「`請幫我把這個每日產業情報任務建立為定時排程...`」，Claude 就會直接調用後台排程工具為您配置好，完全不需要手動填寫複雜參數！
+>    - **無需找按鈕，一句話搞定**：直接在對話框輸入「`請幫我把這個每日產業情報任務建立為定時排程...`」，Claude 就會直接調用後台排程工具為您配置好，完全不需要手動填寫複雜參數！
 >    - 若需要檢視、修改或暫停排程，隨時點擊 **左側導覽列的「Scheduled」** 專區即可管理。
 > 2. **深入理解 `Require this computer`（綁定電腦）開關機制**：
 >    - **什麼時候該打開？** 需要 Claude 存取電腦本機資料夾讀寫檔案、或使用桌面版環境操作本機 Chrome 時。此時**電腦必須處於開機且連網狀態**。
@@ -217,4 +217,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 3 跨來源財務對帳與自動繪圖](../03_Financial_Report/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 5 資料夾指令與專案日誌 →](../05_Folder_Instructions_Project/)
+[← 上一篇：範例 3 跨來源財務對帳與自動繪圖](../03_Financial_Report/) ｜ [返回代理任務主頁](../../README.md) ｜ [下一篇：範例 5 資料夾指令與專案日誌 →](../05_Folder_Instructions_Project/)

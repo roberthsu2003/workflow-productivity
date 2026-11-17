@@ -11,10 +11,10 @@
 > **Plugins** 偏向打包式的擴充，把一組相關的東西（可能同時包含 Skills、指令、Connector 設定等）整合成一個可安裝的套件，方便一次部署或在團隊間共享。  
 > 若需要教 Claude 執行某類工作請看 [Skills](../Skills/README.md)；若需要連外部服務請看 [Connectors](../Connectors/README.md)。
 
-> 🟡 **方案需求**：**Plugins 本身 Free 即可安裝與瀏覽**；但完整的使用環境（**Claude Code** 與 **Cowork**）需 **Pro 方案**。Free 帳號可在一般 claude.ai 聊天中安裝 Plugins，但無法進入 Cowork／Code 流程。  
+> 🟡 **方案需求**：**Plugins 本身 Free 即可安裝與瀏覽**；但完整的使用環境（**代理任務** 與 **Claude Code**）需 **Pro 方案**。Free 帳號可在一般 claude.ai 聊天中安裝 Plugins，但無法使用代理任務／Code 流程。  
 > **Free 替代方案**：若只是要「同時用一組 Skills + Connectors」，Free 帳號可手動在 Settings 中個別啟用各項 Skills 與 Connectors，效果類似但缺少 slash command 與打包分享。
 
-**Plugins** 將 **MCP Connectors**、**Skills**、**斜線指令（slash commands）**、**子代理（sub-agents）** 等打包成**可安裝、可分享**的能力單元，用於在 **Claude Code**、**Cowork** 等情境一次帶入整套流程。總覽見 [Plugins overview](https://claude.com/docs/plugins/overview)；Anthropic 已開源多個內部使用範例（如 **Productivity**、**Enterprise search**、**Data**、**Legal** 等），可於 [claude.com/plugins](https://claude.com/plugins-for/cowork) 瀏覽（實際入口以官網為準）。Cowork 內安裝方式可參考 [Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)。
+**Plugins** 將 **MCP Connectors**、**Skills**、**斜線指令（slash commands）**、**子代理（sub-agents）** 等打包成**可安裝、可分享**的能力單元，用於在 **Claude Code**、**[代理任務](../Agent_Tasks/README.md)** 等情境一次帶入整套流程。總覽見 [Plugins overview](https://claude.com/docs/plugins/overview)；Anthropic 已開源多個內部使用範例（如 **Productivity**、**Enterprise search**、**Data**、**Legal** 等），可於 [claude.com/plugins](https://claude.com/plugins-for/cowork) 瀏覽（實際入口以官網為準）。Cowork 內安裝方式可參考 [Use plugins in Cowork](https://support.claude.com/en/articles/13837440-use-plugins-in-cowork)。
 
 **RTCCF 五段欄位**請對照 [Chats／RTCCF 欄位對照](../Chats/README.md#rtccf-欄位對照複製範本時請五段都填)。
 
@@ -24,7 +24,7 @@
 
 | 適合 | 不適合 |
 |------|--------|
-| 使用 **Claude Code**／**Cowork**，希望**一次安裝**「連線＋技能＋指令」 | 僅使用 **claude.ai 網頁一般聊天**、未使用 Code／Cowork（請改用 **Connectors**／**Skills** 單獨設定） |
+| 使用 **Claude Code**／**代理任務**，希望**一次安裝**「連線＋技能＋指令」 | 僅使用 **claude.ai 網頁一般聊天**、未使用 Code／代理任務（請改用 **Connectors**／**Skills** 單獨設定） |
 | 團隊要**共用同一套**工作流程（外掛目錄／自訂上傳） | 需求極簡、不需要打包與版本管理 |
 | 需要 **slash command** 觸發固定流程（如 `/sales:…`） | 只要單次 RTCCF 對話（見 [Chats](../Chats/README.md) 即可） |
 
@@ -36,11 +36,11 @@
 
 ---
 
-## 經典範例（辦公情境）：在 Cowork 用「生產力」類外掛整理一週任務
+## 經典範例（辦公情境）：用「生產力」類外掛整理一週任務
 
 ### 任務背景
 
-使用者已在 **Cowork**（或相容環境）**Customize → Browse plugins** 安裝 **Productivity**（或同類）外掛，希望用**自然語言＋RTCCF**請 Claude 依外掛能力，將雜訊整理成**本週可執行清單**（實際指令名稱以已安裝外掛為準，可輸入 `/` 查看）。
+使用者已在 Claude（**Customize → Browse plugins**）安裝 **Productivity**（或同類）外掛，希望用**自然語言＋RTCCF**請 Claude 依外掛能力，將雜訊整理成**本週可執行清單**（實際指令名稱以已安裝外掛為準，可輸入 `/` 查看）。
 
 ### RTCCF Prompt（請複製後修改）
 
@@ -71,7 +71,7 @@
 - 若 Plugin 提供明確 **slash command** 建議（例如建立追蹤項），請在文末**逐條寫出可复制的一行指令**（實際以你偵測到的為準）
 ```
 
-> **備註**：Plugin 與 Cowork 功能多為**付費方案**且介面可能更新；無法使用時請改以 [Chats](../Chats/README.md) 單獨撰寫 RTCCF，或僅啟用 **Connectors**／**Skills**。
+> **備註**：Plugin 與代理任務功能多為**付費方案**且介面可能更新；無法使用時請改以 [Chats](../Chats/README.md) 單獨撰寫 RTCCF，或僅啟用 **Connectors**／**Skills**。
 
 ---
 

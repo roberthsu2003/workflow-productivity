@@ -11,7 +11,8 @@
 | 能力 | 🟢 Free | 🔵 Pro（$20/月） |
 | :--- | :---: | :---: |
 | 基本對話（Chats）/ Web 搜尋 / Memory | ✓ | ✓ |
-| Artifacts（互動成品） | ✓ | ✓ |
+| Artifacts：Docs / Slides / Design 範本、互動成品、連結分享 | ✓ | ✓ |
+| Artifacts：Data 儀表板 / Sheets / Whiteboards、儲存資料、連接 App | ✗ | ✓ |
 | 程式碼執行 / 產出 Word・Excel・PPT・PDF | ✓ | ✓ |
 | Connectors（Slack / Google Workspace / Remote MCP） | ✓（有用量限制） | ✓ |
 | Skills（含自訂 SKILL.md） | ✓ | ✓ |
@@ -20,16 +21,16 @@
 | **Projects**（雲端知識沙盒） | ✓（限 5 個） | ✓ |
 | **Model selector**（Opus 等） | ✗ | ✓ |
 | **Research Mode** | ✗ | ✓ |
-| **Cowork**（協作與代理模式） | ✗ | ✓ |
-| **Scheduled**（排程任務，Cowork Beta） | ✗ | ✓ |
-| **Dispatch**（手機／電腦跨裝置代理，Beta） | ✗ | ✓（僅 Pro / Max） |
+| **代理任務**（在對話中交辦多步驟任務，自動執行） | ✗ | ✓ |
+| **Scheduled**（排程任務） | ✗ | ✓ |
+| **內建瀏覽器**（Built-in Browser，需 Claude Desktop） | ✗ | ✓ |
+| **Computer Use**（Beta，需 Claude Desktop；Team / Enterprise 暫不支援） | ✗ | ✓ |
 | **Claude Code**（終端機開發工具） | ✗ | ✓ |
 | **Plugins**（外掛安裝與瀏覽） | ✓ | ✓ |
-| **Plugins**（於 Code 及 Cowork 內使用） | ✗ | ✓ |
-| **Computer Use（Beta）** | ✗ | ✓ |
+| **Plugins**（於代理任務及 Claude Code 內使用） | ✗ | ✓ |
 | 使用量上限 | 較低 | 至少 5 倍 |
 
-> 💡 **教學提醒**：用 Free 方案就能跑完「基礎核心單元」全部範例，以及 Projects（限 5 個）。若課堂上要示範 Plugins、Claude Code、Cowork 等 Pro 專屬功能，建議講師端使用 Pro 帳號展示，學生用 Free 帳號完成大部分練習。
+> 💡 **教學提醒**：用 Free 方案就能跑完「基礎核心單元」全部範例，以及 Projects（限 5 個）。若課堂上要示範 Plugins、Claude Code、代理任務、內建瀏覽器、Computer Use 等 Pro 專屬功能，建議講師端使用 Pro 帳號展示，學生用 Free 帳號完成大部分練習。
 
 ---
 
@@ -44,9 +45,10 @@
 > 學會 **RTCCF 框架**（Role/Task/Context/Constraint/Format）撰寫高品質 Prompt，並透過自然指令產出 Markdown / Word / Excel / PowerPoint / PDF。  
 > 內含五個產出範例（.md / .docx / .xlsx / .pptx / .pdf），全部 Free 可用。
 
-### 🟢 Artifacts（成品畫布與獨立創作中心）— **Free / Pro / Team**
+### 🟢 Artifacts（成品）— **Free 可用 Docs / Slides / Design；Data / Sheets / 儲存資料需 Pro**
 > **📂 [進入主題筆記：Artifacts](./Artifacts/README.md)**  
-> 2026 最新升級：從對話右側即時預覽畫布，全面邁向 **Artifacts 獨立管理中心（Hub）**！除經典 HTML/React/SVG/Mermaid 外，更全面整合 **Claude Design** 並推出 **Docs**（協同文件）、**Slides**（原生簡報）與 **Design**（視覺原型）三大全新 Beta 模板，支援一鍵線上放映與原生轉出 Word/PPT/PDF。
+> 2026/9/16 全面改版：所有作品都集中在左側欄 **Artifacts** 分頁，新增 Docs、Slides、Design（Free）與 Data、Sheets、Whiteboards（Pro）、Motion（Team）範本。成品預設私人，可設定檢視／留言／編輯權限，並可匯出 Word / PowerPoint / PDF。  
+> 內含 10 個可直接複製 Prompt 的實作範例（範例 1～6 Free 即可完成）。
 
 ### 🟢 討論方式的內容生成（人機協作 Human in the Loop 實戰）— **Free（核心工作流）**
 > **📂 [進入主題筆記：討論方式的內容生成](./討論方式的內容生成/README.md)**  
@@ -77,9 +79,9 @@
 > 內含四階範例：模仿者 → 創作者 → 整合者 → 自動化專家。  
 
 
-### 🟡 Plugins（外掛打包）— **Free 可安裝；Cowork / Code 需 Pro**
+### 🟡 Plugins（外掛打包）— **Free 可安裝；代理任務 / Code 需 Pro**
 > **📂 [進入主題筆記：Plugins](./Plugins/README.md)**  
-> 將 Connectors、Skills、slash commands、sub-agents 打包成可安裝、可分享的能力單元。**Plugins 本身 Free 帳號即可安裝與瀏覽**，但主要使用環境（**Claude Code**、**Cowork**）為 Pro 專屬；Free 帳號可在一般聊天中安裝，但無法使用完整的 Cowork／Code 工作流程。
+> 將 Connectors、Skills、slash commands、sub-agents 打包成可安裝、可分享的能力單元。**Plugins 本身 Free 帳號即可安裝與瀏覽**，但主要使用環境（**代理任務**、**Claude Code**）為 Pro 專屬。
 
 ### 🟢 Local MCP / Desktop Extensions（本地擴充）— **Free**
 > **📂 [進入主題筆記：Local_MCP](./Local_MCP/README.md)**  
@@ -89,25 +91,25 @@
 > **📂 [進入主題筆記：claude_in_chrome](./claude_in_chrome/README.md)**  
 > Anthropic 官方推出的 Chrome 擴充功能，能讓 Claude 直接進入您已登入的 Chrome 瀏覽器頁面，代為執行開分頁、點擊按鈕、填寫表單與讀取資料。（需 Pro / Max / Team / Enterprise 付費方案帳號登入使用）
 
-### 🟣 Cowork / Code（進階代理工具）— **Pro / Max / Team / Enterprise**
-> **📂 [進入主題筆記：cowork](./cowork/README.md)**  
-> 專為協作與自動化設計的獨立工作空間，支援自主多步驟任務執行、結合背景運算與排程，讓 Claude 成為能獨立運作的數位神隊友。
-> 專為協作與開發設計，會大量使用 **Sub-agents（子代理）** 技術：
-> - 主 AI 為了完成複雜任務，會自動派發多個「分身」執行子任務（一個查資料、一個寫程式），最後彙整結果。
-> - 大幅提升處理複雜任務的精準度。
+### 🟣 代理任務（Agent Tasks）— **Pro / Max / Team / Enterprise**
+> **📂 [進入主題筆記：Agent_Tasks](./Agent_Tasks/README.md)**  
+> 2026 改版後已併入一般對話：直接說出目標，Claude 會自己拆解步驟、讀寫檔案、上網查資料、寫程式計算，完整做完多步驟工作。預設在雲端執行，關掉筆電也會繼續跑。內含 5 個由淺入深的職場實戰範例與練習檔。
 
 ### 🟣 Scheduled（排程任務）— **Pro / Max / Team / Enterprise**
 > **📂 [進入主題筆記：Scheduled](./Scheduled/README.md)**  
-> 把重複性工作交給 Claude 自動定時執行：每日簡報、週報彙整、定期研究追蹤等，即使電腦休眠也會準時在雲端執行。
+> 在對話中說一句「每天早上 8 點幫我做」，就能把重複性工作交給 Claude 定時執行：每日簡報、週報彙整、定期研究追蹤等，即使電腦休眠也會準時在雲端執行。
 
-### 🟣 Dispatch（Beta）— **Pro / Max Only**
-> **📂 [進入主題筆記：Dispatch](./Dispatch/README.md)**  
-> 從手機交辦任務，Claude 在你的電腦上實際執行，使用本機檔案、Connectors 與應用程式，完成後把成品傳回手機。
+### 🟣 內建瀏覽器（Built-in Browser）— **Pro / Max / Team / Enterprise**
+> **📂 [進入主題筆記：Built_in_Browser](./Built_in_Browser/README.md)**  
+> Claude Desktop 內建的瀏覽器，免安裝擴充功能。Claude 會在側邊面板自己開網頁、閱讀、點擊、填表單，適合比價、新聞追蹤、批次填表。和 Claude in Chrome 的差異與 4 個實作範例都在單元內。
+
+### 🟣 Computer Use（Beta）— **Pro / Max Only**
+> **📂 [進入主題筆記：Computer_Use](./Computer_Use/README.md)**  
+> 讓 Claude 看螢幕、移動滑鼠、打字，直接操作電腦上的任何應用程式（Excel 桌面版、內部系統等）。需 Claude Desktop（macOS / Windows），Team / Enterprise 目前不支援。
 
 ### 🟣 其他 Pro 專屬功能 — **Pro Only**
 - **Model Selector**：選擇 Opus 等更強模型
 - **Research Mode**：深度多步研究
-- **Computer Use（Beta）**：讓 Claude 看見螢幕、操作滑鼠
 - **Claude for Microsoft 365 / Outlook**
 
 ---

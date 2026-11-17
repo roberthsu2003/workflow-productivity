@@ -304,26 +304,26 @@
   - [ ] **多來源參照**：回應結果能同時整合 Project 知識與樣板規範。
 
   </details>
-- [**Claude Cowork 協作工作空間**](../../Claude_ai/cowork/README.md)：Anthropic 全新 AI 獨立工作空間，支援自主多步驟任務執行、整合 Connectors 與 Skills，適合無程式背景者進行進階自動化。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**，且排程任務於**雲端遠端執行**，無法呼叫本機檔案與應用程式。
+- [**代理任務（多步驟自主任務）**](../../Claude_ai/Agent_Tasks/README.md)：已併入一般對話，直接說出目標，Claude 會自主拆解步驟、整合 Connectors 與 Skills 完成多步驟任務，適合無程式背景者進行進階自動化。<br>🔵 **需 Pro / Max / Team / Enterprise 付費方案**；任務預設於**雲端執行**，若需存取本機檔案、內建瀏覽器或 Computer Use，Claude Desktop 必須保持開啟。
   <details>
-  <summary>💡 <b>點擊展開：學員實作驗證（Claude Cowork 獨立工作空間）</b></summary>
+  <summary>💡 <b>點擊展開：學員實作驗證（代理任務）</b></summary>
   <br>
 
-  > 💡 **實作背景**：驗證學員在 Claude Cowork 空間中發起自主任務的能力。
+  > 💡 **實作背景**：驗證學員在一般對話中交辦多步驟自主任務的能力。
 
   ---
 
-  **📝 實作驗證任務：在 Cowork 建立自主工作流程**
+  **📝 實作驗證任務：交辦一個多步驟自主任務**
 
-  1. 從左側選單切換至 **Cowork** 工作空間，建立一個新的 Cowork 任務 Session。
+  1. 開一個新對話（不需要切換任何模式）。
   2. 輸入 Prompt：「`請幫我執行週報彙整任務：讀取目前關聯的 Google Drive 與 Gmail，整理出本週 3 大重點進度與待辦事項。`」
-  3. 觀察 Claude 在 Cowork 視窗中自主拆解步驟、調用工具並交付成果。
+  3. 觀察 Claude 自主拆解步驟、調用工具並交付成果。
 
   ---
 
   **✅ 實作驗證清單（Checklist）**
 
-  - [ ] **Cowork 空間開啟**：成功進入 Cowork 視窗發起任務。
+  - [ ] **任務啟動**：Claude 判斷為多步驟任務並開始執行。
   - [ ] **多步驟自主執行**：Claude 能連續呼叫工具並完成複雜流程。
 
   </details>

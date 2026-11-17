@@ -4,7 +4,7 @@
 > 💻 **適用平台**：Claude 全平台（Desktop / Web / Mobile / Chrome 側邊欄）  
 > 💼 **適用角色**：財務長 (CFO)、財務分析師 (FP&A)、營運總監 (COO)、創投風控經理、電商對帳人員。  
 > 🎯 **核心體驗**：
-> - 🤖 **背景自動寫 Python 運算 (Agentic Code Execution)**：告別大語言模型「計算數字會胡言亂語」的刻板印象，Cowork 會自主在雲端隔離沙盒中撰寫 Python 程式碼，交叉合併多份 CSV 進行精確數學計算。
+> - 🤖 **背景自動寫 Python 運算 (Agentic Code Execution)**：告別大語言模型「計算數字會胡言亂語」的刻板印象，Claude 會自主在雲端隔離沙盒中撰寫 Python 程式碼，交叉合併多份 CSV 進行精確數學計算。
 > - 🔍 **異常超支與虧損自動警報 (Deficit & Overrun Detection)**：自動找出達成率落後、預算嚴重超支的危險部門。
 > - 📊 **自動繪製專業視覺化圖表 (Data Visualization)**：生成並匯入包含長條圖與折線圖的營運趨勢對比圖。
 
@@ -15,7 +15,7 @@
 > *「下週一就是 Q3 季末董事會，CEO 交代：『把會計系統導出的實際支出，跟業務部 CRM 的業績目標拉出來對一下，算清楚各部門達成率，還有我們的現金還能燒幾個月（Cash Runway）！』」*  
 > *你手上有兩份不同系統匯出的 CSV，欄位名稱不同、月份分開。你打開 Excel 寫 VLOOKUP，一下公式報錯 `#N/A`，一下算錯淨利。好不容易拉出來的圖表，還被財務長指出數值加總對不上……*
 
-**把這兩份 CSV 丟進 Claude Cowork，讓 AI 背景自動寫 Python 程式碼，30 秒產出零誤差的董事會級財務報告！**
+**把這兩份 CSV 丟進 Claude，讓 AI 背景自動寫 Python 程式碼，30 秒產出零誤差的董事會級財務報告！**
 
 ---
 
@@ -40,7 +40,7 @@
     └── crm_sales_target.csv          (業務銷售目標：各月預估營收、預算上限、毛利目標)
 ```
 
-⬇️ **透過 Cowork 背景 Code Execution 交叉比對產出** ⬇️
+⬇️ **透過 Claude 背景 Code Execution 交叉比對產出** ⬇️
 
 #### 【產出：高階管理層財務摘要、超支警報與營收對比圖表】
 
@@ -58,7 +58,7 @@
 
 ---
 
-## 🧠 Cowork 代理執行管線 (Agent Execution Pipeline)
+## 🧠 代理任務執行管線 (Agent Execution Pipeline)
 
 ```mermaid
 flowchart TD
@@ -85,7 +85,7 @@ flowchart TD
 > 
 > **面對這個情況，您有兩種最舒服的做法：**
 > 1. **做法 A（直接使用現成 Prompt）**：直接複製下方已經為您精心調校好的 RTCCF Prompt，省時又精準。
-> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼進 Cowork 執行！
+> 2. **做法 B（讓 AI 幫您轉化・一鍵變專業）**：先在一般對話（Chat）中，丟出您的隨興口語，讓 Claude 充當您的「提示詞架構師」，把白話文自動翻譯擴充為工業級 RTCCF 指令，再貼到新對話中執行！
 
 <details>
 <summary><b>點擊展開：如何用一句指令讓 Claude 將「口語白話」轉成「RTCCF」並以 Artifact 協作？</b></summary>
@@ -95,7 +95,7 @@ flowchart TD
 若您平常有其他自訂財務對帳任務，可在 **Chat** 模式中貼上這段元提示詞（Meta-Prompt）：
 
 ```markdown
-我即將使用 Claude Cowork 執行跨表格財務對帳與營運分析任務。
+我即將請 Claude 執行跨表格財務對帳與營運分析任務。
 
 請幫我把以下這段口語需求，轉換擴充為嚴謹、不易出錯的「RTCCF 結構化提示詞（Role, Task, Context, Constraint, Format）」。
 
@@ -124,9 +124,9 @@ flowchart TD
 
 ---
 
-## 🤖 Cowork 實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
+## 🤖 代理任務實戰 Prompt（RTCCF 結構 - 亦可直接複製使用）
 
-請在 **Cowork 模式** 下，上傳本資料夾中的 `q3_financial_raw.csv` 與 `crm_sales_target.csv`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
+請開一個新對話，上傳本資料夾中的 `q3_financial_raw.csv` 與 `crm_sales_target.csv`（或直接掛載 `sample_files/` 目錄），並輸入以下 Prompt（若不想手寫或轉換，直接複製這段即可）：
 
 ```markdown
 ## Role
@@ -162,10 +162,10 @@ flowchart TD
 
 0. **下載／確認練習素材**：
    - 確保本範例目錄中具備 `sample_files/` 測試資料夾。若您是從遠端單獨下載或需要重置，可直接下載解壓縮 [`sample_files.zip`](./sample_files.zip) 取得完整練習檔。
-1. **開啟 Claude 介面切換至 Cowork**：
-   - 登入 [claude.ai](https://claude.ai) 或開啟桌面應用，在訊息輸入框左下角切換為 **Cowork**。
+1. **開啟 Claude 並開新對話**：
+   - 登入 [claude.ai](https://claude.ai) 或開啟 Claude Desktop，直接開一個新對話即可（不需要切換模式，Claude 會自動判斷要不要執行多步驟任務）。
 2. **載入練習資料**：
-   - 桌面端：工作目錄指定本機的 `Claude_ai/cowork/Examples/03_Financial_Report/sample_files/`。
+   - 桌面端：工作目錄指定本機的 `Claude_ai/Agent_Tasks/Examples/03_Financial_Report/sample_files/`。
    - 網頁端：將 `q3_financial_raw.csv` 與 `crm_sales_target.csv` 拖曳上傳至對話框。
 3. **送出 Prompt 啟動程式運算**：
    - 貼上上述 RTCCF Prompt 送出，觀察 Claude 如何自主編寫 Python 程式碼進行數據交叉比對與圖表繪製。
@@ -179,12 +179,12 @@ flowchart TD
 
 > [!TIP]
 > 1. **大語言模型算術不可靠？交給 Code Execution！**  
->    在純文字 Chat 模式下，LLM 遇到多位數除法或複合公式容易產生幻覺。在 Cowork 中，指定「透過背景撰寫 Python 程式碼」，Claude 會將計算交給真實的 Python 解譯器，保證 100% 精準。
+>    在只用文字回答時，LLM 遇到多位數除法或複合公式容易產生幻覺。在代理任務中，指定「透過背景撰寫 Python 程式碼」，Claude 會將計算交給真實的 Python 解譯器，保證 100% 精準。
 > 2. **跨檔案鍵值合併 (Key Merge)**：  
->    只要在 Prompt 中指明共同欄位（如「月份」與「部門」），Cowork 會自動完成類似 SQL `JOIN` 或 Excel `VLOOKUP` 的操作，免去手動整理欄位的苦工。
+>    只要在 Prompt 中指明共同欄位（如「月份」與「部門」），Claude 會自動完成類似 SQL `JOIN` 或 Excel `VLOOKUP` 的操作，免去手動整理欄位的苦工。
 > 3. **隨時可復原與一鍵重置**：  
 >    - 若在練習數據分析或微調報告時改動了原始檔案，直接將目錄內的 [`sample_files.zip`](./sample_files.zip) 解壓縮覆蓋，立即還原最乾淨的初始練習環境！
 
 ---
 
-[← 上一篇：範例 2 客訴情緒診斷與原地微調](../02_Customer_Feedback/) ｜ [返回 Cowork 主頁](../../README.md) ｜ [下一篇：範例 4 產業情報監測與定時晨報 →](../04_Daily_News_Brief/)
+[← 上一篇：範例 2 客訴情緒診斷與原地微調](../02_Customer_Feedback/) ｜ [返回代理任務主頁](../../README.md) ｜ [下一篇：範例 4 產業情報監測與定時晨報 →](../04_Daily_News_Brief/)

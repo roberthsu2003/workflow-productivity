@@ -1,7 +1,7 @@
 # 📊 團隊週會報告與風險簡報 (Weekly Team Status Brief)
 
 > **排程執行時間**：{{EXECUTION_TIME}} (每週五定時產出)  
-> **處理模式**：Claude Scheduled + Cowork 雲端自動彙整  
+> **處理模式**：Claude 排程任務雲端自動彙整  
 > **資料來源**：`team_weekly_updates.csv`
 
 ---

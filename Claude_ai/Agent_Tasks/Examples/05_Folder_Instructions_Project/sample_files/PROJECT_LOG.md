@@ -1,6 +1,6 @@
 # SmartFlow AI 專案進度日誌 (PROJECT_LOG)
 
-> 本日誌由 Claude Cowork 依據 `folder-instructions.md` 規範自主維護與自動記錄。
+> 本日誌由 Claude 依據 `folder-instructions.md` 規範自主維護與自動記錄。
 
 ## 📌 當前專案狀態
 - **整體進度**: 0% (準備啟動)

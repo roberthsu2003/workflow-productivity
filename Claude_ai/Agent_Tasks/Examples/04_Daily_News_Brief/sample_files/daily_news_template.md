@@ -1,7 +1,7 @@
 # 📰 每日產業情報與競品趨勢簡報 (Daily Industry Brief)
 
 > **彙整時間**：{{DATE}}  
-> **處理模式**：Claude Cowork 雲端自動檢索與摘要  
+> **處理模式**：Claude 雲端自動檢索與摘要  
 > **關鍵字領域**：{{KEYWORDS_SUMMARY}}
 
 ---
@@ -31,4 +31,4 @@
 - [ ] {{ACTION_ITEM_2}}
 
 ---
-*本晨報由 Claude Cowork 定時自動檢索與彙整編譯*
+*本晨報由 Claude 定時自動檢索與彙整編譯*

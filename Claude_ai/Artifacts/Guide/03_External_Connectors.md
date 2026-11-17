@@ -1,69 +1,79 @@
-# 外部服務串接 (Connectors & MCP)：讓成品讀寫真實世界資料
+# 外部服務串接（Connectors）：讓成品讀寫真實資料
 
-> 深入解析如何透過 Claude 官方 Connectors 與 MCP 協議，讓右側的 Artifact 直接讀取 Google Drive、Gmail 中的真實資料並產出互動成果。
-
----
-
-## 💡 痛點：擺脫假資料與繁瑣的上下傳流程
-
-在過去，若想請 AI 整理一份業績報表：
-1. 必須先從雲端下載 Excel / PDF 到個人電腦。
-2. 手動將檔案拖曳上傳到 Claude 對話框。
-3. Claude 產出分析後，又得手動複製文字存回文件。
-
-透過 **Connectors（連接器）** 與 **MCP（Model Context Protocol）**，Claude 直接獲得讀寫外部服務的安全授權，**省去所有中間手動下載與上傳的時間浪費**！
+> 透過 Connectors，Claude 可以直接讀取你的 Google Drive、Gmail、Notion 等服務。2026/9/16 改版後，**Artifact 本身也能連接 App**，做出會持續讀取最新資料的工具和儀表板。
+>
+> 📖 官方來源：[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) · 延伸閱讀：[Connectors 單元](../../Connectors/README.md)
 
 ---
 
-## 🔌 支援的常見服務與運作機制
+## 🎯 先分清楚兩種用法
 
-### 1. Google Drive 連接器
-- **讀取能力**：支援讀取 Google Docs、Google Sheets、PDF、Excel、Word 等格式。
-- **寫入能力**：可在 Artifact 討論定稿後，直接指令將內容存成新文件放回指定雲端資料夾。
-
-### 2. Gmail 連接器
-- **搜尋與讀取**：可依關鍵字或寄件人搜尋信件，萃取多封往來郵件中的決議事項。
-- **草稿與發信**：可依 Artifact 生成的文案，直接建立 Gmail 草稿。
-
----
-
-## 🏢 職場實戰三大應用情境
+| 用法 | 說明 | 方案 |
+| :--- | :--- | :---: |
+| **① 對話中用 Connector，再產生 Artifact** | 請 Claude 在對話中讀取 Drive 的檔案，然後做成圖表或文件。成品裡的資料是**做的當下**的內容 | 🟢 Free 可用（Connectors 有用量限制） |
+| **② Artifact 本身連接 App** | 成品打開時會**自己去讀最新資料**，也可以寫回去 | 🔵 Pro 以上 |
 
 ```mermaid
 graph LR
-    subgraph 外部真實資料庫
-        GD["📂 Google Drive<br/>（銷售試算表 .xlsx）"]
-        GM["✉️ Gmail<br/>（專案往來信件）"]
+    subgraph "① 對話中讀取（Free）"
+        D1["📂 Google Drive"] -->|讀一次| C1["🧠 Claude"] --> A1["📊 Artifact<br/>（資料停在當下）"]
     end
-
-    subgraph Claude 運算中樞
-        C["🧠 Claude<br/>（Connectors 安全授權）"]
+    subgraph "② Artifact 連接 App（Pro）"
+        A2["📊 Artifact"] <-->|每次打開都讀取／可寫回| D2["📂 Google Drive / Notion…"]
     end
-
-    subgraph 最終成果物
-        A1["📊 互動戰情室 Artifact"]
-        A2["📋 待辦跟催表 Artifact"]
-    end
-
-    GD -->|自動讀取| C
-    C -->|生成| A1
-    GM -->|搜尋信件| C
-    C -->|生成| A2
 ```
-
-1. **Google Sheets ➔ 即時互動戰情室**：
-   > *「請讀取我 Google Drive 中的『2026年Q1業績明細.xlsx』，在右側製作一個可按部門下拉篩選的 HTML 動態雙軸圖表 Artifact。」*
-2. **Gmail 郵件串 ➔ 專案待辦清單**：
-   > *「搜尋我 Gmail 中關於『機房升級專案』的近 5 封往來信件，整理出重點決議，並在右側產生一份帶核取方塊的專案進度追蹤表。」*
-3. **Artifact 成品一鍵回存雲端**：
-   > *「長官看過第 3 版企劃書確認無誤，請直接把這個 Artifact 儲存一份到我 Google Drive 的『2026 企劃部』資料夾中。」*
 
 ---
 
-## 🔒 資安與隱私防護原則
+## 🧪 實作 1：Drive 試算表 ➔ 業績圖表（對話中讀取）`🟢 Free`
 
-- **動作授權機制（Approval-based）**：凡涉及寫入檔案、發送信件等不可逆操作，介面一定會跳出確認視窗，需由您手動點擊「核准」才會執行。
-- **公開分享時安全隔離**：當您將 Artifact 發布為公開連結給長官或同事時，**外部人員絕對無法透過該連結窺探或讀取您的個人雲端硬碟私密檔案**。
+先在 **Settings ➔ Connectors** 連接 Google Drive，然後輸入：
+
+```text
+請讀取我 Google Drive 中的「2026年Q3業績明細」試算表，
+做成一個可以依「部門」下拉篩選的互動圖表 Artifact，
+上方顯示總營收、成長率兩張 KPI 卡片。
+```
+
+---
+
+## 🧪 實作 2：會自動更新的 Notion 任務看板（Artifact 連接 App）`🔵 Pro`
+
+```markdown
+## Role
+你是一位專案管理工具設計師。
+
+## Task
+做一個 Artifact，連接我的 Notion「Sprint Tasks」資料庫，顯示成看板（待辦／進行中／完成）。
+
+## Constraint
+- 每次打開都讀取最新資料
+- 拖拉卡片到其他欄位時，更新 Notion 中的狀態
+- 標示逾期任務與無負責人的任務
+- 上方顯示本週完成率
+
+## Format
+互動看板 Artifact，連接 Notion
+```
+
+---
+
+## 🧪 實作 3：Gmail ➔ 專案跟催表 `🟢 Free（對話中讀取）`
+
+```text
+搜尋我 Gmail 中主旨含「機房升級」的最近 5 封信，
+整理出決議事項和待辦，做成一份有負責人、期限、核取方塊的追蹤表 Artifact。
+```
+
+---
+
+## 🔒 分享時的權限與安全
+
+- **每個人用自己的連線**：你分享的 Artifact 被同事打開時，讀取的是**同事自己連接的帳號**，不會讀到你的 Drive 或 Notion。
+- **連結訪客不能用**：沒登入的訪客打開時，連接 App 的部分**無法運作**。
+- **連接外部網站的限制**：會連接其他網站的 Artifact **不能使用「Anyone with the link」**，也無法用 Email 邀請；這類工具請用組織內分享。
+- **寫入要確認**：寫入檔案、寄信等動作會先跳出確認，由你核准後才會執行。
+- **組織可關閉**：Team / Enterprise 的管理員可以關閉 Artifact 連接 App 的功能。
 
 ---
 

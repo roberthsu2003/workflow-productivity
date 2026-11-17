@@ -88,7 +88,7 @@ sample_files/
 ├── product_launch_brief.md       (新產品上線需求書)
 └── PROJECT_LOG.md                (初始狀態：進度 0%，里程碑皆為 [ ])
 
-            ⬇️ 透過 Claude 專案指示約束與 Cowork 自主執行 ⬇️
+            ⬇️ 透過 Claude 專案指示約束與 Claude 自主執行 ⬇️
 
 【執行後：產出符合專案規範之公關草案，並自主更新專案進度日誌】
 ├── press_release_draft.md        ⭐【新生成！完全符合 4 大章節與專業語氣】
@@ -175,7 +175,7 @@ flowchart TD
 3. 儲存後，該專案下的每一個對話都將永久受此約束！
 
 ### 步驟 4：在專案內發起任務，驗證自治成果
-1. 在專案首頁的對話輸入框中，切換為 **Cowork** 模式。
+1. 在專案首頁開一個新對話。
 2. 貼上上述 **RTCCF 實戰 Prompt** 送出。
 3. **驗證專案自治成果**：
    - **公關新聞稿**：嚴格遵循四大章節架構，自動產出 `press_release_draft.md`。
@@ -195,4 +195,4 @@ flowchart TD
 
 ---
 
-[← 上一篇：範例 4 產業情報監測與定時晨報](../04_Daily_News_Brief/) ｜ [返回 Cowork 主頁](../../README.md)
+[← 上一篇：範例 4 產業情報監測與定時晨報](../04_Daily_News_Brief/) ｜ [返回代理任務主頁](../../README.md)
