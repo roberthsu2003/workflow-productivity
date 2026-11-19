@@ -52,7 +52,7 @@
 
   <!-- 主標題區 -->
   <text x="520" y="42" class="main-title">成為「AI工作流架構師」：從零散資料到標準工作流三部曲</text>
-  <text x="520" y="66" class="sub-title">4 Core Inputs ➔ Dual-Route Architect Engines (Route A &amp; Route B) ➔ RTCCF_v1.md &amp; Production Deliverables</text>
+  <text x="520" y="66" class="sub-title">4 Core Inputs ➔ Dual-Route Architect Engines (Route A &amp; Route B) ➔ Modular RTCCF Blocks (RTCCF.md / step1~N + main) &amp; Deliverables</text>
 
   <!-- ==================== 第一部曲：四大標準原料 ==================== -->
   <g transform="translate(40, 88)">
@@ -133,7 +133,7 @@
       <circle cx="12" cy="12" r="12" fill="#E0E7FF"/>
       <text x="12" y="16" font-size="12" font-weight="800" fill="#4338CA" text-anchor="middle">3</text>
       <text x="34" y="16" class="step-title">產出《可行性評估與關卡規劃報告.md》</text>
-      <text x="34" y="36" class="step-desc">嚴禁在此階段產出 RTCCF_v1；只擬定 Prompt 1-A 供學員關卡 1 啟動</text>
+      <text x="34" y="36" class="step-desc" style="font-size: 11.5px;">嚴禁在此階段產出 RTCCF 規格檔；只擬定各關建議 Prompt 供學員逐關建立積木</text>
     </g>
 
     <rect x="20" y="280" width="420" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
@@ -146,7 +146,7 @@
     <rect x="0" y="0" width="460" height="330" rx="14" fill="#FFFFFF" stroke="#2DD4BF" stroke-width="2"/>
     <rect x="0" y="0" width="460" height="42" rx="14" fill="url(#grad-route-b)"/>
     <rect x="0" y="24" width="460" height="18" fill="url(#grad-route-b)"/>
-    <text x="230" y="27" class="sec-badge">💬 路線 B：一問一答漸進式（03_路線B 提示詞）</text>
+    <text x="230" y="27" class="sec-badge">💬 路線 B：一問一答漸進積木式（03_路線B 提示詞）</text>
 
     <!-- 適用情境標籤 -->
     <rect x="20" y="54" width="420" height="34" rx="8" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
@@ -156,15 +156,15 @@
     <g transform="translate(24, 106)">
       <circle cx="12" cy="12" r="12" fill="#CCFBF1"/>
       <text x="12" y="16" font-size="12" font-weight="800" fill="#0F766E" text-anchor="middle">1</text>
-      <text x="34" y="16" class="step-title">建議工作流名稱／說明 ＋ 首版 RTCCF_v1.md</text>
-      <text x="34" y="36" class="step-desc">踩煞車不先算數據！立即產出專案命名、簡介與首版規格書檔案</text>
+      <text x="34" y="16" class="step-title">建議名稱／規模判斷 ＋ 首版 RTCCF.md 或 RTCCF_step1.md</text>
+      <text x="34" y="36" class="step-desc">踩煞車不先算數據！立即產出專案命名、單關／多關判斷與首塊規格積木</text>
     </g>
 
     <g transform="translate(24, 164)">
       <circle cx="12" cy="12" r="12" fill="#CCFBF1"/>
       <text x="12" y="16" font-size="12" font-weight="800" fill="#0F766E" text-anchor="middle">2</text>
-      <text x="34" y="16" class="step-title">一問一答互動引導 ➔ 自動漸進更新</text>
-      <text x="34" y="36" class="step-desc">每次只問 1 題（附選項），回答後 AI 自動把確認規則寫回 RTCCF_v1.md</text>
+      <text x="34" y="16" class="step-title">一問一答逐關打磨 ➔ 定版封存積木 ➔ 完稿組裝 main</text>
+      <text x="34" y="36" class="step-desc" style="font-size: 10px;">每次只問 1 題（附選項），單關更新 RTCCF.md；多關逐塊封存 step1~N 並組裝 RTCCF_main.md</text>
     </g>
 
     <g transform="translate(24, 222)">
@@ -175,7 +175,7 @@
     </g>
 
     <rect x="20" y="280" width="420" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1"/>
-    <text x="230" y="301" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">📦 產出：建議名稱與說明 ＋ 漸進收斂版 RTCCF_v1.md（＋選配固定檔）</text>
+    <text x="230" y="301" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">📦 產出：單關 RTCCF.md ／ 多關 RTCCF_main.md ＋ RTCCF_step1~N.md（＋選配固定檔）</text>
   </g>
 
   <!-- 匯流連線：雙路線 -> 第三部曲 -->
@@ -191,7 +191,7 @@
     <text x="480" y="24" class="sec-badge">🚀 第三部曲：正式執行工作流 ＆ 04_實戰操作範例庫（7 大格式演練）</text>
 
     <text x="480" y="60" font-size="13.5" font-weight="700" fill="#0F172A" text-anchor="middle">
-      最終統一收斂為【RTCCF_v1.md ＋ 固定知識庫 .md】，後續只需上傳當期動態輸入檔即可穩定產出實體交付物：
+      最終收斂為【單關 RTCCF.md 或 多關 RTCCF_main.md＋step1~N.md ＋ 固定知識庫 .md】，後續上傳當期動態檔即可穩定產出：
     </text>
 
     <!-- 6 大實體產出格式藥丸 -->
