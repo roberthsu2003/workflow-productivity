@@ -42,6 +42,23 @@
 
 ---
 
+## 🔤 跨平台（Mac / Windows）四大格式統一字型防跑版機制
+
+在轉換 `.xlsx`、`.pptx`、`.docx`、`.pdf` 時之所以常出現「英文換字型了，中文卻退回新細明體或生硬預設黑體」，主要因為 **Mac（蘋方體 `PingFang TC`）與 Windows（微軟正黑體 `Microsoft JhengHei`）預設字庫不同**，加上 **AI 產檔時常漏設 Office 底層的「東亞中文字型標籤」**。
+
+為了讓所有檔案在 Mac、Windows 與雲端檢視時維持一致視覺，請依檔案交付路徑在不同階段鎖定字型（若追求 100% 跨平台與雲端零誤差，全格式首選開源字型 **思源黑體 `Noto Sans TC`**；若免安裝字體且雙平台皆有 Microsoft Office，可統一使用 **`Microsoft JhengHei`（微軟正黑體）＋ 英數 `Arial`**）：
+
+| 交付路徑與格式 | 字型鎖定寫入時機 | 跨 Mac / Windows 底層鎖定標準 |
+| :--- | :--- | :--- |
+| **直出型：Excel (`.xlsx`)** | **寫入 `RTCCF.md` 格式規範** | 在 `RTCCF.md` 明確要求全活頁簿（標題、表頭、資料列、總計列與圖表）所有儲存格皆顯式指定 `Microsoft JhengHei`（或 `Noto Sans TC`），禁止留空退回預設字型。 |
+| **直出型：PowerPoint (`.pptx`)** | **寫入 `RTCCF.md` 格式規範** | 在 `RTCCF.md` 明確指定全簡報中文為 `Microsoft JhengHei`（或 `Noto Sans TC`）、英數為 `Arial`，且強制要求底層 XML 同時寫入**東亞中文字型 `<a:ea>`** 與**拉丁字型 `<a:latin>`**。 |
+| **先審內文型：Word (`.docx`)** | **`.md` 定稿後的「最終轉檔 Prompt」** | 在內文 `.md` 審核通過後下達轉換指令時，要求所有樣式（標題、內文、表格儲存格）同時綁定**西文字型（`w:ascii`/`w:hAnsi` 為 `Arial` 或 `Calibri`）**與**東亞中文字型（`w:eastAsia` 為 `Microsoft JhengHei` 或 `Noto Sans TC`）**。 |
+| **先審內文型：PDF (`.pdf`)** | **`.md` 定稿後的「最終轉檔 Prompt」** | 在內文 `.md` 審核通過後下達轉換指令時，要求指定雲端與跨平台通用的 **思源黑體 `Noto Sans TC`** 並**將字型內嵌（Font Embedding）**，字型堆疊設為 `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`，內文 `11pt`、行高 `1.6` 倍。 |
+
+> 💡 **詳細轉換說明 Prompt 範本**：請見 [**Word 與 PDF 匯出轉換說明指南**](./Word與PDF文件的生成/README.md#-ai-agent-匯出-word-docx-與-pdf-pdf-指南)。
+
+---
+
 ## 📂 核心生成格式與教學手冊
 
 > 💡 點選下方各模組即可進入對應的實戰教學、素材與 `RTCCF.md` 一問一答範本檔案：

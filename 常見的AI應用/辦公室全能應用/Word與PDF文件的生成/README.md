@@ -45,6 +45,29 @@
 1. **對話介面匯出**：在各主流 AI Agent 對話介面，點選匯出至線上文件或直接複製 Markdown，貼入 Word 保留完整階層排版，並可另存為 PDF。
 2. **自主代理 Coding Agent**：可指示 AI Agent 直接讀取工作區內的 `.md` 檔案，透過自動化腳本編譯輸出為標準排版之 `.docx` 或 `.pdf` 實體檔案。
 
+### 🔤 `.md` 定稿轉 `.docx` / `.pdf` 跨平台統一字型轉換 Prompt（Mac / Windows 通用）
+
+因為 Word 與 PDF 是**先產出完整 `.md` 內文並由人類審核定稿後，才進行格式轉換**，因此不需要把轉檔字型塞進內文草稿，只需在「最後放行轉檔」時貼上下方對應的轉換說明 Prompt，即可解決 Mac / Windows 字體不一致與中文退回新細明體的問題：
+
+- **① 同時轉換為 Word (`.docx`) ＋ PDF (`.pdf`) 萬用 Prompt（最常用）**：
+  ```text
+  Markdown 內文審核通過！請依定稿後的 .md 檔案轉換為 Word (.docx) 與 PDF (.pdf)，並嚴格套用以下跨平台統一字型規範（Mac / Windows 通用）：
+  1. PDF (.pdf)：全篇統一使用「思源黑體 (Noto Sans TC)」（字型堆疊："Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif）並內嵌字型，內文字級 11pt、行高 1.6 倍、標題加粗。
+  2. Word (.docx)：全篇所有標題、內文段落與表格儲存格，中文字型統一設定為「微軟正黑體 (Microsoft JhengHei)」（或「思源黑體 (Noto Sans TC)」），英數字型統一為「Arial」，且底層 OpenXML 必須同時綁定西文字型 (w:ascii / w:hAnsi) 與東亞中文字型 (w:eastAsia)，避免中文退回新細明體。
+  ```
+
+- **② 單獨轉換為 Word (`.docx`) 專用 Prompt**：
+  ```text
+  Markdown 內文審核通過！請依定稿後的 .md 檔案轉換為 Word (.docx)。
+  字型請嚴格遵守跨平台規範：全篇（含標題、內文、條列與表格內文字）中文字型統一為「微軟正黑體 (Microsoft JhengHei)」（若雙平台皆已安裝思源黑體可改用 "Noto Sans TC"），英文與數字統一為「Arial」，並確保在底層 XML 同時設定 w:ascii、w:hAnsi 與東亞字型 w:eastAsia，不可只改英數字型而讓中文退回系統預設字體。
+  ```
+
+- **③ 單獨轉換為 PDF (`.pdf`) 專用 Prompt**：
+  ```text
+  Markdown 內文審核通過！請依定稿後的 .md 檔案轉換為 PDF (.pdf)。
+  請使用支援中文字體內嵌（Font Embedding）的轉檔引擎，全篇統一使用「思源黑體 (Noto Sans TC)」（CSS 字型堆疊："Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif），內文字級 11pt、行高 1.6 倍、標題加粗、表格框線清晰且避免跨頁斷頭。
+  ```
+
 ---
 
 [← 返回辦公室全能應用導覽總表](../README.md)
