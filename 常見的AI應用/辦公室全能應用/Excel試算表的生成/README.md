@@ -74,7 +74,7 @@
 4. **零硬編碼計算（Formulas First）**：
    - 凡是小計、總計、差異、毛利率，一律使用公式動態運算，禁止填入靜態算好的死值。
 5. **跨平台統一字型**：
-   - 在 `RTCCF.md` 要求所有儲存格顯式套用 `Microsoft JhengHei`（或 `Noto Sans TC`），細節見章節總覽的「跨平台統一字型」。
+   - 在 `RTCCF.md` 要求所有儲存格顯式套用 `Microsoft JhengHei`（或 `Noto Sans TC`），細節見[共通工作流](../00_共通工作流/README.md)的「跨平台統一字型」。
 
 ---
 
