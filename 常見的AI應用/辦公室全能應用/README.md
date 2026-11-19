@@ -44,17 +44,21 @@
 
 ## 🔤 跨平台（Mac / Windows）四大格式統一字型防跑版機制
 
-在轉換 `.xlsx`、`.pptx`、`.docx`、`.pdf` 時之所以常出現「英文換字型了，中文卻退回新細明體或生硬預設黑體」，主要因為 **Mac（蘋方體 `PingFang TC`）與 Windows（微軟正黑體 `Microsoft JhengHei`）預設字庫不同**，加上 **AI 產檔時常漏設 Office 底層的「東亞中文字型標籤」**。
+在轉換 `.xlsx`、`.pptx`、`.docx`、`.pdf` 時之所以常出現「英文換字型了，中文卻退回新細明體」，甚至「雖然變成黑體，但『申、請、補、準』的筆畫卻像簡體字」，主要有三大原因：
+1. **Mac（蘋方體 `PingFang TC`）與 Windows（微軟正黑體 `Microsoft JhengHei`）預設字庫互斥**。
+2. **AI 產檔時常漏設 Office 底層的「東亞中文字型標籤（`eastAsia` / `a:ea`）」與繁體中文語系（`zh-TW`）**。
+3. **雲端 Linux 轉 PDF 容易誤映射到簡體／日文字庫**：未宣告 `lang="zh-TW"` 時，雲端轉檔伺服器預設會將 `Noto Sans TC` 映射到簡體 `Noto Sans CJK SC` 或日文 `Noto Sans CJK JP`，導致繁體筆畫走樣。
 
-為了讓所有檔案在 Mac、Windows 與雲端檢視時維持一致視覺，請依檔案交付路徑在不同階段鎖定字型（若追求 100% 跨平台與雲端零誤差，全格式首選開源字型 **思源黑體 `Noto Sans TC`**；若免安裝字體且雙平台皆有 Microsoft Office，可統一使用 **`Microsoft JhengHei`（微軟正黑體）＋ 英數 `Arial`**）：
+為了讓所有檔案在 Mac、Windows 與雲端檢視時呈現**正統台灣繁體字形（`zh-TW`）**並維持一致視覺，請依交付路徑在不同階段鎖定字型（全格式首選開源台灣版思源黑體 **`Noto Sans CJK TC` / `Noto Sans TC`**；若免安裝字體且雙平台皆有 Microsoft Office，可統一使用 **`Microsoft JhengHei`（微軟正黑體）＋ 英數 `Arial`**）：
 
-| 交付路徑與格式 | 字型鎖定寫入時機 | 跨 Mac / Windows 底層鎖定標準 |
+| 交付路徑與格式 | 字型鎖定寫入時機 | 跨 Mac / Windows 底層鎖定標準（台灣繁體 `zh-TW`） |
 | :--- | :--- | :--- |
-| **直出型：Excel (`.xlsx`)** | **寫入 `RTCCF.md` 格式規範** | 在 `RTCCF.md` 明確要求全活頁簿（標題、表頭、資料列、總計列與圖表）所有儲存格皆顯式指定 `Microsoft JhengHei`（或 `Noto Sans TC`），禁止留空退回預設字型。 |
-| **直出型：PowerPoint (`.pptx`)** | **寫入 `RTCCF.md` 格式規範** | 在 `RTCCF.md` 明確指定全簡報中文為 `Microsoft JhengHei`（或 `Noto Sans TC`）、英數為 `Arial`，且強制要求底層 XML 同時寫入**東亞中文字型 `<a:ea>`** 與**拉丁字型 `<a:latin>`**。 |
-| **先審內文型：Word (`.docx`)** | **`.md` 定稿後的「最終轉檔 Prompt」** | 在內文 `.md` 審核通過後下達轉換指令時，要求所有樣式（標題、內文、表格儲存格）同時綁定**西文字型（`w:ascii`/`w:hAnsi` 為 `Arial` 或 `Calibri`）**與**東亞中文字型（`w:eastAsia` 為 `Microsoft JhengHei` 或 `Noto Sans TC`）**。 |
-| **先審內文型：PDF (`.pdf`)** | **`.md` 定稿後的「最終轉檔 Prompt」** | 在內文 `.md` 審核通過後下達轉換指令時，要求指定雲端與跨平台通用的 **思源黑體 `Noto Sans TC`** 並**將字型內嵌（Font Embedding）**，字型堆疊設為 `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`，內文 `11pt`、行高 `1.6` 倍。 |
+| **直出型：Excel (`.xlsx`)** | **寫入 `RTCCF.md` 格式規範** | 在 `RTCCF.md` 明確要求全活頁簿（標題、表頭、資料列、總計列與圖表）所有儲存格皆顯式指定 `Microsoft JhengHei`（或台灣版 `Noto Sans TC` / `Noto Sans CJK TC`，語系 `zh-TW`），禁止留空退回預設字型。 |
+| **直出型：PowerPoint (`.pptx`)** | **寫入 `RTCCF.md` 格式規範** | 在 `RTCCF.md` 明確指定全簡報中文為 `Microsoft JhengHei`（或台灣版 `Noto Sans TC` / `Noto Sans CJK TC`）、英數為 `Arial`，且強制要求底層 XML 同時寫入**東亞中文字型 `<a:ea>`**、**拉丁字型 `<a:latin>`** 與繁體中文語系 `lang="zh-TW"`。 |
+| **先審內文型：Word (`.docx`)** | **`.md` 定稿後的「最終轉檔 Prompt」** | 在內文 `.md` 審核通過後下達轉換指令時，要求所有樣式（標題、內文、表格儲存格）同時綁定**西文字型（`w:ascii`/`w:hAnsi` 為 `Arial` 或 `Calibri`）**、**東亞中文字型（`w:eastAsia` 為 `Microsoft JhengHei` 或台灣版 `Noto Sans TC`）**，並將語系鎖定為繁體中文（`zh-TW`）。 |
+| **先審內文型：PDF (`.pdf`)** | **`.md` 定稿後的「最終轉檔 Prompt」** | 在內文 `.md` 審核通過後下達轉換指令時，要求 HTML 底層必須宣告 **`lang="zh-TW"`**，並優先呼叫 **`"Noto Sans CJK TC"`** 與 **`"Noto Sans TC"`** 內嵌字型（堆疊：`"Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`），嚴禁映射到簡體 `SC` 或日文 `JP` 字庫；內文 `11pt`、行高 `1.6` 倍。 |
 
+> 💡 **100% 純正台灣繁體字形（防簡體筆畫）一勞永逸解方**：若雲端轉檔環境未安裝繁體中文字庫、轉出 PDF 的筆畫仍偏簡體字形（如「申、請、補、準」），最穩定的做法是**先輸出已鎖定字型的 `.docx` 檔（或匯出至 Google Docs），下載回本機電腦後，直接用本機 Word 或 Google Docs「另存為 PDF」**，即可調用最純正的台灣繁體字型庫！  
 > 💡 **詳細轉換說明 Prompt 範本**：請見 [**Word 與 PDF 匯出轉換說明指南**](./Word與PDF文件的生成/README.md#-ai-agent-匯出-word-docx-與-pdf-pdf-指南)。
 
 ---

@@ -73,7 +73,7 @@
 4. **零硬編碼計算（Formulas First）**：
    - 凡是小計、總計、差異、毛利率，一律使用公式動態運算，禁止填入靜態算好的死值。
 5. **跨平台統一字型（寫入 `RTCCF.md` Format 規範）**：
-   - 因為 `.xlsx` 是在 `RTCCF.md` 審核通過後直接交付，務必在 `RTCCF.md` 明確要求所有工作表之標題列、表頭、資料列、總計列與圖表文字，每一個儲存格皆顯式套用 **`Microsoft JhengHei`（微軟正黑體）**（或跨平台開源字型 **`Noto Sans TC`**），避免在 Mac / Windows 退回系統預設新細明體。
+   - 因為 `.xlsx` 是在 `RTCCF.md` 審核通過後直接交付，務必在 `RTCCF.md` 明確要求所有工作表之標題列、表頭、資料列、總計列與圖表文字，每一個儲存格皆顯式套用繁體中文（`zh-TW`）字型 **`Microsoft JhengHei`（微軟正黑體）**（或台灣版思源黑體 **`Noto Sans TC` / `Noto Sans CJK TC`**，避免誤用簡體 `SC` 字庫），防止在 Mac / Windows 退回系統預設新細明體。
 
 ---
 

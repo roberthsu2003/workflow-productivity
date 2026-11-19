@@ -75,15 +75,15 @@ RTCCF.md 規格確認無誤，請先依規格產出完整內文並儲存為 Mark
 
 ### 步驟 4：Markdown 內文審核完成 ➔ 轉換為 Word (.docx) 與 PDF (.pdf)
 
-當 `.md` 檔案經過 Human-in-the-Loop 審核完全正確後，才正式轉換為實體文件；在轉換指令中一併鎖定**跨 Mac / Windows 統一字型**，可避免轉檔後中文退回新細明體或跑版：
+當 `.md` 檔案經過 Human-in-the-Loop 審核完全正確後，才正式轉換為實體文件；在轉換指令中一併鎖定**台灣繁體中文 (`zh-TW`) 跨 Mac / Windows 統一字型**，可避免轉檔後中文退回新細明體或誤抓到簡體 (`SC`)／日文 (`JP`) 筆畫：
 
 ```text
-Markdown 內文審核通過，請將定稿 .md 檔案轉換為 Word (.docx) 與 PDF (.pdf)，並套用以下跨平台統一字型規範：
-1. PDF (.pdf)：全篇統一使用「思源黑體 (Noto Sans TC)」（字型堆疊："Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif）並內嵌字型，內文字級 11pt、行高 1.6 倍、標題加粗。
-2. Word (.docx)：全篇（含標題、內文與表格）中文字型統一為「微軟正黑體 (Microsoft JhengHei)」（或「思源黑體 (Noto Sans TC)」），英數字型統一為「Arial」，且底層必須同時綁定西文字型 (w:ascii / w:hAnsi) 與東亞中文字型 (w:eastAsia)。
+Markdown 內文審核通過，請將定稿 .md 檔案轉換為 Word (.docx) 與 PDF (.pdf)，並套用以下台灣繁體中文 (zh-TW) 跨平台統一字型規範：
+1. PDF (.pdf)：HTML 底層必須宣告 lang="zh-TW" 繁體中文（台灣）語系，並優先呼叫 "Noto Sans CJK TC" 與 "Noto Sans TC"（字型堆疊："Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif）並內嵌字型，嚴禁映射到簡體 (SC) 或日文 (JP) 字庫；內文字級 11pt、行高 1.6 倍、標題加粗。
+2. Word (.docx)：全篇（含標題、內文與表格）語系設為繁體中文 (zh-TW)，中文字型統一為「微軟正黑體 (Microsoft JhengHei)」（或「思源黑體 (Noto Sans TC)」），英數字型統一為「Arial」，且底層必須同時綁定西文字型 (w:ascii / w:hAnsi) 與東亞中文字型 (w:eastAsia)。
 ```
 
-- 📥 **匯出方式**：可在對話介面將定稿內容匯出至線上文件另存為 Word / PDF，或直接請 Coding Agent 依定稿 `.md` 編譯輸出標準實體 `.docx` / `.pdf` 檔案！更多個別格式轉換 Prompt 請參閱 [**Word 與 PDF 匯出指南**](../README.md#-ai-agent-匯出-word-docx-與-pdf-pdf-指南)。
+- 📥 **匯出方式**：可在對話介面將定稿內容匯出至線上文件另存為 Word / PDF，或直接請 Coding Agent 依定稿 `.md` 編譯輸出標準實體 `.docx` / `.pdf` 檔案！若雲端轉出之 PDF 仍出現簡體字形筆畫，建議**先轉出 `.docx` 後用本機 Word 或 Google Docs 另存為 PDF**，即可達到 100% 純正台灣字形（更多個別格式轉換 Prompt 請參閱 [**Word 與 PDF 匯出指南**](../README.md#-ai-agent-匯出-word-docx-與-pdf-pdf-指南)）。
 
 ---
 
