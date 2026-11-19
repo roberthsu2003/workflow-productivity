@@ -63,7 +63,7 @@
 | **Word (`.docx`)** | `.md` 定稿後的轉檔 Prompt | 所有樣式同時綁定**西文字型 `w:ascii` / `w:hAnsi`**（`Arial`）與**東亞字型 `w:eastAsia`**（`Microsoft JhengHei` 或 `Noto Sans TC`），語系 `zh-TW`。 |
 | **PDF (`.pdf`)** | `.md` 定稿後的轉檔 Prompt | HTML 宣告 `lang="zh-TW"`，字型堆疊 `"Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif` 並內嵌，嚴禁映射到 `SC` / `JP` 字庫；內文 `11pt`、行高 `1.6` 倍。 |
 
-> 💡 Word / PDF 可直接複製的轉檔 Prompt，以及「先轉 `.docx` 再用本機另存 PDF」確保 100% 台灣字形的做法，都在 [**Word 與 PDF 模組**](../Word與PDF文件的生成/README.md)。
+> 💡 Word / PDF 可直接複製的轉檔 Prompt，放在兩個 Word 範例的「步驟 4」。若轉出的 PDF 筆畫仍像簡體字，先轉成 `.docx`，再用本機 Word 或 Google 文件「另存為 PDF」即可。
 
 ---
 

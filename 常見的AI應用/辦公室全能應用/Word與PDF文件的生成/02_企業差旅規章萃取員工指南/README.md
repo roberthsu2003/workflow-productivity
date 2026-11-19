@@ -72,7 +72,16 @@ RTCCF.md 規格確認無誤，請先依規格產出完整員工指南並儲存�
 
 ### 步驟 4：Markdown 內文審核完成 ➔ 轉換為 Word (.docx) 與 PDF (.pdf)
 
-`.md` 內文審核通過後才轉檔。請到 [**Word 與 PDF 模組的「轉檔 Prompt」**](../README.md) 複製 **① Word＋PDF 萬用 Prompt** 貼給 AI，即可同時鎖定台灣繁體字型；同一處也有各 AI 平台的匯出方式。
+`.md` 內文審核通過後，貼上這段轉檔指令（已鎖定台灣繁體字型，避免中文退回新細明體或變成簡體筆畫）：
+
+```text
+Markdown 內文審核通過，請將定稿 .md 檔案轉換為 Word (.docx) 與 PDF (.pdf)，並套用以下台灣繁體中文 (zh-TW) 跨平台統一字型規範：
+1. PDF (.pdf)：HTML 底層必須宣告 lang="zh-TW" 繁體中文（台灣）語系，並優先呼叫 "Noto Sans CJK TC" 與 "Noto Sans TC"（字型堆疊："Noto Sans CJK TC", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif）並內嵌字型，嚴禁映射到簡體 (SC) 或日文 (JP) 字庫；內文字級 11pt、行高 1.6 倍、標題加粗。
+2. Word (.docx)：全篇（含標題、內文與表格）語系設為繁體中文 (zh-TW)，中文字型統一為「微軟正黑體 (Microsoft JhengHei)」（或「思源黑體 (Noto Sans TC)」），英數字型統一為「Arial」，且底層必須同時綁定西文字型 (w:ascii / w:hAnsi) 與東亞中文字型 (w:eastAsia)。
+```
+
+- 📥 **取得檔案**：Gemini 可「匯出至 Google 文件」再下載；Claude.ai 可複製 Artifacts 貼入 Word；ChatGPT 可從 Canvas 下載；Antigravity 會直接產出 `.docx` / `.pdf`。
+- 💡 **轉出的 PDF 筆畫仍像簡體字？** 先只轉成 `.docx`，下載後用本機 Word 或 Google 文件「另存為 PDF」，就能得到 100% 台灣繁體字形。
 
 ---
 

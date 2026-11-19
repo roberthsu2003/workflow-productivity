@@ -1,88 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 175" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="60%" stop-color="#F8FAFC" />
       <stop offset="100%" stop-color="#F1F5F9" />
     </linearGradient>
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
+    <filter id="cardShadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06" />
     </filter>
     <linearGradient id="step1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0EA5E9"/></linearGradient>
     <linearGradient id="step2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#6366F1"/></linearGradient>
     <linearGradient id="step3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D97706"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient>
     <linearGradient id="step4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10B981"/></linearGradient>
-    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
     </marker>
   </defs>
 
   <style>
-    .node-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 12.5px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
-    .node-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 10.5px; fill: #475569; text-anchor: middle; }
-    .badge-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
-    .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 9.5px; font-weight: 700; fill: #475569; text-anchor: middle; }
-    .alert-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 30px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .num-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 22px; font-weight: 800; fill: #0F172A; }
+    .desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 16px; fill: #475569; }
+    .chip { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 15px; font-weight: 700; text-anchor: middle; }
   </style>
 
-  <rect width="1020" height="175" rx="14" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
+  <rect width="760" height="540" rx="16" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
 
-  <!-- 步驟 01 -->
-  <g transform="translate(26, 16)">
-    <rect width="215" height="142" rx="10" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="12" y="10" width="52" height="20" rx="6" fill="url(#step1)" />
-    <text x="38" y="24" class="badge-text">01 輸入</text>
-    <rect x="70" y="10" width="133" height="20" rx="6" fill="#F1F5F9" />
-    <text x="136.5" y="24" class="pill-text">零門檻輸入</text>
-    <text x="107.5" y="53" class="node-title">口語交辦／素材</text>
-    <text x="107.5" y="75" class="node-desc">日常白話提企劃需求</text>
-    <text x="107.5" y="93" class="node-desc">或上傳差旅規範 PDF</text>
-    <rect x="12" y="106" width="191" height="25" rx="6" fill="#F0F9FF" />
-    <text x="107.5" y="122.5" class="alert-text" fill="#0369A1">💬 零門檻日常口語</text>
+  <!-- 01 輸入 -->
+  <g transform="translate(30, 24)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#BAE6FD" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect width="104" height="104" rx="12" fill="url(#step1)" />
+    <text x="52" y="50" class="num">01</text>
+    <text x="52" y="78" class="num-label">輸入</text>
+    <text x="128" y="40" class="title">口語條列交辦</text>
+    <text x="128" y="68" class="desc">對照 6 個口語重點，用自己的話簡短條列</text>
+    <text x="128" y="92" class="desc">可上傳差旅規章 PDF 等素材</text>
+    <rect x="520" y="14" width="166" height="32" rx="8" fill="#F0F9FF" />
+    <text x="603" y="36" class="chip" fill="#0369A1">💬 不用背提示詞</text>
   </g>
-  <line x1="245" y1="87" x2="273" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="380" y1="132" x2="380" y2="150" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)" />
 
-  <!-- 步驟 02 -->
-  <g transform="translate(277, 16)">
-    <rect width="215" height="142" rx="10" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="12" y="10" width="52" height="20" rx="6" fill="url(#step2)" />
-    <text x="38" y="24" class="badge-text">02 規格</text>
-    <rect x="70" y="10" width="133" height="20" rx="6" fill="#F1F5F9" />
-    <text x="136.5" y="24" class="pill-text">二合一規格書</text>
-    <text x="107.5" y="53" class="node-title">RTCCF 與預檢規格書</text>
-    <text x="107.5" y="75" class="node-desc">同步輸出 RTCCF 與章節預檢</text>
-    <text x="107.5" y="93" class="node-desc">含字數規劃與 PDF 頁碼定位</text>
-    <rect x="12" y="106" width="191" height="25" rx="6" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
-    <text x="107.5" y="122.5" class="alert-text" fill="#4338CA">💾 單檔存為 RTCCF規格書.md</text>
+  <!-- 02 規格 -->
+  <g transform="translate(30, 154)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect width="104" height="104" rx="12" fill="url(#step2)" />
+    <text x="52" y="50" class="num">02</text>
+    <text x="52" y="78" class="num-label">規格</text>
+    <text x="128" y="40" class="title">AI 存 RTCCF.md ＋ 一問一答</text>
+    <text x="128" y="68" class="desc">AI 先填好細節並存成 RTCCF.md</text>
+    <text x="128" y="92" class="desc">一次問 1 題、最多 5~6 題，邊問邊更新</text>
+    <rect x="520" y="14" width="166" height="32" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+    <text x="603" y="36" class="chip" fill="#4338CA">💾 RTCCF.md</text>
   </g>
-  <line x1="496" y1="87" x2="524" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="380" y1="262" x2="380" y2="280" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)" />
 
-  <!-- 步驟 03 -->
-  <g transform="translate(528, 16)">
-    <rect width="215" height="142" rx="10" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="12" y="10" width="52" height="20" rx="6" fill="url(#step3)" />
-    <text x="38" y="24" class="badge-text">03 審核</text>
-    <rect x="70" y="10" width="133" height="20" rx="6" fill="#F1F5F9" />
-    <text x="136.5" y="24" class="pill-text">單點審核放行</text>
-    <text x="107.5" y="53" class="node-title">人類單點審核放行</text>
-    <text x="107.5" y="75" class="node-desc">只審這一次！核對條件骨架</text>
-    <text x="107.5" y="93" class="node-desc">確保合規、零幻覺遺漏</text>
-    <rect x="12" y="106" width="191" height="25" rx="6" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" />
-    <text x="107.5" y="122.5" class="alert-text" fill="#B45309">🛡️ 回覆「審核通過」才產出</text>
+  <!-- 03 審核 -->
+  <g transform="translate(30, 284)">
+    <rect width="700" height="104" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2" filter="url(#cardShadow)" />
+    <rect width="104" height="104" rx="12" fill="url(#step3)" />
+    <text x="52" y="50" class="num">03</text>
+    <text x="52" y="78" class="num-label">審核</text>
+    <text x="128" y="40" class="title">先交付完整內文 .md 審核</text>
+    <text x="128" y="68" class="desc">Word / PDF 獨有的一關：逐段核對內文與條款</text>
+    <text x="128" y="92" class="desc">不對就用口語要求修改，直到定稿</text>
+    <rect x="520" y="14" width="166" height="32" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" />
+    <text x="603" y="36" class="chip" fill="#B45309">🛡️ 人類把關</text>
   </g>
-  <line x1="747" y1="87" x2="775" y2="87" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
+  <line x1="380" y1="392" x2="380" y2="410" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)" />
 
-  <!-- 步驟 04 -->
-  <g transform="translate(779, 16)">
-    <rect width="215" height="142" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="12" y="10" width="52" height="20" rx="6" fill="url(#step4)" />
-    <text x="38" y="24" class="badge-text">04 交付</text>
-    <rect x="70" y="10" width="133" height="20" rx="6" fill="#F1F5F9" />
-    <text x="136.5" y="24" class="pill-text">正式實體交付</text>
-    <text x="107.5" y="53" class="node-title">正式文件匯出</text>
-    <text x="107.5" y="75" class="node-desc">階層標題排版完整</text>
-    <text x="107.5" y="93" class="node-desc">直接用於公務呈報</text>
-    <rect x="12" y="106" width="191" height="25" rx="6" fill="#ECFDF5" stroke="#34D399" stroke-width="1" />
-    <text x="107.5" y="122.5" class="alert-text" fill="#065F46">📄 .docx / 📕 .pdf</text>
+  <!-- 04 交付 -->
+  <g transform="translate(30, 414)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect width="104" height="104" rx="12" fill="url(#step4)" />
+    <text x="52" y="50" class="num">04</text>
+    <text x="52" y="78" class="num-label">交付</text>
+    <text x="128" y="40" class="title">轉換為正式文件</text>
+    <text x="128" y="68" class="desc">定稿 .md 套用台灣繁體字型後轉檔</text>
+    <text x="128" y="92" class="desc">可直接用於公務呈報</text>
+    <rect x="520" y="14" width="166" height="32" rx="8" fill="#ECFDF5" stroke="#34D399" stroke-width="1" />
+    <text x="603" y="36" class="chip" fill="#065F46">📄 .docx / 📕 .pdf</text>
   </g>
 </svg>
