@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [Office 進階對齊](../README.md) › [Excel (.xlsx) 進階對齊](README.md) › **課前導讀：樣版原理與核心套件**
+
 # 📖 Excel (.xlsx) xltpl 動態樣版原理與 Python 核心套件介紹
 
 > 💡 **講師講解導讀**：本頁用一張架構圖帶您秒懂「為什麼品項列數一直變，下方合計公式與合併儲存格卻不會跑版」，以及背後必備的 Python 核心套件。
@@ -35,4 +37,4 @@
 
 ---
 
-[← 返回 Excel (.xlsx) 進階對齊實戰專區](./README.md)
+🧭 [⬆ 回到：Excel (.xlsx) 進階對齊](README.md)

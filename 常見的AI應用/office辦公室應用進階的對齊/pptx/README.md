@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [Office 進階對齊](../README.md) › **PowerPoint (.pptx) 進階對齊**
+
 # 📊 PowerPoint (`.pptx`) 進階對齊：兩大企業實戰主軸
 
 > 📖 **課前原理導讀（附講解圖）**：不清楚什麼是簡報佔位符樣版、Run 層級替換或不知道要裝哪些套件？  
@@ -27,7 +29,7 @@
 | 佔位符樣版 | [簡報範本_佔位符樣版.pptx](./簡報範本_佔位符樣版.pptx) | 已預留 `{{專案名稱}}`、`{{KPI1_數字}}` 等 13 個佔位符 |
 | 測試資料 | [presentation_data.md](./presentation_data.md) | 含「標準版」與「長文字壓力測試」兩組結構化資料 |
 | 示範成果 1 | [簡報_示範成果_1_智慧客服專案.pptx](./簡報_示範成果_1_智慧客服專案.pptx) | 標準資料套用結果（KPI 置中、字型色彩完全保留） |
-| 示範成果 2 | [簡報_示範成果_2_ERP升級(長文字防溢出測試).pptx](./簡報_示範成果_2_ERP升級(長文字防溢出測試).pptx) | 長標題與長條列自動縮字折行，不爆出卡片框 |
+| 示範成果 2 | [簡報_示範成果_2_ERP升級(長文字防溢出測試).pptx](./簡報_示範成果_2_ERP升級%28長文字防溢出測試%29.pptx) | 長標題與長條列自動縮字折行，不爆出卡片框 |
 | 頁頭圖片 | [images/company_header_logo.png](./images/company_header_logo.png) | 企業頁頭 Logo＋公司名稱 PNG（已嵌入封面與內頁右上角） |
 | 頁尾圖片 | [images/company_footer_banner.png](./images/company_footer_banner.png) | 企業頁尾聯絡資訊與機密條 PNG（已嵌入封面與內頁左下角） |
 
@@ -118,4 +120,4 @@ def replace_in_paragraph(para, mapping, max_chars=None, shrink_pt=None):
 
 ---
 
-[← 返回現代職場 AI 應用全指南](../../README.md)
+🧭 [⬅ 上一頁：Excel (.xlsx) 進階對齊](../xlsx/README.md) ｜ [⬆ 回到：Office 進階對齊](../README.md) ｜ [下一頁：PDF (.pdf) 進階對齊 ➡](../pdf/README.md)

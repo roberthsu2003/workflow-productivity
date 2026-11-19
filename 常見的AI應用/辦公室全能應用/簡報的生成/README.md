@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [辦公室全能應用](../README.md) › **PowerPoint 簡報**
+
 # PowerPoint (.pptx) 簡報生成模組
 ## 🚀 AI Agent 商業簡報大綱萃取與 PPTX 實戰（Claude × ChatGPT × Gemini × Antigravity）
 
@@ -36,4 +38,4 @@
 
 ---
 
-[← 返回辦公室全能應用導覽總表](../README.md)
+🧭 [⬅ 上一頁：Excel 試算表](../Excel試算表的生成/README.md) ｜ [⬆ 回到：辦公室全能應用](../README.md) ｜ [下一頁：範例素材與偽資料 ➡](../範例素材與偽資料/README.md)

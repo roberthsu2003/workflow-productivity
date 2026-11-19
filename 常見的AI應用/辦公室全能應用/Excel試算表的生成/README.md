@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [辦公室全能應用](../README.md) › **Excel 試算表**
+
 # 📊 Excel (.xlsx) 試算表生成模組：五階漸進實戰指南
 ## 🚀 像學 Excel 一樣由淺入深：從「痛恨公式」到「指揮 AI 打造專業試算表」
 
@@ -77,4 +79,4 @@
 
 ---
 
-[← 返回辦公室全能應用導覽總表](../README.md)
+🧭 [⬅ 上一頁：Word 與 PDF](../Word與PDF文件的生成/README.md) ｜ [⬆ 回到：辦公室全能應用](../README.md) ｜ [下一頁：PowerPoint 簡報 ➡](../簡報的生成/README.md)

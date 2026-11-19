@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../../README.md) › [Office 進階對齊](../../README.md) › [PowerPoint (.pptx) 進階對齊](../README.md) › **主軸二：企業母片＋大綱動態生成**
+
 # 🏢 主軸二：企業母片（Slide Master）＋ 簡報大綱動態生成 `.pptx`
 
 > 💡 **與「主軸一（固定月報 `{{佔位符}}`）」有什麼不同？**  
@@ -69,4 +71,4 @@
 
 ---
 
-[← 返回 PowerPoint (.pptx) 進階對齊兩大主軸總覽](../README.md)
+🧭 [⬆ 回到：PowerPoint (.pptx) 進階對齊](../README.md)

@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../../README.md) › [辦公室全能應用](../../README.md) › [PowerPoint 簡報](../README.md) › [範例 01：科技商務提案簡報](README.md) › **步驟 1-3 審核放行與交付**
+
 # 步驟 3：確認 `RTCCF.md`（含每頁大綱）通過 ➔ 直接交付 PowerPoint (.pptx)
 
 ## 🛡️ 審核查核重點
@@ -27,4 +29,4 @@ RTCCF.md 與每頁大綱確認無誤，請直接為我生成 PowerPoint (.pptx) 
 
 ---
 
-[← 返回步驟 2](./1-2_AI產出之RTCCF簡報企劃提示詞.md) ｜ [返回範例導覽](./README.md)
+🧭 [⬅ 上一頁：步驟 1-2 RTCCF.md 一問一答](1-2_AI產出之RTCCF簡報企劃提示詞.md) ｜ [⬆ 回到：範例 01：科技商務提案簡報](README.md)

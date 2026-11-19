@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [Office 進階對齊](../README.md) › **PDF (.pdf) 進階對齊**
+
 # 📄 PDF (`.pdf`) 進階對齊：A4 向量報表、跨頁重複表頭與簽核防撕裂
 
 > 📖 **課前原理導讀（附講解圖）**：為什麼 PDF 不用 `{{佔位符}}`？為什麼中文字會變豆腐字？該裝哪些套件？  
@@ -16,7 +18,7 @@
 | 排版規格書 | [pdf_layout_spec.md](./pdf_layout_spec.md) | 定義 `174mm` 固定欄寬、字型路徑、對齊與跨頁規則 |
 | 測試資料 | [expense_data.md](./expense_data.md) | 含「標準單頁（4 筆）」與「跨頁長清單（18 筆）」兩組資料 |
 | 示範成果 1 | [報銷核銷單_示範成果_1_標準單頁.pdf](./報銷核銷單_示範成果_1_標準單頁.pdf) | 標準單頁輸出（NT$ 7,230，數字右對齊、簽核框完整） |
-| 示範成果 2 | [報銷核銷單_示範成果_2_跨頁長清單(自動重複表頭).pdf](./報銷核銷單_示範成果_2_跨頁長清單(自動重複表頭).pdf) | 18 筆跨 2 頁，第 2 頁自動重複深藍表頭、頁尾 `第 X 頁 / 共 2 頁` |
+| 示範成果 2 | [報銷核銷單_示範成果_2_跨頁長清單(自動重複表頭).pdf](./報銷核銷單_示範成果_2_跨頁長清單%28自動重複表頭%29.pdf) | 18 筆跨 2 頁，第 2 頁自動重複深藍表頭、頁尾 `第 X 頁 / 共 2 頁` |
 | 頁頭圖片 | [images/company_header_logo.png](./images/company_header_logo.png) | 企業頁頭 Logo＋公司名稱 PNG（已透過 `NumberedCanvas` 繪製於每頁頁首） |
 | 頁尾圖片 | [images/company_footer_banner.png](./images/company_footer_banner.png) | 企業頁尾聯絡資訊與機密條 PNG（已透過 `NumberedCanvas` 繪製於每頁頁尾） |
 
@@ -102,4 +104,4 @@ story.append(KeepTogether([sign_tbl]))
 
 ---
 
-[← 返回現代職場 AI 應用全指南](../../README.md)
+🧭 [⬅ 上一頁：PowerPoint (.pptx) 進階對齊](../pptx/README.md) ｜ [⬆ 回到：Office 進階對齊](../README.md)
