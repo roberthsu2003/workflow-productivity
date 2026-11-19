@@ -8,7 +8,7 @@
 
 ---
 
-## ⚡ 人機協作標準工作流（Human-in-the-Loop 四步閉環）
+## ⚡ 人機協作標準工作流（Human-in-the-Loop 三步單點審核閉環）
 
 ![Excel人機協作全景圖](./images/Excel人機協作全景圖.svg)
 

@@ -43,7 +43,7 @@
     <circle cx="38" cy="23" r="5" fill="#818CF8" />
     <text x="56" y="28" class="title">📑 專案計畫書架構規格書 (Review Specification)</text>
     <rect x="625" y="13" width="95" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.2" />
-    <text x="672" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">待初審確認</text>
+    <text x="672" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">待單點審核</text>
 
     <!-- 中間元數據區 (Meta Info) -->
     <g transform="translate(24, 62)">

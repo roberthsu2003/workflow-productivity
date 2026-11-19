@@ -56,10 +56,10 @@
     <circle cx="60" cy="23" r="6" fill="#10B981" />
     
     <text x="84" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Noto Sans TC', sans-serif" font-size="15" font-weight="700" fill="#0F172A">
-      AI Agent 辦公室全能應用：雙階段 Markdown 審核閉環全景架構
+      AI Agent 辦公室全能應用：單點審核 Markdown 閉環全景架構
     </text>
-    <text x="680" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11.5" fill="#64748B">
-      口語 ➔ 存為工作流.md (初審) ➔ AI產出規格書.md (終審) ➔ 產出最終產品
+    <text x="555" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', sans-serif" font-size="11.5" fill="#64748B">
+      口語交辦 ➔ AI 一次產出二合一 RTCCF規格書.md ➔ 人類單點審核 ➔ 產出最終產品
     </text>
   </g>
 
@@ -109,90 +109,90 @@
     </g>
   </g>
 
-  <!-- ==================== 模組 2: Stage 1 產生 RTCCF 工作流 ==================== -->
+  <!-- ==================== 模組 2: 二合一 RTCCF 任務與預檢規格書 ==================== -->
   <g transform="translate(325, 88)">
     <rect width="230" height="280" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
     <rect width="230" height="42" rx="14" fill="url(#step2Grad)" />
     <rect y="28" width="230" height="14" fill="url(#step2Grad)" />
     <text x="16" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">
-      02. RTCCF 工作流 (Stage 1)
+      02. 二合一 RTCCF 規格書
     </text>
 
-    <!-- 守則一卡片：儲存為工作流.md -->
+    <!-- 上半部：RTCCF 任務定義 -->
     <g transform="translate(14, 54)">
-      <rect width="202" height="114" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.2" />
-      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#DC2626">
-        ⚠️ 守則一：存為 工作流.md
+      <rect width="202" height="94" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
+      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#4338CA">
+        📋 上半部：RTCCF 任務條件
       </text>
-      <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#991B1B">
-        AI 自動轉為 RTCCF 交辦事項
+      <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
+        ✓ 角色 / 任務 / 情境 / 約束 / 格式
       </text>
-      <text x="10" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
-        ✓ 具備角色/目標/情境/約束/格式
+      <text x="10" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
+        ✓ 兼作日後可重用 SOP 範本
       </text>
-      <text x="10" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
-        ✓ 沉澱為可複用企業交辦工作流
-      </text>
-      <text x="10" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">
-        必須儲存為 .md 檔案進行維護
+      <text x="10" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">
+        一次輸出，無須二次複製貼上
       </text>
     </g>
 
-    <!-- 使用者初審確認 -->
-    <g transform="translate(14, 178)">
-      <rect width="202" height="78" rx="8" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1" />
-      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#4338CA">
-        👤 使用者審核與確認
+    <!-- 下半部：架構預檢卡片 -->
+    <g transform="translate(14, 158)">
+      <rect width="202" height="98" rx="8" fill="#F5F3FF" stroke="#DDD6FE" stroke-width="1.2" />
+      <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#6D28D9">
+        🔍 下半部：架構與數據預檢
       </text>
       <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
-        • 人機協作微調交辦步驟
+        • 章節字數預檢 / 公式與平帳
       </text>
-      <text x="10" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#1E40AF">
-        ➔ 確認後傳給 AI 執行！
+      <text x="10" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#374151">
+        • 簡報頁數動線 / 合規頁碼定位
+      </text>
+      <text x="10" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#DC2626">
+        💾 統一存為單一 RTCCF規格書.md
       </text>
     </g>
   </g>
 
-  <!-- ==================== 模組 3: Stage 2 審核規格書 ==================== -->
+  <!-- ==================== 模組 3: 人類單點審核放行 ==================== -->
   <g transform="translate(595, 88)">
     <rect width="230" height="280" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
     <rect width="230" height="42" rx="14" fill="url(#step3Grad)" />
     <rect y="28" width="230" height="14" fill="url(#step3Grad)" />
     <text x="16" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">
-      03. 審核規格書 (Stage 2)
+      03. 人類單點審核放行
     </text>
 
-    <!-- 守則二卡片：儲存為規格書.md -->
+    <!-- 單次核對重點 -->
     <g transform="translate(14, 54)">
       <rect width="202" height="114" rx="8" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.2" />
       <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#B45309">
-        ⚠️ 守則二：存為 規格書.md
+        ⚡ 只審這一次（單一煞車點）
       </text>
       <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#78350F">
-        AI 產生審核用規格書/卡片
+        同步核對條件與產出骨架
       </text>
       <text x="10" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
-        • 章節字數預檢 / 數據金額平帳
+        ✓ 確認 RTCCF 限制與防呆條件
       </text>
       <text x="10" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#451A03">
-        • 簡報頁數動線 / 風控異常警示
+        ✓ 確認章節、欄位或頁數無偏差
       </text>
       <text x="10" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#D97706">
-        亦必須存為 .md 做為驗收基準
+        有問題直接口語微調，零重工！
       </text>
     </g>
 
-    <!-- 人類終審決策放行 -->
+    <!-- 放行決策指令 -->
     <g transform="translate(14, 178)">
       <rect width="202" height="78" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" />
       <text x="10" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#92400E">
-        🛡️ 人類終審放行決策
+        🛡️ 人類放行閘門 (Review Gate)
       </text>
       <text x="10" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#78350F">
-        人眼確認規格完全無誤後
+        人眼確認條件與預檢皆無誤後
       </text>
       <text x="10" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="800" fill="#B45309">
-        回覆「審核通過」才正式產出！
+        回覆「確認無誤，可以生成」！
       </text>
     </g>
   </g>
