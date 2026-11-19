@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [本機網頁爬蟲](../README.md) › **範例：電商比價與登入**
+
 # 🛒 電商與零售實戰範例：本機 Playwright 爬蟲、競品比價與登入互動
 
 > 🛠️ **核心工具**：桌面版 AI（Claude Desktop / ChatGPT 桌面版 / Antigravity）＋ 本機 **Playwright**  
@@ -58,4 +60,4 @@
 
 ---
 
-[← 返回本機 Playwright 網頁爬蟲實戰指南](../README.md)
+🧭 [⬅ 上一頁：安裝 03：Antigravity](../03_Antigravity_Playwright安裝.md) ｜ [⬆ 回到：本機網頁爬蟲](../README.md) ｜ [下一頁：範例：創投官網調研 ➡](venture_capital.md)

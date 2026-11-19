@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [本機網頁爬蟲](../README.md) › **範例：創投官網調研**
+
 # 💼 創投（VC）實務範例：本機 Playwright 動態網頁調研與截圖存證
 
 > 🛠️ **核心工具**：桌面版 AI（Claude Desktop / ChatGPT 桌面版 / Antigravity）＋ 本機 **Playwright**  
@@ -50,4 +52,4 @@
 
 ---
 
-[← 返回本機 Playwright 網頁爬蟲實戰指南](../README.md)
+🧭 [⬅ 上一頁：範例：電商比價與登入](ecommerce.md) ｜ [⬆ 回到：本機網頁爬蟲](../README.md) ｜ [下一頁：範例：綠能與台電資訊 ➡](green_energy.md)

@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../README.md) › [本機網頁爬蟲](README.md) › **安裝 03：Antigravity**
+
 # 🔵 03. Antigravity 安裝 Playwright MCP 教學
 
 > 📌 **適用環境**：Google **Antigravity** 桌面版 / IDE。
@@ -53,4 +55,4 @@
 
 ---
 
-[← 返回本機 Playwright 網頁爬蟲實戰指南](./README.md)
+🧭 [⬅ 上一頁：安裝 02：ChatGPT 桌面版](02_ChatGPT_桌面版_Playwright安裝.md) ｜ [⬆ 回到：本機網頁爬蟲](README.md) ｜ [下一頁：範例：電商比價與登入 ➡](examples/ecommerce.md)

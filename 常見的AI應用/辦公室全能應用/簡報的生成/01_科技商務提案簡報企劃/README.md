@@ -75,8 +75,8 @@ RTCCF.md 與每頁大綱確認無誤，請直接為我生成 PowerPoint (.pptx) 
 ```
 
 - 📥 **直接交付與模板整合**：
-  - **Coding Agent（如 Antigravity）直接生成**：依定稿 `RTCCF.md`（與模板 [`ptt簡報模版.pptx`](./ptt簡報模版.pptx)）直接交付實體 `.pptx` 檔案！（完成範本見 [`商業科技簡報範例.pptx`](./商業科技簡報範例.pptx)）
-  - **Gamma / 模板一鍵轉檔**：將定稿 `RTCCF.md` 的每頁大綱匯入 Gamma 或套用 [`ptt簡報模版.pptx`](./ptt簡報模版.pptx)，直接產出 16:9 `.pptx` 投影片。
+  - **Coding Agent（如 Antigravity）直接生成**：依定稿 `RTCCF.md`（與模板 `ptt簡報模版.pptx`）直接交付實體 `.pptx` 檔案！（完成範本見 `商業科技簡報範例.pptx`）
+  - **Gamma / 模板一鍵轉檔**：將定稿 `RTCCF.md` 的每頁大綱匯入 Gamma 或套用 `ptt簡報模版.pptx`，直接產出 16:9 `.pptx` 投影片。
 
 ---
 

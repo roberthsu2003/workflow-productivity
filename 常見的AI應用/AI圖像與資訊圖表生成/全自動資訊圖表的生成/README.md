@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [AI 圖像與資訊圖表](../README.md) › **全自動資訊圖表**
+
 # 全自動資訊圖表 (Infographic) 生成模組
 ## 🚀 AI Agent 資訊設計實戰（Claude × ChatGPT × Gemini × Antigravity）
 
@@ -46,4 +48,4 @@
 
 ---
 
-[← 返回 AI 圖像與資訊圖表生成總表](../README.md)
+🧭 [⬆ 回到：AI 圖像與資訊圖表](../README.md) ｜ [下一頁：簡報 vs. 資訊圖表 ➡](../簡報和資訊圖表的差異/README.md)

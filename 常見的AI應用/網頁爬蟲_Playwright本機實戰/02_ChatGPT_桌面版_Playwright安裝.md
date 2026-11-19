@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../README.md) › [本機網頁爬蟲](README.md) › **安裝 02：ChatGPT 桌面版**
+
 # 🟢 02. ChatGPT 桌面版 安裝 Playwright MCP 教學
 
 > 📌 **適用版本**：ChatGPT Desktop（macOS / Windows 桌面應用程式，包含開發者 / Codex 環境）。
@@ -51,4 +53,4 @@
 
 ---
 
-[← 返回本機 Playwright 網頁爬蟲實戰指南](./README.md)
+🧭 [⬅ 上一頁：安裝 01：Claude Desktop](01_Claude_Desktop_Playwright安裝.md) ｜ [⬆ 回到：本機網頁爬蟲](README.md) ｜ [下一頁：安裝 03：Antigravity ➡](03_Antigravity_Playwright安裝.md)

@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../README.md) › **本機網頁爬蟲**
+
 # 🕷️ 本機網頁爬蟲與動態資料蒐集（Desktop AI × Playwright）
 
 > 💡 **為什麼一定要用「桌面版 AI ＋ 本機 Playwright」？**  
@@ -48,4 +50,4 @@
 
 ---
 
-[← 返回現代職場 AI 應用全指南](../README.md)
+🧭 [⬆ 回到：常見的 AI 應用](../README.md) ｜ [下一頁：安裝 01：Claude Desktop ➡](01_Claude_Desktop_Playwright安裝.md)

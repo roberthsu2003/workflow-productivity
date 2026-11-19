@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [連結應用程式](../README.md) › **Canva 簡報**
+
 ## Canva制作簡報
 
 
@@ -241,3 +243,7 @@
 </details>
 
 [產出的範報檔](./完成檔案)
+
+---
+
+🧭 [⬆ 回到：連結應用程式](../README.md) ｜ [下一頁：Google Calendar ➡](../Google_calendar/README.md)

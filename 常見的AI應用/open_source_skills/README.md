@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../README.md) › **開放來源 Skills**
+
 # 開放來源 Skills（4 大主流文件處理技能）
 
 在生成式 AI 與 AI Agent 工作流中，**辦公文件處理（試算表、投影片、Word、PDF）** 是最常見且高價值的應用場景。以下整理開源社群中最主流的 4 大類 Skills 及其所屬生態庫：
@@ -102,3 +104,7 @@ flowchart TD
 * 📖 **[Claude 官方 Skills 指令包](../../Claude_ai/Skills/README.md)**：包含 PPTX、DOCX、XLSX、PDF 的即用實戰指令。
 * 🔌 **[連結應用程式](../連結應用程式/README.md)**：Google Workspace、Canva 整合指南。
 * 📝 **[儲存與重複使用 AI 提示詞](../儲存與重複使用AI提示詞/README.md)**：自訂提示詞與 AI 助手。
+
+---
+
+🧭 [⬆ 回到：常見的 AI 應用](../README.md)

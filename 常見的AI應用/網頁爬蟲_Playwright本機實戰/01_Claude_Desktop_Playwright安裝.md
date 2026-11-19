@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../README.md) › [本機網頁爬蟲](README.md) › **安裝 01：Claude Desktop**
+
 # 🟣 01. Claude Desktop 安裝 Playwright MCP 教學
 
 > 🟢 **方案需求**：Claude **Free / Pro** 帳號皆可使用，只需下載安裝電腦桌面版（Mac / Windows）。
@@ -54,4 +56,4 @@
 
 ---
 
-[← 返回本機 Playwright 網頁爬蟲實戰指南](./README.md)
+🧭 [⬆ 回到：本機網頁爬蟲](README.md) ｜ [下一頁：安裝 02：ChatGPT 桌面版 ➡](02_ChatGPT_桌面版_Playwright安裝.md)

@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [儲存與重複使用 AI 提示詞](../README.md) › **週報整理助手原始檔**
+
 # 週報整理助手原始檔
 
 ## 檔案說明
@@ -14,3 +16,7 @@
 - 若介面無法直接讀取 `.docx`，請改貼文字或匯出為 `.txt`／`.md` 再上傳。
 
 Claude Projects 用的 **ROSES 建議 Prompt**（Instructions 全文）請見上層 [儲存與重複使用 AI 提示詞 README](../README.md)「**三、Claude 的 Projects**」→「**✏️ 小練習（Claude Projects）：週報整理助手**」標題下方的摺疊區（「**第二個畫面**」僅為介面說明）。若用 Gem／GPTs，可沿用同一套邏輯並改貼至對應欄位。
+
+---
+
+🧭 [⬆ 回到：儲存與重複使用 AI 提示詞](../README.md)

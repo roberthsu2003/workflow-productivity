@@ -1,3 +1,5 @@
+📍 [常見的 AI 應用](../../README.md) › [連結應用程式](../README.md) › **Google Calendar**
+
 # Google Calendar
 
 ## 範例：安排課程日期，並產生 xlsx
@@ -149,3 +151,7 @@
 以下為依本範例**步驟二**（Excel／xlsx skill）實際產出之結果，**目的在讓學員直接看到**試算表的欄位、欄寬與整體呈現（內容為示範，實際排程仍以當次 Calendar 與主管機關規定為準）。
 
 **[課程排課規劃表.xlsx](./完成檔案/課程排課規劃表.xlsx)** — 下載後以 Excel、Google 試算表或其他相容軟體開啟即可檢視。
+
+---
+
+🧭 [⬅ 上一頁：Canva 簡報](../Canva簡報/README.md) ｜ [⬆ 回到：連結應用程式](../README.md)
