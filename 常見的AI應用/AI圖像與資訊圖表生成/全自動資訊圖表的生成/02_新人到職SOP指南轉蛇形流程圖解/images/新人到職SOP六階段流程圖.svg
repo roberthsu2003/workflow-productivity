@@ -1,108 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 180" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 802" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="60%" stop-color="#F8FAFC" />
-      <stop offset="100%" stop-color="#F1F5F9" />
-    </linearGradient>
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.05" />
-    </filter>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#0EA5E9"/></linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#6366F1"/></linearGradient>
-    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D97706"/><stop offset="100%" stop-color="#F59E0B"/></linearGradient>
-    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E11D48"/><stop offset="100%" stop-color="#F43F5E"/></linearGradient>
-    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#A855F7"/></linearGradient>
-    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#10B981"/></linearGradient>
-    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8" />
-    </marker>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F1F5F9"/></linearGradient>
+    <filter id="cardShadow" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06"/></filter>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284C7"/><stop offset="100%" stop-color="#41A2D5"/></linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#7B74EB"/></linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#9C6BF1"/></linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#DB2777"/><stop offset="100%" stop-color="#E45D99"/></linearGradient>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D97706"/><stop offset="100%" stop-color="#E29944"/></linearGradient>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#43B08E"/></linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94A3B8"/></marker>
   </defs>
-
   <style>
-    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; }
-    .badge-text { font-size: 10px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
-    .node-title { font-size: 11.5px; font-weight: 700; fill: #0F172A; text-anchor: middle; }
-    .node-owner { font-size: 10px; font-weight: 700; text-anchor: middle; }
-    .node-desc { font-size: 9.5px; fill: #64748B; text-anchor: middle; }
+    .num { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 30px; font-weight: 800; fill: #FFFFFF; text-anchor: middle; }
+    .num-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 22px; font-weight: 800; fill: #0F172A; }
+    .desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 16px; fill: #475569; }
+    .chip { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; font-size: 15px; font-weight: 700; text-anchor: middle; }
   </style>
-
-  <rect width="1020" height="180" rx="14" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2" />
-
-  <!-- 步驟 1 -->
-  <g transform="translate(18, 18)">
-    <rect width="144" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="8" y="10" width="46" height="20" rx="5" fill="url(#grad1)" />
-    <text x="31" y="24" class="font-sans badge-text">01</text>
-    <text x="72" y="56" class="font-sans node-title">報到與身分確認</text>
-    <rect x="22" y="70" width="100" height="20" rx="5" fill="#E0F2FE" />
-    <text x="72" y="84" class="font-sans node-owner" fill="#0369A1">窗口：HR 人資</text>
-    <text x="72" y="108" class="font-sans node-desc">繳交證件資料</text>
-    <text x="72" y="124" class="font-sans node-desc">領取識別門禁卡</text>
+  <rect width="760" height="802" rx="16" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.2"/>
+  <g transform="translate(30, 24)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#99CDE8" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="104" height="104" rx="12" fill="url(#g1)"/>
+    <text x="52" y="50" class="num">01</text><text x="52" y="78" class="num-label">階段</text>
+    <text x="128" y="40" class="title">報到與身分確認</text>
+    <text x="128" y="68" class="desc">繳交證件資料</text><text x="128" y="92" class="desc">領取識別門禁卡</text>
+    <rect x="476" y="14" width="210" height="32" rx="8" fill="#E5F2F9" stroke="#99CDE8" stroke-width="1"/><text x="581" y="36" class="chip" fill="#0284C7">窗口：HR 人資</text>
   </g>
-  <line x1="165" y1="90" x2="182" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
-
-  <!-- 步驟 2 -->
-  <g transform="translate(186, 18)">
-    <rect width="144" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="8" y="10" width="46" height="20" rx="5" fill="url(#grad2)" />
-    <text x="31" y="24" class="font-sans badge-text">02</text>
-    <text x="72" y="56" class="font-sans node-title">IT 設備帳號領用</text>
-    <rect x="22" y="70" width="100" height="20" rx="5" fill="#EEF2FF" />
-    <text x="72" y="84" class="font-sans node-owner" fill="#4338CA">窗口：資訊部門</text>
-    <text x="72" y="108" class="font-sans node-desc">公司信箱 &amp; ERP</text>
-    <text x="72" y="124" class="font-sans node-desc">筆電設備點交</text>
+  <line x1="380" y1="132" x2="380" y2="150" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)"/>
+  <g transform="translate(30, 154)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#B8B5F4" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="104" height="104" rx="12" fill="url(#g2)"/>
+    <text x="52" y="50" class="num">02</text><text x="52" y="78" class="num-label">階段</text>
+    <text x="128" y="40" class="title">IT 設備帳號領用</text>
+    <text x="128" y="68" class="desc">公司信箱 &amp; ERP</text><text x="128" y="92" class="desc">筆電設備點交</text>
+    <rect x="476" y="14" width="210" height="32" rx="8" fill="#EDECFC" stroke="#B8B5F4" stroke-width="1"/><text x="581" y="36" class="chip" fill="#4F46E5">窗口：資訊部門</text>
   </g>
-  <line x1="333" y1="90" x2="350" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
-
-  <!-- 步驟 3 -->
-  <g transform="translate(354, 18)">
-    <rect width="144" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="8" y="10" width="46" height="20" rx="5" fill="url(#grad3)" />
-    <text x="31" y="24" class="font-sans badge-text">03</text>
-    <text x="72" y="56" class="font-sans node-title">導師介紹與環境</text>
-    <rect x="22" y="70" width="100" height="20" rx="5" fill="#FEF3C7" />
-    <text x="72" y="84" class="font-sans node-owner" fill="#B45309">窗口：部門主管</text>
-    <text x="72" y="108" class="font-sans node-desc">指派 1 對 1 導師</text>
-    <text x="72" y="124" class="font-sans node-desc">熟悉團隊辦公區</text>
+  <line x1="380" y1="262" x2="380" y2="280" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)"/>
+  <g transform="translate(30, 284)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#CAB0F7" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="104" height="104" rx="12" fill="url(#g3)"/>
+    <text x="52" y="50" class="num">03</text><text x="52" y="78" class="num-label">階段</text>
+    <text x="128" y="40" class="title">導師介紹與環境</text>
+    <text x="128" y="68" class="desc">指派 1 對 1 導師</text><text x="128" y="92" class="desc">熟悉團隊辦公區</text>
+    <rect x="476" y="14" width="210" height="32" rx="8" fill="#F1EBFD" stroke="#CAB0F7" stroke-width="1"/><text x="581" y="36" class="chip" fill="#7C3AED">窗口：部門主管</text>
   </g>
-  <line x1="501" y1="90" x2="518" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
-
-  <!-- 步驟 4 -->
-  <g transform="translate(522, 18)">
-    <rect width="144" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="8" y="10" width="46" height="20" rx="5" fill="url(#grad4)" />
-    <text x="31" y="24" class="font-sans badge-text">04</text>
-    <text x="72" y="56" class="font-sans node-title">規章考核與線上</text>
-    <rect x="22" y="70" width="100" height="20" rx="5" fill="#FFE4E6" />
-    <text x="72" y="84" class="font-sans node-owner" fill="#BE123C">窗口：人資部門</text>
-    <text x="72" y="108" class="font-sans node-desc">資安規範線上測驗</text>
-    <text x="72" y="124" class="font-sans node-desc">差旅請假權益學習</text>
+  <line x1="380" y1="392" x2="380" y2="410" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)"/>
+  <g transform="translate(30, 414)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#F0A8C8" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="104" height="104" rx="12" fill="url(#g4)"/>
+    <text x="52" y="50" class="num">04</text><text x="52" y="78" class="num-label">階段</text>
+    <text x="128" y="40" class="title">規章考核與線上學習</text>
+    <text x="128" y="68" class="desc">資安規範線上測驗</text><text x="128" y="92" class="desc">差旅請假權益學習</text>
+    <rect x="476" y="14" width="210" height="32" rx="8" fill="#FBE9F1" stroke="#F0A8C8" stroke-width="1"/><text x="581" y="36" class="chip" fill="#DB2777">窗口：人資部門</text>
   </g>
-  <line x1="669" y1="90" x2="686" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
-
-  <!-- 步驟 5 -->
-  <g transform="translate(690, 18)">
-    <rect width="144" height="144" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="8" y="10" width="46" height="20" rx="5" fill="url(#grad5)" />
-    <text x="31" y="24" class="font-sans badge-text">05</text>
-    <text x="72" y="56" class="font-sans node-title">首週任務交辦</text>
-    <rect x="22" y="70" width="100" height="20" rx="5" fill="#F3E8FF" />
-    <text x="72" y="84" class="font-sans node-owner" fill="#7E22CE">窗口：指定導師</text>
-    <text x="72" y="108" class="font-sans node-desc">小型實戰專案演練</text>
-    <text x="72" y="124" class="font-sans node-desc">每日晨會進度同步</text>
+  <line x1="380" y1="522" x2="380" y2="540" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)"/>
+  <g transform="translate(30, 544)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#EFC89B" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="104" height="104" rx="12" fill="url(#g5)"/>
+    <text x="52" y="50" class="num">05</text><text x="52" y="78" class="num-label">階段</text>
+    <text x="128" y="40" class="title">首週任務交辦</text>
+    <text x="128" y="68" class="desc">小型實戰專案演練</text><text x="128" y="92" class="desc">每日晨會進度同步</text>
+    <rect x="476" y="14" width="210" height="32" rx="8" fill="#FBF1E6" stroke="#EFC89B" stroke-width="1"/><text x="581" y="36" class="chip" fill="#D97706">窗口：指定導師</text>
   </g>
-  <line x1="837" y1="90" x2="854" y2="90" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)" />
-
-  <!-- 步驟 6 -->
-  <g transform="translate(858, 18)">
-    <rect width="144" height="144" rx="10" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.2" filter="url(#cardShadow)" />
-    <rect x="8" y="10" width="46" height="20" rx="5" fill="url(#grad6)" />
-    <text x="31" y="24" class="font-sans badge-text">06</text>
-    <text x="72" y="56" class="font-sans node-title">第七天訪談考核</text>
-    <rect x="22" y="70" width="100" height="20" rx="5" fill="#DCFCE7" />
-    <text x="72" y="84" class="font-sans node-owner" fill="#15803D">窗口：HR &amp; 主管</text>
-    <text x="72" y="108" class="font-sans node-desc">雙向回饋訪談</text>
-    <text x="72" y="124" class="font-sans node-desc" fill="#059669" font-weight="700">正式融入團隊 🚀</text>
+  <line x1="380" y1="652" x2="380" y2="670" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arr)"/>
+  <g transform="translate(30, 674)">
+    <rect width="700" height="104" rx="12" fill="#FFFFFF" stroke="#9BD5C3" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="104" height="104" rx="12" fill="url(#g6)"/>
+    <text x="52" y="50" class="num">06</text><text x="52" y="78" class="num-label">階段</text>
+    <text x="128" y="40" class="title">第七天訪談考核</text>
+    <text x="128" y="68" class="desc">雙向回饋訪談</text><text x="128" y="92" class="desc">正式融入團隊 🚀</text>
+    <rect x="476" y="14" width="210" height="32" rx="8" fill="#E6F4F0" stroke="#9BD5C3" stroke-width="1"/><text x="581" y="36" class="chip" fill="#059669">窗口：HR &amp; 主管</text>
   </g>
 </svg>
