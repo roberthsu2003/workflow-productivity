@@ -103,8 +103,8 @@
     <rect x="18" y="14" width="68" height="24" rx="6" fill="url(#gradL3)" />
     <text x="52" y="30" class="font-sans badge-text" text-anchor="middle">階梯 3</text>
     
-    <text x="100" y="31" class="font-sans card-title">【髒資料清洗與轉化】</text>
-    <text x="265" y="31" class="font-sans card-subtitle">告別無止境複製貼上與文字整理</text>
+    <text x="100" y="31" class="font-sans card-title">【雜亂文字與 CSV 轉標準 Excel】</text>
+    <text x="355" y="31" class="font-sans card-subtitle">告別手動整理與複製貼上</text>
     <rect x="740" y="14" width="138" height="22" rx="11" fill="#FFEDD5" />
     <text x="809" y="29" class="font-sans tag-badge" fill="#C2410C" text-anchor="middle">非結構文字結構化</text>
 
