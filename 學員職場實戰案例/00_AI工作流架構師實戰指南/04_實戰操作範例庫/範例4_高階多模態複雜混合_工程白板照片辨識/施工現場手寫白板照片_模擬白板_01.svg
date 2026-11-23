@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700"><rect width="1000" height="700" fill="#d4d0c8"/><rect x="65" y="55" width="870" height="590" rx="12" fill="#fbfbf8" stroke="#626d73" stroke-width="12"/><g fill="#202a33" font-family="sans-serif"><text x="105" y="125" font-size="30">課堂虛構白板｜模擬圖片 01</text><text x="110" y="220" font-size="44">日期：2026-11-02</text><text x="110" y="310" font-size="44">部位：A 區柱</text><text x="110" y="400" font-size="44">工項：鋼筋綁紮</text><text x="110" y="500" font-size="36">查驗結果：待確認</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720">
+  <rect width="1000" height="720" fill="#d4d0c8"/>
+  <rect x="55" y="45" width="890" height="630" rx="12" fill="#fbfbf8" stroke="#626d73" stroke-width="12"/>
+  <line x1="80" y1="118" x2="920" y2="118" stroke="#cbd5e1" stroke-width="3"/>
+  <g fill="#1e293b" font-family="-apple-system, BlinkMacSystemFont, 'PingFang TC', 'Microsoft JhengHei', sans-serif">
+    <text x="95" y="100" font-size="28" font-weight="700" fill="#0f172a">課堂虛構現場手寫白板｜模擬圖片 01（捷運工程監造日誌）</text>
+    <text x="95" y="175" font-size="34" font-weight="700">日期：2026-11-02</text>
+    <text x="520" y="175" font-size="34" font-weight="700">天氣：晴／26°C</text>
+    <text x="95" y="235" font-size="34" font-weight="700">部位：A 區柱（樁號 P12-C3）</text>
+    <text x="95" y="295" font-size="34" font-weight="700">工項：鋼筋綁紮與混凝土澆置查驗</text>
+    <text x="95" y="365" font-size="32">混凝土設計強度：4000 psi（出車 15 車 / 澆置 120 m³）</text>
+    <text x="95" y="425" font-size="32">實測坍流度：62 cm　｜　氯離子含量：0.09 kg/m³</text>
+    <text x="95" y="485" font-size="32">鋼筋保護層實測：8.2 cm　｜　箍筋間距：15? mm（字跡略糊）</text>
+    <text x="95" y="545" font-size="32">出工人數：鋼筋工 6 名、模板工 4 名、雜工 2 名</text>
+    <text x="95" y="615" font-size="30" fill="#b45309" font-weight="700">現場備註：查驗結果待監造工程師公差核定</text>
+  </g>
+</svg>
